@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PokéSleep Guide</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef3f7;color:#24313b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
+.app{max-width:480px;margin:auto;min-height:100vh;background:#f8fafb;padding-bottom:82px}
+header{padding:22px 18px 14px;background:white;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5ebef}
+h1{font-size:22px;margin:0}.sub{color:#7a8790;font-size:12px;margin-top:4px}
+main{padding:14px}.card{background:white;border-radius:18px;padding:16px;margin-bottom:13px;box-shadow:0 2px 10px #0000000a}
+.event{background:#e9f5ff}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.title{font-weight:700;font-size:16px}.muted{color:#7b8790;font-size:13px}
+.progress{height:9px;background:#e7edf1;border-radius:99px;overflow:hidden;margin:10px 0 6px}.bar{height:100%;width:49%;background:#6b9fd0;border-radius:99px}
+.btn{border:0;border-radius:12px;padding:10px 14px;background:#e8f0f6;color:#31536c;font-weight:700}
+.article{padding:13px 0;border-top:1px solid #edf0f2}.article:first-child{border-top:0}
+.search{width:100%;padding:12px 14px;border:1px solid #dfe6ea;border-radius:13px;font-size:15px;margin:8px 0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sleep{padding:14px;border-radius:15px;background:#f4f7f9}.emoji{font-size:30px}.stars{color:#d39b2d;letter-spacing:2px}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);height:70px;background:#fff;border-top:1px solid #e3e8eb;display:flex;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:10}
+nav button{background:none;border:0;color:#7a8790;font-size:11px;min-width:65px}nav button.active{color:#3e6e92;font-weight:700}nav span{display:block;font-size:22px;margin-bottom:2px}
+.section{display:none}.section.active{display:block}
+.badge{font-size:11px;background:#dff0df;color:#3d7446;padding:4px 8px;border-radius:99px}
+
+select.search{background:#fff}
+.eval-score{font-size:30px;font-weight:800;color:#3e6e92}
+.small-note{font-size:11px;color:#89949b;margin-top:7px}
+
+.recipe{padding:13px 0;border-top:1px solid #edf0f2}
+.recipe:first-child{border-top:0}
+.poke-img{width:92px;height:92px;object-fit:contain;display:block;margin:0 auto 6px}.sleep-face-img{width:100%;height:86px;object-fit:contain;display:block;margin-bottom:5px}.sleep-face{min-width:88px}
+.poke-detail-img{width:120px;height:120px;object-fit:contain;display:block}.pokemon-page-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.back-btn{background:#eef3f7;border:0;border-radius:12px;padding:9px 12px;font-weight:700;color:#31536c}.pokemon-page-title{font-size:20px;font-weight:800}.pokemon-hero{background:#f4f7f9;border-radius:18px;padding:16px;text-align:center}.pokemon-hero img{width:180px;height:180px;object-fit:contain}.recipe-title{font-weight:700}
+.recipe-tags{font-size:12px;color:#71808a;margin-top:4px}
+.sleep-profile{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.profile-box{background:#f7f9fa;border-radius:12px;padding:11px}.profile-box .label{font-size:11px;color:#7b8790}.profile-box .value{font-weight:800;margin-top:3px}.ingredient-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.ingredient-pill{background:#fff3d8;border-radius:999px;padding:5px 8px;font-size:12px}.evo-title{font-weight:800;margin-bottom:8px}.evo-grid{display:grid;grid-template-columns:1fr;gap:8px}.evo-card{display:flex;align-items:center;gap:10px;background:#f7f9fa;border-radius:14px;padding:9px;border:1px solid #edf0f2}.evo-card.clickable{cursor:pointer}.evo-card img{width:62px;height:62px;object-fit:contain}.evo-card .evo-name{font-weight:800}.evo-card .evo-cond{font-size:11px;color:#7b8790;margin-top:3px}.evo-arrow{text-align:center;color:#8a969d;font-size:18px;margin:-2px 0}
+
+.ingredient-row{display:flex;align-items:center;gap:10px;background:#fffaf0;border-radius:14px;padding:9px 10px;margin-top:7px;border:1px solid #f4ead5}.ingredient-row img{width:46px;height:46px;object-fit:contain;flex:none;filter:drop-shadow(0 3px 3px #00000012)}.ingredient-main{flex:1}.ingredient-name{font-weight:800;font-size:13px}.ingredient-qty{font-size:11px;color:#7b8790;margin-top:3px}.ingredient-level{font-size:10px;background:#fff0c8;border-radius:999px;padding:3px 7px;display:inline-block;margin-left:4px}.ingredient-note{font-size:10px;color:#8a969d;margin-top:8px}.ingredient-candidates{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:8px}.ingredient-candidate{background:#f7f9fa;border:1px solid #edf0f2;border-radius:12px;padding:8px 5px;text-align:center}.ingredient-candidate img{width:40px;height:40px;object-fit:contain}.ingredient-candidate b{display:block;font-size:11px;margin-top:3px}.ingredient-code{display:inline-block;font-size:10px;font-weight:800;background:#e8f0f6;color:#31536c;border-radius:999px;padding:2px 6px;margin-bottom:3px}.pattern-list{display:grid;gap:7px;margin-top:9px}.pattern-card{background:#f8fafb;border:1px solid #e7edf1;border-radius:13px;padding:8px}.pattern-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.pattern-code{font-size:12px;font-weight:900;letter-spacing:.5px}.pattern-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.pattern-slot{background:white;border-radius:10px;padding:5px 3px;text-align:center;border:1px solid #eef1f3}.pattern-slot img{width:32px;height:32px;object-fit:contain;vertical-align:middle}.pattern-slot .lv{display:block;font-size:9px;color:#89949b}.pattern-slot .q{display:block;font-size:10px;font-weight:800;margin-top:1px}.ingredient-section-title{font-weight:800;margin-top:10px;font-size:13px}.ingredient-help{font-size:10px;color:#7b8790;margin-top:5px;line-height:1.5}
+
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}
+.info-box{background:#f7f9fa;border:1px solid #edf0f2;border-radius:12px;padding:10px 7px;text-align:center}
+.info-box .info-label{font-size:10px;color:#7b8790}
+.info-box .info-value{font-size:14px;font-weight:900;margin-top:4px}
+.skill-box{background:#f4f7f9;border-radius:14px;padding:11px 12px;margin-top:9px}
+.skill-name{font-size:15px;font-weight:900}
+.skill-content{font-size:12px;line-height:1.6;margin-top:5px;color:#4f5c65}
+</style>
+
+<style>
+.sleep-faces{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sleep-face{background:#f7f8fa;border-radius:12px;padding:10px 6px;text-align:center}.face-icon{font-size:28px;margin-bottom:4px}.sleep-face b{display:block;font-size:12px}.sleep-face span{display:block;font-size:11px;color:#888;margin-top:3px}
+</style>
+</head>
+<body>
+<div class="app">
+<header><h1>🌙 PokéSleep Guide</h1><div class="sub">寝顔集めから育成まで、毎日の攻略をサポート</div></header>
+
+<main>
+<section id="home" class="section active">
+<div class="card event"><div class="row"><div><div class="title">🌟 今日のイベント</div><div class="muted">グッドスリープデーを活用しよう！</div></div><span class="badge">開催中</span></div></div>
+<div class="card"><div class="title">⭐ 今日チェックしたい攻略</div>
+<div class="article">寝顔を効率よく集める方法<div class="muted">実際のプレイで意識していること</div></div>
+<div class="article">グッドスリープデーでやること<div class="muted">イベント期間中のポイント</div></div>
+<div class="article">初心者が最初に知っておきたい基本<div class="muted">まず覚えておきたい攻略情報</div></div></div>
+<div class="card"><div class="row"><div><div class="title">📖 寝顔図鑑</div><div class="muted">245 / 500 発見</div></div><strong>49%</strong></div><div class="progress"><div class="bar"></div></div><button class="btn" onclick="show('dex')">図鑑を見る</button></div>
+</section>
+
+<section id="dex" class="section">
+<div class="card"><div class="row"><div><div class="title">📖 ポケモン図鑑</div><div class="muted">寝顔とポケモン情報をまとめて確認</div></div><span class="badge" id="nationalDexCount">ポケスリ登場 241種</span></div><div class="progress"><div class="bar"></div></div>
+<input class="search" placeholder="🔍 ポケモン名・タイプで検索" oninput="filterDex(this.value)">
+<div id="dexLoading" class="muted" style="padding:14px 0;text-align:center">テスト版：図鑑No.1〜9を読み込んでいます…</div>
+<div class="grid" id="dexGrid"></div>
+<div class="small-note">※Pokémon Sleepに登場するポケモンを中心に表示しています。寝顔は対応データを順次追加できます。</div>
+</div>
+<div class="card">
+<div class="row"><div><div class="title">📚 ポケモン情報</div><div class="muted">図鑑から選んで詳しい情報を確認</div></div><span class="badge">β版</span></div>
+<div id="dbDetail"><div class="muted" style="padding:12px 0">ポケモンをタップすると、タイプ・とくい・メインスキル・きのみなどを表示します。</div></div>
+</div>
+</section>
+
+<section id="pokemonDetail" class="section">
+<div class="card">
+  <div class="pokemon-page-head"><button class="back-btn" onclick="backToDex()">← 図鑑に戻る</button><div class="muted">ポケモン詳細</div></div>
+  <div id="pokemonPageContent"></div>
+</div>
+</section>
+
+<section id="articles" class="section">
+<div class="card"><div class="title">📝 攻略記事</div><input class="search" placeholder="🔍 記事を検索">
+<div class="article"><b>寝顔を効率よく集める方法</b><div class="muted">寝顔の仕組み・実践していること・イベント活用</div></div>
+<div class="article"><b>グッドスリープデーで意識したいこと</b><div class="muted">イベントを活用して寝顔を集める</div></div>
+<div class="article"><b>初心者向け：ポケスリの基本</b><div class="muted">最初に知っておきたいポイント</div></div></div>
+</section>
+
+
+
+
+
+
+<section id="scan" class="section">
+<div class="card">
+  <div class="title">📷 スクリーンショット個体評価</div>
+  <div class="muted" style="margin-top:5px">ポケモン詳細画面のスクショから情報を確認します。</div>
+  <input id="shot" type="file" accept="image/*" class="search" onchange="previewShot(event)">
+  <img id="shotPreview" style="width:100%;border-radius:14px;display:none;margin-top:4px">
+  <button class="btn" style="width:100%;margin-top:10px" onclick="analyzeShot()">スクショを解析</button>
+</div>
+<div id="scanResult" class="card" style="display:none">
+  <div class="row"><div><div class="title">解析結果</div><div class="muted">画像から読み取った情報</div></div><span class="badge">確認済み</span></div>
+  <div class="grid" style="margin-top:12px">
+    <div class="sleep"><div class="muted">ポケモン</div><b>ミュウツー</b></div>
+    <div class="sleep"><div class="muted">レベル</div><b>Lv.29</b></div>
+    <div class="sleep"><div class="muted">SP</div><b>1,707</b></div>
+    <div class="sleep"><div class="muted">得意</div><b>スキル</b></div>
+  </div>
+  <div class="article"><b>おてつだい時間</b><br>28分20秒ごと</div>
+  <div class="article"><b>最大所持数</b><br>24個</div>
+  <div class="article"><b>サブスキル</b><br>おてつだいスピードM ／ スキル確率アップM<br>Lv.50 食材確率アップS ／ Lv.70 おてつだいスピードS ／ Lv.80 スキル確率アップS</div>
+  <div class="article"><b>せいかく</b><br>いじっぱり<br><span class="muted">おてつだいスピード ▲▲ ／ 食材おてつだい確率 ▼▼</span></div>
+  <div class="card" style="margin:12px 0 0;background:#f4f8fb">
+    <div class="muted">個体評価（アプリ独自の参考値）</div>
+    <div class="eval-score">解析準備OK</div>
+    <div class="small-note">「個体値」はゲーム内の公式項目ではないため、性格・サブスキル・得意などを使った評価として表示します。</div>
+  </div>
+  <button class="btn" style="width:100%;margin-top:10px" onclick="show('team')">チーム編成に追加</button>
+</div>
+</section>
+
+
+<section id="team" class="section">
+<div class="card">
+  <div class="row">
+    <div><div class="title">👥 チーム編成</div><div class="muted">5匹を選んで、作れる料理を確認</div></div>
+    <button class="btn" onclick="saveTeam()">保存</button>
+  </div>
+
+  <div class="grid" id="teamList" style="margin-top:12px">
+    <div class="sleep teammon" data-name="ミュウツー" data-role="スキル"><div class="emoji">🧠</div><b>ミュウツー</b><div class="muted">スキル</div></div>
+    <div class="sleep teammon" data-name="ピカチュウ" data-role="きのみ"><div class="emoji">⚡</div><b>ピカチュウ</b><div class="muted">きのみ</div></div>
+    <div class="sleep teammon" data-name="マダツボミ" data-role="食材"><div class="emoji">🌱</div><b>マダツボミ</b><div class="muted">食材</div></div>
+    <div class="sleep teammon" data-name="イーブイ" data-role="スキル"><div class="emoji">🦊</div><b>イーブイ</b><div class="muted">スキル</div></div>
+    <div class="sleep teammon" data-name="カビゴン" data-role="サポート"><div class="emoji">💤</div><b>カビゴン</b><div class="muted">サポート</div></div>
+  </div>
+</div>
+
+
+
+<div class="card" id="suggestions">
+  <div class="row">
+    <div><div class="title">💡 チーム提案</div><div class="muted">1日分の食材と料理からおすすめを提案</div></div>
+    <span class="badge">自動提案</span>
+  </div>
+  <div id="suggestionList" style="margin-top:8px"></div>
+</div>
+<div class="card" id="dailyIngredients">
+  <div class="row">
+    <div><div class="title">🥕 1日分の食材</div><div class="muted">現在のチームが24時間で集める食材の目安</div></div>
+    <span class="badge">24時間</span>
+  </div>
+  <div id="dailyIngredientList" style="margin-top:8px"></div>
+  <div class="small-note">※試作版の目安値です。実際の獲得量は、おてつだい時間・食材確率・スキル発動・睡眠時間などで変動します。</div>
+</div>
+<div class="card" id="tomorrowCandidates">
+  <div class="row">
+    <div><div class="title">🔄 明日はどのポケモンを入れて補える？</div><div class="muted">1日分の食材と料理を見て、入れ替え候補を提案</div></div>
+    <span class="badge">明日の編成</span>
+  </div>
+  <div id="tomorrowCandidateList" style="margin-top:8px"></div>
+  <div class="small-note">※試作版では食材・役割をもとにした候補表示です。実際の編成では所持ポケモンや育成状況も考慮します。</div>
+</div>
+<div class="card">
+  <div class="row"><div><div class="title">🍳 作れる料理</div><div class="muted">チームの食材から判定</div></div><span class="badge" id="recipeCount">0件</span></div>
+  <div id="recipeList" style="margin-top:8px"></div>
+  <div class="small-note">※試作版では登録済みの食材データを使った判定サンプルです。</div>
+</div>
+
+<div class="card">
+  <div class="title">📊 チームバランス</div>
+  <div class="row" style="margin-top:12px"><span>きのみ</span><b id="berryCount">1</b></div>
+  <div class="row" style="margin-top:10px"><span>食材</span><b id="ingredientCount">1</b></div>
+  <div class="row" style="margin-top:10px"><span>スキル</span><b id="skillCount">2</b></div>
+</div>
+</section>
+<section id="profile" class="section">
+<div class="card"><div class="title">👤 マイページ</div><div class="muted" style="margin-top:8px">あなたの攻略記録</div></div>
+<div class="card"><div class="row"><span>📖 寝顔図鑑</span><b>49%</b></div><div class="row" style="margin-top:18px"><span>⭐ お気に入り</span><span>0件</span></div><div class="row" style="margin-top:18px"><span>🎯 欲しい寝顔</span><span>0件</span></div><div class="row" style="margin-top:18px"><span>📝 保存した記事</span><span>0件</span></div></div>
+</section>
+</main>
+
+<nav>
+<button class="active" onclick="show('home',this)"><span>🏠</span>ホーム</button>
+<button onclick="show('team',this)"><span>👥</span>チーム</button>
+<button onclick="show('dex',this)"><span>📖</span>図鑑</button>
+<button onclick="show('scan',this)"><span>📷</span>画像解析</button>
+<button onclick="show('articles',this)"><span>📝</span>記事</button>
+<button onclick="show('profile',this)"><span>👤</span>マイページ</button>
+</nav>
+</div>
+<script>
+function show(id,btn){
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ if(btn){document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+ window.scrollTo(0,0)
+}
+function filterDex(q){
+ q=q.trim().toLowerCase();
+ document.querySelectorAll('#dexGrid .dbitem').forEach(x=>x.style.display=x.dataset.search.toLowerCase().includes(q)?'block':'none');
+}
+
+const recipeData = [
+  {name:"あぶりテールカレー", ingredients:["げきからハーブ","マメミート"], tag:"カレー"},
+  {name:"とくせんリンゴカレー", ingredients:["とくせんリンゴ"], tag:"カレー"},
+  {name:"おやこあいカレー", ingredients:["とくせんリンゴ","マメミート"], tag:"カレー"},
+  {name:"あまいホイップクリーム", ingredients:["リラックスカカオ","モーモーミルク"], tag:"デザート・ドリンク"},
+  {name:"プリンのプリンアラモード", ingredients:["リラックスカカオ","モーモーミルク","とくせんエッグ"], tag:"デザート・ドリンク"}
+];
+
+function saveTeam(){
+  localStorage.setItem('pokesleep_team_saved','1');
+  alert('今週のチームを保存しました');
+  updateTeamAnalysis();
+}
+function updateTeamAnalysis(){
+  const mons=[...document.querySelectorAll('.teammon')];
+  const counts={きのみ:0,食材:0,スキル:0};
+  mons.forEach(m=>{const r=m.dataset.role;if(counts[r]!==undefined)counts[r]++;});
+  document.getElementById('berryCount').textContent=counts.きのみ;
+  document.getElementById('ingredientCount').textContent=counts.食材;
+  document.getElementById('skillCount').textContent=counts.スキル;
+
+  // Prototype ingredient pool for the current sample team.
+  const available = new Set(["とくせんリンゴ","マメミート","げきからハーブ","リラックスカカオ","モーモーミルク","とくせんエッグ"]);
+  const possible=recipeData.filter(r=>r.ingredients.every(x=>available.has(x)));
+  document.getElementById('recipeCount').textContent=possible.length+"件";
+  document.getElementById('recipeList').innerHTML=possible.length
+    ? possible.map(r=>`<div class="recipe"><div class="recipe-title">🍳 ${r.name}</div><div class="recipe-tags">${r.tag}　｜　${r.ingredients.join("・")}</div></div>`).join("")
+    : '<div class="muted" style="padding:12px 0">現在の食材では登録済みの料理を作れません。</div>';
+}
+updateTeamAnalysis();
+function evaluatePokemon(){
+ const nature=document.getElementById('nature').value;
+ const role=document.getElementById('role').value;
+ const s1=document.getElementById('sub1').value;
+ const s2=document.getElementById('sub2').value;
+ let score=60;
+ if(nature.includes('スピード')) score+=12;
+ if(nature.includes('確率')) score+=10;
+ if(nature.includes('きのみ')) score+=10;
+ if(role==='きのみ' && s1.includes('きのみ')) score+=12;
+ if(role==='食材' && (s1.includes('食材')||s2.includes('食材'))) score+=10;
+ if(role==='スキル' && (s1.includes('スキル')||s2.includes('スキル'))) score+=10;
+ score=Math.min(score,99);
+ const r=document.getElementById('evalResult');
+ r.style.display='block';
+ r.innerHTML='<div class="muted">入力内容からの参考評価</div><div class="eval-score">'+score+'/100</div><b>'+role+'向けの個体としてチェック</b><div class="small-note">※この評価は攻略アプリ独自の目安です。ゲーム内の公式な「個体値」ではありません。</div>';
+}
+
+function previewShot(e){
+ const f=e.target.files[0]; if(!f)return;
+ const img=document.getElementById('shotPreview');
+ img.src=URL.createObjectURL(f); img.style.display='block';
+}
+function analyzeShot(){
+ const f=document.getElementById('shot').files[0];
+ if(!f){alert('スクリーンショットを選択してください');return;}
+ document.getElementById('scanResult').style.display='block';
+}
+
+
+const POKE_DATA_URL = 'https://raw.githubusercontent.com/kotofurumiya/pokemon_data/master/data/pokemon_data.json';
+const POKE_IMAGE_URL = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+const SLEEP_IMAGE_URL = {1:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_bulbasaur.png',2:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_ivysaur.png',3:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_venusaur.png',4:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmander.png',5:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmeleon.png',6:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charizard.png',7:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_squirtle.png',8:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_wartortle.png',9:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_blastoise.png'};
+const SLEEP_IMG = (id) => SLEEP_IMAGE_URL[id] || POKE_IMAGE_URL(id);
+function imgFallback(id){return `this.onerror=null;this.src='${POKE_IMAGE_URL(id)}'`;}
+
+// Pokémon Sleepに登場するポケモン（2026/9/20時点の公開攻略データを基準）
+const SLEEP_ROSTER = [
+"フシギダネ","フシギソウ","フシギバナ","ヒトカゲ","リザード","リザードン","ゼニガメ","カメール","カメックス","キャタピー","トランセル","バタフリー","コラッタ","ラッタ","アーボ","アーボック","ピカチュウ","ハロウィンピカチュウ","ホリデーピカチュウ","キャプテンピカチュウ","ライチュウ","サンド","サンドパン","ピッピ","ピクシー","ロコン","アローラロコン","キュウコン","アローラキュウコン","プリン","プクリン","ディグダ","ダグトリオ","ニャース","ペルシアン","コダック","ゴルダック","マンキー","オコリザル","ガーディ","ウインディ","マダツボミ","ウツドン","ウツボット","イシツブテ","ゴローン","ゴローニャ","ヤドン","ヤドラン","コイル","レアコイル","カモネギ","ドードー","ドードリオ","ゴース","ゴースト","ゲンガー","イワーク","カラカラ","ガラガラ","ラッキー","ガルーラ","バリヤード","カイロス","メタモン","イーブイ","ホリデーイーブイ","ハロウィンイーブイ","シャワーズ","サンダース","ブースター","ミニリュウ","ハクリュー","カイリュー","ミュウツー","ミュウ","チコリータ","ベイリーフ","メガニウム","ヒノアラシ","マグマラシ","バクフーン","ワニノコ","アリゲイツ","オーダイル","ピチュー","ピィ","ププリン","トゲピー","トゲチック","ネイティ","ネイティオ","メリープ","モココ","デンリュウ","ウソッキー","ウパー","パルデアウパー","ヌオー","エーフィ","ブラッキー","ヤミカラス","ヤドキング","ソーナンス","ハガネール","ツボツボ","ヘラクロス","ニューラ","デリバード","デルビル","ヘルガー","ハピナス","ライコウ","エンテイ","スイクン","ヨーギラス","サナギラス","バンギラス","キモリ","ジュプトル","ジュカイン","アチャモ","ワカシャモ","バシャーモ","ミズゴロウ","ヌマクロー","ラグラージ","ラルトス","キルリア","サーナイト","ナマケロ","ヤルキモノ","ケッキング","ヤミラミ","クチート","ココドラ","コドラ","ボスゴドラ","プラスル","ゴクリン","マルノーム","マイナン","ナックラー","ビブラーバ","フライゴン","チルット","チルタリス","カゲボウズ","ジュペッタ","アブソル","ソーナノ","タマザラシ","ホリデータマザラシ","トドグラー","トドゼルガ","タツベイ","コモルー","ボーマンダ","ラティアス","ラティオス","ナエトル","ハヤシガメ","ドダイトス","ヒコザル","モウカザル","ゴウカザル","ポッチャマ","ポッタイシ","エンペルト","コリンク","ルクシオ","レントラー","フワンテ","フワライド","ドンカラス","ウソハチ","マネネ","ピンプク","ミカルゲ","リオル","ルカリオ","グレッグル","ドクロッグ","ユキカブリ","ユキノオー","マニューラ","ジバコイル","トゲキッス","リーフィア","グレイシア","エルレイド","クレセリア","ダークライ","ムシャーナ","ムンナ","イシズマイ","イワパレス","ワシボン","ウォーグル","チゴラス","ガチゴラス","ニンフィア","ルチャブル","デデンネ","バケッチャ","パンプジン","オンバット","オンバーン","アゴジムシ","デンヂムシ","クワガノン","アブリー","アブリボン","ヌイコグマ","キテルグマ","キュワワー","トゲデマル","ミミッキュ","ジジーロン","ウッウ","エレズン","ストリンダー(ロー)","ストリンダー(ハイ)","ニャオハ","ニャローテ","マスカーニャ","ホゲータ","アチゲータ","ラウドボーン","クワッス","ウェルカモ","ウェーニバル","パモ","パモット","パーモット","カヌチャン","ナカヌチャン","デカヌチャン","アルクジラ","ハルクジラ","ドオー"
+];
+
+const SLEEP_ALIAS = {
+  "ハロウィンピカチュウ":"ピカチュウ","ホリデーピカチュウ":"ピカチュウ","キャプテンピカチュウ":"ピカチュウ",
+  "アローラロコン":"ロコン","アローラキュウコン":"キュウコン","ホリデーイーブイ":"イーブイ","ハロウィンイーブイ":"イーブイ",
+  "ホリデータマザラシ":"タマザラシ","パルデアウパー":"ウパー","ストリンダー(ロー)":"ストリンダー","ストリンダー(ハイ)":"ストリンダー"
+};
+function findBasePokemon(raw,name){
+  const direct=raw.find(p=>p.name===name && !p.isMegaEvolution);
+  if(direct) return direct;
+  const alias=SLEEP_ALIAS[name];
+  if(alias) return raw.find(p=>p.name===alias && !p.isMegaEvolution && !p.form);
+  return null;
+}
+async function loadNationalDex(){
+  const grid=document.getElementById('dexGrid'), loading=document.getElementById('dexLoading');
+  if(!grid) return;
+  try{
+    const res=await fetch(POKE_DATA_URL,{cache:'force-cache'}); if(!res.ok) throw new Error('data load failed');
+    const raw=await res.json();
+    const list=SLEEP_ROSTER.map(name=>({name,p:findBasePokemon(raw,name)})).filter(x=>x.p && x.p.no>=1 && x.p.no<=9).sort((a,b)=>a.p.no-b.p.no);
+    grid.innerHTML=list.map(({name,p})=>{
+      const type=(p.types||[]).join(' / '), search=[name,type,p.no].join(' ');
+      return `<div class="sleep dbitem" data-name="${escapeHtml(name)}" data-search="${escapeHtml(search)}" onclick="showPokemonDetail(${p.no},'${escapeHtml(name)}')"><img class="poke-img" loading="lazy" src="${SLEEP_IMG(p.no)}" onerror="${imgFallback(p.no)}" alt="${escapeHtml(name)}"><b>${escapeHtml(name)}</b><div class="muted">No.${String(p.no).padStart(4,'0')} / ${escapeHtml(type)}</div><div class="stars">Sleep情報あり</div></div>`;
+    }).join('');
+    loading.textContent=`テスト版：図鑑No.1〜9の9匹を表示`;
+    document.getElementById('nationalDexCount').textContent=`テスト 9種`;
+  }catch(e){ loading.textContent='ポケモンデータの読み込みに失敗しました。通信環境を確認してください。'; }
+}
+function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function svgData(svg){ return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg); }
+function ingredientIcon(name){
+  const common='<defs><filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-opacity=".14"/></filter></defs>';
+  const icons={
+    "とくせんリンゴ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><circle cx="50" cy="57" r="27" fill="#ef5b55"/><path d="M50 31c4-12 13-17 24-16-2 11-11 18-24 18z" fill="#5c9b63"/><path d="M49 32c-2-7-7-11-13-13" fill="none" stroke="#6d8d50" stroke-width="5" stroke-linecap="round"/></g></svg>`,
+    "マメミート":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><ellipse cx="40" cy="55" rx="23" ry="17" fill="#b96f43" transform="rotate(-18 40 55)"/><ellipse cx="64" cy="48" rx="21" ry="15" fill="#d58b55" transform="rotate(18 64 48)"/><path d="M29 51c9 5 17 7 25 5" fill="none" stroke="#f3c19b" stroke-width="4" opacity=".7"/></g></svg>`,
+    "モーモーミルク":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M31 28h38l6 14v37H25V42z" fill="#fff" stroke="#b9c8cf" stroke-width="4"/><path d="M31 28h38v11H31z" fill="#dce8ec"/><path d="M40 18h20v10H40z" fill="#dce8ec" stroke="#b9c8cf" stroke-width="3"/><circle cx="50" cy="61" r="10" fill="#a9d4e6"/></g></svg>`,
+    "あまいミツ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><rect x="27" y="29" width="46" height="48" rx="11" fill="#f4c542"/><path d="M27 43h46" stroke="#d99d18" stroke-width="5"/><path d="M39 20h22v10H39z" fill="#d99d18"/><path d="M50 51c-7 9-10 14 0 19 10-5 7-10 0-19z" fill="#fff3b0"/></g></svg>`,
+    "あったかジンジャー":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M36 37c8-10 19-9 26-2 10-1 16 8 12 17 5 9-2 20-12 20-8 9-23 5-25-6-10-3-12-17-1-22z" fill="#d99a4a"/><path d="M43 42c7 3 12 7 13 15M60 40c-3 7-3 13 1 19" fill="none" stroke="#b77a38" stroke-width="4" stroke-linecap="round"/></g></svg>`,
+    "あんみんトマト":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><circle cx="50" cy="58" r="29" fill="#ef5b5b"/><path d="M50 30l7-11 8 5-5 12M50 30l-10-8-6 8 12 9" fill="#65a85b"/><path d="M25 64c8 14 19 20 32 19" fill="none" stroke="#c94343" stroke-width="4" opacity=".5"/></g></svg>`,
+    "ワカクサ大豆":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><ellipse cx="39" cy="54" rx="17" ry="24" fill="#d7bd74"/><ellipse cx="61" cy="51" rx="17" ry="24" fill="#e3c982"/><circle cx="42" cy="51" r="4" fill="#b69a58"/><circle cx="58" cy="57" r="4" fill="#b69a58"/></g></svg>`,
+    "とくせんエッグ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M50 18c16 0 27 22 27 39 0 18-11 27-27 27S23 75 23 57c0-17 11-39 27-39z" fill="#fff8e8" stroke="#e4d7b9" stroke-width="3"/><circle cx="50" cy="59" r="12" fill="#f4c542"/></g></svg>`,
+    "ほっこりポテト":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M24 58c0-22 12-36 28-36s27 14 27 36c0 18-13 29-28 29S24 76 24 58z" fill="#c99b61"/><circle cx="42" cy="50" r="3" fill="#9a7040"/><circle cx="62" cy="65" r="3" fill="#9a7040"/><path d="M45 23c0-8 8-13 12-15 3 7 1 12-3 16" fill="#67a65a"/></g></svg>`,
+    "げきからハーブ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M50 83C48 61 52 39 64 20" stroke="#4f8f4d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M57 45c-13-9-25-6-30 4 11 8 22 7 30-4zM58 34c2-12 10-20 21-19 1 11-6 18-21 19zM51 58c-12-3-21 2-24 11 11 5 21 1 24-11z" fill="#63a65d"/></g></svg>`,
+    "ピュアなオイル":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M34 28h32l6 12v39H28V40z" fill="#f4c84e"/><path d="M39 20h22v9H39z" fill="#d7a927"/><path d="M28 47h44" stroke="#d7a927" stroke-width="5"/><circle cx="50" cy="65" r="11" fill="#fff0a0"/></g></svg>`,
+    "リラックスカカオ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M31 67c-8-18 0-39 19-46 21 7 29 28 19 46-9 15-28 15-38 0z" fill="#7b4a35"/><path d="M50 22v54M36 31c8 8 8 29 0 37M64 31c-8 8-8 29 0 37" fill="none" stroke="#a86b4d" stroke-width="4"/></g></svg>`,
+    "おいしいシッポ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M26 69c20 13 49 4 51-17 2-17-17-25-29-14-8 8 1 20 11 15 7-4 6-12 0-15" fill="none" stroke="#d7a0b7" stroke-width="15" stroke-linecap="round"/><circle cx="26" cy="69" r="8" fill="#e7b4c8"/></g></svg>`,
+    "ワカクサコーン":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M39 26h22l9 48H30z" fill="#f2c83e"/><path d="M39 26l-13 8 13 10M61 26l13 8-13 10" fill="#65a85b"/><path d="M38 39h24M36 50h28M34 61h32" stroke="#d3a62c" stroke-width="3"/></g></svg>`,
+    "めざましコーヒー":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M25 39h48v28c0 10-8 17-17 17H42c-9 0-17-7-17-17z" fill="#6f4a3b"/><path d="M73 47h8c10 0 10 16 0 16h-8" fill="none" stroke="#6f4a3b" stroke-width="6"/><path d="M39 29c-5-7 3-10-2-16M54 29c-5-7 3-10-2-16" fill="none" stroke="#c9a38b" stroke-width="4" stroke-linecap="round"/></g></svg>`,
+    "ずっしりカボチャ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M27 56c0-20 10-31 23-31s23 11 23 31c0 18-10 29-23 29S27 74 27 56z" fill="#e99532"/><path d="M50 25v60M37 29c-7 10-8 37 0 50M63 29c7 10 8 37 0 50" stroke="#c97624" stroke-width="4" fill="none"/><path d="M50 26c0-8 5-11 10-13" stroke="#5f8f4e" stroke-width="5" fill="none" stroke-linecap="round"/></g></svg>`,
+    "つやつやアボカド":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M50 17c17 0 28 18 28 39 0 23-13 36-28 36S22 79 22 56c0-21 11-39 28-39z" fill="#4f9a5d"/><path d="M50 25c11 0 20 14 20 31 0 17-8 28-20 28S30 73 30 56c0-17 9-31 20-31z" fill="#9bcf72"/><circle cx="50" cy="64" r="9" fill="#9a6b43"/></g></svg>`,
+    "ふといながねぎ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M37 25h25v50H37z" fill="#f5f2e8"/><path d="M37 25h10v50H37zM52 25h10v50H52z" fill="#78b96d"/><path d="M39 76c5 8 15 8 21 0" fill="#d9c7a6"/><path d="M43 25c-2-9 3-15 8-19M54 25c0-8 5-13 10-15" stroke="#5d9c5b" stroke-width="5" fill="none" stroke-linecap="round"/></g></svg>`,
+    "あじわいキノコ":`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${common}<g filter="url(#s)"><path d="M23 51c0-18 12-30 27-30s27 12 27 30H23z" fill="#a86b4d"/><path d="M40 51h20v27c0 7-20 7-20 0z" fill="#f0d8a8"/><circle cx="39" cy="39" r="4" fill="#d7a17f"/><circle cx="60" cy="34" r="4" fill="#d7a17f"/></g></svg>`,
+  };
+  return svgData(icons[name] || `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="#dfe7ec"/><text x="50" y="57" text-anchor="middle" font-size="22">🥕</text></svg>`);
+}
+const INGREDIENT_IMAGE = new Proxy({}, { get:(_,name)=>ingredientIcon(name) });
+function ingredientRows(items){ return (items||[]).map(x=>`<div class="ingredient-row"><img src="${INGREDIENT_IMAGE[x.name]}" alt="${escapeHtml(x.name)}"><div class="ingredient-main"><div class="ingredient-name">${escapeHtml(x.name)} <span class="ingredient-level">${escapeHtml(x.level)}</span></div><div class="ingredient-qty">1回のおてつだい：<b>${escapeHtml(x.qty)}</b></div></div></div>`).join(''); }
+
+const PATTERN_CODES = ["AAA","AAB","AAC","ABA","ABB","ABC"];
+function ingredientData(A,B,C){
+  return {A:{name:A[0],lv1:A[1],lv30:A[2],lv60:A[3]},B:{name:B[0],lv30:B[1],lv60:B[2]},C:C?{name:C[0],lv60:C[1]}:null};
+}
+function patternRows(d){
+  const s=d.ingredientSlots;
+  if(!s) return '';
+  const qty=(code,level)=>{ const slot=s[code]; return level===1?slot.lv1:level===30?slot.lv30:slot.lv60; };
+  const name=(code,level)=>s[code].name;
+  const rows=PATTERN_CODES.filter(code=>s[code[2]] || code[2]==='A').map(code=>{
+    const cells=[1,30,60].map(level=>{const codeChar=level===1?'A':code[level===30?1:2]; const slot=s[codeChar]; if(!slot) return `<div class="pattern-slot"><span class="lv">Lv.${level}</span><span class="q">—</span></div>`; return `<div class="pattern-slot"><img src="${INGREDIENT_IMAGE[slot.name]}" alt="${escapeHtml(slot.name)}"><span class="lv">Lv.${level}</span><span class="q">${escapeHtml(slot.name)} ×${qty(codeChar,level)}</span></div>`;}).join('');
+    return `<div class="pattern-card"><div class="pattern-head"><span class="pattern-code">${code}</span><span class="muted">食材構成</span></div><div class="pattern-slots">${cells}</div></div>`;
+  }).join('');
+  return `<div class="ingredient-section-title">📦 全食材構成パターン</div><div class="ingredient-help">A＝Lv.1固定、B＝Lv.30で追加候補、C＝Lv.60で追加候補。Lv.30・Lv.60は個体ごとに候補が決まります。</div><div class="pattern-list">${rows}</div>`;
+}
+const SLEEP_FACE_DATA = {
+  "フシギダネ": {no:1,type:"うとうと", pokemonType:"くさ・どく", specialty:"食材", helpTime:4400, ingredientRate:"25.7%", skillRate:"1.9%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["あまいミツ",2,5,7],["あんみんトマト",4,7],["ほっこりポテト",6]), faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "フシギソウ": {no:2,type:"うとうと", pokemonType:"くさ・どく", specialty:"食材", helpTime:3300, ingredientRate:"25.5%", skillRate:"1.9%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["あまいミツ",2,5,7],["あんみんトマト",4,7],["ほっこりポテト",6]), faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "フシギバナ": {no:3,type:"うとうと", pokemonType:"くさ・どく", specialty:"食材", helpTime:2800, ingredientRate:"26.6%", skillRate:"2.1%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["あまいミツ",2,5,7],["あんみんトマト",4,7],["ほっこりポテト",6]), faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "ヒトカゲ": {no:4,type:"すやすや", pokemonType:"ほのお", specialty:"食材", helpTime:3500, ingredientRate:"20.1%", skillRate:"1.1%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["マメミート",2,5,7],["あったかジンジャー",4,7],["げきからハーブ",6]), faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "リザード": {no:5,type:"すやすや", pokemonType:"ほのお", specialty:"食材", helpTime:3000, ingredientRate:"22.7%", skillRate:"1.6%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["マメミート",2,5,7],["あったかジンジャー",4,7],["げきからハーブ",6]), faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "リザードン": {no:6,type:"すやすや", pokemonType:"ほのお", specialty:"食材", helpTime:2400, ingredientRate:"22.4%", skillRate:"1.6%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["マメミート",2,5,7],["あったかジンジャー",4,7],["げきからハーブ",6]), faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "ゼニガメ": {no:7,type:"ぐっすり", pokemonType:"みず", specialty:"食材", helpTime:4500, ingredientRate:"27.1%", skillRate:"2.0%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["モーモーミルク",2,5,7],["リラックスカカオ",3,5],["マメミート",7]), faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
+  "カメール": {no:8,type:"ぐっすり", pokemonType:"みず", specialty:"食材", helpTime:3400, ingredientRate:"27.1%", skillRate:"2.0%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["モーモーミルク",2,5,7],["リラックスカカオ",3,5],["マメミート",7]), faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
+  "カメックス": {no:9,type:"ぐっすり", pokemonType:"みず", specialty:"食材", helpTime:2800, ingredientRate:"27.5%", skillRate:"2.1%", skill:"食材ゲットS", skillContent:"ランダムで食材を6個ゲットする", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"}], ingredientSlots:ingredientData(["モーモーミルク",2,5,7],["リラックスカカオ",3,5],["マメミート",7]), faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]}
+};
+const EVOLUTION_DATA = {
+  "フシギダネ":[{no:2,name:"フシギソウ",cond:"Lv.12 + フシギダネのアメ×40"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
+  "フシギソウ":[{no:1,name:"フシギダネ",cond:"進化前"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
+  "フシギバナ":[{no:2,name:"フシギソウ",cond:"進化前"}],
+  "ヒトカゲ":[{no:5,name:"リザード",cond:"Lv.12 + ヒトカゲのアメ×40"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
+  "リザード":[{no:4,name:"ヒトカゲ",cond:"進化前"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
+  "リザードン":[{no:5,name:"リザード",cond:"進化前"}],
+  "ゼニガメ":[{no:8,name:"カメール",cond:"Lv.12 + ゼニガメのアメ×40"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
+  "カメール":[{no:7,name:"ゼニガメ",cond:"進化前"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
+  "カメックス":[{no:8,name:"カメール",cond:"進化前"}]
+};
+function sleepWikiUrl(name){ return 'https://wikiwiki.jp/poke_sleep/' + encodeURIComponent(name); }
+function sleepFaceHtml(name,no){
+  const d=SLEEP_FACE_DATA[name];
+  if(!d) return `<div class="article"><b>😴 寝顔図鑑</b><br><span class="muted">寝顔データを追加中です。</span></div>`;
+  return `<div class="article"><b>😴 寝顔図鑑</b><div class="muted" style="margin:4px 0 8px">${d.type}タイプ・★1〜★4</div><div class="sleep-faces">${d.faces.map((f,i)=>`<div class="sleep-face"><div class="face-icon" style="display:block;font-size:32px;padding:12px 0">😴</div><b>${escapeHtml(f)}</b><span>★${i+1}</span><a href="${sleepWikiUrl(name)}" target="_blank" rel="noopener" class="small-note" style="display:block;margin-top:6px">寝顔画像を見る ↗</a></div>`).join('')}</div><div class="small-note">※寝顔名・睡眠タイプは公開されているPokémon Sleep攻略データを参照しています。</div></div>`;
+}
+function evolutionHtml(name){
+  const arr=EVOLUTION_DATA[name]||[];
+  if(!arr.length) return '';
+  return `<div class="article"><div class="evo-title">🔄 進化先・進化条件</div><div class="evo-grid">${arr.map(e=>`<div class="evo-card clickable" onclick="showPokemonDetail(${e.no},'${escapeHtml(e.name)}')"><img src="${SLEEP_IMG(e.no)}" onerror="${imgFallback(e.no)}" alt="${escapeHtml(e.name)}"><div><div class="evo-name">${escapeHtml(e.name)}</div><div class="evo-cond">${escapeHtml(e.cond)}</div><div class="small-note">タップして詳細へ →</div></div></div>`).join('')}</div></div>`;
+}
+function showPokemonDetail(no,name){
+  const d=SLEEP_FACE_DATA[name]||{};
+  const content=document.getElementById('pokemonPageContent');
+  content.innerHTML=`
+    <div class="pokemon-hero">
+      <div class="pokemon-page-title">${escapeHtml(name)}</div>
+      <div class="muted">No.${String(no).padStart(4,'0')} / ${escapeHtml(d.type||'—')}</div>
+      <img src="${SLEEP_IMG(no)}" onerror="${imgFallback(no)}" alt="${escapeHtml(name)}">
+      <div style="margin-top:2px"><span class="badge">Pokémon Sleep登場</span></div>
+    </div>
+    <div class="article"><b>📋 基本情報</b><div class="sleep-profile"><div class="profile-box"><div class="label">タイプ</div><div class="value">${escapeHtml(d.pokemonType||'—')}</div></div><div class="profile-box"><div class="label">睡眠タイプ</div><div class="value">${escapeHtml(d.type||'—')}</div></div><div class="profile-box"><div class="label">得意</div><div class="value">${escapeHtml(d.specialty||'—')}</div></div></div></div>
+    <div class="article"><b>⏱️ お手伝い情報</b><div class="info-grid">
+      <div class="info-box"><div class="info-label">お手伝い時間</div><div class="info-value">${d.helpTime ?? '—'}秒</div></div>
+      <div class="info-box"><div class="info-label">食材確率</div><div class="info-value">${escapeHtml(d.ingredientRate||'—')}</div></div>
+      <div class="info-box"><div class="info-label">スキル確率</div><div class="info-value">${escapeHtml(d.skillRate||'—')}</div></div>
+    </div><div class="small-note">※基礎値。せいかく・サブスキル・げんきなどで実際の値は変動します。</div></div>
+    <div class="article"><b>✨ メインスキル</b><div class="skill-box"><div class="skill-name">${escapeHtml(d.skill||'—')}</div><div class="skill-content">${escapeHtml(d.skillContent||'—')}</div></div></div>
+    <div class="article"><b>🥕 食材と量</b><div class="ingredient-candidates">${['A','B','C'].map(k=>{const s=d.ingredientSlots&&d.ingredientSlots[k]; if(!s)return ''; const level=k==='A'?'Lv.1〜':k==='B'?'Lv.30〜':'Lv.60'; const q=k==='A'?s.lv1:k==='B'?s.lv30:s.lv60; return `<div class="ingredient-candidate"><span class="ingredient-code">候補${k}</span><img src="${INGREDIENT_IMAGE[s.name]}" alt="${escapeHtml(s.name)}"><b>${escapeHtml(s.name)}</b><div class="muted">${level} ${q}個</div></div>`}).join('')}</div>${patternRows(d)}<div class="ingredient-note">※1回のおてつだいで拾う数。Lv.30・Lv.60の枠は複数候補から個体ごとに決まり、決定後は変更されません。</div></div>
+    ${evolutionHtml(name)}
+    ${sleepFaceHtml(name,no)}
+    <button class="btn" style="width:100%;margin-top:10px" onclick="show('scan')">スクショ個体評価へ</button>`;
+  show('pokemonDetail');
+}
+function backToDex(){
+  const dexBtn=document.querySelector('nav button:nth-child(3)');
+  show('dex',dexBtn);
+}
+
+loadNationalDex();
+
+const dbDetails = {
+  "イーブイ": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png", type:"ノーマル", specialty:"スキル", skill:"食材ゲットS", berry:"ブリーのみ", note:"進化先や役割に応じてチームを調整" },
+  "ヒトカゲ": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", type:"ほのお", specialty:"食材", skill:"食材ゲットS", berry:"ヒメリのみ", note:"食材枠として料理を支える候補" },
+  "カビゴン": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png", type:"ノーマル", specialty:"サポート", skill:"なし", berry:"フィラのみ", note:"睡眠リサーチの中心となるポケモン" },
+  "ミュウツー": {
+    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+    type:"エスパー", specialty:"スキル", skill:"サイコブレイク（きのみゾーン）",
+    berry:"オボンのみ", note:"スキルタイプとして個体評価・チーム編成に利用"
+  },
+  "ピカチュウ": {
+    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    type:"でんき", specialty:"きのみ", skill:"エナジーチャージS",
+    berry:"ウブのみ", note:"きのみ役として評価"
+  },
+  "マダツボミ": {
+    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png",
+    type:"くさ", specialty:"食材", skill:"げんきチャージS",
+    berry:"ドリのみ", note:"食材構成を確認して評価"
+  },
+  "フワンテ": {
+    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/425.png",
+    type:"ゴースト", specialty:"スキル", skill:"たくわえる（エナジーチャージS）",
+    berry:"ブリーのみ", note:"スキル発動を軸に評価"
+  }
+};
+document.querySelectorAll('.dbitem').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const name=el.querySelector('b').textContent;
+    const d=dbDetails[name]; if(!d)return;
+    document.getElementById('dbDetail').innerHTML=
+      '<div class="row"><div><img class="poke-detail-img" src="'+d.image+'" alt="'+name+'"></div><div style="flex:1"><div class="title">'+name+'</div><span class="badge">'+d.specialty+'</span></div></div>'+
+      '<div class="article"><b>タイプ</b><br>'+d.type+'</div>'+
+      '<div class="article"><b>とくい</b><br>'+d.specialty+'</div>'+
+      '<div class="article"><b>メインスキル</b><br>'+d.skill+'</div>'+
+      '<div class="article"><b>きのみ</b><br>'+d.berry+'</div>'+
+      '<div class="article"><b>攻略メモ</b><br>'+d.note+'</div>'+
+      '<button class="btn" onclick="show(\'scan\')">スクショ個体評価へ</button>';
+  });
+});
+function filterDB(q){
+  q=q.trim().toLowerCase();
+  document.querySelectorAll('.dbitem').forEach(el=>{
+    el.style.display=el.dataset.search.toLowerCase().includes(q)?'block':'none';
+  });
+}
+
+
+const dailyIngredientData = [
+  {name:"とくせんリンゴ", amount:18},
+  {name:"マメミート", amount:15},
+  {name:"げきからハーブ", amount:12},
+  {name:"リラックスカカオ", amount:10},
+  {name:"モーモーミルク", amount:14},
+  {name:"とくせんエッグ", amount:8}
+];
+
+function updateDailyIngredients(){
+  const box=document.getElementById('dailyIngredientList');
+  if(!box) return;
+  box.innerHTML=dailyIngredientData.map(x=>{
+    const width=Math.min(100, x.amount*4);
+    return `<div style="margin:10px 0">
+      <div class="row"><span>${x.name}</span><b>${x.amount}個/日</b></div>
+      <div class="progress"><div class="bar" style="width:${width}%"></div></div>
+    </div>`;
+  }).join('');
+}
+updateDailyIngredients();
+
+function updateTomorrowCandidates(){
+  const box=document.getElementById('tomorrowCandidateList');
+  if(!box) return;
+  const candidates=[
+    {name:"カメックス", role:"食材", focus:"モーモーミルク", reason:"ミルク系の食材を補う候補"},
+    {name:"ウツボット", role:"食材", focus:"料理向け食材", reason:"食材枠を増やして料理用の在庫を安定させる候補"},
+    {name:"カイリュー", role:"食材", focus:"食材全体", reason:"不足しやすい食材を補う食材枠の候補"}
+  ];
+  box.innerHTML=candidates.map((x,i)=>`
+    <div class="article">
+      <div class="row"><b>${i+1}. ${x.name}</b><span class="badge">${x.role}</span></div>
+      <div style="margin-top:6px"><span class="tag">${x.focus}</span></div>
+      <div class="muted" style="margin-top:5px">${x.reason}</div>
+      <button class="btn" style="margin-top:8px" onclick="alert('${x.name}を明日の候補としてチーム比較に追加しました（試作版）')">候補に入れる</button>
+    </div>`).join('');
+}
+updateTomorrowCandidates();
+
+
+function updateSuggestions(){
+  const box=document.getElementById('suggestionList');
+  if(!box) return;
+  const suggestions=[
+    {title:"食材担当を1匹追加", text:"1日分の食材に余裕を作るため、食材タイプのポケモンを追加する候補です。"},
+    {title:"料理を優先して編成", text:"現在集められる食材から作れる料理を確認し、狙いたい料理に必要な食材を優先します。"},
+    {title:"スキル担当を1匹確保", text:"料理・回復などのスキルを活用したい場合は、スキルタイプを1枠入れる候補です。"}
+  ];
+  box.innerHTML=suggestions.map((s,i)=>`
+    <div class="article">
+      <div class="row"><b>${i+1}. ${s.title}</b><span class="badge">提案</span></div>
+      <div class="muted" style="margin-top:5px">${s.text}</div>
+    </div>`).join('');
+}
+updateSuggestions();
+
+</script>
+</body>
+</html>
