@@ -28,8 +28,11 @@ select.search{background:#fff}
 .recipe{padding:13px 0;border-top:1px solid #edf0f2}
 .recipe:first-child{border-top:0}
 .poke-img{width:92px;height:92px;object-fit:contain;display:block;margin:0 auto 6px}.sleep-face-img{width:100%;height:86px;object-fit:contain;display:block;margin-bottom:5px}.sleep-face{min-width:88px}
-.poke-detail-img{width:120px;height:120px;object-fit:contain;display:block}.recipe-title{font-weight:700}
+.poke-detail-img{width:120px;height:120px;object-fit:contain;display:block}.pokemon-page-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.back-btn{background:#eef3f7;border:0;border-radius:12px;padding:9px 12px;font-weight:700;color:#31536c}.pokemon-page-title{font-size:20px;font-weight:800}.pokemon-hero{background:#f4f7f9;border-radius:18px;padding:16px;text-align:center}.pokemon-hero img{width:180px;height:180px;object-fit:contain}.recipe-title{font-weight:700}
 .recipe-tags{font-size:12px;color:#71808a;margin-top:4px}
+.sleep-profile{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.profile-box{background:#f7f9fa;border-radius:12px;padding:11px}.profile-box .label{font-size:11px;color:#7b8790}.profile-box .value{font-weight:800;margin-top:3px}.ingredient-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.ingredient-pill{background:#fff3d8;border-radius:999px;padding:5px 8px;font-size:12px}.evo-title{font-weight:800;margin-bottom:8px}.evo-grid{display:grid;grid-template-columns:1fr;gap:8px}.evo-card{display:flex;align-items:center;gap:10px;background:#f7f9fa;border-radius:14px;padding:9px;border:1px solid #edf0f2}.evo-card.clickable{cursor:pointer}.evo-card img{width:62px;height:62px;object-fit:contain}.evo-card .evo-name{font-weight:800}.evo-card .evo-cond{font-size:11px;color:#7b8790;margin-top:3px}.evo-arrow{text-align:center;color:#8a969d;font-size:18px;margin:-2px 0}
+
+.ingredient-row{display:flex;align-items:center;gap:10px;background:#fffaf0;border-radius:14px;padding:8px 10px;margin-top:7px}.ingredient-row img{width:42px;height:42px;object-fit:contain;flex:none}.ingredient-main{flex:1}.ingredient-name{font-weight:800;font-size:13px}.ingredient-qty{font-size:11px;color:#7b8790;margin-top:3px}.ingredient-level{font-size:10px;background:#fff0c8;border-radius:999px;padding:3px 7px;display:inline-block;margin-left:4px}.ingredient-note{font-size:10px;color:#8a969d;margin-top:8px}
 </style>
 
 <style>
@@ -60,6 +63,13 @@ select.search{background:#fff}
 <div class="card">
 <div class="row"><div><div class="title">📚 ポケモン情報</div><div class="muted">図鑑から選んで詳しい情報を確認</div></div><span class="badge">β版</span></div>
 <div id="dbDetail"><div class="muted" style="padding:12px 0">ポケモンをタップすると、タイプ・とくい・メインスキル・きのみなどを表示します。</div></div>
+</div>
+</section>
+
+<section id="pokemonDetail" class="section">
+<div class="card">
+  <div class="pokemon-page-head"><button class="back-btn" onclick="backToDex()">← 図鑑に戻る</button><div class="muted">ポケモン詳細</div></div>
+  <div id="pokemonPageContent"></div>
 </div>
 </section>
 
@@ -248,6 +258,9 @@ function analyzeShot(){
 
 const POKE_DATA_URL = 'https://raw.githubusercontent.com/kotofurumiya/pokemon_data/master/data/pokemon_data.json';
 const POKE_IMAGE_URL = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+const SLEEP_IMAGE_URL = {1:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_bulbasaur.png',2:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_ivysaur.png',3:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_venusaur.png',4:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmander.png',5:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmeleon.png',6:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charizard.png',7:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_squirtle.png',8:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_wartortle.png',9:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_blastoise.png'};
+const SLEEP_IMG = (id) => SLEEP_IMAGE_URL[id] || POKE_IMAGE_URL(id);
+function imgFallback(id){return `this.onerror=null;this.src='${POKE_IMAGE_URL(id)}'`;}
 
 // Pokémon Sleepに登場するポケモン（2026/9/20時点の公開攻略データを基準）
 const SLEEP_ROSTER = [
@@ -275,37 +288,75 @@ async function loadNationalDex(){
     const list=SLEEP_ROSTER.map(name=>({name,p:findBasePokemon(raw,name)})).filter(x=>x.p && x.p.no>=1 && x.p.no<=9).sort((a,b)=>a.p.no-b.p.no);
     grid.innerHTML=list.map(({name,p})=>{
       const type=(p.types||[]).join(' / '), search=[name,type,p.no].join(' ');
-      return `<div class="sleep dbitem" data-name="${escapeHtml(name)}" data-search="${escapeHtml(search)}" onclick="showPokemonDetail(${p.no},'${escapeHtml(name)}')"><img class="poke-img" loading="lazy" src="${POKE_IMAGE_URL(p.no)}" alt="${escapeHtml(name)}"><b>${escapeHtml(name)}</b><div class="muted">No.${String(p.no).padStart(4,'0')} / ${escapeHtml(type)}</div><div class="stars">Pokémon Sleep</div></div>`;
+      return `<div class="sleep dbitem" data-name="${escapeHtml(name)}" data-search="${escapeHtml(search)}" onclick="showPokemonDetail(${p.no},'${escapeHtml(name)}')"><img class="poke-img" loading="lazy" src="${SLEEP_IMG(p.no)}" onerror="${imgFallback(p.no)}" alt="${escapeHtml(name)}"><b>${escapeHtml(name)}</b><div class="muted">No.${String(p.no).padStart(4,'0')} / ${escapeHtml(type)}</div><div class="stars">Sleep情報あり</div></div>`;
     }).join('');
     loading.textContent=`テスト版：図鑑No.1〜9の9匹を表示`;
     document.getElementById('nationalDexCount').textContent=`テスト 9種`;
   }catch(e){ loading.textContent='ポケモンデータの読み込みに失敗しました。通信環境を確認してください。'; }
 }
 function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
-const SLEEP_FACE_DATA = {
-  "フシギダネ": {no:1,type:"うとうと", faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "フシギソウ": {no:2,type:"うとうと", faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "フシギバナ": {no:3,type:"うとうと", faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "ヒトカゲ": {no:4,type:"すやすや", faces:["ぱちぱち寝","おなかさすり寝","おなかだし寝","おなかのうえ寝"]},
-  "リザード": {no:5,type:"すやすや", faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
-  "リザードン": {no:6,type:"すやすや", faces:["はらばい寝","うでぐみ寝","おなかだし寝","おなかのうえ寝"]},
-  "ゼニガメ": {no:7,type:"ぐっすり", faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
-  "カメール": {no:8,type:"ぐっすり", faces:["からにこもる寝","こもらない寝","つっぷし寝","おなかのうえ寝"]},
-  "カメックス": {no:9,type:"ぐっすり", faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]}
+const INGREDIENT_IMAGE = {
+  "あまいミツ":"assets/ingredients/sweet_honey.svg", "あんみんトマト":"assets/ingredients/tomato.svg", "ほっこりポテト":"assets/ingredients/potato.svg",
+  "マメミート":"assets/ingredients/beansausage.svg", "あったかジンジャー":"assets/ingredients/ginger.svg", "げきからハーブ":"assets/ingredients/herb.svg",
+  "モーモーミルク":"assets/ingredients/milk.svg", "リラックスカカオ":"assets/ingredients/cacao.svg"
 };
-function sleepWikiUrl(name){
-  return 'https://wikiwiki.jp/poke_sleep/' + encodeURIComponent(name);
-}
+function ingredientRows(items){ return (items||[]).map(x=>`<div class="ingredient-row"><img src="${INGREDIENT_IMAGE[x.name]||''}" alt="${escapeHtml(x.name)}"><div class="ingredient-main"><div class="ingredient-name">${escapeHtml(x.name)} <span class="ingredient-level">${escapeHtml(x.level)}</span></div><div class="ingredient-qty">1回のおてつだい：<b>${escapeHtml(x.qty)}</b></div></div></div>`).join(''); }
+const SLEEP_FACE_DATA = {
+  "フシギダネ": {no:1,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "フシギソウ": {no:2,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "フシギバナ": {no:3,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
+  "ヒトカゲ": {no:4,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "リザード": {no:5,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "リザードン": {no:6,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
+  "ゼニガメ": {no:7,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
+  "カメール": {no:8,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
+  "カメックス": {no:9,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]}
+};
+const EVOLUTION_DATA = {
+  "フシギダネ":[{no:2,name:"フシギソウ",cond:"Lv.12 + フシギダネのアメ×40"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
+  "フシギソウ":[{no:1,name:"フシギダネ",cond:"進化前"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
+  "フシギバナ":[{no:2,name:"フシギソウ",cond:"進化前"}],
+  "ヒトカゲ":[{no:5,name:"リザード",cond:"Lv.12 + ヒトカゲのアメ×40"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
+  "リザード":[{no:4,name:"ヒトカゲ",cond:"進化前"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
+  "リザードン":[{no:5,name:"リザード",cond:"進化前"}],
+  "ゼニガメ":[{no:8,name:"カメール",cond:"Lv.12 + ゼニガメのアメ×40"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
+  "カメール":[{no:7,name:"ゼニガメ",cond:"進化前"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
+  "カメックス":[{no:8,name:"カメール",cond:"進化前"}]
+};
+function sleepWikiUrl(name){ return 'https://wikiwiki.jp/poke_sleep/' + encodeURIComponent(name); }
 function sleepFaceHtml(name,no){
   const d=SLEEP_FACE_DATA[name];
   if(!d) return `<div class="article"><b>😴 寝顔図鑑</b><br><span class="muted">寝顔データを追加中です。</span></div>`;
-  return `<div class="article"><b>😴 寝顔図鑑</b><div class="muted" style="margin:4px 0 8px">${d.type}タイプ・★1〜★4</div><div class="sleep-faces">${d.faces.map((f,i)=>`<div class="sleep-face"><div class="face-icon" style="display:block;font-size:32px;padding:12px 0">😴</div><b>${escapeHtml(f)}</b><span>★${i+1}</span><a href="${sleepWikiUrl(name)}" target="_blank" rel="noopener" class="small-note" style="display:block;margin-top:6px">寝顔画像を見る ↗</a></div>`).join('')}</div><div class="small-note">※今回のテスト版は図鑑番号1〜9の寝顔名・睡眠タイプを実データで表示しています。寝顔画像は各ポケモンの公開寝顔ページから確認できます。</div><a href="${sleepWikiUrl(name)}" target="_blank" rel="noopener" class="btn" style="display:inline-block;margin-top:8px;text-decoration:none">${escapeHtml(name)}の寝顔を開く</a></div>`;
+  return `<div class="article"><b>😴 寝顔図鑑</b><div class="muted" style="margin:4px 0 8px">${d.type}タイプ・★1〜★4</div><div class="sleep-faces">${d.faces.map((f,i)=>`<div class="sleep-face"><div class="face-icon" style="display:block;font-size:32px;padding:12px 0">😴</div><b>${escapeHtml(f)}</b><span>★${i+1}</span><a href="${sleepWikiUrl(name)}" target="_blank" rel="noopener" class="small-note" style="display:block;margin-top:6px">寝顔画像を見る ↗</a></div>`).join('')}</div><div class="small-note">※寝顔名・睡眠タイプは公開されているPokémon Sleep攻略データを参照しています。</div></div>`;
+}
+function evolutionHtml(name){
+  const arr=EVOLUTION_DATA[name]||[];
+  if(!arr.length) return '';
+  return `<div class="article"><div class="evo-title">🔄 進化先・進化条件</div><div class="evo-grid">${arr.map(e=>`<div class="evo-card clickable" onclick="showPokemonDetail(${e.no},'${escapeHtml(e.name)}')"><img src="${SLEEP_IMG(e.no)}" onerror="${imgFallback(e.no)}" alt="${escapeHtml(e.name)}"><div><div class="evo-name">${escapeHtml(e.name)}</div><div class="evo-cond">${escapeHtml(e.cond)}</div><div class="small-note">タップして詳細へ →</div></div></div>`).join('')}</div></div>`;
 }
 function showPokemonDetail(no,name){
-  const img=POKE_IMAGE_URL(no), el=[...document.querySelectorAll('#dexGrid .dbitem')].find(x=>x.dataset.name===name); if(!el) return;
-  const type=(el.querySelector('.muted')?.textContent||'').replace(/^No\.\d+\s*\/\s*/,'').trim();
-  document.getElementById('dbDetail').innerHTML=`<div class="row"><div><img class="poke-detail-img" src="${img}" alt="${escapeHtml(name)}"></div><div style="flex:1"><div class="title">${escapeHtml(name)}</div><span class="badge">Pokémon Sleep登場</span></div></div><div class="article"><b>タイプ</b><br>${escapeHtml(type||'—')}</div>`+sleepFaceHtml(name,no)+`<div class="article"><b>ポケモン情報</b><br>Pokémon Sleep登場ポケモンとして表示中。とくい・メインスキル・きのみ・食材も順次連携できます。</div><button class="btn" onclick="show('scan')">スクショ個体評価へ</button>`;
+  const d=SLEEP_FACE_DATA[name]||{};
+  const content=document.getElementById('pokemonPageContent');
+  content.innerHTML=`
+    <div class="pokemon-hero">
+      <img src="${SLEEP_IMG(no)}" onerror="${imgFallback(no)}" alt="${escapeHtml(name)}">
+      <div class="pokemon-page-title">${escapeHtml(name)}</div>
+      <div class="muted">No.${String(no).padStart(4,'0')} / ${escapeHtml(d.type||'—')}</div>
+      <div style="margin-top:8px"><span class="badge">Pokémon Sleep登場</span></div>
+    </div>
+    <div class="article"><b>📋 基本情報</b><div class="sleep-profile"><div class="profile-box"><div class="label">睡眠タイプ</div><div class="value">${escapeHtml(d.type||'—')}</div></div><div class="profile-box"><div class="label">得意</div><div class="value">${escapeHtml(d.specialty||'—')}</div></div></div></div>
+    <div class="article"><b>🥕 食材と量</b>${ingredientRows(d.ingredients)}<div class="ingredient-note">※表示量は1回のおてつだいで拾う食材数。Lv.30/Lv.60で解放される枠を含みます。</div></div>
+    ${evolutionHtml(name)}
+    ${sleepFaceHtml(name,no)}
+    <div class="article"><b>ポケモン情報</b><br>Pokémon Sleepの睡眠タイプ・得意・食材を表示しています。今後、メインスキル・きのみ・お手伝い時間なども追加できます。</div>
+    <button class="btn" style="width:100%;margin-top:10px" onclick="show('scan')">スクショ個体評価へ</button>`;
+  show('pokemonDetail');
 }
+function backToDex(){
+  const dexBtn=document.querySelector('nav button:nth-child(3)');
+  show('dex',dexBtn);
+}
+
 loadNationalDex();
 
 const dbDetails = {
