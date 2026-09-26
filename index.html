@@ -1,780 +1,2136 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide</title>
-<meta name="pokesleep-data-schema" content="1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PokéSleep Guide - Stable v12</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#eef3f7;color:#24313b;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}
-.app{max-width:480px;margin:auto;min-height:100vh;background:#f8fafb;padding-bottom:82px}
-header{padding:22px 18px 14px;background:white;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5ebef}
-h1{font-size:22px;margin:0}.sub{color:#7a8790;font-size:12px;margin-top:4px}
-main{padding:14px}.card{background:white;border-radius:18px;padding:16px;margin-bottom:13px;box-shadow:0 2px 10px #0000000a}
-.event{background:#e9f5ff}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.title{font-weight:700;font-size:16px}.muted{color:#7b8790;font-size:13px}
-.progress{height:9px;background:#e7edf1;border-radius:99px;overflow:hidden;margin:10px 0 6px}.bar{height:100%;width:49%;background:#6b9fd0;border-radius:99px}
-.btn{border:0;border-radius:12px;padding:10px 14px;background:#e8f0f6;color:#31536c;font-weight:700}
-.article{padding:13px 0;border-top:1px solid #edf0f2}.article:first-child{border-top:0}
-.search{width:100%;padding:12px 14px;border:1px solid #dfe6ea;border-radius:13px;font-size:15px;margin:8px 0 12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sleep{padding:14px;border-radius:15px;background:#f4f7f9}.emoji{font-size:30px}.stars{color:#d39b2d;letter-spacing:2px}
-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);height:70px;background:#fff;border-top:1px solid #e3e8eb;display:flex;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:10}
-nav button{background:none;border:0;color:#7a8790;font-size:11px;min-width:65px}nav button.active{color:#3e6e92;font-weight:700}nav span{display:block;font-size:22px;margin-bottom:2px}
-.section{display:none}.section.active{display:block}
-.badge{font-size:11px;background:#dff0df;color:#3d7446;padding:4px 8px;border-radius:99px}
-
-select.search{background:#fff}
-.eval-score{font-size:30px;font-weight:800;color:#3e6e92}
-.small-note{font-size:11px;color:#89949b;margin-top:7px}
-
-.recipe{padding:13px 0;border-top:1px solid #edf0f2}
-.recipe:first-child{border-top:0}
-.poke-img{width:92px;height:92px;object-fit:contain;display:block;margin:0 auto 6px}.sleep-face-img{width:100%;height:86px;object-fit:contain;display:block;margin-bottom:5px}.sleep-face{min-width:88px}
-.poke-detail-img{width:120px;height:120px;object-fit:contain;display:block}.pokemon-page-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.back-btn{background:#eef3f7;border:0;border-radius:12px;padding:9px 12px;font-weight:700;color:#31536c}.pokemon-page-title{font-size:20px;font-weight:800}.pokemon-hero{background:#f4f7f9;border-radius:18px;padding:16px;text-align:center}.pokemon-hero img{width:180px;height:180px;object-fit:contain}.recipe-title{font-weight:700}
-.recipe-tags{font-size:12px;color:#71808a;margin-top:4px}
-.sleep-profile{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.profile-box{background:#f7f9fa;border-radius:12px;padding:11px}.profile-box .label{font-size:11px;color:#7b8790}.profile-box .value{font-weight:800;margin-top:3px}.ingredient-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.ingredient-pill{background:#fff3d8;border-radius:999px;padding:5px 8px;font-size:12px}.evo-title{font-weight:800;margin-bottom:8px}.evo-grid{display:grid;grid-template-columns:1fr;gap:8px}.evo-card{display:flex;align-items:center;gap:10px;background:#f7f9fa;border-radius:14px;padding:9px;border:1px solid #edf0f2}.evo-card.clickable{cursor:pointer}.evo-card img{width:62px;height:62px;object-fit:contain}.evo-card .evo-name{font-weight:800}.evo-card .evo-cond{font-size:11px;color:#7b8790;margin-top:3px}.evo-arrow{text-align:center;color:#8a969d;font-size:18px;margin:-2px 0}
-
-.ingredient-row{display:flex;align-items:center;gap:10px;background:#fffaf0;border-radius:14px;padding:8px 10px;margin-top:7px}.ingredient-row img{width:42px;height:42px;object-fit:contain;flex:none}.ingredient-main{flex:1}.ingredient-name{font-weight:800;font-size:13px}.ingredient-qty{font-size:11px;color:#7b8790;margin-top:3px}.ingredient-level{font-size:10px;background:#fff0c8;border-radius:999px;padding:3px 7px;display:inline-block;margin-left:4px}.ingredient-note{font-size:10px;color:#8a969d;margin-top:8px}
-
-/* Pokédex compact icon layout */
-#dexGrid.dex-icon-grid{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:4px}
-.dex-icon{padding:3px 1px 4px;border-radius:10px;text-align:center;cursor:pointer;min-width:0;border:1px solid rgba(0,0,0,.025)}
-.dex-icon .poke-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;margin:0 auto 2px;border-radius:50%;padding:2px}
-.dex-icon b{display:block;font-size:7px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dex-icon .dex-no{font-size:6px;color:#71808a;line-height:1.1}
-.type-grass{background:#effaf0}.type-fire{background:#fff3ef}.type-water{background:#eef7ff}.type-bug{background:#f4fae9}.type-normal{background:#f7f7f5}.type-poison{background:#f8f0fb}.type-electric{background:#fff9e8}.type-ground{background:#fbf4e8}.type-fairy{background:#fff1f7}.type-flying{background:#f1f6ff}.type-default{background:#f5f7f8}
-.dex-filters{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}.dex-filters select{margin:0;padding:9px 7px;font-size:12px}
-@media(max-width:380px){#dexGrid.dex-icon-grid{gap:3px}.dex-icon b{font-size:6px}.dex-icon .dex-no{font-size:5.5px}}
+:root{--bg:#f5f8f7;--card:#fff;--line:#dfe8e4;--text:#20312c;--muted:#718079;--green:#46a477}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{height:56px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;position:sticky;top:0;z-index:20}
+main{max-width:720px;margin:auto;padding:12px 12px 86px}.screen{display:none}.screen.active{display:block}
+h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.empty{text-align:center;padding:34px 16px;color:var(--muted)}button,input,select{font:inherit}
+.btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
+nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
+nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px}nav button.active{color:var(--green)}
+.detail-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}.detail-head h2{margin:0;flex:1}.stats{display:grid;grid-template-columns:1fr 1fr;gap:7px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.stat small{display:block;color:var(--muted);font-size:10px}.section-title{font-weight:900;margin-bottom:8px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}.pill{background:#f1f5f3;border-radius:999px;padding:6px 9px;font-size:12px}
+.note{font-size:12px;color:var(--muted);line-height:1.6}
+@media(max-width:360px){.grid{gap:6px}.poke{padding:7px}}
+</style>
+<style id="stable-v2-style">
+.dex-card{position:relative;min-height:132px;padding:9px;overflow:hidden}
+.dex-card .dex-name{font-weight:900;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dex-card .dex-meta{display:flex;justify-content:space-between;gap:4px;margin-top:3px;color:#718079;font-size:10px}
+.dex-card .dex-art{height:54px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#9aa7a2}
+.dex-card .dex-bottom{display:flex;align-items:center;gap:4px}
+.dex-card .dex-bottom span{width:22px;height:22px;border-radius:7px;background:rgba(255,255,255,.8);display:grid;place-items:center;font-size:13px}
+.type-grass{background:#eaf7ed}.type-fire{background:#fff0e9}.type-water{background:#eaf4ff}.type-electric{background:#fff9dc}.type-bug{background:#f2f7df}.type-normal{background:#f3f2ef}.type-poison{background:#f5eafa}
+.dex-controls{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:10px}
+.filter-title{font-size:11px;color:var(--muted);font-weight:800;margin:6px 0}
+.filter-row{display:flex;gap:6px;overflow:auto;padding-bottom:2px}.filter-btn{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:800}.filter-btn.on{background:#e7f6ef;border-color:#79bea0}
+.detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:10px}.detail-tabs button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px;font-weight:900}.detail-tabs button.on{background:#e7f6ef;border-color:#79bea0}
+.detail-pane{display:none}.detail-pane.on{display:block}
+.hero{border-radius:18px;padding:14px;margin-bottom:10px}.hero-top{display:flex;align-items:center;gap:12px}.hero-art{width:92px;height:92px;background:rgba(255,255,255,.72);border-radius:18px;display:grid;place-items:center;font-size:42px}.hero-info{flex:1}.hero-info h2{margin:0 0 7px}.white-row{background:#fff;border-radius:10px;padding:7px 9px;font-size:12px;margin-top:5px}
+.detail-nav{display:grid;grid-template-columns:70px 1fr 70px;align-items:center;gap:5px;margin-bottom:9px}.detail-nav strong{text-align:center;font-size:13px}.detail-nav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 5px;font-weight:800}
+.food-row{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #edf1ef}.food-row:last-child{border:0}.food-letter{font-weight:900}.unknown{color:#8b9792;font-size:12px}
 </style>
 
-<style>
-.sleep-faces{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sleep-face{background:#f7f8fa;border-radius:12px;padding:10px 6px;text-align:center}.face-icon{font-size:28px;margin-bottom:4px}.sleep-face b{display:block;font-size:12px}.sleep-face span{display:block;font-size:11px;color:#888;margin-top:3px}
-</style>
-<style>#dexGrid.dex-icon-grid{grid-template-columns:repeat(3,1fr);gap:10px}.dex-icon{padding:9px 6px;border-radius:16px}.dex-icon .poke-img{width:82px;height:82px}.dex-icon b{font-size:12px;white-space:normal}.dex-icon .dex-no{font-size:10px}.tabs{display:flex;gap:7px;overflow-x:auto;padding:8px 0}.tab{border:0;border-radius:999px;padding:9px 12px;background:#edf2f5;font-weight:700;white-space:nowrap}.tab.active{background:#dcecf8;color:#315f80}.team5{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.slot,.boxmon{background:#f4f7f9;border-radius:14px;padding:7px;text-align:center}.slot img,.boxmon img{width:100%;aspect-ratio:1;object-fit:contain}.slot b{display:block;font-size:9px;overflow:hidden}.boxgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.panel{display:none}.panel.active{display:block}.placeholder{background:#fff9e8;border:1px solid #f4e6b9;border-radius:12px;padding:10px;color:#806d3c;font-size:11px;margin-top:8px}.cost{display:inline-block;border-radius:99px;background:#eef3f7;padding:5px 9px;font-weight:800}.facecheck{display:block;margin-top:8px}</style>
-<style>
-.recipe-tools{background:#f7f9fa;border-radius:14px;padding:10px;margin:10px 0}
-.ingredient-filter{display:flex;gap:7px;overflow-x:auto;padding:4px 0 2px}
-.ing-filter-btn{border:1px solid #e1e7eb;background:white;border-radius:12px;min-width:46px;height:46px;font-size:22px}
-.ing-filter-btn.active{outline:2px solid #6b9fd0;background:#edf6ff}
-.camp-toggle{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.switch{border:0;border-radius:999px;padding:7px 12px;font-weight:800;background:#e7edf1;color:#65737c}
-.switch.on{background:#dff0df;color:#397046}
-.recipe-card{border-top:1px solid #edf0f2;padding:14px 0;cursor:pointer}
-.recipe-card:first-child{border-top:0}
-.recipe-energy-max{font-size:18px;font-weight:900;color:#31536c;margin-top:7px}
-.recipe-energy-base{font-size:12px;color:#71808a;margin-top:2px}
-.recipe-ing-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:9px}
-.pot-count{font-weight:900;background:#eef3f7;border-radius:999px;padding:5px 9px}
-.ing-chip{display:inline-flex;align-items:center;gap:2px;background:#fff7e6;border-radius:999px;padding:5px 8px;font-weight:800}
-.recipe-detail-ing{background:#fffaf0;border-radius:14px;padding:10px;margin-top:8px}
-.recipe-detail-ing-title{font-weight:900}
-.recipe-pokemon-row{display:flex;gap:8px;overflow-x:auto;padding-top:8px}
-.recipe-pokemon{position:relative;flex:0 0 58px;text-align:center;cursor:pointer}
-.recipe-pokemon img{width:54px;height:54px;object-fit:contain;background:#f5f7f8;border-radius:14px}
-.unlock-badge{position:absolute;right:0;bottom:0;background:#31536c;color:#fff;border-radius:999px;font-size:9px;font-weight:900;padding:2px 5px}
+
+<style id="stable-v3-filter-style">
+.compact-filter{margin:0 0 10px}
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px}
+.filter-select{position:relative}
+.filter-main{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 10px;font-weight:850;text-align:left;display:flex;justify-content:space-between;align-items:center}
+.filter-main.active{background:#e7f6ef;border-color:#79bea0}
+.filter-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px;z-index:15;box-shadow:0 8px 20px rgba(35,55,48,.12);max-height:220px;overflow:auto}
+.filter-select.open .filter-panel{display:block}
+.filter-option{width:100%;border:0;background:#fff;border-radius:8px;padding:8px;text-align:left;font-weight:750}
+.filter-option.on{background:#e7f6ef}
+.spec-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.spec-row .filter-main{justify-content:center}
+.box-filter-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:9px}
+.tag-note{font-size:10px;color:var(--muted);padding:5px 7px 2px}
 </style>
 
+
+<style id="stable-v5-dex-detail-style">
+#dexDetail{--accent:#168fe6}
+#dexDetail .detail-head{margin:0 0 8px}
+#dexDetail .detail-head h2{text-align:center;font-size:18px}
+#dexDetail .detail-nav{grid-template-columns:1fr 1.35fr 1fr;gap:8px;margin-bottom:10px}
+#dexDetail .detail-nav button{min-height:52px;background:#fff;border-radius:14px}
+#dexDetail .detail-nav strong{font-size:15px;line-height:1.25}
+#dexDetail .hero{padding:10px;border-radius:18px}
+#dexDetail .hero-top{align-items:stretch}
+#dexDetail .hero-art{width:34%;min-width:104px;height:154px;border:1px solid rgba(0,0,0,.06);font-size:44px}
+#dexDetail .hero-info{display:flex;flex-direction:column;gap:8px}
+#dexDetail .hero-info h2{text-align:center;font-size:26px;margin:0}
+#dexDetail .white-row{margin:0;padding:10px;min-height:44px;display:flex;align-items:center;justify-content:center;font-weight:900}
+#dexDetail .stats{gap:0;background:#fff;border-radius:15px;overflow:hidden;border:1px solid var(--line)}
+#dexDetail .stat{border:0;border-radius:0;min-height:68px;padding:10px}
+#dexDetail .stat:nth-child(odd){border-right:1px solid var(--line)}
+#dexDetail .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+#dexDetail .stat small{font-size:11px;font-weight:800}
+#dexDetail .stat b{font-size:18px}
+#dexDetail .detail-tabs{gap:8px;margin:10px 0}
+#dexDetail .detail-tabs button{min-height:48px;font-size:15px;border-radius:13px}
+#dexDetail .detail-tabs button.on{background:#0aa05a;color:#fff;border-color:#0aa05a}
+#dexDetail .ability-card{padding:0;overflow:hidden}
+#dexDetail .ability-title{display:flex;align-items:center;gap:10px;padding:12px 14px 9px;font-size:23px;font-weight:950}
+#dexDetail .rate-badge{font-size:12px;background:#ffe7ef;color:#e93170;border-radius:8px;padding:6px 9px}
+.food-table-head,.food-line{display:grid;grid-template-columns:minmax(118px,1.35fr) repeat(3,minmax(48px,.58fr)) minmax(112px,1.4fr);align-items:center}
+.food-table-head{padding:0 10px 5px;color:#168fe6;font-size:10px;font-weight:900}
+.food-table-head span{text-align:center;background:#eaf5ff;border-radius:7px;padding:4px 2px;margin:0 2px}
+.food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
+.food-line{min-height:68px;border-top:1px solid #edf1ef;padding:6px 10px}
+.food-id{display:grid;grid-template-columns:34px 34px 1fr;align-items:center;gap:5px;min-width:0}
+.food-letter{width:32px;height:42px;border-radius:8px;display:grid;place-items:center;font-size:21px;font-weight:950;background:#e8f7ef;color:#11965b}
+.food-line:nth-of-type(3) .food-letter{background:#fff0f4;color:#e52e68}
+.food-line:nth-of-type(4) .food-letter{background:#fff5df;color:#b86c00}
+.food-icon{font-size:25px;text-align:center}
+.food-name{font-size:11px;font-weight:900;overflow:hidden;text-overflow:ellipsis}
+.food-qty{text-align:center;font-weight:950;font-size:14px}
+.recipe-strip{display:flex;gap:5px;overflow:hidden;align-items:center;min-width:0}
+.recipe-ph{flex:0 0 31px;height:31px;border-radius:50%;background:#fff4e5;border:1px solid #f3dfc3;display:grid;place-items:center;font-size:13px}
+.recipe-more{margin-left:auto;color:#ef8a00;font-size:22px;font-weight:900}
+.skill-box{margin:0 10px 10px;border:1px solid #e4eaf1;border-radius:13px;padding:12px}
+.skill-top{display:flex;gap:8px;align-items:center}
+.skill-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#b648df;color:#fff;font-size:24px}
+.skill-name{font-weight:950;flex:1}
+.skill-level{white-space:nowrap;background:#edf6ff;border-radius:9px;padding:7px 9px;color:#168fe6;font-weight:900}
+.skill-desc{font-size:12px;line-height:1.55;margin:8px 0 0;color:#53625c}
+@media(max-width:430px){
+ #dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:8px}
+ #dexDetail .hero-art{width:100%;min-width:0;height:145px}
+ #dexDetail .hero-info h2{font-size:23px}
+ .food-table-head,.food-line{grid-template-columns:minmax(112px,1.3fr) repeat(3,48px) minmax(86px,1fr)}
+ .recipe-ph:nth-child(n+4){display:none}
+}
+</style>
+
+
+<style id="stable-v6-rebuild">
+/* v6: rebuild only the Dex individual screen. Bottom navigation and master foundation stay intact. */
+#dexDetail{padding-top:8px}
+#dexDetail .detail-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 8px}
+#dexDetail .detail-head h2{font-size:18px;margin:0}
+#dexDetail .detail-head .btn{border:0;background:transparent;color:#118fe6;font-weight:900;padding:8px}
+#dexDetail .dex-fav{font-size:25px;color:#102066}
+#dexDetail .detail-nav{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:8px;align-items:center;margin-bottom:10px}
+#dexDetail .detail-nav button{background:#fff;border:1px solid var(--line);border-radius:14px;min-height:56px;padding:7px}
+#dexDetail .detail-nav .current{border:0;background:transparent;text-align:center;line-height:1.15}
+#dexDetail .detail-nav .current small{font-weight:900}
+#dexDetail .detail-nav .current strong{display:block;font-size:26px;margin-top:3px}
+#dexDetail .hero{padding:0;background:transparent;border:0;box-shadow:none}
+#dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:9px}
+#dexDetail .hero-art{width:100%;height:176px;border-radius:16px;background:rgba(255,255,255,.46);border:1px solid rgba(0,0,0,.06);display:grid;place-items:center;font-size:45px}
+#dexDetail .hero-info{display:flex;flex-direction:column;gap:9px}
+#dexDetail .hero-info>h2{display:none}
+#dexDetail .white-row{background:#fff;border-radius:14px;min-height:52px;padding:9px;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:15px}
+#dexDetail .stats{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;flex:1}
+#dexDetail .stat{min-height:74px;border:0;border-radius:0;padding:10px;display:flex;flex-direction:column;justify-content:center}
+#dexDetail .stat:nth-child(odd){border-right:1px solid #e7ece9}
+#dexDetail .stat:nth-child(-n+2){border-bottom:1px solid #e7ece9}
+#dexDetail .stat small{font-size:11px;font-weight:850}
+#dexDetail .stat b{font-size:20px;margin-top:4px}
+#dexDetail .detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+#dexDetail .detail-tabs button{min-height:48px;border-radius:13px;background:#fff;border:1px solid var(--line);font-size:15px;font-weight:950}
+#dexDetail .detail-tabs button.on{background:#08a35b;color:#fff;border-color:#08a35b}
+#dexDetail .ability-card{background:#fff;border-radius:17px;margin-bottom:10px;overflow:hidden}
+#dexDetail .ability-title{display:flex;align-items:center;gap:9px;padding:12px 13px 8px;font-size:23px;font-weight:950}
+#dexDetail .rate-badge{font-size:12px;background:#ffe6ef;color:#e72d70;border-radius:8px;padding:6px 9px}
+.food-table-head,.food-line{display:grid;grid-template-columns:minmax(120px,1.35fr) repeat(3,50px) minmax(92px,1fr);align-items:center}
+.food-table-head{padding:0 10px 5px;color:#168fe6;font-size:10px;font-weight:950}
+.food-table-head span{text-align:center;background:#eaf5ff;border-radius:7px;padding:4px 2px;margin:0 2px}
+.food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
+.food-line{min-height:70px;border-top:1px solid #edf1ef;padding:6px 10px}
+.food-id{display:grid;grid-template-columns:34px 32px 1fr;align-items:center;gap:5px;min-width:0}
+.food-letter{width:32px;height:43px;border-radius:8px;display:grid;place-items:center;font-size:21px;font-weight:950;background:#e8f7ef;color:#11965b}
+.food-line:nth-child(2) .food-letter{background:#fff0f4;color:#e52e68}
+.food-line:nth-child(3) .food-letter{background:#fff5df;color:#b86c00}
+.food-icon{font-size:24px;text-align:center}.food-name{font-size:11px;font-weight:900}
+.food-qty{text-align:center;font-size:14px;font-weight:950}
+.recipe-strip{display:flex;gap:4px;overflow:hidden;align-items:center}
+.recipe-ph{flex:0 0 30px;height:30px;border-radius:50%;background:#fff4e5;border:1px solid #f0dfc7;display:grid;place-items:center;font-size:13px}
+.recipe-more{margin-left:auto;color:#ef8a00;font-size:22px;font-weight:950}
+.skill-box{margin:0 10px 10px;border:1px solid #e4eaf1;border-radius:13px;padding:12px}
+.skill-top{display:grid;grid-template-columns:50px 1fr auto;gap:9px;align-items:center}
+.skill-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#b648df;color:#fff;font-size:25px}
+.skill-name{font-weight:950}.skill-level{white-space:nowrap;background:#edf6ff;border-radius:9px;padding:7px;color:#168fe6;font-weight:950}
+.skill-desc{font-size:12px;line-height:1.55;margin:8px 0 0}
+.skill-detail-toggle{width:100%;border:0;border-top:1px solid #edf1ef;background:#fff;padding:10px;font-weight:900;color:#32423b}
+.skill-levels{display:none;border-top:1px solid #edf1ef;padding:7px 10px 10px}
+.skill-levels.open{display:block}
+.skill-level-row{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:7px 4px;border-bottom:1px solid #f0f2f1;font-size:12px}
+.skill-level-row:last-child{border-bottom:0}
+.skill-level-row b{color:#168fe6}
+#evolutionCard{border-radius:17px}
+@media(max-width:430px){
+ #dexDetail .hero-art{height:158px}
+ #dexDetail .detail-nav .current strong{font-size:23px}
+ .food-table-head,.food-line{grid-template-columns:minmax(110px,1.3fr) repeat(3,45px) minmax(82px,.95fr)}
+ .recipe-ph:nth-child(n+4){display:none}
+}
+</style>
+
+
+<style id="stable-v7-hero-fix">
+#dexDetail .hero-top{display:grid!important;grid-template-columns:minmax(105px,35%) minmax(0,65%)!important;gap:10px!important;align-items:stretch!important}
+#dexDetail .hero-art{grid-column:1!important;grid-row:1!important;width:100%!important;height:100%!important;min-height:205px!important}
+#dexDetail .hero-info{grid-column:2!important;grid-row:1!important;min-width:0!important;display:flex!important;flex-direction:column!important;gap:8px!important}
+#dexDetail .white-row{flex:0 0 auto!important;min-height:48px!important}
+#dexDetail .stats{width:100%!important;min-width:0!important;flex:1 1 auto!important;display:grid!important;grid-template-columns:1fr 1fr!important}
+#dexDetail .stat{min-width:0!important;padding:8px!important}
+#dexDetail .stat b{font-size:17px!important;word-break:keep-all}
+@media(max-width:430px){
+ #dexDetail .hero-top{grid-template-columns:34% 66%!important;gap:7px!important}
+ #dexDetail .hero-art{min-height:190px!important}
+ #dexDetail .stat{padding:6px!important}
+ #dexDetail .stat small{font-size:9px!important}
+ #dexDetail .stat b{font-size:15px!important}
+}
+</style>
+
+
+<script id="stable-v9-test-master">
+window.PS_V9 = {
+  skills: {
+    ingredient_magnet_s: {
+      id:"ingredient_magnet_s",
+      name:"食材ゲットS",
+      maxLevel:7,
+      tags:["食材","ランダム"],
+      effectType:"random_ingredients",
+      levels:{
+        1:{amount:6},2:{amount:8},3:{amount:11},4:{amount:14},
+        5:{amount:17},6:{amount:21},7:{amount:24}
+      }
+    }
+  },
+  pokemon: {
+    1:{
+      no:1,name:"フシギダネ",type:"くさ",sleepType:"うとうと",specialty:"食材",
+      berry:"ドリのみ",berryQty:1,help:4400,carry:11,
+      foodRate:25.7,skillRate:1.9,rateStatus:"推定",
+      mainSkillId:"ingredient_magnet_s",
+      ingredients:[
+        {slot:"A",name:"あまいミツ",qty:[2,5,7]},
+        {slot:"B",name:"あんみんトマト",qty:[null,4,7]},
+        {slot:"C",name:"ほっこりポテト",qty:[null,null,6]}
+      ],
+      evolution:{toNo:2,to:"フシギソウ",level:12,candy:40}
+    },
+    2:{
+      no:2,name:"フシギソウ",type:"くさ",sleepType:"うとうと",specialty:"食材",
+      berry:"ドリのみ",berryQty:1,help:3300,foodRate:25.5,skillRate:1.9,rateStatus:"推定",
+      mainSkillId:"ingredient_magnet_s",
+      evolution:{toNo:3,to:"フシギバナ",level:24,candy:80}
+    },
+    3:{
+      no:3,name:"フシギバナ",type:"くさ",sleepType:"うとうと",specialty:"食材",
+      berry:"ドリのみ",berryQty:1,help:2800,carry:27,foodRate:26.6,skillRate:2.1,rateStatus:"推定",
+      mainSkillId:"ingredient_magnet_s",evolution:null
+    }
+  }
+};
+</script>
+
+
+<style id="stable-v9-layout">
+/* v9 test case: left is art; right owns navigation, name, traits and all four metrics */
+#dexDetail .detail-nav{display:none!important}
+#dexDetail .hero-top{grid-template-columns:36% minmax(0,64%)!important;gap:8px!important}
+#dexDetail .hero-art{min-height:255px!important}
+#dexDetail .hero-info{gap:7px!important}
+.v9-poke-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v9-poke-nav button{min-width:0;border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:6px 4px;font-size:10px;font-weight:900;line-height:1.25}
+.v9-poke-nav button:disabled{opacity:.35}
+.v9-name{text-align:center;background:#fff;border-radius:12px;padding:7px 5px}
+.v9-name small{display:block;font-weight:900;font-size:10px}
+.v9-name strong{display:block;font-size:21px;line-height:1.05}
+.v9-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v9-trait{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
+#dexDetail .stats{flex:1!important}
+#dexDetail .stat{min-height:62px!important}
+#dexDetail .stat small{font-size:9px!important}
+#dexDetail .stat b{font-size:14px!important}
+.v9-est{font-size:8px;color:#8a6c00;font-weight:800}
+.v9-skill-level-select{display:flex;gap:4px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
+.v9-skill-level-select button{flex:0 0 38px;border:1px solid #dbe4df;background:#fff;border-radius:8px;padding:6px 2px;font-size:11px;font-weight:900}
+.v9-skill-level-select button.on{background:#168fe6;color:#fff;border-color:#168fe6}
+.v9-skill-tags{display:flex;gap:5px;margin-top:7px}
+.v9-skill-tag{font-size:10px;background:#edf7ef;border-radius:999px;padding:4px 7px;font-weight:900}
+.v9-evo-btn{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:9px;font-weight:900}
+</style>
+
+
+<style id="stable-v10-detail-cleanup">
+/* Single-detail-controller cleanup */
+#dexDetail .detail-nav{display:none!important}
+#dexDetail .hero-info>.white-row{display:none!important} /* remove duplicate type/sleep/specialty row */
+#dexDetail .hero-top{display:grid!important;grid-template-columns:36% minmax(0,64%)!important;gap:9px!important}
+#dexDetail .hero-art{min-height:250px!important;height:100%!important}
+#dexDetail .hero-info{display:flex!important;flex-direction:column!important;gap:7px!important;min-width:0!important}
+.v10-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v10-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900;min-width:0}
+.v10-nav button:disabled{opacity:.35}
+.v10-name{text-align:center;background:#fff;border-radius:11px;padding:6px}
+.v10-name small{display:block;font-size:10px;font-weight:900}
+.v10-name strong{display:block;font-size:21px;line-height:1.1}
+.v10-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v10-traits span{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
+#dexDetail .stats{width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;flex:1!important}
+#dexDetail .stat{min-height:61px!important;padding:7px!important}
+#dexDetail .stat small{font-size:9px!important} #dexDetail .stat b{font-size:15px!important}
+.food-table-head{font-size:14px!important}
+.food-table-head span{padding:7px 3px!important}
+.food-qty{font-size:17px!important}
+.skill-desc{font-size:16px!important;line-height:1.65!important;font-weight:700}
+.skill-level-row{font-size:14px!important;line-height:1.5}
+.v10-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
+</style>
+
+
+<style id="stable-v11-fixes">
+/* Actual DOM structure fix: stats is moved inside .hero-info by JS */
+#dexDetail .hero{padding:10px!important}
+#dexDetail .hero-top{display:grid!important;grid-template-columns:36% minmax(0,64%)!important;gap:9px!important;align-items:stretch!important}
+#dexDetail .hero-art{min-height:265px!important;height:100%!important}
+#dexDetail .hero-info{min-width:0!important;display:flex!important;flex-direction:column!important;gap:7px!important}
+#dexDetail .hero-info>.stats{margin-top:0!important;flex:1!important}
+.v11-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v11-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900}
+.v11-nav button:disabled{opacity:.35}
+.v11-name{text-align:center;background:#fff;border-radius:11px;padding:6px}
+.v11-name small{display:block;font-size:10px;font-weight:900}
+.v11-name strong{display:block;font-size:22px}
+.v11-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v11-traits span{background:#fff;border-radius:9px;padding:7px 2px;text-align:center;font-size:11px;font-weight:900}
+#dexDetail .stat{min-height:62px!important}
+.food-table-head{font-size:15px!important;font-weight:950!important}
+.food-qty{font-size:18px!important}
+.skill-desc{font-size:17px!important;line-height:1.65!important;font-weight:750!important}
+.skill-level-row{font-size:15px!important}
+.v11-lv{display:flex;align-items:center;gap:3px}
+.v11-lv button{border:0;background:#edf6ff;color:#168fe6;border-radius:8px;padding:7px 9px;font-size:18px;font-weight:950}
+.v11-lv b{background:#edf6ff;color:#168fe6;border-radius:8px;padding:8px 10px;white-space:nowrap}
+.v11-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
+</style>
+
+
+<style id="stable-v14-detail-ui">
+/* v12: fixed hero, right-side information, tabs switch only the content below */
+#dexDetail{--type-bg:#eaf7ed;--type-accent:#55a66b}
+#dexDetail .hero{
+  background:var(--type-bg)!important;
+  border-color:color-mix(in srgb,var(--type-accent) 22%, #dfe8e2)!important;
+}
+#dexDetail .hero-top{
+  display:grid!important;
+  grid-template-columns:36% minmax(0,64%)!important;
+  gap:10px!important;
+  align-items:stretch!important;
+}
+#dexDetail .hero-art{
+  min-height:285px!important;
+  background:rgba(255,255,255,.58)!important;
+}
+#dexDetail .hero-info{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+.v12-title-row{
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) auto;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.72);
+  border-radius:12px;
+  padding:8px 10px;
+}
+.v12-name{text-align:left}
+.v12-name small{display:block;font-size:10px;font-weight:900}
+.v12-name strong{display:block;font-size:22px;line-height:1.12}
+.v12-traits{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.v12-traits span{
+  background:#fff;border-radius:999px;padding:6px 8px;
+  font-size:10px;font-weight:900;white-space:nowrap
+}
+.v12-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v12-nav button{
+  border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.78);
+  border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900
+}
+.v12-nav button:disabled{opacity:.32}
+#dexDetail .hero-info>.stats{
+  display:grid!important;grid-template-columns:1fr 1fr!important;
+  width:100%!important;margin:0!important;flex:1!important;
+  background:rgba(255,255,255,.68)!important
+}
+#dexDetail .stat{min-height:59px!important}
+.v12-tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+  margin-top:auto
+}
+.v12-tabs button{
+  min-height:43px;border:1px solid rgba(0,0,0,.08);
+  border-radius:10px;background:rgba(255,255,255,.82);
+  font-size:14px;font-weight:950
+}
+.v12-tabs button.active{
+  background:var(--type-accent);color:#fff;border-color:var(--type-accent)
+}
+/* old tab row is no longer part of layout */
+#dexDetail>.detail-tabs,#dexDetail .detail-tabs:not(.v12-tabs){display:none!important}
+.v12-panel{display:none}
+.v12-panel.active{display:block}
+#dexDetail .ability-content{display:block!important}
+#dexDetail .section-head{
+  display:flex!important;align-items:center!important
+}
+#dexDetail .section-head .badge{align-self:center!important}
+#skillDetailToggle{
+  font-size:11px!important;font-weight:800!important;padding:5px 8px!important
+}
+.v11-lv button,.v12-lv button{
+  min-width:48px!important;min-height:44px!important;font-size:24px!important
+}
+.v12-placeholder{
+  background:#fff;border:1px solid #e4ebe7;border-radius:14px;
+  padding:20px;text-align:center;font-weight:800;color:#6f7c75
+}
+@media(max-width:620px){
+  #dexDetail .hero-top{grid-template-columns:38% minmax(0,62%)!important;gap:6px!important}
+  .v12-title-row{grid-template-columns:1fr;padding:6px}
+  .v12-traits{justify-content:flex-start}
+  .v12-name strong{font-size:18px}
+  .v12-traits span{font-size:9px;padding:5px}
+  .v12-tabs button{font-size:12px}
+}
+
+/* v13: slightly larger navigation and number */
+#dexDetail .v12-nav button{
+  min-height:42px!important;
+  font-size:12px!important;
+  padding:9px 6px!important;
+}
+#dexDetail .v12-name small{
+  font-size:14px!important;
+  line-height:1.15!important;
+  margin-bottom:2px!important;
+}
+/* Three compact metrics in one row */
+#dexDetail .hero-info>.stats{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:5px!important;
+  flex:0 0 auto!important;
+  background:transparent!important;
+  padding:0!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  min-height:64px!important;
+  padding:7px 4px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  background:rgba(255,255,255,.76)!important;
+  border-radius:10px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  font-size:9px!important;
+  line-height:1.15!important;
+  white-space:nowrap!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  margin-top:5px!important;
+  font-size:15px!important;
+  line-height:1!important;
+}
+/* Berry is a compact standalone chip rather than a fourth metric */
+.v13-berry{
+  display:inline-flex;align-items:center;gap:5px;
+  align-self:flex-start;
+  padding:5px 8px;border-radius:999px;
+  background:rgba(255,255,255,.78);
+  font-size:10px;font-weight:900;
+}
+/* Food table: fixed shared vertical axes */
+.v13-food-head,.v13-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(118px,1.35fr) 46px 50px 50px minmax(110px,1.2fr)!important;
+  align-items:center!important;
+  column-gap:0!important;
+  width:100%!important;
+}
+.v13-food-head{
+  min-height:38px;
+  font-size:10px;font-weight:950;
+  border-bottom:1px solid #e8ece9;
+}
+.v13-food-title{
+  display:flex;align-items:center;gap:6px;min-width:0;
+}
+.v13-food-rate{
+  display:inline-flex;align-items:center;
+  padding:3px 6px;border-radius:999px;
+  background:#f1f5f2;font-size:9px;white-space:nowrap;
+}
+.v13-food-head>div:not(:first-child),
+.v13-food-row>.v13-level{text-align:center}
+.v13-food-row{
+  min-height:54px;border-bottom:1px solid #edf0ee;
+}
+.v13-food-name{
+  display:flex;align-items:center;gap:5px;min-width:0;
+  font-size:11px;font-weight:850;
+}
+.v13-food-name .food-letter{
+  flex:0 0 auto;width:18px;height:18px;display:grid;place-items:center;
+  border-radius:6px;background:#f1f4f2;font-size:9px
+}
+.v13-food-name .food-icon{font-size:17px}
+.v13-food-name .food-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v13-level{font-size:12px;font-weight:900}
+.v13-recipes{
+  min-width:0;overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;padding:3px 2px
+}
+.v13-recipes::-webkit-scrollbar{display:none}
+.v13-recipes span{display:inline-block;margin-right:3px}
+@media(max-width:620px){
+  .v13-food-head,.v13-food-row{
+    grid-template-columns:minmax(105px,1.25fr) 39px 43px 43px minmax(92px,1.1fr)!important;
+  }
+  .v13-food-rate{font-size:8px;padding:3px 4px}
+  .v13-food-head{font-size:9px}
+  .v13-food-name{font-size:10px}
+}
+
+#v12Ability .section-head:has(#foodRateBadge){display:none!important}
+</style>
+
+<style id="stable-v19-three-fixes">
+/* Identity and traits */
+#dexDetail .v19-identity{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 10px;background:rgba(255,255,255,.74);border-radius:12px;
+}
+#dexDetail .v19-identity .v19-no{font-size:14px;font-weight:950}
+#dexDetail .v19-identity strong{font-size:21px;line-height:1.1}
+#dexDetail .v19-type{
+  margin-left:auto;padding:5px 8px;background:#fff;border-radius:999px;
+  font-size:11px;font-weight:950;white-space:nowrap
+}
+#dexDetail .v19-traits{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px
+}
+#dexDetail .v19-traits span{
+  min-height:34px;display:flex;align-items:center;justify-content:center;
+  padding:5px;background:rgba(255,255,255,.76);border-radius:9px;
+  font-size:10px;font-weight:900;text-align:center
+}
+#v13Berry{display:none!important}
+
+/* Food: larger, readability-first; no strict vertical-axis requirement */
+#detailFoods{font-size:13px!important}
+#detailFoods .v13-food-head{
+  min-height:46px!important;
+  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
+  font-size:11px!important;
+}
+#detailFoods .v13-food-row{
+  min-height:68px!important;
+  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
+}
+#detailFoods .v13-food-name{font-size:13px!important;gap:7px!important}
+#detailFoods .v13-food-name .food-letter{
+  width:23px!important;height:23px!important;font-size:11px!important
+}
+#detailFoods .v13-food-name .food-icon{font-size:23px!important}
+#detailFoods .v13-level{font-size:15px!important}
+#detailFoods .v13-recipes{font-size:22px!important;padding:6px 3px!important}
+#detailFoods .v13-food-rate{font-size:10px!important;padding:4px 7px!important}
+
+/* Keep only one current skill level controller visible */
+#v12Ability #v12SkillLv{display:flex!important;align-items:center;gap:7px}
+#v12Ability #v12SkillLv button{min-width:48px!important;min-height:44px!important}
+
+@media(max-width:620px){
+  #dexDetail .v19-identity{gap:5px;padding:7px}
+  #dexDetail .v19-identity .v19-no{font-size:12px}
+  #dexDetail .v19-identity strong{font-size:18px}
+  #dexDetail .v19-type{font-size:10px;padding:4px 6px}
+  #dexDetail .v19-traits span{font-size:9px}
+  #detailFoods{overflow-x:auto}
+  #detailFoods .v13-food-head,#detailFoods .v13-food-row{
+    min-width:560px!important;
+  }
+}
+</style>
+
+
+<style id="stable-v20b-precise-refine">
+/* Keep v19 geometry; enlarge only the information the user specified. */
+#dexDetail .v19-type{
+  font-size:14px!important;
+  font-weight:950!important;
+  padding:6px 10px!important;
+}
+
+/* Berry / sleep type / specialty: keep the same row, make content larger */
+#dexDetail .v19-traits span{
+  font-size:12px!important;
+  font-weight:950!important;
+  min-height:38px!important;
+}
+
+/* Food header: distribute labels horizontally with better visual balance */
+#detailFoods .v13-food-head{
+  grid-template-columns:minmax(155px,1.55fr) 58px 62px 62px minmax(145px,1.35fr)!important;
+  font-size:13px!important;
+  min-height:44px!important;
+}
+#detailFoods .v13-food-title{
+  font-size:14px!important;
+  gap:8px!important;
+}
+#detailFoods .v13-food-rate{
+  font-size:10px!important;
+}
+#detailFoods .v13-food-row{
+  grid-template-columns:minmax(155px,1.55fr) 58px 62px 62px minmax(145px,1.35fr)!important;
+  min-height:64px!important;
+}
+
+/* A/B/C: larger, colored badges for instant recognition */
+#detailFoods .food-letter{
+  width:30px!important;
+  height:30px!important;
+  font-size:15px!important;
+  font-weight:950!important;
+  color:#fff!important;
+  border-radius:9px!important;
+}
+#detailFoods .v13-food-row:nth-of-type(2) .food-letter{background:#5d9f6e!important}
+#detailFoods .v13-food-row:nth-of-type(3) .food-letter{background:#d39a45!important}
+#detailFoods .v13-food-row:nth-of-type(4) .food-letter{background:#7b83bd!important}
+
+/* Skill: existing right-side controller only. Rate sits between name and controller. */
+.v20b-skill-line{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  width:100%!important;
+}
+.v20b-skill-rate{
+  font-size:11px!important;
+  font-weight:900!important;
+  white-space:nowrap!important;
+  padding:4px 7px!important;
+  border-radius:999px!important;
+  background:#f2f5f3!important;
+}
+#v12SkillLv{
+  justify-self:end!important;
+  margin-left:0!important;
+}
+@media(max-width:620px){
+  #detailFoods{overflow-x:auto!important}
+  #detailFoods .v13-food-head,#detailFoods .v13-food-row{min-width:585px!important}
+  .v20b-skill-line{gap:6px!important}
+  .v20b-skill-rate{font-size:10px!important;padding:4px 5px!important}
+}
+</style>
+
+
+<style id="stable-v21-header-skill">
+#dexDetail .v19-identity{justify-content:flex-start!important;gap:7px!important}
+#dexDetail .v19-identity .v19-no{font-size:13px!important;flex:0 0 auto!important}
+#dexDetail .v19-identity strong{font-size:24px!important;line-height:1.05!important;flex:0 0 auto!important}
+#dexDetail .v19-type{margin-left:2px!important;font-size:14px!important;padding:5px 8px!important;flex:0 0 auto!important}
+#dexDetail .v19-traits,#dexDetail .hero-info>.stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
+#dexDetail .v19-traits span,#dexDetail .hero-info>.stats .stat{width:100%!important;box-sizing:border-box!important}
+.v21-skill-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;align-items:center!important;gap:10px!important;width:100%!important}
+.v21-skill-rate{font-size:11px;font-weight:900;white-space:nowrap;padding:5px 8px;border-radius:999px;background:#f2f5f3}
+#v12SkillLv{justify-self:end!important;margin:0!important}
+@media(max-width:620px){#dexDetail .v19-identity strong{font-size:20px!important}.v21-skill-row{gap:6px!important}.v21-skill-rate{font-size:10px;padding:4px 5px}}
+</style>
+
+
+<style id="stable-v22-skill-root-fix">
+/* Single authoritative skill header layout */
+#v12Ability .skill-top{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  width:100%!important;
+}
+#v12Ability .skill-name{font-weight:950!important;min-width:0!important}
+#v12Ability .skill-rate-inline{
+  font-size:11px!important;font-weight:900!important;white-space:nowrap!important;
+  padding:5px 8px!important;border-radius:999px!important;background:#f2f5f3!important
+}
+#v12Ability #v12SkillLv{
+  display:flex!important;align-items:center!important;gap:6px!important;
+  justify-self:end!important;margin:0!important
+}
+#v12Ability #v12SkillLv button{
+  min-width:46px!important;min-height:42px!important;font-size:22px!important
+}
+/* Any stale legacy level display is forbidden */
+#v12Ability .skill-level{display:none!important}
+@media(max-width:620px){
+ #v12Ability .skill-top{gap:6px!important}
+ #v12Ability .skill-rate-inline{font-size:10px!important;padding:4px 5px!important}
+}
+</style>
+
+
+<style id="stable-v24-food-root-fix">
+/* v24 owns the actual #detailFoods DOM generated by renderFood(). */
+#detailFoods{display:block!important;overflow:visible!important;font-size:inherit!important}
+#detailFoods .v24-food-title{
+  display:flex!important;align-items:center!important;gap:12px!important;
+  min-height:48px!important;padding:0 8px!important;border-bottom:1px solid #e8edf4!important
+}
+#detailFoods .v24-food-title b{font-size:23px!important}
+#detailFoods .v24-food-title span{
+  padding:6px 12px!important;border-radius:10px!important;background:#ffe7ef!important;
+  font-size:13px!important;font-weight:900!important;color:#e83269!important
+}
+#detailFoods .v24-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(155px,1.45fr) 68px 68px 68px minmax(180px,1.65fr)!important;
+  align-items:stretch!important;min-height:78px!important;width:100%!important;
+  border-bottom:1px solid #e8edf4!important
+}
+#detailFoods .v24-food-name{
+  display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;
+  align-items:center!important;gap:6px!important;padding:7px 8px!important
+}
+#detailFoods .v24-letter{
+  display:grid!important;place-items:center!important;width:42px!important;height:48px!important;
+  border-radius:10px!important;font-size:27px!important;font-weight:950!important
+}
+#detailFoods .v24-food-main{
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;min-width:0!important
+}
+#detailFoods .v24-food-icon{font-size:30px!important;line-height:1!important}
+#detailFoods .v24-food-main b{
+  margin-top:4px!important;font-size:12px!important;line-height:1.1!important;
+  text-align:center!important;white-space:normal!important
+}
+#detailFoods .v24-level{
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;border-left:1px solid #e8edf4!important
+}
+#detailFoods .v24-level small{
+  padding:3px 7px!important;border-radius:7px!important;background:#eaf5ff!important;
+  color:#078be8!important;font-size:11px!important;font-weight:900!important
+}
+#detailFoods .v24-level b{margin-top:9px!important;font-size:16px!important}
+#detailFoods .v24-recipes{
+  display:flex!important;align-items:center!important;gap:9px!important;
+  overflow-x:auto!important;padding:8px 9px!important;border-left:1px solid #e8edf4!important;
+  background:#fffaf5!important;scrollbar-width:none!important
+}
+#detailFoods .v24-recipes::-webkit-scrollbar{display:none}
+#detailFoods .v24-placeholder{
+  flex:0 0 48px!important;height:48px!important;display:grid!important;place-items:center!important;
+  border-radius:50%!important;background:#fff!important;font-size:26px!important
+}
+#detailFoods .v24-more{margin-left:auto!important;font-size:32px!important;font-weight:900!important;color:#ef8a00!important}
+#detailFoods .slot-A .v24-food-name{background:#effbf5!important}
+#detailFoods .slot-B .v24-food-name{background:#fff2f6!important}
+#detailFoods .slot-C .v24-food-name{background:#fff8eb!important}
+#detailFoods .slot-A .v24-letter{background:#d9f7e7!important;color:#079b57!important}
+#detailFoods .slot-B .v24-letter{background:#ffe1eb!important;color:#e91e63!important}
+#detailFoods .slot-C .v24-letter{background:#ffefd1!important;color:#ae6800!important}
+@media(max-width:620px){
+ #detailFoods{overflow-x:auto!important}
+ #detailFoods .v24-food-title,#detailFoods .v24-food-row{min-width:590px!important}
+ #detailFoods .v24-food-row{grid-template-columns:155px 66px 66px 66px minmax(180px,1fr)!important}
+}
+</style>
+
+
+<style id="stable-v25-food-skill-unified">
+/* Food and skill headers share the same visual rhythm */
+#detailFoods .v24-food-title,
+#v12Ability .skill-top{
+  min-height:52px!important;
+  box-sizing:border-box!important;
+  border-bottom:1px solid #e8edf4!important;
+}
+
+/* Food heading: one compact label */
+#detailFoods .v24-food-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  padding:0 10px!important;
+}
+#detailFoods .v24-food-title b{
+  font-size:18px!important;
+  line-height:1!important;
+  font-weight:950!important;
+}
+#detailFoods .v24-food-title span{
+  background:transparent!important;
+  padding:0!important;
+  border-radius:0!important;
+  color:#e83269!important;
+  font-size:16px!important;
+  font-weight:950!important;
+}
+
+/* Skill heading: name | trigger rate | one right-side level control */
+#v12Ability .skill-top{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  padding:0 10px!important;
+}
+#v12Ability .skill-icon{display:none!important}
+#v12Ability .skill-name{
+  font-size:18px!important;
+  line-height:1.1!important;
+  font-weight:950!important;
+}
+#v12Ability .skill-name::before{
+  content:"✨ ";
+}
+#v12Ability .skill-rate-inline{
+  background:transparent!important;
+  padding:0!important;
+  border-radius:0!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  white-space:nowrap!important;
+}
+#v12Ability #v12SkillLv{
+  margin:0!important;
+  justify-self:end!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:5px!important;
+}
+#v12Ability #v12SkillLv button{
+  min-width:38px!important;
+  min-height:38px!important;
+  font-size:21px!important;
+}
+#v12Ability #v12SkillLv b{
+  white-space:nowrap!important;
+  font-size:14px!important;
+}
+#v12Ability .skill-desc{
+  padding-top:12px!important;
+}
+@media(max-width:620px){
+  #v12Ability .skill-top{
+    grid-template-columns:minmax(0,1fr) auto auto!important;
+    gap:6px!important;
+    padding:0 7px!important;
+  }
+  #v12Ability .skill-name{font-size:15px!important}
+  #v12Ability .skill-rate-inline{font-size:11px!important}
+  #v12Ability #v12SkillLv button{min-width:34px!important;min-height:36px!important}
+  #detailFoods .v24-food-title b{font-size:17px!important}
+  #detailFoods .v24-food-title span{font-size:15px!important}
+}
+</style>
+
+
+<style id="stable-v26-layout-refine">
+/* v26: type color belongs to the detail page background, not to tab identity. */
+#dexDetail{
+  background:
+    linear-gradient(180deg,var(--type-bg) 0%,var(--type-bg) 38%,#f7f9f8 100%)!important;
+  border-radius:18px!important;
+}
+#dexDetail .hero{
+  background:color-mix(in srgb,var(--type-bg) 76%, white 24%)!important;
+  border:1px solid color-mix(in srgb,var(--type-accent) 22%, transparent)!important;
+}
+
+/* Upper-right block: one consistent three-column rhythm. */
+#dexDetail .hero-info{gap:7px!important}
+#dexDetail .v19-identity{
+  display:flex!important;align-items:center!important;flex-wrap:nowrap!important;
+  min-height:46px!important;padding:7px 10px!important;gap:7px!important;
+  background:rgba(255,255,255,.78)!important;
+}
+#dexDetail .v19-identity strong{
+  font-size:25px!important;white-space:nowrap!important;
+}
+#dexDetail .v19-type{
+  margin-left:0!important;font-size:13px!important;
+  background:color-mix(in srgb,var(--type-bg) 70%, white 30%)!important;
+  border:1px solid color-mix(in srgb,var(--type-accent) 28%, transparent)!important;
+}
+#dexDetail .v26-variant-slot{
+  margin-left:auto!important;min-width:0!important;
+}
+/* Future style/form selector goes here only when the master has variants. */
+#dexDetail .v26-variant-slot:empty{display:block!important}
+
+#dexDetail .v19-traits,
+#dexDetail .hero-info>.stats,
+#dexDetail .v12-tabs{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:7px!important;width:100%!important;
+}
+#dexDetail .v19-traits span{
+  min-height:42px!important;font-size:11px!important;
+  border:1px solid rgba(0,0,0,.035)!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  min-height:68px!important;border:1px solid rgba(0,0,0,.035)!important;
+}
+#dexDetail .hero-info>.stats .stat small{font-size:10px!important}
+#dexDetail .hero-info>.stats .stat b{font-size:16px!important}
+
+/* Bigger previous/next Pokémon controls. */
+#dexDetail .v12-nav{gap:8px!important}
+#dexDetail .v12-nav button{
+  min-height:48px!important;font-size:13px!important;padding:10px 8px!important;
+  border-radius:12px!important;
+}
+
+/* Tabs use fixed semantic colors, independent of Pokémon type. */
+#dexDetail .v12-tabs{margin-top:0!important}
+#dexDetail .v12-tabs button{
+  min-height:48px!important;font-size:14px!important;border-width:1px!important;
+  transition:filter .15s ease,transform .15s ease!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="ability"]{
+  background:#eaf4ff!important;color:#1768a6!important;border-color:#b8d9f5!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="sleep"]{
+  background:#f2ecff!important;color:#704bb2!important;border-color:#d8c7f5!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#eaf7ee!important;color:#347a4b!important;border-color:#bfe1c9!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="ability"].active{
+  background:#2f80c9!important;color:#fff!important;border-color:#2f80c9!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="sleep"].active{
+  background:#7957b8!important;color:#fff!important;border-color:#7957b8!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  background:#4d9662!important;color:#fff!important;border-color:#4d9662!important;
+}
+
+/* Food: probability + Lv.1/Lv.30/Lv.60 + recipes share one header grid. */
+#detailFoods .v24-food-title{display:none!important}
+#detailFoods .v26-food-head,
+#detailFoods .v24-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(155px,1.45fr) 68px 68px 68px minmax(180px,1.65fr)!important;
+  align-items:center!important;width:100%!important;
+}
+#detailFoods .v26-food-head{
+  min-height:58px!important;border-bottom:1px solid #e8edf4!important;
+  background:#fff!important;
+}
+#detailFoods .v26-food-rate{
+  text-align:center!important;font-size:16px!important;font-weight:950!important;
+}
+#detailFoods .v26-food-rate strong{color:#e83269!important;font-size:16px!important}
+#detailFoods .v26-level-pill{
+  justify-self:center!important;padding:5px 10px!important;border-radius:8px!important;
+  background:#eaf5ff!important;color:#078be8!important;
+  font-size:13px!important;font-weight:950!important;white-space:nowrap!important;
+}
+#detailFoods .v26-recipe-head{
+  text-align:center!important;font-size:13px!important;font-weight:950!important;
+}
+#detailFoods .v24-level small{display:none!important}
+#detailFoods .v24-level b{margin-top:0!important;font-size:17px!important}
+
+/* Skill: true left group (name + probability) and one right-side level control. */
+#v12Ability .skill-top{
+  display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
+  gap:10px!important;padding:0 10px!important;
+}
+#v12Ability .skill-name{
+  display:inline!important;font-size:18px!important;
+}
+#v12Ability .skill-rate-inline{
+  justify-self:start!important;margin-left:8px!important;
+  font-size:12px!important;background:transparent!important;padding:0!important;
+}
+#v12Ability .skill-name,
+#v12Ability .skill-rate-inline{grid-row:1!important}
+#v12Ability .skill-name{grid-column:1!important}
+#v12Ability .skill-rate-inline{
+  grid-column:1!important;
+  /* place the rate directly after the rendered skill name instead of in a separate wide column */
+  padding-left:150px!important;
+}
+#v12Ability #v12SkillLv{grid-column:2!important;grid-row:1!important;justify-self:end!important}
+
+/* Keep the skill name/rate visually joined without changing the single level controller. */
+@supports(selector(:has(*))){
+  #v12Ability .skill-top:has(.skill-rate-inline){
+    grid-template-columns:minmax(0,1fr) auto!important;
+  }
+}
+
+@media(max-width:620px){
+  #dexDetail .v19-identity strong{font-size:20px!important}
+  #dexDetail .v19-type{font-size:10px!important;padding:4px 6px!important}
+  #dexDetail .v12-nav button{min-height:46px!important;font-size:11px!important}
+  #dexDetail .v12-tabs button{min-height:46px!important;font-size:12px!important}
+  #detailFoods{overflow-x:auto!important}
+  #detailFoods .v26-food-head,#detailFoods .v24-food-row{min-width:590px!important}
+  #v12Ability .skill-rate-inline{padding-left:126px!important;font-size:10px!important}
+}
+</style>
+
+
+<style id="stable-v26-skill-group-fix">
+#v12Ability .skill-top{
+  display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+}
+#v12Ability .v26-skill-left{
+  min-width:0!important;display:flex!important;align-items:center!important;
+  gap:9px!important;flex-wrap:wrap!important;
+}
+#v12Ability .v26-skill-left .skill-name,
+#v12Ability .v26-skill-left .skill-rate-inline{
+  grid-column:auto!important;grid-row:auto!important;padding-left:0!important;margin-left:0!important;
+}
+#v12Ability .v26-skill-left .skill-rate-inline{white-space:nowrap!important}
+@media(max-width:620px){
+  #v12Ability .v26-skill-left{gap:6px!important}
+  #v12Ability .v26-skill-left .skill-name{font-size:15px!important}
+}
+</style>
+
+
+<style id="stable-v27-basic-block-check">
+/* v27 confirmation pass: basic ability block only */
+
+/* Line 1: equal white outlined previous/next controls. */
+#dexDetail .v12-nav{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+}
+#dexDetail .v12-nav button,
+#dexDetail .v12-nav button:disabled{
+  min-height:50px!important;
+  padding:10px 8px!important;
+  border:1px solid rgba(0,0,0,.72)!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  color:#111!important;
+  opacity:1!important;
+  font-size:13px!important;
+  font-weight:900!important;
+}
+#dexDetail .v12-nav button:disabled{cursor:default!important}
+
+/* Give line 2 (name) and line 3 (traits) a little more breathing room. */
+#dexDetail .v19-identity{margin-bottom:6px!important}
+
+/* Lines 3 and 4: same three-column geometry and almost identical box height. */
+#dexDetail .v19-traits,
+#dexDetail .hero-info>.stats{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:7px!important;
+}
+#dexDetail .v19-traits span,
+#dexDetail .hero-info>.stats .stat{
+  box-sizing:border-box!important;
+  min-height:70px!important;
+  border-radius:12px!important;
+  padding:8px 5px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+#dexDetail .v19-traits span{
+  font-size:12px!important;
+  font-weight:900!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  flex-direction:column!important;
+  gap:2px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  font-size:10px!important;
+  line-height:1.15!important;
+  font-weight:850!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  font-size:22px!important;
+  line-height:1.05!important;
+  font-weight:1000!important;
+  letter-spacing:-.35px!important;
+  white-space:nowrap!important;
+}
+
+/* Field tab: deeper green, independent from Pokémon type color. */
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#e8f2eb!important;
+  color:#214f31!important;
+  border-color:#8db49a!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  background:#245b36!important;
+  color:#fff!important;
+  border-color:#245b36!important;
+}
+
+@media(max-width:620px){
+  #dexDetail .v12-nav button,
+  #dexDetail .v12-nav button:disabled{
+    min-height:48px!important;
+    font-size:11px!important;
+    padding:9px 5px!important;
+  }
+  #dexDetail .v19-identity{margin-bottom:5px!important}
+  #dexDetail .v19-traits span,
+  #dexDetail .hero-info>.stats .stat{
+    min-height:66px!important;
+    padding:6px 3px!important;
+  }
+  #dexDetail .v19-traits span{font-size:10px!important}
+  #dexDetail .hero-info>.stats .stat small{font-size:9px!important}
+  #dexDetail .hero-info>.stats .stat b{font-size:19px!important}
+}
+</style>
+
+
+<style id="stable-v28-basic-block-refine">
+/* v28: refinement of Basic Ability block */
+
+/* 1st line: keep symmetry but reduce visual dominance. */
+#dexDetail .v12-nav button,
+#dexDetail .v12-nav button:disabled{
+  min-height:41px!important;
+  padding:7px 8px!important;
+  border:1px solid rgba(45,52,48,.38)!important;
+  border-radius:10px!important;
+  background:rgba(255,255,255,.90)!important;
+  color:#303733!important;
+  font-size:11px!important;
+  font-weight:800!important;
+}
+
+/* 2nd line: make the whole name strip the Pokémon type-color surface. */
+#dexDetail .v19-identity{
+  background:var(--type-bg)!important;
+  border:1px solid var(--type-accent)!important;
+  border-radius:12px!important;
+  padding:8px 10px!important;
+  margin-bottom:7px!important;
+  box-shadow:inset 4px 0 0 var(--type-accent)!important;
+}
+#dexDetail .v19-identity .v19-no{
+  color:var(--type-accent)!important;
+  font-weight:900!important;
+}
+#dexDetail .v19-identity strong{
+  color:#172019!important;
+}
+#dexDetail .v19-type{
+  background:rgba(255,255,255,.64)!important;
+  border-color:color-mix(in srgb,var(--type-accent) 45%, transparent)!important;
+  color:var(--type-accent)!important;
+}
+
+/* 3rd line: stronger than before, but still below the main numeric values. */
+#dexDetail .v19-traits span{
+  min-height:66px!important;
+  font-size:14px!important;
+  font-weight:950!important;
+  border-radius:12px!important;
+}
+#dexDetail .v19-traits span:first-letter{
+  font-size:17px!important;
+}
+
+/* 4th line: match line 3 geometry and keep values as the visual focus. */
+#dexDetail .hero-info>.stats .stat{
+  min-height:66px!important;
+  border-radius:12px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  font-size:10px!important;
+  font-weight:850!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  font-size:23px!important;
+  font-weight:1000!important;
+  line-height:1!important;
+}
+
+/* Tabs remain UI colors, not type colors. Field green stays clearly distinct. */
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#f7faf8!important;
+  color:#174a2b!important;
+  border:1.5px solid #245b36!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  background:#245b36!important;
+  color:#fff!important;
+  border-color:#174526!important;
+}
+
+@media(max-width:620px){
+  #dexDetail .v12-nav button,
+  #dexDetail .v12-nav button:disabled{
+    min-height:40px!important;
+    font-size:10px!important;
+  }
+  #dexDetail .v19-traits span,
+  #dexDetail .hero-info>.stats .stat{min-height:62px!important}
+  #dexDetail .v19-traits span{font-size:12px!important}
+  #dexDetail .hero-info>.stats .stat b{font-size:20px!important}
+}
+</style>
+
+
+<style id="stable-v29-nav-image-check">
+/* Line 1: mirror-symmetric around the center. */
+#dexDetail .v12-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+#dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{
+ min-height:42px!important;padding:5px 9px!important;border:1px solid rgba(45,52,48,.30)!important;
+ border-radius:10px!important;background:rgba(255,255,255,.90)!important;color:#303733!important;
+ opacity:1!important;font-size:11px!important;font-weight:800!important;display:flex!important;align-items:center!important;gap:7px!important
+}
+#dexDetail #v12Prev{justify-content:flex-end!important;text-align:right!important}
+#dexDetail #v12Next{justify-content:flex-start!important;text-align:left!important}
+#dexDetail .v29-nav-img{
+ width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:50%!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:rgba(255,255,255,.78)!important;color:var(--type-accent)!important;font-size:12px!important;overflow:hidden!important
+}
+#dexDetail .v29-nav-img img{width:100%!important;height:100%!important;object-fit:contain!important}
+#dexDetail .v29-nav-name{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+#dexDetail .v29-arrow{font-size:15px!important;line-height:1!important}
+#dexDetail .v29-empty{width:100%!important;text-align:center!important;font-size:16px!important}
+
+/* Agreed follow-ups: lighter name line, stronger line 3. */
+#dexDetail .v19-identity{
+ border:0!important;box-shadow:none!important;background:var(--type-bg)!important;
+ padding:7px 9px!important;margin-bottom:5px!important
+}
+#dexDetail .v19-traits span{font-size:15px!important;font-weight:950!important}
+@media(max-width:620px){
+ #dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{min-height:40px!important;padding:4px 7px!important;font-size:10px!important;gap:5px!important}
+ #dexDetail .v29-nav-img{width:28px!important;height:28px!important;flex-basis:28px!important}
+ #dexDetail .v19-traits span{font-size:13px!important}
+}
+</style>
+
+
+<style id="stable-v30-blocks-1to4-history">
+/* v30 — reserved refinements for blocks 1–4. Keep borders quiet; use surfaces, spacing and hierarchy. */
+
+/* 1-2: simple type surface, black Pokédex number, no framed/accent-strip treatment. */
+#dexDetail .v19-identity .v19-no{color:#172019!important}
+
+/* 2 block: remove the cheap white-card feel while preserving the accepted food grid. */
+#v12Ability .ability-card:has(#detailFoods){
+  background:#f7f9f8!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:16px!important;
+  padding:6px!important;
+  overflow:hidden!important;
+}
+#detailFoods{background:transparent!important;border:0!important}
+#detailFoods .v26-food-head{
+  min-height:64px!important;
+  background:#eef3f1!important;
+  border:0!important;
+  border-radius:12px!important;
+  margin-bottom:5px!important;
+}
+#detailFoods .v26-food-rate{font-size:18px!important}
+#detailFoods .v26-food-rate strong{font-size:19px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:14px!important}
+#detailFoods .v24-food-row{
+  border:0!important;
+  border-bottom:1px solid rgba(40,55,47,.08)!important;
+  background:transparent!important;
+}
+#detailFoods .v24-food-row:last-child{border-bottom:0!important}
+
+/* 3 block: one surface, no double frame. 3-1 is a real left group + right level control. */
+#v12Ability .ability-card:has(#detailSkill){
+  background:#f7f9f8!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:16px!important;
+  padding:14px!important;
+}
+#v12Ability .skill-box{
+  margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+}
+#v12Ability .skill-top{padding:0!important;gap:12px!important}
+#v12Ability .v26-skill-left{
+  display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;min-width:0!important;
+}
+#v12Ability .skill-icon{flex:0 0 auto!important}
+#v12Ability .skill-name{flex:0 1 auto!important;white-space:nowrap!important;font-size:18px!important}
+#v12Ability .skill-rate-inline{
+  flex:0 0 auto!important;white-space:nowrap!important;margin:0!important;padding:0!important;
+  font-size:12px!important;color:#68736d!important;background:transparent!important;
+}
+#v12Ability #v12SkillLv{flex:0 0 auto!important;justify-self:end!important}
+#v12Ability .skill-desc{margin:13px 0 5px!important;padding-top:11px!important;border-top:1px solid rgba(40,55,47,.08)!important}
+#v12Ability .skill-detail-toggle{opacity:.72!important;font-size:12px!important}
+
+/* 4 block: forward evolution only. Variable-height requirements -> arrow -> destination image/type. */
+#v12Ability #evolutionCard{
+  background:#f7f9f8!important;border:0!important;box-shadow:none!important;border-radius:16px!important;padding:14px!important;
+}
+#v12Ability #evolutionCard .section-title{margin-bottom:8px!important}
+#detailEvolution{display:flex!important;flex-direction:column!important;gap:8px!important}
+.v30-evo-row{
+  width:100%!important;display:grid!important;grid-template-columns:minmax(95px,1fr) 34px minmax(92px,1fr)!important;
+  align-items:center!important;gap:8px!important;border:0!important;background:#eef3f1!important;border-radius:13px!important;padding:10px 12px!important;
+  color:#26312b!important;text-align:left!important;cursor:pointer!important;
+}
+.v30-evo-conditions{display:flex!important;flex-direction:column!important;gap:4px!important;font-weight:900!important;font-size:13px!important;line-height:1.25!important}
+.v30-evo-arrow{text-align:center!important;font-size:22px!important;font-weight:900!important;color:#65716b!important}
+.v30-evo-target{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:0!important}
+.v30-evo-image{width:58px!important;height:58px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+.v30-evo-image img{width:100%!important;height:100%!important;object-fit:contain!important}
+.v30-evo-image .fallback{font-size:26px!important;color:var(--type-accent)!important}
+.v30-evo-type{font-size:11px!important;font-weight:900!important;padding:3px 7px!important;border-radius:999px!important;background:#fff!important;border:1px solid rgba(40,55,47,.10)!important;white-space:nowrap!important}
+
+@media(max-width:620px){
+  #detailFoods .v26-food-rate{font-size:16px!important}
+  #detailFoods .v26-food-rate strong{font-size:17px!important}
+  #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:13px!important}
+  #v12Ability .v26-skill-left{gap:5px!important}
+  #v12Ability .skill-name{font-size:15px!important}
+  #v12Ability .skill-rate-inline{font-size:10px!important}
+  .v30-evo-row{grid-template-columns:minmax(82px,1fr) 26px minmax(78px,.9fr)!important;padding:9px!important;gap:6px!important}
+  .v30-evo-image{width:52px!important;height:52px!important}
+}
+</style>
+
+
+<style id="stable-v31-reserved-refine">
+/* v31 — execute the approved refinement reservations. */
+/* 1-1: lightweight image-only previous/next navigation. */
+#dexDetail .v12-nav{align-items:center!important;min-height:42px!important}
+#dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{background:transparent!important;border:0!important;box-shadow:none!important;padding:2px 6px!important;min-height:38px!important;min-width:66px!important;color:#39463f!important;opacity:1!important}
+#dexDetail .v12-nav button:first-child{justify-self:start!important;justify-content:flex-start!important}
+#dexDetail .v12-nav button:last-child{justify-self:end!important;justify-content:flex-end!important}
+#dexDetail .v29-nav-name{display:none!important}
+#dexDetail .v29-arrow{font-size:22px!important;font-weight:800!important}
+#dexDetail .v29-nav-img{width:34px!important;height:34px!important;flex-basis:34px!important;font-size:22px!important;border:0!important;background:transparent!important}
+#dexDetail .v29-empty{font-size:20px!important;color:#9aa39e!important}
+
+/* Active-tab surface: type identity stays above; content below follows tab semantics. */
+#v12Ability,#v12Sleep,#v12Field{border-radius:0 0 18px 18px!important;padding:10px 8px 16px!important}
+#v12Ability{background:#f1f7ff!important}
+#v12Sleep{background:#f6f1fb!important}
+#v12Field{background:#f0f6f1!important}
+#v12Ability>.ability-card,#v12Ability>#evolutionCard{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;margin:0!important;padding:14px 6px!important}
+#v12Ability>.ability-card+#v12Ability>.ability-card{}
+#v12Ability>.ability-card:not(:first-child),#v12Ability>#evolutionCard{border-top:0!important}
+
+/* 2: one table surface; stronger plain headers, no pill backgrounds. */
+#v12Ability .ability-card:has(#detailFoods){background:transparent!important;padding:8px 4px 14px!important}
+#detailFoods .v26-food-head{background:transparent!important;border:0!important;border-radius:0!important;min-height:58px!important;margin-bottom:2px!important}
+#detailFoods .v26-food-rate{font-size:18px!important;font-weight:900!important}
+#detailFoods .v26-food-rate strong{font-size:21px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;font-size:16px!important;font-weight:950!important;color:#33443c!important}
+#detailFoods .v24-food-row{background:transparent!important;border:0!important;border-bottom:1px solid rgba(55,83,112,.08)!important;border-radius:0!important}
+#detailFoods .v24-food-name{padding-left:14px!important}
+#detailFoods .v24-letter{margin-left:5px!important}
+
+/* 3: Dex is read-only. Skill + rate are prominent; details expands all levels. */
+#v12Ability .ability-card:has(#detailSkill){background:transparent!important;padding:14px 6px!important}
+#v12Ability .skill-box{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;column-gap:14px!important;row-gap:7px!important}
+#v12Ability .skill-top{display:block!important;grid-column:1!important;grid-row:1!important}
+#v12Ability .v26-skill-left{display:flex!important;align-items:baseline!important;gap:9px!important;flex-wrap:wrap!important}
+#v12Ability .skill-name{font-size:18px!important;font-weight:950!important}
+#v12Ability .skill-rate-inline{font-size:16px!important;font-weight:900!important;color:#23835a!important}
+#v12Ability .skill-rate-inline strong{font-size:20px!important;color:inherit!important}
+#v12Ability #v12SkillLv{display:none!important}
+#v12Ability .skill-desc{grid-column:1!important;grid-row:2!important;margin:0!important;padding:2px 0 0!important;border:0!important;font-size:14px!important;line-height:1.45!important}
+#v12Ability .skill-detail-toggle{grid-column:2!important;grid-row:1 / span 2!important;align-self:center!important;width:auto!important;border:0!important;background:transparent!important;padding:8px 2px!important;font-size:13px!important;font-weight:900!important;color:#52645b!important;white-space:nowrap!important}
+#v12Ability .skill-levels{grid-column:1 / -1!important;grid-row:3!important}
+
+/* 4: full known evolution family. Current Pokémon is larger. Type icon overlays image bottom-right. */
+#v12Ability #evolutionCard{background:transparent!important;padding:14px 6px!important}
+#detailEvolution{display:block!important}
+.v31-evo-line{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;overflow-x:auto!important;padding:8px 2px 4px!important}
+.v31-evo-node{border:0!important;background:transparent!important;padding:2px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:3px!important;min-width:68px!important;color:#26312b!important}
+.v31-evo-image{position:relative!important;width:58px!important;height:58px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.v31-evo-node.is-current .v31-evo-image{width:72px!important;height:72px!important}
+.v31-evo-image img{width:100%!important;height:100%!important;object-fit:contain!important}
+.v31-evo-image>.fallback{font-size:30px!important;color:var(--type-accent)!important}
+.v31-evo-type{position:absolute!important;right:-2px!important;bottom:-2px!important;width:23px!important;height:23px!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:#fff!important;box-shadow:0 1px 5px rgba(0,0,0,.14)!important;font-size:13px!important}
+.v31-evo-name{font-size:11px!important;font-weight:900!important;white-space:nowrap!important}
+.v31-evo-step{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;min-width:68px!important;gap:3px!important}
+.v31-evo-cond{display:flex!important;flex-direction:column!important;align-items:center!important;gap:1px!important;font-size:10px!important;font-weight:850!important;line-height:1.2!important;text-align:center!important}
+.v31-big-arrow{font-size:22px!important;font-weight:900!important;color:#6b7972!important}
+.v31-branch-layout{display:grid!important;grid-template-columns:78px 26px minmax(0,1fr)!important;align-items:center!important;gap:6px!important;padding:6px 0!important}
+.v31-branch-root{align-self:center!important}
+.v31-branch-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px 4px!important;align-items:start!important}
+.v31-branch-cell{display:flex!important;flex-direction:column!important;align-items:center!important;gap:2px!important;min-width:0!important}
+.v31-branch-cell .v31-evo-node{min-width:0!important;width:100%!important}
+.v31-branch-cell .v31-evo-image{width:48px!important;height:48px!important}
+.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:60px!important;height:60px!important}
+
+@media(max-width:620px){
+ #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:15px!important}
+ #detailFoods .v26-food-rate{font-size:16px!important} #detailFoods .v26-food-rate strong{font-size:19px!important}
+ #v12Ability .skill-name{font-size:16px!important} #v12Ability .skill-rate-inline{font-size:14px!important} #v12Ability .skill-rate-inline strong{font-size:18px!important}
+ .v31-evo-line{gap:4px!important;justify-content:flex-start!important}
+ .v31-evo-node{min-width:62px!important}.v31-evo-image{width:52px!important;height:52px!important}.v31-evo-node.is-current .v31-evo-image{width:66px!important;height:66px!important}
+ .v31-evo-step{min-width:58px!important}.v31-evo-cond{font-size:9px!important}
+ .v31-branch-layout{grid-template-columns:70px 20px minmax(0,1fr)!important;gap:3px!important}
+ .v31-branch-grid{gap:8px 2px!important}.v31-branch-cell .v31-evo-image{width:42px!important;height:42px!important}.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:54px!important;height:54px!important}
+}
+</style>
+
+
+<style id="stable-v32-page-refine">
+/* v32 — approved finishing reservations for blocks 1–3. */
+/* 1-2: subtle alignment only; keep the accepted type surface. */
+#dexDetail .v19-identity{align-items:center!important}
+#dexDetail .v19-identity .v19-no{position:relative!important;top:-2px!important;color:#172019!important}
+#dexDetail .v19-identity strong{position:relative!important;left:-4px!important}
+/* 1-4: labels are deliberately darker while values remain dominant. */
+#dexDetail .hero-info>.stats .stat small{color:#34413a!important;font-weight:950!important}
+
+/* 2: move the useful columns left and give recipes more room. */
+#v12Ability .ability-card:has(#detailFoods){padding-left:0!important;padding-right:2px!important}
+#detailFoods .v26-food-head,#detailFoods .v24-food-row{grid-template-columns:minmax(142px,1.25fr) 62px 62px 62px minmax(210px,1.9fr)!important}
+#detailFoods .v26-food-head{min-height:60px!important}
+#detailFoods .v26-food-rate{font-size:19px!important;text-align:left!important;padding-left:6px!important}
+#detailFoods .v26-food-rate strong{font-size:22px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:17px!important;font-weight:950!important;background:transparent!important}
+#detailFoods .v24-food-name{padding-left:8px!important}
+#detailFoods .v24-letter{margin-left:8px!important}
+#detailFoods .v24-recipes{gap:7px!important;justify-content:center!important}
+#detailFoods .v24-placeholder{flex:0 0 auto!important}
+
+/* 3: semantic variable colors + compact 2-column x 3-row level detail. */
+:root{--skill-effect-food:#d82f67;--skill-effect-energy:#d56b16;--skill-effect-berry:#c64a43;--skill-effect-energy-recovery:#4f9a58;--skill-effect-help:#287fc0;--skill-effect-skill:#7557b4;--skill-effect-zone:#405aa8}
+#v12Ability .skill-var{font-weight:1000!important}
+#v12Ability .effect-food{color:var(--skill-effect-food)!important}
+#v12Ability .effect-energy{color:var(--skill-effect-energy)!important}
+#v12Ability .effect-berry{color:var(--skill-effect-berry)!important}
+#v12Ability .effect-energy-recovery{color:var(--skill-effect-energy-recovery)!important}
+#v12Ability .effect-help{color:var(--skill-effect-help)!important}
+#v12Ability .effect-skill{color:var(--skill-effect-skill)!important}
+#v12Ability .effect-zone{color:var(--skill-effect-zone)!important}
+#v12Ability .skill-levels.open{padding:9px 0 0!important;border-top:0!important;margin-top:8px!important}
+#v12Ability .v32-skill-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 18px!important;max-width:430px!important;margin:0 auto!important}
+#v12Ability .v32-skill-cell{display:grid!important;grid-template-columns:52px 1fr!important;align-items:center!important;gap:8px!important;min-height:42px!important;padding:6px 8px!important;border-bottom:1px solid rgba(55,83,112,.09)!important;font-size:14px!important}
+#v12Ability .v32-skill-cell>b{color:#33443c!important;font-weight:950!important}
+#v12Ability .v32-skill-cell>.skill-var{font-size:17px!important}
+@media(max-width:620px){
+ #detailFoods .v26-food-head,#detailFoods .v24-food-row{min-width:590px!important;grid-template-columns:140px 60px 60px 60px 270px!important}
+ #detailFoods .v26-food-rate{font-size:17px!important} #detailFoods .v26-food-rate strong{font-size:20px!important}
+ #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:16px!important}
+ #v12Ability .v32-skill-grid{gap:0 10px!important}
+ #v12Ability .v32-skill-cell{grid-template-columns:44px 1fr!important;padding:5px 4px!important;font-size:13px!important}
+ #v12Ability .v32-skill-cell>.skill-var{font-size:16px!important}
+}
+</style>
+
+
+<style id="stable-v33-blocks-finish-responsive">
+/* v33 — approved finishing pass. Mobile-first, viewport-responsive presentation. */
+/* 1-2: Pokémon name is the visual focus; number stays secondary and type stays to the right. */
+#dexDetail .v19-identity{display:grid!important;grid-template-columns:auto auto auto minmax(0,1fr)!important;align-items:center!important;column-gap:0!important}
+#dexDetail .v19-identity .v19-no{font-size:12px!important;font-weight:900!important;top:-4px!important;color:#172019!important;white-space:nowrap!important}
+#dexDetail .v19-identity strong{font-size:25px!important;font-weight:1000!important;left:0!important;min-width:0!important;white-space:nowrap!important;margin-left:1em!important}
+#dexDetail .v19-identity .v19-type{justify-self:start!important;white-space:nowrap!important;margin-left:.35em!important}
+
+/* 2: recipe data stays intact; only the visible preview count changes with viewport width. */
+#detailFoods .v24-recipes{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-width:0!important}
+#detailFoods .v24-placeholder{display:inline-grid!important;place-items:center!important}
+/* Wide: 5 previews. Medium: 4. Narrow: 3. */
+@media(max-width:760px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+@media(max-width:520px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(4),#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+
+/* 3: probability styling matches ingredient probability. Normal effect/detail copy is black. */
+#v12Ability .skill-rate-inline{color:#26312b!important}
+#v12Ability .skill-rate-inline strong{color:#e83269!important}
+#v12Ability .v33-skill-effect-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-column:1 / -1!important;grid-row:2!important;align-items:center!important;gap:10px!important;margin-top:7px!important;padding-top:0!important;border-top:0!important}
+#v12Ability .v33-skill-effect-row .skill-desc{grid-column:auto!important;grid-row:auto!important;margin:0!important;padding:0!important;border:0!important;color:#111!important;font-size:14px!important;line-height:1.5!important}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{grid-column:auto!important;grid-row:auto!important;align-self:center!important;width:auto!important;border:0!important;background:transparent!important;padding:7px 2px!important;color:#111!important;font-size:13px!important;font-weight:900!important;white-space:nowrap!important}
+#v12Ability .v32-skill-cell{color:#111!important}
+#v12Ability .v32-skill-cell>b{color:#111!important}
+
+/* 4: keep Level/Candy stacked; improve readability and scale of the evolution family. */
+#v12Ability #evolutionCard .section-title{font-size:18px!important}
+.v31-evo-line{gap:10px!important;padding:12px 4px 8px!important}
+.v31-evo-node{min-width:82px!important;gap:5px!important}
+.v31-evo-image{width:72px!important;height:72px!important}
+.v31-evo-node.is-current .v31-evo-image{width:88px!important;height:88px!important}
+.v31-evo-name{font-size:13px!important;font-weight:950!important;color:#111!important}
+.v31-evo-step{min-width:76px!important;gap:5px!important}
+.v31-evo-cond{font-size:12px!important;font-weight:850!important;line-height:1.3!important;color:#111!important}
+.v31-evo-cond span{color:#111!important}
+.v31-evo-cond span:first-child{font-weight:950!important}
+.v31-big-arrow{color:#39453f!important;font-weight:950!important}
+.v31-branch-cell .v31-evo-image{width:62px!important;height:62px!important}
+.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+.v31-branch-cell .v31-evo-cond{font-size:11px!important;color:#111!important}
+
+/* Responsive finishing: preserve information, adjust density rather than shrinking everything. */
+@media(max-width:620px){
+ #dexDetail .v19-identity{column-gap:0!important}
+ #dexDetail .v19-identity .v19-no{font-size:11px!important;top:-3px!important}
+ #dexDetail .v19-identity strong{font-size:21px!important;left:0!important;margin-left:1em!important}
+ #v12Ability .v33-skill-effect-row{gap:6px!important}
+ #v12Ability .v33-skill-effect-row .skill-desc{font-size:13px!important}
+ #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:12px!important}
+ .v31-evo-line{gap:5px!important;justify-content:flex-start!important}
+ .v31-evo-node{min-width:70px!important}
+ .v31-evo-image{width:62px!important;height:62px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+ .v31-evo-name{font-size:12px!important}
+ .v31-evo-step{min-width:64px!important}
+ .v31-evo-cond{font-size:11px!important}
+}
+@media(max-width:390px){
+ #dexDetail .v19-identity strong{font-size:19px!important}
+ #dexDetail .v19-identity .v19-type{font-size:12px!important}
+ .v31-evo-image{width:58px!important;height:58px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:70px!important;height:70px!important}
+ .v31-evo-step{min-width:58px!important}
+}
+</style>
+
+
+<style id="dex-detail-final-skill-style">
+/* v38 structure cleanup — frozen visual design from v37.
+   Block 2 row separators + Block 3 skill presentation are centralized here. */
+
+/* Block 2: A/B/C rows are separated by spacing/background, not rules. */
+#detailFoods .v24-food-row{border-bottom:0!important;}
+/* v39: requested text-color refinements only. */
+#detailFoods .v26-level-pill,
+#detailFoods .v26-recipe-head{color:#111!important;}
+
+/* Block 3 heading: same visual scale as Block 2 heading. */
+#v12Ability .skill-name{font-size:19px!important;font-weight:950!important;}
+
+/* Block 3 surface: no internal separator rules or legacy pseudo-rules. */
+#v12Ability .skill-box,
+#v12Ability .skill-top,
+#v12Ability .v33-skill-effect-row,
+#v12Ability .v33-skill-effect-row .skill-desc,
+#v12Ability .skill-levels,
+#v12Ability .skill-levels.open,
+#v12Ability .v32-skill-grid,
+#v12Ability .v32-skill-cell{
+  border:0!important;border-top:0!important;border-bottom:0!important;
+  outline:0!important;box-shadow:none!important;background-image:none!important;
+}
+#v12Ability .skill-top::before,
+#v12Ability .skill-top::after,
+#v12Ability .v33-skill-effect-row::before,
+#v12Ability .v33-skill-effect-row::after,
+#v12Ability .v33-skill-effect-row .skill-desc::before,
+#v12Ability .v33-skill-effect-row .skill-desc::after,
+#v12Ability .v32-skill-cell::before,
+#v12Ability .v32-skill-cell::after{
+  content:none!important;display:none!important;border:0!important;box-shadow:none!important;
+}
+
+/* 3-2: Lv.1 begins under the skill-name text, excluding the icon column. */
+#v12Ability .v33-skill-effect-row{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,auto) auto!important;
+  justify-content:start!important;align-items:start!important;
+  column-gap:10px!important;row-gap:3px!important;
+  padding-left:27px!important;margin-top:7px!important;
+}
+#v12Ability .v33-skill-effect-row .skill-desc{
+  display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;
+  align-items:baseline!important;column-gap:10px!important;
+  min-width:0!important;max-width:100%!important;
+  font-size:15px!important;line-height:1.55!important;
+}
+#v12Ability .v35-effect-level{white-space:nowrap!important;font-size:15px!important;}
+#v12Ability .v35-effect-copy{min-width:0!important;color:#111!important;font-size:15px!important;}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{
+  justify-self:start!important;align-self:start!important;
+  padding:1px 2px!important;margin:0!important;font-size:14px!important;
+  color:#111!important;
+}
+
+/* Responsive behavior from frozen v37 design. */
+@media(max-width:620px){
+  #v12Ability .skill-name{font-size:17px!important;}
+  #v12Ability .v33-skill-effect-row{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    padding-left:25px!important;column-gap:6px!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{min-width:0!important;font-size:14px!important;}
+  #v12Ability .v35-effect-level,#v12Ability .v35-effect-copy{font-size:14px!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:13px!important;}
+}
+@media(max-width:430px){
+  #v12Ability .v33-skill-effect-row{grid-template-columns:minmax(0,1fr)!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{margin-left:calc(2.4em + 10px)!important;}
+}
+</style>
 </head>
 <body>
-<div class="app">
-<header><h1>🌙 PokéSleep Guide</h1><div class="sub">寝顔集めから育成まで、毎日の攻略をサポート</div></header>
-
-<main><section id="home" class="section active"><div class="card"><div class="row"><div><div class="title">👥 今週のチーム</div><div class="muted">ホームに5匹を表示</div></div><button class="btn" onclick="show('box',document.querySelectorAll('nav button')[1])">変更</button></div><div class="team5" id="homeTeam"></div></div><div class="card"><div class="row"><div><div class="title">📖 寝顔図鑑</div><div class="muted" id="sleepProg">0 / 36 発見</div></div><b id="sleepPct">0%</b></div><div class="progress"><div class="bar" id="sleepBar" style="width:0%"></div></div></div><div class="card"><div class="title">📷 寝顔を一括チェック</div><div class="muted">寝顔図鑑のスクリーンショットを選択</div><input id="sleepShot" type="file" accept="image/*" multiple class="search"><button class="btn" style="width:100%" onclick="alert('画像解析による自動判定は次の段階で接続します')">画像解析</button></div></section><section id="box" class="section"><div class="card"><div class="row"><div><div class="title">📦 ボックス</div><div class="muted">手持ちポケモンを登録</div></div><span class="badge" id="boxCount">0匹</span></div><button class="btn" style="width:100%;margin-top:10px" onclick="addBox()">＋ 手持ちを登録</button><div class="boxgrid" id="boxGrid" style="margin-top:10px"></div></div></section><section id="dex" class="section"><div class="card"><div class="row"><div><div class="title">📖 ポケモン図鑑</div><div class="muted">タイプ・得意で絞り込み</div></div><span class="badge" id="nationalDexCount">読み込み中</span></div><input id="dexSearch" class="search" placeholder="🔍 ポケモン名で検索" oninput="applyDexFilters()"><div class="dex-filters"><select id="typeFilter" class="search" onchange="applyDexFilters()"><option value="">全タイプ</option><option>くさ</option><option>ほのお</option><option>みず</option><option>むし</option><option>ノーマル</option><option>どく</option><option>でんき</option><option>じめん</option><option>フェアリー</option></select><select id="specialtyFilter" class="search" onchange="applyDexFilters()"><option value="">全ての得意</option><option>きのみ</option><option>食材</option><option>スキル</option></select></div><div id="dexLoading" class="muted" style="padding:10px;text-align:center">読み込み中…</div><div class="dex-icon-grid" id="dexGrid"></div></div></section><section id="pokemonDetail" class="section"><div class="card"><div class="pokemon-page-head"><button class="back-btn" onclick="backToDex()">← 図鑑に戻る</button><div class="muted">ポケモン詳細</div></div><div id="pokemonPageContent"></div></div></section><section id="info" class="section"><div class="card"><div class="title">ℹ️ 情報</div><div class="tabs"><button class="tab active" onclick="infoTab('recipe',this)">🍳 料理</button><button class="tab" onclick="infoTab('field',this)">🗺️ フィールド</button></div><div id="info-recipe" class="panel active"><div class="tabs"><button class="tab active" onclick="recipeTab('カレー・シチュー',this)">🍛 カレー・シチュー</button><button class="tab" onclick="recipeTab('サラダ',this)">🥗 サラダ</button><button class="tab" onclick="recipeTab('デザート・ドリンク',this)">🍰 デザート・ドリンク</button></div><div id="recipeInfo"></div></div><div id="info-field" class="panel"><div class="tabs" id="fieldTabs"></div><div id="fieldInfo"></div></div></div></section>
-<section id="recipeDetail" class="section"><div class="card">
-  <div class="pokemon-page-head"><button class="back-btn" onclick="backToRecipes()">← 料理一覧</button><div class="muted">料理詳細</div></div>
-  <div id="recipeDetailContent"></div>
-</div></section></main>
-
-<nav><button class="active" onclick="show('home',this)"><span>🏠</span>ホーム</button><button onclick="show('box',this)"><span>📦</span>ボックス</button><button onclick="show('dex',this)"><span>📖</span>図鑑</button><button onclick="show('info',this)"><span>ℹ️</span>情報</button></nav>
+<header>PokéSleep Guide <small style="margin-left:6px;color:#7d8a85">Stable v39</small></header>
+<main>
+<section id="home" class="screen active"><h2>ホーム</h2><div class="card"><div class="section-title">現在のチーム</div><div class="empty">チームはまだ登録されていません。</div></div></section>
+<section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn">＋追加</button></div>
+<div class="compact-filter" id="boxCompactFilters">
+ <div class="box-filter-row">
+  <div class="filter-select" data-menu="box-type"><button class="filter-main">タイプ <span>▼</span></button><div class="filter-panel" id="boxTypeFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
+  <div class="filter-select" data-menu="box-ing"><button class="filter-main">食材 <span>▼</span></button><div class="filter-panel" id="boxIngredientFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
+ </div>
+ <div class="box-filter-row">
+  <div class="filter-select" data-menu="box-spec"><button class="filter-main">得意 <span>▼</span></button><div class="filter-panel" id="boxSpecialtyFilters"><button class="filter-option">🍓 きのみ</button><button class="filter-option">🥕 食材</button><button class="filter-option">✨ スキル</button></div></div>
+  <div class="filter-select" data-menu="box-tag"><button class="filter-main">タグ <span>▼</span></button><div class="filter-panel" id="boxTagFilters">
+   <button class="filter-option" data-tag="favorite">★ お気に入り</button>
+   <button class="filter-option" data-tag="training">🌱 育成</button>
+   <button class="filter-option" data-tag="special">✨ 特別</button>
+   <button class="filter-option" data-tag="shiny">🌈 色違い</button>
+   <div class="tag-note">お気に入り・育成＝ユーザー設定<br>特別＝種族属性／色違い＝個体固有属性</div>
+  </div></div>
+ </div>
+</div><div id="boxGrid" class="grid"></div><div id="boxEmpty" class="card empty">Boxは空です。<br>安定版では仮の5体を破棄しています。</div></section>
+<section id="dex" class="screen">
+<div class="toolbar"><h2 style="flex:1">ポケモン図鑑</h2><input id="dexSearch" style="max-width:150px" placeholder="名前検索"></div>
+<div class="compact-filter" id="dexCompactFilters">
+ <div class="filter-grid">
+  <div class="filter-select" data-menu="dex-type"><button class="filter-main">タイプ <span>▼</span></button><div class="filter-panel" id="typeFilters"></div></div>
+  <div class="filter-select" data-menu="dex-ing"><button class="filter-main">食材 <span>▼</span></button><div class="filter-panel" id="ingredientFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
+ </div>
+ <div class="spec-row" id="specialtyFilters">
+  <button class="filter-main" data-spec="きのみ">🍓 きのみ</button>
+  <button class="filter-main" data-spec="食材">🥕 食材</button>
+  <button class="filter-main" data-spec="スキル">✨ スキル</button>
+ </div>
 </div>
-<script>
-function show(id,btn){
- document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- if(btn){document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
- window.scrollTo(0,0)
+<div class="note" id="dexCount" style="margin:0 2px 8px">0 / 0</div>
+<div id="dexGrid" class="grid"></div><div id="dexEmpty" class="card empty">図鑑データは次段階で再調査して投入します。<br>未確認値は推測で埋めません。</div>
+</section>
+<section id="info" class="screen"><h2>情報</h2><div class="card"><div class="section-title">🍳 料理</div><div class="note">料理データ用の独立領域。マスターデータ投入後に表示します。</div></div><div class="card"><div class="section-title">🗺️ フィールド</div><div class="note">通常 / EXを含むフィールドデータ用の独立領域です。</div></div></section>
+<section id="dexDetail" class="screen">
+<div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2 style="margin:0;flex:1">ポケモン詳細</h2></div>
+<div class="detail-nav"><button id="prevPokemon">‹ 前</button><strong id="detailNoName">—</strong><button id="nextPokemon">後 ›</button></div>
+<div id="dexHero" class="hero type-normal">
+ <div class="hero-top"><div class="hero-art" id="detailArt">◌</div><div class="hero-info"><h2 id="detailName">—</h2><div class="white-row" id="detailTraits">タイプ / 睡眠タイプ / 得意</div></div></div>
+ <div class="stats" style="margin-top:10px">
+  <div class="stat"><small>きのみ</small><b id="detailBerry">未確認</b></div>
+  <div class="stat"><small>おてつだい時間</small><b id="detailHelp">未確認</b></div>
+  <div class="stat"><small>食材確率</small><b id="detailFoodRate">未確認</b></div>
+  <div class="stat"><small>スキル確率</small><b id="detailSkillRate">未確認</b></div>
+ </div>
+</div>
+<div class="detail-tabs"><button class="on" data-pane="ability">能力</button><button data-pane="sleep">寝顔</button><button data-pane="field">フィールド</button></div>
+<div id="pane-ability" class="detail-pane on">
+ <div class="card ability-card">
+  <div class="ability-title">🥕 食材 <span class="rate-badge" id="foodRateBadge">食材確率 未確認</span></div>
+  <div class="food-table-head"><span></span><span>Lv.1</span><span>Lv.30</span><span>Lv.60</span><span>料理</span></div>
+  <div id="detailFoods"><span class="unknown" style="display:block;padding:12px">未確認</span></div>
+ </div>
+ <div class="card ability-card">
+  <div class="ability-title">✨ スキル <span class="rate-badge" id="skillRateBadge">スキル確率 未確認</span></div>
+  <div class="skill-box">
+   <div class="skill-top"><div class="v26-skill-left"><div class="skill-icon">✦</div><div class="skill-name" id="detailSkill">未確認</div><span class="skill-rate-inline" id="skillRateInline">未確認</span></div><div class="v12-lv" id="v12SkillLv"></div></div>
+   <div class="v33-skill-effect-row"><p class="skill-desc" id="detailSkillEffect">効果データはマスターデータ投入後に表示します。</p><button class="skill-detail-toggle" id="skillDetailToggle">詳細を見る ▼</button></div>
+   <div class="skill-levels" id="skillLevels"><div class="skill-level-row"><b>Lv.1</b><span>効果データ未確認</span></div></div>
+  </div>
+ </div>
+ <div class="card" id="evolutionCard"><div class="section-title">🧬 進化</div><div id="detailEvolution" class="unknown">未確認</div></div>
+</div>
+<div id="pane-sleep" class="detail-pane"><div class="card"><div class="section-title">寝顔</div><div class="pills"><span class="pill">★1</span><span class="pill">★2</span><span class="pill">★3</span><span class="pill">★4</span></div><p class="unknown">寝顔データ投入後に表示します。</p></div></div>
+<div id="pane-field" class="detail-pane"><div class="card"><div class="section-title">フィールド</div><p class="unknown">フィールドデータ投入後に表示します。</p></div></div>
+</section>
+<section id="boxDetail" class="screen"><div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2 id="boxTitle">個体詳細</h2></div><div class="card"><div class="stats"><div class="stat"><small>おてつだい時間</small><b id="help">未確認</b></div><div class="stat"><small>最大所持数</small><b>未確認</b></div><div class="stat"><small>食材確率</small><b>未確認</b></div><div class="stat"><small>スキル確率</small><b>未確認</b></div></div></div><div class="card"><b>レベル</b><div style="display:flex;justify-content:center;gap:10px;align-items:center;margin:10px"><button class="btn" id="minus">−</button><b id="lv">Lv.1</b><button class="btn" id="plus">＋</button></div><input id="lvRange" type="range" min="1" max="100" value="1" style="width:100%"></div><div class="card"><b>🥕 食材</b></div><div class="card"><b>サブスキル</b></div><div class="card"><b>✨ スキル</b></div><div class="card"><b>🎀 おやすみリボン</b></div><div class="card"><b>🧬 進化情報</b></div><div class="card"><details><summary><b>… サブメニュー</b></summary><div class="pills" style="margin-top:10px"><button class="btn">⚙️ 個体値設定</button><button class="btn">☆ お気に入り</button><button class="btn">🌱 育成</button><button class="btn">↩️ 元に戻す</button></div></details></div></section>
+</main>
+<nav><button class="active" data-tab="home">⌂<br>ホーム</button><button data-tab="box">▣<br>ボックス</button><button data-tab="dex">▦<br>図鑑</button><button data-tab="info">ⓘ<br>情報</button></nav>
+<script id="stable-v2-controller">
+(()=>{'use strict';
+const state={screen:'home',history:[],box:[],selected:null,selectedDex:null,
+filters:{types:new Set(),ingredients:new Set(),specs:new Set()},
+boxFilters:{types:new Set(),ingredients:new Set(),specs:new Set(),tags:new Set()}};
+/* One source of truth. No Pokémon values are carried over from the unstable builds. */
+const master={
+ pokemon:[], ingredients:[],
+ /* Future master attribute: specialTeamCategory / specialTeamLimited.
+    Exact Pokémon assignments are intentionally deferred until current Sleep rules are verified. */
+ rules:{version:'stable-v3',verifiedAt:null}
+};
+/* Individual records may later contain:
+ favorite:boolean, training:boolean,
+ shiny:'confirmed'|'not_shiny'|'unknown'.
+ Shiny is not exposed as a freely editable tag. */
+const screens=[...document.querySelectorAll('.screen')],tabs=[...document.querySelectorAll('nav button')];
+
+function go(id,push=true){
+ if(push&&state.screen!==id)state.history.push(state.screen);
+ state.screen=id;
+ screens.forEach(s=>s.classList.toggle('active',s.id===id));
+ tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+ window.scrollTo(0,0);
 }
-function filterDex(){ applyDexFilters(); }
-function applyDexFilters(){
- const q=(document.getElementById('dexSearch')?.value||'').trim().toLowerCase();
- const type=document.getElementById('typeFilter')?.value||'';
- const specialty=document.getElementById('specialtyFilter')?.value||'';
- document.querySelectorAll('#dexGrid .dbitem').forEach(x=>{
-   const okQ=!q||x.dataset.search.toLowerCase().includes(q);
-   const okT=!type||x.dataset.type===type;
-   const okS=!specialty||x.dataset.specialty===specialty;
-   x.style.display=(okQ&&okT&&okS)?'block':'none';
+tabs.forEach(b=>b.onclick=()=>{state.history=[];go(b.dataset.tab,false)});
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>go(state.history.pop()||'home',false));
+
+const typeClass=t=>({'くさ':'grass','ほのお':'fire','みず':'water','でんき':'electric','むし':'bug','ノーマル':'normal','どく':'poison'}[t]||'normal');
+const specIcon=s=>s==='きのみ'?'🍓':s==='食材'?'🥕':s==='スキル'?'✨':'◌';
+const ingIcon=()=> '◌';
+
+function renderFilters(){
+ const types=[...new Set(master.pokemon.map(p=>p.type).filter(Boolean))];
+ typeFilters.innerHTML=types.length?types.map(t=>`<button class="filter-option" data-type="${t}">${t}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+ typeFilters.querySelectorAll('[data-type]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.filters.types.has(b.dataset.type)?state.filters.types.delete(b.dataset.type):state.filters.types.add(b.dataset.type);renderDex()});
+ specialtyFilters.querySelectorAll('[data-spec]').forEach(b=>b.onclick=()=>{b.classList.toggle('active');state.filters.specs.has(b.dataset.spec)?state.filters.specs.delete(b.dataset.spec):state.filters.specs.add(b.dataset.spec);renderDex()});
+}
+function setupMenus(){
+ document.querySelectorAll('.filter-select>.filter-main').forEach(btn=>btn.onclick=e=>{
+   e.stopPropagation();const host=btn.parentElement,was=host.classList.contains('open');
+   document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open'));
+   if(!was)host.classList.add('open');
  });
+ document.querySelectorAll('.filter-panel').forEach(p=>p.onclick=e=>e.stopPropagation());
+ document.addEventListener('click',()=>document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open')));
+ document.querySelectorAll('#boxSpecialtyFilters .filter-option').forEach((b,i)=>b.onclick=()=>{const v=['きのみ','食材','スキル'][i];b.classList.toggle('on');state.boxFilters.specs.has(v)?state.boxFilters.specs.delete(v):state.boxFilters.specs.add(v);renderBox()});
+ document.querySelectorAll('#boxTagFilters [data-tag]').forEach(b=>b.onclick=()=>{b.classList.toggle('on');const v=b.dataset.tag;state.boxFilters.tags.has(v)?state.boxFilters.tags.delete(v):state.boxFilters.tags.add(v);renderBox()});
 }
+function renderDex(){
+ const q=dexSearch.value.trim();
+ const all=master.pokemon;
+ const a=all.filter(p=>(!q||p.name.includes(q))&&(!state.filters.types.size||state.filters.types.has(p.type))&&(!state.filters.specs.size||state.filters.specs.has(p.specialty)));
+ dexCount.textContent=`${a.length} / ${all.length}`;
+ dexGrid.innerHTML=a.map(p=>`<article class="poke dex-card type-${typeClass(p.type)}" data-no="${p.no}">
+   <div class="dex-name">${p.name}</div><div class="dex-meta"><span>No.${String(p.no).padStart(3,'0')}</span><span>${p.sleepProgress??'0/—'}</span></div>
+   <div class="dex-art">${p.art||'◌'}</div><div class="dex-bottom"><span>${specIcon(p.specialty)}</span><span>${ingIcon(p.ingredients?.[0])}</span><span>${ingIcon(p.ingredients?.[1])}</span><span>${ingIcon(p.ingredients?.[2])}</span></div>
+  </article>`).join('');
+ dexEmpty.style.display=a.length?'none':'block';
+ dexGrid.querySelectorAll('[data-no]').forEach(c=>c.onclick=()=>openDex(+c.dataset.no));
+}
+function val(v,suffix=''){return v===null||v===undefined?'未確認':`${v}${suffix}`}
+function openDex(no){
+ const p=master.pokemon.find(x=>x.no===no); if(!p)return;
+ state.selectedDex=no;
+ detailNoName.textContent=`No.${String(p.no).padStart(3,'0')} ${p.name}`;detailName.textContent=p.name;detailArt.textContent=p.art||'◌';
+ dexHero.className=`hero type-${typeClass(p.type)}`;
+ detailTraits.textContent=[p.type,p.sleepType,p.specialty].filter(Boolean).join(' ｜ ')||'未確認';
+ detailBerry.textContent=val(p.berry);detailHelp.textContent=val(p.help,'秒');detailFoodRate.textContent=val(p.foodRate,'%');detailSkillRate.textContent=val(p.skillRate,'%');
+ const slots=p.ingredients||[];
+ const rows=[];
+ const slotA=slots.find(x=>x.unlock===1)||slots[0],slotB=slots.find(x=>x.unlock===30)||slots[1],slotC=slots.find(x=>x.unlock===60)||slots[2];
+ const aName=slotA?.candidates?.[0]?.name||slotA?.name;
+ const candidates=[
+   {letter:'A',name:aName,q1:slotA?.candidates?.find(c=>c.name===aName)?.qty??slotA?.qty,
+    q30:slotB?.candidates?.find(c=>c.name===aName)?.qty,q60:slotC?.candidates?.find(c=>c.name===aName)?.qty},
+   ...((slotB?.candidates||[]).filter(c=>c.name!==aName).map(c=>({letter:'B',name:c.name,q1:null,q30:c.qty,q60:slotC?.candidates?.find(z=>z.name===c.name)?.qty}))),
+   ...((slotC?.candidates||[]).filter(c=>c.name!==aName&&!((slotB?.candidates||[]).some(z=>z.name===c.name))).map(c=>({letter:'C',name:c.name,q1:null,q30:null,q60:c.qty})))
+ ];
+ const foodEmoji=n=>n?.includes('ミツ')?'🍯':n?.includes('トマト')?'🍅':n?.includes('ポテト')?'🥔':n?.includes('ミート')?'🥩':n?.includes('ジンジャー')?'🫚':n?.includes('ハーブ')?'🌿':n?.includes('大豆')?'🫘':'◌';
+ detailFoods.innerHTML=candidates.length?candidates.map(r=>`<div class="food-line">
+   <div class="food-id"><span class="food-letter">${r.letter}</span><span class="food-icon">${foodEmoji(r.name)}</span><span class="food-name">${r.name||'未確認'}</span></div>
+   <div class="food-qty">${r.q1??'—'}</div><div class="food-qty">${r.q30??'—'}</div><div class="food-qty">${r.q60??'—'}</div>
+   <div class="recipe-strip"><span class="recipe-ph">🍽️</span><span class="recipe-ph">🍽️</span><span class="recipe-ph">🍽️</span><span class="recipe-more">›</span></div>
+ </div>`).join(''):'<span class="unknown" style="display:block;padding:12px">未確認</span>';
+ foodRateBadge.textContent=`食材確率 ${val(p.foodRate,'%')}`;
+ skillRateBadge.textContent=`スキル確率 ${val(p.skillRate,'%')}`;
+ detailSkill.textContent=val(p.skill);detailEvolution.textContent=val(p.evolution);
+ const ix=master.pokemon.findIndex(x=>x.no===no);prevPokemon.disabled=ix<=0;nextPokemon.disabled=ix<0||ix>=master.pokemon.length-1;
+ prevPokemon.onclick=()=>ix>0&&openDex(master.pokemon[ix-1].no);nextPokemon.onclick=()=>ix<master.pokemon.length-1&&openDex(master.pokemon[ix+1].no);
+ go('dexDetail');
+}
+document.querySelectorAll('.detail-tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.detail-tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.detail-pane').forEach(x=>x.classList.toggle('on',x.id==='pane-'+b.dataset.pane))});
 
-const recipeData = [
-  {name:"あぶりテールカレー", ingredients:["げきからハーブ","マメミート"], tag:"カレー"},
-  {name:"とくせんリンゴカレー", ingredients:["とくせんリンゴ"], tag:"カレー"},
-  {name:"おやこあいカレー", ingredients:["とくせんリンゴ","マメミート"], tag:"カレー"},
-  {name:"あまいホイップクリーム", ingredients:["リラックスカカオ","モーモーミルク"], tag:"デザート・ドリンク"},
-  {name:"プリンのプリンアラモード", ingredients:["リラックスカカオ","モーモーミルク","とくせんエッグ"], tag:"デザート・ドリンク"}
-];
-
-function saveTeam(){
-  localStorage.setItem('pokesleep_team_saved','1');
-  alert('今週のチームを保存しました');
-  updateTeamAnalysis();
-}
-function updateTeamAnalysis(){
-  if(!document.getElementById('berryCount')) return;
-  const mons=[...document.querySelectorAll('.teammon')];
-  const counts={きのみ:0,食材:0,スキル:0};
-  mons.forEach(m=>{const r=m.dataset.role;if(counts[r]!==undefined)counts[r]++;});
-  document.getElementById('berryCount').textContent=counts.きのみ;
-  document.getElementById('ingredientCount').textContent=counts.食材;
-  document.getElementById('skillCount').textContent=counts.スキル;
-
-  // Prototype ingredient pool for the current sample team.
-  const available = new Set(["とくせんリンゴ","マメミート","げきからハーブ","リラックスカカオ","モーモーミルク","とくせんエッグ"]);
-  const possible=recipeData.filter(r=>r.ingredients.every(x=>available.has(x)));
-  document.getElementById('recipeCount').textContent=possible.length+"件";
-  document.getElementById('recipeList').innerHTML=possible.length
-    ? possible.map(r=>`<div class="recipe"><div class="recipe-title">🍳 ${r.name}</div><div class="recipe-tags">${r.tag}　｜　${r.ingredients.join("・")}</div></div>`).join("")
-    : '<div class="muted" style="padding:12px 0">現在の食材では登録済みの料理を作れません。</div>';
-}
-updateTeamAnalysis();
-function evaluatePokemon(){
- const nature=document.getElementById('nature').value;
- const role=document.getElementById('role').value;
- const s1=document.getElementById('sub1').value;
- const s2=document.getElementById('sub2').value;
- let score=60;
- if(nature.includes('スピード')) score+=12;
- if(nature.includes('確率')) score+=10;
- if(nature.includes('きのみ')) score+=10;
- if(role==='きのみ' && s1.includes('きのみ')) score+=12;
- if(role==='食材' && (s1.includes('食材')||s2.includes('食材'))) score+=10;
- if(role==='スキル' && (s1.includes('スキル')||s2.includes('スキル'))) score+=10;
- score=Math.min(score,99);
- const r=document.getElementById('evalResult');
- r.style.display='block';
- r.innerHTML='<div class="muted">入力内容からの参考評価</div><div class="eval-score">'+score+'/100</div><b>'+role+'向けの個体としてチェック</b><div class="small-note">※この評価は攻略アプリ独自の目安です。ゲーム内の公式な「個体値」ではありません。</div>';
-}
-
-function previewShot(e){
- const f=e.target.files[0]; if(!f)return;
- const img=document.getElementById('shotPreview');
- img.src=URL.createObjectURL(f); img.style.display='block';
-}
-function analyzeShot(){
- const f=document.getElementById('shot').files[0];
- if(!f){alert('スクリーンショットを選択してください');return;}
- document.getElementById('scanResult').style.display='block';
-}
-
-
-const POKE_DATA_URL = 'https://raw.githubusercontent.com/kotofurumiya/pokemon_data/master/data/pokemon_data.json';
-const POKE_IMAGE_URL = id => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
-const SLEEP_IMAGE_URL = {1:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_bulbasaur.png',2:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_ivysaur.png',3:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_venusaur.png',4:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmander.png',5:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charmeleon.png',6:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_charizard.png',7:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_squirtle.png',8:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_wartortle.png',9:'https://www.pokemonsleep.net/wp/wp-content/themes/sleep/diagnosis/img/result/result_blastoise.png'};
-const SLEEP_IMG = (id) => SLEEP_IMAGE_URL[id] || POKE_IMAGE_URL(id);
-function imgFallback(id){return `this.onerror=null;this.src='${POKE_IMAGE_URL(id)}'`;}
-
-// Pokémon Sleepに登場するポケモン（2026/9/20時点の公開攻略データを基準）
-const SLEEP_ROSTER = [
-"フシギダネ","フシギソウ","フシギバナ","ヒトカゲ","リザード","リザードン","ゼニガメ","カメール","カメックス","キャタピー","トランセル","バタフリー","コラッタ","ラッタ","アーボ","アーボック","ピカチュウ","ハロウィンピカチュウ","ホリデーピカチュウ","キャプテンピカチュウ","ライチュウ","サンド","サンドパン","ピッピ","ピクシー","ロコン","アローラロコン","キュウコン","アローラキュウコン","プリン","プクリン","ディグダ","ダグトリオ","ニャース","ペルシアン","コダック","ゴルダック","マンキー","オコリザル","ガーディ","ウインディ","マダツボミ","ウツドン","ウツボット","イシツブテ","ゴローン","ゴローニャ","ヤドン","ヤドラン","コイル","レアコイル","カモネギ","ドードー","ドードリオ","ゴース","ゴースト","ゲンガー","イワーク","カラカラ","ガラガラ","ラッキー","ガルーラ","バリヤード","カイロス","メタモン","イーブイ","ホリデーイーブイ","ハロウィンイーブイ","シャワーズ","サンダース","ブースター","ミニリュウ","ハクリュー","カイリュー","ミュウツー","ミュウ","チコリータ","ベイリーフ","メガニウム","ヒノアラシ","マグマラシ","バクフーン","ワニノコ","アリゲイツ","オーダイル","ピチュー","ピィ","ププリン","トゲピー","トゲチック","ネイティ","ネイティオ","メリープ","モココ","デンリュウ","ウソッキー","ウパー","パルデアウパー","ヌオー","エーフィ","ブラッキー","ヤミカラス","ヤドキング","ソーナンス","ハガネール","ツボツボ","ヘラクロス","ニューラ","デリバード","デルビル","ヘルガー","ハピナス","ライコウ","エンテイ","スイクン","ヨーギラス","サナギラス","バンギラス","キモリ","ジュプトル","ジュカイン","アチャモ","ワカシャモ","バシャーモ","ミズゴロウ","ヌマクロー","ラグラージ","ラルトス","キルリア","サーナイト","ナマケロ","ヤルキモノ","ケッキング","ヤミラミ","クチート","ココドラ","コドラ","ボスゴドラ","プラスル","ゴクリン","マルノーム","マイナン","ナックラー","ビブラーバ","フライゴン","チルット","チルタリス","カゲボウズ","ジュペッタ","アブソル","ソーナノ","タマザラシ","ホリデータマザラシ","トドグラー","トドゼルガ","タツベイ","コモルー","ボーマンダ","ラティアス","ラティオス","ナエトル","ハヤシガメ","ドダイトス","ヒコザル","モウカザル","ゴウカザル","ポッチャマ","ポッタイシ","エンペルト","コリンク","ルクシオ","レントラー","フワンテ","フワライド","ドンカラス","ウソハチ","マネネ","ピンプク","ミカルゲ","リオル","ルカリオ","グレッグル","ドクロッグ","ユキカブリ","ユキノオー","マニューラ","ジバコイル","トゲキッス","リーフィア","グレイシア","エルレイド","クレセリア","ダークライ","ムシャーナ","ムンナ","イシズマイ","イワパレス","ワシボン","ウォーグル","チゴラス","ガチゴラス","ニンフィア","ルチャブル","デデンネ","バケッチャ","パンプジン","オンバット","オンバーン","アゴジムシ","デンヂムシ","クワガノン","アブリー","アブリボン","ヌイコグマ","キテルグマ","キュワワー","トゲデマル","ミミッキュ","ジジーロン","ウッウ","エレズン","ストリンダー(ロー)","ストリンダー(ハイ)","ニャオハ","ニャローテ","マスカーニャ","ホゲータ","アチゲータ","ラウドボーン","クワッス","ウェルカモ","ウェーニバル","パモ","パモット","パーモット","カヌチャン","ナカヌチャン","デカヌチャン","アルクジラ","ハルクジラ","ドオー"
-];
-
-const SLEEP_ALIAS = {
-  "ハロウィンピカチュウ":"ピカチュウ","ホリデーピカチュウ":"ピカチュウ","キャプテンピカチュウ":"ピカチュウ",
-  "アローラロコン":"ロコン","アローラキュウコン":"キュウコン","ホリデーイーブイ":"イーブイ","ハロウィンイーブイ":"イーブイ",
-  "ホリデータマザラシ":"タマザラシ","パルデアウパー":"ウパー","ストリンダー(ロー)":"ストリンダー","ストリンダー(ハイ)":"ストリンダー"
-};
-function findBasePokemon(raw,name){
-  const direct=raw.find(p=>p.name===name && !p.isMegaEvolution);
-  if(direct) return direct;
-  const alias=SLEEP_ALIAS[name];
-  if(alias) return raw.find(p=>p.name===alias && !p.isMegaEvolution && !p.form);
-  return null;
-}
-const DEX_TEST_META={
-  1:{type:"くさ",specialty:"食材"},2:{type:"くさ",specialty:"食材"},3:{type:"くさ",specialty:"食材"},
-  4:{type:"ほのお",specialty:"食材"},5:{type:"ほのお",specialty:"食材"},6:{type:"ほのお",specialty:"食材"},
-  7:{type:"みず",specialty:"食材"},8:{type:"みず",specialty:"食材"},9:{type:"みず",specialty:"食材"},
-  10:{type:"むし",specialty:"きのみ"},11:{type:"むし",specialty:"きのみ"},12:{type:"むし",specialty:"きのみ"},
-  19:{type:"ノーマル",specialty:"きのみ"},20:{type:"ノーマル",specialty:"きのみ"},23:{type:"どく",specialty:"きのみ"},24:{type:"どく",specialty:"きのみ"},
-  25:{type:"でんき",specialty:"きのみ"},26:{type:"でんき",specialty:"きのみ"},27:{type:"じめん",specialty:"きのみ"},28:{type:"じめん",specialty:"きのみ"},
-  35:{type:"フェアリー",specialty:"スキル"},36:{type:"フェアリー",specialty:"スキル"}
-};
-const TYPE_CLASS={"くさ":"grass","ほのお":"fire","みず":"water","むし":"bug","ノーマル":"normal","どく":"poison","でんき":"electric","じめん":"ground","フェアリー":"fairy","ひこう":"flying"};
-async function loadNationalDex(){
-  const grid=document.getElementById('dexGrid'), loading=document.getElementById('dexLoading');
-  if(!grid) return;
-  try{
-    const res=await fetch(POKE_DATA_URL,{cache:'force-cache'}); if(!res.ok) throw new Error('data load failed');
-    const raw=await res.json();
-    const list=SLEEP_ROSTER.map(name=>({name,p:findBasePokemon(raw,name)})).filter(x=>x.p && x.p.no>=1 && x.p.no<=151 && ![29,30,31,32,33,34].includes(x.p.no)).sort((a,b)=>a.p.no-b.p.no);
-    grid.innerHTML=list.map(({name,p})=>{
-      const m=DEX_TEST_META[p.no]||{};
-      const type=m.type||(p.types||[])[0]||'—', specialty=m.specialty||'';
-      const search=[name,type,specialty,p.no].join(' '), tc=TYPE_CLASS[type]||'default';
-      return `<div class="dbitem dex-icon type-${tc}" data-name="${escapeHtml(name)}" data-type="${escapeHtml(type)}" data-specialty="${escapeHtml(specialty)}" data-search="${escapeHtml(search)}" onclick="showPokemonDetail(${p.no},'${escapeHtml(name)}')"><img class="poke-img" loading="lazy" src="${SLEEP_IMG(p.no)}" onerror="${imgFallback(p.no)}" alt="${escapeHtml(name)}"><b>${escapeHtml(name)}</b><div class="dex-no">${String(p.no).padStart(3,'0')}</div></div>`;
-    }).join('');
-    loading.textContent=`機能テスト：Pokémon Sleep登場ポケモンを全国図鑑No.151まで表示`;
-    document.getElementById('nationalDexCount').textContent=`テスト ${list.length}種`;
-  }catch(e){ loading.textContent='ポケモンデータの読み込みに失敗しました。通信環境を確認してください。'; }
-}
-function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
-const INGREDIENT_IMAGE = {
-  "あまいミツ":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB4PSIyNyIgeT0iMjUiIHdpZHRoPSI0NiIgaGVpZ2h0PSI1NSIgcng9IjEyIiBmaWxsPSIjZjVjNTQyIi8+PHBhdGggZD0iTTI3IDQyaDQ2IiBzdHJva2U9IiNkOTlkMTgiIHN0cm9rZS13aWR0aD0iNiIvPjxwYXRoIGQ9Ik0zOCAyMGgyNHYxMEgzOHoiIGZpbGw9IiNkOTlkMTgiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjU4IiByPSIxMiIgZmlsbD0iI2ZmZjNiMCIvPjwvc3ZnPg==", "あんみんトマト":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjU2IiByPSIzMCIgZmlsbD0iI2VmNWI1YiIvPjxwYXRoIGQ9Ik01MCAyN2w3LTEyIDggNC02IDEyTTUwIDI3bC0xMC04LTYgNyAxMiAxMCIgZmlsbD0iIzY1YTg1YiIvPjxwYXRoIGQ9Ik0yMCA2MmM2IDE1IDE4IDI1IDMwIDI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOTQzNDMiIHN0cm9rZS13aWR0aD0iNCIgb3BhY2l0eT0iLjUiLz48L3N2Zz4=", "ほっこりポテト":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMjUgNThjMC0yMiAxMS0zNyAyNy0zN3MyOCAxNSAyOCAzN2MwIDE4LTEzIDI5LTI4IDI5UzI1IDc2IDI1IDU4eiIgZmlsbD0iI2M5OWI2MSIvPjxjaXJjbGUgY3g9IjQyIiBjeT0iNTEiIHI9IjMiIGZpbGw9IiM5YTcwNDAiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjY1IiByPSIzIiBmaWxsPSIjOWE3MDQwIi8+PHBhdGggZD0iTTQ1IDIzYzAtOSA4LTEyIDEyLTE1IDMgNyAxIDEyLTMgMTYiIGZpbGw9IiM2N2E2NWEiLz48L3N2Zz4=",
-  "マメミート":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMjUgNDJjNS0xOCAyMC0yMyAzNS0xOCAxNCA1IDI0IDE3IDE3IDMxLTggMTctMjYgMjQtNDEgMTdDMjQgNjYgMjEgNTUgMjUgNDJ6IiBmaWxsPSIjYzk2YjU0Ii8+PHBhdGggZD0iTTM5IDQzYzctOCAxNi03IDIxIDAtNSA2LTE0IDktMjEgNXoiIGZpbGw9IiNmM2IwYTAiLz48L3N2Zz4=", "あったかジンジャー":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMzcgMzJjOC0xMCAyMC05IDI3LTIgMTAtMSAxNyA4IDEzIDE3IDUgOS0xIDIwLTExIDIxLTcgOC0yMCA3LTI2LTItMTEgMC0xNi0xMy0xMC0yMS0yLTUgMC0xMCA3LTEzeiIgZmlsbD0iI2Q5YTQ1YSIvPjxwYXRoIGQ9Ik00NCAzOWM2IDMgOSA5IDggMTZNNjEgMzdjLTMgNi0zIDEzIDEgMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I3N2EzOCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PC9zdmc+", "げきからハーブ":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNNTAgODJDNDggNjAgNTEgMzYgNjMgMjAiIHN0cm9rZT0iIzRmOGY0ZCIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTU3IDQ1Yy0xNC05LTI2LTYtMzAgNCAxMSA4IDIyIDcgMzAtNHpNNTggMzRjMi0xMyAxMC0yMCAyMS0xOSAxIDExLTYgMTgtMjEgMTl6TTUxIDU4Yy0xMi0zLTIxIDItMjQgMTEgMTEgNSAyMSAxIDI0LTExeiIgZmlsbD0iIzYzYTY1ZCIvPjxwYXRoIGQ9Ik02OCAyNWM4IDMgMTAgOSA5IDE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNlMDdiNGYiIHN0cm9rZS13aWR0aD0iNSIvPjwvc3ZnPg==",
-  "モーモーミルク":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMzQgMjJoMzJsNyAxMnY0N0gyN1YzNHoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I5YzRjYyIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTM0IDIydi04aDMydjgiIGZpbGw9IiNkZmU3ZWMiLz48cGF0aCBkPSJNMzAgNDloNDAiIHN0cm9rZT0iI2E5ZDRlNiIgc3Ryb2tlLXdpZHRoPSI4Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI2NiIgcj0iOSIgZmlsbD0iI2E5ZDRlNiIvPjwvc3ZnPg==", "リラックスカカオ":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMzAgNjZjLTktMTcgMC0zOSAxOS00NSAxOSA2IDI4IDI4IDE5IDQ1LTggMTQtMzAgMTQtMzggMHoiIGZpbGw9IiM3YjRhMzUiLz48cGF0aCBkPSJNNTAgMjN2NTRNMzYgMzFjOCA4IDggMjkgMCAzN002NCAzMWMtOCA4LTggMjkgMCAzNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYTg2YjRkIiBzdHJva2Utd2lkdGg9IjQiLz48L3N2Zz4="
-};
-function ingredientRows(items){ return (items||[]).map(x=>{const lv=(x.level==='Lv.1'||x.level==='1')?'':`<span class="ingredient-level">${escapeHtml(String(x.level).replace('Lv.',''))}</span>`;return `<div class="ingredient-row"><img src="${INGREDIENT_IMAGE[x.name]||''}" alt="${escapeHtml(x.name)}"><div class="ingredient-main"><div class="ingredient-name">${escapeHtml(x.name)} ${lv}</div><div class="ingredient-qty">1回のおてつだい：<b>${escapeHtml(x.qty)}</b></div></div></div>`}).join(''); }
-const SLEEP_FACE_DATA = {
-  "フシギダネ": {no:1,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "フシギソウ": {no:2,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "フシギバナ": {no:3,type:"うとうと", specialty:"食材", ingredients:[{name:"あまいミツ",level:"Lv.1",qty:"2個"},{name:"あんみんトマト",level:"Lv.30",qty:"4個"},{name:"ほっこりポテト",level:"Lv.60",qty:"6個"}], faces:["こうごうせい寝","ふんばり寝","ツルだし寝","おなかのうえ寝"]},
-  "ヒトカゲ": {no:4,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
-  "リザード": {no:5,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
-  "リザードン": {no:6,type:"すやすや", specialty:"食材", ingredients:[{name:"マメミート",level:"Lv.1",qty:"2個"},{name:"あったかジンジャー",level:"Lv.30",qty:"4個"},{name:"げきからハーブ",level:"Lv.60",qty:"6個"}], faces:["うでまくら寝","すわり寝","ぐうたら寝","おなかのうえ寝"]},
-  "ゼニガメ": {no:7,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
-  "カメール": {no:8,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]},
-  "カメックス": {no:9,type:"ぐっすり", specialty:"食材", ingredients:[{name:"モーモーミルク",level:"Lv.1",qty:"2個"},{name:"リラックスカカオ",level:"Lv.30",qty:"3個"},{name:"マメミート",level:"Lv.60",qty:"7個"}], faces:["からにこもる寝","こもらない寝","ひっくりかえり寝","おなかのうえ寝"]}
-};
-const EVOLUTION_DATA = {
-  "フシギダネ":[{no:2,name:"フシギソウ",cond:"Lv.12 + フシギダネのアメ×40"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
-  "フシギソウ":[{no:1,name:"フシギダネ",cond:"進化前"},{no:3,name:"フシギバナ",cond:"Lv.24 + フシギダネのアメ×80"}],
-  "フシギバナ":[{no:2,name:"フシギソウ",cond:"進化前"}],
-  "ヒトカゲ":[{no:5,name:"リザード",cond:"Lv.12 + ヒトカゲのアメ×40"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
-  "リザード":[{no:4,name:"ヒトカゲ",cond:"進化前"},{no:6,name:"リザードン",cond:"Lv.27 + ヒトカゲのアメ×80"}],
-  "リザードン":[{no:5,name:"リザード",cond:"進化前"}],
-  "ゼニガメ":[{no:8,name:"カメール",cond:"Lv.12 + ゼニガメのアメ×40"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
-  "カメール":[{no:7,name:"ゼニガメ",cond:"進化前"},{no:9,name:"カメックス",cond:"Lv.27 + ゼニガメのアメ×80"}],
-  "カメックス":[{no:8,name:"カメール",cond:"進化前"}]
-};
-function sleepWikiUrl(name){ return 'https://wikiwiki.jp/poke_sleep/' + encodeURIComponent(name); }
-function sleepFaceHtml(name,no){
-  const d=SLEEP_FACE_DATA[name];
-  if(!d) return `<div class="article"><b>😴 寝顔図鑑</b><br><span class="muted">寝顔データを追加中です。</span></div>`;
-  return `<div class="article"><b>😴 寝顔図鑑</b><div class="muted" style="margin:4px 0 8px">${d.type}タイプ・★1〜★4</div><div class="sleep-faces">${d.faces.map((f,i)=>`<div class="sleep-face"><div class="face-icon" style="display:block;font-size:32px;padding:12px 0">😴</div><b>${escapeHtml(f)}</b><span>★${i+1}</span><a href="${sleepWikiUrl(name)}" target="_blank" rel="noopener" class="small-note" style="display:block;margin-top:6px">寝顔画像を見る ↗</a></div>`).join('')}</div><div class="small-note">※寝顔名・睡眠タイプは公開されているPokémon Sleep攻略データを参照しています。</div></div>`;
-}
-function evolutionHtml(name){
-  const arr=EVOLUTION_DATA[name]||[];
-  if(!arr.length) return '';
-  return `<div class="article"><div class="evo-title">🔄 進化先・進化条件</div><div class="evo-grid">${arr.map(e=>`<div class="evo-card clickable" onclick="showPokemonDetail(${e.no},'${escapeHtml(e.name)}')"><img src="${SLEEP_IMG(e.no)}" onerror="${imgFallback(e.no)}" alt="${escapeHtml(e.name)}"><div><div class="evo-name">${escapeHtml(e.name)}</div><div class="evo-cond">${escapeHtml(e.cond)}</div><div class="small-note">タップして詳細へ →</div></div></div>`).join('')}</div></div>`;
-}
-function showPokemonDetail(no,name){
-  const d=SLEEP_FACE_DATA[name]||{};
-  const content=document.getElementById('pokemonPageContent');
-  content.innerHTML=`
-    <div class="pokemon-hero">
-      <img src="${SLEEP_IMG(no)}" onerror="${imgFallback(no)}" alt="${escapeHtml(name)}">
-      <div class="pokemon-page-title">${escapeHtml(name)}</div>
-      <div class="muted">No.${String(no).padStart(4,'0')} / ${escapeHtml(d.type||'—')}</div>
-      <div style="margin-top:8px"><span class="badge">Pokémon Sleep登場</span></div>
-    </div>
-    <div class="article"><b>📋 基本情報</b><div class="sleep-profile"><div class="profile-box"><div class="label">睡眠タイプ</div><div class="value">${escapeHtml(d.type||'—')}</div></div><div class="profile-box"><div class="label">得意</div><div class="value">${escapeHtml(d.specialty||'—')}</div></div></div></div>
-    <div class="article"><b>🥕 食材と量</b>${ingredientRows(d.ingredients)}<div class="ingredient-note">※表示量は1回のおてつだいで拾う食材数。Lv.30/Lv.60で解放される枠を含みます。</div></div>
-    ${evolutionHtml(name)}
-    ${sleepFaceHtml(name,no)}
-    <div class="article"><b>ポケモン情報</b><br>Pokémon Sleepの睡眠タイプ・得意・食材を表示しています。今後、メインスキル・きのみ・お手伝い時間なども追加できます。</div>
-    <button class="btn" style="width:100%;margin-top:10px" onclick="show('scan')">スクショ個体評価へ</button>`;
-  show('pokemonDetail');
-}
-function backToDex(){
-  const dexBtn=document.querySelector('nav button:nth-child(3)');
-  show('dex',dexBtn);
-}
-
-loadNationalDex();
-
-const dbDetails = {
-  "イーブイ": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png", type:"ノーマル", specialty:"スキル", skill:"食材ゲットS", berry:"ブリーのみ", note:"進化先や役割に応じてチームを調整" },
-  "ヒトカゲ": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png", type:"ほのお", specialty:"食材", skill:"食材ゲットS", berry:"ヒメリのみ", note:"食材枠として料理を支える候補" },
-  "カビゴン": { image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png", type:"ノーマル", specialty:"サポート", skill:"なし", berry:"フィラのみ", note:"睡眠リサーチの中心となるポケモン" },
-  "ミュウツー": {
-    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
-    type:"エスパー", specialty:"スキル", skill:"サイコブレイク（きのみゾーン）",
-    berry:"オボンのみ", note:"スキルタイプとして個体評価・チーム編成に利用"
-  },
-  "ピカチュウ": {
-    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-    type:"でんき", specialty:"きのみ", skill:"エナジーチャージS",
-    berry:"ウブのみ", note:"きのみ役として評価"
-  },
-  "マダツボミ": {
-    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png",
-    type:"くさ", specialty:"食材", skill:"げんきチャージS",
-    berry:"ドリのみ", note:"食材構成を確認して評価"
-  },
-  "フワンテ": {
-    image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/425.png",
-    type:"ゴースト", specialty:"スキル", skill:"たくわえる（エナジーチャージS）",
-    berry:"ブリーのみ", note:"スキル発動を軸に評価"
-  }
-};
-document.querySelectorAll('.dbitem').forEach(el=>{
-  el.addEventListener('click',()=>{
-    const name=el.querySelector('b').textContent;
-    const d=dbDetails[name]; if(!d)return;
-    document.getElementById('dbDetail').innerHTML=
-      '<div class="row"><div><img class="poke-detail-img" src="'+d.image+'" alt="'+name+'"></div><div style="flex:1"><div class="title">'+name+'</div><span class="badge">'+d.specialty+'</span></div></div>'+
-      '<div class="article"><b>タイプ</b><br>'+d.type+'</div>'+
-      '<div class="article"><b>とくい</b><br>'+d.specialty+'</div>'+
-      '<div class="article"><b>メインスキル</b><br>'+d.skill+'</div>'+
-      '<div class="article"><b>きのみ</b><br>'+d.berry+'</div>'+
-      '<div class="article"><b>攻略メモ</b><br>'+d.note+'</div>'+
-      '<button class="btn" onclick="show(\'scan\')">スクショ個体評価へ</button>';
-  });
+function renderBox(){
+ const q=boxSearch.value.trim(),a=state.box.filter(x=>{
+ const text=!q||x.name.includes(q);
+ const spec=!state.boxFilters.specs.size||state.boxFilters.specs.has(x.specialty);
+ const tags=!state.boxFilters.tags.size||[...state.boxFilters.tags].every(t=>
+   t==='favorite'?!!x.favorite:t==='training'?!!x.training:t==='special'?!!x.specialTeamLimited:t==='shiny'?x.shiny==='confirmed':true);
+ return text&&spec&&tags;
 });
-function filterDB(q){
-  q=q.trim().toLowerCase();
-  document.querySelectorAll('.dbitem').forEach(el=>{
-    el.style.display=el.dataset.search.toLowerCase().includes(q)?'block':'none';
-  });
+ boxGrid.innerHTML=a.map(x=>`<div class="poke" data-id="${x.id}"><b>${x.name}</b><small>Lv.${x.level}</small><div class="icons">🍓 ◌ ◌ ◌</div></div>`).join('');
+ boxEmpty.style.display=a.length?'none':'block';
+ boxGrid.querySelectorAll('.poke').forEach(c=>c.onclick=()=>openBox(c.dataset.id));
 }
-
-
-const dailyIngredientData = [
-  {name:"とくせんリンゴ", amount:18},
-  {name:"マメミート", amount:15},
-  {name:"げきからハーブ", amount:12},
-  {name:"リラックスカカオ", amount:10},
-  {name:"モーモーミルク", amount:14},
-  {name:"とくせんエッグ", amount:8}
-];
-
-function updateDailyIngredients(){
-  const box=document.getElementById('dailyIngredientList');
-  if(!box) return;
-  box.innerHTML=dailyIngredientData.map(x=>{
-    const width=Math.min(100, x.amount*4);
-    return `<div style="margin:10px 0">
-      <div class="row"><span>${x.name}</span><b>${x.amount}個/日</b></div>
-      <div class="progress"><div class="bar" style="width:${width}%"></div></div>
-    </div>`;
-  }).join('');
-}
-updateDailyIngredients();
-
-function updateTomorrowCandidates(){
-  const box=document.getElementById('tomorrowCandidateList');
-  if(!box) return;
-  const candidates=[
-    {name:"カメックス", role:"食材", focus:"モーモーミルク", reason:"ミルク系の食材を補う候補"},
-    {name:"ウツボット", role:"食材", focus:"料理向け食材", reason:"食材枠を増やして料理用の在庫を安定させる候補"},
-    {name:"カイリュー", role:"食材", focus:"食材全体", reason:"不足しやすい食材を補う食材枠の候補"}
-  ];
-  box.innerHTML=candidates.map((x,i)=>`
-    <div class="article">
-      <div class="row"><b>${i+1}. ${x.name}</b><span class="badge">${x.role}</span></div>
-      <div style="margin-top:6px"><span class="tag">${x.focus}</span></div>
-      <div class="muted" style="margin-top:5px">${x.reason}</div>
-      <button class="btn" style="margin-top:8px" onclick="alert('${x.name}を明日の候補としてチーム比較に追加しました（試作版）')">候補に入れる</button>
-    </div>`).join('');
-}
-updateTomorrowCandidates();
-
-
-function updateSuggestions(){
-  const box=document.getElementById('suggestionList');
-  if(!box) return;
-  const suggestions=[
-    {title:"食材担当を1匹追加", text:"1日分の食材に余裕を作るため、食材タイプのポケモンを追加する候補です。"},
-    {title:"料理を優先して編成", text:"現在集められる食材から作れる料理を確認し、狙いたい料理に必要な食材を優先します。"},
-    {title:"スキル担当を1匹確保", text:"料理・回復などのスキルを活用したい場合は、スキルタイプを1枠入れる候補です。"}
-  ];
-  box.innerHTML=suggestions.map((s,i)=>`
-    <div class="article">
-      <div class="row"><b>${i+1}. ${s.title}</b><span class="badge">提案</span></div>
-      <div class="muted" style="margin-top:5px">${s.text}</div>
-    </div>`).join('');
-}
-updateSuggestions();
-
+function openBox(id){state.selected=state.box.find(x=>x.id===id);if(!state.selected)return;boxTitle.textContent=state.selected.name;syncLevel();go('boxDetail')}
+function syncLevel(){if(!state.selected)return;lv.textContent='Lv.'+state.selected.level;lvRange.value=state.selected.level;help.textContent='未確認'}
+minus.onclick=()=>{if(state.selected){state.selected.level=Math.max(1,state.selected.level-1);syncLevel()}};
+plus.onclick=()=>{if(state.selected){state.selected.level=Math.min(100,state.selected.level+1);syncLevel()}};
+lvRange.oninput=()=>{if(state.selected){state.selected.level=+lvRange.value;syncLevel()}};
+boxSearch.oninput=renderBox;dexSearch.oninput=renderDex;
+addBtn.onclick=()=>alert('個体登録はBox実装段階で接続します。');
+renderFilters();setupMenus();renderDex();renderBox();
+window.PS={state,master,go,renderDex,openDex,renderBox};
+})();
 </script>
-<script>const team=[{no:25,name:'ピカチュウ'},{no:4,name:'ヒトカゲ'},{no:7,name:'ゼニガメ'},{no:1,name:'フシギダネ'},{no:133,name:'イーブイ'}];function renderHome(){homeTeam.innerHTML=team.map(x=>`<div class="slot"><img src="${POKE_IMAGE_URL(x.no)}"><b>${x.name}</b></div>`).join('')}let BOX=JSON.parse(localStorage.getItem('ps_box')||'[]');function renderBox(){boxCount.textContent=BOX.length+'匹';boxGrid.innerHTML=BOX.length?BOX.map((x,i)=>`<div class="boxmon"><img src="${POKE_IMAGE_URL(x.no)}"><b>${x.name}</b><div class="muted">Lv.${x.lv}</div><button class="btn" onclick="BOX.splice(${i},1);saveBox()">削除</button></div>`).join(''):'<div class="muted" style="grid-column:1/-1">まだ登録されていません。</div>'}function saveBox(){localStorage.setItem('ps_box',JSON.stringify(BOX));renderBox()}function addBox(){let a=[{no:1,name:'フシギダネ'},{no:4,name:'ヒトカゲ'},{no:7,name:'ゼニガメ'},{no:25,name:'ピカチュウ'}],x=a[BOX.length%4];BOX.push({...x,lv:10});saveBox()}function infoTab(id,b){document.querySelectorAll('#info .panel').forEach(x=>x.classList.remove('active'));document.getElementById('info-'+id).classList.add('active');b.parentElement.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active')}const ING_EMOJI={
-'マメミート':'🥩','げきからハーブ':'🌿','あったかジンジャー':'🫚','あじわいキノコ':'🍄',
-'モーモーミルク':'🥛','ほっこりポテト':'🥔','ピュアなオイル':'🫙','つやつやアボカド':'🥑',
-'ふといながねぎ':'🥬','とくせんエッグ':'🥚','あまいミツ':'🍯','ワカクサ大豆':'🫘',
-'あんみんトマト':'🍅','めざましコーヒー':'☕','ワカクサコーン':'🌽','ずっしりカボチャ':'🎃',
-'リラックスカカオ':'🍫'
+<script id="stable-v4-master-foundation">
+(()=>{
+/* Stable v4 master contract.
+   Null means "not yet verified"; UI must display 未確認 rather than invent a value.
+   This object is intentionally separate from user Box data and calculation rules. */
+const MASTER_V4={
+ schemaVersion:1,
+ dataVersion:"2026-09-26-research-1",
+ pokemon:[
+  {no:1,name:"フシギダネ",type:"くさ",sleepType:"うとうと",specialty:"食材",berry:"ドリのみ",berryQty:1,
+   help:4400,carry:11,foodRate:25.70,skillRate:1.90,skill:"食材ゲットS",
+   ingredients:[
+    {slot:"A",unlock:1,candidates:[{name:"あまいミツ",qty:2}]},
+    {slot:"B",unlock:30,candidates:[{name:"あまいミツ",qty:5},{name:"あんみんトマト",qty:4}]},
+    {slot:"C",unlock:60,candidates:[{name:"あまいミツ",qty:7},{name:"あんみんトマト",qty:7},{name:"ほっこりポテト",qty:6}]}
+   ],evolution:{to:"フシギソウ",level:12,candy:40},verified:true},
+  {no:4,name:"ヒトカゲ",type:"ほのお",sleepType:"すやすや",specialty:"食材",berry:"ヒメリのみ",
+   help:3500,carry:12,foodRate:20.10,skillRate:1.10,skill:"食材ゲットS",
+   ingredients:[
+    {slot:"A",unlock:1,candidates:[{name:"マメミート",qty:2}]},
+    {slot:"B",unlock:30,candidates:[{name:"マメミート",qty:5},{name:"あったかジンジャー",qty:4}]},
+    {slot:"C",unlock:60,candidates:[{name:"マメミート",qty:7},{name:"あったかジンジャー",qty:7},{name:"げきからハーブ",qty:6}]}
+   ],evolution:null,verified:true},
+  {no:10,name:"キャタピー",type:"むし",sleepType:"うとうと",specialty:"きのみ",berry:"ラムのみ",
+   help:4400,carry:11,foodRate:17.90,skillRate:0.80,skill:"食材ゲットS",
+   ingredients:[
+    {slot:"A",unlock:1,candidates:[{name:"あまいミツ",qty:1}]},
+    {slot:"B",unlock:30,candidates:[{name:"あまいミツ",qty:2},{name:"あんみんトマト",qty:2}]},
+    {slot:"C",unlock:60,candidates:[{name:"あまいミツ",qty:4},{name:"あんみんトマト",qty:3},{name:"ワカクサ大豆",qty:4}]}
+   ],evolution:null,verified:true}
+ ],
+ pendingNationalNos:[2,3,5,6,7,8,9,11,12,19,20,23,24,25],
+ absentOrPendingVerification:[13,14,15,16,17,18,21,22],
+ sourceNote:"Current Sleep-specific values are added only after cross-checking; pending records remain absent."
 };
-const recipes=[
-{cat:'カレー・シチュー',name:'とびはねるカレーうどん',base:25539,max:91430,ings:[['マメミート',20],['げきからハーブ',22],['あったかジンジャー',39],['あじわいキノコ',31]]},
-{cat:'カレー・シチュー',name:'しんりょくアボカドグラタン',base:24802,max:88791,ings:[['モーモーミルク',41],['ほっこりポテト',20],['ピュアなオイル',32],['つやつやアボカド',22]]},
-{cat:'カレー・シチュー',name:'いあいぎりすき焼きカレー',base:20655,max:73945,ings:[['マメミート',26],['ふといながねぎ',27],['とくせんエッグ',22],['あまいミツ',26]]},
-{cat:'サラダ',name:'ごろごろねっとうサラダ',base:25356,max:90774,ings:[['ほっこりポテト',30],['あじわいキノコ',27],['ワカクサコーン',18],['ずっしりカボチャ',20]]},
-{cat:'サラダ',name:'じならしワカモレチップス',base:25162,max:90080,ings:[['ワカクサ大豆',22],['げきからハーブ',30],['ワカクサコーン',25],['つやつやアボカド',28]]},
-{cat:'サラダ',name:'まけんきコーヒーサラダ',base:20218,max:72380,ings:[['マメミート',28],['ほっこりポテト',22],['ピュアなオイル',22],['めざましコーヒー',28]]},
-{cat:'デザート・ドリンク',name:'みつあつめチョコワッフル',base:25484,max:91233,ings:[['リラックスカカオ',21],['ピュアなオイル',28],['あまいミツ',38],['ワカクサコーン',28]]},
-{cat:'デザート・ドリンク',name:'ドキドキこわいかおパンケーキ',base:24354,max:87187,ings:[['とくせんエッグ',24],['あんみんトマト',29],['あまいミツ',32],['ずっしりカボチャ',18]]},
-{cat:'デザート・ドリンク',name:'ドオーのエクレア',base:20885,max:74768,ings:[['リラックスカカオ',30],['モーモーミルク',26],['あまいミツ',22],['めざましコーヒー',24]]}
-];
-let currentRecipeCat='カレー・シチュー', selectedIngredient='', goodCamp=false;
-const RECIPE_POKEMON={
-'あまいミツ':[[1,'フシギダネ',1],[2,'フシギソウ',1],[3,'フシギバナ',1]],
-'モーモーミルク':[[7,'ゼニガメ',1],[8,'カメール',1],[9,'カメックス',1]],
-'ほっこりポテト':[[1,'フシギダネ',60],[2,'フシギソウ',60],[3,'フシギバナ',60]],
-'マメミート':[[4,'ヒトカゲ',1],[5,'リザード',1],[6,'リザードン',1],[7,'ゼニガメ',60],[8,'カメール',60],[9,'カメックス',60]],
-'げきからハーブ':[[4,'ヒトカゲ',60],[5,'リザード',60],[6,'リザードン',60]],
-'あったかジンジャー':[[4,'ヒトカゲ',30],[5,'リザード',30],[6,'リザードン',30]],
-'リラックスカカオ':[[7,'ゼニガメ',30],[8,'カメール',30],[9,'カメックス',30]]
-};
-function ingEmoji(n){return ING_EMOJI[n]||'🥕'}
-function recipeTotal(r){return r.ings.reduce((s,x)=>s+x[1],0)}
-function recipeTab(c,b){currentRecipeCat=c;b.parentElement.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedIngredient='';renderRecipes()}
-function renderRecipes(){
- const all=[...new Set(recipes.filter(r=>r.cat===currentRecipeCat).flatMap(r=>r.ings.map(x=>x[0])))];
- const list=recipes.filter(r=>r.cat===currentRecipeCat && (!selectedIngredient||r.ings.some(x=>x[0]===selectedIngredient))).sort((a,b)=>b.max-a.max);
- recipeInfo.innerHTML=`<div class="recipe-tools"><div class="muted">食材で絞り込み</div><div class="ingredient-filter"><button class="ing-filter-btn ${selectedIngredient?'':'active'}" onclick="selectedIngredient='';renderRecipes()">すべて</button>${all.map(n=>`<button title="${n}" class="ing-filter-btn ${selectedIngredient===n?'active':''}" onclick="selectedIngredient='${n}';renderRecipes()">${ingEmoji(n)}</button>`).join('')}</div><div class="camp-toggle"><span>⛺ いいキャンプチケット</span><button class="switch ${goodCamp?'on':''}" onclick="goodCamp=!goodCamp;renderRecipes()">${goodCamp?'ON':'OFF'}</button></div></div>`+
- list.map(r=>`<div class="recipe-card" onclick="showRecipeDetail('${r.name}')"><b>${r.name}</b><div class="recipe-energy-max">最大Lvエナジー ${r.max.toLocaleString()}</div><div class="recipe-energy-base">基礎エナジー ${r.base.toLocaleString()}</div><div class="recipe-ing-line"><span class="pot-count">🍲 ×${recipeTotal(r)}</span>${r.ings.map(x=>`<span class="ing-chip">${ingEmoji(x[0])} ×${x[1]}</span>`).join('')}</div><div class="small-note">タップして詳細へ →</div></div>`).join('');
-}
-function showRecipeDetail(name){
- const r=recipes.find(x=>x.name===name); if(!r)return;
- recipeDetailContent.innerHTML=`<div class="pokemon-hero"><div class="pokemon-page-title">${r.name}</div><div class="recipe-energy-max">最大Lvエナジー ${r.max.toLocaleString()}</div><div class="recipe-energy-base">基礎エナジー ${r.base.toLocaleString()}</div><div style="margin-top:9px"><span class="pot-count">🍲 ×${recipeTotal(r)}</span></div></div><div class="article"><b>🥕 必要食材</b>${r.ings.map(x=>`<div class="recipe-detail-ing"><div class="recipe-detail-ing-title">${ingEmoji(x[0])} ${x[0]} ×${x[1]}</div>${recipePokemonHtml(x[0])}</div>`).join('')}</div>`;
- show('recipeDetail');
-}
-function recipePokemonHtml(ing){
- const a=RECIPE_POKEMON[ing]||[];
- if(!a.length)return `<div class="small-note">この食材を拾うポケモンはデータ追加中です。</div>`;
- return `<div class="recipe-pokemon-row">${a.map(p=>`<div class="recipe-pokemon" onclick="showPokemonDetail(${p[0]},'${p[1]}')"><img src="${SLEEP_IMG(p[0])}" onerror="${imgFallback(p[0])}" alt="${p[1]}">${p[2]===1?'':`<span class="unlock-badge">${p[2]}</span>`}</div>`).join('')}</div>`;
-}
-function backToRecipes(){show('info',document.querySelectorAll('nav button')[3]);setTimeout(()=>{document.querySelector('#info .tab')?.click();renderRecipes()},0)}
-const fields=['ワカクサ本島','シアンの砂浜','トープ洞窟','ウノハナ雪原','ラピスラズリ湖畔','ゴールド旧発電所','EX'];function fieldShow(n,b){document.querySelectorAll('#fieldTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');fieldInfo.innerHTML=`<div class="article"><b>${n}</b><div class="placeholder">必要エナジー・好みのきのみ・出現ポケモン・寝顔解放ランクを追加予定です。</div></div>`}function initFields(){fieldTabs.innerHTML=fields.map((x,i)=>`<button class="tab ${i?'':'active'}" onclick="fieldShow('${x}',this)">${x}</button>`).join('');fieldShow(fields[0],fieldTabs.firstElementChild)}const oldDetail=showPokemonDetail;showPokemonDetail=function(no,name){oldDetail(no,name);let c=document.getElementById('pokemonPageContent');if(!c)return;let rank=[1,2,3,4,5,6,7,8,9].includes(no)?'B':'—';c.insertAdjacentHTML('beforeend',`<div class="article"><b>💎 育成リソース</b><div class="row" style="margin-top:8px"><span>育成コストランク</span><span class="cost">${rank}</span></div><div class="small-note">必要なアメ・ゆめのかけら量の詳細は確認済みデータから追加します。</div></div><div class="article"><b>🗺️ 出現フィールド</b><div class="placeholder">出現フィールドと寝顔ごとの解放ランクを追加予定です。</div></div>`);document.querySelectorAll('.sleep-face').forEach((x,i)=>x.insertAdjacentHTML('beforeend',`<label class="facecheck"><input type="checkbox" onchange="localStorage.setItem('face_${name}_${i}',this.checked?'1':'0')" ${localStorage.getItem('face_'+name+'_'+i)=='1'?'checked':''}> 発見済み</label>`))};renderHome();renderBox();recipeTab('カレー・シチュー',document.querySelector('#info-recipe .tab'));initFields();</script>
-<script id="pokesleep-data-layer">
-/* PokéSleep Guide normalized data layer v1 */
-const PSDB={schemaVersion:1,gameDataVersion:"2026-09-test",updatedAt:"2026-09-26",
- ingredients:{},recipes:{},pokemon:{},skills:{},fields:{},
- potRules:{baseCapacity:null,campMultiplier:null,eventModifiers:[]}};
-function psId(s){return String(s).trim().replace(/\s+/g,"_")}
+window.PS_MASTER_V4=MASTER_V4;
 
-/* Existing ingredient/recipe test data -> normalized DB */
-if(typeof ING_EMOJI!=="undefined")Object.entries(ING_EMOJI).forEach(([name,icon])=>{
- const id=psId(name); PSDB.ingredients[id]={id,name,icon};
-});
-if(typeof recipes!=="undefined")recipes.forEach((r,i)=>{
- const id=`recipe_${i+1}`;
- PSDB.recipes[id]={id,category:r.cat,name:r.name,baseEnergy:r.base??null,maxLevelEnergy:r.max??null,
-  ingredients:(r.ings||[]).map(([name,qty])=>({ingredientId:psId(name),qty})),
-  potSize:(r.ings||[]).reduce((s,x)=>s+(Number(x[1])||0),0),image:null};
-});
-
-/* Confirmed starter-family ingredient structure. Unknown data remains blank rather than invented. */
-const seedPokemon={
-1:["フシギダネ","くさ","食材",[["A","あまいミツ",{1:2,30:5,60:7}],["B","あんみんトマト",{30:4,60:7}],["C","ほっこりポテト",{60:6}]]],
-2:["フシギソウ","くさ","食材",[["A","あまいミツ",{1:2,30:5,60:7}],["B","あんみんトマト",{30:4,60:7}],["C","ほっこりポテト",{60:6}]]],
-3:["フシギバナ","くさ","食材",[["A","あまいミツ",{1:2,30:5,60:7}],["B","あんみんトマト",{30:4,60:7}],["C","ほっこりポテト",{60:6}]]],
-4:["ヒトカゲ","ほのお","食材",[["A","マメミート",{1:2,30:5,60:7}],["B","あったかジンジャー",{30:4,60:7}],["C","げきからハーブ",{60:6}]]],
-5:["リザード","ほのお","食材",[["A","マメミート",{1:2,30:5,60:7}],["B","あったかジンジャー",{30:4,60:7}],["C","げきからハーブ",{60:6}]]],
-6:["リザードン","ほのお","食材",[["A","マメミート",{1:2,30:5,60:7}],["B","あったかジンジャー",{30:4,60:7}],["C","げきからハーブ",{60:6}]]],
-7:["ゼニガメ","みず","食材",[["A","モーモーミルク",{1:2,30:5,60:7}],["B","リラックスカカオ",{30:3,60:5}],["C","マメミート",{60:7}]]],
-8:["カメール","みず","食材",[["A","モーモーミルク",{1:2,30:5,60:7}],["B","リラックスカカオ",{30:3,60:5}],["C","マメミート",{60:7}]]],
-9:["カメックス","みず","食材",[["A","モーモーミルク",{1:2,30:5,60:7}],["B","リラックスカカオ",{30:3,60:5}],["C","マメミート",{60:7}]]]
-};
-Object.entries(seedPokemon).forEach(([no,p])=>{
- PSDB.pokemon[no]={no:+no,name:p[0],type:p[1],specialty:p[2],
-  ingredients:p[3].map(x=>({slot:x[0],ingredientId:psId(x[1]),levels:x[2]}))};
-});
-
-function dbUpsertPokemon(p){if(p?.no)PSDB.pokemon[p.no]={...(PSDB.pokemon[p.no]||{}),...p,no:+p.no}}
-function dbUpsertIngredient(x){if(x?.name){const id=x.id||psId(x.name);PSDB.ingredients[id]={...(PSDB.ingredients[id]||{}),...x,id}}}
-function dbUpsertRecipe(r){if(r?.id)PSDB.recipes[r.id]={...(PSDB.recipes[r.id]||{}),...r}}
-
-function dbRecipesForIngredient(id){
- return Object.values(PSDB.recipes).filter(r=>r.ingredients?.some(x=>x.ingredientId===id))
- .map(r=>({...r,requiredQty:r.ingredients.find(x=>x.ingredientId===id)?.qty??null}))
- .sort((a,b)=>(b.maxLevelEnergy||0)-(a.maxLevelEnergy||0));
+/* Adapter: the stable UI continues to consume one normalized master array.
+   Ingredient cards use the earliest candidate as a display preview only;
+   full candidate sets remain preserved in MASTER_V4. */
+if(window.PS?.master){
+ window.PS.master.pokemon.splice(0,window.PS.master.pokemon.length,
+  ...MASTER_V4.pokemon.map(p=>({
+    ...p,
+    ingredients:p.ingredients.map(s=>({name:s.candidates[0]?.name??null,qty:s.candidates[0]?.qty??null,candidates:s.candidates,unlock:s.unlock}))
+  }))
+ );
+ window.PS.renderDex?.();
 }
-function dbCurrentPotCapacity({camp=false}={}){
- let cap=PSDB.potRules.baseCapacity;if(cap==null)return null;
- if(camp&&PSDB.potRules.campMultiplier!=null)cap=Math.floor(cap*PSDB.potRules.campMultiplier);
- for(const m of PSDB.potRules.eventModifiers||[])if(m?.active&&Number.isFinite(m.multiplier))cap=Math.floor(cap*m.multiplier);
- return cap;
-}
-function dbRecipeCookable(r,opt={}){
- const cap=dbCurrentPotCapacity(opt);return cap==null?null:r.potSize<=cap;
-}
-function dbSortedRecipes({category=null,ingredientId=null,camp=false}={}){
- return Object.values(PSDB.recipes)
- .filter(r=>(!category||r.category===category)&&(!ingredientId||r.ingredients?.some(x=>x.ingredientId===ingredientId)))
- .sort((a,b)=>{const ac=dbRecipeCookable(a,{camp}),bc=dbRecipeCookable(b,{camp});
-  if(ac!==null&&bc!==null&&ac!==bc)return ac?-1:1;
-  return (b.maxLevelEnergy||0)-(a.maxLevelEnergy||0)});
-}
-window.PSDB=PSDB;
-window.PSDB_API={upsertPokemon:dbUpsertPokemon,upsertIngredient:dbUpsertIngredient,upsertRecipe:dbUpsertRecipe,
- recipesForIngredient:dbRecipesForIngredient,currentPotCapacity:dbCurrentPotCapacity,
- recipeCookable:dbRecipeCookable,sortedRecipes:dbSortedRecipes};
-</script>
-
-
-<style id="dex-v2-style">
-#dex .dex-toolbar{position:sticky;top:76px;z-index:4;background:#f8fafbf2;backdrop-filter:blur(10px);padding:8px 0 10px}
-#dex .dex-filter-title{font-size:11px;color:#7b8790;margin:7px 2px 5px;font-weight:700}
-#dex .dex-filter-row{display:flex;gap:6px;overflow-x:auto;padding:1px 1px 4px;scrollbar-width:none}
-#dex .dex-filter-row::-webkit-scrollbar{display:none}
-#dex .dex-filter{white-space:nowrap;border:1px solid #e1e8ec;background:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:700;color:#5f6d76}
-#dex .dex-filter.active{background:#31536c;color:#fff;border-color:#31536c}
-#dexGrid.dex-icon-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important}
-#dexGrid .dex-icon{border:1px solid #e8edf0;border-radius:16px;padding:9px 5px!important;min-width:0;text-align:center;box-shadow:0 2px 8px #00000008}
-#dexGrid .dex-icon .poke-img{width:78px;height:78px;margin:0 auto 4px}
-#dexGrid .dex-icon b{display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#dexGrid .dex-icon .dex-no{font-size:10px;color:#7b8790;margin-top:2px}
-#dexGrid .type-grass{background:#eef9ef} #dexGrid .type-fire{background:#fff2ee}
-#dexGrid .type-water{background:#eef7ff} #dexGrid .type-bug{background:#f4f8e9}
-#dexGrid .type-electric{background:#fff9df} #dexGrid .type-psychic{background:#fff0f6}
-#dexGrid .type-fairy{background:#fff1f7} #dexGrid .type-ground{background:#faf2e7}
-#dexGrid .type-poison{background:#f6effb} #dexGrid .type-normal{background:#f5f5f3}
-#dexGrid .type-flying{background:#f0f5ff} #dexGrid .type-default{background:#fff}
-.dex-empty{grid-column:1/-1;text-align:center;color:#7b8790;padding:28px 8px}
-@media(max-width:360px){#dexGrid .dex-icon .poke-img{width:68px;height:68px}}
-</style>
-<script id="dex-v2-script">
-(function(){
- let typeFilter="", specialtyFilter="";
- const typeOptions=["すべて","くさ","ほのお","みず","むし","ノーマル","どく","でんき","じめん","フェアリー","ひこう","エスパー"];
- const specialtyOptions=["すべて","きのみ","食材","スキル"];
-
- function applyDexV2(){
-   const dex=document.getElementById("dex"), grid=document.getElementById("dexGrid");
-   if(!dex||!grid)return;
-   grid.classList.add("dex-icon-grid");
-   if(!dex.querySelector(".dex-toolbar")){
-     const anchor=dex.querySelector(".search") || grid;
-     const box=document.createElement("div");
-     box.className="dex-toolbar";
-     box.innerHTML=
-       '<div class="dex-filter-title">タイプ</div><div class="dex-filter-row" id="dexTypeFilters">'+
-       typeOptions.map((x,i)=>`<button class="dex-filter ${i===0?'active':''}" data-v="${i?'':x}">${x}</button>`).join("")+
-       '</div><div class="dex-filter-title">得意</div><div class="dex-filter-row" id="dexSpecialtyFilters">'+
-       specialtyOptions.map((x,i)=>`<button class="dex-filter ${i===0?'active':''}" data-v="${i?'':x}">${x}</button>`).join("")+
-       '</div>';
-     anchor.insertAdjacentElement("afterend",box);
-     box.querySelector("#dexTypeFilters").onclick=e=>{
-       const b=e.target.closest("button");if(!b)return;
-       typeFilter=b.dataset.v; box.querySelectorAll("#dexTypeFilters button").forEach(x=>x.classList.toggle("active",x===b)); filter();
-     };
-     box.querySelector("#dexSpecialtyFilters").onclick=e=>{
-       const b=e.target.closest("button");if(!b)return;
-       specialtyFilter=b.dataset.v; box.querySelectorAll("#dexSpecialtyFilters button").forEach(x=>x.classList.toggle("active",x===b)); filter();
-     };
-   }
-   filter();
- }
- function filter(){
-   const grid=document.getElementById("dexGrid"); if(!grid)return;
-   const q=(document.querySelector("#dex .search")?.value||"").trim().toLowerCase();
-   let visible=0;
-   grid.querySelectorAll(".dbitem").forEach(el=>{
-     const okQ=!q||(el.dataset.search||"").toLowerCase().includes(q);
-     const okT=!typeFilter||el.dataset.type===typeFilter;
-     const okS=!specialtyFilter||el.dataset.specialty===specialtyFilter;
-     const show=okQ&&okT&&okS; el.style.display=show?"":"none"; if(show)visible++;
-   });
-   let empty=grid.querySelector(".dex-empty");
-   if(!visible){if(!empty){empty=document.createElement("div");empty.className="dex-empty";empty.textContent="条件に合うポケモンがいません";grid.appendChild(empty)}}
-   else empty?.remove();
- }
- const old=window.filterDB;
- window.filterDB=function(q){ if(old) old(q); filter(); };
- const mo=new MutationObserver(()=>applyDexV2());
- const grid=document.getElementById("dexGrid"); if(grid)mo.observe(grid,{childList:true});
- setTimeout(applyDexV2,0);
 })();
 </script>
 
 
-<style id="detail-v3-style">
-#pokemonPageContent.detail-v3{--typebg:#f6f8fa}
-.detail-v3 .detail-shell{background:var(--typebg);margin:-14px;padding:14px;min-height:calc(100vh - 140px)}
-.detail-v3 .poke-nav{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:7px;align-items:stretch;margin-bottom:10px}
-.detail-v3 .poke-nav button,.detail-v3 .poke-current{border:0;background:#fff;border-radius:14px;padding:8px 5px;text-align:center;min-width:0}
-.detail-v3 .poke-nav button{font-size:11px;font-weight:700;color:#31536c}
-.detail-v3 .poke-current b{display:block;font-size:18px}.detail-v3 .poke-current small{font-size:10px;color:#7b8790}
-.detail-v3 .hero-v3{display:grid;grid-template-columns:38% 62%;gap:9px;align-items:center}
-.detail-v3 .hero-v3>img{width:100%;max-height:170px;object-fit:contain}
-.detail-v3 .profile-tags{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:7px}
-.detail-v3 .profile-tags span{background:#fff;border-radius:11px;padding:8px 3px;text-align:center;font-size:11px;font-weight:800}
-.detail-v3 .stats4{display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:15px;overflow:hidden}
-.detail-v3 .stat4{padding:10px 7px;min-height:62px;border-right:1px solid #edf0f2;border-bottom:1px solid #edf0f2}
-.detail-v3 .stat4:nth-child(2n){border-right:0}.detail-v3 .stat4:nth-last-child(-n+2){border-bottom:0}
-.detail-v3 .stat4 small{display:block;color:#7b8790;font-size:10px}.detail-v3 .stat4 b{font-size:13px}
-.detail-v3 .main-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:11px 0}
-.detail-v3 .main-tabs button{border:0;background:#fff;border-radius:13px;padding:10px 4px;font-weight:800;color:#53636e}
-.detail-v3 .main-tabs button.active{background:#31536c;color:#fff}
-.detail-v3 .v3-panel{display:none}.detail-v3 .v3-panel.active{display:block}
-.detail-v3 .v3-card{background:#fff;border-radius:16px;padding:13px;margin-bottom:10px}
-.detail-v3 .v3-title{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:900;margin-bottom:8px}
-.detail-v3 .prob{font-size:11px;background:#f5f7f8;border-radius:999px;padding:4px 8px;color:#66757e}
-.detail-v3 .ing-v3{display:grid;grid-template-columns:28px 1fr;gap:7px;padding:9px 0;border-top:1px solid #edf0f2}
-.detail-v3 .slot{font-size:19px;font-weight:900;text-align:center}.detail-v3 .ing-name{font-weight:800}
-.detail-v3 .levels{font-size:11px;color:#5f6d76;margin-top:3px;word-spacing:7px}
-.detail-v3 .recipe-strip{display:grid;grid-auto-flow:column;grid-auto-columns:58px;gap:6px;overflow-x:auto;margin-top:7px;padding-bottom:2px}
-.detail-v3 .recipe-mini{height:54px;border-radius:10px;background:#f7f9fa;display:grid;place-items:center;font-size:9px;text-align:center;position:relative;padding:3px}
-.detail-v3 .recipe-mini em{position:absolute;right:4px;bottom:2px;font-style:normal;font-weight:900}
-.detail-v3 .skill-row{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.detail-v3 .skill-name{font-weight:900}.detail-v3 .level-switch{white-space:nowrap;background:#f1f5f8;border-radius:10px;padding:6px 8px;font-weight:800}
-.detail-v3 .effect{margin-top:9px;line-height:1.65;font-size:13px}.detail-v3 details{margin-top:9px;font-size:12px}
-.detail-v3 .placeholder-v3{color:#7b8790;font-size:12px;line-height:1.7}
-</style>
-<script id="detail-v3-script">
-(function(){
- const TYPE_BG={"くさ":"#eef9ef","ほのお":"#fff2ee","みず":"#eef7ff","むし":"#f4f8e9","でんき":"#fff9df","エスパー":"#fff0f6","フェアリー":"#fff1f7","じめん":"#faf2e7","どく":"#f6effb","ノーマル":"#f5f5f3","ひこう":"#f0f5ff"};
- function esc(v){return String(v??"—").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]))}
- function meta(no,name){
-   const d=(window.PSDB?.pokemon||{})[no]||{};
-   const m=(typeof DEX_TEST_META!=="undefined"&&DEX_TEST_META[no])||{};
-   return {no,name,type:d.type||m.type||"—",specialty:d.specialty||m.specialty||"—",
-    sleepType:d.sleepType||"—",berry:d.berry||"—",helpTime:d.helpTime||"—",
-    ingredientRate:d.ingredientRate??null,skillRate:d.skillRate??null,
-    ingredients:d.ingredients||[],skill:d.skill||null,evolution:d.evolution||null};
- }
- function rosterCards(){
-   return [...document.querySelectorAll("#dexGrid .dbitem")].filter(x=>x.dataset.name).map(x=>{
-     const n=+(x.querySelector(".dex-no")?.textContent||0);return {no:n,name:x.dataset.name};
-   }).sort((a,b)=>a.no-b.no);
- }
- function recipeStrip(id){
-   const rs=window.PSDB_API?.recipesForIngredient?.(id)||[];
-   if(!rs.length)return "";
-   return `<div class="recipe-strip">${rs.map(r=>`<div class="recipe-mini" title="${esc(r.name)}">${esc(r.name)}<em>${r.requiredQty??""}</em></div>`).join("")}</div>`;
- }
- function ingHtml(p){
-   if(!p.ingredients.length)return `<div class="placeholder-v3">食材データは確認後にデータベースへ追加します。</div>`;
-   return p.ingredients.map(x=>{
-     const ing=window.PSDB?.ingredients?.[x.ingredientId]; const lv=x.levels||{};
-     return `<div class="ing-v3"><div class="slot">${esc(x.slot)}</div><div><div class="ing-name">${esc(ing?.icon||"🥕")} ${esc(ing?.name||x.ingredientId)}</div>
-       <div class="levels">Lv.1 ${lv[1]??"—"}　Lv.30 ${lv[30]??"—"}　Lv.60 ${lv[60]??"—"}</div>${recipeStrip(x.ingredientId)}</div></div>`;
-   }).join("");
- }
- function render(no,name){
-   const c=document.getElementById("pokemonPageContent");if(!c)return;
-   const p=meta(no,name), list=rosterCards(), idx=list.findIndex(x=>x.no===+no);
-   const prev=idx>0?list[idx-1]:null,next=idx>=0&&idx<list.length-1?list[idx+1]:null;
-   c.className="detail-v3"; c.style.setProperty("--typebg",TYPE_BG[p.type]||"#f6f8fa");
-   c.innerHTML=`<div class="detail-shell">
-    <div class="poke-nav">
-      ${prev?`<button onclick="showPokemonDetail(${prev.no},'${esc(prev.name)}')">‹ No.${prev.no}<br>${esc(prev.name)}</button>`:"<span></span>"}
-      <div class="poke-current"><small>No.${p.no}</small><b>${esc(p.name)}</b></div>
-      ${next?`<button onclick="showPokemonDetail(${next.no},'${esc(next.name)}')">No.${next.no} ›<br>${esc(next.name)}</button>`:"<span></span>"}
-    </div>
-    <div class="hero-v3">
-      <img src="${SLEEP_IMG(p.no)}" onerror="${imgFallback(p.no)}" alt="${esc(p.name)}">
-      <div><div class="profile-tags"><span>${esc(p.type)}</span><span>${esc(p.sleepType)}</span><span>${esc(p.specialty)}</span></div>
-      <div class="stats4">
-       <div class="stat4"><small>きのみ</small><b>${esc(p.berry)}</b></div>
-       <div class="stat4"><small>お手伝い時間</small><b>${esc(p.helpTime)}</b></div>
-       <div class="stat4"><small>食材確率</small><b>${p.ingredientRate==null?"—":esc(p.ingredientRate)+"%"}</b></div>
-       <div class="stat4"><small>スキル確率</small><b>${p.skillRate==null?"—":esc(p.skillRate)+"%"}</b></div>
-      </div></div>
-    </div>
-    <div class="main-tabs"><button class="active" onclick="v3tab('ability',this)">能力</button><button onclick="v3tab('faces',this)">寝顔</button><button onclick="v3tab('field',this)">フィールド</button></div>
-    <section id="v3-ability" class="v3-panel active">
-      <div class="v3-card"><div class="v3-title">🥕 食材 ${p.ingredientRate==null?"":`<span class="prob">食材確率 ${esc(p.ingredientRate)}%</span>`}</div>${ingHtml(p)}</div>
-      <div class="v3-card"><div class="v3-title">✨ スキル ${p.skillRate==null?"":`<span class="prob">スキル確率 ${esc(p.skillRate)}%</span>`}</div>
-       ${p.skill?`<div class="skill-row"><div class="skill-name">${esc(p.skill.name)}</div><div class="level-switch">‹ Lv.1 ›</div></div><div class="effect">${esc(p.skill.effect||"")}</div><details><summary>詳細を見る</summary>${esc(p.skill.details||"")}</details>`:`<div class="placeholder-v3">スキル詳細は確認後にデータベースへ追加します。</div>`}
-      </div>
-      ${p.evolution?`<div class="v3-card"><div class="v3-title">進化</div>${esc(p.evolution)}</div>`:""}
-    </section>
-    <section id="v3-faces" class="v3-panel"><div class="v3-card"><div class="v3-title">🌙 寝顔</div><div class="placeholder-v3">★1〜★4・発見済みチェック・解放ランクを、このポケモンの寝顔DBから表示します。</div></div></section>
-    <section id="v3-field" class="v3-panel"><div class="v3-card"><div class="v3-title">🗺️ フィールド</div><div class="placeholder-v3">出現フィールドと寝顔ごとの解放ランクを、フィールドDBから表示します。</div></div></section>
-   </div>`;
- }
- window.v3tab=function(id,b){document.querySelectorAll(".detail-v3 .v3-panel").forEach(x=>x.classList.remove("active"));document.getElementById("v3-"+id)?.classList.add("active");document.querySelectorAll(".detail-v3 .main-tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
- const legacy=window.showPokemonDetail;
- window.showPokemonDetail=function(no,name){
-   if(legacy)legacy(no,name);
-   setTimeout(()=>render(+no,name),0);
+<!-- stable-v6-detail-behavior disabled in v10 -->
+
+
+<!-- stable-v7-bulbasaur-check disabled in v10 -->
+
+
+<!-- stable-v9-test-behavior disabled in v10 -->
+
+
+<!-- stable-v10-single-controller replaced by v11 -->
+
+
+<script id="stable-v12-controller">
+(()=>{
+ const V=window.PS_V9;if(!V)return;
+ let currentNo=1,skillLv=1,currentTab="ability";
+ const byNo=n=>V.pokemon[Number(n)]||null;
+ const skillOf=m=>m?V.skills[m.mainSkillId]:null;
+
+ const TYPE_THEME={
+   "ノーマル":["#f5f3ea","#9b9686"],"ほのお":["#fff0e8","#ef7b52"],
+   "みず":["#e9f4ff","#5c9fdb"],"でんき":["#fff8d9","#d7ae35"],
+   "くさ":["#e8f7ec","#55a66b"],"こおり":["#e7f7fa","#62b9c4"],
+   "かくとう":["#f7e9e6","#b66a5d"],"どく":["#f3e9f8","#9568ad"],
+   "じめん":["#f5eee1","#b28b56"],"ひこう":["#edf1fb","#849bc8"],
+   "エスパー":["#f9eaf1","#c76f96"],"むし":["#f1f5df","#91a44e"],
+   "いわ":["#f1ede2","#9f8c5b"],"ゴースト":["#eeeafa","#756da9"],
+   "ドラゴン":["#eceafb","#7067bd"],"あく":["#ecebea","#69635f"],
+   "はがね":["#eef2f4","#82939c"],"フェアリー":["#faeaf2","#c77c9f"]
  };
-})();
-</script>
+ function setTheme(type){
+   const [bg,accent]=TYPE_THEME[type]||["#f3f6f4","#718078"];
+   const d=document.getElementById("dexDetail");
+   d.style.setProperty("--type-bg",bg);d.style.setProperty("--type-accent",accent);
+ }
+ function show(id){
+   document.querySelectorAll(".screen").forEach(x=>x.classList.toggle("active",x.id===id));
+   window.scrollTo(0,0);
+ }
+ // v30: app-local detail history. Keeps evolution jumps reversible without relying on browser history.
+ const detailHistory=[];
+ let detailOrigin="dex";
+ const info=document.querySelector("#dexDetail .hero-info");
+ const stats=document.querySelector("#dexDetail .hero > .stats")||document.querySelector("#dexDetail .hero-info .stats");
+ if(info&&stats&&stats.parentElement!==info) info.appendChild(stats);
 
+ // Remove legacy duplicated identity/traits and legacy tab strip.
+ ["detailTraits","detailName"].forEach(id=>document.getElementById(id)?.remove());
+ document.querySelectorAll("#dexDetail .detail-tabs").forEach(x=>x.remove());
 
-<style id="cards-v4-style">
-/* v4: shared Dex / Box cards + shared filters */
-.legacy-dex-filters{display:none!important}
-.filter-stack{display:grid;gap:8px;margin:10px 0 12px}.filter-row{border:1px solid #e8edf0;border-radius:14px;background:#fafcfd;overflow:hidden}.filter-head{width:100%;border:0;background:transparent;padding:10px 12px;display:flex;align-items:center;gap:8px;font-weight:800;text-align:left}.filter-head .picked{display:flex;gap:4px;flex:1;min-width:0;overflow:hidden}.filter-head .chev{margin-left:auto}.filter-body{display:none;padding:0 10px 10px}.filter-row.open .filter-body{display:block}.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.ingredient-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.filter-chip{border:1px solid #e5e9ec;background:#fff;border-radius:11px;min-height:38px;padding:5px;font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center;gap:3px}.filter-chip.active{outline:2px solid #5c9ee6;background:#eef6ff}.ingredient-grid .filter-chip{font-size:20px;aspect-ratio:1}.specialty-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.specialty-row .filter-chip{font-size:13px}.filter-actions{display:flex;justify-content:space-between;align-items:center;margin-top:8px}.mini-link{border:0;background:transparent;color:#287bd6;font-weight:800}.sortline{display:flex;gap:8px;align-items:center;margin:8px 0}.sortline select{margin-left:auto;border:1px solid #e4e9ed;background:#fff;border-radius:999px;padding:8px 12px;font-weight:700}
-#dexGrid.dex-icon-grid,#boxGrid.boxgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}.p-card{position:relative;border-radius:16px;min-width:0;overflow:hidden;padding:8px 6px 6px;box-shadow:0 2px 8px #0000000a;border:1px solid #ffffff80;min-height:160px}.p-card.type-grass{background:#eaf9ea}.p-card.type-fire{background:#fff0e8}.p-card.type-water{background:#eaf6ff}.p-card.type-electric{background:#fff8d9}.p-card.type-bug{background:#f2f7e5}.p-card.type-normal{background:#f5f4f1}.p-card.type-poison{background:#f5ecfb}.p-card.type-ground{background:#f9efe1}.p-card.type-fairy{background:#fff0f7}.p-card.type-psychic{background:#fff0f6}.p-card.type-default{background:#f4f7f9}.p-top{display:flex;align-items:center;gap:4px;min-width:0;height:22px;position:relative;z-index:3}.p-name{font-weight:900;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.p-meta{font-size:9px;font-weight:800;color:#56636c;white-space:nowrap}.p-status{margin-left:auto;font-size:10px;font-weight:900;white-space:nowrap}.p-sprite{display:block;width:94px;height:94px;object-fit:contain;margin:-2px auto -8px;image-rendering:pixelated;position:relative;z-index:1}.p-bottom{position:relative;z-index:4;display:grid;grid-template-columns:24px repeat(3,1fr);align-items:center;gap:3px;background:#ffffffdd;border-radius:999px;padding:4px 5px;margin-top:-8px;box-shadow:0 1px 4px #0000000a}.spec-icon{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px}.spec-berry{background:#ffe8ef}.spec-food{background:#fff0d9}.spec-skill{background:#e8f1ff}.spec-all{background:#eee8ff}.ing-icon{height:22px;display:grid;place-items:center;font-size:17px;overflow:hidden}.ing-icon img{width:22px;height:22px;object-fit:contain}.subskills{position:relative;z-index:4;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin:-2px 4px 4px}.subskill{height:20px;border-radius:6px;background:#fff9;display:grid;place-items:center;font-size:11px;border:1px solid #ffffffaa}.subskill.locked{opacity:.28;filter:grayscale(1)}
-.box-tools{margin:10px 0}.box-add{width:100%;margin-top:8px}.box-empty{grid-column:1/-1;color:#7b8790;text-align:center;padding:18px}.box-card .p-sprite{margin-top:-4px}.box-card{min-height:180px}
-@media(max-width:360px){.p-card{padding-left:4px;padding-right:4px}.p-name{font-size:11px}.p-meta,.p-status{font-size:8px}.p-sprite{width:86px;height:86px}.p-bottom{grid-template-columns:22px repeat(3,1fr);gap:2px}}
-</style>
-<script id="cards-v4-script">
-(()=>{
-const SPRITE=n=>`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${n}.png`;
-const TYPE_ICON={"くさ":"🍃","ほのお":"🔥","みず":"💧","でんき":"⚡","こおり":"❄️","かくとう":"🥊","どく":"🟣","じめん":"⛰️","ひこう":"🪽","エスパー":"🔮","むし":"🐛","いわ":"🪨","ゴースト":"👻","ドラゴン":"🐉","あく":"🌑","はがね":"⚙️","フェアリー":"🎀","ノーマル":"⚪"};
-const SPEC_ICON={"きのみ":"🍓","食材":"🥕","スキル":"✨","all":"ALL"};
-const TYPE_CLS={"くさ":"grass","ほのお":"fire","みず":"water","でんき":"electric","むし":"bug","ノーマル":"normal","どく":"poison","じめん":"ground","フェアリー":"fairy","エスパー":"psychic"};
-const starterIngredients={1:["あまいミツ","あんみんトマト","ほっこりポテト"],2:["あまいミツ","あんみんトマト","ほっこりポテト"],3:["あまいミツ","あんみんトマト","ほっこりポテト"],4:["マメミート","あったかジンジャー","げきからハーブ"],5:["マメミート","あったかジンジャー","げきからハーブ"],6:["マメミート","あったかジンジャー","げきからハーブ"],7:["モーモーミルク","リラックスカカオ","マメミート"],8:["モーモーミルク","リラックスカカオ","マメミート"],9:["モーモーミルク","リラックスカカオ","マメミート"]};
-const fallbackEmoji={"あまいミツ":"🍯","あんみんトマト":"🍅","ほっこりポテト":"🥔","マメミート":"🥩","あったかジンジャー":"🫚","げきからハーブ":"🌿","モーモーミルク":"🥛","リラックスカカオ":"🫘"};
-let dexState={types:new Set(),ingredients:new Set(),specialties:new Set()}; let boxState={types:new Set(),ingredients:new Set(),specialties:new Set()};
-function kana(s){return (s||'').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)).replace(/\s/g,'')}
-function ingredientsFor(no){let p=(window.PSDB&&PSDB.pokemon&&PSDB.pokemon[no]);let a=p&&p.ingredients; if(Array.isArray(a)){let r=a.map(x=>typeof x==='string'?x:(x.id||x.name)).filter(Boolean);if(r.length)return r.slice(0,3)}return starterIngredients[no]||[]}
-function ingHtml(name){if(!name)return '<span class="ing-icon">·</span>';let src=(window.INGREDIENT_IMAGE||{})[name];return `<span class="ing-icon" title="${name}">${src?`<img src="${src}" alt="${name}">`:(fallbackEmoji[name]||'◌')}</span>`}
-function specHtml(s){let c=s==='きのみ'?'berry':s==='食材'?'food':s==='スキル'?'skill':'all';return `<span class="spec-icon spec-${c}" title="得意：${s||'—'}">${SPEC_ICON[s]||'◌'}</span>`}
-function sleepStatus(name){let total=(window.SLEEP_FACE_DATA&&SLEEP_FACE_DATA[name]&&SLEEP_FACE_DATA[name].length)||4,found=0;for(let i=0;i<total;i++)if(localStorage.getItem(`face_${name}_${i}`)==='1')found++;let r=total?found/total:0,moon=r>=1?'🌕':r>=.75?'🌔':r>=.5?'🌓':r>0?'🌒':'🌑';return `${moon} ${found}/${total}`}
-function meta(no){return (window.DEX_TEST_META&&DEX_TEST_META[no])||{}}
-function dexCard(el){let no=+el.dataset.no||+el.querySelector('.dex-no')?.textContent||0,name=el.dataset.name||el.querySelector('b')?.textContent||'',m=meta(no),type=el.dataset.type||m.type||'',spec=el.dataset.specialty||m.specialty||'',ings=ingredientsFor(no);el.className=`dbitem p-card dex-card type-${TYPE_CLS[type]||'default'}`;el.dataset.no=no;el.dataset.ingredients=ings.join('|');el.innerHTML=`<div class="p-top"><span class="p-name">${name}</span><span class="p-meta">No.${String(no).padStart(3,'0')}</span><span class="p-status">${sleepStatus(name)}</span></div><img class="p-sprite" loading="lazy" src="${SPRITE(no)}" onerror="this.onerror=null;this.src='${POKE_IMAGE_URL(no)}'" alt="${name}"><div class="p-bottom">${specHtml(spec)}${[0,1,2].map(i=>ingHtml(ings[i])).join('')}</div>`}
-function selectedIcons(state,kind){let a=[...state[kind]];return a.slice(0,5).map(v=>kind==='types'?(TYPE_ICON[v]||'◌'):kind==='ingredients'?(fallbackEmoji[v]||'◌'):'').join(' ')}
-function filterUI(prefix,state,onchange){let ingredients=Object.keys((window.PSDB&&PSDB.ingredients)||{}).map(k=>PSDB.ingredients[k]?.name||k);if(!ingredients.length)ingredients=Object.keys(window.INGREDIENT_IMAGE||{});let types=Object.keys(TYPE_ICON);return `<div class="filter-stack"><div class="filter-row" id="${prefix}TypeRow"><button class="filter-head" type="button" data-toggle="${prefix}TypeRow"><span>タイプ</span><span class="picked" id="${prefix}TypePicked"></span><span class="chev">⌄</span></button><div class="filter-body"><div class="type-grid">${types.map(v=>`<button type="button" class="filter-chip" data-filter="types" data-v="${v}">${TYPE_ICON[v]} ${v}</button>`).join('')}</div><div class="filter-actions"><button class="mini-link" data-clear="types">選択をクリア</button><button class="mini-link" data-close="${prefix}TypeRow">閉じる</button></div></div></div><div class="filter-row" id="${prefix}IngRow"><button class="filter-head" type="button" data-toggle="${prefix}IngRow"><span>食材</span><span class="picked" id="${prefix}IngPicked"></span><span class="chev">⌄</span></button><div class="filter-body"><div class="ingredient-grid">${ingredients.map(v=>`<button type="button" class="filter-chip" title="${v}" data-filter="ingredients" data-v="${v}">${fallbackEmoji[v]||'◌'}</button>`).join('')}</div><div class="filter-actions"><button class="mini-link" data-clear="ingredients">選択をクリア</button><button class="mini-link" data-close="${prefix}IngRow">閉じる</button></div></div></div><div class="specialty-row">${['きのみ','食材','スキル'].map(v=>`<button type="button" class="filter-chip" data-filter="specialties" data-v="${v}">${SPEC_ICON[v]} ${v}</button>`).join('')}</div></div>`}
-function wire(root,state,prefix,cb){root.querySelectorAll('[data-toggle]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.toggle).classList.toggle('open'));root.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.close).classList.remove('open'));root.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{let set=state[b.dataset.filter],v=b.dataset.v;set.has(v)?set.delete(v):set.add(v);b.classList.toggle('active',set.has(v));document.getElementById(prefix+'TypePicked').textContent=selectedIcons(state,'types');document.getElementById(prefix+'IngPicked').textContent=selectedIcons(state,'ingredients');cb()});root.querySelectorAll('[data-clear]').forEach(b=>b.onclick=()=>{state[b.dataset.clear].clear();root.querySelectorAll(`[data-filter="${b.dataset.clear}"]`).forEach(x=>x.classList.remove('active'));document.getElementById(prefix+'TypePicked').textContent=selectedIcons(state,'types');document.getElementById(prefix+'IngPicked').textContent=selectedIcons(state,'ingredients');cb()})}
-function match(state,type,spec,ings){let t=!state.types.size||state.types.has(type),sp=!state.specialties.size||state.specialties.has(spec)||spec==='all',ing=!state.ingredients.size||[...state.ingredients].every(v=>ings.includes(v));return t&&sp&&ing}
-function setupDex(){let sec=document.getElementById('dex'),grid=document.getElementById('dexGrid');if(!sec||!grid)return;sec.querySelector('.dex-filters')?.classList.add('legacy-dex-filters');let search=document.getElementById('dexSearch');let host=document.createElement('div');host.id='dexFilterV4';host.innerHTML=filterUI('dexV4',dexState);search.after(host);wire(host,dexState,'dexV4',applyDexV4);search.oninput=applyDexV4;let obs=new MutationObserver(()=>{[...grid.children].filter(x=>!x.classList.contains('p-card')).forEach(dexCard);applyDexV4()});obs.observe(grid,{childList:true});[...grid.children].forEach(dexCard)}
-function applyDexV4(){let q=kana(document.getElementById('dexSearch')?.value||'');let n=0;document.querySelectorAll('#dexGrid .p-card').forEach(el=>{let ok=(!q||kana(el.dataset.name).includes(q))&&match(dexState,el.dataset.type,el.dataset.specialty,(el.dataset.ingredients||'').split('|'));el.style.display=ok?'':'none';if(ok)n++});let c=document.getElementById('nationalDexCount');if(c)c.textContent=`${n}種`;let l=document.getElementById('dexLoading');if(l&&document.querySelector('#dexGrid .p-card'))l.style.display='none'}
-function ensureBoxData(){BOX=BOX.map((x,i)=>({...x,id:x.id||`${Date.now()}-${i}`,team:x.team??team.some(t=>t.no===x.no),favorite:x.favorite||false,training:x.training||false,subskills:x.subskills||['⚡','⬆️','🎒','◌','◌']}))}
-function boxCard(x){let m=meta(x.no),type=m.type||'',spec=m.specialty||'',ings=ingredientsFor(x.no),sub=x.subskills||[];return `<div class="p-card box-card type-${TYPE_CLS[type]||'default'}" data-no="${x.no}" data-name="${x.name}" data-type="${type}" data-specialty="${spec}" data-ingredients="${ings.join('|')}" data-level="${x.lv||1}" data-team="${x.team?1:0}"><div class="p-top"><span class="p-name">${x.name}</span><span class="p-meta">Lv.${x.lv||1}</span><span class="p-status">${x.favorite?'★':'☆'} ${x.training?'🌱':''}</span></div><img class="p-sprite" src="${SPRITE(x.no)}" onerror="this.onerror=null;this.src='${POKE_IMAGE_URL(x.no)}'" alt="${x.name}"><div class="subskills">${[0,1,2,3,4].map((i)=>`<span class="subskill ${([10,25,50,75,100][i]>(x.lv||1))?'locked':''}">${sub[i]||'◌'}</span>`).join('')}</div><div class="p-bottom">${specHtml(spec)}${[0,1,2].map(i=>ingHtml(ings[i])).join('')}</div></div>`}
-function applyBoxV4(){let q=kana(document.getElementById('boxSearchV4')?.value||''),sort=document.getElementById('boxSortV4')?.value||'team';let arr=[...BOX].filter(x=>{let m=meta(x.no),ings=ingredientsFor(x.no);return (!q||kana(x.name).includes(q))&&match(boxState,m.type||'',m.specialty||'',ings)});arr.sort((a,b)=>sort==='level'?(b.lv-a.lv||a.no-b.no):sort==='number'?(a.no-b.no||b.lv-a.lv):((b.team?1:0)-(a.team?1:0)||b.lv-a.lv||a.no-b.no));boxCount.textContent=arr.length+'匹';boxGrid.innerHTML=arr.length?arr.map(boxCard).join(''):'<div class="box-empty">該当するポケモンはいません。</div>'}
-function setupBox(){let sec=document.getElementById('box'),grid=document.getElementById('boxGrid');if(!sec||!grid)return;ensureBoxData();let oldBtn=sec.querySelector('button.btn');let tools=document.createElement('div');tools.className='box-tools';tools.innerHTML=`<input id="boxSearchV4" class="search" placeholder="🔍 ポケモン名で検索（ひらがな・カタカナ対応）">${filterUI('boxV4',boxState)}<div class="sortline"><span class="muted">並び順</span><select id="boxSortV4"><option value="team">チーム優先 → Lv → No.</option><option value="level">Lvが高い順</option><option value="number">図鑑No.順</option></select></div>`;oldBtn.before(tools);oldBtn.classList.add('box-add');wire(tools,boxState,'boxV4',applyBoxV4);document.getElementById('boxSearchV4').oninput=applyBoxV4;document.getElementById('boxSortV4').onchange=applyBoxV4;window.renderBox=applyBoxV4;applyBoxV4()}
-window.addEventListener('load',()=>{setupDex();setupBox();setTimeout(()=>{document.querySelectorAll('#dexGrid .dbitem').forEach(dexCard);applyDexV4();applyBoxV4()},700)});
-})();
-</script>
-
-
-<style id="box-test-v5-style">
-.testdata-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.testdata-actions button{border:0;border-radius:12px;padding:10px 6px;font-weight:800}.test-load{background:#e8f6ff;color:#28648b}.test-clear{background:#f2f4f5;color:#66737c}
-</style>
-<script id="box-test-v5-script">
-(()=>{
-const TEST_BOX=[
- {id:'test-venusaur',no:3,name:'フシギバナ',lv:60,team:true,favorite:true,training:true,type:'くさ',specialty:'食材',ingredients:['あまいミツ','あまいミツ','あまいミツ'],subskills:['🍓','🥕','🎒','✨','✨']},
- {id:'test-charizard',no:6,name:'リザードン',lv:52,team:true,favorite:true,training:false,type:'ほのお',specialty:'食材',ingredients:['マメミート','あったかジンジャー','マメミート'],subskills:['✨','🥕','🎒','⚡','✨']},
- {id:'test-blastoise',no:9,name:'カメックス',lv:51,team:true,favorite:false,training:true,type:'みず',specialty:'食材',ingredients:['モーモーミルク','リラックスカカオ','モーモーミルク'],subskills:['✨','✨','🥕','⚡','🍓']},
- {id:'test-mewtwo',no:150,name:'ミュウツー',lv:29,team:false,favorite:true,training:true,type:'エスパー',specialty:'スキル',ingredients:['ワカクサ大豆','ワカクサ大豆','ワカクサコーン'],subskills:['⚡','✨','🥕','⚡','✨']},
- {id:'test-dragonite',no:149,name:'カイリュー',lv:60,team:false,favorite:false,training:false,type:'ドラゴン',specialty:'きのみ',ingredients:['げきからハーブ','ワカクサコーン','げきからハーブ'],subskills:['🍓','✨','🎒','⭐','⚡']}
-];
-function loadTestBox(){
- window.BOX=TEST_BOX.map(x=>({...x,subskills:[...x.subskills],ingredients:[...x.ingredients]}));
- try{BOX=window.BOX}catch(e){}
- localStorage.setItem('ps_box',JSON.stringify(window.BOX));
- location.reload();
-}
-function clearTestBox(){localStorage.removeItem('ps_box');location.reload()}
-window.loadTestBoxV5=loadTestBox; window.clearTestBoxV5=clearTestBox;
-window.addEventListener('load',()=>{
- const sec=document.getElementById('box'); if(!sec)return;
- const add=sec.querySelector('.box-add')||sec.querySelector('button.btn'); if(!add)return;
- const d=document.createElement('div'); d.className='testdata-actions';
- d.innerHTML='<button class="test-load" type="button" onclick="loadTestBoxV5()">🧪 仮データ5匹を入れる</button><button class="test-clear" type="button" onclick="clearTestBoxV5()">仮データを消す</button>';
- add.insertAdjacentElement('afterend',d);
- // Per-individual test metadata: use screenshot-derived ingredient choices for card testing.
- const oldBoxCard=window.boxCard;
+ let tabs=document.getElementById("v12Tabs");
+ if(!tabs){
+   tabs=document.createElement("div");tabs.id="v12Tabs";tabs.className="v12-tabs";
+   tabs.innerHTML='<button data-v12tab="ability">能力</button><button data-v12tab="sleep">寝顔</button><button data-v12tab="field">フィールド</button>';
+   info.appendChild(tabs);
+ }
+ // Everything after hero becomes the switchable area. Existing ability sections are grouped.
+ const hero=document.querySelector("#dexDetail .hero");
+ let ability=document.getElementById("v12Ability");
+ if(!ability){
+   ability=document.createElement("div");ability.id="v12Ability";ability.className="v12-panel";
+   const movable=[];
+   let node=hero?.nextElementSibling;
+   while(node){
+     const next=node.nextElementSibling;
+     if(!node.matches("nav,.bottom-nav")) movable.push(node);
+     node=next;
+   }
+   movable.forEach(n=>ability.appendChild(n));
+   hero?.after(ability);
+ }
+ 
+ // Remove legacy headings/table header that are replaced by the current renderers.
+ // This fixes the visible duplicate UI without deleting the CSS/layout that v17 relies on.
+ ability.querySelectorAll(".ability-card").forEach(card=>{
+   const title=card.querySelector(":scope > .ability-title");
+   const legacyFoodHead=card.querySelector(":scope > .food-table-head");
+   if(title) title.remove();
+   if(legacyFoodHead) legacyFoodHead.remove();
  });
+
+ let sleep=document.getElementById("v12Sleep");
+ if(!sleep){sleep=document.createElement("div");sleep.id="v12Sleep";sleep.className="v12-panel";sleep.innerHTML='<div class="v12-placeholder">寝顔データをここに表示します</div>';ability.after(sleep)}
+ let field=document.getElementById("v12Field");
+ if(!field){field=document.createElement("div");field.id="v12Field";field.className="v12-panel";field.innerHTML='<div class="v12-placeholder">フィールドデータをここに表示します</div>';sleep.after(field)}
+
+ function switchTab(tab){
+   currentTab=tab;
+   [["ability",ability],["sleep",sleep],["field",field]].forEach(([k,p])=>p.classList.toggle("active",k===tab));
+   tabs.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.v12tab===tab));
+ }
+ tabs.onclick=e=>{const b=e.target.closest("[data-v12tab]");if(b)switchTab(b.dataset.v12tab)};
+
+ function header(m){
+   let h=document.getElementById("v12Header");
+   if(!h){h=document.createElement("div");h.id="v12Header";info.prepend(h)}
+   const prev=byNo(m.no-1),next=byNo(m.no+1);
+   const typeIcon={"くさ":"🌿","ほのお":"🔥","みず":"💧","でんき":"⚡","こおり":"❄️","かくとう":"🥊","どく":"☠️","じめん":"⛰️","ひこう":"🪽","エスパー":"🔮","むし":"🐛","いわ":"🪨","ゴースト":"👻","ドラゴン":"🐉","あく":"🌑","はがね":"⚙️","フェアリー":"✨","ノーマル":"◯"}[m.type]||"◯";
+   h.innerHTML=`<div class="v12-nav">
+    <button id="v12Prev" ${prev?"":"disabled"}>${prev?`<span class="v29-arrow">←</span><span class="v29-nav-img">${prev.image?`<img src="${prev.image}" alt="">`:"◌"}</span>`:`<span class="v29-empty">−</span>`}</button>
+    <button id="v12Next" ${next?"":"disabled"}>${next?`<span class="v29-nav-img">${next.image?`<img src="${next.image}" alt="">`:"◌"}</span><span class="v29-arrow">→</span>`:`<span class="v29-empty">−</span>`}</button>
+   </div>
+   <div class="v19-identity">
+     <span class="v19-no">No.${String(m.no).padStart(3,"0")}</span>
+     <strong>${m.name}</strong>
+     <span class="v19-type">${typeIcon} ${m.type}</span>
+     <span class="v26-variant-slot" id="v26VariantSlot"></span>
+   </div>
+   <div class="v19-traits">
+     <span>🍓 ${m.berry||"—"} ×${m.berryQty||1}</span>
+     <span>💤 ${m.sleepType}</span>
+     <span>🥕 ${m.specialty}</span>
+   </div>`;
+   if(prev)document.getElementById("v12Prev").onclick=()=>openPokemonDetail(prev.no);
+   if(next)document.getElementById("v12Next").onclick=()=>openPokemonDetail(next.no);
+ }
+ function renderStats(m){
+   stats.innerHTML=`<div class="stat"><small>⏱ おてつだい時間</small><b>${m.help?.toLocaleString()||"—"}秒</b></div>
+   <div class="stat"><small>🥕 食材確率</small><b>${m.foodRate??"—"}%</b></div>
+   <div class="stat"><small>✨ スキル発動確率</small><b>${m.skillRate??"—"}%</b></div>`;
+ }
+ function renderFood(m){
+   const host=document.getElementById("detailFoods");
+   const oldBadge=document.getElementById("foodRateBadge");
+   if(oldBadge)oldBadge.style.display="none";
+   if(!host)return;
+   const emoji=n=>n.includes("ミツ")?"🍯":n.includes("トマト")?"🍅":n.includes("ポテト")?"🥔":"◌";
+   const rate=m.foodRate!=null?`${m.foodRate}%`:"未確認";
+   const ingredients=m.ingredients||[];
+   const rows=ingredients.length?ingredients.map((x,i)=>{
+     const q=x.qty||[];
+     return `<div class="v24-food-row slot-${x.slot||i}">
+       <div class="v24-food-name">
+         <span class="v24-letter">${x.slot||["A","B","C"][i]}</span>
+         <span class="v24-food-main"><span class="v24-food-icon">${emoji(x.name)}</span><b>${x.name||"未確認"}</b></span>
+       </div>
+       <div class="v24-level"><b>${q[0]??"—"}${q[0]!=null?"個":""}</b></div>
+       <div class="v24-level"><b>${q[1]??"—"}${q[1]!=null?"個":""}</b></div>
+       <div class="v24-level"><b>${q[2]??"—"}${q[2]!=null?"個":""}</b></div>
+       <div class="v24-recipes"><span class="v24-placeholder">🍽️</span><span class="v24-placeholder">🍽️</span><span class="v24-placeholder">🍽️</span><span class="v24-placeholder">🍽️</span><span class="v24-placeholder">🍽️</span><span class="v24-more">›</span></div>
+     </div>`;
+   }).join(""):`<div class="unknown" style="padding:12px">食材データ未確認</div>`;
+   host.innerHTML=`<div class="v26-food-head">
+     <div class="v26-food-rate">🥕 食材確率 <strong>${rate}</strong></div>
+     <div class="v26-level-pill">Lv.1</div>
+     <div class="v26-level-pill">Lv.30</div>
+     <div class="v26-level-pill">Lv.60</div>
+     <div class="v26-recipe-head">対応料理</div>
+   </div>${rows}`;
+ }
+ function renderSkill(m){
+   const s=skillOf(m);if(!s)return;
+   const badge=document.getElementById("skillRateBadge");
+   if(badge)badge.style.display="none";
+   const name=document.getElementById("detailSkill");
+   if(name)name.textContent=s.name;
+   const rate=document.getElementById("skillRateInline");
+   if(rate)rate.innerHTML=`発動確率 <strong>${m.skillRate!=null?m.skillRate+"%":"未確認"}</strong>`;
+   const lv1=s.levels?.[1];
+   const effect=document.getElementById("detailSkillEffect");
+   if(effect){
+     effect.innerHTML=lv1?`<b class="v35-effect-level">Lv.1</b><span class="v35-effect-copy">ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。</span>`:`<b class="v35-effect-level">Lv.1</b><span class="v35-effect-copy">効果未確認</span>`;
+     effect.classList.add("skill-desc");
+   }
+   // Dex is reference-only: no skill-level adjustment control here.
+   const ctl=document.getElementById("v12SkillLv");
+   if(ctl)ctl.remove();
+   const levels=document.getElementById("skillLevels");
+   if(levels){
+     const detail=Object.entries(s.levels||{}).filter(([lv])=>Number(lv)>1).sort((a,b)=>Number(a[0])-Number(b[0]));
+     const left=detail.filter(([lv])=>Number(lv)<=4), right=detail.filter(([lv])=>Number(lv)>=5);
+     const ordered=[]; for(let i=0;i<Math.max(left.length,right.length);i++){if(left[i])ordered.push(left[i]);if(right[i])ordered.push(right[i])}
+     levels.innerHTML=`<div class="v32-skill-grid">${ordered.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="skill-var effect-food">${x.amount}個</strong></div>`).join("")}</div>`;
+   }
+ }
+ function evolutionEntries(m){
+   if(!m?.evolution)return [];
+   return Array.isArray(m.evolution)?m.evolution:[m.evolution];
+ }
+ function evolutionConditions(e){
+   if(Array.isArray(e.conditions)&&e.conditions.length)return e.conditions;
+   const out=[];
+   if(e.level!=null)out.push(`Lv.${e.level}`);
+   if(e.candy!=null)out.push(`アメ${e.candy}個`);
+   if(e.item)out.push(e.item);
+   if(e.extra)out.push(e.extra);
+   return out.length?out:["条件未確認"];
+ }
+ function parentsOf(no){
+   return Object.values(V.pokemon).filter(p=>evolutionEntries(p).some(e=>Number(e.toNo)===Number(no)));
+ }
+ function rootOf(m){
+   let cur=m,seen=new Set();
+   while(cur&&!seen.has(cur.no)){
+     seen.add(cur.no);const ps=parentsOf(cur.no);if(!ps.length)break;cur=ps[0];
+   }
+   return cur||m;
+ }
+ function descendantsOf(root){
+   const out=[],seen=new Set();
+   const walk=p=>{if(!p||seen.has(p.no))return;seen.add(p.no);out.push(p);evolutionEntries(p).forEach(e=>walk(byNo(e.toNo)))};
+   walk(root);return out;
+ }
+ function evoNode(p,currentNo,cls=""){
+   if(!p)return "";
+   const typeIcon={"くさ":"🌿","ほのお":"🔥","みず":"💧","でんき":"⚡","こおり":"❄️","かくとう":"🥊","どく":"☠️","じめん":"⛰️","ひこう":"🪽","エスパー":"🔮","むし":"🐛","いわ":"🪨","ゴースト":"👻","ドラゴン":"🐉","あく":"🌑","はがね":"⚙️","フェアリー":"✨","ノーマル":"◯"}[p.type]||"◯";
+   const image=p.image?`<img src="${p.image}" alt="${p.name}">`:`<span class="fallback">◌</span>`;
+   return `<button class="v31-evo-node ${Number(p.no)===Number(currentNo)?"is-current":""} ${cls}" data-evo-no="${p.no}"><span class="v31-evo-image">${image}<span class="v31-evo-type">${typeIcon}</span></span><span class="v31-evo-name">${p.name}</span></button>`;
+ }
+ function renderEvolution(m){
+   const el=document.getElementById("detailEvolution"),card=document.getElementById("evolutionCard");
+   if(!el||!card)return;
+   const root=rootOf(m),family=descendantsOf(root),rootBranches=evolutionEntries(root);
+   if(family.length<=1){card.style.display="none";el.innerHTML="";return}
+   card.style.display="";
+   // Heavy branching: base at left-center, destinations in a 3-column grid on the right.
+   if(rootBranches.length>2){
+     const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div></div>`}).join("");
+     el.innerHTML=`<div class="v31-branch-layout"><div class="v31-branch-root">${evoNode(root,m.no,"is-root")}</div><div class="v31-big-arrow">→</div><div class="v31-branch-grid">${cells}</div></div>`;
+   }else{
+     // Normal line: render the full known evolution family, not Pokédex-number adjacency.
+     const chain=[];let cur=root,guard=0;
+     while(cur&&guard++<12){chain.push(cur);const es=evolutionEntries(cur);if(es.length!==1)break;cur=byNo(es[0].toNo)}
+     let html='<div class="v31-evo-line">';
+     chain.forEach((p,i)=>{
+       html+=evoNode(p,m.no);
+       if(i<chain.length-1){const e=evolutionEntries(p)[0];html+=`<div class="v31-evo-step"><div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div><div class="v31-big-arrow">→</div></div>`}
+     });
+     html+='</div>';el.innerHTML=html;
+   }
+   el.querySelectorAll("[data-evo-no]").forEach(btn=>btn.onclick=()=>{const no=Number(btn.dataset.evoNo);if(no&&no!==currentNo)openPokemonDetail(no,{pushHistory:true})});
+ }
+ function openPokemonDetail(no,opts={}){
+   const m=byNo(no);if(!m)return;
+   if(opts.pushHistory&&currentNo&&currentNo!==m.no)detailHistory.push(currentNo);
+   currentNo=m.no;skillLv=1;setTheme(m.type);show("dexDetail");
+   header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);switchTab(currentTab||"ability");
+ }
+ window.openPokemonDetail=openPokemonDetail;
+
+ document.addEventListener("click",e=>{
+   const card=e.target.closest?.("#dexGrid [data-no]");if(!card)return;
+   const no=Number(card.dataset.no);if(!byNo(no))return;
+   e.preventDefault();e.stopImmediatePropagation();
+   currentTab="ability";detailHistory.length=0;detailOrigin="dex";currentNo=null;openPokemonDetail(no);
+ },true);
+
+ // Line-1 previous/next navigation also participates in the same reversible detail history.
+ document.addEventListener("click",e=>{
+   const b=e.target.closest?.("#v12Prev,#v12Next");
+   if(!b||b.disabled)return;
+   const current=byNo(currentNo);if(!current)return;
+   const target=b.id==="v12Prev"?byNo(current.no-1):byNo(current.no+1);
+   if(!target)return;
+   e.preventDefault();e.stopImmediatePropagation();openPokemonDetail(target.no,{pushHistory:true});
+ },true);
+
+ const back=document.querySelector("#dexDetail [data-back]");
+ if(back)back.addEventListener("click",e=>{
+   e.preventDefault();e.stopImmediatePropagation();
+   const previous=detailHistory.pop();
+   if(previous){openPokemonDetail(previous);return}
+   show(detailOrigin||"dex");currentNo=null;
+ },true);
+
+ const toggle=document.getElementById("skillDetailToggle"),levels=document.getElementById("skillLevels");
+ if(toggle&&levels)toggle.onclick=()=>{const o=levels.classList.toggle("open");toggle.textContent=o?"詳細を閉じる ▲":"詳細を見る ▼"};
+
+ switchTab("ability");
 })();
 </script>
-<script id="box-test-v5-overrides">
-/* Make the v4 card renderer use per-individual test values when supplied. */
-window.addEventListener('load',()=>{
- setTimeout(()=>{
-  const grid=document.getElementById('boxGrid'); if(!grid)return;
-  function renderTestAware(){
-   let q=(document.getElementById('boxSearchV4')?.value||'').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)).replace(/\s/g,'');
-   let sort=document.getElementById('boxSortV4')?.value||'team';
-   let arr=[...BOX].filter(x=>!q||(x.name||'').toLowerCase().replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)).includes(q));
-   arr.sort((a,b)=>sort==='level'?(b.lv-a.lv||a.no-b.no):sort==='number'?(a.no-b.no||b.lv-a.lv):((b.team?1:0)-(a.team?1:0)||b.lv-a.lv||a.no-b.no));
-   const typeCls={'くさ':'grass','ほのお':'fire','みず':'water','でんき':'electric','むし':'bug','ノーマル':'normal','どく':'poison','じめん':'ground','フェアリー':'fairy','エスパー':'psychic'};
-   const specIcon={'きのみ':['berry','🍓'],'食材':['food','🥕'],'スキル':['skill','✨'],'all':['all','ALL']};
-   const em={'あまいミツ':'🍯','あんみんトマト':'🍅','ほっこりポテト':'🥔','マメミート':'🥩','あったかジンジャー':'🫚','げきからハーブ':'🌿','モーモーミルク':'🥛','リラックスカカオ':'🫘','ワカクサ大豆':'🫘','ワカクサコーン':'🌽'};
-   grid.innerHTML=arr.length?arr.map(x=>{let m=(window.DEX_TEST_META&&DEX_TEST_META[x.no])||{},type=x.type||m.type||'',spec=x.specialty||m.specialty||'',ings=x.ingredients||[],si=specIcon[spec]||['all','◌'],sub=x.subskills||[];return `<div class="p-card box-card type-${typeCls[type]||'default'}"><div class="p-top"><span class="p-name">${x.name}</span><span class="p-meta">Lv.${x.lv}</span><span class="p-status">${x.favorite?'★':''} ${x.training?'🌱':''}</span></div><img class="p-sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x.no}.png" alt="${x.name}"><div class="subskills">${[0,1,2,3,4].map(i=>`<span class="subskill ${([10,25,50,75,100][i]>x.lv)?'locked':''}">${sub[i]||'◌'}</span>`).join('')}</div><div class="p-bottom"><span class="spec-icon spec-${si[0]}">${si[1]}</span>${[0,1,2].map(i=>`<span class="ing-icon" title="${ings[i]||''}">${em[ings[i]]||'◌'}</span>`).join('')}</div></div>`}).join(''):'<div class="box-empty">該当するポケモンはいません。</div>';
-   const c=document.getElementById('boxCount');if(c)c.textContent=arr.length+'匹';
-  }
-  if(BOX.some(x=>String(x.id||'').startsWith('test-'))){ window.renderBox=renderTestAware; renderTestAware(); document.getElementById('boxSortV4').onchange=renderTestAware; document.getElementById('boxSearchV4').oninput=renderTestAware; }
- },900)
-});
+
+
+<script id="stable-v17-bottom-nav-fix">
+(()=>{
+  document.addEventListener("click", e=>{
+    const btn=e.target.closest?.("nav [data-tab]");
+    if(!btn)return;
+    const id=btn.dataset.tab;
+    const target=document.getElementById(id);
+    if(!target)return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id===id));
+    document.querySelectorAll("nav [data-tab]").forEach(b=>b.classList.toggle("active",b===btn));
+    window.scrollTo(0,0);
+  },true);
+})();
 </script>
 
-</body>
-</html>
+</body></html>
