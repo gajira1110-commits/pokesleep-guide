@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v123</title>
+<title>PokéSleep Guide - Review v125</title>
 
 
 
@@ -97,6 +97,12 @@ window.PS_CATALOG = {
     3:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
     4:[['ぱちぱち寝',1],['おなかさすり寝',2],['おなかだし寝',3],['おなかのうえ寝',4]],
     10:[['ぺったり寝',1],['あたまおもい寝',2],['いとをはく寝',3],['おなかのうえ寝',4]]
+  },
+  // Recipe facts cross-checked with 2026 recipe tables. Energy is shown only
+  // at verified endpoints; intermediate levels need their own verified values.
+  recipes: {
+    baby_honey_curry:{id:'baby_honey_curry',name:'ベイビィハニーカレー',category:'カレー・シチュー',ingredients:[{name:'あまいミツ',qty:7}],energy:{min:{level:1,value:839},max:{level:70,value:3004}}},
+    bean_burger_curry:{id:'bean_burger_curry',name:'マメバーグカレー',category:'カレー・シチュー',ingredients:[{name:'マメミート',qty:7}],energy:{min:{level:1,value:856},max:{level:70,value:3064}}}
   },
   skills: {
     ingredient_magnet_s: {
@@ -193,6 +199,13 @@ for(const [name,image] of Object.entries(window.PS_IMAGE_FILES.ingredients)){
 for(const [id,image] of Object.entries(window.PS_IMAGE_FILES.skills)){
   if(window.PS_CATALOG.skills[id])window.PS_CATALOG.skills[id].image=image;
 }
+window.PS_CATALOG.recipesByIngredient={};
+for(const recipe of Object.values(window.PS_CATALOG.recipes)){
+  recipe.image=window.PS_IMAGE_FILES.recipes[recipe.id]||null;
+  for(const ingredient of recipe.ingredients){
+    (window.PS_CATALOG.recipesByIngredient[ingredient.name]??=[]).push({id:recipe.id,name:recipe.name,image:recipe.image,amount:ingredient.qty});
+  }
+}
 window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name]||null;
 </script>
 
@@ -276,6 +289,7 @@ h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(-
 .btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .psg-team-row{display:flex;align-items:center;gap:12px;padding:6px 0}.psg-team-row label{flex:0 0 4em;font-weight:700}.psg-team-row select{flex:1;min-width:0;text-align:left;color:#17231e}.psg-team-card .note{margin:8px 0}
 .psg-skill-index input{display:block;width:100%;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px}.psg-skill-entry{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.psg-skill-entry summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;cursor:pointer;color:#171d1a}.psg-skill-entry summary strong{font-size:18px}.psg-skill-tags{font-size:13px;color:#527a62}.psg-skill-levels{padding:0 14px}.psg-skill-level{display:flex;gap:16px;padding:10px 0;border-top:1px solid var(--line)}.psg-skill-level b{min-width:44px}.psg-skill-species-label{font-weight:700;padding:12px 14px 6px}.psg-skill-species{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px}
+.psg-recipe-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.psg-recipe-filters label{font-size:13px;font-weight:700}.psg-recipe-filters input,.psg-recipe-filters select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px;color:#18221b}.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:12px;background:#fff}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-headline{display:flex;flex-direction:column;gap:2px}.psg-recipe-headline strong{font-size:17px}.psg-recipe-headline small,.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;padding:4px 8px;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
 .toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer;font:inherit;color:inherit;text-align:left}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
 nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
@@ -2799,7 +2813,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v123</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v125</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div></section>
@@ -2844,7 +2858,11 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
  <label for="skillSearch">スキル名・分類で検索</label><input id="skillSearch" type="search" placeholder="例：食材" autocomplete="off">
  <div id="skillIndexCount" class="note" role="status"></div><div id="skillIndexList"></div>
 </div>
-<div class="card"><div class="section-title">🍳 料理</div><div class="note">料理データ用の独立領域。マスターデータ投入後に表示します。</div></div>
+<div class="card psg-recipe-index"><div class="section-title">🍳 料理</div>
+ <p class="note">確認済みのレシピから掲載しています。食材の種類が揃うかをチームと照合します。</p>
+ <div class="psg-recipe-filters"><label for="recipeSearch">料理名<input id="recipeSearch" type="search" placeholder="料理名で検索"></label><label for="recipeIngredient">食材<select id="recipeIngredient"><option value="">すべて</option></select></label></div>
+ <div id="recipeCount" class="note" role="status"></div><div id="recipeList"></div>
+</div>
 <div class="card"><div class="section-title">🗺️ フィールド</div><div class="note">通常 / EXを含むフィールドデータ用の独立領域です。</div></div>
 <div class="card"><div class="section-title">記録のバックアップ</div><p>ボックスと寝顔の登録記録を１つのファイルに保存できます。</p>
  <button class="btn primary" type="button" id="backupExport">バックアップを書き出す</button>
@@ -3199,7 +3217,10 @@ function renderBox(){
  boxGrid.innerHTML=a.map(x=>`<button type="button" class="poke" data-id="${x.id}" aria-label="${x.name} Lv.${x.level}の個体詳細"><b>${x.name}</b><small>Lv.${x.level}</small></button>`).join('');
  boxEmpty.textContent=state.box.length?'条件に合う個体がありません。':'Boxは空です。「＋追加」から登録できます。';
  boxEmpty.style.display=a.length?'none':'block';
- boxGrid.querySelectorAll('.poke').forEach(c=>c.onclick=()=>openBox(c.dataset.id));
+ boxGrid.querySelectorAll('.poke').forEach(c=>c.onclick=()=>{
+  if(Date.now()<(window.PS?.ignoreCardClicksUntil||0))return;
+  openBox(c.dataset.id);
+ });
  renderTeam();
 }
 const MAX_POKEMON_LEVEL=70; // Confirmed in official Ver.3.6.0 notice, 2026-06-25.
@@ -3789,7 +3810,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
 <script id="psg-swipe-navigation">
 (()=>{
   const screens=["home","box","dex","info"];
-  const minDistance=64,edgeWidth=56;
+  const minDistance=64,boxMinDistance=48,edgeWidth=56;
   let start=null;
   const interactive="button,a,input,select,textarea,[contenteditable='true']";
   function insideHorizontalScroller(target,screen){
@@ -3800,7 +3821,11 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
   }
   document.addEventListener("touchstart",event=>{
     start=null;
-    if(event.touches.length!==1||event.target.closest?.(interactive))return;
+    if(event.touches.length!==1)return;
+    // Box cards are buttons that fill most of the screen; allow a sideways drag
+    // from their surface, while the tap still opens the individual as usual.
+    const boxCard=event.target.closest?.('#boxGrid .poke');
+    if(event.target.closest?.(interactive)&&!boxCard)return;
     // Dex cards are tappable, but a gesture starting on their surface can switch screens.
     if(event.target.closest?.("[role='button']")&&!event.target.closest?.("#dexGrid .dex-card"))return;
     if(event.target.closest?.("#detailEvolution,#detailFoods .v24-recipes"))return;
@@ -3818,7 +3843,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     const gesture=start;start=null;
     if(!document.getElementById(gesture.screen)?.classList.contains("active"))return;
     const touch=event.changedTouches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
-    if(Math.abs(dx)<minDistance||Math.abs(dx)<Math.abs(dy)*1.35)return;
+    if(Math.abs(dx)<(gesture.screen==='box'?boxMinDistance:minDistance)||Math.abs(dx)<Math.abs(dy)*1.35)return;
     if(gesture.screen==="dexDetail"){
       if(dx>0)window.PS_DETAIL_NAV?.back();
       if(dx<0)window.PS_DETAIL_NAV?.forward();
@@ -3826,7 +3851,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     }
     const index=screens.indexOf(gesture.screen),next=screens[index+(dx<0?1:-1)];
     if(!next||!window.PS?.go)return;
-    if(gesture.screen==="dex"&&window.PS)window.PS.ignoreCardClicksUntil=Date.now()+400;
+    if((gesture.screen==="dex"||gesture.screen==="box")&&window.PS)window.PS.ignoreCardClicksUntil=Date.now()+400;
     window.PS.state.history.length=0;
     window.PS.go(next,false);
   },{passive:true});
@@ -3882,6 +3907,76 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
   });
  }
  input.addEventListener('input',render);render();
+})();
+</script>
+<script id="psg-recipe-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const list=document.getElementById('recipeList'),search=document.getElementById('recipeSearch');
+ const ingredientFilter=document.getElementById('recipeIngredient'),count=document.getElementById('recipeCount');
+ if(!catalog||!list||!search||!ingredientFilter)return;
+ const recipes=Object.values(catalog.recipes||{});
+ const names=[...new Set(recipes.flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
+ names.forEach(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;ingredientFilter.append(option)});
+ function availableIngredients(){
+  const available=new Set();
+  for(const member of window.PS?.teamContext?.().members||[]){
+   const individual=window.PS.state.box.find(x=>x.id===member.instanceId);
+   const species=catalog.pokemon[member.speciesNo];
+   for(const slot of species?.ingredientSlots||[]){
+    if(slot.unlock>individual.level)continue;
+    const chosen=individual.ingredients?.[slot.unlock];
+    const confirmed=slot.candidates.some(c=>c.name===chosen)?chosen:slot.candidates.length===1?slot.candidates[0].name:null;
+    if(confirmed)available.add(confirmed);
+   }
+  }
+  return available;
+ }
+ function icon(name){
+  const visual=catalog.ingredientVisual?.(name);
+  const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  if(src){const img=document.createElement('img');img.src=src;img.alt='';return img}
+  const text=document.createElement('span');text.textContent=visual?.fallback||'◌';return text;
+ }
+ function render(){
+  const query=search.value.trim().toLocaleLowerCase('ja'),ingredient=ingredientFilter.value;
+  const filtered=recipes.filter(r=>r.name.toLocaleLowerCase('ja').includes(query)&&(!ingredient||r.ingredients.some(i=>i.name===ingredient)));
+  const available=availableIngredients();
+  count.textContent=`${filtered.length} / ${recipes.length} 件の確認済みレシピ`;
+  list.replaceChildren();
+  if(!filtered.length){const empty=document.createElement('p');empty.className='note';empty.textContent='該当する料理はありません。';list.append(empty);return}
+  for(const recipe of filtered){
+   const card=document.createElement('article');card.className='psg-recipe-entry';
+   const summary=document.createElement('div');summary.className='psg-recipe-heading';
+   const title=document.createElement('strong');title.textContent=recipe.name;
+   const category=document.createElement('small');category.textContent=recipe.category;
+   const headline=document.createElement('span');headline.className='psg-recipe-headline';headline.append(title,category);
+   const total=document.createElement('b');total.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;
+   summary.append(headline,total);card.append(summary);
+   const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
+   for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.append(icon(item.name));const name=document.createElement('span');name.textContent=`${item.name} ×${item.qty}`;chip.append(name);ingredientRow.append(chip)}
+   card.append(ingredientRow);
+   const energy=document.createElement('div');energy.className='psg-recipe-energy';
+   const max=document.createElement('strong');max.textContent=Number.isFinite(recipe.energy?.max?.value)?`Lv.${recipe.energy.max.level} ${recipe.energy.max.value.toLocaleString()} エナジー`:'最大エナジー未確認';
+   const min=document.createElement('small');min.textContent=Number.isFinite(recipe.energy?.min?.value)?`Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー`:'Lv.1 未確認';
+   energy.append(max,min);card.append(energy);
+   const status=document.createElement('p');status.className='note';
+   status.textContent=(window.PS?.teamContext?.().members.length||0)===0?'チーム未登録':recipe.ingredients.every(i=>available.has(i.name))?'チームに食材の種類あり（必要数・鍋容量は未判定）':'チームの食材の種類が未確認';card.append(status);
+   const providers=document.createElement('details');providers.className='psg-recipe-providers';
+   const label=document.createElement('summary');label.textContent='食材を拾うポケモンを見る';providers.append(label);
+   for(const item of recipe.ingredients){
+    const listOfSpecies=Object.values(catalog.pokemon).filter(p=>p.dexVisible).flatMap(p=>{
+      const first=p.ingredientSlots?.find(slot=>slot.candidates.some(candidate=>candidate.name===item.name));
+      return first?[`${p.name}${first.unlock>1?` Lv.${first.unlock}～`:''}`]:[];
+    });
+    const line=document.createElement('p');line.textContent=`${item.name}：${listOfSpecies.length?listOfSpecies.join('、'):'データ未確認'}`;providers.append(line);
+   }
+   card.append(providers);list.append(card);
+  }
+ }
+ search.addEventListener('input',render);ingredientFilter.addEventListener('change',render);
+ document.querySelector('nav [data-tab="info"]')?.addEventListener('click',render);
+ render();
 })();
 </script>
 </body></html>
