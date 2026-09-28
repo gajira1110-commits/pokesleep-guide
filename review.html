@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v120</title>
+<title>PokéSleep Guide - Review v122</title>
 
 
 
@@ -274,6 +274,8 @@ main{max-width:720px;margin:auto;padding:12px 12px 86px}.screen{display:none}.sc
 h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
 .empty{text-align:center;padding:34px 16px;color:var(--muted)}button,input,select{font:inherit}
 .btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.psg-team-row{display:flex;align-items:center;gap:12px;padding:6px 0}.psg-team-row label{flex:0 0 4em;font-weight:700}.psg-team-row select{flex:1;min-width:0;text-align:left;color:#17231e}.psg-team-card .note{margin:8px 0}
+.psg-skill-index input{display:block;width:100%;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px}.psg-skill-entry{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.psg-skill-entry summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;cursor:pointer;color:#171d1a}.psg-skill-entry summary strong{font-size:18px}.psg-skill-tags{font-size:13px;color:#527a62}.psg-skill-levels{padding:0 14px}.psg-skill-level{display:flex;gap:16px;padding:10px 0;border-top:1px solid var(--line)}.psg-skill-level b{min-width:44px}.psg-skill-species-label{font-weight:700;padding:12px 14px 6px}.psg-skill-species{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px}
 .toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer;font:inherit;color:inherit;text-align:left}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
 nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
@@ -2797,9 +2799,10 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v120</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v122</small></header>
 <main>
-<section id="home" class="screen active"><h2>ホーム</h2><div class="card"><div class="section-title">現在のチーム</div><div class="empty">チームはまだ登録されていません。</div></div></section>
+<section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
+<p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div></section>
 <section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
 <div id="boxAddPanel" class="card" hidden style="margin-bottom:12px"><label for="boxSpecies">図鑑から選ぶ</label><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px"><select id="boxSpecies" class="btn" style="flex:1;min-width:160px"></select><button class="btn primary" id="boxConfirmAdd">Boxに登録</button><button class="btn" id="boxCancelAdd">キャンセル</button></div></div>
 <div id="boxUndoPanel" class="card" hidden style="margin-bottom:12px">削除しました。 <button class="btn" id="boxUndoRemove">元に戻す</button></div>
@@ -2836,7 +2839,20 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 <div class="note" id="dexCount" style="margin:0 2px 8px">0 / 0</div>
 <div id="dexGrid" class="grid"></div><div id="dexEmpty" class="card empty">図鑑データは次段階で再調査して投入します。<br>未確認値は推測で埋めません。</div>
 </section>
-<section id="info" class="screen"><h2>情報</h2><div class="card"><div class="section-title">🍳 料理</div><div class="note">料理データ用の独立領域。マスターデータ投入後に表示します。</div></div><div class="card"><div class="section-title">🗺️ フィールド</div><div class="note">通常 / EXを含むフィールドデータ用の独立領域です。</div></div></section>
+<section id="info" class="screen"><h2>情報</h2>
+<div class="card psg-skill-index"><div class="section-title">✨ スキル一覧</div>
+ <label for="skillSearch">スキル名・分類で検索</label><input id="skillSearch" type="search" placeholder="例：食材" autocomplete="off">
+ <div id="skillIndexCount" class="note" role="status"></div><div id="skillIndexList"></div>
+</div>
+<div class="card"><div class="section-title">🍳 料理</div><div class="note">料理データ用の独立領域。マスターデータ投入後に表示します。</div></div>
+<div class="card"><div class="section-title">🗺️ フィールド</div><div class="note">通常 / EXを含むフィールドデータ用の独立領域です。</div></div>
+<div class="card"><div class="section-title">記録のバックアップ</div><p>ボックスと寝顔の登録記録を１つのファイルに保存できます。</p>
+ <button class="btn primary" type="button" id="backupExport">バックアップを書き出す</button>
+ <label for="backupFile" style="display:block;margin-top:16px">バックアップを取り込む</label>
+ <input id="backupFile" type="file" accept=".json,application/json" style="max-width:100%">
+ <div id="backupPreview" class="note" role="status" style="margin-top:8px">ファイルを選ぶと内容を確認できます。</div>
+ <button class="btn" type="button" id="backupImport" hidden>この記録を復元する</button>
+</div></section>
 <section id="dexDetail" class="screen">
 <div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2 style="margin:0;flex:1">ポケモン詳細</h2></div>
 <div class="detail-nav"><button id="prevPokemon">‹ 前</button><strong id="detailNoName">—</strong><button id="nextPokemon">後 ›</button></div>
@@ -2915,13 +2931,17 @@ const master={
  rules:{version:'stable-v3',verifiedAt:null}
 };
 const BOX_STORAGE_KEY='psg.box.instances.v1';
+const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
+const TEAM_STORAGE_KEY='psg.team.primary.v1';
 const boxCatalog=()=>Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible);
-function readBox(){
- try{
-  const raw=JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]');
+function normalizeBox(raw){
   if(!Array.isArray(raw))return [];
   const known=new Map(boxCatalog().map(p=>[Number(p.no),p]));
-  return raw.filter(x=>x&&typeof x.id==='string'&&/^[a-zA-Z0-9-]{1,100}$/.test(x.id)&&known.has(Number(x.no))&&Number.isInteger(x.level)&&x.level>=1&&x.level<=100)
+  const seen=new Set();
+  return raw.filter(x=>{
+    if(!x||typeof x.id!=='string'||! /^[a-zA-Z0-9-]{1,100}$/.test(x.id)||seen.has(x.id)||!known.has(Number(x.no))||!Number.isInteger(x.level)||x.level<1||x.level>100)return false;
+    seen.add(x.id);return true;
+  })
    .map(x=>({id:x.id,no:Number(x.no),level:Math.min(70,x.level),name:known.get(Number(x.no)).name,
     specialty:known.get(Number(x.no)).specialty,
     ingredients:x.ingredients&&typeof x.ingredients==='object'?x.ingredients:{},
@@ -2929,7 +2949,10 @@ function readBox(){
     nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
     skillLevel:Number.isInteger(x.skillLevel)?Math.max(1,Math.min(7,x.skillLevel)):1,
     role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true}));
- }catch{return []}
+}
+function readBox(){
+ try{return normalizeBox(JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]'))}
+ catch{return []}
 }
 function commitBox(next){
  try{
@@ -2941,6 +2964,102 @@ function commitBox(next){
  }catch{alert('保存できませんでした。ブラウザーの保存設定を確認してください。');return false}
 }
 state.box=readBox();
+function normalizeTeam(raw,box){
+ const validIds=new Set(box.map(x=>x.id)),seen=new Set();
+ return Array.from({length:5},(_,i)=>{
+  const id=Array.isArray(raw)?raw[i]:null;
+  if(typeof id!=='string'||!validIds.has(id)||seen.has(id))return null;
+  seen.add(id);return id;
+ });
+}
+function readTeam(){
+ try{return normalizeTeam(JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'[]'),state.box)}catch{return [null,null,null,null,null]}
+}
+let team=readTeam();
+function renderTeam(){
+ const panel=document.getElementById('teamSlots');panel.replaceChildren();
+ team=normalizeTeam(team,state.box);
+ team.forEach((id,index)=>{
+  const row=document.createElement('div');row.className='psg-team-row';
+  const label=document.createElement('label');label.textContent=`${index+1}匹目`;
+  const select=document.createElement('select');select.className='btn';select.setAttribute('aria-label',`${index+1}匹目のポケモン`);
+  const empty=document.createElement('option');empty.value='';empty.textContent='未設定';select.append(empty);
+  state.box.forEach(x=>{
+   if(team.includes(x.id)&&id!==x.id)return;
+   const option=document.createElement('option');option.value=x.id;option.textContent=`${x.name} Lv.${x.level}`;select.append(option);
+  });
+  select.value=id||'';
+  select.onchange=()=>{
+   const next=[...team];next[index]=select.value||null;
+   try{localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify(next));team=next;renderTeam()}
+   catch{select.value=id||'';document.getElementById('teamSummary').textContent='チームを保存できませんでした。端末の設定を確認してください。'}
+  };
+  row.append(label,select);panel.append(row);
+ });
+ const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
+ const summary=document.getElementById('teamSummary');
+ summary.textContent=state.box.length?`${selected.length} / 5匹を登録中${selected.length?`・得意：${[...new Set(selected.map(x=>x.specialty))].join('、')}`:''}`:'ボックスに個体を登録すると、ここでチームを組めます。';
+}
+const backupBoxFields=({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training})=>({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training});
+const knownSleepIds=new Set(Object.values(window.PS_CATALOG?.sleepStyles||{}).flat().map(s=>s.id));
+function normalizeSleepFound(raw){
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))return {};
+ return Object.fromEntries(Object.entries(raw).filter(([id,found])=>knownSleepIds.has(id)&&found===true));
+}
+function readSleepBackup(){
+ try{return normalizeSleepFound(JSON.parse(localStorage.getItem(SLEEP_STORAGE_KEY)||'{}'))}
+ catch{return {}}
+}
+const backupFile=document.getElementById('backupFile');
+const backupPreview=document.getElementById('backupPreview');
+const backupImport=document.getElementById('backupImport');
+let pendingBackup=null;
+document.getElementById('backupExport').onclick=()=>{
+ try{
+  const payload={format:'psg-user-data',version:2,exportedAt:new Date().toISOString(),box:state.box.map(backupBoxFields),sleepFound:readSleepBackup(),team:normalizeTeam(team,state.box)};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));
+  const link=document.createElement('a');link.href=url;link.download=`PSG_backup_${new Date().toISOString().slice(0,10)}.json`;
+  document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+  backupPreview.textContent=`ボックス ${payload.box.length}件・寝顔 ${Object.keys(payload.sleepFound).length}件を書き出しました。`;
+ }catch{backupPreview.textContent='書き出せませんでした。端末の設定を確認してください。'}
+};
+backupFile.onchange=async()=>{
+ pendingBackup=null;backupImport.hidden=true;
+ const file=backupFile.files?.[0];if(!file){backupPreview.textContent='ファイルを選ぶと内容を確認できます。';return}
+ if(file.size>5*1024*1024){backupPreview.textContent='ファイルが大きすぎます（上限5MB）。';return}
+ try{
+  const parsed=JSON.parse(await file.text());
+  if(parsed?.format!=='psg-user-data'||![1,2].includes(parsed.version)||!Array.isArray(parsed.box)||!parsed.sleepFound||typeof parsed.sleepFound!=='object'||Array.isArray(parsed.sleepFound)||parsed.version===2&&!Array.isArray(parsed.team))throw Error('形式');
+  const box=normalizeBox(parsed.box),sleepFound=normalizeSleepFound(parsed.sleepFound);
+  const importedTeam=normalizeTeam(parsed.team,box);
+  if(parsed.box.length>0&&box.length===0)throw Error('ポケモンのデータが一致しません');
+  const skipped=parsed.box.length-box.length+Object.keys(parsed.sleepFound).length-Object.keys(sleepFound).length;
+  pendingBackup={box,sleepFound,team:importedTeam};
+  backupPreview.textContent=`ボックス ${box.length}件・チーム ${importedTeam.filter(Boolean).length}匹・寝顔 ${Object.keys(sleepFound).length}件を確認しました。${skipped?`未対応の記録 ${skipped}件を除外します。`:''}復元すると現在の記録を置き換えます。`;
+  backupImport.hidden=false;
+ }catch{backupPreview.textContent='読み込めませんでした。PokéSleep GuideのバックアップJSONを選んでください。'}
+};
+backupImport.onclick=()=>{
+ if(!pendingBackup)return;
+ if(!confirm(`現在のボックス ${state.box.length}件・寝顔 ${Object.keys(readSleepBackup()).length}件を、選択したバックアップに置き換えます。復元しますか？`))return;
+ const oldBox=localStorage.getItem(BOX_STORAGE_KEY),oldSleep=localStorage.getItem(SLEEP_STORAGE_KEY),oldTeam=localStorage.getItem(TEAM_STORAGE_KEY);
+ try{
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(pendingBackup.box.map(backupBoxFields)));
+  localStorage.setItem(SLEEP_STORAGE_KEY,JSON.stringify(pendingBackup.sleepFound));
+  localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify(pendingBackup.team));
+  state.box=readBox();team=readTeam();renderBox();renderTeam();
+  window.PSG_REFRESH_SLEEP_FOUND?.();
+  backupPreview.textContent=`復元しました。ボックス ${state.box.length}件・寝顔 ${Object.keys(pendingBackup.sleepFound).length}件。`;
+  pendingBackup=null;backupImport.hidden=true;backupFile.value='';
+ }catch{
+  try{
+   if(oldBox===null)localStorage.removeItem(BOX_STORAGE_KEY);else localStorage.setItem(BOX_STORAGE_KEY,oldBox);
+   if(oldSleep===null)localStorage.removeItem(SLEEP_STORAGE_KEY);else localStorage.setItem(SLEEP_STORAGE_KEY,oldSleep);
+   if(oldTeam===null)localStorage.removeItem(TEAM_STORAGE_KEY);else localStorage.setItem(TEAM_STORAGE_KEY,oldTeam);
+  }catch{}
+  state.box=readBox();backupPreview.textContent='復元できませんでした。端末の保存設定を確認してください。';
+ }
+};
 /* Individual records may later contain:
  favorite:boolean, training:boolean,
  shiny:'confirmed'|'not_shiny'|'unknown'.
@@ -3065,6 +3184,7 @@ function renderBox(){
  boxEmpty.textContent=state.box.length?'条件に合う個体がありません。':'Boxは空です。「＋追加」から登録できます。';
  boxEmpty.style.display=a.length?'none':'block';
  boxGrid.querySelectorAll('.poke').forEach(c=>c.onclick=()=>openBox(c.dataset.id));
+ renderTeam();
 }
 const MAX_POKEMON_LEVEL=70; // Confirmed in official Ver.3.6.0 notice, 2026-06-25.
 const SUBSKILL_LEVELS=[10,25,50,70,80];
@@ -3349,6 +3469,11 @@ if(window.PS?.master&&window.PS_CATALOG){
    });
    sleep.appendChild(grid);
  }
+ window.PSG_REFRESH_SLEEP_FOUND=()=>{
+   sleepFound=readSleepFound();
+   const pokemon=byNo(currentNo);
+   if(pokemon)renderSleepStyles(pokemon);
+ };
 
  function switchTab(tab){
    currentTab=tab;
@@ -3699,4 +3824,48 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
 
 
 
+<script id="psg-skill-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const input=document.getElementById('skillSearch'),list=document.getElementById('skillIndexList'),count=document.getElementById('skillIndexCount');
+ if(!catalog||!input||!list)return;
+ const effects=(skill,level)=>{
+  const value=skill.levels?.[level];
+  if(skill.effectType==='random_ingredients'&&Number.isFinite(value?.amount))return `ランダムな食材を${value.amount}個ゲットする`;
+  return typeof value?.description==='string'&&value.description.trim()?value.description:'効果データ未確認';
+ };
+ function render(){
+  const query=input.value.trim().toLocaleLowerCase('ja');
+  const all=Object.values(catalog.skills||{});
+  const matches=all.filter(s=>[s.name,...(s.tags||[])].some(value=>String(value).toLocaleLowerCase('ja').includes(query)));
+  count.textContent=`${matches.length} / ${all.length} スキル`;
+  list.replaceChildren();
+  if(!matches.length){const empty=document.createElement('p');empty.className='note';empty.textContent='該当するスキルはありません。';list.append(empty);return}
+  matches.forEach(skill=>{
+   const species=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible&&p.mainSkillId===skill.id);
+   const item=document.createElement('details');item.className='psg-skill-entry';
+   const summary=document.createElement('summary');
+   const title=document.createElement('strong');title.textContent=skill.name;
+   const tags=document.createElement('span');tags.className='psg-skill-tags';tags.textContent=(skill.tags||[]).join(' · ');
+   summary.append(title,tags);item.append(summary);
+   const rows=document.createElement('div');rows.className='psg-skill-levels';
+   for(let level=1;level<=Math.min(10,Number(skill.maxLevel)||0);level++){
+    const row=document.createElement('div');row.className='psg-skill-level';
+    const label=document.createElement('b');label.textContent=`Lv.${level}`;
+    const description=document.createElement('span');description.textContent=effects(skill,level);
+    row.append(label,description);rows.append(row);
+   }
+   item.append(rows);
+   const heading=document.createElement('div');heading.className='psg-skill-species-label';heading.textContent='このスキルを持つポケモン';item.append(heading);
+   const links=document.createElement('div');links.className='psg-skill-species';
+   if(!species.length){const empty=document.createElement('span');empty.textContent='データ未確認';links.append(empty)}
+   species.forEach(p=>{
+    const button=document.createElement('button');button.type='button';button.className='btn';button.textContent=`No.${String(p.no).padStart(3,'0')} ${p.name}`;
+    button.onclick=()=>window.openPokemonDetail?.(p.no,{pushHistory:false});links.append(button);
+   });item.append(links);list.append(item);
+  });
+ }
+ input.addEventListener('input',render);render();
+})();
+</script>
 </body></html>
