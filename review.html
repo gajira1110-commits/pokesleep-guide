@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v122</title>
+<title>PokéSleep Guide - Review v123</title>
 
 
 
@@ -2799,7 +2799,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v122</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v123</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div></section>
@@ -2976,6 +2976,22 @@ function readTeam(){
  try{return normalizeTeam(JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'[]'),state.box)}catch{return [null,null,null,null,null]}
 }
 let team=readTeam();
+// Team composition for skill-specific rules. IDs are individual records;
+// species/type/skill grouping is computed only when an effect asks for it.
+function teamContext(){
+ const members=team.map((id,slot)=>{
+  const individual=state.box.find(x=>x.id===id);
+  const species=individual&&window.PS_CATALOG?.pokemon[individual.no];
+  return species?{slot,instanceId:individual.id,speciesNo:Number(species.no),type:species.type,mainSkillId:species.mainSkillId}:null;
+ }).filter(Boolean);
+ const speciesCounts={},skillCounts={},speciesByType={};
+ members.forEach(member=>{
+  speciesCounts[member.speciesNo]=(speciesCounts[member.speciesNo]||0)+1;
+  if(member.mainSkillId)skillCounts[member.mainSkillId]=(skillCounts[member.mainSkillId]||0)+1;
+  (speciesByType[member.type]??=new Set()).add(member.speciesNo);
+ });
+ return {members,speciesCounts,skillCounts,distinctSpeciesByType:Object.fromEntries(Object.entries(speciesByType).map(([type,ids])=>[type,ids.size]))};
+}
 function renderTeam(){
  const panel=document.getElementById('teamSlots');panel.replaceChildren();
  team=normalizeTeam(team,state.box);
@@ -3295,7 +3311,7 @@ boxUndoRemove.onclick=()=>{
  if(commitBox(next)){lastRemoval=null;boxUndoPanel.hidden=true}
 };
 hydrateSpecialtyIcons(document);renderFilters();setupMenus();renderDex();renderBox();
-window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel};
+window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel,teamContext};
 })();
 </script>
 <script id="psg-dex-catalog-adapter">
