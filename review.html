@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v126</title>
+<title>PokéSleep Guide - Review v127</title>
 
 
 
@@ -44,7 +44,7 @@ window.PS_IMAGE_FILES = {
    Keep public mode when promoting a reviewed version to the official release. */
 window.PS_IMAGE_PREVIEW_MODE = 'public';
 window.PS_DEV_ASSETS = {
-  ingredientIds:{'あまいミツ':'honey','あんみんトマト':'tomato','ほっこりポテト':'potato','マメミート':'bean_meat','あったかジンジャー':'warming_ginger','げきからハーブ':'fiery_herb','ワカクサ大豆':'greengrass_soybeans'},
+  ingredientIds:{'あまいミツ':'honey','あんみんトマト':'tomato','ほっこりポテト':'potato','マメミート':'bean_meat','あったかジンジャー':'warming_ginger','げきからハーブ':'fiery_herb','ワカクサ大豆':'greengrass_soybeans','とくせんリンゴ':'fancy_apple'},
   berryIds:{'ドリのみ':'dori','ヒメリのみ':'himeri','ラムのみ':'ramu'},
   path(kind,id,role='full'){
     if(kind==='pokemon')return `assets/pokemon/${String(id).padStart(4,'0')}_default_${role}.webp`;
@@ -102,7 +102,11 @@ window.PS_CATALOG = {
   // at verified endpoints; intermediate levels need their own verified values.
   recipes: {
     baby_honey_curry:{id:'baby_honey_curry',name:'ベイビィハニーカレー',category:'カレー・シチュー',ingredients:[{name:'あまいミツ',qty:7}],energy:{min:{level:1,value:839},max:{level:70,value:3004}}},
-    bean_burger_curry:{id:'bean_burger_curry',name:'マメバーグカレー',category:'カレー・シチュー',ingredients:[{name:'マメミート',qty:7}],energy:{min:{level:1,value:856},max:{level:70,value:3064}}}
+    bean_burger_curry:{id:'bean_burger_curry',name:'マメバーグカレー',category:'カレー・シチュー',ingredients:[{name:'マメミート',qty:7}],energy:{min:{level:1,value:856},max:{level:70,value:3064}}},
+    bean_ham_salad:{id:'bean_ham_salad',name:'マメハムサラダ',category:'サラダ',ingredients:[{name:'マメミート',qty:8}],energy:{min:{level:1,value:978},max:{level:70,value:3501}}},
+    choice_apple_salad:{id:'choice_apple_salad',name:'とくせんリンゴサラダ',category:'サラダ',ingredients:[{name:'とくせんリンゴ',qty:8}],energy:{min:{level:1,value:855},max:{level:70,value:3061}}},
+    ginger_tea:{id:'ginger_tea',name:'ひのこのジンジャーティー',category:'デザート・ドリンク',ingredients:[{name:'とくせんリンゴ',qty:7},{name:'あったかジンジャー',qty:9}],energy:{min:{level:1,value:1913},max:{level:70,value:6849}}},
+    apple_juice:{id:'apple_juice',name:'とくせんリンゴジュース',category:'デザート・ドリンク',ingredients:[{name:'とくせんリンゴ',qty:8}],energy:{min:{level:1,value:855},max:{level:70,value:3061}}}
   },
   skills: {
     ingredient_magnet_s: {
@@ -2796,6 +2800,41 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-recipe-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
 .psg-recipe-categories button{min-height:46px;padding:8px 3px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:clamp(10px,2.8vw,13px);font-weight:700;color:#24332d;cursor:pointer}
 .psg-recipe-categories button.active{background:#e8f3e9;border-color:#7db88d}
+.psg-recipe-sticky{position:sticky;top:56px;z-index:60;padding:7px 0 9px;background:var(--bg);border-bottom:1px solid var(--line)}
+.psg-recipe-sticky .psg-subpage-head{margin-bottom:8px}
+.psg-recipe-filter-bar{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:7px;margin-top:8px}
+.psg-recipe-select .filter-panel{min-width:175px;right:auto;width:max-content;max-width:min(90vw,280px)}
+.psg-recipe-filter-option{display:flex;align-items:center;gap:9px;cursor:pointer}
+.psg-recipe-filter-option img{width:30px;height:30px;object-fit:contain}.psg-recipe-filter-option[aria-pressed="true"]{background:#e7f6ef}
+.psg-recipe-sort-label{display:flex;align-items:center;gap:4px;white-space:nowrap;font-size:11px;font-weight:750}
+.psg-recipe-sort-label select{min-width:0;width:100%;padding:9px 2px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111;font-size:12px;font-weight:700}
+.psg-recipe-count{margin:10px 2px 6px}
+.psg-recipe-entry{padding:0!important;overflow:hidden}
+.psg-recipe-entry>.psg-recipe-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start;cursor:pointer;padding:13px;list-style:none}
+.psg-recipe-entry>.psg-recipe-heading::-webkit-details-marker{display:none}
+.psg-recipe-heading>strong{font-size:clamp(15px,4vw,18px);line-height:1.3;color:#111}
+.psg-recipe-heading .psg-recipe-energy{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:1px;white-space:nowrap}
+.psg-recipe-energy .psg-recipe-energy-max{font-size:18px;color:#111;line-height:1.3}
+.psg-recipe-energy-max small{font-size:10px;font-weight:700;color:#55645e}
+.psg-recipe-energy-max span{font-size:11px}.psg-recipe-energy .psg-recipe-energy-min{font-size:10px;color:#6e7a74}
+.psg-recipe-energy-min::after{content:" ▾";color:#347958;font-size:12px}.psg-recipe-entry[open] .psg-recipe-energy-min::after{content:" ▴"}
+.psg-recipe-heading .psg-recipe-ingredients{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin:1px 0 0}
+.psg-recipe-chip{padding:3px 7px}.psg-recipe-chip b{font-size:14px;color:#111}
+.psg-recipe-pot{margin-left:auto;font-size:13px;font-weight:800;color:#111;white-space:nowrap}
+.psg-recipe-expanded{border-top:1px solid var(--line);padding:10px 13px 13px}
+.psg-recipe-expanded h3{font-size:14px;margin:0 0 9px}.psg-recipe-expanded>.note{margin:9px 0 0}
+.psg-recipe-provider-group{border-top:1px solid #edf0ee;padding:8px 0}
+.psg-recipe-provider-group>strong{display:flex;align-items:center;gap:5px;font-size:13px}
+.psg-recipe-provider-group>strong img{width:24px;height:24px;object-fit:contain}
+.psg-recipe-providers{display:flex;flex-direction:column;gap:7px;border:0;padding:6px 0 0}
+.psg-recipe-family{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.psg-recipe-provider{border:1px solid var(--line);border-radius:10px;background:#fff;padding:4px;min-width:65px;max-width:82px;display:grid;justify-items:center;gap:2px;font-size:10px;font-weight:700;color:#111;cursor:pointer}
+.psg-recipe-provider-art{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:7px;background:#f4f8f5}
+.psg-recipe-provider-art img{max-width:100%;max-height:100%;object-fit:contain}
+.psg-recipe-provider-art img[hidden],.psg-recipe-provider-missing[hidden]{display:none}
+.psg-recipe-provider-missing{font-size:9px;color:#708178}
+.psg-recipe-provider-art small{position:absolute;bottom:-2px;right:-2px;border-radius:5px;background:#fff;padding:2px;font-size:9px;color:#111}
+@media(max-width:620px){.psg-recipe-sticky{top:calc(38px + env(safe-area-inset-top))}.psg-recipe-sticky .psg-subpage-head h2{font-size:17px}.psg-recipe-energy .psg-recipe-energy-max{font-size:16px}}
 #v12Sleep .psg-sleep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 #v12Sleep .psg-sleep-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e1eb;border-radius:15px;padding:7px}
 #v12Sleep .psg-sleep-photo{position:relative;aspect-ratio:4/3;display:grid;place-items:center;border-radius:10px;background:#f8f7fa;overflow:hidden}
@@ -2821,7 +2860,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v126</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v127</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div></section>
@@ -2874,23 +2913,21 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
  <div id="backupPreview" class="note" role="status" style="margin-top:8px">ファイルを選ぶと内容を確認できます。</div>
  <button class="btn" type="button" id="backupImport" hidden>この記録を復元する</button>
 </div></section>
-<section id="skillPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 情報に戻る</button><h2>スキル</h2></div>
+<section id="skillPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>スキル</h2></div>
 <div class="card psg-skill-index"><div class="section-title">✨ スキル一覧</div>
  <label for="skillSearch">スキル名・分類で検索</label><input id="skillSearch" type="search" placeholder="例：食材" autocomplete="off">
  <div id="skillIndexCount" class="note" role="status"></div><div id="skillIndexList"></div>
 </div></section>
-<section id="recipePage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 情報に戻る</button><h2>料理</h2></div>
-<div class="card psg-recipe-index"><div class="section-title">🍳 料理</div>
- <p class="note">確認済みのレシピから掲載しています。食材の種類が揃うかをチームと照合します。</p>
+<section id="recipePage" class="screen"><div class="psg-recipe-sticky"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>料理</h2></div>
  <div class="psg-recipe-categories" role="group" aria-label="料理の部門">
   <button type="button" class="active" data-recipe-category="カレー・シチュー" aria-pressed="true">カレー・シチュー</button>
   <button type="button" data-recipe-category="サラダ" aria-pressed="false">サラダ</button>
   <button type="button" data-recipe-category="デザート・ドリンク" aria-pressed="false">デザート・ドリンク</button>
  </div>
- <div class="psg-recipe-filters"><label for="recipeSearch">料理名<input id="recipeSearch" type="search" placeholder="料理名で検索"></label><label for="recipeIngredient">食材<select id="recipeIngredient"><option value="">すべて</option></select></label></div>
- <div id="recipeCount" class="note" role="status"></div><div id="recipeList"></div>
-</div></section>
-<section id="fieldPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 情報に戻る</button><h2>フィールド</h2></div>
+ <div class="psg-recipe-filter-bar"><div class="filter-select psg-recipe-select" data-menu="recipe-ing"><button type="button" class="filter-main" id="recipeIngredientButton" aria-expanded="false">食材 <span>▼</span></button><div class="filter-panel" id="recipeIngredientOptions" aria-label="食材で絞り込み"></div></div><label class="psg-recipe-sort-label" for="recipeSort">並び順<select id="recipeSort"><option value="energy-desc">エナジーが多い順</option><option value="energy-asc">エナジーが少ない順</option><option value="name">名前順</option></select></label></div>
+ </div><div id="recipeCount" class="note psg-recipe-count" role="status"></div><div id="recipeList"></div>
+</section>
+<section id="fieldPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>フィールド</h2></div>
  <div class="card"><div class="note">通常／EXフィールドのデータは確認後に追加します。未確認の出現情報は表示しません。</div></div>
 </section>
 <section id="dexDetail" class="screen">
@@ -2926,7 +2963,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 <div id="pane-field" class="detail-pane"><div class="card"><div class="section-title">フィールド</div><p class="unknown">フィールドデータ投入後に表示します。</p></div></div>
 </section>
 <section id="boxDetail" class="screen">
- <div class="detail-head"><button class="btn" data-back>‹ ボックスに戻る</button><h2><small id="boxHeaderNo"></small><span id="boxTitle">個体詳細</span></h2><span id="boxHeaderMeta" aria-label="現在レベル"></span></div>
+ <div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2><small id="boxHeaderNo"></small><span id="boxTitle">個体詳細</span></h2><span id="boxHeaderMeta" aria-label="現在レベル"></span></div>
  <div class="psg-box-hero card">
   <div class="psg-box-identity"><div class="psg-v106-media"><div id="boxArtwork" class="psg-box-artwork" aria-label="ポケモンの画像"></div></div>
    <div class="psg-box-facts"><div id="boxTraits" class="psg-box-traits"></div><div id="boxStats" class="psg-box-stats"></div></div></div>
@@ -3142,6 +3179,7 @@ const filterIconShapes={
  'ほのお':`<path d="M32 8c3 12 12 16 8 26 6-4 6-9 7-11 12 21 0 36-15 36C16 59 9 45 17 32c1 6 5 7 7 8-4-13 2-25 8-32z" fill="#f47546" stroke="#cb4939" stroke-width="2"/><path d="M32 31c2 9 7 12 4 20-3 6-12 4-12-4 0-6 5-12 8-16z" fill="#ffd47c"/>`,
  'むし':`<path d="M24 23 18 11m22 12 6-12M19 34l-10-3m10 12-10 6m36-15 10-3m-10 12 10 6" stroke="#5f8158" stroke-width="3" stroke-linecap="round"/><ellipse cx="32" cy="36" rx="15" ry="20" fill="#9acb78" stroke="#4d8751" stroke-width="3"/><path d="M17 31h30M32 31v24" stroke="#4d8751" stroke-width="2"/><circle cx="26" cy="25" r="2" fill="#233d38"/><circle cx="38" cy="25" r="2" fill="#233d38"/>`,
  'あまいミツ':`<path d="M16 23h32l-3 30H19z" fill="#e6a53a" stroke="#965e32" stroke-width="3"/><path d="M14 19q18-7 36 0v7H14z" fill="#ffd980" stroke="#965e32" stroke-width="3"/><path d="M25 25v12q3 5 6 0V26m6 0v8q3 4 6 0v-9" fill="#ffeb9e" stroke="#c6872c" stroke-width="2"/>`,
+ 'とくせんリンゴ':`<path d="M32 19c-5-8-14-6-18 0-9 15 1 36 13 36 4 0 6-2 10 0 12 0 23-21 14-36-4-6-13-8-19 0z" fill="#e95f50" stroke="#ac453a" stroke-width="3"/><path d="M32 20c0-7 3-11 9-13" fill="none" stroke="#755332" stroke-width="3"/><path d="M34 15c6-9 13-8 18-7-3 8-10 12-18 10z" fill="#79ac67" stroke="#4e8255" stroke-width="2"/>`,
  'あんみんトマト':`<circle cx="32" cy="36" r="21" fill="#ee6651" stroke="#ac403d" stroke-width="3"/><path d="M32 20c-6-11-3-14 0-13 4 5 2 10 0 13z" fill="#6c9f60"/><path d="m32 21-8-5 2 9-8 4 10-1 4 6 4-6 10 1-8-4 2-9z" fill="#77ac66" stroke="#4d7e50" stroke-width="2"/><circle cx="23" cy="39" r="3" fill="#fa9b7e"/>`,
  'ほっこりポテト':`<path d="M16 32C15 18 25 13 37 17c13 1 20 11 15 25-6 15-25 15-36 4-5-5-4-10 0-14z" fill="#d5aa68" stroke="#8c693f" stroke-width="3"/><circle cx="26" cy="28" r="2" fill="#a47b48"/><circle cx="41" cy="36" r="2" fill="#a47b48"/><circle cx="29" cy="45" r="2" fill="#a47b48"/>`,
  'マメミート':`<path d="M13 33c0-13 14-22 29-18 12 4 16 19 8 30-8 12-24 10-34 1-5-4-6-9-3-13z" fill="#d77b78" stroke="#8f4c4d" stroke-width="3"/><path d="M19 36c5-5 12-5 17-1 6 3 11 1 16-3" fill="none" stroke="#f6c3ad" stroke-width="4" stroke-linecap="round"/><circle cx="26" cy="24" r="3" fill="#f7d9c6"/>`,
@@ -3714,7 +3752,7 @@ if(window.PS?.master&&window.PS_CATALOG){
  }
  function openPokemonDetail(no,opts={}){
    const m=byNo(no);if(!m)return;
-   if(window.PS?.state?.screen==='skillPage')detailOrigin='skillPage';
+   if(['skillPage','recipePage'].includes(window.PS?.state?.screen))detailOrigin=window.PS.state.screen;
    if(opts.pushHistory&&currentNo&&currentNo!==m.no){detailHistory.push(currentNo);detailForward.length=0}
    currentNo=m.no;setTheme(m.type);show("dexDetail");
    header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);renderSleepStyles(m);switchTab(currentTab||"ability");
@@ -3937,83 +3975,100 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
 <script id="psg-recipe-index-controller">
 (()=>{'use strict';
  const catalog=window.PS_CATALOG;
- const list=document.getElementById('recipeList'),search=document.getElementById('recipeSearch');
- const ingredientFilter=document.getElementById('recipeIngredient'),count=document.getElementById('recipeCount');
- if(!catalog||!list||!search||!ingredientFilter)return;
+ const list=document.getElementById('recipeList'),count=document.getElementById('recipeCount');
+ const ingredientOptions=document.getElementById('recipeIngredientOptions'),ingredientButton=document.getElementById('recipeIngredientButton');
+ const sort=document.getElementById('recipeSort');
+ if(!catalog||!list||!ingredientOptions||!ingredientButton||!sort)return;
  const recipes=Object.values(catalog.recipes||{});
  const categoryButtons=[...document.querySelectorAll('[data-recipe-category]')];
- let selectedCategory='カレー・シチュー';
- function resetIngredientOptions(){
-  ingredientFilter.replaceChildren();
-  const all=document.createElement('option');all.value='';all.textContent='すべて';ingredientFilter.append(all);
-  const names=[...new Set(recipes.filter(r=>r.category===selectedCategory).flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
-  names.forEach(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;ingredientFilter.append(option)});
- }
- function availableIngredients(){
-  const available=new Set();
-  for(const member of window.PS?.teamContext?.().members||[]){
-   const individual=window.PS.state.box.find(x=>x.id===member.instanceId);
-   const species=catalog.pokemon[member.speciesNo];
-   for(const slot of species?.ingredientSlots||[]){
-    if(slot.unlock>individual.level)continue;
-    const chosen=individual.ingredients?.[slot.unlock];
-    const confirmed=slot.candidates.some(c=>c.name===chosen)?chosen:slot.candidates.length===1?slot.candidates[0].name:null;
-    if(confirmed)available.add(confirmed);
-   }
-  }
-  return available;
- }
+ let selectedCategory='カレー・シチュー',selectedIngredient='';
  function icon(name){
   const visual=catalog.ingredientVisual?.(name);
   const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
   if(src){const img=document.createElement('img');img.src=src;img.alt='';return img}
   const text=document.createElement('span');text.textContent=visual?.fallback||'◌';return text;
  }
+ function ingredientChoices(){
+  ingredientOptions.replaceChildren();
+  const names=[...new Set(recipes.filter(r=>r.category===selectedCategory).flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
+  for(const name of names){
+   const option=document.createElement('button');option.type='button';option.className='filter-option psg-recipe-filter-option';
+   option.setAttribute('aria-label',name);option.setAttribute('aria-pressed',String(name===selectedIngredient));option.title=name;
+   option.append(icon(name));const caption=document.createElement('span');caption.textContent=name;option.append(caption);
+   option.onclick=e=>{e.stopPropagation();selectedIngredient=selectedIngredient===name?'':name;ingredientButton.classList.toggle('active',!!selectedIngredient);ingredientButton.firstChild.textContent=selectedIngredient||'食材';ingredientOptions.parentElement.classList.remove('open');ingredientButton.setAttribute('aria-expanded','false');ingredientChoices();render()};
+   ingredientOptions.append(option);
+  }
+ }
+ function providerGroup(item){
+  const section=document.createElement('section');section.className='psg-recipe-provider-group';
+  const heading=document.createElement('strong');heading.append(icon(item.name),document.createTextNode(item.name));section.append(heading);
+  // Use only species whose own verified slots contain the ingredient; evolution does not imply the same slot.
+  const providers=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible).flatMap(p=>{
+   const slots=p.ingredientSlots?.filter(s=>s.candidates.some(c=>c.name===item.name))||[];
+   return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
+  });
+  if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
+  const parentOf=new Map();for(const p of Object.values(catalog.pokemon||{})){
+   const edges=Array.isArray(p.evolution)?p.evolution:p.evolution?[p.evolution]:[];
+   edges.forEach(e=>{if(e.toNo)parentOf.set(Number(e.toNo),Number(p.no))});
+  }
+  const root=no=>{const seen=new Set();while(parentOf.has(no)&&!seen.has(no)){seen.add(no);no=parentOf.get(no)}return no};
+  const families=new Map();for(const provider of providers){const key=root(provider.species.no);(families.get(key)||families.set(key,[]).get(key)).push(provider)}
+  const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
+  for(const family of families.values()){
+   const row=document.createElement('div');row.className='psg-recipe-family';
+   family.sort((a,b)=>a.species.no-b.species.no).forEach(({species,unlock},index)=>{
+    if(index){const arrow=document.createElement('span');arrow.textContent='›';arrow.setAttribute('aria-hidden','true');row.append(arrow)}
+    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
+    const art=document.createElement('span');art.className='psg-recipe-provider-art';
+    const img=document.createElement('img');img.src=window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
+    const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';missing.hidden=true;
+    img.onerror=()=>{img.hidden=true;missing.hidden=false};art.append(img,missing);
+    if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
+    const name=document.createElement('span');name.textContent=species.name;button.append(art,name);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);row.append(button);
+   });wrap.append(row);
+  }
+  section.append(wrap);return section;
+ }
  function render(){
-  const query=search.value.trim().toLocaleLowerCase('ja'),ingredient=ingredientFilter.value;
   const categoryRecipes=recipes.filter(r=>r.category===selectedCategory);
-  const filtered=categoryRecipes.filter(r=>r.name.toLocaleLowerCase('ja').includes(query)&&(!ingredient||r.ingredients.some(i=>i.name===ingredient)));
-  const available=availableIngredients();
+  const filtered=categoryRecipes.filter(r=>!selectedIngredient||r.ingredients.some(i=>i.name===selectedIngredient));
+  filtered.sort((a,b)=>sort.value==='name'?a.name.localeCompare(b.name,'ja'):
+   sort.value==='energy-asc'?(Number(a.energy?.max?.value)||0)-(Number(b.energy?.max?.value)||0):
+   (Number(b.energy?.max?.value)||0)-(Number(a.energy?.max?.value)||0));
   count.textContent=`${filtered.length} / ${categoryRecipes.length} 件の確認済みレシピ`;
   list.replaceChildren();
   if(!filtered.length){const empty=document.createElement('p');empty.className='note';empty.textContent=categoryRecipes.length?'該当する料理はありません。':'この部門のレシピはまだ確認・登録していません。';list.append(empty);return}
   for(const recipe of filtered){
-   const card=document.createElement('article');card.className='psg-recipe-entry';
-   const summary=document.createElement('div');summary.className='psg-recipe-heading';
+   const card=document.createElement('details');card.className='psg-recipe-entry';
+   const summary=document.createElement('summary');summary.className='psg-recipe-heading';
    const title=document.createElement('strong');title.textContent=recipe.name;
-   const category=document.createElement('small');category.textContent=recipe.category;
-   const headline=document.createElement('span');headline.className='psg-recipe-headline';headline.append(title,category);
-   const total=document.createElement('b');total.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;
-   summary.append(headline,total);card.append(summary);
-   const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
-   for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.append(icon(item.name));const name=document.createElement('span');name.textContent=`${item.name} ×${item.qty}`;chip.append(name);ingredientRow.append(chip)}
-   card.append(ingredientRow);
    const energy=document.createElement('div');energy.className='psg-recipe-energy';
-   const max=document.createElement('strong');max.textContent=Number.isFinite(recipe.energy?.max?.value)?`Lv.${recipe.energy.max.level} ${recipe.energy.max.value.toLocaleString()} エナジー`:'最大エナジー未確認';
-   const min=document.createElement('small');min.textContent=Number.isFinite(recipe.energy?.min?.value)?`Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー`:'Lv.1 未確認';
-   energy.append(max,min);card.append(energy);
-   const status=document.createElement('p');status.className='note';
-   status.textContent=(window.PS?.teamContext?.().members.length||0)===0?'チーム未登録':recipe.ingredients.every(i=>available.has(i.name))?'チームに食材の種類あり（必要数・鍋容量は未判定）':'チームの食材の種類が未確認';card.append(status);
-   const providers=document.createElement('details');providers.className='psg-recipe-providers';
-   const label=document.createElement('summary');label.textContent='食材を拾うポケモンを見る';providers.append(label);
-   for(const item of recipe.ingredients){
-    const listOfSpecies=Object.values(catalog.pokemon).filter(p=>p.dexVisible).flatMap(p=>{
-      const first=p.ingredientSlots?.find(slot=>slot.candidates.some(candidate=>candidate.name===item.name));
-      return first?[`${p.name}${first.unlock>1?` Lv.${first.unlock}～`:''}`]:[];
-    });
-    const line=document.createElement('p');line.textContent=`${item.name}：${listOfSpecies.length?listOfSpecies.join('、'):'データ未確認'}`;providers.append(line);
-   }
-   card.append(providers);list.append(card);
+   const max=document.createElement('strong');max.className='psg-recipe-energy-max';
+   max.innerHTML=Number.isFinite(recipe.energy?.max?.value)?`<small>Lv.${recipe.energy.max.level}</small> ${recipe.energy.max.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
+   const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1 未確認）';
+   energy.append(max,min);summary.append(title,energy);
+   const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
+   for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.title=item.name;chip.setAttribute('aria-label',`${item.name} ${item.qty}個`);chip.append(icon(item.name));const qty=document.createElement('b');qty.textContent=`×${item.qty}`;chip.append(qty);ingredientRow.append(chip)}
+   const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;ingredientRow.append(pot);
+   summary.append(ingredientRow);card.append(summary);
+   const detail=document.createElement('div');detail.className='psg-recipe-expanded';
+   const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
+   recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
+   const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
+   card.append(detail);card.addEventListener('toggle',()=>{if(card.open)list.querySelectorAll('.psg-recipe-entry').forEach(other=>{if(other!==card)other.open=false})});
+   list.append(card);
   }
  }
- search.addEventListener('input',render);ingredientFilter.addEventListener('change',render);
+ sort.addEventListener('change',render);
  categoryButtons.forEach(button=>button.addEventListener('click',()=>{
   selectedCategory=button.dataset.recipeCategory;
   categoryButtons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
-  search.value='';resetIngredientOptions();render();
+  selectedIngredient='';ingredientButton.firstChild.textContent='食材';ingredientButton.classList.remove('active');ingredientOptions.parentElement.classList.remove('open');ingredientChoices();render();
  }));
  document.querySelector('[data-info-page="recipePage"]')?.addEventListener('click',render);
- resetIngredientOptions();
+ ingredientChoices();
  render();
 })();
 </script>
