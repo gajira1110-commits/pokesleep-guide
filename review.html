@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v114</title>
+<title>PokéSleep Guide - Review v115</title>
 
 
 
@@ -35,7 +35,16 @@ window.PS_IMAGE_FILES = {
   berries: {},       // きのみ名 -> 詳細上部のきのみアイコン
   skills: {},        // スキルID -> 詳細のスキル固有アイコン
   recipes: {},       // レシピID -> 対応料理（表示実装時に接続）
-  sleepStyles: {},   // 寝顔ID -> 寝顔タブ（表示実装時に接続）
+  // 種族No. -> 寝顔一覧。新しい寝顔には３番目に固有IDを指定する。
+  // 既存の順序とIDを変えると発見済み記録が別の寝顔へ移るので変更しない。
+  // 写真は別ファイル。assets/sleep/0001_01.webp のように追加すれば表示される。
+  sleepStyles: {
+    1:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    2:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    3:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    4:[['ぱちぱち寝',1],['おなかさすり寝',2],['おなかだし寝',3],['おなかのうえ寝',4]],
+    10:[['ぺったり寝',1],['あたまおもい寝',2],['いとをはく寝',3],['おなかのうえ寝',4]]
+  },
   fields: {}         // フィールドID -> フィールドタブ（表示実装時に接続）
 };
 </script>
@@ -154,6 +163,12 @@ window.PS_CATALOG = {
     }
   }
 };
+for(const [no,styles] of Object.entries(window.PS_CATALOG.sleepStyles)){
+  window.PS_CATALOG.sleepStyles[no]=styles.map(([name,stars,explicitId],index)=>{
+    const id=explicitId||`${String(no).padStart(4,'0')}_${String(index+1).padStart(2,'0')}`;
+    return {id,stars,name,image:`assets/sleep/${id}.webp`};
+  });
+}
 /* Render-only preview rows are derived from the verified slot candidates.
    The complete candidate sets remain in ingredientSlots for future screens. */
 for(const pokemon of Object.values(window.PS_CATALOG.pokemon)){
@@ -2753,10 +2768,25 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #dexDetail .v31-branch-grid{gap:6px 2px!important}
 #dexDetail .v31-branch-cell .v31-evo-node{width:100%!important}
 #dexDetail .v31-branch-cell .v111-evo-body{display:flex;justify-content:center}
+
+/* Sleep-style gallery: master entries are ordered by stars and shown two across. */
+#v12Sleep .psg-sleep-heading{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:3px 2px 10px;color:#111}
+#v12Sleep .psg-sleep-heading h3{margin:0;font-size:18px}
+#v12Sleep .psg-sleep-count{font-size:12px;font-weight:800;color:#65726c}
+#v12Sleep .psg-sleep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#v12Sleep .psg-sleep-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e1eb;border-radius:15px;padding:7px}
+#v12Sleep .psg-sleep-photo{position:relative;aspect-ratio:4/3;display:grid;place-items:center;border-radius:10px;background:#f8f7fa;overflow:hidden}
+#v12Sleep .psg-sleep-photo img{display:block;width:100%;height:100%;object-fit:cover}
+#v12Sleep .psg-sleep-no-image{font-size:13px;color:#75827c;font-weight:700}
+#v12Sleep .psg-sleep-toggle{position:absolute;top:7px;right:7px;display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid #d8e1dc;border-radius:50%;background:rgba(255,255,255,.97);color:#6d7a73;font-size:21px;line-height:1;box-shadow:0 1px 5px #0002;cursor:pointer}
+#v12Sleep .psg-sleep-toggle[aria-pressed="true"]{background:#47a472;border-color:#47a472;color:#fff;font-size:22px}
+#v12Sleep .psg-sleep-caption{display:flex;align-items:baseline;gap:6px;padding:8px 3px 3px;color:#111;font-size:12px;font-weight:800;overflow-wrap:anywhere}
+#v12Sleep .psg-sleep-stars{flex:none;color:#b87935;font-size:14px}
+#v12Sleep .psg-sleep-empty{margin:0;padding:22px 14px;border:1px solid #e4e1eb;border-radius:15px;background:#fff;color:#55645c;font-size:13px;line-height:1.6}
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v114</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v115</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card"><div class="section-title">現在のチーム</div><div class="empty">チームはまだ登録されていません。</div></div></section>
 <section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
@@ -3248,9 +3278,61 @@ if(window.PS?.master&&window.PS_CATALOG){
  });
 
  let sleep=document.getElementById("v12Sleep");
- if(!sleep){sleep=document.createElement("div");sleep.id="v12Sleep";sleep.className="v12-panel";sleep.innerHTML='<div class="v12-placeholder">寝顔データをここに表示します</div>';ability.after(sleep)}
+ if(!sleep){sleep=document.createElement("div");sleep.id="v12Sleep";sleep.className="v12-panel";ability.after(sleep)}
  let field=document.getElementById("v12Field");
  if(!field){field=document.createElement("div");field.id="v12Field";field.className="v12-panel";field.innerHTML='<div class="v12-placeholder">フィールドデータをここに表示します</div>';sleep.after(field)}
+
+ // Discoveries are stored by permanent sleep-style ID, never by position or name.
+ const SLEEP_FOUND_KEY='psg-sleep-discoveries-v1';
+ function readSleepFound(){
+   try{
+     const saved=JSON.parse(localStorage.getItem(SLEEP_FOUND_KEY)||'{}');
+     return saved&&typeof saved==='object'&&!Array.isArray(saved)?saved:{};
+   }catch{return {}}
+ }
+ let sleepFound=readSleepFound();
+ function renderSleepStyles(m){
+   sleep.replaceChildren();
+   const styles=(V.sleepStyles?.[m.no]||[]).filter(x=>x&&x.id&&Number.isInteger(Number(x.stars))&&Number(x.stars)>=1&&Number(x.stars)<=5)
+     .slice().sort((a,b)=>Number(a.stars)-Number(b.stars)||Number(a.order||0)-Number(b.order||0)||String(a.id).localeCompare(String(b.id)));
+   const title=document.createElement('div');title.className='psg-sleep-heading';
+   const heading=document.createElement('h3');heading.textContent='寝顔図鑑';title.appendChild(heading);
+   const count=document.createElement('span');count.className='psg-sleep-count';
+   count.textContent=`${styles.filter(x=>sleepFound[x.id]).length} / ${styles.length} 登録済み`;
+   title.appendChild(count);sleep.appendChild(title);
+   if(!styles.length){
+     const empty=document.createElement('p');empty.className='psg-sleep-empty';
+     empty.textContent='寝顔データ未登録。確認できた寝顔をマスターデータに追加すると、ここに★順で表示します。';
+     sleep.appendChild(empty);return;
+   }
+   const grid=document.createElement('div');grid.className='psg-sleep-grid';
+   styles.forEach(style=>{
+     const card=document.createElement('article');card.className='psg-sleep-card';
+     const photo=document.createElement('div');photo.className='psg-sleep-photo';
+     const fallback=document.createElement('span');fallback.className='psg-sleep-no-image';fallback.textContent='No image';
+     if(style.image){
+       const img=document.createElement('img');img.src=style.image;img.alt=style.name||'寝顔';img.loading='lazy';
+       img.onerror=()=>{img.remove();photo.appendChild(fallback)};
+       photo.appendChild(img);
+     }else photo.appendChild(fallback);
+     const toggle=document.createElement('button');toggle.type='button';toggle.className='psg-sleep-toggle';
+     toggle.setAttribute('aria-pressed',sleepFound[style.id]?'true':'false');
+     toggle.setAttribute('aria-label',`${m.name} ${style.name||'寝顔'} ${sleepFound[style.id]?'登録済み。タップして未登録にする':'未登録。タップして登録する'}`);
+     toggle.textContent=sleepFound[style.id]?'✓':'○';
+     toggle.onclick=()=>{
+       const updated={...sleepFound};
+       if(updated[style.id])delete updated[style.id];else updated[style.id]=true;
+       try{localStorage.setItem(SLEEP_FOUND_KEY,JSON.stringify(updated));sleepFound=updated;renderSleepStyles(m)}
+       catch{toggle.setAttribute('aria-label','保存できませんでした。端末の保存設定を確認してください')}
+     };
+     photo.appendChild(toggle);card.appendChild(photo);
+     const caption=document.createElement('div');caption.className='psg-sleep-caption';
+     const stars=document.createElement('strong');stars.className='psg-sleep-stars';stars.textContent=`★${style.stars}`;
+     const name=document.createElement('span');name.textContent=style.name||'名称未確認';
+     caption.append(stars,name);card.appendChild(caption);grid.appendChild(card);
+   });
+   sleep.appendChild(grid);
+ }
 
  function switchTab(tab){
    currentTab=tab;
@@ -3432,7 +3514,7 @@ if(window.PS?.master&&window.PS_CATALOG){
    const m=byNo(no);if(!m)return;
    if(opts.pushHistory&&currentNo&&currentNo!==m.no){detailHistory.push(currentNo);detailForward.length=0}
    currentNo=m.no;setTheme(m.type);show("dexDetail");
-   header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);switchTab(currentTab||"ability");
+   header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);renderSleepStyles(m);switchTab(currentTab||"ability");
  }
  window.openPokemonDetail=openPokemonDetail;
 
