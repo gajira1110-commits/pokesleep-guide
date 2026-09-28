@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v115</title>
+<title>PokéSleep Guide - Review v116</title>
 
 
 
@@ -35,16 +35,7 @@ window.PS_IMAGE_FILES = {
   berries: {},       // きのみ名 -> 詳細上部のきのみアイコン
   skills: {},        // スキルID -> 詳細のスキル固有アイコン
   recipes: {},       // レシピID -> 対応料理（表示実装時に接続）
-  // 種族No. -> 寝顔一覧。新しい寝顔には３番目に固有IDを指定する。
-  // 既存の順序とIDを変えると発見済み記録が別の寝顔へ移るので変更しない。
-  // 写真は別ファイル。assets/sleep/0001_01.webp のように追加すれば表示される。
-  sleepStyles: {
-    1:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
-    2:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
-    3:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
-    4:[['ぱちぱち寝',1],['おなかさすり寝',2],['おなかだし寝',3],['おなかのうえ寝',4]],
-    10:[['ぺったり寝',1],['あたまおもい寝',2],['いとをはく寝',3],['おなかのうえ寝',4]]
-  },
+  sleepStyles: {},   // 寝顔ID -> 写真ファイル（寝顔名・★はPS_CATALOGに置く）
   fields: {}         // フィールドID -> フィールドタブ（表示実装時に接続）
 };
 </script>
@@ -97,6 +88,16 @@ window.PS_CATALOG = {
   pendingNationalNos:[2,3,5,6,7,8,9,11,12,19,20,23,24,25],
   absentOrPendingVerification:[13,14,15,16,17,18,21,22],
   sourceNote:"Current Sleep-specific values are added only after cross-checking; pending records remain absent.",
+  // 種族No. -> 寝顔一覧。新しい寝顔には３番目に固有IDを指定する。
+  // 既存の順序とIDを変えると発見済み記録が別の寝顔へ移るので変更しない。
+  // 写真は assets/sleep/0001_01.webp のように後から追加する。
+  sleepStyles: {
+    1:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    2:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    3:[['こうごうせい寝',1],['ふんばり寝',2],['ツルだし寝',3],['おなかのうえ寝',4]],
+    4:[['ぱちぱち寝',1],['おなかさすり寝',2],['おなかだし寝',3],['おなかのうえ寝',4]],
+    10:[['ぺったり寝',1],['あたまおもい寝',2],['いとをはく寝',3],['おなかのうえ寝',4]]
+  },
   skills: {
     ingredient_magnet_s: {
       id:"ingredient_magnet_s",
@@ -2786,7 +2787,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v115</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v116</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card"><div class="section-title">現在のチーム</div><div class="empty">チームはまだ登録されていません。</div></div></section>
 <section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
