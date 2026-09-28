@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PokéSleep Guide - Review v116</title>
+<title>PokéSleep Guide - Review v118</title>
 
 
 
@@ -1053,12 +1053,14 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 }
 
 /* source: stable-v26-layout-refine */
-/* v26: type color belongs to the detail page background, not to tab identity. */
+/* Keep the Pokémon type color inside the identity block; the page follows its active tab. */
 #dexDetail{
-  background:
-    linear-gradient(180deg,var(--type-bg) 0%,var(--type-bg) 38%,#f7f9f8 100%)!important;
+  --pane-bg:#f1f7ff;
+  background:#f1f7ff!important;
   border-radius:18px!important;
 }
+#dexDetail:has(#v12Sleep.active){--pane-bg:#f6f1fb;background:#f6f1fb!important}
+#dexDetail:has(#v12Field.active){--pane-bg:#f0f6f1;background:#f0f6f1!important}
 #dexDetail .hero{
   background:color-mix(in srgb,var(--type-bg) 76%, white 24%)!important;
   border:1px solid color-mix(in srgb,var(--type-accent) 22%, transparent)!important;
@@ -2691,9 +2693,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
   #boxDetail .psg-box-line{min-height:44px;padding:4px 0}
   #boxDetail .psg-v106-ingredient{min-height:96px;gap:2px;padding:5px 2px}
   #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:74px}
-  #dexDetail{background:#f1f7ff!important;border-radius:0!important}
-  #dexDetail:has(#v12Sleep.active){background:#f6f1fb!important}
-  #dexDetail:has(#v12Field.active){background:#f0f6f1!important}
+  #dexDetail{border-radius:0!important}
   #dexDetail .hero-top{grid-template-columns:minmax(102px,34%) minmax(0,1fr)!important;grid-template-rows:auto!important;align-items:start!important}
   #dexDetail .psg-v106-media,#boxDetail .psg-v106-media{display:flex;flex-direction:column;gap:4px;min-width:0}
   #dexDetail .hero-art{grid-column:auto!important;grid-row:auto!important;align-self:auto!important;min-height:0!important;width:100%!important;aspect-ratio:1!important}
@@ -2771,9 +2771,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #dexDetail .v31-branch-cell .v111-evo-body{display:flex;justify-content:center}
 
 /* Sleep-style gallery: master entries are ordered by stars and shown two across. */
-#v12Sleep .psg-sleep-heading{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:3px 2px 10px;color:#111}
-#v12Sleep .psg-sleep-heading h3{margin:0;font-size:18px}
-#v12Sleep .psg-sleep-count{font-size:12px;font-weight:800;color:#65726c}
 #v12Sleep .psg-sleep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 #v12Sleep .psg-sleep-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e1eb;border-radius:15px;padding:7px}
 #v12Sleep .psg-sleep-photo{position:relative;aspect-ratio:4/3;display:grid;place-items:center;border-radius:10px;background:#f8f7fa;overflow:hidden}
@@ -2781,13 +2778,24 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #v12Sleep .psg-sleep-no-image{font-size:13px;color:#75827c;font-weight:700}
 #v12Sleep .psg-sleep-toggle{position:absolute;top:7px;right:7px;display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid #d8e1dc;border-radius:50%;background:rgba(255,255,255,.97);color:#6d7a73;font-size:21px;line-height:1;box-shadow:0 1px 5px #0002;cursor:pointer}
 #v12Sleep .psg-sleep-toggle[aria-pressed="true"]{background:#47a472;border-color:#47a472;color:#fff;font-size:22px}
-#v12Sleep .psg-sleep-caption{display:flex;align-items:baseline;gap:6px;padding:8px 3px 3px;color:#111;font-size:12px;font-weight:800;overflow-wrap:anywhere}
+#v12Sleep .psg-sleep-caption{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:8px 3px 3px;color:#111;font-size:12px;font-weight:800;text-align:center;overflow-wrap:anywhere}
+#dexDetail .v12-tabs .psg-sleep-tab-count{display:inline;font-size:.83em;font-weight:800;white-space:nowrap}
 #v12Sleep .psg-sleep-stars{flex:none;color:#b87935;font-size:14px}
 #v12Sleep .psg-sleep-empty{margin:0;padding:22px 14px;border:1px solid #e4e1eb;border-radius:15px;background:#fff;color:#55645c;font-size:13px;line-height:1.6}
+
+/* The selected tab shares the page surface; the pinned type-colored identity ends above it. */
+@media(max-width:620px){
+  #dexDetail>.hero{margin-bottom:0!important;padding-bottom:0!important;border-bottom:0!important;border-radius:18px 18px 0 0!important}
+  #dexDetail .v12-tabs{box-sizing:border-box;width:calc(100% + 14px)!important;margin:6px -7px 0!important;padding:5px 7px 0!important;background:var(--pane-bg)!important;border-radius:11px 11px 0 0!important}
+  #dexDetail .v12-tabs button.active{background:var(--pane-bg)!important;border-bottom-color:transparent!important;border-radius:10px 10px 0 0!important;box-shadow:none!important}
+  #dexDetail .v12-tabs button[data-v12tab="ability"].active{color:#1768a6!important;border-color:transparent!important;border-top:2px solid #2f80c9!important}
+  #dexDetail .v12-tabs button[data-v12tab="sleep"].active{color:#704bb2!important;border-color:transparent!important;border-top:2px solid #7957b8!important}
+  #dexDetail .v12-tabs button[data-v12tab="field"].active{color:#347a4b!important;border-color:transparent!important;border-top:2px solid #4d9662!important}
+}
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v116</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v118</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card"><div class="section-title">現在のチーム</div><div class="empty">チームはまだ登録されていません。</div></div></section>
 <section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
@@ -3251,7 +3259,7 @@ if(window.PS?.master&&window.PS_CATALOG){
  let tabs=document.getElementById("v12Tabs");
  if(!tabs){
    tabs=document.createElement("div");tabs.id="v12Tabs";tabs.className="v12-tabs";
-   tabs.innerHTML='<button data-v12tab="ability">能力</button><button data-v12tab="sleep">寝顔</button><button data-v12tab="field">フィールド</button>';
+   tabs.innerHTML='<button data-v12tab="ability">基本能力</button><button data-v12tab="sleep">寝顔図鑑 <span class="psg-sleep-tab-count"></span></button><button data-v12tab="field">フィールド</button>';
    hero?.appendChild(tabs);
  }
  // Everything after hero becomes the switchable area. Existing ability sections are grouped.
@@ -3296,11 +3304,10 @@ if(window.PS?.master&&window.PS_CATALOG){
    sleep.replaceChildren();
    const styles=(V.sleepStyles?.[m.no]||[]).filter(x=>x&&x.id&&Number.isInteger(Number(x.stars))&&Number(x.stars)>=1&&Number(x.stars)<=5)
      .slice().sort((a,b)=>Number(a.stars)-Number(b.stars)||Number(a.order||0)-Number(b.order||0)||String(a.id).localeCompare(String(b.id)));
-   const title=document.createElement('div');title.className='psg-sleep-heading';
-   const heading=document.createElement('h3');heading.textContent='寝顔図鑑';title.appendChild(heading);
-   const count=document.createElement('span');count.className='psg-sleep-count';
-   count.textContent=`${styles.filter(x=>sleepFound[x.id]).length} / ${styles.length} 登録済み`;
-   title.appendChild(count);sleep.appendChild(title);
+   const registered=styles.filter(x=>sleepFound[x.id]).length;
+   const sleepTab=tabs.querySelector('[data-v12tab="sleep"]');
+   sleepTab.querySelector('.psg-sleep-tab-count').textContent=`${registered}/${styles.length}`;
+   sleepTab.setAttribute('aria-label',`寝顔図鑑、${styles.length}種類中${registered}種類登録済み`);
    if(!styles.length){
      const empty=document.createElement('p');empty.className='psg-sleep-empty';
      empty.textContent='寝顔データ未登録。確認できた寝顔をマスターデータに追加すると、ここに★順で表示します。';
