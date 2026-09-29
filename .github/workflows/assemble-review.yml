@@ -1,0 +1,29 @@
+name: Assemble PokéSleep Guide review
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.psg-parts/v184/**'
+      - '.github/workflows/assemble-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble and verify v184
+        shell: bash
+        run: |
+          cat .psg-parts/v184/*.part > review.html
+          echo '1d7a6f38801024aa095ae3c0c0bc390ec729cd58448bb46f4abf4c6341a851a8  review.html' | sha256sum -c -
+      - name: Commit generated page
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add review.html
+          git rm -r -- .psg-parts/v184
+          git commit -m 'Publish PokéSleep Guide v184'
+          git push
