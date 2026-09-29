@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v175</title>
+  <title>PokéSleep Guide — Review v176</title>
 
 
 
@@ -276,6 +276,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-box-mini-badge em{position:absolute;top:0;left:0;font-size:7px;font-style:normal;font-weight:900;background:#fff9;z-index:1}
 .psg-box-mini-badge.is-unknown{color:#839089;background:#f5f5f5}
 .psg-box-mini-badge.is-locked{opacity:.48}
+.psg-subskill-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;width:100%;max-width:74px;margin:1px auto 0}
+.psg-subskill-card-grid .psg-box-mini-badge{width:100%;max-width:none;min-height:18px;border-radius:4px}
 .dex-card .dex-art-placeholder{width:35px;height:35px;border:2px dotted currentColor;border-radius:50%}
 .dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:2px;margin-top:-11px;position:relative}
 .dex-card .dex-bottom span{width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;display:grid;place-items:center;font-size:13px}
@@ -2957,7 +2959,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v175</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v176</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -3265,6 +3267,12 @@ function teamFace(individual){
  const img=document.createElement('img');img.src=src;img.alt='';img.onerror=()=>{img.remove();art.textContent='No image'};
  art.append(img);return art;
 }
+function subskillCardBadges(individual){
+ return `<span class="psg-subskill-card-grid" aria-label="サブスキル">${SUBSKILL_LEVELS.map((unlock,i)=>{
+  const name=individual?.subskills?.[i],src=window.PS_IMAGE_FILES.subskills?.[name];
+  return `<span class="psg-box-mini-badge ${name?'':'is-unknown'} ${individual?.level<unlock?'is-locked':''}" title="Lv.${unlock}：${boxEsc(name||'未確認')}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}">${src?`<img src="${src}" alt="">`:`<span>${name?'・':'?'}</span>`}</span>`;
+ }).join('')}</span>`;
+}
 function renderTeam(){
  const panel=document.getElementById('teamSlots');panel.replaceChildren();
  team=normalizeTeam(team,state.box);
@@ -3295,6 +3303,7 @@ function renderTeam(){
    identity.append(speed);
   }
   choose.append(identity);
+  if(individual)choose.insertAdjacentHTML('beforeend',subskillCardBadges(individual));
   const arrow=document.createElement('span');arrow.className='psg-team-choose-arrow';arrow.textContent=teamReorderMode?(teamReorderFrom===index?'選択中':'移動先'):'Boxで選ぶ';choose.append(arrow);
   choose.onclick=()=>{
    if(teamReorderMode){
@@ -3551,11 +3560,7 @@ function renderBox(){
    const icon=visual?.image?window.PS_DEV_ASSETS.image(visual.image,'ingredient',chosen,'full',chosen):'';
    return `<span class="psg-box-mini-badge ${chosen?'':'is-unknown'}" title="${['A','B','C'][i]} Lv.${unlock}：${boxEsc(chosen||'未確認')}" aria-label="${['A','B','C'][i]} ${boxEsc(chosen||'未確認')}"><em>${['A','B','C'][i]}</em>${icon||'<span>?</span>'}</span>`;
   }).join('');
-  const skills=SUBSKILL_LEVELS.map((unlock,i)=>{
-   const name=x.subskills?.[i],src=window.PS_IMAGE_FILES.subskills?.[name];
-   return `<span class="psg-box-mini-badge ${name?'':'is-unknown'} ${x.level<unlock?'is-locked':''}" title="Lv.${unlock}：${boxEsc(name||'未確認')}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}">${src?`<img src="${src}" alt="">`:`<span>${name?'・':'?'}</span>`}</span>`;
-  }).join('');
-  return `<button type="button" class="poke psg-box-card" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-art">${window.PS_DEV_ASSETS.image(species?.faceImage,'pokemon',x.no,'face',x.name)||'<small>No image</small>'}</span><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b><small>Lv.${x.level}</small></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span><span class="psg-box-mini-row" aria-label="サブスキル">${skills}</span></button>`;
+  return `<button type="button" class="poke psg-box-card" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-art">${window.PS_DEV_ASSETS.image(species?.faceImage,'pokemon',x.no,'face',x.name)||'<small>No image</small>'}</span><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b><small>Lv.${x.level}</small></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span>${subskillCardBadges(x)}</button>`;
  }).join('');
  boxEmpty.textContent=state.box.length?'条件に合う個体がありません。':'Boxは空です。「＋追加」から登録できます。';
  boxEmpty.style.display=a.length?'none':'block';
