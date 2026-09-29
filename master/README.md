@@ -1,0 +1,64 @@
+# PokéSleep Guide マスターの更新
+
+このフォルダーを編集し、`python3 PSG_build_master.py` を実行すると、スマホで開ける単一ファイル `review.html` が生成されます。`index.html` は生成対象ではありません。
+
+画面のCSSは `styles/` の番号順のファイルを編集します。生成器が `PSG_styles.css` を互換用に再生成します。編集順序は [styles/README.md](../styles/README.md) を参照してください。
+HTMLは `templates/` の画面別ファイルを編集します。生成器が `PSG_source_template.html` を互換用に再生成します。構成は [templates/README.md](../templates/README.md) を参照してください。
+
+| フォルダー | 1 件の単位 | 主なファイル |
+| --- | --- | --- |
+| `pokemon/0001/` | 図鑑番号 1 のポケモン | `data.json`, `face.webp`, `full.webp`, `sleep/0001_01.webp` など |
+| `ingredients/honey/` | 食材 | `data.json`, `icon.webp` |
+| `types/water/` | みずタイプのアイコン | `icon.webp`（任意。IDは `types/manifest.json`） |
+| `skills/ingredient_magnet_s/` | メインスキル | `data.json`, `icon.webp` |
+| `berries/<id>/` | きのみのLv.1基礎エナジーとアイコン | `data.json`, `icon.webp`（任意） |
+| `recipes/baby_honey_curry/` | 料理 | `data.json`, `image.webp` |
+| `fields/greengrass/` | 通常フィールドと出現する寝顔 | `data.json`, `image.webp`（任意） |
+| `natures/` | 性格25種と項目別の補正倍率 | `data.json` |
+| `subskills/` | サブスキル名と効果量・計算の接続状態 | `data.json`, `icons/<id>.webp`（任意） |
+
+タイプ・きのみ・食材・サブスキルの画像は各フォルダーに保管し、生成時に単一HTMLへ埋め込みます。未追加のタイプは既存の18タイプ画像シート、サブスキルは既存のSVGバッジを使います。追加方法は [タイプ画像](types/README.md) と [サブスキル画像](subskills/icons/README.md) を参照してください。
+
+画像は任意です。PNG・JPEG も同じベース名で使えます。画像がまだない場合は画面の代替表示が出ます。寝顔画像のベース名には `data.json` 内の `sleepStyles[].id` を使います。顔画像はボックスや一覧、全身画像は詳細の表示に使います。権利が確認できた画像だけを追加してください。初期データに入っている `0001/full.webp` は従来のテスト表示用画像です。
+
+v166では `assets/faces/kanto_vol1_sheet.png` の顔部分を25種の一覧・ボックスカード・チーム・進化・料理の候補に表示します。シートは加工せず、表示位置を `PSG_face_sheet.js` の `tiles` 対応表で管理します。生成時は `PSG_build_master.py` がこのスクリプトとシートを単一HTMLに埋め込みます。v164でプリンとプクリンの位置指定がそれぞれディグダ、ダグトリオになっていたため、v165で修正しました。個別フォルダーの `face.webp` 等を追加した場合はそちらを優先します。ピチュー、ププリン、ワニノコ系、メリープ系、ヤドキングは引き続き画像待ちです。シートは単一HTMLに埋め込まれるため、再生成にはこの画像ファイルも必要です。
+
+## ポケモンの追加
+
+1. `pokemon/0026/` のように4桁の図鑑番号で新しいフォルダーを作ります。
+2. 既存の `data.json` を複製し、`no`, `name`, `type`, `sleepType`, `specialty`, `berry`, `berryQty`, `mainSkillId`, `ingredientSlots`, `sleepStyles` をそのポケモンの値に変えます。図鑑番号とフォルダー名は一致させます。
+3. 食材候補の `ingredientId` は `ingredients/` のフォルダー名、`mainSkillId` は `skills/` のフォルダー名を使います。食材候補の個数は「その食材を拾ったときの個数」です。Lv.30 と Lv.60 の候補はその個体に一つずつ割り当てます。
+4. 画像があれば同じフォルダーに入れます。`sleepStyles` は寝顔の種類だけを登録し、画像未用意でも寝顔は表示できます。
+5. ローカルで `python3 PSG_build_master.py` を実行します。不明な食材・きのみ・スキルや重複IDなどはエラーで停止します。生成された `review.html` をアップロードして確認します。
+
+確認できない数値は `data.json` から省いてください。既存の表示どおり「未確認」と出します。現在の図鑑に登録されていた No.1/4/10 などの情報は保存し、確認した種を追加しています。食材確率・スキル確率の `rateStatus` が「推定」のものは公表値ではなく資料サイトの推算です。確認が割れたカメール・カメックス・ピカチュウ・ライチュウの所持数などは埋めていません。追加した能力値と寝顔名の照合先は [参照元](SOURCES.md) を参照してください。
+
+## 新しい食材・スキル・料理
+
+各種類のフォルダーを1件ずつ作り、同じ種類の `data.json` を複製して `id` と必要項目を変更します。食材・きのみ・スキルをポケモンから参照する前に、それぞれの定義を追加します。きのみは `berries/<id>/data.json` の `name` と `baseEnergy`、ポケモン側の `berry` 名を一致させます。料理の `ingredients[].ingredientId` も食材のフォルダー名と一致させます。
+
+スキル効果は `random_ingredients`（`levels` に `amount`）、`fixed_energy`（`energy`）、`variable_energy`（`min`／`max`）、`team_energy_recovery`、`self_energy_recovery`、`ally_energy_recovery`（それぞれ `recovery`）、`extra_help`（`helps`）を表示できます。新しい効果を追加するときは表示側と日産予測の反映範囲を確認してください。げんきエールの対象は日産では等分近似、おてつだいサポートの追加産出はまだ未反映です。
+
+## フィールドとユーザー設定
+
+`fields/<id>/data.json` に通常フィールドの安定したIDと名前、`favoriteMode`、通常の `favoriteBerries` を定義します。ワカクサ本島は `weekly_random` と空配列、ほかは `fixed` と3種です。`rankThresholds` はノーマル1〜マスター20の35段階の累積カビゴンエナジーです。`encounters` は寝顔ID・そのフィールドでの最低ランク・必要ねむけパワーの組です。新しい寝顔の出現情報を追加するときは該当フィールドの配列へ1件ずつ追加し、寝顔IDが `pokemon/<no>/data.json` に存在することを生成器で確認します。未掲載は出現しないという意味ではありません。最低ランクと必要ねむけパワーは別条件です。エリアボーナスはユーザーごと・フィールドごとの値なのでマスターには入れません。固定きのみは画面に自動表示し、イベントで変わった週はユーザーが上書きして「通常設定に戻す」で解除できます。週の境界は端末の現地時間の月曜4時で、週が変わると前週の上書きを計算に使いません。イベント用の自動切替とEXモードの補正は未実装です。バックアップはv3でフィールド設定を含み、v1/v2を取り込む場合は既存のフィールド設定を維持します。
+
+## 性格・サブスキル
+
+`natures/data.json` は25種の行列（上昇項目×下降項目）と倍率を持ちます。`subskills/data.json` は名称、効果の種類、量を持ちます。ボックス編集の選択肢と個体補正は、生成後の両データを参照します。性格・サブスキル名を変更する場合、既存のボックスデータは文字列で保存されているため旧名との移行も必要です。
+
+サブスキルは17種。対応する暫定バッジは `PSG_subskill_badges.mjs` から `assets/subskills/` に生成し、manifest とマスターの名称をビルド時に照合します。参照デザインはユーザー提供の `サブスキルバッジ一覧_修正版.png`。過去の誤登録「レベル上限ボーナス」は選択肢から外しました。既存個体にその文字列が保存されていても編集時に未対応として保持します。
+
+`team-active` のおてつだいボーナスは、チームの解放済み個体から合計してホームのおてつだい時間に適用します。個体の速度サブスキルと合わせて短縮上限は35%です。ボックスでは単体の値を示します。`daily-pending` の効果やチーム補正を使った日産計算は未接続です。スキルレベルアップS/Mはユーザーが設定した現在のスキルLvへ二重加算しません。性格の食材・スキル確率倍率と種族基礎確率は推定を含みます。回収間隔・所持数満杯・げんき回復を加えた日次予測ができるまでは、料理の数量可否を判定しません。
+
+## GitHub Pages での自動生成
+
+同梱の `.github/workflows/build-review.yml` をリポジトリに配置して、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に一度だけ変更します。`main` にマスターフォルダーの追加・編集をアップロードすると Actions が `review.html` を生成し、既存の `index.html` と `assets/` を合わせて公開します。必ず既存の `index.html` と `assets/` をリポジトリに残してください。設定を切り替えるまでは、従来どおり生成済み `review.html` をアップロードすれば確認できます。
+
+確認用URL: https://gajira1110-commits.github.io/pokesleep-guide/review.html
+
+既存のボックスと寝顔の保存キーは変更していません。公開前に生成済みレビューで登録済みデータが見えるか確認してください。
+
+## 日産予想の基礎値チェック
+
+生成時に各ポケモンの `help`、`carry`、`berryQty`、`foodRate`、`skillRate`、`ingredientSlots` の充足数と欠落項目を表示します。新種の未確認値を推測で埋めずに追加できますが、その個体の獲得予想は欠落理由を示して停止します。確率を記録する場合は `rateStatus` に「推定」または「確認済み」を付けます。
