@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v162</title>
+  <title>PokéSleep Guide — Review v163</title>
 
 
 
@@ -2869,7 +2869,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v162</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v163</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -3884,6 +3884,7 @@ if(window.PS?.master&&window.PS_CATALOG){
 <script id="stable-v12-controller">
 (()=>{
  const V=window.PS_CATALOG;if(!V)return;
+ const detailEsc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
  let currentNo=1,currentTab="ability";
  const byNo=n=>V.pokemon[Number(n)]||null;
  const neighborOf=(no,direction)=>{
@@ -4156,7 +4157,7 @@ if(window.PS?.master&&window.PS_CATALOG){
    const lv1=s.levels?.[1];
    const effect=document.getElementById("detailSkillEffect");
    if(effect){
-     const effectCopy=s.effectType==='random_ingredients'&&lv1?.amount!=null?`ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。`:s.effectType==='fixed_energy'&&lv1?.energy!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.energy.toLocaleString()}</strong> 増やす。`:s.effectType==='variable_energy'&&lv1?.min!=null&&lv1?.max!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.min.toLocaleString()}～${lv1.max.toLocaleString()}</strong> 増やす。`:s.effectType==='team_energy_recovery'&&lv1?.recovery!=null?`チーム全員のげんきを <strong class="skill-var">${lv1.recovery}</strong> 回復する。`:lv1?.description?boxEsc(lv1.description):'効果未確認';
+     const effectCopy=s.effectType==='random_ingredients'&&lv1?.amount!=null?`ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。`:s.effectType==='fixed_energy'&&lv1?.energy!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.energy.toLocaleString()}</strong> 増やす。`:s.effectType==='variable_energy'&&lv1?.min!=null&&lv1?.max!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.min.toLocaleString()}～${lv1.max.toLocaleString()}</strong> 増やす。`:s.effectType==='team_energy_recovery'&&lv1?.recovery!=null?`チーム全員のげんきを <strong class="skill-var">${lv1.recovery}</strong> 回復する。`:lv1?.description?detailEsc(lv1.description):'効果未確認';
      effect.innerHTML=`<b class="v35-effect-level">Lv.1</b><span class="v35-effect-copy">${effectCopy}</span>`;
      effect.classList.add("skill-desc");
    }
@@ -4168,7 +4169,7 @@ if(window.PS?.master&&window.PS_CATALOG){
      const detail=Object.entries(s.levels||{}).filter(([lv])=>Number(lv)>1).sort((a,b)=>Number(a[0])-Number(b[0]));
      const simpleCompact = detail.length===6 && detail.every(([lv,x])=>x && (x.amount!=null||x.energy!=null||x.recovery!=null||x.helps!=null) && String(x.amount??x.energy??x.recovery??x.helps).length<=4);
      const layoutClass = simpleCompact ? "v43-compact-3" : (detail.length<=6 ? "v43-compact-2" : "v43-detail-long");
-     levels.innerHTML=`<div class="v32-skill-grid ${layoutClass}">${detail.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="skill-var effect-food">${s.effectType==='random_ingredients'&&x.amount!=null?x.amount+'個':s.effectType==='fixed_energy'&&x.energy!=null?x.energy.toLocaleString():s.effectType==='variable_energy'&&x.min!=null&&x.max!=null?x.min.toLocaleString()+'～'+x.max.toLocaleString():s.effectType==='team_energy_recovery'&&x.recovery!=null?'全員＋'+x.recovery:s.effectType==='self_energy_recovery'&&x.recovery!=null?'自分＋'+x.recovery:s.effectType==='ally_energy_recovery'&&x.recovery!=null?'1匹＋'+x.recovery:s.effectType==='extra_help'&&x.helps!=null?'おてつだい'+x.helps+'回':x.description?boxEsc(x.description):'効果未確認'}</strong></div>`).join("")}</div>`;
+     levels.innerHTML=`<div class="v32-skill-grid ${layoutClass}">${detail.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="skill-var effect-food">${s.effectType==='random_ingredients'&&x.amount!=null?x.amount+'個':s.effectType==='fixed_energy'&&x.energy!=null?x.energy.toLocaleString():s.effectType==='variable_energy'&&x.min!=null&&x.max!=null?x.min.toLocaleString()+'～'+x.max.toLocaleString():s.effectType==='team_energy_recovery'&&x.recovery!=null?'全員＋'+x.recovery:s.effectType==='self_energy_recovery'&&x.recovery!=null?'自分＋'+x.recovery:s.effectType==='ally_energy_recovery'&&x.recovery!=null?'1匹＋'+x.recovery:s.effectType==='extra_help'&&x.helps!=null?'おてつだい'+x.helps+'回':x.description?detailEsc(x.description):'効果未確認'}</strong></div>`).join("")}</div>`;
    }
  }
  function evolutionEntries(m){
