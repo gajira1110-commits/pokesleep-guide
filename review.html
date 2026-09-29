@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v167</title>
+  <title>PokéSleep Guide — Review v168</title>
 
 
 
@@ -278,8 +278,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 
 /* source: stable-v3-filter-style */
 .compact-filter{margin:0 0 10px}
-.psg-dex-list-sticky{position:sticky;top:var(--psg-header-height);z-index:65;background:var(--bg);margin:0 -12px 8px;padding:0 12px 1px}
-.psg-dex-list-sticky .compact-filter{margin-bottom:0}
+.psg-list-sticky{position:sticky;top:var(--psg-header-height);z-index:65;background:var(--bg);margin:0 -12px 8px;padding:0 12px 1px}
+.psg-list-sticky .compact-filter{margin-bottom:0}
 .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px}
 .filter-select{position:relative}
 .filter-main{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 10px;font-weight:850;text-align:left;display:flex;justify-content:space-between;align-items:center}
@@ -2905,16 +2905,14 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v167</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v168</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
 <div class="card psg-day-card"><div class="section-title">1日の獲得予想</div><label class="psg-day-setting" for="teamCollectionInterval">起きている間の回収間隔 <select id="teamCollectionInterval"><option value="2">2時間おき</option><option value="4" selected>4時間おき</option><option value="8">8時間おき</option></select></label><div class="psg-day-toggles"><button type="button" id="teamGoodCamp" class="psg-day-camp" aria-pressed="false">いいキャンプ：OFF</button><button type="button" id="teamMeals" class="psg-day-camp" aria-pressed="true">食事3回：ON</button></div><fieldset class="psg-day-energy"><legend>チーム全員の起床時げんき</legend><div class="psg-day-energy-options"><button type="button" data-energy="80" aria-pressed="false">80</button><button type="button" data-energy="100" aria-pressed="true">100</button><button type="button" data-energy="120" aria-pressed="false">120</button><button type="button" data-energy="150" aria-pressed="false">150</button></div></fieldset><button type="button" class="psg-day-field-link" id="teamFieldLink"><span id="teamFieldSummary">フィールドを設定</span><b aria-hidden="true">›</b></button><div id="teamDayEstimate" aria-live="polite"></div><details class="psg-day-method"><summary>計算条件</summary><p>起床後16時間・睡眠8時間。げんきは10分ごとに1減少し、睡眠中は回収しません。睡眠回復は翌朝に適用。食事ONでは起床直後・6時間後・12時間後に3回食べる仮定。食事前のげんきに応じて各匹が1～9回復し、最大150。食材を消費できるかは判定しません。解放済みの食材枠は等確率、所持数の満杯は期待値で判定します。いいキャンプONではおてつだい速度と所持上限を各1.2倍。鍋容量1.5倍とリサーチの効果は日産表示の対象外です。選択中の通常フィールドで指定した好物きのみはエナジー2倍、エリアボーナスはきのみと固定エナジースキルに適用します。EXフィールドやイベント固有の補正は対象外です。メインスキルは満杯前のおてつだいと回収時のストック上限から期待回数を計算。げんきオールSは回収時にチームへ期待回復量を適用し、次の時間帯からおてつだい速度へ反映。発動率の推定値と近似計算を使用し、天井や発動タイミング・10分タイマーのリセットは再現しません。料理の必要数判定には使用しません。</p></details></div>
 <div class="card psg-team-food-card"><div class="section-title">チームが拾う食材</div><div id="teamIngredientList"></div></div>
 <div class="card psg-team-recipe-card"><div class="section-title">料理の食材チェック</div><p class="note">確認できた食材の種類だけを照合します。必要数・鍋容量は未判定です。</p><div id="teamRecipeList"></div></div></section>
-<section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
-<div id="boxAddPanel" class="card" hidden style="margin-bottom:12px"><label for="boxSpecies">図鑑から選ぶ</label><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px"><select id="boxSpecies" class="btn" style="flex:1;min-width:160px"></select><button class="btn primary" id="boxConfirmAdd">Boxに登録</button><button class="btn" id="boxCancelAdd">キャンセル</button></div></div>
-<div id="boxUndoPanel" class="card" hidden style="margin-bottom:12px">削除しました。 <button class="btn" id="boxUndoRemove">元に戻す</button></div>
+<section id="box" class="screen"><div class="psg-list-sticky"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
 <div class="compact-filter" id="boxCompactFilters">
  <div class="box-filter-row">
   <div class="filter-select" data-menu="box-type"><button class="filter-main">タイプ <span>▼</span></button><div class="filter-panel" id="boxTypeFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
@@ -2930,9 +2928,12 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
    <div class="tag-note">お気に入り・育成＝ユーザー設定<br>特別＝種族属性／色違い＝個体固有属性</div>
   </div></div>
  </div>
-</div><div id="boxGrid" class="grid"></div><div id="boxEmpty" class="card empty">Boxは空です。「＋追加」から登録できます。</div></section>
+</div></div>
+<div id="boxAddPanel" class="card" hidden style="margin-bottom:12px"><label for="boxSpecies">図鑑から選ぶ</label><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px"><select id="boxSpecies" class="btn" style="flex:1;min-width:160px"></select><button class="btn primary" id="boxConfirmAdd">Boxに登録</button><button class="btn" id="boxCancelAdd">キャンセル</button></div></div>
+<div id="boxUndoPanel" class="card" hidden style="margin-bottom:12px">削除しました。 <button class="btn" id="boxUndoRemove">元に戻す</button></div>
+<div id="boxGrid" class="grid"></div><div id="boxEmpty" class="card empty">Boxは空です。「＋追加」から登録できます。</div></section>
 <section id="dex" class="screen">
-<div class="psg-dex-list-sticky">
+<div class="psg-list-sticky">
 <div class="toolbar"><h2 style="flex:1">ポケモン図鑑</h2><input id="dexSearch" style="max-width:150px" placeholder="名前検索"></div>
 <div class="compact-filter" id="dexCompactFilters">
  <div class="dex-filter-controls">
