@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v149</title>
+  <title>PokéSleep Guide — Review v150</title>
 
 
 
@@ -613,6 +613,13 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-day-energy-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
 .psg-day-energy-options button{font:inherit;font-weight:700;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:12px;min-height:42px;padding:6px}
 .psg-day-energy-options button[aria-pressed="true"]{background:#e8f2fc;border-color:#3888d8;color:#145c9e}
+.psg-day-field{border:1px solid #dce4df;border-radius:12px;padding:8px 10px 10px;margin:12px 0;min-width:0}
+.psg-day-field legend{font-weight:700;padding:0 5px;color:#111}
+.psg-day-berries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:8px}
+.psg-day-berries label{font-size:.8em;color:#52645b;min-width:0}
+.psg-day-berries select{width:100%;font:inherit;font-size:1.12em;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:7px 2px;min-height:38px}
+.psg-day-field .psg-day-setting{font-size:.9em}
+#teamAreaBonus{font:inherit;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:6px;width:4.5em;text-align:right}
 .psg-day-method{margin-top:10px;color:#596861;font-size:.85em}
 .psg-day-method summary{cursor:pointer;color:#316caa;font-weight:700;padding:4px 0}
 .psg-day-method p{line-height:1.5;margin:5px 0 0}
@@ -2838,11 +2845,11 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v149</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v150</small></header>
 <main>
 <section id="home" class="screen active"><h2>ホーム</h2><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <p class="note">ボックスの個体から５匹まで選べます。</p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
-<div class="card psg-day-card"><div class="section-title">1日の獲得予想</div><label class="psg-day-setting" for="teamCollectionInterval">起きている間の回収間隔 <select id="teamCollectionInterval"><option value="2">2時間おき</option><option value="4" selected>4時間おき</option><option value="8">8時間おき</option></select></label><div class="psg-day-toggles"><button type="button" id="teamGoodCamp" class="psg-day-camp" aria-pressed="false">いいキャンプ：OFF</button><button type="button" id="teamMeals" class="psg-day-camp" aria-pressed="true">食事3回：ON</button></div><fieldset class="psg-day-energy"><legend>チーム全員の起床時げんき</legend><div class="psg-day-energy-options"><button type="button" data-energy="80" aria-pressed="false">80</button><button type="button" data-energy="100" aria-pressed="true">100</button><button type="button" data-energy="120" aria-pressed="false">120</button><button type="button" data-energy="150" aria-pressed="false">150</button></div></fieldset><div id="teamDayEstimate" aria-live="polite"></div><details class="psg-day-method"><summary>計算条件</summary><p>起床後16時間・睡眠8時間。げんきは10分ごとに1減少し、睡眠中は回収しません。睡眠回復は翌朝に適用。食事ONでは起床直後・6時間後・12時間後に3回食べる仮定。食事前のげんきに応じて各匹が1～9回復し、最大150。食材を消費できるかは判定しません。解放済みの食材枠は等確率、所持数の満杯は期待値で判定します。いいキャンプONではおてつだい速度と所持上限を各1.2倍。鍋容量1.5倍とリサーチの効果は日産表示の対象外です。きのみエナジーは個体のLvと種類による基礎値のみ。メインスキルは満杯前のおてつだいと回収時のストック上限から期待回数を計算。げんきオールSは回収時にチームへ期待回復量を適用し、次の時間帯からおてつだい速度へ反映。発動率の推定値と近似計算を使用し、天井や発動タイミング・10分タイマーのリセットは再現しません。フィールドの好物・ボーナスは未反映です。料理の必要数判定には使用しません。</p></details></div>
+<div class="card psg-day-card"><div class="section-title">1日の獲得予想</div><label class="psg-day-setting" for="teamCollectionInterval">起きている間の回収間隔 <select id="teamCollectionInterval"><option value="2">2時間おき</option><option value="4" selected>4時間おき</option><option value="8">8時間おき</option></select></label><div class="psg-day-toggles"><button type="button" id="teamGoodCamp" class="psg-day-camp" aria-pressed="false">いいキャンプ：OFF</button><button type="button" id="teamMeals" class="psg-day-camp" aria-pressed="true">食事3回：ON</button></div><fieldset class="psg-day-energy"><legend>チーム全員の起床時げんき</legend><div class="psg-day-energy-options"><button type="button" data-energy="80" aria-pressed="false">80</button><button type="button" data-energy="100" aria-pressed="true">100</button><button type="button" data-energy="120" aria-pressed="false">120</button><button type="button" data-energy="150" aria-pressed="false">150</button></div></fieldset><fieldset class="psg-day-field"><legend>通常フィールドの補正</legend><div class="psg-day-berries"><label>好物① <select class="psg-favorite-berry"><option value="">指定なし</option></select></label><label>好物② <select class="psg-favorite-berry"><option value="">指定なし</option></select></label><label>好物③ <select class="psg-favorite-berry"><option value="">指定なし</option></select></label></div><label class="psg-day-setting" for="teamAreaBonus">エリアボーナス <span><input id="teamAreaBonus" type="number" inputmode="numeric" min="0" max="200" step="5" value="0">％</span></label></fieldset><div id="teamDayEstimate" aria-live="polite"></div><details class="psg-day-method"><summary>計算条件</summary><p>起床後16時間・睡眠8時間。げんきは10分ごとに1減少し、睡眠中は回収しません。睡眠回復は翌朝に適用。食事ONでは起床直後・6時間後・12時間後に3回食べる仮定。食事前のげんきに応じて各匹が1～9回復し、最大150。食材を消費できるかは判定しません。解放済みの食材枠は等確率、所持数の満杯は期待値で判定します。いいキャンプONではおてつだい速度と所持上限を各1.2倍。鍋容量1.5倍とリサーチの効果は日産表示の対象外です。通常フィールドの指定した好物きのみはエナジー2倍、エリアボーナスはきのみと固定エナジースキルに適用します。EXフィールドやイベント固有の補正は対象外です。メインスキルは満杯前のおてつだいと回収時のストック上限から期待回数を計算。げんきオールSは回収時にチームへ期待回復量を適用し、次の時間帯からおてつだい速度へ反映。発動率の推定値と近似計算を使用し、天井や発動タイミング・10分タイマーのリセットは再現しません。料理の必要数判定には使用しません。</p></details></div>
 <div class="card psg-team-food-card"><div class="section-title">チームが拾う食材</div><div id="teamIngredientList"></div></div>
 <div class="card psg-team-recipe-card"><div class="section-title">料理の食材チェック</div><p class="note">確認できた食材の種類だけを照合します。必要数・鍋容量は未判定です。</p><div id="teamRecipeList"></div></div></section>
 <section id="box" class="screen"><h2>ボックス</h2><div class="toolbar"><input id="boxSearch" placeholder="名前で検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
@@ -3457,9 +3464,11 @@ function berryEnergyAtLevel(base,level){
 function mealRecoveryAtEnergy(energy){
  return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
 }
-function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true){
+function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true,favoriteBerries=[],areaBonus=0){
  const interval=[2,4,8].includes(Number(collectionHours))?Number(collectionHours):4;
  const startingEnergy=Math.max(0,Math.min(150,Math.round(Number(initialEnergy)||0)));
+ const favorites=new Set(favoriteBerries.filter(name=>Object.hasOwn(catalog?.berries||{},name)));
+ const areaFactor=1+Math.max(0,Math.min(200,Number(areaBonus)||0))/100;
  const energyIntervalFactor=e=>e>=81?.45:e>=61?.52:e>=41?.58:e>=1?.66:1;
  const speedContext=teamSpeedContext(ids,box,catalog);
  const periods=[];for(let h=0;h<16;h+=interval)periods.push(Math.min(interval,16-h));
@@ -3488,7 +3497,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
   const skillEffect=skill?.levels?.[skillLevel];
   const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
   return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
-   berryBase:catalog.berries[species.berry],level:item.level,
+   berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
    foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,
    skillName:skill?.name||null,skillEffectType:skill?.effectType,
    skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy,
@@ -3520,20 +3529,36 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
   }
   elapsedTicks+=hours*6;
  });
- for(const member of valid)member.berryEnergy=member.berries*berryEnergyAtLevel(member.berryBase,member.level);
+ for(const member of valid){
+  member.berryEnergyBase=member.berries*berryEnergyAtLevel(member.berryBase,member.level);
+  member.berryEnergy=member.berryEnergyBase*(favorites.has(member.berryName)?2:1)*areaFactor;
+ }
  const foods=new Map();
  valid.forEach(member=>member.foods.forEach((qty,name)=>foods.set(name,(foods.get(name)||0)+qty)));
  const berryEnergy=valid.reduce((sum,member)=>sum+member.berryEnergy,0);
- const skillEnergy=valid.reduce((sum,member)=>sum+(member.skillEffectType==='fixed_energy'&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
- return {members,foods,berryEnergy,skillEnergy,periods,interval,startingEnergy,goodCamp,threeMeals};
+ const skillEnergyBase=valid.reduce((sum,member)=>sum+(member.skillEffectType==='fixed_energy'&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
+ const skillEnergy=skillEnergyBase*areaFactor;
+ return {members,foods,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
 }
 let teamInitialEnergy=100;
 let teamGoodCamp=false;
 let teamMeals=true;
+const berryChoices=[...document.querySelectorAll('.psg-favorite-berry')];
+for(const select of berryChoices){
+ for(const name of Object.keys(window.PS_CATALOG?.berries||{}).sort((a,b)=>a.localeCompare(b,'ja'))){
+  select.add(new Option(name,name));
+ }
+ select.onchange=renderTeamDay;
+}
+const areaBonusInput=document.getElementById('teamAreaBonus');
+areaBonusInput.onchange=()=>{
+ areaBonusInput.value=String(Math.max(0,Math.min(200,Number(areaBonusInput.value)||0)));
+ renderTeamDay();
+};
 function renderTeamDay(){
  const host=document.getElementById('teamDayEstimate');if(!host)return;
  const interval=document.getElementById('teamCollectionInterval').value;
- const result=dailyBaseline(team,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals);
+ const result=dailyBaseline(team,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,berryChoices.map(select=>select.value),areaBonusInput.value);
  host.replaceChildren();
  if(!result.members.length){const p=document.createElement('p');p.className='note';p.textContent='チームを選ぶと獲得予想を表示します。';host.append(p);return}
  const list=document.createElement('div');list.className='psg-day-list';
@@ -3541,13 +3566,13 @@ function renderTeamDay(){
   const row=document.createElement('div');row.className='psg-day-row';
   const label=document.createElement('strong');label.textContent=member.name;row.append(label);
   const detail=document.createElement('span');
-  const skillText=member.skillName?` ／ ${member.skillName} 約${member.skillTriggers.toFixed(1)}回${member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount)?`（ランダム食材 約${(member.skillTriggers*member.skillAmount).toFixed(1)}個）`:member.skillEffectType==='fixed_energy'&&Number.isFinite(member.skillEnergy)?`（エナジー 約${Math.round(member.skillTriggers*member.skillEnergy).toLocaleString()}）`:member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（チーム各匹＋${member.skillRecovery}）`:''}`:'';
-  detail.textContent=member.missing?`未確認：${member.reasons.join('・')}`:`${[...member.foods].map(([name,qty])=>`${name} 約${qty.toFixed(1)}個`).join('・')} ／ きのみ 約${member.berries.toFixed(1)}個（満杯後 約${member.overflow.toFixed(1)}個・基礎エナジー 約${Math.round(member.berryEnergy).toLocaleString()}）${skillText}`;
+  const skillText=member.skillName?` ／ ${member.skillName} 約${member.skillTriggers.toFixed(1)}回${member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount)?`（ランダム食材 約${(member.skillTriggers*member.skillAmount).toFixed(1)}個）`:member.skillEffectType==='fixed_energy'&&Number.isFinite(member.skillEnergy)?`（エナジー 約${Math.round(member.skillTriggers*member.skillEnergy*result.areaFactor).toLocaleString()}）`:member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（チーム各匹＋${member.skillRecovery}）`:''}`:'';
+  detail.textContent=member.missing?`未確認：${member.reasons.join('・')}`:`${[...member.foods].map(([name,qty])=>`${name} 約${qty.toFixed(1)}個`).join('・')} ／ きのみ 約${member.berries.toFixed(1)}個（満杯後 約${member.overflow.toFixed(1)}個・エナジー 約${Math.round(member.berryEnergy).toLocaleString()}${result.favorites.has(member.berryName)?'・好物':''}）${skillText}`;
   row.append(detail);list.append(row);
  }
  host.append(list);
  if(result.foods.size){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`食材合計：${[...result.foods].map(([name,qty])=>`${name} 約${qty.toFixed(1)}個`).join('・')}`;host.append(total)}
- if(result.members.some(member=>!member.missing)){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`きのみ＋固定スキルのエナジー：約${Math.round(result.berryEnergy+result.skillEnergy).toLocaleString()}（きのみ基礎 約${Math.round(result.berryEnergy).toLocaleString()}・固定スキル 約${Math.round(result.skillEnergy).toLocaleString()}）`;host.append(total)}
+ if(result.members.some(member=>!member.missing)){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`きのみ＋固定スキルのエナジー：約${Math.round(result.berryEnergy+result.skillEnergy).toLocaleString()}（きのみ 約${Math.round(result.berryEnergy).toLocaleString()}・固定スキル 約${Math.round(result.skillEnergy).toLocaleString()}／好物・エリア補正込み）`;host.append(total)}
 }
 document.getElementById('teamCollectionInterval').onchange=renderTeamDay;
 document.getElementById('teamGoodCamp').onclick=event=>{
