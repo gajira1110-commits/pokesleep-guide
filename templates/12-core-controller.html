@@ -478,7 +478,7 @@ function renderBox(){
    const slot=species?.ingredientSlots?.find(s=>s.unlock===unlock);
    const chosen=x.ingredients?.[unlock]||((slot?.candidates?.length===1)?slot.candidates[0].name:'');
    const visual=chosen&&ingredientVisual(chosen);
-   const icon=visual?.image?window.PS_DEV_ASSETS.image(visual.image,'ingredient',chosen,'full',chosen):'';
+   const icon=chosen?ingIcon({name:chosen}):'';
    return `<span class="psg-box-mini-badge ${chosen?'':'is-unknown'}" title="${['A','B','C'][i]} Lv.${unlock}：${boxEsc(chosen||'未確認')}" aria-label="${['A','B','C'][i]} ${boxEsc(chosen||'未確認')}"><em>${['A','B','C'][i]}</em>${icon||'<span>?</span>'}</span>`;
   }).join('');
   return `<button type="button" class="poke psg-box-card type-${typeClass(species?.type)}" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b></span><span class="psg-box-card-art">${window.PS_DEV_ASSETS.image(species?.faceImage,'pokemon',x.no,'face',x.name)||'<small>No image</small>'}<span class="psg-box-card-level">Lv.${x.level}</span></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span>${subskillCardBadges(x)}</button>`;
