@@ -46,7 +46,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v197_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v198_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -254,7 +254,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v197') == 2
+    assert source.count('Review v198') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -269,7 +269,7 @@ def build():
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
     # Individual master icons take priority. Keep the legacy sheet only while
     # a type is missing, so the self-contained review does not embed it twice.
-    type_uri = '' if len(images['types']) == len(json.loads((MASTER / 'types/manifest.json').read_text())) else TYPE_SHEET.relative_to(ROOT).as_posix()
+    type_uri = TYPE_SHEET.relative_to(ROOT).as_posix()
     html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_TYPE_SHEET */',json.dumps(type_uri))
     assert MARKER not in html
     PREVIEW.write_text(html)

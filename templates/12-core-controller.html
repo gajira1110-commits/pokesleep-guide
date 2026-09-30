@@ -593,7 +593,25 @@ function activeFieldBerries(){
  const entry=fieldProfile.weekly[fieldProfile.selectedFieldId];
  return entry?.weekKey===currentFieldWeek()?entry.berries:(window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.favoriteBerries||[]);
 }
+function renderFieldGallery(){
+ const host=document.getElementById('fieldGallery');host.replaceChildren();
+ for(const id of fieldOrder){
+  const field=window.PS_CATALOG.fields[id];if(!field)continue;
+  const button=document.createElement('button');button.type='button';button.className='psg-field-choice';button.dataset.fieldId=id;
+  button.setAttribute('aria-pressed',String(id===fieldProfile.selectedFieldId));
+  const image=window.PS_IMAGE_FILES.fields[id];
+  if(image){const img=document.createElement('img');img.src=image;img.alt='';img.width=76;img.height=86;button.append(img)}
+  const name=document.createElement('strong');name.textContent=field.name;button.append(name);
+  button.onclick=()=>{fieldSelect.value=id;fieldSelect.dispatchEvent(new Event('change'))};host.append(button);
+ }
+ for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
+  const row=document.createElement('div');row.className='psg-field-choice';
+  const image=document.createElement('img');image.src=`assets/fields/${id}/image.webp`;image.alt='';image.width=76;image.height=86;row.append(image);
+  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='計算設定は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);host.append(row);
+ }
+}
 function renderFieldControls(){
+ renderFieldGallery();
  fieldSelect.value=fieldProfile.selectedFieldId;
  homeFieldSelect.value=fieldProfile.selectedFieldId;
  homeMealSelect.value=activeMealCategory();

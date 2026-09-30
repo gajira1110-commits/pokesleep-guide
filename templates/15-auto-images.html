@@ -63,7 +63,7 @@ async function alignTypeImages(){
  }));return aligned.some(Boolean);
 }
 const typeSheet=new Image();
-if(Object.keys(window.PS_TYPE_IMAGES).length<18)jobs.push(new Promise(resolve=>{
+if(Object.keys(window.PS_TYPE_IMAGES).length<18||/master\/types\/fairy\/icon\.png$/.test(window.PS_TYPE_IMAGES['フェアリー']||''))jobs.push(new Promise(resolve=>{
  typeSheet.onload=async()=>{
   const names=['ノーマル','ほのお','みず','くさ','でんき','こおり','かくとう','どく','じめん','ひこう','エスパー','むし','いわ','ゴースト','ドラゴン','あく','はがね','フェアリー'];
   const width=typeSheet.naturalWidth/6,height=typeSheet.naturalHeight/3;
@@ -72,7 +72,13 @@ if(Object.keys(window.PS_TYPE_IMAGES).length<18)jobs.push(new Promise(resolve=>{
    const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;
    context.drawImage(typeSheet,(index%6)*width,Math.floor(index/6)*height,width,height,0,0,64,64);
    if(!window.PS_TYPE_IMAGES[name])window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
-  });await alignTypeImages();resolve(true);
+  });
+  if(/master\/types\/fairy\/icon\.png$/.test(window.PS_TYPE_IMAGES['フェアリー']||'')){
+   const canvas=document.createElement('canvas');canvas.width=280;canvas.height=280;
+   canvas.getContext('2d').drawImage(typeSheet,1460,565,280,280,0,0,280,280);
+   window.PS_TYPE_IMAGES['フェアリー']=canvas.toDataURL('image/png');
+  }
+  await alignTypeImages();resolve(true);
  };
  typeSheet.onerror=()=>resolve(false);
  typeSheet.src=/* PSG_BUILD_TYPE_SHEET */;
@@ -106,7 +112,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     window.PS?.renderFilters();window.PS?.renderDex();window.PS?.renderBox();
     if(document.getElementById('boxDetail')?.classList.contains('active'))window.PS?.refreshBoxDetail?.();
     if(document.getElementById('dexDetail')?.classList.contains('active')){
-      const label=document.getElementById('detailNoName')?.textContent||'';
+      const label=document.querySelector('#dexDetail .v51-head-no')?.textContent||'';
       const no=Number(label.match(/No\.?\s*(\d+)/i)?.[1]);
       if(no)window.openPokemonDetail?.(no);
     }

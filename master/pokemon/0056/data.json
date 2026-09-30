@@ -1,0 +1,93 @@
+{
+  "no": 56,
+  "name": "マンキー",
+  "type": "かくとう",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "クラボのみ",
+  "berryQty": 2,
+  "help": 4200,
+  "carry": 12,
+  "foodRate": 19.7,
+  "skillRate": 2.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 57,
+    "to": "オコリザル",
+    "candy": 40,
+    "level": 21
+  },
+  "sleepStyles": [
+    {
+      "id": "0056_01",
+      "name": "おこり寝",
+      "stars": 1
+    },
+    {
+      "id": "0056_02",
+      "name": "ぼうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0056_03",
+      "name": "おだやか寝",
+      "stars": 3
+    },
+    {
+      "id": "0056_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/マンキー",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}
