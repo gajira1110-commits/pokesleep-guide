@@ -9,3 +9,26 @@ assert.equal(full.members[0].berries,24);assert.equal(full.members[0].overflow,1
 ctx.state.box[0].ingredients={};ctx.window.PS_CATALOG.pokemon[1].ingredientSlots[1].candidates.push({name:'c',qty:6});
 const missing=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);assert.equal(missing.members[0].missing,true);assert.equal(missing.foods.size,0);
 console.log('Daily calculator: fixed production, camp, stock cap, overflow and missing selection passed.');
+
+ctx.window.PS_CATALOG.pokemon[1].ingredientSlots[1].candidates.pop();
+ctx.window.PS_CATALOG.pokemon[1].type='ほのお';
+ctx.teamSpeedContext=()=>({members:new Map(ctx.state.box.map((item,i)=>[item.id,{speed:3600,carry:10000,food:50,berryQty:1,skill:i?0:100,energyFactor:1}]))});
+ctx.window.PS_CATALOG.skills.s={maxLevel:1,name:'boost',effectType:'helper_boost_fire',levels:{1:{helps:2,bonusByUniqueFire:[0,0,0,1,2,4]}}};
+let boost=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);
+assert.equal(boost.members[0].skillExtraHelps,10);assert.equal(boost.foods.get('a'),17);assert.equal(boost.members[0].skillTriggers,5);
+ctx.state.box.push({id:'two',no:1,name:'duplicate',level:30});ctx.team.push('two');
+boost=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);
+assert.equal(boost.members[0].boost.unique,1);assert.equal(boost.members[1].skillExtraHelps,10);
+ctx.window.PS_CATALOG.pokemon[2]={...ctx.window.PS_CATALOG.pokemon[1],type:'みず'};ctx.state.box[1].no=2;
+boost=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);
+assert.equal(boost.members[0].boost.unique,1);assert.equal(boost.members[1].skillExtraHelps,10);
+assert.equal(vm.runInContext("helperBoostContext('helper_boost_fire',{helps:5,bonusByUniqueFire:[0,0,1,3,4,6]},[{no:1},{no:3},{no:4},{no:5}],{pokemon:{1:{type:'ほのお'},3:{type:'ほのお'},4:{type:'ほのお'},5:{type:'ほのお'}}}).helps",ctx),9);
+ctx.window.PS_CATALOG.skills.s={maxLevel:1,name:'support',effectType:'extra_help',levels:{1:{helps:6}}};
+let support=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);
+assert.equal(support.members[0].skillExtraHelps,15);assert.equal(support.members[1].skillExtraHelps,15);
+ctx.teamSpeedContext=()=>({members:new Map(ctx.state.box.map((item,i)=>[item.id,{speed:3600,carry:1,food:50,berryQty:1,skill:i?0:100,energyFactor:1}]))});
+support=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);assert(support.members[1].skillExtraHelps>0);assert(support.foods.get('a')>1);
+ctx.window.PS_CATALOG.skills.s={maxLevel:1,name:'magnet',effectType:'random_ingredients',levels:{1:{amount:6}}};
+ctx.teamSpeedContext=()=>({members:new Map(ctx.state.box.map((item,i)=>[item.id,{speed:3600,carry:10000,food:50,berryQty:1,skill:i?0:100,energyFactor:1}]))});
+const magnet=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);assert.equal(magnet.randomIngredients,30);assert.equal(magnet.foods.get('a'),24);
+console.log('Boost species count, mixed types, support distribution, overflow bypass, no recursion, random-food separate totals passed.');
