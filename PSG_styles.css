@@ -1,0 +1,2866 @@
+
+/* source: base */
+:root{--bg:#f5f8f7;--card:#fff;--line:#dfe8e4;--text:#111;--muted:#718079;--green:#46a477;--psg-header-height:56px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{height:56px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;position:sticky;top:0;z-index:20}
+main{max-width:720px;margin:auto;padding:12px 12px 86px}.screen{display:none}.screen.active{display:block}
+h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
+.empty{text-align:center;padding:34px 16px;color:var(--muted)}button,input,select{font:inherit}
+.btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.psg-team-card .note{margin:8px 0}
+.psg-skill-index input{display:block;width:100%;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px}.psg-skill-entry{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.psg-skill-entry summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;cursor:pointer;color:#171d1a}.psg-skill-entry summary strong{font-size:18px}.psg-skill-tags{font-size:13px;color:#527a62}.psg-skill-levels{padding:0 14px}.psg-skill-level{display:flex;gap:16px;padding:10px 0;border-top:1px solid var(--line)}.psg-skill-level b{min-width:44px}.psg-skill-species-label{font-weight:700;padding:12px 14px 6px}.psg-skill-species{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px}
+.psg-recipe-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.psg-recipe-filters label{font-size:13px;font-weight:700}.psg-recipe-filters input,.psg-recipe-filters select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px;color:#18221b}.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:12px;background:var(--recipe-category-bg,#fff)}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-headline{display:flex;flex-direction:column;gap:2px}.psg-recipe-headline strong{font-size:17px}.psg-recipe-headline small,.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;padding:4px 8px;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
+.toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer;font:inherit;color:inherit;text-align:left}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
+nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
+nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px}nav button.active{color:var(--green)}
+.detail-head{display:flex;align-items:center;gap:9px;margin-bottom:10px}.detail-head h2{margin:0;flex:1}.stats{display:grid;grid-template-columns:1fr 1fr;gap:7px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.stat small{display:block;color:var(--muted);font-size:10px}.section-title{font-weight:900;margin-bottom:8px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}.pill{background:#f1f5f3;border-radius:999px;padding:6px 9px;font-size:12px}
+.note{font-size:12px;color:var(--muted);line-height:1.6}
+@media(max-width:360px){.grid{gap:6px}.poke{padding:7px}}
+
+/* source: stable-v2-style */
+.dex-card{position:relative;min-width:0;min-height:162px;padding:8px 6px 9px;overflow:hidden;display:flex;flex-direction:column}
+.dex-card .dex-heading{min-width:0;min-height:36px;display:flex;align-items:flex-start;justify-content:space-between;gap:2px}
+.dex-card .dex-identity{min-width:0;flex:1;color:#111}
+.dex-card .dex-number-row{display:flex;align-items:center;justify-content:space-between;gap:3px;min-width:0}
+.dex-card .dex-no{display:block;font-size:9px;font-weight:800;line-height:1.1;white-space:nowrap}
+.dex-card .dex-name{display:block;font-weight:900;font-size:13px;line-height:1.2;overflow-wrap:anywhere}
+.dex-card .dex-discovery{flex:none;font-size:8px;font-weight:700;white-space:nowrap;color:#52635b}
+.dex-card .dex-art{height:92px;display:grid;place-items:center;color:#9aa7a2}
+.dex-card .dex-art img{width:100%;height:100%;object-fit:contain}
+.psg-face-sprite{display:block;flex:none;width:100%;max-height:100%;aspect-ratio:145/108;background-image:var(--psg-face-sheet);background-repeat:no-repeat;background-size:1412.414% 1066.667%;background-position:var(--face-x) var(--face-y);image-rendering:pixelated;border-radius:7px}
+.dex-card .dex-art>.psg-face-sprite{max-width:124px}
+.psg-team-face>.psg-face-sprite,.psg-recipe-provider-art>.psg-face-sprite,.v31-evo-image>.psg-face-sprite{width:100%;height:auto}
+#boxGrid .psg-box-card{display:flex;flex-direction:column;gap:4px}
+.psg-box-card-art{width:100%;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:8px;color:#82918a;font-size:10px}
+.psg-box-card-art>.psg-face-sprite{max-width:104px}
+.psg-box-card-art>img{width:100%;height:100%;object-fit:contain}
+.psg-box-card-copy{display:block;min-width:0}
+/* Five cards across on phone and desktop; each badge keeps its own accessible label. */
+#dexGrid,#boxGrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+#dexGrid .dex-card{padding:5px 3px;min-height:132px}
+#dexGrid .dex-heading{min-height:36px;display:block}
+#dexGrid .dex-discovery{display:block;font-size:9px;text-align:right;margin-left:auto}
+#dexGrid .dex-name{font-size:11px}
+#dexGrid .dex-art{height:73px}
+#dexGrid .dex-bottom{gap:1px;margin-top:2px}
+#dexGrid .dex-bottom>span{width:16px;height:16px;flex:none;overflow:hidden;font-size:10px}
+#dexGrid .dex-bottom img,#dexGrid .dex-bottom img.psg-specialty-icon{width:13px;height:13px}
+#boxGrid .psg-box-card{min-width:0;padding:3px 2px 4px;gap:1px;overflow:hidden;border-radius:10px}
+#boxGrid .psg-box-card-art{position:relative;height:68px}
+#boxGrid .psg-box-card-copy{min-height:14px;line-height:1.1;text-align:left}
+#boxGrid .psg-box-card-copy b{display:block;font-size:11px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#boxGrid .psg-box-card-level{position:absolute;right:1px;bottom:1px;z-index:2;padding:1px 2px;border-radius:3px;background:#ffffffe8;color:#111;font-size:10px;font-weight:950;line-height:1.15}
+#boxGrid .psg-box-card-copy small{font-size:10px}
+.psg-box-mini-row{display:flex;justify-content:center;gap:1px;min-width:0}
+.psg-box-mini-badge{position:relative;display:grid;place-items:center;min-width:0;flex:1;max-width:19px;aspect-ratio:1;border-radius:3px;background:#eff4ef;border:1px solid #d9e3db;overflow:hidden;font-size:9px;line-height:1}
+.psg-box-mini-badge img{width:100%;height:100%;object-fit:contain}
+.psg-box-mini-badge em{position:absolute;top:0;left:0;font-size:7px;font-style:normal;font-weight:900;background:#fff9;z-index:1}
+.psg-box-mini-badge.is-unknown{color:#839089;background:#f5f5f5}
+.psg-box-mini-badge.is-locked{opacity:.48}
+.psg-subskill-card-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;width:100%;max-width:74px;margin:0 auto}
+.psg-subskill-card-grid .psg-box-mini-badge{grid-column:span 2;width:100%;max-width:none;min-height:18px;border-radius:4px}
+.psg-subskill-card-grid .psg-box-mini-badge:nth-child(4){grid-column:2 / span 2}
+.dex-card .dex-art-placeholder{width:35px;height:35px;border:2px dotted currentColor;border-radius:50%}
+.dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:2px;margin-top:-11px;position:relative}
+.dex-card .dex-bottom>span{width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;display:grid;place-items:center;font-size:13px}
+.dex-card .dex-bottom img{width:18px;height:18px;object-fit:contain}
+.psg-specialty-icon{width:22px;height:22px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:auto}
+.dex-card .dex-bottom img.psg-specialty-icon{width:18px;height:18px}
+#boxSpecialtyFilters .filter-option{display:flex;align-items:center;gap:6px}
+#boxSpecialtyFilters .psg-specialty-icon{width:20px;height:20px}
+.psg-mini-missing{display:block;font-size:7px;font-weight:650;line-height:.95;text-align:center;color:#74857e;letter-spacing:0}
+@media(max-width:360px){.dex-card .dex-bottom>span{width:18px;height:18px;font-size:11px}}
+.type-grass{--psg-type-bg:#eaf7ed;background:var(--psg-type-bg)}.type-fire{--psg-type-bg:#fff0e9;background:var(--psg-type-bg)}.type-water{--psg-type-bg:#eaf4ff;background:var(--psg-type-bg)}.type-electric{--psg-type-bg:#fff9dc;background:var(--psg-type-bg)}.type-bug{--psg-type-bg:#f2f7df;background:var(--psg-type-bg)}.type-normal{--psg-type-bg:#f3f2ef;background:var(--psg-type-bg)}.type-poison{--psg-type-bg:#f5eafa;background:var(--psg-type-bg)}.type-ground{--psg-type-bg:#f6f0e3;background:var(--psg-type-bg)}.type-flying{--psg-type-bg:#eaf3ff;background:var(--psg-type-bg)}.type-ghost{--psg-type-bg:#eeeaf8;background:var(--psg-type-bg)}.type-psychic{--psg-type-bg:#ffeef4;background:var(--psg-type-bg)}.type-ice{--psg-type-bg:#e6f8fb;background:var(--psg-type-bg)}.type-steel{--psg-type-bg:#edf2f5;background:var(--psg-type-bg)}.type-fighting{--psg-type-bg:#faece8;background:var(--psg-type-bg)}.type-rock{--psg-type-bg:#f0eee4;background:var(--psg-type-bg)}.type-dark{--psg-type-bg:#ecebea;background:var(--psg-type-bg)}.type-dragon{--psg-type-bg:#eceffc;background:var(--psg-type-bg)}.type-fairy{--psg-type-bg:#fff0f8;background:var(--psg-type-bg)}
+.dex-controls{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:10px}
+.filter-title{font-size:11px;color:var(--muted);font-weight:800;margin:6px 0}
+.filter-row{display:flex;gap:6px;overflow:auto;padding-bottom:2px}.filter-btn{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:800}.filter-btn.on{background:#e7f6ef;border-color:#79bea0}
+.detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:10px}.detail-tabs button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px;font-weight:900}.detail-tabs button.on{background:#e7f6ef;border-color:#79bea0}
+.detail-pane{display:none}.detail-pane.on{display:block}
+.hero{border-radius:18px;padding:14px;margin-bottom:10px}.hero-top{display:flex;align-items:center;gap:12px}.hero-art{width:92px;height:92px;background:rgba(255,255,255,.72);border-radius:18px;display:grid;place-items:center;font-size:42px}.hero-info{flex:1}.hero-info h2{margin:0 0 7px}.white-row{background:#fff;border-radius:10px;padding:7px 9px;font-size:12px;margin-top:5px}
+.detail-nav{display:grid;grid-template-columns:70px 1fr 70px;align-items:center;gap:5px;margin-bottom:9px}.detail-nav strong{text-align:center;font-size:13px}.detail-nav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 5px;font-weight:800}
+.food-row{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #edf1ef}.food-row:last-child{border:0}.food-letter{font-weight:900}.unknown{color:#8b9792;font-size:12px}
+
+/* source: stable-v3-filter-style */
+.compact-filter{margin:0 0 10px}
+.psg-list-sticky{position:sticky;top:var(--psg-header-height);z-index:65;background:var(--bg);margin:0 -12px 4px;padding:0 12px 1px}
+.psg-list-sticky .compact-filter{margin-bottom:0}
+.psg-list-sticky .toolbar{align-items:center;margin-bottom:5px}
+.psg-list-sticky .toolbar h2{margin:0;min-width:0}
+.psg-list-sticky .toolbar input{padding:7px 8px;font-size:16px}
+#dexCompactFilters .filter-main,#boxCompactFilters .filter-main{padding-block:7px}
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px}
+.filter-select{position:relative}
+.filter-main{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 10px;font-weight:850;text-align:left;display:flex;justify-content:space-between;align-items:center}
+.filter-main.active{background:#e7f6ef;border-color:#79bea0}
+.filter-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:7px;z-index:15;box-shadow:0 8px 20px rgba(35,55,48,.12);max-height:220px;overflow:auto}
+.filter-select.open .filter-panel{display:block}
+.filter-option{width:100%;border:0;background:#fff;border-radius:8px;padding:8px;text-align:left;font-weight:750}
+.filter-option.on{background:#e7f6ef}
+.dex-filter-controls{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:4px}
+.dex-filter-controls>.filter-select{position:static}
+.dex-filter-controls .filter-panel{left:0;right:0;top:calc(100% + 4px)}
+.dex-filter-controls .filter-select.open .filter-panel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.dex-filter-controls .filter-select.open #typeFilters{grid-template-columns:repeat(4,minmax(0,1fr))}
+.dex-filter-controls .filter-option{min-height:49px;padding:3px;display:grid;place-items:center;text-align:center;border:1px solid #e2ebe6}
+.dex-filter-controls .filter-option.on{border-color:#46a477}
+.dex-filter-controls .filter-pictogram{font-size:23px;line-height:1}
+.dex-filter-controls .filter-pictogram img{width:26px;height:26px;object-fit:contain}
+.dex-filter-controls .filter-type-label{font-size:10px;line-height:1.1}
+.dex-filter-controls .filter-option.text-fallback{grid-column:span 2;font-size:11px;line-height:1.2;overflow-wrap:anywhere}
+.dex-filter-controls .filter-option,.box-filter-row:first-child .filter-option{min-height:60px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;min-width:0}
+.dex-filter-controls .filter-option img,.box-filter-row:first-child .filter-option img{width:30px;height:30px;object-fit:contain}
+.dex-filter-controls .filter-option .filter-caption,.box-filter-row:first-child .filter-option .filter-caption{font-size:9px;line-height:1.12;overflow-wrap:anywhere}
+.spec-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.spec-row .filter-main{justify-content:center}
+.spec-row .filter-main{min-width:0;gap:2px;font-size:clamp(10px,2.8vw,14px);white-space:nowrap;padding-inline:3px}
+.box-filter-row{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:4px}
+.box-filter-row:first-child{position:relative}
+.box-filter-row:first-child>.filter-select{position:static}
+.box-filter-row:first-child .filter-panel{left:0;right:0;top:calc(100% + 4px)}
+.box-filter-row:first-child .filter-select.open .filter-panel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.tag-note{font-size:10px;color:var(--muted);padding:5px 7px 2px}
+
+/* source: stable-v5-dex-detail-style */
+#dexDetail{--accent:#168fe6}
+#dexDetail .detail-head{margin:0 0 8px}
+#dexDetail .detail-head h2{text-align:center;font-size:18px}
+#dexDetail .detail-nav{grid-template-columns:1fr 1.35fr 1fr;margin-bottom:10px}
+#dexDetail .detail-nav button{min-height:52px;border-radius:14px}
+#dexDetail .detail-nav strong{font-size:15px;line-height:1.25}
+#dexDetail .hero{padding:10px;border-radius:18px}
+#dexDetail .hero-top{align-items:stretch}
+#dexDetail .hero-art{width:34%;min-width:104px;height:154px;font-size:44px}
+#dexDetail .hero-info{gap:8px}
+#dexDetail .hero-info h2{text-align:center;font-size:26px;margin:0}
+#dexDetail .white-row{margin:0;padding:10px;min-height:44px;font-weight:900}
+#dexDetail .stats{gap:0;border-radius:15px;border:1px solid var(--line)}
+#dexDetail .stat{min-height:68px;padding:10px}
+#dexDetail .stat:nth-child(odd){border-right:1px solid var(--line)}
+#dexDetail .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+#dexDetail .stat small{font-weight:800}
+#dexDetail .stat b{font-size:18px}
+#dexDetail .detail-tabs{margin:10px 0}
+#dexDetail .detail-tabs button{border-radius:13px}
+#dexDetail .detail-tabs button.on{background:#0aa05a;border-color:#0aa05a}
+#dexDetail .ability-card{padding:0;overflow:hidden}
+#dexDetail .ability-title{gap:10px;padding:12px 14px 9px;font-weight:950}
+#dexDetail .rate-badge{background:#ffe7ef;color:#e93170;padding:6px 9px}
+.food-table-head,.food-line{grid-template-columns:minmax(118px,1.35fr) repeat(3,minmax(48px,.58fr)) minmax(112px,1.4fr);align-items:center}
+.food-table-head{font-weight:900}
+.food-table-head span{margin:0 2px}
+.food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
+.food-line{min-height:68px;padding:6px 10px}
+.food-id{grid-template-columns:34px 34px 1fr;min-width:0}
+.food-letter{height:42px;color:#11965b}
+.food-line:nth-of-type(3) .food-letter{background:#fff0f4;color:#e52e68}
+.food-line:nth-of-type(4) .food-letter{background:#fff5df;color:#b86c00}
+.food-icon{font-size:25px;text-align:center}
+.food-name{font-weight:900;overflow:hidden;text-overflow:ellipsis}
+.food-qty{font-weight:950;font-size:14px}
+.recipe-strip{gap:5px;align-items:center;min-width:0}
+.recipe-ph{flex:0 0 31px;height:31px;border:1px solid #f3dfc3;font-size:13px}
+.recipe-more{font-weight:900}
+.skill-box{padding:12px}
+.skill-top{display:flex;gap:8px;align-items:center}
+.skill-icon{width:48px;height:48px;font-size:24px}
+.skill-name{font-weight:950;flex:1}
+.skill-level{padding:7px 9px;font-weight:900}
+.skill-desc{margin:8px 0 0;color:#53625c}
+@media(max-width:430px){
+ #dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:8px}
+ #dexDetail .hero-art{width:100%;min-width:0;height:145px}
+ #dexDetail .hero-info h2{font-size:23px}
+ .food-table-head,.food-line{grid-template-columns:minmax(112px,1.3fr) repeat(3,48px) minmax(86px,1fr)}
+ .recipe-ph:nth-child(n+4){display:none}
+}
+
+/* source: stable-v6-rebuild */
+/* v6: rebuild only the Dex individual screen. Bottom navigation and master foundation stay intact. */
+#dexDetail{padding-top:8px}
+#dexDetail .detail-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 8px}
+#dexDetail .detail-head h2{font-size:18px;margin:0}
+#dexDetail .detail-head .btn{border:0;background:transparent;color:#118fe6;font-weight:900;padding:8px}
+#dexDetail .dex-fav{font-size:25px;color:#102066}
+#dexDetail .detail-nav{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:8px;align-items:center;margin-bottom:10px}
+#dexDetail .detail-nav button{background:#fff;border:1px solid var(--line);border-radius:14px;min-height:56px;padding:7px}
+#dexDetail .detail-nav .current{border:0;background:transparent;text-align:center;line-height:1.15}
+#dexDetail .detail-nav .current small{font-weight:900}
+#dexDetail .detail-nav .current strong{display:block;font-size:26px;margin-top:3px}
+#dexDetail .hero{padding:0;background:transparent;border:0;box-shadow:none}
+#dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:9px}
+#dexDetail .hero-art{width:100%;height:176px;border-radius:16px;background:rgba(255,255,255,.46);border:1px solid rgba(0,0,0,.06);display:grid;place-items:center;font-size:45px}
+#dexDetail .hero-info{display:flex;flex-direction:column;gap:9px}
+#dexDetail .hero-info>h2{display:none}
+#dexDetail .white-row{background:#fff;border-radius:14px;min-height:52px;padding:9px;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:15px}
+#dexDetail .stats{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;flex:1}
+#dexDetail .stat{min-height:74px;border:0;border-radius:0;padding:10px;display:flex;flex-direction:column;justify-content:center}
+#dexDetail .stat:nth-child(odd){border-right:1px solid #e7ece9}
+#dexDetail .stat:nth-child(-n+2){border-bottom:1px solid #e7ece9}
+#dexDetail .stat small{font-size:11px;font-weight:850}
+#dexDetail .stat b{font-size:20px;margin-top:4px}
+#dexDetail .detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+#dexDetail .detail-tabs button{min-height:48px;border-radius:13px;background:#fff;border:1px solid var(--line);font-size:15px;font-weight:950}
+#dexDetail .detail-tabs button.on{background:#08a35b;color:#fff;border-color:#08a35b}
+#dexDetail .ability-card{background:#fff;border-radius:17px;margin-bottom:10px;overflow:hidden}
+#dexDetail .ability-title{display:flex;align-items:center;gap:9px;padding:12px 13px 8px;font-size:23px;font-weight:950}
+#dexDetail .rate-badge{font-size:12px;background:#ffe6ef;color:#e72d70;border-radius:8px;padding:6px 9px}
+.food-table-head,.food-line{display:grid;grid-template-columns:minmax(120px,1.35fr) repeat(3,50px) minmax(92px,1fr);align-items:center}
+.food-table-head{padding:0 10px 5px;color:#168fe6;font-size:10px;font-weight:950}
+.food-table-head span{text-align:center;background:#eaf5ff;border-radius:7px;padding:4px 2px;margin:0 2px}
+.food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
+.food-line{min-height:70px;border-top:1px solid #edf1ef;padding:6px 10px}
+.food-id{display:grid;grid-template-columns:34px 32px 1fr;align-items:center;gap:5px;min-width:0}
+.food-letter{width:32px;height:43px;border-radius:8px;display:grid;place-items:center;font-size:21px;font-weight:950;background:#e8f7ef;color:#11965b}
+.food-line:nth-child(2) .food-letter{background:#fff0f4;color:#e52e68}
+.food-line:nth-child(3) .food-letter{background:#fff5df;color:#b86c00}
+.food-icon{font-size:24px;text-align:center}.food-name{font-size:11px;font-weight:900}
+.food-qty{text-align:center;font-size:14px;font-weight:950}
+.recipe-strip{display:flex;gap:4px;overflow:hidden;align-items:center}
+.recipe-ph{flex:0 0 30px;height:30px;border-radius:50%;background:#fff4e5;border:1px solid #f0dfc7;display:grid;place-items:center;font-size:13px}
+.recipe-more{margin-left:auto;color:#ef8a00;font-size:22px;font-weight:950}
+.skill-box{margin:0 10px 10px;border:1px solid #e4eaf1;border-radius:13px;padding:12px}
+.skill-top{display:grid;grid-template-columns:50px 1fr auto;gap:9px;align-items:center}
+.skill-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#b648df;color:#fff;font-size:25px}
+.skill-name{font-weight:950}.skill-level{white-space:nowrap;background:#edf6ff;border-radius:9px;padding:7px;color:#168fe6;font-weight:950}
+.skill-desc{font-size:12px;line-height:1.55;margin:8px 0 0}
+.skill-detail-toggle{width:100%;border:0;border-top:1px solid #edf1ef;background:#fff;padding:10px;font-weight:900;color:#32423b}
+.skill-levels{display:none;border-top:1px solid #edf1ef;padding:7px 10px 10px}
+.skill-levels.open{display:block}
+.skill-level-row{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:7px 4px;border-bottom:1px solid #f0f2f1;font-size:12px}
+.skill-level-row:last-child{border-bottom:0}
+.skill-level-row b{color:#168fe6}
+#evolutionCard{border-radius:17px}
+@media(max-width:430px){
+ #dexDetail .hero-art{height:158px}
+ #dexDetail .detail-nav .current strong{font-size:23px}
+ .food-table-head,.food-line{grid-template-columns:minmax(110px,1.3fr) repeat(3,45px) minmax(82px,.95fr)}
+ .recipe-ph:nth-child(n+4){display:none}
+}
+
+/* source: stable-v7-hero-fix */
+#dexDetail .hero-top{grid-template-columns:minmax(105px,35%) minmax(0,65%)!important;align-items:stretch!important}
+#dexDetail .hero-art{grid-column:1!important;grid-row:1!important;width:100%!important;height:100%!important;min-height:205px!important}
+#dexDetail .hero-info{grid-column:2!important;grid-row:1!important;gap:8px!important}
+#dexDetail .white-row{flex:0 0 auto!important;min-height:48px!important}
+#dexDetail .stats{min-width:0!important;flex:1 1 auto!important;grid-template-columns:1fr 1fr!important}
+#dexDetail .stat{min-width:0!important;padding:8px!important}
+#dexDetail .stat b{font-size:17px!important;word-break:keep-all}
+@media(max-width:430px){
+ #dexDetail .hero-top{grid-template-columns:34% 66%!important;gap:7px!important}
+ #dexDetail .hero-art{min-height:190px!important}
+ #dexDetail .stat{padding:6px!important}
+ #dexDetail .stat small{font-size:9px!important}
+ #dexDetail .stat b{font-size:15px!important}
+}
+
+/* source: stable-v9-layout */
+/* v9 test case: left is art; right owns navigation, name, traits and all four metrics */
+#dexDetail .detail-nav{display:none!important}
+#dexDetail .hero-top{gap:8px!important}
+#dexDetail .hero-art{min-height:255px!important}
+#dexDetail .hero-info{gap:7px!important}
+.v9-poke-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v9-poke-nav button{min-width:0;border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:6px 4px;font-size:10px;font-weight:900;line-height:1.25}
+.v9-poke-nav button:disabled{opacity:.35}
+.v9-name{text-align:center;background:#fff;border-radius:12px;padding:7px 5px}
+.v9-name small{display:block;font-weight:900;font-size:10px}
+.v9-name strong{display:block;font-size:21px;line-height:1.05}
+.v9-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v9-trait{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
+#dexDetail .stats{flex:1!important}
+#dexDetail .stat{min-height:62px!important}
+#dexDetail .stat small{font-size:9px!important}
+#dexDetail .stat b{font-size:14px!important}
+.v9-est{font-size:8px;color:#8a6c00;font-weight:800}
+.v9-skill-level-select{display:flex;gap:4px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
+.v9-skill-level-select button{flex:0 0 38px;border:1px solid #dbe4df;background:#fff;border-radius:8px;padding:6px 2px;font-size:11px;font-weight:900}
+.v9-skill-level-select button.on{background:#168fe6;color:#fff;border-color:#168fe6}
+.v9-skill-tags{display:flex;gap:5px;margin-top:7px}
+.v9-skill-tag{font-size:10px;background:#edf7ef;border-radius:999px;padding:4px 7px;font-weight:900}
+.v9-evo-btn{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:9px;font-weight:900}
+
+/* source: stable-v10-detail-cleanup */
+/* Single-detail-controller cleanup */
+#dexDetail .detail-nav{display:none!important}
+#dexDetail .hero-info>.white-row{display:none!important} /* remove duplicate type/sleep/specialty row */
+#dexDetail .hero-top{gap:9px!important}
+#dexDetail .hero-art{min-height:250px!important;height:100%!important}
+#dexDetail .hero-info{gap:7px!important;min-width:0!important}
+.v10-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v10-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900;min-width:0}
+.v10-nav button:disabled{opacity:.35}
+.v10-name{text-align:center;background:#fff;border-radius:11px;padding:6px}
+.v10-name small{display:block;font-size:10px;font-weight:900}
+.v10-name strong{display:block;font-size:21px;line-height:1.1}
+.v10-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v10-traits span{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
+#dexDetail .stats{width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;flex:1!important}
+#dexDetail .stat{min-height:61px!important;padding:7px!important}
+#dexDetail .stat small{font-size:9px!important} #dexDetail .stat b{font-size:15px!important}
+.food-table-head{font-size:14px!important}
+.food-table-head span{padding:7px 3px!important}
+.food-qty{font-size:17px!important}
+.skill-desc{font-size:16px!important;font-weight:700}
+.skill-level-row{font-size:14px!important;line-height:1.5}
+.v10-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
+
+/* source: stable-v11-fixes */
+/* Actual DOM structure fix: stats is moved inside .hero-info by JS */
+#dexDetail .hero{padding:10px!important}
+#dexDetail .hero-top{gap:9px!important;align-items:stretch!important}
+#dexDetail .hero-art{min-height:265px!important;height:100%!important}
+#dexDetail .hero-info{min-width:0!important;gap:7px!important}
+#dexDetail .hero-info>.stats{margin-top:0!important;flex:1!important}
+.v11-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v11-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900}
+.v11-nav button:disabled{opacity:.35}
+.v11-name{text-align:center;background:#fff;border-radius:11px;padding:6px}
+.v11-name small{display:block;font-size:10px;font-weight:900}
+.v11-name strong{display:block;font-size:22px}
+.v11-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.v11-traits span{background:#fff;border-radius:9px;padding:7px 2px;text-align:center;font-size:11px;font-weight:900}
+#dexDetail .stat{min-height:62px!important}
+.food-table-head{font-size:15px!important;font-weight:950!important}
+.food-qty{font-size:18px!important}
+.skill-desc{font-size:17px!important;line-height:1.65!important;font-weight:750!important}
+.skill-level-row{font-size:15px!important}
+.v11-lv{display:flex;align-items:center;gap:3px}
+.v11-lv button{border:0;background:#edf6ff;color:#168fe6;border-radius:8px;padding:7px 9px;font-size:18px;font-weight:950}
+.v11-lv b{background:#edf6ff;color:#168fe6;border-radius:8px;padding:8px 10px;white-space:nowrap}
+.v11-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
+
+.psg-sleep-type-icon{width:36px;height:23px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:auto}
+.v44-sleep-trait,.psg-box-trait:has(.psg-sleep-type-icon){display:flex;align-items:center;justify-content:center;gap:3px}
+/* source: stable-v14-detail-ui */
+/* v12: fixed hero, right-side information, tabs switch only the content below */
+#dexDetail{--type-bg:#eaf7ed;--type-accent:#55a66b}
+#dexDetail .hero{
+  background:var(--type-bg)!important;
+  border-color:color-mix(in srgb,var(--type-accent) 22%, #dfe8e2)!important;
+}
+#dexDetail .hero-top{
+  display:grid!important;
+  grid-template-columns:36% minmax(0,64%)!important;
+  gap:10px!important;
+  align-items:stretch!important;
+}
+#dexDetail .hero-art{
+  min-height:285px!important;
+  background:rgba(255,255,255,.58)!important;
+}
+#dexDetail .hero-info{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+.v12-title-row{
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) auto;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.72);
+  border-radius:12px;
+  padding:8px 10px;
+}
+.v12-name{text-align:left}
+.v12-name small{display:block;font-size:10px;font-weight:900}
+.v12-name strong{display:block;font-size:22px;line-height:1.12}
+.v12-traits{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.v12-traits span{
+  background:#fff;border-radius:999px;padding:6px 8px;
+  font-size:10px;font-weight:900;white-space:nowrap
+}
+.v12-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v12-nav button{
+  border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.78);
+  border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900
+}
+.v12-nav button:disabled{opacity:.32}
+#dexDetail .hero-info>.stats{
+  display:grid!important;grid-template-columns:1fr 1fr!important;
+  width:100%!important;margin:0!important;flex:1!important;
+  background:rgba(255,255,255,.68)!important
+}
+#dexDetail .stat{min-height:59px!important}
+.v12-tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+  margin-top:auto
+}
+.v12-tabs button{
+  min-height:43px;border:1px solid rgba(0,0,0,.08);
+  border-radius:10px;background:rgba(255,255,255,.82);
+  font-size:14px;font-weight:950
+}
+.v12-tabs button.active{
+  background:var(--type-accent);color:#fff;border-color:var(--type-accent)
+}
+/* old tab row is no longer part of layout */
+#dexDetail>.detail-tabs,#dexDetail .detail-tabs:not(.v12-tabs){display:none!important}
+.v12-panel{display:none}
+.v12-panel.active{display:block}
+#dexDetail .ability-content{display:block!important}
+#dexDetail .section-head{
+  display:flex!important;align-items:center!important
+}
+#dexDetail .section-head .badge{align-self:center!important}
+#skillDetailToggle{
+  font-size:11px!important;font-weight:800!important;padding:5px 8px!important
+}
+.v11-lv button,.v12-lv button{
+  min-width:48px!important;min-height:44px!important;font-size:24px!important
+}
+.v12-placeholder{
+  background:#fff;border:1px solid #e4ebe7;border-radius:14px;
+  padding:20px;text-align:center;font-weight:800;color:#6f7c75
+}
+@media(max-width:620px){
+  #dexDetail .hero-top{grid-template-columns:38% minmax(0,62%)!important;gap:6px!important}
+  .v12-title-row{grid-template-columns:1fr;padding:6px}
+  .v12-traits{justify-content:flex-start}
+  .v12-name strong{font-size:18px}
+  .v12-traits span{font-size:9px;padding:5px}
+  .v12-tabs button{font-size:12px}
+}
+
+/* Team ingredient coverage is based on the selected individual and unlocked slots. */
+.psg-home-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.psg-home-heading h2{margin:0;flex:none}
+.psg-home-settings{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;flex:1 1 270px;min-width:0}
+.psg-home-field{display:flex;flex-direction:column;align-items:stretch;gap:3px;min-width:0;font-size:12px;font-weight:700}
+.psg-home-field select{min-width:0;width:100%;max-width:none;min-height:40px;padding:5px 8px;border:1px solid #d7e0da;border-radius:10px;background:#fff;color:#111;font:inherit;font-size:14px}
+.psg-team-face-dock:not([hidden]){position:fixed;top:var(--psg-header-height);left:50%;transform:translateX(-50%);z-index:66;box-sizing:border-box;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;width:min(100%,720px);padding:5px 12px;background:var(--bg);border-bottom:1px solid #dce5df;box-shadow:0 3px 8px #1b36241a}
+.psg-team-face-dock-cell{min-width:0;padding:2px;border:1px solid #dfe8e3;border-radius:9px;background:#fff;cursor:pointer}
+.psg-team-face-dock-cell .psg-team-face{width:100%;height:42px;border-radius:6px}
+.psg-team-face-dock[hidden]{display:none}
+.psg-team-row{display:flex;align-items:center;gap:7px;margin:7px 0}
+.psg-team-choose{display:flex;align-items:center;gap:9px;flex:1;min-width:0;min-height:58px;padding:5px 9px;text-align:left;background:#fff;color:#111;border:1px solid #dfe8e3;border-radius:12px;cursor:pointer;font:inherit}
+.psg-team-face{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;border-radius:10px;background:#f2f6f4;color:#83918a;font-size:9px;font-weight:700;overflow:hidden}
+.psg-team-face img{width:100%;height:100%;object-fit:contain}
+.psg-team-identity{display:flex;flex-direction:column;gap:2px;min-width:0}
+.psg-team-identity strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+.psg-team-identity small,.psg-team-option small{color:#68776f;font-size:11px}
+.psg-team-identity .psg-team-speed{color:#111;line-height:1.2}
+.psg-team-choose-arrow{margin-left:auto;font-size:10px;color:#668677}
+.psg-team-actions{display:flex;gap:3px}
+.psg-team-actions button{min-width:37px;min-height:44px;padding:5px;border:1px solid #dfe8e3;background:#fff;border-radius:9px;color:#376d53;font:inherit;font-weight:800;cursor:pointer}
+.psg-team-actions button:disabled{opacity:.28;cursor:default}
+.psg-team-actions .psg-team-remove{font-size:10px;color:#69776f;min-width:42px}
+.psg-team-picker{margin:0 0 11px;padding:10px;border:1px solid #dfe8e3;border-radius:12px;background:#f7faf8}
+.psg-team-picker>input{box-sizing:border-box;width:100%;margin:0 0 9px;padding:9px 10px;border:1px solid #dfe8e3;border-radius:9px;font:inherit;font-size:16px}
+.psg-team-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;max-height:240px;overflow:auto;overscroll-behavior:contain}
+.psg-team-option{display:flex;align-items:center;gap:7px;min-width:0;padding:6px;text-align:left;border:1px solid #dfe8e3;border-radius:10px;background:#fff;color:#111;cursor:pointer;font:inherit}
+.psg-team-option>.psg-team-face{flex-basis:40px;width:40px;height:40px}
+.psg-team-option>span:last-child{display:flex;flex-direction:column;min-width:0}
+.psg-team-option strong{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.psg-team-option:disabled{opacity:.5;cursor:default}
+.psg-team-option[hidden]{display:none}
+.psg-team-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.psg-team-toolbar .note{flex:1}
+.psg-team-toolbar button,.psg-team-picker-remove{min-height:44px;padding:7px 11px;border:1px solid #d5e3db;border-radius:10px;background:#fff;color:#276747;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.psg-team-toolbar button[aria-pressed="true"]{background:#e5f4e9;border-color:#70af82}
+.psg-team-toolbar button:disabled{opacity:.45;cursor:default}
+.psg-team-hint,.psg-team-picker-hint{font-size:12px;color:#40644f;line-height:1.4;margin:4px 0 8px}
+.psg-team-row{margin:5px 0}
+.psg-team-number{flex:none;display:grid;place-items:center;width:20px;color:#5a7564;font-size:13px;font-weight:700}
+.psg-team-choose{min-height:60px}
+.psg-team-row.is-reorder-source .psg-team-choose{border:2px solid #388c55;background:#ecf8ee}
+.psg-team-row.is-reordering .psg-team-choose-arrow{font-size:11px;white-space:nowrap}
+.psg-team-picker{margin-left:27px}
+.psg-team-picker-remove{margin-bottom:5px}
+/* Home team cards share the Box's five-column rhythm. The picker spans the row. */
+#teamSlots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;align-items:start}
+#teamSlots .psg-team-row{position:relative;display:flex;flex-direction:column;min-width:0;margin:0;gap:0}
+#teamSlots .psg-team-number{position:absolute;top:4px;left:4px;z-index:1;width:15px;height:15px;border-radius:50%;background:#fff;color:#345944;font-size:10px}
+#teamSlots .psg-team-choose{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1px;width:100%;min-height:123px;padding:3px 2px;text-align:center;border-radius:10px}
+#teamSlots .psg-team-choose[class*="type-"]{background:var(--psg-type-bg)}
+#teamSlots .psg-team-card-name{display:block;width:100%;padding-left:13px;box-sizing:border-box;color:#111;font-size:11px;line-height:1.15;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#teamSlots .psg-team-card-art{position:relative;display:block;width:100%}
+#teamSlots .psg-team-face{flex:0 0 auto;width:100%;height:62px;border-radius:6px}
+#teamSlots .psg-team-card-level{position:absolute;right:1px;bottom:1px;padding:1px 2px;border-radius:3px;background:#ffffffe8;color:#111;font-size:10px;font-weight:950;line-height:1.15}
+#teamSlots .psg-team-identity{width:100%;gap:0}
+#teamSlots .psg-team-identity strong{font-size:11px}
+#teamSlots .psg-team-identity small{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#teamSlots .psg-team-speed{display:none}
+#teamSlots .psg-team-choose-arrow{margin:0;font-size:9px}
+#teamSlots .psg-team-picker{grid-column:1/-1;margin:0 0 4px}
+.psg-box-team-mode{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 10px;padding:10px;border:1px solid #83bc98;border-radius:12px;background:#edf8f0;font-size:12px}
+.psg-box-team-mode[hidden]{display:none}
+.psg-box-team-mode strong{font-size:14px}
+.psg-box-team-mode span{flex:1 1 100%}
+.psg-box-team-mode button{min-height:38px;padding:5px 9px;border:1px solid #78ab8a;border-radius:8px;background:#fff;color:#286a47;font-weight:700}
+.psg-team-option.is-selected{border-color:#70af82;background:#eff8f1}
+.psg-team-toolbar button:focus-visible,.psg-team-picker-remove:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
+.psg-team-choose:focus-visible,.psg-team-actions button:focus-visible,.psg-team-option:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
+@media(max-width:355px){.psg-team-choose{gap:5px;padding:5px}.psg-team-face{flex-basis:40px;width:40px;height:40px}.psg-team-actions button{min-width:31px}.psg-team-actions .psg-team-remove{min-width:37px}}
+.psg-team-food-card,.psg-team-recipe-card{margin-top:12px}
+.psg-day-card{margin-top:12px}
+.psg-day-header{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.psg-day-header .section-title{margin:0;min-width:0}
+.psg-day-setting{display:flex;align-items:center;justify-content:flex-end;gap:5px;white-space:nowrap;font-size:12px;font-weight:700}
+.psg-day-setting select{font:inherit;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:6px 3px;min-width:0;max-width:76px}
+.psg-day-toggles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.psg-day-camp{font:inherit;font-weight:700;color:#285843;background:#fff;border:1px solid #b8d3c0;border-radius:12px;padding:9px 12px;min-height:42px}
+.psg-day-camp[aria-pressed="true"]{background:#dff2e6;border-color:#61a878;color:#174b30}
+.psg-day-energy{border:0;padding:0;margin:12px 0 0;min-width:0}
+.psg-day-energy legend{font-weight:700;padding:0;margin-bottom:7px;color:#111}
+.psg-day-energy-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.psg-day-energy-options button{font:inherit;font-weight:700;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:12px;min-height:42px;padding:6px}
+.psg-day-energy-options button[aria-pressed="true"]{background:#e8f2fc;border-color:#3888d8;color:#145c9e}
+.psg-day-field{border:1px solid #dce4df;border-radius:12px;padding:8px 10px 10px;margin:12px 0;min-width:0}
+.psg-day-field legend{font-weight:700;padding:0 5px;color:#111}
+.psg-day-berries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:8px}
+.psg-day-berries label{font-size:.8em;color:#52645b;min-width:0}
+.psg-day-berries select{width:100%;font:inherit;font-size:1.12em;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:7px 2px;min-height:38px}
+.psg-day-field-link{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;padding:10px 12px;text-align:left;font:inherit;font-size:.88em;font-weight:700;color:#24583d;background:#f1f8f3;border:1px solid #cbded0;border-radius:12px}
+.psg-day-field-link span{min-width:0}.psg-day-field-link b{font-size:1.4em}
+.psg-field-settings>label{display:block;margin:12px 0 5px;font-weight:700}
+.psg-field-settings>select{width:100%;font:inherit;padding:9px;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:10px}
+.psg-field-percent{display:flex;align-items:center;gap:6px}
+#fieldAreaBonus{font:inherit;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:8px;width:5.5em;text-align:right}
+.psg-field-week{margin:15px 0 5px;color:#617269;font-size:.85em}
+.psg-field-settings .psg-day-field{margin:8px 0}.psg-field-settings .psg-day-berries{margin-bottom:0}
+.psg-field-reset{margin-top:8px;color:#316caa}.psg-field-reset[hidden]{display:none}
+.psg-field-encounters{margin-top:12px}
+.psg-field-rank-label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:800;margin:12px 0}
+.psg-field-rank-label select{font:inherit;max-width:55%;min-height:40px;border:1px solid #d7e0da;border-radius:10px;background:#fff;color:#111;padding:6px}
+.psg-field-rank-details{margin:10px 0 16px;border:1px solid #dce6e0;border-radius:12px;background:#fff;padding:9px 12px}
+.psg-field-rank-details summary{cursor:pointer;color:#316caa;font-weight:800}
+.psg-field-rank-details .psg-field-encounter-row{padding:5px 0}
+.psg-field-species{background:#fff;border:1px solid #dce6e0;border-radius:14px;padding:12px;margin:10px 0}
+.psg-field-species h4{margin:0 0 8px;font-size:1em}
+.psg-field-species-name{display:block;width:100%;background:none;border:0;padding:0 0 8px;text-align:left;color:#316caa;font:inherit;font-weight:800;cursor:pointer}
+.psg-field-encounter-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid #e9eeeb;font-size:.92em}
+.psg-field-encounter-row strong{white-space:nowrap;font-size:.92em}
+#v12Field{padding:10px 4px 24px}
+#v12Field>h3{margin:10px 4px}
+#v12Field>.note{margin:4px 4px 12px}
+.psg-day-method{margin-top:10px;color:#596861;font-size:.85em}
+.psg-day-method summary{cursor:pointer;color:#316caa;font-weight:700;padding:4px 0}
+.psg-day-method p{line-height:1.5;margin:5px 0 0}
+.psg-day-list{display:grid;gap:0;border:1px solid #dce4df;border-radius:14px;overflow:hidden}
+.psg-day-row{display:grid;gap:4px;padding:9px 12px;background:#fff;color:#111}
+.psg-day-row+.psg-day-row{border-top:1px solid #e6ebe8}
+.psg-day-row span{font-size:.86em;line-height:1.4}
+.psg-day-total{font-weight:700;line-height:1.45;margin:10px 0}
+.psg-day-food-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.psg-day-food-tile{display:flex;align-items:center;gap:5px;min-width:0;max-width:100%;padding:3px 6px;border:1px solid #dfe8e3;border-radius:9px;background:#f7faf8}
+.psg-day-food-tile>img,.psg-day-food-tile>span:first-child{width:28px;height:28px;flex:none;object-fit:contain}
+.psg-day-food-tile>span:last-child{display:flex;flex-direction:column;min-width:0;line-height:1.12}
+.psg-day-food-tile small{font-size:10px;font-weight:600;white-space:nowrap}.psg-day-food-tile strong{font-size:12px;white-space:nowrap}
+.psg-team-food-list{display:grid;gap:8px}
+.psg-team-food-item{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid #e2e9e5;border-radius:13px;background:#fafcfb;min-width:0}
+.psg-team-food-item>img,.psg-team-food-item>span:first-child{width:34px;height:34px;object-fit:contain;flex:none}
+.psg-team-food-item>span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
+.psg-team-food-item strong{color:#111}.psg-team-food-item small{color:#60716a;line-height:1.45;overflow-wrap:anywhere}
+.psg-team-food-card>.note{margin:8px 0 0}
+#teamRecipeList{display:grid;gap:8px;margin-top:10px}
+.psg-team-recipe-group{border:1px solid #dfe8e3;border-radius:13px;background:#fff;overflow:hidden}
+.psg-team-recipe-group-title{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;cursor:pointer;color:#111;list-style:none}
+.psg-team-recipe-group-title::-webkit-details-marker{display:none}
+.psg-team-recipe-group-title>strong{flex:1}.psg-team-recipe-group-title>small{font-size:.77em;color:#66766f;white-space:nowrap}
+.psg-team-recipe-group-title:after{content:'▾';font-size:13px;color:#66766f}
+.psg-team-recipe-group[open]>.psg-team-recipe-group-title:after{transform:rotate(180deg)}
+.psg-team-recipe-items{display:grid;gap:7px;padding:0 9px 9px}
+.psg-team-recipe-row{display:flex;flex-direction:column;gap:3px;width:100%;padding:10px 12px;text-align:left;background:var(--recipe-category-bg,#f9fbfa);color:#111;border:1px solid #e2e9e5;border-radius:10px;cursor:pointer}
+.psg-team-recipe-row>strong{overflow-wrap:anywhere}
+.psg-team-recipe-meta{color:#64756d;font-size:.78em}
+.psg-team-recipe-status{color:#68766f;font-size:.8em;line-height:1.35;overflow-wrap:anywhere}
+.psg-team-recipe-status.is-covered{color:#267650;font-weight:700}
+.psg-team-recipe-row:focus-visible,.psg-team-recipe-group-title:focus-visible{outline:2px solid #438ac8;outline-offset:-2px}
+
+/* v13: slightly larger navigation and number */
+#dexDetail .v12-nav button{
+  min-height:42px!important;
+  font-size:12px!important;
+  padding:9px 6px!important;
+}
+#dexDetail .v12-name small{
+  font-size:14px!important;
+  line-height:1.15!important;
+  margin-bottom:2px!important;
+}
+/* Three compact metrics in one row */
+#dexDetail .hero-info>.stats{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:5px!important;
+  flex:0 0 auto!important;
+  background:transparent!important;
+  padding:0!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  min-height:64px!important;
+  padding:7px 4px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  background:rgba(255,255,255,.76)!important;
+  border-radius:10px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  font-size:9px!important;
+  white-space:nowrap!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  margin-top:5px!important;
+  font-size:15px!important;
+}
+/* Berry is a compact standalone chip rather than a fourth metric */
+.v13-berry{
+  display:inline-flex;align-items:center;gap:5px;
+  align-self:flex-start;
+  padding:5px 8px;border-radius:999px;
+  background:rgba(255,255,255,.78);
+  font-size:10px;font-weight:900;
+}
+/* Food table: fixed shared vertical axes */
+.v13-food-head,.v13-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(118px,1.35fr) 46px 50px 50px minmax(110px,1.2fr)!important;
+  align-items:center!important;
+  column-gap:0!important;
+  width:100%!important;
+}
+.v13-food-head{
+  min-height:38px;
+  font-size:10px;font-weight:950;
+  border-bottom:1px solid #e8ece9;
+}
+.v13-food-title{
+  display:flex;align-items:center;gap:6px;min-width:0;
+}
+.v13-food-rate{
+  display:inline-flex;align-items:center;
+  padding:3px 6px;border-radius:999px;
+  background:#f1f5f2;font-size:9px;white-space:nowrap;
+}
+.v13-food-head>div:not(:first-child),
+.v13-food-row>.v13-level{text-align:center}
+.v13-food-row{
+  min-height:54px;border-bottom:1px solid #edf0ee;
+}
+.v13-food-name{
+  display:flex;align-items:center;gap:5px;min-width:0;
+  font-size:11px;font-weight:850;
+}
+.v13-food-name .food-letter{
+  flex:0 0 auto;width:18px;height:18px;display:grid;place-items:center;
+  border-radius:6px;background:#f1f4f2;font-size:9px
+}
+.v13-food-name .food-icon{font-size:17px}
+.v13-food-name .food-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v13-level{font-size:12px;font-weight:900}
+.v13-recipes{
+  min-width:0;overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;padding:3px 2px
+}
+.v13-recipes::-webkit-scrollbar{display:none}
+.v13-recipes span{display:inline-block;margin-right:3px}
+@media(max-width:620px){
+  .v13-food-head,.v13-food-row{
+    grid-template-columns:minmax(105px,1.25fr) 39px 43px 43px minmax(92px,1.1fr)!important;
+  }
+  .v13-food-rate{font-size:8px;padding:3px 4px}
+  .v13-food-head{font-size:9px}
+  .v13-food-name{font-size:10px}
+}
+
+#v12Ability .section-head:has(#foodRateBadge){display:none!important}
+
+/* source: stable-v19-three-fixes */
+/* Identity and traits */
+#dexDetail .v19-identity{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding:8px 10px;background:rgba(255,255,255,.74);border-radius:12px;
+}
+#dexDetail .v19-identity .v19-no{font-size:14px;font-weight:950}
+#dexDetail .v19-identity strong{font-size:21px;line-height:1.1}
+#dexDetail .v19-type{
+  margin-left:auto;padding:5px 8px;background:#fff;border-radius:999px;
+  font-size:11px;font-weight:950;white-space:nowrap
+}
+#dexDetail .v19-traits{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px
+}
+#dexDetail .v19-traits span{
+  min-height:34px;display:flex;align-items:center;justify-content:center;
+  padding:5px;background:rgba(255,255,255,.76);border-radius:9px;
+  font-size:10px;font-weight:900;text-align:center
+}
+#v13Berry{display:none!important}
+
+/* Food: larger, readability-first; no strict vertical-axis requirement */
+#detailFoods{font-size:13px!important}
+#detailFoods .v13-food-head{
+  min-height:46px!important;
+  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
+  font-size:11px!important;
+}
+#detailFoods .v13-food-row{
+  min-height:68px!important;
+  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
+}
+#detailFoods .v13-food-name{font-size:13px!important;gap:7px!important}
+#detailFoods .v13-food-name .food-letter{
+  width:23px!important;height:23px!important;font-size:11px!important
+}
+#detailFoods .v13-food-name .food-icon{font-size:23px!important}
+#detailFoods .v13-level{font-size:15px!important}
+#detailFoods .v13-recipes{font-size:22px!important;padding:6px 3px!important}
+#detailFoods .v13-food-rate{padding:4px 7px!important}
+
+/* Keep only one current skill level controller visible */
+#v12Ability #v12SkillLv{align-items:center;gap:7px}
+#v12Ability #v12SkillLv button{min-width:48px!important;min-height:44px!important}
+
+@media(max-width:620px){
+  #dexDetail .v19-identity{gap:5px;padding:7px}
+  #dexDetail .v19-identity .v19-no{font-size:12px}
+  #dexDetail .v19-identity strong{font-size:18px}
+  #dexDetail .v19-type{font-size:10px;padding:4px 6px}
+  #dexDetail .v19-traits span{font-size:9px}
+  #detailFoods{overflow-x:auto}
+  #detailFoods .v13-food-head,#detailFoods .v13-food-row{
+    min-width:560px!important;
+  }
+}
+
+/* source: stable-v20b-precise-refine */
+/* Keep v19 geometry; enlarge only the information the user specified. */
+#dexDetail .v19-type{
+  font-weight:950!important;
+  padding:6px 10px!important;
+}
+
+/* Berry / sleep type / specialty: keep the same row, make content larger */
+#dexDetail .v19-traits span{
+  min-height:38px!important;
+}
+
+/* Food header: distribute labels horizontally with better visual balance */
+#detailFoods .v13-food-head{
+  grid-template-columns:minmax(155px,1.55fr) 58px 62px 62px minmax(145px,1.35fr)!important;
+  font-size:13px!important;
+  min-height:44px!important;
+}
+#detailFoods .v13-food-title{
+  font-size:14px!important;
+  gap:8px!important;
+}
+#detailFoods .v13-food-rate{
+  font-size:10px!important;
+}
+#detailFoods .v13-food-row{
+  grid-template-columns:minmax(155px,1.55fr) 58px 62px 62px minmax(145px,1.35fr)!important;
+  min-height:64px!important;
+}
+
+/* A/B/C: larger, colored badges for instant recognition */
+#detailFoods .food-letter{
+  width:30px!important;
+  height:30px!important;
+  font-size:15px!important;
+  font-weight:950!important;
+  color:#fff!important;
+  border-radius:9px!important;
+}
+#detailFoods .v13-food-row:nth-of-type(2) .food-letter{background:#5d9f6e!important}
+#detailFoods .v13-food-row:nth-of-type(3) .food-letter{background:#d39a45!important}
+#detailFoods .v13-food-row:nth-of-type(4) .food-letter{background:#7b83bd!important}
+
+/* Skill: existing right-side controller only. Rate sits between name and controller. */
+.v20b-skill-line{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  width:100%!important;
+}
+.v20b-skill-rate{
+  font-size:11px!important;
+  font-weight:900!important;
+  white-space:nowrap!important;
+  padding:4px 7px!important;
+  border-radius:999px!important;
+  background:#f2f5f3!important;
+}
+#v12SkillLv{
+  margin-left:0!important;
+}
+@media(max-width:620px){
+  #detailFoods{overflow-x:auto!important}
+  #detailFoods .v13-food-head,#detailFoods .v13-food-row{min-width:585px!important}
+  .v20b-skill-line{gap:6px!important}
+  .v20b-skill-rate{font-size:10px!important;padding:4px 5px!important}
+}
+/* source: stable-v21-header-skill */
+#dexDetail .v19-identity{gap:7px!important}
+#dexDetail .v19-identity .v19-no{font-size:13px!important;flex:0 0 auto!important}
+#dexDetail .v19-identity strong{font-size:24px!important;line-height:1.05!important;flex:0 0 auto!important}
+#dexDetail .v19-type{margin-left:2px!important;font-size:14px!important;padding:5px 8px!important;flex:0 0 auto!important}
+#dexDetail .v19-traits,#dexDetail .hero-info>.stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
+#dexDetail .v19-traits span,#dexDetail .hero-info>.stats .stat{width:100%!important;box-sizing:border-box!important}
+.v21-skill-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;align-items:center!important;gap:10px!important;width:100%!important}
+.v21-skill-rate{font-size:11px;font-weight:900;white-space:nowrap;padding:5px 8px;border-radius:999px;background:#f2f5f3}
+#v12SkillLv{justify-self:end!important;margin:0!important}
+@media(max-width:620px){#dexDetail .v19-identity strong{font-size:20px!important}.v21-skill-row{gap:6px!important}.v21-skill-rate{font-size:10px;padding:4px 5px}}
+
+/* source: stable-v22-skill-root-fix */
+/* Single authoritative skill header layout */
+#v12Ability .skill-top{
+  grid-template-columns:auto minmax(0,1fr) auto auto!important;
+  width:100%!important;
+}
+#v12Ability .skill-name{min-width:0!important}
+#v12Ability .skill-rate-inline{
+  font-size:11px!important;
+  padding:5px 8px!important;border-radius:999px!important;background:#f2f5f3!important
+}
+#v12Ability #v12SkillLv{gap:6px!important;margin:0!important
+}
+#v12Ability #v12SkillLv button{
+  min-width:46px!important;min-height:42px!important;font-size:22px!important
+}
+/* Any stale legacy level display is forbidden */
+#v12Ability .skill-level{display:none!important}
+@media(max-width:620px){
+ #v12Ability .skill-top{gap:6px!important}
+ #v12Ability .skill-rate-inline{font-size:10px!important;padding:4px 5px!important}
+}
+
+/* source: stable-v24-food-root-fix */
+/* v24 owns the actual #detailFoods DOM generated by renderFood(). */
+#detailFoods{display:block!important;overflow:visible!important;font-size:inherit!important}
+#detailFoods .v24-food-title{gap:12px!important;
+  min-height:48px!important;padding:0 8px!important;border-bottom:1px solid #e8edf4!important
+}
+#detailFoods .v24-food-title b{font-size:23px!important}
+#detailFoods .v24-food-title span{
+  padding:6px 12px!important;border-radius:10px!important;background:#ffe7ef!important;
+  font-size:13px!important;font-weight:900!important;color:#e83269!important
+}
+#detailFoods .v24-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(155px,1.45fr) 68px 68px 68px minmax(180px,1.65fr)!important;
+  align-items:stretch!important;min-height:78px!important;width:100%!important;
+  border-bottom:1px solid #e8edf4!important
+}
+#detailFoods .v24-food-name{
+  display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;
+  align-items:center!important;gap:6px!important;padding:7px 8px!important
+}
+#detailFoods .v24-letter{
+  display:grid!important;place-items:center!important;width:42px!important;height:48px!important;
+  border-radius:10px!important;font-size:27px!important;font-weight:950!important
+}
+#detailFoods .v24-food-main{
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;min-width:0!important
+}
+#detailFoods .v24-food-icon{font-size:30px!important;line-height:1!important}
+#detailFoods .v24-food-icon img{display:block;width:1em;height:1em;object-fit:contain}
+#detailFoods .v24-food-main b{
+  margin-top:4px!important;font-size:12px!important;line-height:1.1!important;
+  text-align:center!important;white-space:normal!important
+}
+#detailFoods .v24-level{
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;border-left:1px solid #e8edf4!important
+}
+#detailFoods .v24-level small{
+  padding:3px 7px!important;border-radius:7px!important;background:#eaf5ff!important;
+  color:#078be8!important;font-size:11px!important;font-weight:900!important
+}
+#detailFoods .v24-level b{margin-top:9px!important;font-size:16px!important}
+#detailFoods .v24-recipes{gap:9px!important;
+  overflow-x:auto!important;padding:8px 9px!important;border-left:1px solid #e8edf4!important;
+  background:#fffaf5!important;scrollbar-width:none!important
+}
+#detailFoods .v24-recipes::-webkit-scrollbar{display:none}
+#detailFoods .v24-placeholder{
+  flex:0 0 48px!important;height:48px!important;display:grid!important;place-items:center!important;
+  border-radius:50%!important;background:#fff!important;font-size:26px!important
+}
+#detailFoods .v24-more{margin-left:auto!important;font-size:32px!important;font-weight:900!important;color:#ef8a00!important}
+#detailFoods .slot-A .v24-food-name{background:#effbf5!important}
+#detailFoods .slot-B .v24-food-name{background:#fff2f6!important}
+#detailFoods .slot-C .v24-food-name{background:#fff8eb!important}
+#detailFoods .slot-A .v24-letter{background:#d9f7e7!important;color:#079b57!important}
+#detailFoods .slot-B .v24-letter{background:#ffe1eb!important;color:#e91e63!important}
+#detailFoods .slot-C .v24-letter{background:#ffefd1!important;color:#ae6800!important}
+@media(max-width:620px){
+ #detailFoods{overflow-x:auto!important}
+ #detailFoods .v24-food-title,#detailFoods .v24-food-row{min-width:590px!important}
+ #detailFoods .v24-food-row{grid-template-columns:155px 66px 66px 66px minmax(180px,1fr)!important}
+}
+
+/* source: stable-v25-food-skill-unified */
+/* The food heading alone needs a fixed minimum height. The skill heading
+   follows its content so its Lv.1 effect sits directly below it. */
+#detailFoods .v24-food-title{
+  min-height:52px!important;
+  box-sizing:border-box!important;
+  border-bottom:1px solid #e8edf4!important;
+}
+
+/* Food heading: one compact label */
+#detailFoods .v24-food-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  padding:0 10px!important;
+}
+#detailFoods .v24-food-title b{
+  font-size:18px!important;
+  line-height:1!important;
+  font-weight:950!important;
+}
+#detailFoods .v24-food-title span{
+  background:transparent!important;
+  padding:0!important;
+  border-radius:0!important;
+  color:#e83269!important;
+  font-size:16px!important;
+  font-weight:950!important;
+}
+
+/* Skill heading: name | trigger rate | one right-side level control */
+#v12Ability .skill-top{
+  grid-template-columns:minmax(0,1fr) auto auto!important;
+}
+#v12Ability .skill-icon:not(.has-image){display:none!important}
+#v12Ability .skill-icon.has-image{display:grid!important;background:transparent!important}
+#v12Ability .skill-icon.has-image img{display:block;width:100%;height:100%;object-fit:contain}
+#v12Ability .skill-name{
+  line-height:1.1!important;
+}
+#v12Ability .skill-name::before{
+  content:"✨ ";
+}
+#v12Ability .skill-rate-inline{
+  border-radius:0!important;
+  font-size:13px!important;
+}
+#v12Ability #v12SkillLv{
+  margin:0!important;
+  justify-self:end!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:5px!important;
+}
+#v12Ability #v12SkillLv button{
+  min-width:38px!important;
+  min-height:38px!important;
+  font-size:21px!important;
+}
+#v12Ability #v12SkillLv b{
+  white-space:nowrap!important;
+  font-size:14px!important;
+}
+#v12Ability .skill-desc{
+  padding-top:12px!important;
+}
+@media(max-width:620px){
+  #v12Ability .skill-top{
+    grid-template-columns:minmax(0,1fr) auto auto!important;
+    gap:6px!important;
+    padding:0 7px!important;
+  }
+  #v12Ability .skill-name{font-size:15px!important}
+  #v12Ability .skill-rate-inline{font-size:11px!important}
+  #v12Ability #v12SkillLv button{min-width:34px!important;min-height:36px!important}
+  #detailFoods .v24-food-title b{font-size:17px!important}
+  #detailFoods .v24-food-title span{font-size:15px!important}
+}
+
+/* source: stable-v26-layout-refine */
+/* Keep the Pokémon type color inside the identity block; the page follows its active tab. */
+#dexDetail{
+  --pane-bg:#f1f7ff;
+  background:#f1f7ff!important;
+  border-radius:18px!important;
+}
+#dexDetail:has(#v12Sleep.active){--pane-bg:#f6f1fb;background:#f6f1fb!important}
+#dexDetail:has(#v12Field.active){--pane-bg:#f0f6f1;background:#f0f6f1!important}
+#dexDetail .hero{
+  background:color-mix(in srgb,var(--type-bg) 76%, white 24%)!important;
+  border:1px solid color-mix(in srgb,var(--type-accent) 22%, transparent)!important;
+}
+
+/* Upper-right block: one consistent three-column rhythm. */
+#dexDetail .hero-info{gap:7px!important}
+#dexDetail .v19-identity{flex-wrap:nowrap!important;
+  min-height:46px!important;padding:7px 10px!important;gap:7px!important;
+  background:rgba(255,255,255,.78)!important;
+}
+#dexDetail .v19-identity strong{
+}
+#dexDetail .v19-type{
+  margin-left:0!important;font-size:13px!important;
+  background:color-mix(in srgb,var(--type-bg) 70%, white 30%)!important;
+  border:1px solid color-mix(in srgb,var(--type-accent) 28%, transparent)!important;
+}
+#dexDetail .v26-variant-slot{
+  margin-left:auto!important;min-width:0!important;
+}
+/* Future style/form selector goes here only when the master has variants. */
+#dexDetail .v26-variant-slot:empty{display:block!important}
+
+#dexDetail .v19-traits,
+#dexDetail .hero-info>.stats,
+#dexDetail .v12-tabs{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:7px!important;width:100%!important;
+}
+#dexDetail .v19-traits span{
+  min-height:42px!important;font-size:11px!important;
+  border:1px solid rgba(0,0,0,.035)!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  min-height:68px!important;border:1px solid rgba(0,0,0,.035)!important;
+}
+#dexDetail .hero-info>.stats .stat small{font-size:10px!important}
+#dexDetail .hero-info>.stats .stat b{font-size:16px!important}
+
+/* Bigger previous/next Pokémon controls. */
+#dexDetail .v12-nav{gap:8px!important}
+#dexDetail .v12-nav button{
+  min-height:48px!important;font-size:13px!important;padding:10px 8px!important;
+  border-radius:12px!important;
+}
+
+/* Tabs use fixed semantic colors, independent of Pokémon type. */
+#dexDetail .v12-tabs{margin-top:0!important}
+#dexDetail .v12-tabs button{
+  min-height:48px!important;font-size:14px!important;border-width:1px!important;
+  transition:filter .15s ease,transform .15s ease!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="ability"]{
+  background:#eaf4ff!important;color:#1768a6!important;border-color:#b8d9f5!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="sleep"]{
+  background:#f2ecff!important;color:#704bb2!important;border-color:#d8c7f5!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#eaf7ee!important;color:#347a4b!important;border-color:#bfe1c9!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="ability"].active{
+  background:#2f80c9!important;color:#fff!important;border-color:#2f80c9!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="sleep"].active{
+  background:#7957b8!important;color:#fff!important;border-color:#7957b8!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  background:#4d9662!important;border-color:#4d9662!important;
+}
+
+/* Food: probability + Lv.1/Lv.30/Lv.60 + recipes share one header grid. */
+#detailFoods .v24-food-title{display:none!important}
+#detailFoods .v26-food-head,
+#detailFoods .v24-food-row{
+  display:grid!important;
+  grid-template-columns:minmax(155px,1.45fr) 68px 68px 68px minmax(180px,1.65fr)!important;
+  width:100%!important;
+}
+#detailFoods .v26-food-head{
+  align-items:center!important;color:#111!important;border-bottom:1px solid #e8edf4!important;
+  background:#fff!important;
+}
+#detailFoods .v26-food-rate{
+  text-align:center!important;font-size:16px!important;font-weight:950!important;
+}
+#detailFoods .v26-food-rate strong{font-size:16px!important}
+#detailFoods .v26-level-pill{
+  justify-self:center!important;padding:5px 10px!important;border-radius:8px!important;
+  background:#eaf5ff!important;color:#078be8!important;
+  font-size:13px!important;font-weight:950!important;white-space:nowrap!important;
+}
+#detailFoods .v26-recipe-head{
+  text-align:center!important;font-size:13px!important;font-weight:950!important;
+}
+#detailFoods .v24-level small{display:none!important}
+#detailFoods .v24-level b{margin-top:0!important;font-size:17px!important}
+
+/* Skill: true left group (name + probability) and one right-side level control. */
+#v12Ability .skill-top{
+  gap:10px!important;padding:0 10px!important;
+}
+#v12Ability .skill-name{
+  display:inline!important;
+}
+#v12Ability .skill-rate-inline{
+  justify-self:start!important;margin-left:8px!important;
+}
+#v12Ability .skill-name,
+#v12Ability .skill-rate-inline{grid-row:1!important}
+#v12Ability .skill-name{grid-column:1!important}
+#v12Ability .skill-rate-inline{
+  grid-column:1!important;
+  /* place the rate directly after the rendered skill name instead of in a separate wide column */
+  padding-left:150px!important;
+}
+#v12Ability #v12SkillLv{grid-column:2!important;grid-row:1!important;justify-self:end!important}
+
+/* Keep the skill name/rate visually joined without changing the single level controller. */
+@supports(selector(:has(*))){
+  #v12Ability .skill-top:has(.skill-rate-inline){
+    grid-template-columns:minmax(0,1fr) auto!important;
+  }
+}
+
+@media(max-width:620px){
+  #dexDetail .v19-identity strong{font-size:20px!important}
+  #dexDetail .v19-type{font-size:10px!important;padding:4px 6px!important}
+  #dexDetail .v12-nav button{min-height:46px!important;font-size:11px!important}
+  #dexDetail .v12-tabs button{min-height:46px!important;font-size:12px!important}
+  #detailFoods{overflow-x:auto!important}
+  #detailFoods .v26-food-head,#detailFoods .v24-food-row{min-width:590px!important}
+  #v12Ability .skill-rate-inline{padding-left:126px!important;font-size:10px!important}
+}
+
+/* source: stable-v26-skill-group-fix */
+#v12Ability .skill-top{
+  display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+}
+#v12Ability .v26-skill-left{flex-wrap:wrap!important;
+}
+#v12Ability .v26-skill-left .skill-name,
+#v12Ability .v26-skill-left .skill-rate-inline{
+  grid-column:auto!important;grid-row:auto!important;padding-left:0!important;margin-left:0!important;
+}
+#v12Ability .v26-skill-left .skill-rate-inline{white-space:nowrap!important}
+@media(max-width:620px){
+  #v12Ability .v26-skill-left{gap:6px!important}
+  #v12Ability .v26-skill-left .skill-name{font-size:15px!important}
+}
+
+/* source: stable-v27-basic-block-check */
+/* v27 confirmation pass: basic ability block only */
+
+/* Line 1: equal white outlined previous/next controls. */
+#dexDetail .v12-nav{
+  gap:8px!important;
+}
+#dexDetail .v12-nav button,
+#dexDetail .v12-nav button:disabled{
+  min-height:50px!important;
+  padding:10px 8px!important;
+  border:1px solid rgba(0,0,0,.72)!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  color:#111!important;
+  opacity:1!important;
+  font-size:13px!important;
+  font-weight:900!important;
+}
+#dexDetail .v12-nav button:disabled{cursor:default!important}
+
+/* Give line 2 (name) and line 3 (traits) a little more breathing room. */
+#dexDetail .v19-identity{margin-bottom:6px!important}
+
+/* Lines 3 and 4: same three-column geometry and almost identical box height. */
+#dexDetail .v19-traits,
+#dexDetail .hero-info>.stats{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:7px!important;
+}
+#dexDetail .v19-traits span,
+#dexDetail .hero-info>.stats .stat{
+  box-sizing:border-box!important;
+  min-height:70px!important;
+  border-radius:12px!important;
+  padding:8px 5px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+#dexDetail .v19-traits span{
+  font-size:12px!important;
+  font-weight:900!important;
+}
+#dexDetail .hero-info>.stats .stat{
+  flex-direction:column!important;
+  gap:2px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  line-height:1.15!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  font-size:22px!important;
+  line-height:1.05!important;
+  letter-spacing:-.35px!important;
+  white-space:nowrap!important;
+}
+
+/* Field tab: deeper green, independent from Pokémon type color. */
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#e8f2eb!important;
+  color:#214f31!important;
+  border-color:#8db49a!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  border-color:#245b36!important;
+}
+
+@media(max-width:620px){
+  #dexDetail .v12-nav button,
+  #dexDetail .v12-nav button:disabled{
+    min-height:48px!important;
+    font-size:11px!important;
+    padding:9px 5px!important;
+  }
+  #dexDetail .v19-identity{margin-bottom:5px!important}
+  #dexDetail .v19-traits span,
+  #dexDetail .hero-info>.stats .stat{
+    min-height:66px!important;
+    padding:6px 3px!important;
+  }
+  #dexDetail .v19-traits span{font-size:10px!important}
+  #dexDetail .hero-info>.stats .stat small{font-size:9px!important}
+  #dexDetail .hero-info>.stats .stat b{font-size:19px!important}
+}
+
+/* source: stable-v28-basic-block-refine */
+/* v28: refinement of Basic Ability block */
+
+/* 1st line: keep symmetry but reduce visual dominance. */
+#dexDetail .v12-nav button,
+#dexDetail .v12-nav button:disabled{
+  min-height:41px!important;
+  padding:7px 8px!important;
+  border:1px solid rgba(45,52,48,.38)!important;
+  border-radius:10px!important;
+  background:rgba(255,255,255,.90)!important;
+  color:#303733!important;
+  font-size:11px!important;
+  font-weight:800!important;
+}
+
+/* 2nd line: make the whole name strip the Pokémon type-color surface. */
+#dexDetail .v19-identity{
+  border:1px solid var(--type-accent)!important;
+  border-radius:12px!important;
+  padding:8px 10px!important;
+  margin-bottom:7px!important;
+  box-shadow:inset 4px 0 0 var(--type-accent)!important;
+}
+#dexDetail .v19-identity .v19-no{
+  color:var(--type-accent)!important;
+}
+#dexDetail .v19-identity strong{
+  color:#172019!important;
+}
+#dexDetail .v19-type{
+  background:rgba(255,255,255,.64)!important;
+  border-color:color-mix(in srgb,var(--type-accent) 45%, transparent)!important;
+  color:var(--type-accent)!important;
+}
+
+/* 3rd line: stronger than before, but still below the main numeric values. */
+#dexDetail .v19-traits span{
+  min-height:66px!important;
+  font-size:14px!important;
+  font-weight:950!important;
+  border-radius:12px!important;
+}
+#dexDetail .v19-traits span:first-letter{
+  font-size:17px!important;
+}
+
+/* 4th line: match line 3 geometry and keep values as the visual focus. */
+#dexDetail .hero-info>.stats .stat{
+  min-height:66px!important;
+  border-radius:12px!important;
+}
+#dexDetail .hero-info>.stats .stat small{
+  font-size:10px!important;
+  font-weight:850!important;
+}
+#dexDetail .hero-info>.stats .stat b{
+  font-size:23px!important;
+  font-weight:1000!important;
+  line-height:1!important;
+}
+
+/* Tabs remain UI colors, not type colors. Field green stays clearly distinct. */
+#dexDetail .v12-tabs button[data-v12tab="field"]{
+  background:#f7faf8!important;
+  color:#174a2b!important;
+  border:1.5px solid #245b36!important;
+}
+#dexDetail .v12-tabs button[data-v12tab="field"].active{
+  background:#245b36!important;
+  color:#fff!important;
+  border-color:#174526!important;
+}
+
+@media(max-width:620px){
+  #dexDetail .v12-nav button,
+  #dexDetail .v12-nav button:disabled{
+    min-height:40px!important;
+    font-size:10px!important;
+  }
+  #dexDetail .v19-traits span,
+  #dexDetail .hero-info>.stats .stat{min-height:62px!important}
+  #dexDetail .v19-traits span{font-size:12px!important}
+  #dexDetail .hero-info>.stats .stat b{font-size:20px!important}
+}
+
+/* source: stable-v29-nav-image-check */
+/* Line 1: mirror-symmetric around the center. */
+#dexDetail .v12-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+#dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{
+ min-height:42px!important;padding:5px 9px!important;border:1px solid rgba(45,52,48,.30)!important;
+ border-radius:10px!important;background:rgba(255,255,255,.90)!important;color:#303733!important;
+ opacity:1!important;font-size:11px!important;font-weight:800!important;display:flex!important;align-items:center!important;gap:7px!important
+}
+#dexDetail #v12Prev{justify-content:flex-end!important;text-align:right!important}
+#dexDetail #v12Next{justify-content:flex-start!important;text-align:left!important}
+#dexDetail .v29-nav-img{
+ width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:50%!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:rgba(255,255,255,.78)!important;color:var(--type-accent)!important;font-size:12px!important;overflow:hidden!important
+}
+#dexDetail .v29-nav-img img{width:100%!important;height:100%!important;object-fit:contain!important}
+#dexDetail .v29-nav-name{white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+#dexDetail .v29-arrow{font-size:15px!important;line-height:1!important}
+#dexDetail .v29-empty{width:100%!important;text-align:center!important;font-size:16px!important}
+
+/* Agreed follow-ups: lighter name line, stronger line 3. */
+#dexDetail .v19-identity{
+ border:0!important;box-shadow:none!important;background:var(--type-bg)!important;
+ padding:7px 9px!important;margin-bottom:5px!important
+}
+#dexDetail .v19-traits span{font-size:15px!important;font-weight:950!important}
+@media(max-width:620px){
+ #dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{min-height:40px!important;padding:4px 7px!important;font-size:10px!important;gap:5px!important}
+ #dexDetail .v29-nav-img{width:28px!important;height:28px!important;flex-basis:28px!important}
+ #dexDetail .v19-traits span{font-size:13px!important}
+}
+
+/* source: stable-v30-blocks-1to4-history */
+/* v30 — reserved refinements for blocks 1–4. Keep borders quiet; use surfaces, spacing and hierarchy. */
+
+/* 1-2: simple type surface, black Pokédex number, no framed/accent-strip treatment. */
+#dexDetail .v19-identity .v19-no{color:#172019!important}
+
+/* 2 block: remove the cheap white-card feel while preserving the accepted food grid. */
+#v12Ability .ability-card:has(#detailFoods){
+  background:#f7f9f8!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:16px!important;
+  padding:6px!important;
+  overflow:hidden!important;
+}
+#detailFoods{background:transparent!important;border:0!important}
+#detailFoods .v26-food-head{
+  min-height:64px!important;
+  background:#eef3f1!important;
+  border-radius:12px!important;
+  margin-bottom:5px!important;
+}
+#detailFoods .v26-food-rate{font-size:18px!important}
+#detailFoods .v26-food-rate strong{font-size:19px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:14px!important}
+#detailFoods .v24-food-row{
+  border-bottom:1px solid rgba(40,55,47,.08)!important;
+}
+#detailFoods .v24-food-row:last-child{border-bottom:0!important}
+
+/* 3 block: one surface, no double frame. 3-1 is a real left group + right level control. */
+#v12Ability .ability-card:has(#detailSkill){
+  background:#f7f9f8!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:16px!important;
+  padding:14px!important;
+}
+#v12Ability .skill-box{
+  margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+}
+#v12Ability .skill-top{padding:0!important;gap:12px!important}
+#v12Ability .v26-skill-left{align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;min-width:0!important;
+}
+#v12Ability .skill-icon{flex:0 0 auto!important}
+#v12Ability .skill-name{flex:0 1 auto!important;white-space:nowrap!important;font-size:18px!important}
+#v12Ability .skill-rate-inline{
+  flex:0 0 auto!important;white-space:nowrap!important;margin:0!important;padding:0!important;
+  font-size:12px!important;color:#68736d!important;background:transparent!important;
+}
+#v12Ability #v12SkillLv{flex:0 0 auto!important;justify-self:end!important}
+#v12Ability .skill-desc{margin:13px 0 5px!important;padding-top:11px!important;border-top:1px solid rgba(40,55,47,.08)!important}
+#v12Ability .skill-detail-toggle{opacity:.72!important;font-size:12px!important}
+
+/* 4 block: forward evolution only. Variable-height requirements -> arrow -> destination image/type. */
+#v12Ability #evolutionCard{
+  background:#f7f9f8!important;border:0!important;box-shadow:none!important;border-radius:16px!important;padding:14px!important;
+}
+#v12Ability #evolutionCard .section-title{margin-bottom:8px!important}
+#detailEvolution{display:flex!important;flex-direction:column!important;gap:8px!important}
+.v30-evo-row{
+  width:100%!important;display:grid!important;grid-template-columns:minmax(95px,1fr) 34px minmax(92px,1fr)!important;
+  align-items:center!important;gap:8px!important;border:0!important;background:#eef3f1!important;border-radius:13px!important;padding:10px 12px!important;
+  color:#26312b!important;text-align:left!important;cursor:pointer!important;
+}
+.v30-evo-conditions{display:flex!important;flex-direction:column!important;gap:4px!important;font-weight:900!important;font-size:13px!important;line-height:1.25!important}
+.v30-evo-arrow{text-align:center!important;font-size:22px!important;font-weight:900!important;color:#65716b!important}
+.v30-evo-target{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:0!important}
+.v30-evo-image{width:58px!important;height:58px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+.v30-evo-image img{width:100%!important;height:100%!important;object-fit:contain!important}
+.v30-evo-image .fallback{font-size:26px!important;color:var(--type-accent)!important}
+.v30-evo-type{font-size:11px!important;font-weight:900!important;padding:3px 7px!important;border-radius:999px!important;background:#fff!important;border:1px solid rgba(40,55,47,.10)!important;white-space:nowrap!important}
+
+@media(max-width:620px){
+  #detailFoods .v26-food-rate{font-size:16px!important}
+  #detailFoods .v26-food-rate strong{font-size:17px!important}
+  #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:13px!important}
+  #v12Ability .v26-skill-left{gap:5px!important}
+  #v12Ability .skill-name{font-size:15px!important}
+  #v12Ability .skill-rate-inline{font-size:10px!important}
+  .v30-evo-row{grid-template-columns:minmax(82px,1fr) 26px minmax(78px,.9fr)!important;padding:9px!important;gap:6px!important}
+  .v30-evo-image{width:52px!important;height:52px!important}
+}
+
+/* source: stable-v31-reserved-refine */
+/* v31 — execute the approved refinement reservations. */
+/* 1-1: lightweight image-only previous/next navigation. */
+#dexDetail .v12-nav{align-items:center!important;min-height:42px!important}
+#dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{background:transparent!important;border:0!important;box-shadow:none!important;padding:2px 6px!important;min-height:38px!important;min-width:66px!important;color:#39463f!important;opacity:1!important}
+#dexDetail .v12-nav button:first-child{justify-self:start!important;justify-content:flex-start!important}
+#dexDetail .v12-nav button:last-child{justify-self:end!important;justify-content:flex-end!important}
+#dexDetail .v29-nav-name{display:none!important}
+#dexDetail .v29-arrow{font-size:22px!important;font-weight:800!important}
+#dexDetail .v29-nav-img{width:34px!important;height:34px!important;flex-basis:34px!important;font-size:22px!important;border:0!important;background:transparent!important}
+#dexDetail .v29-empty{font-size:20px!important;color:#9aa39e!important}
+
+/* Active-tab surface: type identity stays above; content below follows tab semantics. */
+#v12Ability,#v12Sleep,#v12Field{border-radius:0 0 18px 18px!important;padding:10px 8px 16px!important}
+#v12Ability{background:#f1f7ff!important}
+#v12Sleep{background:#f6f1fb!important}
+#v12Field{background:#f0f6f1!important}
+#v12Ability>.ability-card,#v12Ability>#evolutionCard{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;margin:0!important;padding:14px 6px!important}
+#v12Ability>.ability-card+#v12Ability>.ability-card{}
+#v12Ability>.ability-card:not(:first-child),#v12Ability>#evolutionCard{border-top:0!important}
+
+/* 2: one table surface; stronger plain headers, no pill backgrounds. */
+#v12Ability .ability-card:has(#detailFoods){background:transparent!important;padding:8px 4px 14px!important}
+#detailFoods .v26-food-head{background:transparent!important;border:0!important;border-radius:0!important;min-height:58px!important;margin-bottom:2px!important}
+#detailFoods .v26-food-rate{font-size:18px!important;font-weight:900!important}
+#detailFoods .v26-food-rate strong{font-size:21px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;font-size:16px!important;color:#111!important}
+#detailFoods .v24-food-row{background:transparent!important;border:0!important;border-bottom:1px solid rgba(55,83,112,.08)!important;border-radius:0!important}
+#detailFoods .v24-food-name{padding-left:14px!important}
+#detailFoods .v24-letter{margin-left:5px!important}
+
+/* 3: Dex is read-only. Skill + rate are prominent; details expands all levels. */
+#v12Ability .ability-card:has(#detailSkill){background:transparent!important;padding:14px 6px!important}
+#v12Ability .skill-box{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;column-gap:14px!important;row-gap:7px!important}
+#v12Ability .skill-top{display:block!important;grid-column:1!important;grid-row:1!important}
+#v12Ability .v26-skill-left{display:flex!important;align-items:baseline!important;gap:9px!important;flex-wrap:wrap!important}
+#v12Ability .skill-name{font-size:18px!important;font-weight:950!important}
+#v12Ability .skill-rate-inline{font-size:16px!important;font-weight:900!important;color:#23835a!important}
+#v12Ability .skill-rate-inline strong{font-size:20px!important;color:inherit!important}
+#v12Ability #v12SkillLv{display:none!important}
+#v12Ability .skill-desc{grid-column:1!important;grid-row:2!important;margin:0!important;padding:2px 0 0!important;border:0!important;font-size:14px!important;line-height:1.45!important}
+#v12Ability .skill-detail-toggle{grid-column:2!important;grid-row:1 / span 2!important;align-self:center!important;width:auto!important;border:0!important;background:transparent!important;padding:8px 2px!important;font-size:13px!important;font-weight:900!important;color:#52645b!important;white-space:nowrap!important}
+#v12Ability .skill-levels{grid-column:1 / -1!important;grid-row:3!important}
+
+/* 4: full known evolution family. Current Pokémon is larger. Type icon overlays image bottom-right. */
+#v12Ability #evolutionCard{background:transparent!important;padding:14px 6px!important}
+#detailEvolution{display:block!important}
+.v31-evo-line{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;overflow-x:auto!important;padding:8px 2px 4px!important}
+.v31-evo-node{border:0!important;background:transparent!important;padding:2px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:3px!important;min-width:68px!important;color:#26312b!important}
+.v31-evo-image{position:relative!important;width:58px!important;height:58px!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.v31-evo-node.is-current .v31-evo-image{width:72px!important;height:72px!important}
+.v31-evo-image img{width:100%!important;height:100%!important;object-fit:contain!important}
+.v31-evo-image img.psg-asset-preview{width:68%!important;height:68%!important}
+.v31-evo-image>.fallback{font-size:30px!important;color:var(--type-accent)!important}
+.v31-evo-type{position:absolute!important;right:-2px!important;bottom:-2px!important;width:23px!important;height:23px!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:#fff!important;box-shadow:0 1px 5px rgba(0,0,0,.14)!important;font-size:13px!important}
+.v31-evo-name{font-size:11px!important;font-weight:900!important;white-space:nowrap!important}
+.v31-evo-step{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;min-width:68px!important;gap:3px!important}
+.v31-evo-cond{display:flex!important;flex-direction:column!important;align-items:center!important;gap:1px!important;font-size:10px!important;line-height:1.2!important;text-align:center!important}
+.v31-big-arrow{font-size:22px!important;font-weight:900!important;color:#6b7972!important}
+.v31-branch-layout{display:grid!important;grid-template-columns:78px 26px minmax(0,1fr)!important;align-items:center!important;gap:6px!important;padding:6px 0!important}
+.v31-branch-root{align-self:center!important}
+.v31-branch-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px 4px!important;align-items:start!important}
+.v31-branch-grid.is-two{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.v31-branch-cell{display:flex!important;flex-direction:column!important;align-items:center!important;gap:2px!important;min-width:0!important}
+.v31-branch-cell .v31-evo-node{min-width:0!important;width:100%!important}
+.v31-branch-cell .v31-evo-image{width:48px!important;height:48px!important}
+.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:60px!important;height:60px!important}
+
+@media(max-width:620px){
+ #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:15px!important}
+ #detailFoods .v26-food-rate{font-size:16px!important} #detailFoods .v26-food-rate strong{font-size:19px!important}
+ #v12Ability .skill-name{font-size:16px!important} #v12Ability .skill-rate-inline{font-size:14px!important} #v12Ability .skill-rate-inline strong{font-size:18px!important}
+ .v31-evo-line{gap:4px!important;justify-content:flex-start!important}
+ .v31-evo-node{min-width:62px!important}.v31-evo-image{width:52px!important;height:52px!important}.v31-evo-node.is-current .v31-evo-image{width:66px!important;height:66px!important}
+ .v31-evo-step{min-width:58px!important}.v31-evo-cond{font-size:9px!important}
+ .v31-branch-layout{grid-template-columns:70px 20px minmax(0,1fr)!important;gap:3px!important}
+ .v31-branch-grid{gap:8px 2px!important}.v31-branch-cell .v31-evo-image{width:42px!important;height:42px!important}.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:54px!important;height:54px!important}
+}
+
+/* source: stable-v32-page-refine */
+/* v32 — approved finishing reservations for blocks 1–3. */
+/* 1-2: subtle alignment only; keep the accepted type surface. */
+#dexDetail .v19-identity{align-items:center!important}
+#dexDetail .v19-identity .v19-no{position:relative!important;top:-2px!important;color:#172019!important}
+#dexDetail .v19-identity strong{position:relative!important;left:-4px!important}
+/* 1-4/1-5: neutral black labels; values remain dominant by size. */
+#dexDetail .hero-info>.stats .stat small{color:#111!important;font-weight:950!important}
+
+/* 2: move the useful columns left and give recipes more room. */
+#v12Ability .ability-card:has(#detailFoods){padding-left:0!important;padding-right:2px!important}
+#detailFoods .v26-food-head,#detailFoods .v24-food-row{grid-template-columns:minmax(142px,1.25fr) 62px 62px 62px minmax(210px,1.9fr)!important}
+#detailFoods .v26-food-head{min-height:60px!important}
+#detailFoods .v26-food-rate{font-size:19px!important;text-align:left!important;padding-left:6px!important}
+#detailFoods .v26-food-rate strong{font-size:22px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:17px!important;font-weight:950!important;background:transparent!important}
+#detailFoods .v24-food-name{padding-left:8px!important}
+#detailFoods .v24-letter{margin-left:8px!important}
+#detailFoods .v24-recipes{gap:7px!important;justify-content:center!important}
+#detailFoods .v24-placeholder{flex:0 0 auto!important}
+
+/* 3: semantic variable colors + compact 2-column x 3-row level detail. */
+:root{--skill-effect-food:#d82f67;--skill-effect-energy:#d56b16;--skill-effect-berry:#c64a43;--skill-effect-energy-recovery:#4f9a58;--skill-effect-help:#287fc0;--skill-effect-skill:#7557b4;--skill-effect-zone:#405aa8}
+#v12Ability .skill-var{font-weight:1000!important}
+#v12Ability .effect-food{color:var(--skill-effect-food)!important}
+#v12Ability .effect-energy{color:var(--skill-effect-energy)!important}
+#v12Ability .effect-berry{color:var(--skill-effect-berry)!important}
+#v12Ability .effect-energy-recovery{color:var(--skill-effect-energy-recovery)!important}
+#v12Ability .effect-help{color:var(--skill-effect-help)!important}
+#v12Ability .effect-skill{color:var(--skill-effect-skill)!important}
+#v12Ability .effect-zone{color:var(--skill-effect-zone)!important}
+#v12Ability .skill-levels.open{padding:9px 0 0!important;border-top:0!important;margin-top:8px!important}
+#v12Ability .v32-skill-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 18px!important;max-width:430px!important;margin:0 auto!important}
+#v12Ability .v32-skill-cell{display:grid!important;grid-template-columns:52px 1fr!important;align-items:center!important;gap:8px!important;min-height:42px!important;padding:6px 8px!important;border-bottom:1px solid rgba(55,83,112,.09)!important;font-size:14px!important}
+#v12Ability .v32-skill-cell>b{color:#33443c!important;font-weight:950!important}
+#v12Ability .v32-skill-cell>.skill-var{font-size:17px!important}
+@media(max-width:620px){
+ #detailFoods .v26-food-head,#detailFoods .v24-food-row{min-width:590px!important;grid-template-columns:140px 60px 60px 60px 270px!important}
+ #detailFoods .v26-food-rate{font-size:17px!important} #detailFoods .v26-food-rate strong{font-size:20px!important}
+ #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:16px!important}
+ #v12Ability .v32-skill-grid{gap:0 10px!important}
+ #v12Ability .v32-skill-cell{padding:5px 4px!important;font-size:13px!important}
+ #v12Ability .v32-skill-cell>.skill-var{font-size:16px!important}
+}
+
+/* source: stable-v33-blocks-finish-responsive */
+/* v33 — approved finishing pass. Mobile-first, viewport-responsive presentation. */
+/* 1-2: Pokémon name is the visual focus; number stays secondary and type stays to the right. */
+#dexDetail .v19-identity{display:grid!important;grid-template-columns:auto auto auto minmax(0,1fr)!important;align-items:center!important;column-gap:0!important}
+#dexDetail .v19-identity .v19-no{font-size:12px!important;font-weight:900!important;top:-4px!important;color:#172019!important;white-space:nowrap!important}
+#dexDetail .v19-identity strong{font-size:25px!important;font-weight:1000!important;left:0!important;min-width:0!important;white-space:nowrap!important;margin-left:1em!important}
+#dexDetail .v19-identity .v19-type{justify-self:start!important;white-space:nowrap!important;margin-left:.35em!important}
+
+/* 2: recipe data stays intact; only the visible preview count changes with viewport width. */
+#detailFoods .v24-recipes{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-width:0!important}
+#detailFoods .v24-placeholder{display:inline-grid!important;place-items:center!important}
+/* Wide: 5 previews. Medium: 4. Narrow: 3. */
+@media(max-width:760px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+@media(max-width:520px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(4),#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+
+/* 3: probability styling matches ingredient probability. Normal effect/detail copy is black. */
+#v12Ability .skill-rate-inline{color:#26312b!important}
+#v12Ability .skill-rate-inline strong{color:#e83269!important}
+#v12Ability .v33-skill-effect-row{grid-template-columns:minmax(0,1fr) auto!important;grid-column:1 / -1!important;grid-row:2!important;align-items:center!important;gap:10px!important;padding-top:0!important;border-top:0!important}
+#v12Ability .v33-skill-effect-row .skill-desc{grid-column:auto!important;grid-row:auto!important;margin:0!important;padding:0!important;border:0!important;color:#111!important;font-size:14px!important;line-height:1.5!important}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{grid-column:auto!important;grid-row:auto!important;align-self:center!important;width:auto!important;border:0!important;background:transparent!important;padding:7px 2px!important;font-size:13px!important;font-weight:900!important;white-space:nowrap!important}
+#v12Ability .v32-skill-cell{color:#111!important}
+#v12Ability .v32-skill-cell>b{color:#111!important}
+
+/* 4: keep Level/Candy stacked; improve readability and scale of the evolution family. */
+#v12Ability #evolutionCard .section-title{font-size:18px!important}
+.v31-evo-line{gap:10px!important;padding:12px 4px 8px!important}
+.v31-evo-node{min-width:82px!important;gap:5px!important}
+.v31-evo-image{width:72px!important;height:72px!important}
+.v31-evo-node.is-current .v31-evo-image{width:88px!important;height:88px!important}
+.v31-evo-name{font-size:13px!important;font-weight:950!important;color:#111!important}
+.v31-evo-step{min-width:76px!important;gap:5px!important}
+.v31-evo-cond{font-size:12px!important;font-weight:850!important;line-height:1.3!important;color:#111!important}
+.v31-evo-cond span{color:#111!important}
+.v31-evo-cond span:first-child{font-weight:950!important}
+.v31-big-arrow{color:#39453f!important;font-weight:950!important}
+.v31-branch-cell .v31-evo-image{width:62px!important;height:62px!important}
+.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+.v31-branch-cell .v31-evo-cond{font-size:11px!important;color:#111!important}
+
+/* Responsive finishing: preserve information, adjust density rather than shrinking everything. */
+@media(max-width:620px){
+ #dexDetail .v19-identity{column-gap:0!important}
+ #dexDetail .v19-identity .v19-no{font-size:11px!important;top:-3px!important}
+ #dexDetail .v19-identity strong{font-size:21px!important;left:0!important;margin-left:1em!important}
+ #v12Ability .v33-skill-effect-row{gap:6px!important}
+ #v12Ability .v33-skill-effect-row .skill-desc{font-size:13px!important}
+ #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:12px!important}
+ .v31-evo-line{gap:5px!important;justify-content:flex-start!important}
+ .v31-evo-node{min-width:70px!important}
+ .v31-evo-image{width:62px!important;height:62px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+ .v31-evo-name{font-size:12px!important}
+ .v31-evo-step{min-width:64px!important}
+ .v31-evo-cond{font-size:11px!important}
+}
+@media(max-width:390px){
+ #dexDetail .v19-identity strong{font-size:19px!important}
+ #dexDetail .v19-identity .v19-type{font-size:12px!important}
+ .v31-evo-image{width:58px!important;height:58px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:70px!important;height:70px!important}
+ .v31-evo-step{min-width:58px!important}
+}
+
+/* source: dex-detail-final-skill-style */
+/* v38 structure cleanup — frozen visual design from v37.
+   Block 2 row separators + Block 3 skill presentation are centralized here. */
+
+/* Block 2: A/B/C rows are separated by spacing/background, not rules. */
+#detailFoods .v24-food-row{border-bottom:0!important;}
+/* v39: requested text-color refinements only. */
+#detailFoods .v26-level-pill,
+#detailFoods .v26-recipe-head{color:#111!important;}
+
+/* Block 3 heading: same visual scale as Block 2 heading. */
+#v12Ability .skill-name{font-size:19px!important;font-weight:950!important;}
+
+/* Block 3 surface: no internal separator rules or legacy pseudo-rules. */
+#v12Ability .skill-box,
+#v12Ability .skill-top,
+#v12Ability .v33-skill-effect-row,
+#v12Ability .v33-skill-effect-row .skill-desc,
+#v12Ability .skill-levels,
+#v12Ability .skill-levels.open,
+#v12Ability .v32-skill-grid,
+#v12Ability .v32-skill-cell{
+  border:0!important;border-top:0!important;border-bottom:0!important;
+  outline:0!important;box-shadow:none!important;background-image:none!important;
+}
+#v12Ability .skill-top::before,
+#v12Ability .skill-top::after,
+#v12Ability .v33-skill-effect-row::before,
+#v12Ability .v33-skill-effect-row::after,
+#v12Ability .v33-skill-effect-row .skill-desc::before,
+#v12Ability .v33-skill-effect-row .skill-desc::after,
+#v12Ability .v32-skill-cell::before,
+#v12Ability .v32-skill-cell::after{
+  content:none!important;display:none!important;border:0!important;box-shadow:none!important;
+}
+
+/* 3-2: Lv.1 begins under the skill-name text, excluding the icon column. */
+#v12Ability .v33-skill-effect-row{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,auto) auto!important;
+  justify-content:start!important;align-items:start!important;
+  column-gap:10px!important;row-gap:3px!important;
+  padding-left:27px!important;margin-top:7px!important;
+}
+#v12Ability .v33-skill-effect-row .skill-desc{
+  display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;
+  align-items:baseline!important;column-gap:10px!important;
+  min-width:0!important;max-width:100%!important;
+  font-size:15px!important;line-height:1.55!important;
+}
+#v12Ability .v35-effect-level{white-space:nowrap!important;font-size:15px!important;}
+#v12Ability .v35-effect-copy{min-width:0!important;color:#111!important;font-size:15px!important;}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{
+  justify-self:start!important;align-self:start!important;
+  padding:1px 2px!important;margin:0!important;font-size:14px!important;
+  color:#111!important;
+}
+
+/* Responsive behavior from frozen v37 design. */
+@media(max-width:620px){
+  #v12Ability .skill-name{font-size:17px!important;}
+  #v12Ability .v33-skill-effect-row{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    padding-left:25px!important;column-gap:6px!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{min-width:0!important;font-size:14px!important;}
+  #v12Ability .v35-effect-level,#v12Ability .v35-effect-copy{font-size:14px!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:13px!important;}
+}
+@media(max-width:430px){
+  #v12Ability .v33-skill-effect-row{grid-template-columns:minmax(0,1fr)!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{margin-left:calc(2.4em + 10px)!important;}
+}
+
+/* source: psg-v42-mobile-finish */
+/* PSG v42 — smartphone finishing pass + consolidation of v40/v41 mobile overrides.
+   Desktop rules and the completed Block 3 alignment model remain unchanged. */
+
+/* Natural No./name/type flow on all widths; remove old fixed-character offsets. */
+#dexDetail .v19-identity{
+  display:flex!important;align-items:baseline!important;justify-content:flex-start!important;
+  flex-wrap:wrap!important;gap:4px 7px!important;
+}
+#dexDetail .v19-identity .v19-no{position:static!important;top:auto!important;margin:0!important;}
+#dexDetail .v19-identity strong{position:static!important;left:auto!important;margin:0!important;}
+#dexDetail .v19-identity .v19-type{margin:0 0 0 2px!important;}
+
+/* 3-2 toggle must be true black, not inherited translucent gray. */
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{color:#000!important;opacity:1!important;}
+
+@media(max-width:620px){
+  /* Block 1 — full-width 1-4/1-5. Keep artwork size, lower its visual center slightly. */
+  #dexDetail .hero{padding:8px!important;}
+  #dexDetail .hero-top{
+    grid-template-columns:minmax(88px,29%) minmax(0,1fr)!important;
+    grid-template-rows:auto auto auto!important;
+    gap:7px 8px!important;
+  }
+  #dexDetail .hero-art{height:138px!important;min-height:138px!important;transform:translateY(8px)!important;
+  }
+  #dexDetail .hero-info{display:contents!important;}
+  #dexDetail #v12Header{grid-column:2!important;grid-row:1!important;align-self:start!important;}
+  #dexDetail .hero-info>.stats{
+    grid-column:1 / -1!important;grid-row:2!important;margin:8px 0 0!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important;
+  }
+  #dexDetail .hero-info>.stats .stat{min-height:58px!important;padding:6px 4px!important;}
+  #dexDetail .hero-info>.stats .stat small{font-size:9.5px!important;letter-spacing:-.02em!important;}
+  #dexDetail .hero-info>.stats .stat b{font-size:18px!important;}
+  #dexDetail .v12-tabs{grid-column:1 / -1!important;grid-row:3!important;}
+  #dexDetail .v12-tabs button{min-height:44px!important;font-size:13px!important;}
+
+  /* Block 2 — compact two-row rate header; column labels centered to its total height. */
+  #v12Ability .ability-card:has(#detailFoods){padding:5px 2px 10px!important;}
+  #detailFoods{margin:0!important;width:100%!important;overflow:visible!important;}
+  #detailFoods .v26-food-head,#detailFoods .v24-food-row{
+    min-width:0!important;width:100%!important;
+    grid-template-columns:minmax(100px,1.08fr) 39px 39px 39px minmax(108px,1.35fr)!important;
+    column-gap:1px!important;
+  }
+  #detailFoods .v26-food-head{min-height:48px!important;margin-bottom:0!important;}
+  #detailFoods .v26-food-rate{
+    gap:0!important;padding:0 0 0 4px!important;font-size:13px!important;line-height:1.15!important;white-space:normal!important;
+  }
+  #detailFoods .v26-food-rate strong{display:block!important;line-height:1.1!important;margin-top:2px!important;}
+  #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{
+    align-self:center!important;font-size:12px!important;line-height:1.1!important;white-space:nowrap!important;
+  }
+  #detailFoods .v24-food-row{min-height:70px!important;}
+  #detailFoods .v24-food-name{padding-left:3px!important;gap:2px!important;min-width:0!important;}
+  #detailFoods .v24-letter{margin-left:0!important;flex:0 0 auto!important;}
+  #detailFoods .v24-food-main{}
+  #detailFoods .v24-food-main b{font-size:10.5px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+  #detailFoods .v24-food-icon{font-size:18px!important;}
+  #detailFoods .v24-level{font-size:12px!important;}
+  #detailFoods .v24-recipes{gap:3px!important;justify-content:flex-start!important;overflow:hidden!important;}
+  #detailFoods .v24-placeholder{font-size:18px!important;min-width:20px!important;}
+  #detailFoods .v24-more{flex:0 0 auto!important;}
+
+  /* Block 3 — same usable width as Block 2; preserve the accepted text alignment. */
+  #v12Ability .ability-card:has(#detailSkill){padding:10px 2px!important;}
+  #v12Ability .skill-box{row-gap:4px!important;}
+  #v12Ability .skill-name{font-size:18px!important;}
+  #v12Ability .skill-rate-inline{font-size:14px!important;}
+  #v12Ability .skill-rate-inline strong{font-size:18px!important;}
+  #v12Ability .v33-skill-effect-row{row-gap:1px!important;}
+  #v12Ability .v33-skill-effect-row .skill-desc,
+  #v12Ability .v35-effect-level,#v12Ability .v35-effect-copy{font-size:15px!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:14px!important;padding-top:2px!important;padding-bottom:2px!important;}
+
+  /* Simple level tables: keep 2x3 structure but remove the oversized vertical air. */
+  #v12Ability .skill-levels.open{padding-top:4px!important;margin-top:3px!important;}
+  #v12Ability .v32-skill-grid{gap:0 10px!important;}
+  #v12Ability .v32-skill-cell{
+    grid-template-columns:44px 1fr!important;min-height:30px!important;
+    padding:2px 4px!important;font-size:13px!important;line-height:1.25!important;
+  }
+  #v12Ability .v32-skill-cell>.skill-var{font-size:16px!important;}
+}
+@media(max-width:390px){
+  /* Keep three recipe previews on narrow phones; underlying recipe data remains intact. */
+  #detailFoods .v24-recipes .v24-placeholder:nth-of-type(3){display:inline-grid!important;}
+  #detailFoods .v24-recipes .v24-placeholder:nth-of-type(n+4){display:none!important;}
+}
+
+/* source: psg-v43-mobile-blocks23 */
+/* PSG v43 — smartphone Block 2/3 finishing.
+   Desktop presentation and Block 4 are intentionally untouched. */
+@media(max-width:620px){
+  /* Block 2: A/B/C + ingredient icon on phone. When an icon is not
+     registered, show the known ingredient name instead of an empty circle. */
+  #detailFoods .v26-food-head,
+  #detailFoods .v24-food-row{
+    grid-template-columns:minmax(58px,.72fr) 42px 42px 42px minmax(116px,1.48fr)!important;
+    column-gap:2px!important;
+  }
+  #detailFoods .v24-food-main:not(.name-fallback) b{display:none!important;}
+  #detailFoods .v24-food-main.name-fallback .v24-food-icon{display:none!important;}
+  #detailFoods .v24-food-main.name-fallback b{
+    display:block!important;
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.2!important;
+    text-align:center!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  #detailFoods .v24-food-name{
+    padding-left:4px!important;gap:5px!important;justify-content:flex-start!important;
+  }
+  #detailFoods .v24-food-main{display:flex!important;justify-content:flex-start!important;}
+  #detailFoods .v24-food-icon{font-size:20px!important;}
+
+  /* 2-1: three visual groups — rate / unlock level / recipes. */
+  #detailFoods .v26-food-head{
+    min-height:50px!important;
+    align-items:center!important;
+  }
+  #detailFoods .v26-food-rate{
+    grid-column:1!important;
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;
+    padding-left:3px!important;
+  }
+  #detailFoods .v43-food-title{
+    display:flex!important;align-items:center!important;gap:3px!important;
+    font-size:13px!important;font-weight:950!important;white-space:nowrap!important;
+  }
+  #detailFoods .v43-food-icon{display:inline-block!important;width:18px!important;text-align:center!important;}
+  #detailFoods .v26-food-rate strong{
+    margin:2px 0 0 21px!important; /* starts under 食, not under 🥕 */
+    font-size:16px!important;line-height:1.05!important;
+  }
+  #detailFoods .v43-unlock-head{
+    grid-column:2 / 5!important;
+    align-self:stretch!important;
+    display:grid!important;grid-template-rows:1fr 1fr!important;
+    align-items:center!important;justify-items:stretch!important;
+    font-size:12px!important;font-weight:950!important;line-height:1!important;
+  }
+  #detailFoods .v43-unlock-head>span:first-child{
+    align-self:end!important;justify-self:center!important;padding-bottom:3px!important;white-space:nowrap!important;
+  }
+  #detailFoods .v43-unlock-levels{
+    align-self:start!important;display:grid!important;grid-template-columns:repeat(3,42px)!important;
+    justify-content:center!important;text-align:center!important;padding-top:3px!important;
+  }
+  #detailFoods .v43-unlock-levels b{font-size:12px!important;font-weight:950!important;}
+  #detailFoods .v26-recipe-head{
+    grid-column:5!important;align-self:center!important;justify-self:center!important;
+    width:100%!important;text-align:center!important;font-size:12px!important;line-height:1.1!important;
+  }
+
+  /* Block 3: make 3-1 + 3-2 read as one compact skill unit. */
+  #v12Ability .ability-card:has(#detailSkill){padding-bottom:7px!important;}
+  #v12Ability .skill-box{}
+  #v12Ability .v33-skill-effect-row{
+    margin-top:0!important;padding-top:1px!important;row-gap:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    margin-top:0!important;margin-bottom:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{
+    margin-top:0!important;padding-top:1px!important;padding-bottom:1px!important;line-height:1.25!important;
+  }
+  #v12Ability .skill-levels.open{padding-top:2px!important;}
+
+  /* Short/simple Lv.2–Lv.7: Lv.2–4 left, Lv.5–7 right. */
+  #v12Ability .v32-skill-grid.v43-compact-3{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(3,auto)!important;
+    grid-auto-flow:column!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell{
+    grid-template-columns:auto 1fr!important;
+    min-height:25px!important;
+    column-gap:4px!important;font-size:12px!important;line-height:1.15!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell>.skill-var{font-size:14px!important;}
+
+  /* Medium detail falls back to 2 columns; long/complex content remains content-driven. */
+  #v12Ability .v32-skill-grid.v43-compact-2{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:2px 8px!important;
+  }
+  #v12Ability .v32-skill-grid.v43-detail-long{
+    display:grid!important;grid-template-columns:1fr!important;gap:3px!important;
+  }
+}
+
+/* source: psg-v44-mobile-ability-finish */
+@media(max-width:620px){
+  /* 1-3: image + quantity / sleep type / specialty, all one line.
+     berryImage can be supplied by master data later; emoji is only the current fallback. */
+  #dexDetail .v19-traits{
+    gap:5px!important;
+  }
+  #dexDetail .v19-traits span{
+    min-height:38px!important;
+    padding:5px 4px!important;
+    gap:4px!important;
+    font-size:12px!important;
+  }
+  #dexDetail .v19-traits .v44-berry-trait b{font-size:13px!important;font-weight:950!important;}
+  #dexDetail .v44-berry-visual{
+    width:24px!important;height:24px!important;flex:0 0 24px!important;
+    padding:0!important;overflow:visible!important;font-size:20px!important;
+  }
+  #dexDetail .v44-berry-visual img{
+    display:block!important;width:24px!important;height:24px!important;object-fit:contain!important;
+  }
+
+  /* 3 block root fix:
+     stop using the legacy grid for the skill box on phone.
+     Normal document flow now determines the 3-1 -> 3-2 distance. */
+  #v12Ability .skill-box{
+    width:100%!important;
+  }
+  #v12Ability .skill-top{
+    display:block!important;
+    width:100%!important;
+  }
+  #v12Ability .v33-skill-effect-row{
+    width:100%!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr)!important;
+    align-items:baseline!important;
+    column-gap:9px!important;
+    width:100%!important;
+    line-height:1.42!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{
+    display:block!important;
+    width:auto!important;
+    min-width:118px!important;
+    margin:1px 0 0 auto!important;
+    padding:5px 2px 4px 18px!important;
+    text-align:right!important;
+    line-height:1.2!important;
+    color:#000!important;
+    opacity:1!important;
+    background:transparent!important;
+    border:0!important;
+    touch-action:manipulation!important;
+  }
+  #v12Ability .skill-levels,
+  #v12Ability .skill-levels.open{
+    margin:1px 0 0!important;
+    padding:2px 0 0!important;
+  }
+  #v12Ability .skill-levels{}
+  #v12Ability .skill-levels.open{}
+
+  /* Keep v43's content-aware detail layouts, but tighten the simple case. */
+  #v12Ability .v32-skill-grid.v43-compact-3{
+    max-width:none!important;
+    gap:1px 5px!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell{
+    min-height:24px!important;
+    padding:1px 3px!important;
+  }
+}
+
+/* source: psg-v49-mobile-polish */
+/* PSG v49 — cleanup polish only.
+   Consolidates the v45–v47 smartphone overrides into one valid cascade layer.
+   No reserved new feature (such as max carry) is added here. */
+@media(max-width:620px){
+  /* 1-4: visual centering by the whole stat, not by label text excluding the icon. */
+  #dexDetail .hero-info>.stats .stat{
+  }
+  #dexDetail .hero-info>.stats .stat small{
+  }
+  #dexDetail .hero-info>.stats .v45-stat-icon,
+  #dexDetail .hero-info>.stats .v45-stat-text{
+    display:inline!important;
+    width:auto!important;
+    min-width:0!important;
+    text-align:inherit!important;
+  }
+  #dexDetail .hero-info>.stats .stat>b{
+  }
+
+  /* Probability values are neutral information, not semantic effect colors. */
+  #dexDetail .hero-info>.stats .stat:nth-child(2)>b,
+  #dexDetail .hero-info>.stats .stat:nth-child(3)>b,
+  #detailFoods .v26-food-rate>strong,
+  #v12Ability .skill-rate-inline,
+  #v12Ability .skill-rate-inline strong{color:#111!important;}
+
+  /* Block 3: four explicit visual rows: title/rate, Lv.1, toggle, detail. */
+  #v12Ability .ability-card:has(#detailSkill){
+    padding-top:6px!important;
+    padding-bottom:5px!important;
+  }
+  #v12Ability .skill-box{display:block!important;margin:0!important;padding:0!important;}
+  #v12Ability .skill-top{margin:0!important;padding:0!important;}
+  #v12Ability .v33-skill-effect-row{
+    display:block!important;
+    margin:3px 0 0!important;
+    padding:0 0 0 25px!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    padding:0!important;
+  }
+  #v12Ability .v47-skill-toggle-row{
+    display:flex!important;
+    justify-content:flex-end!important;
+    align-items:center!important;
+    width:100%!important;
+    min-height:25px!important;
+    margin:1px 0 0!important;
+    padding:0 8px 0 25px!important;
+  }
+  #v12Ability .v47-skill-toggle-row .skill-detail-toggle{
+    display:block!important;
+    width:auto!important;
+    min-width:126px!important;
+    margin:0!important;
+    padding:4px 0 4px 18px!important;
+    border:0!important;
+    background:transparent!important;
+    color:#000!important;
+    opacity:1!important;
+    text-align:right!important;
+    font-size:14px!important;
+    line-height:1.2!important;
+    touch-action:manipulation!important;
+  }
+  #v12Ability .skill-levels,
+  #v12Ability .skill-levels.open{width:100%!important;margin:0!important;padding:0!important;}
+  #v12Ability .skill-levels{display:none!important;}
+  #v12Ability .skill-levels.open{display:block!important;}
+  #v12Ability .v32-skill-grid.v43-compact-3{margin:0!important;row-gap:1px!important;}
+
+  /* Tighten only the transition into Block 4; Block 4 internals stay untouched. */
+  #v12Ability .ability-card:has(#detailSkill){margin-bottom:5px!important;}
+  #evolutionCard{margin-top:5px!important;}
+}
+
+/* source: psg-v50-reserved-layout */
+@media(max-width:600px){
+#dexDetail .stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important}
+#dexDetail .stat{min-width:0!important;padding:5px 1px!important;text-align:center!important}
+#dexDetail .stat small{display:flex!important;justify-content:center!important;align-items:center!important;gap:1px!important;white-space:nowrap!important;font-size:7.4px!important;line-height:1.15!important}
+#dexDetail .stat .v45-stat-icon{flex:0 0 auto!important;font-size:9px!important}
+#dexDetail .stat .v45-stat-text{display:inline!important}
+#dexDetail .stat b{display:block!important;text-align:center!important;font-size:12px!important;line-height:1.25!important;margin-top:3px!important;white-space:nowrap!important;color:#111!important}
+.v50-unlock-empty{visibility:hidden!important}
+#dexDetail .skill-box{margin-bottom:4px!important}
+#dexDetail #evolutionCard{margin-top:5px!important}
+#dexDetail .v31-evo-line{align-items:center!important}
+#dexDetail .v31-evo-node{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important}
+#dexDetail .v31-evo-node .v31-evo-name{order:0!important;margin:0!important;font-size:10px!important;line-height:1.15!important}
+#dexDetail .v31-evo-node .v31-evo-image{order:1!important}
+#dexDetail .v31-evo-node.is-current .v31-evo-image{transform:scale(1.16)!important;transform-origin:center!important}
+#dexDetail .v31-evo-step{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;align-self:center!important}
+#dexDetail .v31-evo-step .v31-big-arrow{order:0!important;line-height:1!important}
+#dexDetail .v31-evo-step .v31-evo-cond{order:1!important;margin:0!important;text-align:center!important;line-height:1.2!important}
+}
+
+/* source: psg-v51-block1-3223 */
+/* v51 — Block 1 mobile 3-2-2-3 layout. v50 Blocks 2–4 are intentionally untouched. */
+@media(max-width:620px){
+  #dexDetail .detail-head{top:0!important;z-index:50!important;
+    display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;
+    align-items:center!important;gap:6px!important;padding:6px 10px!important;
+    min-height:44px!important;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(10px);
+  }
+  #dexDetail .detail-head>[data-back]{grid-column:1!important;padding:6px 4px!important;white-space:nowrap!important;}
+  #dexDetail .detail-head h2{
+    grid-column:2!important;display:flex!important;align-items:baseline!important;justify-content:center!important;
+    gap:5px!important;min-width:0!important;margin:0!important;white-space:nowrap!important;overflow:hidden!important;
+    font-size:15px!important;line-height:1.15!important;
+  }
+  #dexDetail .v51-head-no{color:#68736d!important;flex:0 0 auto!important;}
+  #dexDetail .v51-head-name{}
+  #dexDetail .v51-head-nav{grid-column:3!important;display:flex!important;gap:3px!important;}
+  #dexDetail .v51-head-nav button{
+    width:28px!important;height:30px!important;padding:0!important;border:1px solid rgba(0,0,0,.15)!important;
+    border-radius:9px!important;background:#fff!important;color:#26332c!important;font-size:20px!important;line-height:1!important;
+  }
+  #dexDetail .v51-head-nav button:disabled{opacity:.28!important;}
+
+  #dexDetail .hero{padding:7px!important;}
+  #dexDetail .hero-top{
+    display:grid!important;grid-template-columns:minmax(108px,37%) minmax(0,1fr)!important;
+    grid-template-rows:1fr!important;gap:6px!important;align-items:stretch!important;
+  }
+  #dexDetail .hero-art{
+    position:relative!important;grid-column:1!important;grid-row:1!important;min-height:166px!important;transform:none!important;align-self:stretch!important;
+  }
+  #dexDetail .v51-type-badge{
+    position:absolute!important;right:5px!important;bottom:5px!important;z-index:2!important;
+    display:inline-flex!important;align-items:center!important;gap:2px!important;
+    padding:0!important;border-radius:0!important;background:transparent!important;
+    border:0!important;color:var(--type-accent)!important;
+    font-size:10px!important;font-weight:950!important;line-height:1!important;white-space:nowrap!important;
+  }
+  #dexDetail .hero-info{display:flex!important;flex-direction:column!important;
+    justify-content:space-between!important;gap:4px!important;min-width:0!important;
+  }
+  #dexDetail #v12Header{width:100%!important;min-width:0!important;margin:0!important;}
+  #dexDetail .v19-identity{display:none!important;}
+  #dexDetail .v19-traits{
+    display:grid!important;grid-template-columns:31fr 38fr 31fr!important;gap:3px!important;width:100%!important;margin:0!important;
+  }
+  #dexDetail .v19-traits span{
+    min-width:0!important;min-height:31px!important;padding:3px 2px!important;display:flex!important;align-items:center!important;
+    justify-content:center!important;gap:2px!important;white-space:nowrap!important;overflow:hidden!important;font-size:9.5px!important;line-height:1!important;
+  }
+  #dexDetail .v44-berry-visual{width:19px!important;height:19px!important;flex:0 0 19px!important;font-size:16px!important;}
+  #dexDetail .v44-berry-visual img{width:19px!important;height:19px!important;}
+  #dexDetail .v19-traits .v44-berry-trait b{font-size:10.5px!important;}
+
+  /* middle two rows = 1-4, 2 columns x 2 rows */
+  #dexDetail .hero-info>.stats{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto)!important;
+    gap:3px!important;width:100%!important;margin:0!important;
+  }
+  #dexDetail .hero-info>.stats .stat{
+    min-width:0!important;min-height:48px!important;padding:4px 2px!important;gap:2px!important;
+  }
+  #dexDetail .hero-info>.stats .stat small{gap:1px!important;
+    margin:0!important;padding:0!important;font-size:7.8px!important;letter-spacing:-.04em!important;white-space:nowrap!important;line-height:1.05!important;
+  }
+  #dexDetail .hero-info>.stats .stat .v45-stat-icon{font-size:8.5px!important;flex:0 0 auto!important;}
+  #dexDetail .hero-info>.stats .stat b{
+    display:block!important;width:100%!important;margin:0!important;text-align:center!important;font-size:13px!important;line-height:1.1!important;
+    white-space:nowrap!important;color:#111!important;
+  }
+
+  /* bottom row = former 1-5, 3 columns */
+  #dexDetail .v12-tabs{gap:3px!important;margin:0!important;
+  }
+  #dexDetail .v12-tabs button{min-width:0!important;min-height:32px!important;padding:4px 2px!important;font-size:10px!important;border-radius:9px!important;}
+}
+
+/* source: psg-v52-block1-refine */
+/* v52 — agreed mobile refinements: 1-1 black No., 1-2 square, 1-3 larger, 1-4/1-5 natural centering, 1-6 full width, quieter A/B/C, stronger skill name. */
+@media(max-width:620px){
+  /* 1-1 */
+  #dexDetail .v51-head-no{font-size:10.5px!important;}
+
+  /* 1-2: artwork area is a true square; it no longer stretches to the right column height. */
+  #dexDetail .hero-top{align-items:start!important;}
+  #dexDetail .hero-art{height:auto!important;
+    align-self:start!important;
+  }
+
+  /* 1-3: keep three columns, but give the labels more presence. */
+  #dexDetail .v19-traits span{font-size:11px!important;font-weight:850!important;}
+  #dexDetail .v19-traits .v44-berry-trait b{font-size:11.5px!important;}
+
+  /* 1-4 / 1-5: center icon+label as one unit, then center the value below it. */
+  #dexDetail .hero-info>.stats .stat{}
+  #dexDetail .hero-info>.stats .stat small{gap:2px!important;
+  }
+  #dexDetail .hero-info>.stats .stat>b{}
+
+  /* 1-6: independent full-width row below image + 3/2/2 information area. */
+  #dexDetail .hero{display:flex!important;flex-direction:column!important;}
+  #dexDetail .hero-top{width:100%!important;}
+  #dexDetail .v12-tabs{
+    order:2!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:5px!important;width:100%!important;margin:6px 0 0!important;
+  }
+  #dexDetail .v12-tabs button{min-height:38px!important;padding:5px 3px!important;font-size:12px!important;border-radius:10px!important;}
+
+  /* Block 2: A/B/C are guides, not the visual focus. */
+  #detailFoods .v24-letter{font-size:11px!important;opacity:.68!important;}
+
+  /* Block 3: skill name is the primary heading; activation probability stays secondary. */
+  #v12Ability .skill-name{}
+  #v12Ability .skill-rate-inline{font-weight:750!important;}
+}
+
+
+/* PSG v57 — approved visual refinement pass (based on verified v56 behavior). */
+@media(max-width:620px){
+  :root{--psg-header-height:calc(38px + env(safe-area-inset-top))}
+  /* Unified app header + 1-1. Safe-area aware; left/right top labels preserve the center zone. */
+  .psg-app-header{
+    position:sticky!important;top:0!important;z-index:70!important;
+    height:calc(38px + env(safe-area-inset-top))!important;
+    min-height:calc(38px + env(safe-area-inset-top))!important;
+    padding:env(safe-area-inset-top) 12px 0!important;
+    display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    align-items:center!important;background:rgba(255,255,255,.97)!important;
+    border-bottom:0!important;backdrop-filter:blur(12px)!important;
+  }
+  .psg-app-title{justify-self:start!important;font-size:14px!important;white-space:nowrap!important;}
+  .psg-app-version{justify-self:end!important;margin:0!important;color:#7d8a85!important;font-size:10px!important;white-space:nowrap!important;}
+  #dexDetail .detail-head{
+    position:sticky!important;top:calc(38px + env(safe-area-inset-top))!important;z-index:69!important;
+    margin:0 -10px 7px!important;padding:5px 10px 6px!important;min-height:42px!important;
+    background:rgba(255,255,255,.97)!important;border-top:0!important;border-bottom:1px solid rgba(0,0,0,.08)!important;
+    box-shadow:0 2px 7px rgba(0,0,0,.035)!important;backdrop-filter:blur(12px)!important;
+  }
+
+  /* 1-2: square stays fixed; the artwork display region is vertically centered within it. */
+  #dexDetail .hero-art{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    aspect-ratio:1 / 1!important;overflow:hidden!important;
+  }
+  #dexDetail .hero-art>img{
+    display:block!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important;
+    object-fit:contain!important;object-position:center center!important;margin:auto!important;
+  }
+  #dexDetail .hero-art .v31-evo-type,
+  #dexDetail .hero-art .v51-type,
+  #dexDetail .hero-art [class*="type-badge"]{align-self:auto!important;}
+
+  /* 1-4 / 1-5: center the icon+label as one visual group and the value beneath it. */
+  #dexDetail .hero-info>.stats .stat{
+    display:flex!important;flex-direction:column!important;gap:3px!important;
+  }
+  #dexDetail .hero-info>.stats .stat small{gap:3px!important;
+    width:auto!important;max-width:100%!important;margin:0 auto!important;
+  }
+  #dexDetail .hero-info>.stats .stat>b{display:block!important;margin:0!important;}
+
+  /* Block 2: A/B/C are quiet guides. Within the ingredient-name area use label:ingredient = 3:7. */
+  #detailFoods .v24-food-name{
+    display:grid!important;grid-template-columns:3fr 7fr!important;align-items:stretch!important;gap:3px!important;padding:4px!important;
+  }
+  #detailFoods .v24-letter{
+    width:100%!important;height:100%!important;min-width:0!important;min-height:42px!important;
+    display:grid!important;place-items:center!important;border-radius:8px!important;
+    font-size:10px!important;font-weight:750!important;opacity:.72!important;
+  }
+  #detailFoods .v24-food-main{width:100%!important;min-width:0!important;align-items:center!important;justify-content:center!important;}
+  #detailFoods .v24-food-icon{font-size:25px!important;line-height:1!important;}
+  #detailFoods .slot-A .v24-food-name{background:#f7fcf9!important;}
+  #detailFoods .slot-B .v24-food-name{background:#fff8fa!important;}
+  #detailFoods .slot-C .v24-food-name{background:#fffbf4!important;}
+  #detailFoods .slot-A .v24-letter{background:#edf9f2!important;color:#16885a!important;}
+  #detailFoods .slot-B .v24-letter{background:#fff0f5!important;color:#bd4b72!important;}
+  #detailFoods .slot-C .v24-letter{background:#fff5e5!important;color:#8e6727!important;}
+
+  /* Block 3: skill name leads; probability remains secondary/neutral. */
+  #v12Ability .skill-name{font-size:22px!important;line-height:1.12!important;color:#111!important;}
+  #v12Ability .skill-rate-inline,
+  #v12Ability .skill-rate-inline strong{font-size:12px!important;font-weight:750!important;color:#111!important;}
+}
+
+
+/* PSG v58 — focused mobile refinement: attached header, stronger Pokémon name, A/B/C tint through quantities. */
+@media(max-width:620px){
+  /* Keep the app header at its normal safe-area position and attach 1-1 directly beneath it. */
+  main:has(#dexDetail.active){padding-top:0!important;}
+  #dexDetail{padding-top:0!important;}
+  .psg-app-header{margin-bottom:0!important;}
+  #dexDetail .detail-head{margin-top:0!important;}
+
+  /* 1-1: Pokémon name is the visual focus; No. remains secondary. */
+  #dexDetail .v51-head-name{
+    font-size:19px!important;font-weight:950!important;line-height:1.08!important;
+    overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+  }
+  #dexDetail .v51-head-no{font-size:10px!important;font-weight:750!important;}
+
+  /* Block 2: carry each A/B/C tint through all ingredient quantity cells; recipe area stays separate. */
+  #detailFoods .slot-A .v24-food-name,
+  #detailFoods .slot-A .v24-level{}
+  #detailFoods .slot-B .v24-food-name,
+  #detailFoods .slot-B .v24-level{}
+  #detailFoods .slot-C .v24-food-name,
+  #detailFoods .slot-C .v24-level{}
+}
+
+
+/* PSG v59 — focused visual polish only.
+   No navigation/routing changes. Skill-specific icon data is reserved for a later version. */
+@media(max-width:620px){
+
+  /* 1-1: No. is black; Pokémon name keeps the accepted v58 emphasis. */
+  #dexDetail .v51-head-no{
+    color:#111!important;
+  }
+
+  /* 1-4 / 1-5: remove decorative icons so labels themselves can be truly centered. */
+  #dexDetail .hero-info>.stats .stat{
+    text-align:center!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  #dexDetail .hero-info>.stats .stat small{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    width:100%!important;
+    text-align:center!important;
+  }
+  #dexDetail .hero-info>.stats .stat .v45-stat-icon{
+    display:none!important;
+  }
+  #dexDetail .hero-info>.stats .stat .v45-stat-text{
+    display:block!important;
+    width:100%!important;
+    text-align:center!important;
+  }
+  #dexDetail .hero-info>.stats .stat>b{
+    width:100%!important;
+    text-align:center!important;
+  }
+
+  /* Block 2 header: remove carrot decoration and center the rate label/value. */
+  #detailFoods .v43-food-icon{
+    display:none!important;
+  }
+  #detailFoods .v43-food-title{
+    justify-content:center!important;
+    width:100%!important;
+    text-align:center!important;
+  }
+  #detailFoods .v26-food-rate{
+    align-items:center!important;
+    padding-left:0!important;
+    text-align:center!important;
+  }
+  #detailFoods .v26-food-rate strong{
+    margin:2px 0 0!important;
+    text-align:center!important;
+  }
+
+  /* Block 2 rows: one continuous tint from A/B/C through all quantity cells.
+     Recipe area remains a separate white surface. */
+  #detailFoods .v26-food-head,
+  #detailFoods .v24-food-row{
+    grid-template-columns:minmax(58px,.70fr) 40px 40px 40px minmax(128px,1.62fr)!important;
+    column-gap:0!important;
+  }
+  #detailFoods .v24-food-name,
+  #detailFoods .v24-level{
+    border-left:0!important;
+  }
+  #detailFoods .slot-A .v24-food-name,
+  #detailFoods .slot-A .v24-level{background:#f7fcf9!important;}
+  #detailFoods .slot-B .v24-food-name,
+  #detailFoods .slot-B .v24-level{background:#fff8fa!important;}
+  #detailFoods .slot-C .v24-food-name,
+  #detailFoods .slot-C .v24-level{background:#fffbf4!important;}
+
+  /* No second capsule behind A/B/C; letters use a darker semantic color only. */
+  #detailFoods .v24-letter{
+    background:transparent!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    width:auto!important;
+    min-width:18px!important;
+    height:auto!important;
+    padding:0!important;
+    font-size:14px!important;
+    font-weight:950!important;
+  }
+  #detailFoods .slot-A .v24-letter{background:transparent!important;color:#14784d!important;}
+  #detailFoods .slot-B .v24-letter{background:transparent!important;color:#ad3f67!important;}
+  #detailFoods .slot-C .v24-letter{background:transparent!important;color:#84601f!important;}
+
+  /* Give recipe previews a little more visual weight without changing recipe data. */
+  #detailFoods .v24-recipes{
+    background:#fff!important;
+    gap:4px!important;
+    padding-left:6px!important;
+    padding-right:6px!important;
+  }
+  #detailFoods .v24-placeholder{
+    font-size:20px!important;
+    min-width:24px!important;
+  }
+  #detailFoods .v26-recipe-head{
+    font-size:13px!important;
+  }
+
+  /* Block 3: skill name is the clear visual headline; closed state stays compact. */
+  #v12Ability .ability-card:has(#detailSkill){
+    padding-top:3px!important;
+    padding-bottom:3px!important;
+    margin-bottom:1px!important;
+  }
+  #v12Ability .skill-box{
+    row-gap:0!important;
+    margin-bottom:0!important;
+  }
+  #v12Ability .v26-skill-left{
+    gap:8px!important;
+    line-height:1.1!important;
+  }
+  #v12Ability .skill-name{
+    font-size:29px!important;
+    line-height:1.1!important;
+    font-weight:950!important;
+  }
+  #v12Ability .skill-rate-inline{
+    font-size:12px!important;
+    line-height:1.1!important;
+    color:#111!important;
+  }
+  #v12Ability .skill-rate-inline strong{
+    font-size:13px!important;
+    color:#111!important;
+  }
+  #v12Ability .v33-skill-effect-row{
+    margin-top:3px!important;
+    padding-top:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    padding-top:0!important;
+    margin:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{
+    padding-top:0!important;
+    padding-bottom:0!important;
+    margin:0!important;
+  }
+  #v12Ability .skill-levels.open{
+    margin-top:1px!important;
+    padding-top:1px!important;
+  }
+  #evolutionCard{
+    margin-top:1px!important;
+  }
+
+  /* Block 4: evolution arrows are neutral black. */
+  #dexDetail .v31-big-arrow{
+    color:#111!important;
+  }
+}
+
+
+
+
+
+#pane-ability .ability-card:has(#detailFoods)>.ability-title,
+#pane-ability .ability-card:has(#detailFoods)>.food-table-head{display:none!important}
+#detailFoods .psg-food-head{display:flex;justify-content:space-between;padding:10px 7px 12px;gap:10px;color:#111}
+#detailFoods .psg-food-rate{display:flex;flex-direction:column;align-items:flex-start;font-weight:900;line-height:1.15}
+#detailFoods .psg-food-rate strong{font-size:25px;color:#111}
+#detailFoods .psg-food-stack{margin:0 4px 10px;border:1px solid #e0e9e5;border-radius:16px;overflow:hidden;background:#fff}
+#detailFoods .psg-food-row{display:grid;grid-template-columns:minmax(90px,30%) minmax(0,1fr);background:#fff}
+#detailFoods .psg-food-row:not(:last-child){border-bottom:1px solid #e0e9e5}
+#detailFoods .psg-food-id{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:10px 5px;min-width:0;position:relative}
+#detailFoods .psg-food-id b{position:absolute;left:8px;top:9px;font-size:20px;line-height:1}
+#detailFoods .psg-food-id img{width:clamp(50px,14vw,84px);height:clamp(50px,14vw,84px);object-fit:contain}
+#detailFoods .psg-food-id .psg-food-fallback{font-size:12px;text-align:center;overflow-wrap:anywhere;margin-top:12px}
+#detailFoods .psg-food-row[data-slot="A"] .psg-food-id{background:#e9f8ee}
+#detailFoods .psg-food-row[data-slot="B"] .psg-food-id{background:#fdf0f3}
+#detailFoods .psg-food-row[data-slot="C"] .psg-food-id{background:#fdf6e9}
+#detailFoods .psg-food-row[data-slot="A"] .psg-food-id b{color:#609c7a}
+#detailFoods .psg-food-row[data-slot="B"] .psg-food-id b{color:#bd7289}
+#detailFoods .psg-food-row[data-slot="C"] .psg-food-id b{color:#a28c5c}
+#detailFoods .psg-food-content{display:grid;grid-template-rows:auto auto;min-width:0}
+#detailFoods .psg-food-levels{align-items:center;min-height:67px;background:#fff}
+#detailFoods .psg-food-level{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 2px}
+#detailFoods .psg-food-level+ .psg-food-level{border-left:1px solid #e7edea}
+#detailFoods .psg-food-level small{font-size:11px;font-weight:900;background:#eaf4ff;border-radius:7px;padding:3px 5px;color:#111}
+#detailFoods .psg-food-level strong{font-size:clamp(15px,4vw,22px);line-height:1.15;white-space:nowrap;color:#111}
+#detailFoods .psg-food-recipes{border-top:1px solid #e8eeeb;background:#fffaf4;padding:6px 8px 8px;min-width:0;min-height:87px}
+#detailFoods .psg-food-recipes.is-pending{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:35px;padding:5px 9px;background:#fffaf4}
+#detailFoods .psg-food-recipes.is-pending .psg-food-recipes-label{margin:0;color:#111}
+#detailFoods .psg-food-pending{font-size:11px;font-weight:750;color:#111}
+#detailFoods .psg-food-recipes-label{font-size:11px;font-weight:850;color:#111;margin-bottom:5px;line-height:1.2}
+#detailFoods .psg-food-recipe-strip{display:flex;gap:5px;align-items:center;min-width:0;overflow-x:auto;scrollbar-width:none}
+#detailFoods .psg-food-recipe-strip::-webkit-scrollbar{display:none}
+#detailFoods .psg-food-recipe-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1 0 0;min-width:0;max-width:84px;height:58px;border:1px solid #f1e8db;border-radius:9px;background:var(--recipe-category-bg,#fff)}
+#detailFoods .psg-food-recipe-tile img{width:37px;height:37px;object-fit:contain}
+#detailFoods .psg-food-recipe-missing{display:grid;place-items:center;width:37px;height:37px;font-size:25px;line-height:1;color:#91a39b}
+#detailFoods .psg-food-recipe-tile small{font-size:10px;font-weight:900}
+@media(max-width:390px){#detailFoods .psg-food-row{grid-template-columns:minmax(90px,31%) minmax(0,1fr)}#detailFoods .psg-food-id img{width:52px;height:52px}#detailFoods .psg-food-recipe-tile{height:54px}}
+#evolutionCard .v31-evo-node{border:1px solid #e1ebe6!important;border-radius:14px!important;background:#fff!important;padding:8px 5px!important}
+
+
+/* v106: a shared, compact detail identity and aligned content columns. */
+#detailFoods .psg-food-head{display:grid;grid-template-columns:minmax(64px,22%) minmax(108px,30%) minmax(0,1fr);align-items:end;gap:0;padding:5px 4px 7px}
+#detailFoods .psg-food-rate span{font-size:20px;font-weight:950;color:#111}
+#detailFoods .psg-food-head>b{text-align:center;font-size:13px;color:#111}
+#detailFoods .psg-food-head-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center;font-size:12px;font-weight:900;color:#111}
+#detailFoods .psg-food-stack{border-radius:18px;box-shadow:none}
+#detailFoods .psg-food-row,#detailFoods .psg-food-row[data-slot]{grid-template-columns:minmax(64px,22%) minmax(108px,30%) minmax(0,1fr);min-height:82px}
+#detailFoods .psg-food-id{padding:7px 2px;gap:0}
+#detailFoods .psg-food-id img{width:clamp(38px,11vw,56px);height:clamp(38px,11vw,56px)}
+#detailFoods .psg-food-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;min-width:0}
+#detailFoods .psg-food-level{min-width:0;padding:4px 1px;display:grid;place-items:center}
+#detailFoods .psg-food-level+.psg-food-level{border-left:0}
+#detailFoods .psg-food-level strong{font-size:clamp(12px,3.6vw,20px)}
+#detailFoods .psg-food-row[data-slot="A"] .psg-food-id,#detailFoods .psg-food-row[data-slot="A"] .psg-food-levels{background:#e9f8ee}
+#detailFoods .psg-food-row[data-slot="B"] .psg-food-id,#detailFoods .psg-food-row[data-slot="B"] .psg-food-levels{background:#fdf0f3}
+#detailFoods .psg-food-row[data-slot="C"] .psg-food-id,#detailFoods .psg-food-row[data-slot="C"] .psg-food-levels{background:#fdf6e9}
+#detailFoods .psg-food-recipes{border-top:0;border-left:1px solid #e8eeeb;min-height:82px;background:#fff;padding:6px 3px;display:flex;align-items:center;justify-content:center;min-width:0}
+#detailFoods .psg-food-recipes.is-pending{min-height:82px;background:#fff;padding:5px 3px}
+#detailFoods .psg-food-recipe-strip{width:100%;gap:2px}
+#detailFoods .psg-food-recipe-tile{height:55px;flex:0 0 clamp(43px,11vw,60px);border-radius:12px}
+#detailFoods .psg-food-recipe-tile img{width:34px;height:34px}
+#detailFoods .psg-food-pending{color:#111;font-size:10px}
+#v12Ability .ability-card:has(#detailSkill),#evolutionCard{border-radius:18px!important;box-shadow:none!important}
+/* The skill block needs one quiet surface to balance the food and evolution sections. */
+#v12Ability .ability-card:has(#detailSkill){background:rgba(255,255,255,.78)!important;border:1px solid #e1e9e6!important;border-radius:18px!important;padding:10px 9px!important;margin-bottom:8px!important}
+#evolutionCard .v31-evo-node{border-radius:16px!important}
+#dexDetail .v31-big-arrow{color:#39453d!important;font-size:27px!important;font-weight:500!important;line-height:1!important}
+#dexDetail .v106-evo-conditions{order:2!important;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:850;color:#111;white-space:nowrap;line-height:1.15}
+#dexDetail .v31-evo-step{min-width:19px!important;width:19px!important}
+#dexDetail .v31-evo-line{gap:3px!important}
+@media(max-width:620px){
+  main:has(#boxDetail.active),main:has(#dexDetail.active){padding-top:0!important}
+  #boxDetail .detail-head,#dexDetail .detail-head{margin-top:0!important;margin-bottom:3px!important}
+  #dexDetail .hero-info>.stats .stat{min-height:42px!important;padding:2px!important;gap:1px!important}
+  #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:74px}
+  #dexDetail{border-radius:0!important}
+  #dexDetail .hero-top{grid-template-columns:minmax(102px,34%) minmax(0,1fr)!important;grid-template-rows:auto!important;align-items:start!important}
+  #dexDetail .psg-v106-media,#boxDetail .psg-v106-media{display:flex;flex-direction:column;gap:4px;min-width:0}
+  #dexDetail .hero-art{grid-column:auto!important;grid-row:auto!important;align-self:auto!important;min-height:0!important;width:100%!important;aspect-ratio:1!important}
+  #dexDetail .hero-info{grid-column:2!important;grid-row:1!important;justify-content:flex-start!important;gap:3px!important}
+  #dexDetail .hero-info #v12Header{width:100%!important;min-width:0!important;flex:none!important}
+  #dexDetail .hero-info .v19-traits,#boxDetail .psg-box-facts .psg-box-traits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:2px!important;width:100%!important}
+  #dexDetail .hero-info .v19-traits>span,#boxDetail .psg-box-facts .psg-box-trait{height:30px!important;min-height:30px!important;min-width:0!important;padding:2px 0!important;font-size:8px!important;line-height:1!important;white-space:nowrap!important;gap:0!important;border-radius:8px!important}
+  #dexDetail .hero-info .v44-berry-visual,#dexDetail .hero-info .v44-berry-visual img{width:25px!important;height:25px!important;flex:0 0 25px!important;padding:0!important;background:transparent!important}
+  #dexDetail .hero-info .v44-berry-trait b,#boxDetail .psg-box-facts .psg-box-trait b{font-size:8px!important}
+  #dexDetail .hero-info .psg-specialty-icon,#boxDetail .psg-box-facts .psg-specialty-icon{width:30px!important;height:30px!important;object-fit:contain}
+  #dexDetail .psg-v106-media #v12Header{width:100%!important}
+  #dexDetail .psg-v106-media .v19-traits,#boxDetail .psg-v106-media .psg-box-traits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:2px!important;width:100%!important}
+  #dexDetail .psg-v106-media .v19-traits>span,#boxDetail .psg-v106-media .psg-box-trait{min-height:30px!important;height:30px!important;padding:2px 0!important;font-size:8px!important;line-height:1!important;gap:0!important;white-space:nowrap!important;border-radius:8px!important}
+  #dexDetail .psg-v106-media .v44-berry-visual,#dexDetail .psg-v106-media .v44-berry-visual img{width:25px!important;height:25px!important;flex:0 0 25px!important;padding:0!important;background:transparent!important}
+  #dexDetail .psg-v106-media .v44-berry-trait b,#boxDetail .psg-v106-media .psg-box-trait b{font-size:8px!important}
+  #dexDetail .psg-v106-media .psg-specialty-icon,#boxDetail .psg-v106-media .psg-specialty-icon{width:23px;height:23px;object-fit:contain}
+}
+/* Duplicate rates are omitted only while the complete identity panel is sticky. */
+@media(max-width:620px) and (orientation:portrait){
+  #dexDetail>.psg-dex-sticky,#boxDetail>.psg-box-hero{position:sticky!important;top:calc(83px + env(safe-area-inset-top))!important;z-index:55!important}
+  #detailFoods .psg-food-rate strong,#v12Ability .skill-rate-inline{display:none!important}
+}
+@media(max-width:620px) and (orientation:landscape){
+  #dexDetail>.psg-dex-sticky,#boxDetail>.psg-box-hero{position:relative!important}
+}
+
+
+/* v111: align all section frames to the pinned identity card. */
+@media(max-width:620px){
+  #v12Ability,#v12Sleep,#v12Field{padding-inline:0!important}
+  #v12Ability>.ability-card:has(#detailFoods){padding-inline:0!important;padding-top:4px!important;padding-bottom:4px!important}
+  #detailFoods .psg-food-stack{margin-inline:0!important;margin-bottom:5px!important}
+  #v12Ability .ability-card:has(#detailSkill){margin-inline:0!important;margin-bottom:5px!important}
+  #v12Ability #evolutionCard{margin-inline:0!important;margin-top:0!important;padding:9px 7px!important;background:rgba(255,255,255,.78)!important;border:1px solid #e1e9e6!important;border-radius:18px!important}
+  #detailFoods .psg-food-head{padding-top:3px;padding-bottom:5px}
+  #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:68px}
+  #detailFoods .psg-food-id{padding-block:3px}
+  #detailFoods .psg-food-id img{width:32px;height:32px}
+  #detailFoods .psg-food-levels{min-height:68px}
+  #detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{padding:3px 2px}
+  #detailFoods .psg-food-recipe-tile{height:58px;position:relative}
+  #detailFoods .psg-food-recipe-tile img{width:32px;height:32px;object-fit:contain}
+  #detailFoods .psg-food-recipe-tile small{position:absolute;right:1px;bottom:1px;min-width:16px;padding:1px 2px;border-radius:7px;background:rgba(255,255,255,.94);font-size:9px;line-height:1}
+  #dexDetail .v51-type-badge{right:7px!important;bottom:7px!important;width:30px!important;height:30px!important;padding:0!important;border:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:transparent!important;box-shadow:none!important}
+  #dexDetail .v51-type-badge img{width:30px!important;height:30px!important;object-fit:contain!important;image-rendering:auto}
+  #dexDetail .v51-type-badge .filter-pictogram{font-size:12px}
+}
+/* Evolution: face on the left and outgoing requirements on the right. */
+#dexDetail .v31-evo-line{display:flex!important;align-items:stretch!important;gap:5px!important;padding:2px 0!important;overflow-x:visible!important}
+#dexDetail .v31-evo-line>.v31-evo-node{flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important}
+#dexDetail .v31-evo-node{min-width:0!important;gap:6px!important;justify-content:flex-start!important;overflow:visible!important}
+#dexDetail .v31-evo-node .v31-evo-name{max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;line-height:1.2!important;font-size:clamp(10px,2.7vw,13px)!important}
+#dexDetail .v111-evo-body{display:grid;grid-template-columns:minmax(0,56px) minmax(0,1fr);align-items:center;gap:3px;width:100%;min-width:0}
+#dexDetail .v31-evo-node:not(:has(.v106-evo-conditions)) .v111-evo-body{display:flex;justify-content:center}
+#dexDetail .v31-evo-line .v31-evo-image{width:clamp(44px,13vw,56px)!important;height:clamp(44px,13vw,56px)!important;transform:none!important;min-width:0!important;overflow:visible!important}
+#dexDetail .v31-evo-node.is-current .v31-evo-image{transform:none!important}
+#dexDetail .v31-evo-image>img{object-fit:contain!important;width:100%!important;height:100%!important}
+#dexDetail .v31-evo-type{right:-2px!important;bottom:-2px!important;width:21px!important;height:21px!important;font-size:12px!important}
+#dexDetail .v106-evo-conditions{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important;min-width:0!important;max-width:100%!important;font-size:clamp(9px,2.35vw,11px)!important;line-height:1.2!important;white-space:normal!important;text-align:left!important;overflow-wrap:anywhere}
+#dexDetail .v106-evo-conditions>span:first-child{white-space:nowrap!important}
+#dexDetail .v111-evo-next{margin-left:2px;font-size:1.25em;line-height:.8;color:#39453d}
+#dexDetail .v31-branch-layout{grid-template-columns:minmax(58px,22%) 16px minmax(0,1fr)!important;gap:2px!important}
+#dexDetail .v31-branch-grid{gap:6px 2px!important}
+#dexDetail .v31-branch-cell .v31-evo-node{width:100%!important}
+#dexDetail .v31-branch-cell .v111-evo-body{display:flex;justify-content:center}
+
+/* Eevee: compact origin above eight full-width, three-column destinations. */
+#dexDetail .psg-eevee-origin{display:flex;align-items:center;gap:12px;margin:4px 0 10px}
+#dexDetail .psg-eevee-root{width:88px!important;flex:none;padding:5px!important}
+#dexDetail .psg-eevee-root .v31-evo-image{width:42px!important;height:42px!important}
+#dexDetail .psg-eevee-common{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#52635b}
+#dexDetail .psg-eevee-common strong{font-size:13px;color:#111}
+#dexDetail .psg-eevee-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;align-items:stretch}
+#dexDetail .psg-eevee-destination{width:100%!important;padding:8px 3px!important;box-sizing:border-box}
+#dexDetail .psg-eevee-destination .v111-evo-body{display:flex!important;flex-direction:column;align-items:center;gap:7px}
+#dexDetail .psg-eevee-destination .v31-evo-image{width:54px!important;height:54px!important}
+#dexDetail .psg-eevee-destination .v106-evo-conditions{align-items:center!important;text-align:center!important;font-size:clamp(8px,2.5vw,11px)!important;line-height:1.35!important;overflow-wrap:normal;min-height:30px}
+#dexDetail .psg-eevee-destination .v106-evo-conditions>span{white-space:nowrap}
+
+/* Sleep-style gallery: master entries are ordered by stars and shown two across. */
+.psg-info-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:15px}
+.psg-info-link{width:100%;display:grid;grid-template-columns:1fr auto;gap:3px;text-align:left;align-items:center;cursor:pointer;color:#16221b}
+.psg-info-links .psg-info-link{min-width:0;min-height:104px;margin:0;padding:12px;align-content:center}
+.psg-info-links .psg-info-link span{min-width:0;line-height:1.35}
+.psg-info-link strong{font-size:19px}.psg-info-link span{color:var(--muted);font-size:13px}
+.psg-info-link b{grid-column:2;grid-row:1/3;font-size:24px;color:#587567}
+.psg-subpage-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}.psg-subpage-head h2{margin:0}
+.psg-recipe-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.psg-recipe-categories button{min-height:46px;padding:8px 3px;border:1px solid var(--line);border-radius:10px;background:var(--recipe-category-bg,#fff);font-size:clamp(10px,2.8vw,13px);font-weight:700;color:#24332d;cursor:pointer}
+.psg-recipe-categories button.active{border-color:var(--recipe-category-border);box-shadow:inset 0 0 0 1px var(--recipe-category-border)}
+.psg-recipe-sticky{position:sticky;top:var(--psg-header-height);z-index:60;padding:7px 0 9px;background:var(--bg);border-bottom:1px solid var(--line)}
+.psg-recipe-sticky .psg-subpage-head{margin-bottom:8px}
+.psg-recipe-filter-bar{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:7px;margin-top:8px}
+.psg-recipe-select .filter-panel{min-width:175px;right:auto;width:max-content;max-width:min(90vw,280px)}
+.psg-recipe-filter-option{display:flex;align-items:center;gap:9px;cursor:pointer}
+.psg-recipe-filter-option img{width:30px;height:30px;object-fit:contain}.psg-recipe-filter-option[aria-pressed="true"]{background:#e7f6ef}
+.psg-recipe-sort-label{display:flex;align-items:center;gap:4px;white-space:nowrap;font-size:11px;font-weight:750}
+.psg-recipe-sort-label select{min-width:0;width:100%;padding:9px 2px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111;font-size:12px;font-weight:700}
+.psg-recipe-count{margin:10px 2px 6px}
+.psg-recipe-entry{padding:0!important;overflow:hidden}
+.psg-recipe-entry>.psg-recipe-heading{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start;cursor:pointer;padding:13px;list-style:none}
+.psg-recipe-entry>.psg-recipe-heading::-webkit-details-marker{display:none}
+.psg-recipe-heading>strong{font-size:clamp(15px,4vw,18px);line-height:1.3;color:#111}
+.psg-recipe-heading .psg-recipe-energy{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:1px;white-space:nowrap}
+.psg-recipe-energy .psg-recipe-energy-max{font-size:18px;color:#111;line-height:1.3}
+.psg-recipe-energy-max small{font-size:10px;font-weight:700;color:#55645e}
+.psg-recipe-energy-max span{font-size:11px}.psg-recipe-energy .psg-recipe-energy-min{font-size:10px;color:#6e7a74}
+.psg-recipe-chevron{display:grid;place-items:center;flex:none;width:22px;height:28px;margin-left:3px;color:#347958;font-size:20px;line-height:1;transition:transform .15s ease}
+.psg-recipe-entry[open] .psg-recipe-chevron{transform:rotate(180deg)}
+.psg-recipe-heading .psg-recipe-ingredients{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin:1px 0 0}
+.psg-recipe-chip{padding:3px 7px}.psg-recipe-chip b{font-size:14px;color:#111}
+.psg-recipe-pot{margin-left:auto;font-size:13px;font-weight:800;color:#111;white-space:nowrap}
+.psg-recipe-expanded{border-top:1px solid var(--line);padding:10px 13px 13px}
+.psg-recipe-expanded h3{font-size:14px;margin:0 0 9px}.psg-recipe-expanded>.note{margin:9px 0 0}
+.psg-recipe-provider-group{border-top:1px solid #edf0ee;padding:8px 0}
+.psg-recipe-provider-group>strong{display:flex;align-items:center;gap:5px;font-size:13px}
+.psg-recipe-provider-group>strong img{width:24px;height:24px;object-fit:contain}
+.psg-recipe-providers{display:flex;flex-direction:column;gap:7px;border:0;padding:6px 0 0}
+.psg-recipe-family{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.psg-recipe-provider{border:1px solid var(--line);border-radius:10px;background:#fff;padding:4px;min-width:58px;max-width:64px;display:grid;justify-items:center;gap:2px;color:#111;cursor:pointer}
+.psg-recipe-provider-art{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:7px;background:#f4f8f5}
+.psg-recipe-provider-art img{max-width:100%;max-height:100%;object-fit:contain}
+.psg-recipe-provider-art img[hidden],.psg-recipe-provider-missing[hidden]{display:none}
+.psg-recipe-provider-missing{font-size:9px;color:#708178}
+.psg-recipe-provider-art small{position:absolute;bottom:-2px;right:-2px;border-radius:5px;background:#fff;padding:2px;font-size:9px;color:#111}
+@media(max-width:620px){.psg-recipe-sticky .psg-subpage-head h2{font-size:17px}.psg-recipe-energy .psg-recipe-energy-max{font-size:16px}}
+#v12Sleep .psg-sleep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+#v12Sleep .psg-sleep-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e1eb;border-radius:15px;padding:7px}
+#v12Sleep .psg-sleep-photo{position:relative;aspect-ratio:4/3;display:grid;place-items:center;border-radius:10px;background:#f8f7fa;overflow:hidden}
+#v12Sleep .psg-sleep-photo img{display:block;width:100%;height:100%;object-fit:cover}
+#v12Sleep .psg-sleep-no-image{font-size:13px;color:#75827c;font-weight:700}
+#v12Sleep .psg-sleep-toggle{position:absolute;top:7px;right:7px;display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid #d8e1dc;border-radius:50%;background:rgba(255,255,255,.97);color:#6d7a73;font-size:21px;line-height:1;box-shadow:0 1px 5px #0002;cursor:pointer}
+#v12Sleep .psg-sleep-toggle[aria-pressed="true"]{background:#47a472;border-color:#47a472;color:#fff;font-size:22px}
+#v12Sleep .psg-sleep-caption{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:8px 3px 3px;color:#111;font-size:12px;font-weight:800;text-align:center;overflow-wrap:anywhere}
+#dexDetail .v12-tabs .psg-sleep-tab-count{display:inline;font-size:.83em;font-weight:800;white-space:nowrap}
+#v12Sleep .psg-sleep-stars{flex:none;color:#b87935;font-size:14px}
+#v12Sleep .psg-sleep-empty{margin:0;padding:22px 14px;border:1px solid #e4e1eb;border-radius:15px;background:#fff;color:#55645c;font-size:13px;line-height:1.6}
+
+/* The tab strip follows the type-colored identity card and stays pinned with it. */
+@media(max-width:620px){
+  #dexDetail>.psg-dex-sticky{width:100%;background:var(--pane-bg);box-shadow:none!important}
+  #dexDetail .psg-dex-sticky>.hero{margin-bottom:0!important;padding-bottom:7px!important;border-radius:18px!important;box-shadow:none!important}
+  #dexDetail .psg-dex-sticky>.v12-tabs{box-sizing:border-box;width:100%!important;margin:0!important;padding:7px 7px 0!important;background:var(--pane-bg)!important;border-radius:0!important}
+  #dexDetail .v12-tabs button.active{border-radius:0!important;box-shadow:none!important}
+  #dexDetail .v12-tabs button[data-v12tab="ability"].active{background:#f1f7ff!important;color:#1768a6!important;border:0!important;border-bottom:2px solid #2f80c9!important}
+  #dexDetail .v12-tabs button[data-v12tab="sleep"].active{background:#f6f1fb!important;color:#704bb2!important;border:0!important;border-bottom:2px solid #7957b8!important}
+  #dexDetail .v12-tabs button[data-v12tab="field"].active{background:#f0f6f1!important;color:#347a4b!important;border:0!important;border-bottom:2px solid #4d9662!important}
+}
+
+.psg-selected-filters:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;padding:5px 0}
+.psg-selected-filters button{max-width:100%;overflow-wrap:anywhere;border:1px solid #8abd9e;background:#eaf5ee;color:#285c3d;border-radius:9px;padding:5px 7px;min-height:32px;font-size:12px;font-weight:700}
+.psg-selected-filters .psg-filter-clear{background:#fff;color:#526259;border-color:#d6e2da}
+
+.psg-recipe-title{display:flex;align-items:center;gap:6px;min-width:0}
+.psg-recipe-title>span{min-width:0;overflow-wrap:anywhere}
+.psg-recipe-art{width:44px;height:44px;object-fit:contain;flex:none;image-rendering:pixelated}
+
+/* Shared meal colors for category tabs, recipe cards and team checks. */
+[data-meal-category="カレー・シチュー"],[data-recipe-category="カレー・シチュー"]{--recipe-category-bg:#fff6dc;--recipe-category-border:#cfac4d}
+[data-meal-category="サラダ"],[data-recipe-category="サラダ"]{--recipe-category-bg:#edf8ee;--recipe-category-border:#78ad82}
+[data-meal-category="デザート・ドリンク"],[data-recipe-category="デザート・ドリンク"]{--recipe-category-bg:#fff0f5;--recipe-category-border:#d994ad}
+.psg-type-icon{display:block;object-fit:contain;object-position:center;image-rendering:auto}
+#dexDetail .v51-type-badge{display:grid;place-items:center;position:absolute;right:7px;bottom:7px;width:30px;height:30px;padding:0;border:0;background:transparent;box-shadow:none}
+#dexDetail .v51-type-badge img{width:30px;height:30px;object-fit:contain}
+
+/* Field portraits reuse the approved September 29 pixel artwork. */
+.psg-field-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.psg-field-choice{display:flex;align-items:center;gap:7px;min-width:0;width:100%;padding:8px;text-align:left;border:1px solid #dce7df;border-radius:16px;background:#fff;color:#253c30;font:inherit;cursor:pointer}
+.psg-field-choice>img{width:48px;height:64px;object-fit:contain;flex-shrink:0;image-rendering:auto}
+.psg-field-choice>div{min-width:0}
+.psg-field-choice strong{font-size:12px;overflow-wrap:anywhere;line-height:1.35;display:block}
+.psg-field-choice .psg-field-berry-icons{gap:1px;flex-wrap:wrap}
+.psg-field-choice .psg-master-berry-icon{width:20px!important;height:20px!important}
+@media(min-width:600px){.psg-field-choice>img{width:68px;height:80px}.psg-field-choice strong{font-size:15px}}
+.psg-field-choice[aria-pressed="true"]{border-color:#65a382;background:#edf8ee}
+
+/* A later-stage fork keeps the shared ancestors at left and both destinations at right. */
+#dexDetail .psg-evolution-tree{display:grid;grid-template-columns:repeat(var(--evo-columns),minmax(0,1fr));gap:8px 10px;align-items:center;padding:4px 0}
+#dexDetail .psg-evo-tree-cell{position:relative;display:flex;align-items:center;min-width:0;height:100%}
+#dexDetail .psg-evo-tree-cell:not([data-depth="0"])::before{content:'›';position:absolute;left:-9px;top:50%;transform:translateY(-50%);font-size:19px;color:#52635b}
+#dexDetail .psg-evo-tree-node{width:100%!important;min-width:0!important;padding:8px 3px!important;align-self:center;box-sizing:border-box}
+#dexDetail .psg-evo-tree-node .v111-evo-body{display:flex!important;flex-direction:column!important;align-items:center;gap:7px}
+#dexDetail .psg-evo-tree-node .v31-evo-image{width:46px!important;height:46px!important;transform:none!important}
+#dexDetail .psg-evo-tree-node .v106-evo-conditions{align-items:center!important;text-align:center!important;font-size:10px!important;min-height:24px}
+#dexDetail .psg-evo-tree-node .v31-evo-name{font-size:clamp(10px,2.6vw,13px)!important}
+
+#dexDetail .v31-evo-type{background:transparent!important;box-shadow:none!important}
+#dexDetail .v31-evo-type .psg-type-icon{width:100%!important;height:100%!important;image-rendering:auto}
+
+/* Shared master berry assets, including field favorites and daily estimates. */
+.psg-master-berry-icon{width:28px!important;height:28px!important;object-fit:contain;vertical-align:middle;display:inline-block;flex:none;image-rendering:auto;background:none;border:0;box-shadow:none}
+.psg-field-berry-icons{display:flex;gap:4px;margin-top:6px}
+#teamFieldSummary .psg-master-berry-icon{margin:0 2px}
+.psg-day-row .psg-master-berry-icon{margin-right:4px}
+/* Box detail styles, in their original cascade order. */
+/* v95: dedicated layouts for the rebuilt Box screen and Dex food rows. */
+/* Box identity remains visible while reading its long sections. */
+#boxDetail .detail-head{
+  position:sticky;top:56px;z-index:69;display:flex;align-items:center;
+  gap:8px;min-height:48px;margin:0 -12px 10px;padding:5px 12px;
+  background:rgba(255,255,255,.97);border-bottom:1px solid #e1e8e4;
+  backdrop-filter:blur(12px);
+}
+#boxDetail .detail-head>[data-back]{flex:0 0 auto;padding:7px 9px;white-space:nowrap;font-size:13px}
+#boxDetail #boxTitle{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:17px;margin:0;font-weight:950}
+#boxDetail #boxHeaderEdit{flex:0 0 auto;font-size:11px;font-weight:900;color:#111;white-space:nowrap}
+@media(max-width:620px){
+ #boxDetail .detail-head{top:calc(38px + env(safe-area-inset-top));min-height:44px}
+ #boxDetail .detail-head>[data-back]{font-size:12px}
+ #boxDetail #boxTitle{font-size:16px}}
+#boxDetail .detail-head h2{display:flex;align-items:baseline;justify-content:center;gap:5px;flex:1;min-width:0}
+#boxDetail #boxHeaderNo{font-size:10px;font-weight:900;white-space:nowrap;color:#111}
+#boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
+#boxDetail #boxIdentity:empty{display:none}
+#boxDetail .psg-box-art-badges{position:absolute;right:7px;bottom:7px;display:flex;align-items:center;gap:4px;z-index:2}
+#boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:0;background:transparent;border:0;box-shadow:none}
+#boxDetail .psg-box-art-badge img{width:30px;height:30px;object-fit:contain;image-rendering:auto}
+#boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
+#boxDetail .psg-box-hero{background:#eef8f0;border-color:#cfe8d4}
+#boxDetail .psg-box-identity{display:grid;grid-template-columns:minmax(100px,36%) 1fr;gap:10px;align-items:stretch}
+#boxDetail .psg-box-artwork{min-height:220px;background:#f8faf8;border:1px solid #dfe8e4;border-radius:18px;position:relative;overflow:hidden;display:grid;place-items:center}
+#boxDetail .psg-box-artwork img{max-width:100%;max-height:100%;object-fit:contain}
+#boxDetail .psg-box-facts{min-width:0;display:flex;flex-direction:column;gap:8px}
+#boxDetail #boxIdentity{font-weight:900;font-size:14px}
+#boxDetail .psg-box-stats{display:grid;gap:7px;flex:1}
+#boxDetail .psg-box-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;padding:5px 3px;background:#fff;border-radius:13px;text-align:center}
+#boxDetail .psg-box-stat small{font-size:10px;font-weight:900;color:#111}
+#boxDetail .psg-box-stat strong{font-size:clamp(14px,4vw,22px);line-height:1.25;overflow-wrap:anywhere}
+#boxDetail .psg-box-stat em{font-style:normal;color:#111;font-size:11px;font-weight:800}
+#boxDetail .psg-box-level{margin-top:12px;background:#fff;padding:10px;border-radius:13px}
+#boxDetail .psg-box-level label{font-weight:900}
+#boxDetail .psg-box-level-controls{justify-content:center;gap:10px;margin:6px 0}
+#boxDetail #boxLevelInput{width:65px;text-align:center;border:1px solid #dfe8e4;border-radius:8px;padding:8px}
+#boxDetail #lvRange{width:100%}
+#boxDetail .psg-box-section h3{font-size:20px;margin:0 0 7px;color:#111}
+#boxDetail .psg-box-section{background:#f3f7ff}
+#boxDetail .psg-box-skill-art img{width:36px;height:36px;object-fit:contain;vertical-align:middle}
+#boxDetail .psg-box-lead{font-weight:950;font-size:19px;line-height:1.4}
+#boxDetail .psg-box-skill-art{width:42px;height:42px;object-fit:contain;vertical-align:middle;margin-right:8px}
+#boxDetail .psg-box-muted{color:#111;font-size:13px;line-height:1.5}
+#boxDetail .psg-mint-mark{display:inline-flex;border:1px solid #8ab99e;border-radius:50%;background:#fff;color:#56966e;width:25px;height:25px;align-items:center;justify-content:center;margin-left:7px;vertical-align:middle}
+#boxDetail .psg-milestone{background:#fff;border-radius:11px;padding:10px;margin-top:7px}
+#boxDetail .psg-box-editor summary{font-weight:900;cursor:pointer}
+#boxDetail #boxEditForm{display:grid;gap:10px;margin-top:12px}
+#boxDetail #boxEditForm label{display:grid;gap:3px;font-weight:800;font-size:13px}
+#boxDetail #boxEditForm input,#boxDetail #boxEditForm select{min-width:0;width:100%;border:1px solid #cbdad3;background:#fff;border-radius:8px;padding:9px;font-size:16px}
+#boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
+#boxDetail #boxEditForm .psg-editor-check input{width:auto}
+#boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
+@media(max-width:390px){#boxDetail .psg-box-artwork{min-height:190px}#boxDetail .psg-box-stat small{font-size:9px}#boxDetail .psg-box-stat strong{font-size:14px}}
+/* Box Block 1 shares the Dex geometry: square artwork, facts to the right,
+   and a full-width action row where the Dex shows tabs. */
+#boxDetail .psg-box-hero{padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
+#boxDetail .psg-box-identity{grid-template-columns:minmax(108px,37%) minmax(0,1fr);gap:6px;align-items:start}
+#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:rgba(255,255,255,.58);border-radius:16px}
+#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+#boxDetail .psg-box-facts{justify-content:space-between;gap:4px;align-self:stretch}
+#boxDetail .psg-box-traits{display:grid;grid-template-columns:31fr 38fr 31fr;gap:3px;min-width:0}
+#boxDetail .psg-box-trait{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:31px;padding:3px 2px;border-radius:9px;background:#fff;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;color:#111}
+#boxDetail .psg-box-trait-berry img{width:25px;height:25px;object-fit:contain;flex:none}
+#boxDetail .psg-box-trait-berry b{font-size:11px}
+#boxDetail .psg-box-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;flex:1;background:transparent;border:0}
+#boxDetail .psg-box-stat{min-height:48px;padding:3px 2px;border-radius:12px;gap:2px}
+#boxDetail .psg-box-stat small{font-size:clamp(7px,2.1vw,10px);line-height:1.12;letter-spacing:-.03em}
+#boxDetail .psg-box-stat strong{font-size:clamp(11px,3vw,18px);line-height:1.1}
+#boxDetail .psg-box-stat em{font-size:10px;line-height:1}
+#boxDetail .psg-box-level{grid-template-columns:auto 1fr;gap:4px 8px;margin-top:6px;padding:5px 8px;border-radius:10px}
+#boxDetail .psg-box-level label{grid-column:1;font-size:12px;white-space:nowrap;color:#111}
+#boxDetail .psg-box-level-controls{grid-column:2;justify-content:flex-end;gap:5px;margin:0}
+#boxDetail .psg-box-level-controls .btn{min-width:32px;min-height:32px;padding:0 4px}
+#boxDetail #lv{white-space:nowrap;font-size:13px}
+#boxDetail #boxLevelInput{width:43px;padding:4px;font-size:13px}
+#boxDetail #lvRange{grid-column:1/-1;min-height:20px}
+@media(max-width:390px){
+ #boxDetail .psg-box-identity{grid-template-columns:minmax(104px,37%) minmax(0,1fr)}
+ #boxDetail .psg-box-trait{font-size:9px}
+ #boxDetail .psg-box-stat{min-height:45px}
+ #boxDetail .psg-box-stat small{font-size:8px}
+ #boxDetail .psg-box-stat strong{font-size:12px}}
+#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:7px}
+#boxDetail .psg-box-food-heading h3{margin:0;font-size:18px}
+#boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:3px;row-gap:0;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
+#boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
+#boxDetail .psg-v106-unlock{text-align:center;font-size:11px;line-height:1.2;white-space:nowrap}
+#boxDetail .psg-v106-ingredient-image{grid-row:1 / 3;display:grid;place-items:center;width:28px;height:28px}
+#boxDetail .psg-v106-ingredient-image img{width:28px;height:28px;object-fit:contain}
+#boxDetail .psg-v106-ingredient strong{grid-column:2;text-align:center;font-size:13px;line-height:1.1;white-space:nowrap}
+#boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
+#boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
+#boxDetail .psg-box-level-controls{grid-column:1;display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0}
+#boxDetail .psg-box-level-controls .btn{min-width:35px;min-height:38px}
+#boxDetail #lv{min-width:34px;text-align:center;white-space:nowrap}
+#boxDetail #lvRange{grid-column:2;min-width:0;width:100%;min-height:40px;margin:0;touch-action:pan-x}
+@media(max-width:620px){
+  #boxDetail .psg-box-stat{min-height:46px;padding:2px}
+  #boxDetail .psg-box-stats{grid-template-rows:repeat(2,minmax(46px,1fr))}
+  #boxDetail .psg-box-section{padding:10px;margin-bottom:7px}
+  #boxDetail .psg-box-section h3{margin-bottom:8px}
+  #boxDetail .psg-v106-ingredient{min-height:34px;column-gap:2px;padding:2px 1px}
+  #boxDetail .psg-box-facts{gap:3px!important}
+  #boxDetail .psg-box-facts .psg-box-trait-berry>img{width:25px!important;height:25px!important}
+  #boxDetail .psg-box-stats{flex:0 0 auto!important}
+  #boxDetail .psg-box-identity{grid-template-columns:minmax(102px,34%) minmax(0,1fr);align-items:start}
+  #boxDetail .psg-box-facts{justify-content:flex-start}
+  #boxDetail .psg-v106-media .psg-box-trait-berry>img{width:25px;height:25px}
+  #boxDetail .psg-v106-media .psg-box-traits{align-items:start}}
+/* Duplicate rates are omitted only while the complete identity panel is sticky. */
+@media(max-width:620px) and (orientation:portrait){
+  #boxDetail>.psg-box-hero{box-shadow:0 2px 5px rgba(20,40,30,.10)!important}
+  #boxDetail #boxEditor{scroll-margin-top:310px}}
+
+
+/* v111: align all section frames to the pinned identity card. */
+@media(max-width:620px){
+  #boxDetail>.psg-box-hero,#boxDetail>.psg-box-section,#boxDetail>.psg-box-editor,#boxDetail>.card{box-sizing:border-box;width:100%;margin-inline:0}
+  #boxDetail>.psg-box-section{margin-bottom:6px}}
+
+/* Compact individual controls and three-column subskill tiles. */
+#boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
+#boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
+#boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
+#boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+#boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:9px;padding:3px}
+#boxDetail .psg-subskill-top{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;line-height:1.2}
+#boxDetail .psg-subskill-badge{width:24px;height:24px;object-fit:contain}
+#boxDetail .psg-subskill-unknown{display:grid;place-items:center;width:24px;height:24px;color:#81908a}
+#boxDetail .psg-box-subskill>strong{text-align:center;overflow-wrap:anywhere;font-size:11px;line-height:1.2}
+#boxDetail .psg-box-subskill.is-locked{opacity:.48}
+#boxDetail .psg-editor-note{margin:0;font-weight:400}
+#boxDetail #boxEditor{scroll-margin-top:110px}
+@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
+
+#boxDetail .psg-box-nature-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px;align-items:center}
+#boxDetail .psg-box-nature-row .psg-box-lead{margin:0}
+#boxDetail .psg-box-nature-effects{display:grid;gap:2px;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+#boxDetail .psg-nature-up{color:#b04436}
+#boxDetail .psg-nature-down{color:#346baa}
+/* Compact lower detail sections. */
+#boxDetail .psg-box-section{padding:9px 10px;margin-bottom:7px}
+#boxDetail .psg-box-section h3{font-size:18px;margin:0 0 6px}
+#boxDetail .psg-box-section p{margin:5px 0;line-height:1.45}
+#boxDetail .psg-box-pending{font-size:12px;color:#66736d;margin:6px 0 0}
+#boxDetail .psg-box-effect{font-size:13px;line-height:1.45}
+#boxDetail .psg-box-explanation{font-size:12px;margin-top:5px}
+#boxDetail .psg-box-explanation summary{cursor:pointer;color:#456458}
+#boxDetail .psg-box-lead{font-size:17px;line-height:1.4}
+#boxDetail .psg-milestone{padding:5px 8px;margin-top:4px;border-radius:8px;font-size:13px}
+#boxEvaluation>p{font-size:13px}
+#boxDetail #boxGrowth .psg-box-muted{font-size:12px}
+
+#boxDetail .psg-box-day-food{margin-top:6px}
+#boxDetail .psg-box-day-food-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px}
+#boxDetail .psg-box-day-food-line>small{font-weight:800;color:#52685d}
+#boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
+#boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
+#boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}

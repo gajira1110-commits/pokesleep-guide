@@ -50,8 +50,7 @@ function centeredTypeImage(source){
     const width=right-left+1,height=bottom-top+1,scale=112/Math.max(width,height);
     const target=document.createElement('canvas');target.width=128;target.height=128;
     const draw=target.getContext('2d');draw.imageSmoothingEnabled=true;draw.imageSmoothingQuality="high";
-    // Soften the coarse source pixel steps at display time; keep master artwork intact.
-    draw.filter='blur(1.25px)';
+    // Smooth master badges need only high-quality scaling, without extra blur.
     const w=Math.round(width*scale),h=Math.round(height*scale);
     draw.drawImage(image,left,top,width,height,Math.floor((128-w)/2),Math.floor((128-h)/2),w,h);
     resolve(target.toDataURL('image/png'));

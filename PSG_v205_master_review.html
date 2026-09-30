@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v206</title>
+  <title>PokéSleep Guide — Review v205</title>
 
 
 
@@ -3092,7 +3092,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 </style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v206</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v205</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -4810,7 +4810,8 @@ function centeredTypeImage(source){
     const width=right-left+1,height=bottom-top+1,scale=112/Math.max(width,height);
     const target=document.createElement('canvas');target.width=128;target.height=128;
     const draw=target.getContext('2d');draw.imageSmoothingEnabled=true;draw.imageSmoothingQuality="high";
-    // Smooth master badges need only high-quality scaling, without extra blur.
+    // Soften the coarse source pixel steps at display time; keep master artwork intact.
+    draw.filter='blur(1.25px)';
     const w=Math.round(width*scale),h=Math.round(height*scale);
     draw.drawImage(image,left,top,width,height,Math.floor((128-w)/2),Math.floor((128-h)/2),w,h);
     resolve(target.toDataURL('image/png'));
@@ -4824,7 +4825,7 @@ async function alignTypeImages(){
  }));return aligned.some(Boolean);
 }
 // Re-extract complete circles from the original sheet; custom master icons retain priority.
-const typeSheetConfig={"url": "assets/types/all_18_pixel.png", "icons": {}};
+const typeSheetConfig={"url": "assets/types/all_18_pixel.png", "icons": {"\u30ce\u30fc\u30de\u30eb": [41, 36, 252, 257], "\u307b\u306e\u304a": [323, 35, 253, 257], "\u307f\u305a": [606, 35, 256, 258], "\u304f\u3055": [901, 35, 255, 258], "\u3067\u3093\u304d": [1191, 35, 254, 258], "\u3053\u304a\u308a": [1476, 35, 256, 258], "\u304b\u304f\u3068\u3046": [41, 303, 252, 256], "\u3069\u304f": [323, 303, 253, 256], "\u3058\u3081\u3093": [605, 303, 257, 256], "\u3072\u3053\u3046": [901, 303, 255, 256], "\u30a8\u30b9\u30d1\u30fc": [1191, 303, 254, 257], "\u3080\u3057": [1476, 303, 256, 256], "\u3044\u308f": [41, 570, 252, 257], "\u30b4\u30fc\u30b9\u30c8": [323, 570, 253, 257], "\u30c9\u30e9\u30b4\u30f3": [604, 570, 257, 257], "\u3042\u304f": [901, 570, 255, 257], "\u306f\u304c\u306d": [1191, 570, 255, 257], "\u30d5\u30a7\u30a2\u30ea\u30fc": [1476, 570, 255, 257]}};
 const typeSheet=new Image();
 if(Object.keys(typeSheetConfig.icons).length)jobs.push(new Promise(resolve=>{
  typeSheet.onload=async()=>{

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v204</title>
+  <title>PokéSleep Guide — Review v206</title>
 
 
 
@@ -203,7 +203,7 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
 <style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v204</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v206</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -1780,8 +1780,23 @@ if(window.PS?.master&&window.PS_CATALOG){
      return;
    }
    card.style.display="";
-   // Heavy branching: base at left-center, destinations in a 3-column grid on the right.
-   if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
+   // Eevee's eight destinations need the full width for readable requirements.
+   if(Number(root.no)===133&&rootBranches.length>1){
+     const commonCandy=rootBranches.every(e=>e.candy===rootBranches[0].candy)?rootBranches[0].candy:null;
+     const cells=rootBranches.map(e=>{
+       const conditions=[];
+       if(commonCandy==null&&e.candy!=null)conditions.push(`アメ${e.candy}個`);
+       if(e.level!=null)conditions.push(`Lv.${e.level}`);
+       if(e.item)conditions.push(e.item);
+       if(e.extra){
+         conditions.push(detailEsc(e.extra.replace('一緒に睡眠','睡眠').split('・')[0]));
+         if(e.extra.includes('06:00〜18:00'))conditions.push('昼 06:00〜18:00');
+         else if(e.extra.includes('18:00〜06:00'))conditions.push('夜 18:00〜06:00');
+       }
+       return evoNode(byNo(e.toNo),m.no,'psg-eevee-destination',{conditions},true);
+     }).join('');
+     el.innerHTML=`<div class="psg-eevee-family"><div class="psg-eevee-origin">${evoNode(root,m.no,'psg-eevee-root')}<div class="psg-eevee-common">進化先を選ぶ${commonCandy!=null?`<strong>共通：アメ${commonCandy}個</strong>`:''}</div></div><div class="psg-eevee-grid">${cells}</div></div>`;
+   }else if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
      el.innerHTML=nestedEvolutionTree(root,m.no);
    }else if(rootBranches.length>1){
      const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div></div>`}).join("");
@@ -1854,7 +1869,6 @@ if(window.PS?.master&&window.PS_CATALOG){
  switchTab("ability");
 })();
 </script>
-
 <script id="psg-auto-image-paths">
 /* Only verified species and registered asset IDs are queried. Missing files leave the existing UI alone. */
 (()=>{'use strict';
@@ -1907,8 +1921,7 @@ function centeredTypeImage(source){
     const width=right-left+1,height=bottom-top+1,scale=112/Math.max(width,height);
     const target=document.createElement('canvas');target.width=128;target.height=128;
     const draw=target.getContext('2d');draw.imageSmoothingEnabled=true;draw.imageSmoothingQuality="high";
-    // Soften the coarse source pixel steps at display time; keep master artwork intact.
-    draw.filter='blur(1.25px)';
+    // Smooth master badges need only high-quality scaling, without extra blur.
     const w=Math.round(width*scale),h=Math.round(height*scale);
     draw.drawImage(image,left,top,width,height,Math.floor((128-w)/2),Math.floor((128-h)/2),w,h);
     resolve(target.toDataURL('image/png'));
