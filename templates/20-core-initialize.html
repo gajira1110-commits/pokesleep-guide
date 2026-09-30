@@ -1,0 +1,30 @@
+boxSearch.oninput=renderBox;dexSearch.oninput=renderDex;
+function closeBoxAdd(){boxAddPanel.hidden=true;addBtn.setAttribute('aria-expanded','false')}
+addBtn.onclick=()=>{
+ const opening=boxAddPanel.hidden;
+ if(opening)boxSpecies.innerHTML=boxCatalog().map(p=>`<option value="${p.no}">No.${String(p.no).padStart(3,'0')} ${p.name}</option>`).join('');
+ boxAddPanel.hidden=!opening;addBtn.setAttribute('aria-expanded',String(opening));
+};
+boxCancelAdd.onclick=closeBoxAdd;
+boxConfirmAdd.onclick=()=>{
+ const p=boxCatalog().find(x=>Number(x.no)===Number(boxSpecies.value));if(!p)return;
+ const id=globalThis.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}`;
+ if(commitBox([...state.box,{id,no:Number(p.no),name:p.name,specialty:p.specialty,level:1}])){
+  boxUndoPanel.hidden=true;closeBoxAdd();boxSearch.value='';renderBox();
+ }
+};
+let lastRemoval=null;
+boxRemoveBtn.onclick=()=>{
+ const selected=state.selected;if(!selected||!confirm(`${selected.name} Lv.${selected.level}をBoxから削除しますか？`))return;
+ const index=state.box.findIndex(x=>x.id===selected.id);if(index<0)return;
+ if(commitBox(state.box.filter(x=>x.id!==selected.id))){lastRemoval={selected,index};state.selected=null;boxUndoPanel.hidden=false;go('box',false)}
+};
+boxUndoRemove.onclick=()=>{
+ if(!lastRemoval)return;
+ const next=[...state.box];next.splice(lastRemoval.index,0,lastRemoval.selected);
+ if(commitBox(next)){lastRemoval=null;boxUndoPanel.hidden=true}
+};
+hydrateSpecialtyIcons(document);renderFilters();setupMenus();renderDex();renderBox();
+window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel,teamContext};
+})();
+</script>
