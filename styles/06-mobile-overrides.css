@@ -53,8 +53,8 @@
   #dexDetail .v51-type-badge{
     position:absolute!important;right:5px!important;bottom:5px!important;z-index:2!important;
     display:inline-flex!important;align-items:center!important;gap:2px!important;
-    padding:4px 6px!important;border-radius:999px!important;background:rgba(255,255,255,.90)!important;
-    border:1px solid var(--type-accent)!important;color:var(--type-accent)!important;
+    padding:0!important;border-radius:0!important;background:transparent!important;
+    border:0!important;color:var(--type-accent)!important;
     font-size:10px!important;font-weight:950!important;line-height:1!important;white-space:nowrap!important;
   }
   #dexDetail .hero-info{display:flex!important;flex-direction:column!important;

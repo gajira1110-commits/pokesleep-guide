@@ -137,7 +137,7 @@ function renderTeamFood(){
   const list=document.createElement('div');list.className='psg-team-recipe-items';
   for(const recipe of categoryRecipes){
    const missing=recipe.ingredients.filter(item=>!confirmed.has(item.name));
-   const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';
+   const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;
    const name=document.createElement('strong');name.textContent=recipe.name;
    const meta=document.createElement('span');meta.className='psg-team-recipe-meta';const verified=recipe.energy?.max,shown=verified||[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];meta.textContent=shown?`${verified?'':'確認値 '}Lv.${shown.level} ${shown.value.toLocaleString()} エナジー`:'エナジー未確認';
    const status=document.createElement('span');status.className=`psg-team-recipe-status ${missing.length?'is-unconfirmed':'is-covered'}`;
@@ -389,7 +389,7 @@ const filterIconShapes={
 };
 const filterIconData=name=>filterIconShapes[name]?`data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#faf8ee"/>${filterIconShapes[name]}</svg>`)}`:null;
 window.PS_INGREDIENT_FALLBACK_ICON=filterIconData;
-const typeFilterArt=t=>window.PS_TYPE_IMAGES?.[t]?`<img src="${window.PS_TYPE_IMAGES[t]}" alt="">`:filterIconData(t)?`<img src="${filterIconData(t)}" alt="">`:`<span class="filter-pictogram" aria-hidden="true">${typeSymbol(t)}</span>`;
+const typeFilterArt=t=>window.PS_TYPE_IMAGES?.[t]?`<img class="psg-type-icon" src="${window.PS_TYPE_IMAGES[t]}" alt="">`:filterIconData(t)?`<img src="${filterIconData(t)}" alt="">`:`<span class="filter-pictogram" aria-hidden="true">${typeSymbol(t)}</span>`;
 window.PS_TYPE_ART=typeFilterArt;
 const ingredientFilterArt=name=>{
  const visual=ingredientVisual(name);
