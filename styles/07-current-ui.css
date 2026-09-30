@@ -247,3 +247,9 @@
 
 #dexDetail .v31-evo-type{background:transparent!important;box-shadow:none!important}
 #dexDetail .v31-evo-type .psg-type-icon{width:100%!important;height:100%!important;image-rendering:auto}
+
+/* Shared master berry assets, including field favorites and daily estimates. */
+.psg-master-berry-icon{width:28px!important;height:28px!important;object-fit:contain;vertical-align:middle;display:inline-block;flex:none;image-rendering:auto;background:none;border:0;box-shadow:none}
+.psg-field-berry-icons{display:flex;gap:4px;margin-top:6px}
+#teamFieldSummary .psg-master-berry-icon{margin:0 2px}
+.psg-day-row .psg-master-berry-icon{margin-right:4px}
