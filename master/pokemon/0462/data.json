@@ -1,0 +1,77 @@
+{
+  "no": 462,
+  "name": "ジバコイル",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "ベリブのみ",
+  "berryQty": 1,
+  "help": 3100,
+  "carry": 23,
+  "foodRate": 17.9,
+  "skillRate": 6.2,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0462_01",
+      "name": "ゆらゆらふゆう寝",
+      "stars": 1
+    },
+    {
+      "id": "0462_02",
+      "name": "かんしふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0462_03",
+      "name": "さかさふゆう寝",
+      "stars": 3
+    }
+  ],
+  "evolution": null,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/magnezone"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 3
+}

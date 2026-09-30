@@ -845,7 +845,7 @@ function syncLevel(){
   const image=name&&window.PS_CATALOG.ingredientVisual(name)?.image;
   const iconSource=image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
   const icon=iconSource?`<img src="${iconSource}" alt="${boxEsc(name)}">`:'';
-  return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="${index?'Lv.'+unlock+' ':' '}${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}">${index?`<b class="psg-v106-unlock">Lv.${unlock}</b>`:'<b class="psg-v106-unlock" aria-hidden="true">&nbsp;</b>'}<span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
+  return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}"><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">Lv.${unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
  });
  document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
  document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{
