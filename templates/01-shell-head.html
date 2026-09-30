@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v200</title>
+  <title>PokéSleep Guide — Review v201</title>
 
 
 
@@ -34,6 +34,7 @@ window.PS_IMAGE_FILES = {
   types: {},         // タイプ名 -> フィルターなどのタイプアイコン
   skills: {},        // スキルID -> 詳細のスキル固有アイコン
   recipes: {},       // レシピID -> 対応料理（表示実装時に接続）
+  sleepTypes: {},    // 睡眠タイプ名 -> 共通バッジ
   sleepStyles: {},   // 寝顔ID -> 写真ファイル（寝顔名・★はPS_CATALOGに置く）
   fields: {},        // フィールドID -> フィールドタブ（表示実装時に接続）
   subskills: {}      // サブスキル名 -> 小型バッジ
@@ -93,6 +94,10 @@ for(const [no,styles] of Object.entries(window.PS_CATALOG.sleepStyles)){
     return {id,stars,name,image:window.PS_IMAGE_FILES.sleepStyles[id]||`assets/sleep/${id}.webp`};
   });
 }
+window.PS_SLEEP_ICON=name=>{
+ const src=window.PS_IMAGE_FILES.sleepTypes[name];
+ return src?`<img class="psg-sleep-type-icon" src="${src}" alt="" aria-hidden="true">`:'';
+};
 /* Render-only preview rows are derived from the verified slot candidates.
    The complete candidate sets remain in ingredientSlots for future screens. */
 for(const pokemon of Object.values(window.PS_CATALOG.pokemon)){
@@ -198,5 +203,5 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
 <style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v200</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v201</small></header>
 <main>

@@ -65,7 +65,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:2px;margin-top:-11px;position:relative}
 .dex-card .dex-bottom>span{width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;display:grid;place-items:center;font-size:13px}
 .dex-card .dex-bottom img{width:18px;height:18px;object-fit:contain}
-.psg-specialty-icon{width:22px;height:22px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:pixelated}
+.psg-specialty-icon{width:22px;height:22px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:auto}
 .dex-card .dex-bottom img.psg-specialty-icon{width:18px;height:18px}
 #boxSpecialtyFilters .filter-option{display:flex;align-items:center;gap:6px}
 #boxSpecialtyFilters .psg-specialty-icon{width:20px;height:20px}
@@ -329,3 +329,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .v11-lv button{border:0;background:#edf6ff;color:#168fe6;border-radius:8px;padding:7px 9px;font-size:18px;font-weight:950}
 .v11-lv b{background:#edf6ff;color:#168fe6;border-radius:8px;padding:8px 10px;white-space:nowrap}
 .v11-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
+
+.psg-sleep-type-icon{width:36px;height:23px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:auto}
+.v44-sleep-trait,.psg-box-trait:has(.psg-sleep-type-icon){display:flex;align-items:center;justify-content:center;gap:3px}
