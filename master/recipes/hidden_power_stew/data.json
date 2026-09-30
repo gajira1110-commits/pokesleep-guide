@@ -1,0 +1,44 @@
+{
+  "id": "hidden_power_stew",
+  "name": "めざめるパワーシチュー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "greengrass_soybeans",
+      "qty": 28
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 25
+    },
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 23
+    },
+    {
+      "ingredientId": "coffee",
+      "qty": 16
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 64,
+        "value": 62329,
+        "source": "user-screenshot/IMG_1512.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1512.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

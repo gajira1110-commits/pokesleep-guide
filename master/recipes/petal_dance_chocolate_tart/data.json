@@ -1,0 +1,36 @@
+{
+  "id": "petal_dance_chocolate_tart",
+  "name": "はなびらのまいチョコタルト",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "soothing_cacao",
+      "qty": 11
+    },
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 11
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 12,
+        "value": 4010,
+        "source": "user-screenshot/IMG_1525.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1525.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

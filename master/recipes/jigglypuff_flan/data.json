@@ -1,0 +1,44 @@
+{
+  "id": "jigglypuff_flan",
+  "name": "プリンのプリンアラモード",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "honey",
+      "qty": 20
+    },
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 15
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 10
+    },
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 10
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 55,
+        "value": 20580,
+        "source": "user-screenshot/IMG_1523.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1523.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "huge_power_soy_donuts",
+  "name": "ちからもちソイドーナッツ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "pure_oil",
+      "qty": 12
+    },
+    {
+      "ingredientId": "greengrass_soybeans",
+      "qty": 16
+    },
+    {
+      "ingredientId": "soothing_cacao",
+      "qty": 7
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 34,
+        "value": 9652,
+        "source": "user-screenshot/IMG_1524.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1524.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

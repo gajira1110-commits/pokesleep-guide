@@ -28,6 +28,25 @@
     "max": {
       "level": 70,
       "value": 91430
+    },
+    "observed": [
+      {
+        "level": 67,
+        "value": 87599,
+        "source": "user-screenshot/IMG_1512.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1512.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
     }
-  }
+  ]
 }

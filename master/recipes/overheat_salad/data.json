@@ -1,0 +1,40 @@
+{
+  "id": "overheat_salad",
+  "name": "オーバーヒートサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 17
+    },
+    {
+      "ingredientId": "warming_ginger",
+      "qty": 10
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 8
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 44,
+        "value": 11129,
+        "source": "user-screenshot/IMG_1519.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1519.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

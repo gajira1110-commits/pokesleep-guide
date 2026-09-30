@@ -1,0 +1,40 @@
+{
+  "id": "neroli_detox_tea",
+  "name": "ネロリのデトックスティー",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "warming_ginger",
+      "qty": 11
+    },
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 15
+    },
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 9
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 17,
+        "value": 6584,
+        "source": "user-screenshot/IMG_1525.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1525.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

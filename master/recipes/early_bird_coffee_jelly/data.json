@@ -1,0 +1,40 @@
+{
+  "id": "early_bird_coffee_jelly",
+  "name": "はやおきコーヒーゼリー",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "coffee",
+      "qty": 16
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 14
+    },
+    {
+      "ingredientId": "honey",
+      "qty": 12
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 24,
+        "value": 9850,
+        "source": "user-screenshot/IMG_1524.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1524.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

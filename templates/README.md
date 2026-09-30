@@ -16,6 +16,7 @@
 | `10-box-detail.html` | 個体詳細 |
 | `11-navigation.html` | ナビゲーションと共通の画面構造 |
 | `12-core-controller.html` | 保存・補正計算、チーム・一覧の処理、共通クロージャの開始 |
+| `21-day-calculator.html` | ホームとボックス共通の日産近似計算 |
 | `19-box-detail-controller.html` | ボックス詳細の表示・個体編集・レベル操作 |
 | `20-core-initialize.html` | 一覧イベント・追加削除・初期化、共通クロージャの終了 |
 | `13-catalog-adapter.html` | 図鑑データの接続 |
@@ -27,4 +28,6 @@
 
 ファイル境界は表示順を保つためのものです。新しい部品を追加する場合は、`PSG_build_master.py` の `TEMPLATE_PARTS` に挿入位置を指定してください。CSSは `styles/` を編集します。
 
-12 → 19 → 20 は同じスクリプトとクロージャの断片です。順番を変えたり単独の script タグで囲んだりしないでください。個体詳細の変更は19、HTMLは10、CSSは08-box-detail.cssで行います。
+12 → 21 → 19 → 20 は同じスクリプトとクロージャの断片です。順番を変えたり単独の script タグで囲んだりしないでください。個体詳細の変更は19、HTMLは10、CSSは08-box-detail.cssで行います。
+
+日産の基本数値検証：`node tests/check_daily_calculator.cjs`。UI確認とは別に24時間・げんき0・所持数十分の既知条件、キャンプ、満杯、未選択を検証します。

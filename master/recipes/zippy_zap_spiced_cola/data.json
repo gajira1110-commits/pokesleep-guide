@@ -1,0 +1,44 @@
+{
+  "id": "zippy_zap_spiced_cola",
+  "name": "スパークスパイスコーラ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 35
+    },
+    {
+      "ingredientId": "warming_ginger",
+      "qty": 20
+    },
+    {
+      "ingredientId": "large_leek",
+      "qty": 20
+    },
+    {
+      "ingredientId": "coffee",
+      "qty": 12
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 63,
+        "value": 56156,
+        "source": "user-screenshot/IMG_1522.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1522.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

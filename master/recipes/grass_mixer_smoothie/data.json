@@ -1,0 +1,40 @@
+{
+  "id": "grass_mixer_smoothie",
+  "name": "グラスミキサースムージー",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "shiny_avocado",
+      "qty": 18
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 16
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 14
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 10,
+        "value": 9635,
+        "source": "user-screenshot/IMG_1524.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1524.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

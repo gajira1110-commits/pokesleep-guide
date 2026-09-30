@@ -1,0 +1,44 @@
+{
+  "id": "apple_acid_yogurt_salad",
+  "name": "りんごさんヨーグルトサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 35
+    },
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 28
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 23
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 18
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 47,
+        "value": 43795,
+        "source": "user-screenshot/IMG_1517.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1517.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

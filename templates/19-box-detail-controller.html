@@ -2,6 +2,33 @@
 const boxEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const selectedSpecies=()=>window.PS_CATALOG?.pokemon?.[state.selected?.no]||null;
 function openBox(id){state.selected=state.box.find(x=>x.id===id);if(!state.selected)return;boxTitle.textContent=state.selected.name;syncLevel();go('boxDetail')}
+function boxDailyEstimate(item){
+ const inTeam=team.includes(item.id),ids=inTeam?team:[item.id];
+ const interval=Number(document.getElementById('teamCollectionInterval').value);
+ const result=dailyBaseline(ids,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,activeFieldBerries(),fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ return {result,member:result.members.find(m=>m.id===item.id),inTeam};
+}
+function renderBoxDayFood(estimate){
+ const {result,member,inTeam}=estimate,host=document.getElementById('boxDayFood');
+ const scope=inTeam?'チーム条件':'単体条件';
+ const conditions=`${scope}・回収${result.interval}時間・起床時げんき${result.startingEnergy}・いいキャンプ${result.goodCamp?'ON':'OFF'}・食事${result.threeMeals?'3回':'なし'}`;
+ if(!member||member.missing){host.innerHTML=`<p class="psg-box-pending">１日の獲得予想：${boxEsc(member?.reasons?.join('・')||'個体情報')}を設定してください</p>`;return}
+ const amounts=[...member.foods].map(([name,qty])=>{
+  const src=window.PS_CATALOG.ingredientVisual(name)?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  return `<span class="psg-box-day-food-item" title="${boxEsc(name)}" aria-label="${boxEsc(name)} 約${qty.toFixed(1)}個">${src?`<img src="${src}" alt="">`:boxEsc(name)}<b>約${qty.toFixed(1)}</b></span>`;
+ }).join('');
+ host.innerHTML=`<div class="psg-box-day-food-line"><small>１日予想</small>${amounts}</div><details class="psg-box-explanation"><summary>推定・${scope}</summary><p>${conditions}</p><p>ホームの設定を使用。16時間活動・8時間睡眠。食材枠は等確率、満杯は期待値で判定。スキル由来の食材・おてつだい追加とリボン補正は含みません。性格未入力は無補正として仮計算します。</p>${inTeam&&result.members.some(m=>m.missing)?'<p>未設定のチーム個体は計算対象外です。</p>':''}</details>`;
+}
+function boxDailySkillText(estimate){
+ const {result,member}=estimate;
+ if(!member||member.missing||!Number.isFinite(member.stats?.skill)||!member.skillName)return '１日の発動予想：条件・発動率未確認';
+ const n=member.skillTriggers;let amount='';
+ if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))amount=`・ランダム食材 約${(n*member.skillAmount).toFixed(1)}個（食材予想に未加算）`;
+ else if(['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))amount=`・エナジー 約${Math.round(n*member.skillEnergy*result.areaFactor).toLocaleString()}（エリア補正込み）`;
+ else if(['team_energy_recovery','self_energy_recovery','ally_energy_recovery'].includes(member.skillEffectType)&&Number.isFinite(member.skillRecovery))amount='（回復による速度変化は予想に反映）';
+ else amount='（効果の日産加算は未対応）';
+ return `１日 約${n.toFixed(1)}回${amount}`;
+}
 function syncLevel(){
  const item=state.selected;if(!item)return;
  const p=selectedSpecies();
@@ -37,6 +64,7 @@ function syncLevel(){
   return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}"><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">${unlock===1?'初期':'Lv.'+unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
  });
  document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
+ const daily=boxDailyEstimate(item);renderBoxDayFood(daily);
  document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{
   const name=item.subskills?.[index]||'',badge=window.PS_IMAGE_FILES.subskills?.[name];
   const locked=unlock>MAX_POKEMON_LEVEL||item.level<unlock;
@@ -49,7 +77,7 @@ function syncLevel(){
  const skillArt=skill?.image?window.PS_DEV_ASSETS.image(skill.image,'skill',skill.id,'full',skill.name):'';
  const isBoost=skill?.effectType?.startsWith('helper_boost_')&&currentEffect?.helps!=null;
  const summary=isBoost?`チーム全員が各${currentEffect.helps}回分おてつだい＋タイプ種類数ボーナス`:effect;
- document.getElementById('boxMainSkill').innerHTML=`<div class="psg-box-lead">${skillArt?`<span class="psg-box-skill-art">${skillArt}</span>`:''}${boxEsc(skill?.name||'未確認')}　Lv.${skillLv}</div><p class="psg-box-effect">${summary}</p><p class="psg-box-pending">１日の期待値：計算データ未確認</p><details class="psg-box-explanation"><summary>効果・計算の詳細</summary>${isBoost?`<p>${effect}</p>`:''}<p class="psg-box-muted">スキルLv補正・発動回数の計算データ未確認</p></details>`;
+ document.getElementById('boxMainSkill').innerHTML=`<div class="psg-box-lead">${skillArt?`<span class="psg-box-skill-art">${skillArt}</span>`:''}${boxEsc(skill?.name||'未確認')}　Lv.${skillLv}</div><p class="psg-box-effect">${summary}</p><p class="psg-box-pending" id="boxDaySkill">${boxDailySkillText(daily)}</p><details class="psg-box-explanation"><summary>効果・計算の詳細</summary>${isBoost?`<p>${effect}</p>`:''}<p class="psg-box-muted">発動回数は満杯前のおてつだいとストック上限から推定。天井・実際の発動タイミング・リボン補正は未対応。発動率は推定値を使用。</p></details>`;
  const mintIcon='<span class="psg-mint-mark" title="まっしろミント適用済み" aria-label="まっしろミント適用済み"><svg width="17" height="17" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16C3 7 9 3 17 3c0 8-4 14-12 14" fill="#fff" stroke="#5d9c75" stroke-width="1.5"/><path d="M4 17c3-4 6-7 11-10" fill="none" stroke="#5d9c75" stroke-width="1.2"/></svg></span>';
  const labels={speed:'おてつだい速度',energy:'げんき回復',food:'食材確率',skill:'スキル確率',exp:'EXP'};
  const natureText=item.mint?'ミント適用：性格補正なし':!item.nature?'性格未入力（無補正として仮計算）':!NATURE_EFFECTS[item.nature]?'性格名未対応（無補正として仮計算）':calc.nature.up?`${labels[calc.nature.up]}↑ / ${labels[calc.nature.down]}↓`:'性格補正なし';

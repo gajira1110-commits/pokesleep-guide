@@ -154,3 +154,10 @@
 #boxDetail .psg-milestone{padding:5px 8px;margin-top:4px;border-radius:8px;font-size:13px}
 #boxEvaluation>p{font-size:13px}
 #boxDetail #boxGrowth .psg-box-muted{font-size:12px}
+
+#boxDetail .psg-box-day-food{margin-top:6px}
+#boxDetail .psg-box-day-food-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px}
+#boxDetail .psg-box-day-food-line>small{font-weight:800;color:#52685d}
+#boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
+#boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
+#boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}

@@ -1,0 +1,100 @@
+// Shared daily estimate, assembled inside the core controller closure.
+// Bounded estimate: ten-minute energy bands and expected inventory occupancy.
+// Ingredients across unlocked slots are assumed equally likely; skill events are separate.
+function expectedStoredSkills(regularHelps,rate,stockLimit){
+ const probability=Math.max(0,Math.min(1,Number(rate)/100));
+ if(!Number.isFinite(regularHelps)||regularHelps<=0||!probability)return 0;
+ if(probability===1)return Math.min(stockLimit,regularHelps);
+ // Fractional expected helps: Poisson approximation to Bernoulli trials.
+ const lambda=-regularHelps*Math.log1p(-probability),none=Math.exp(-lambda);
+ return stockLimit===2?2-(2+lambda)*none:1-none;
+}
+function berryEnergyAtLevel(base,level){
+ if(!Number.isFinite(base)||!Number.isFinite(level))return null;
+ return Math.round(Math.max(base+level-1,base*Math.pow(1.025,level-1)));
+}
+function mealRecoveryAtEnergy(energy){
+ return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
+}
+function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true,favoriteBerries=[],areaBonus=0){
+ const interval=[2,4,8].includes(Number(collectionHours))?Number(collectionHours):4;
+ const startingEnergy=Math.max(0,Math.min(150,Math.round(Number(initialEnergy)||0)));
+ const favorites=new Set(favoriteBerries.filter(name=>Object.hasOwn(catalog?.berries||{},name)));
+ const areaFactor=1+Math.max(0,Math.min(200,Number(areaBonus)||0))/100;
+ const energyIntervalFactor=e=>e>=81?.45:e>=61?.52:e>=41?.58:e>=1?.66:1;
+ const speedContext=teamSpeedContext(ids,box,catalog);
+ const periods=[];for(let h=0;h<16;h+=interval)periods.push(Math.min(interval,16-h));
+ periods.push(8); // No collection during sleep; collect at wake-up.
+ const members=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean).map(item=>{
+  const species=catalog?.pokemon?.[item.no],stats=speedContext.members.get(item.id);
+  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
+   const chosen=item.ingredients?.[slot.unlock];
+   return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);
+  });
+  const reasons=[];
+  if(!stats?.speed)reasons.push('おてつだい時間');
+  if(!stats?.carry)reasons.push('最大所持数');
+  if(!Number.isFinite(stats?.food))reasons.push('食材確率');
+  if(!Number.isFinite(stats?.berryQty))reasons.push('きのみ数');
+  if(!Number.isFinite(catalog?.berries?.[species?.berry]))reasons.push('きのみエナジー');
+  if(!slots.length)reasons.push('食材候補');
+  else slots.forEach((slot,index)=>{if(!slot)reasons.push(`Lv.${species.ingredientSlots.filter(s=>s.unlock<=item.level)[index].unlock}の食材選択`)});
+  if(reasons.length)return {id:item.id,name:item.name,missing:true,reasons};
+  const chance=Math.max(0,Math.min(1,stats.food/100));
+  const averageFood=slots.reduce((sum,slot)=>sum+slot.qty,0)/slots.length;
+  const averageSize=chance*averageFood+(1-chance)*stats.berryQty;
+  if(averageSize<=0)return {id:item.id,name:item.name,missing:true};
+  const skill=catalog?.skills?.[species.mainSkillId];
+  const skillLevel=Math.max(1,Math.min(skill?.maxLevel||7,item.skillLevel||1));
+  const skillEffect=skill?.levels?.[skillLevel];
+  const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
+  return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
+   berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
+   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,
+   skillName:skill?.name||null,skillEffectType:skill?.effectType,
+   skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
+    (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillRecovery:skillEffect?.recovery,skillHelps:skillEffect?.helps,missing:false};
+ });
+ const valid=members.filter(m=>!m.missing);
+ let elapsedTicks=0;
+ periods.forEach((hours,periodIndex)=>{
+  let teamRecovery=0,allyRecovery=0;
+  for(const member of valid){
+   let helps=0;
+   for(let tick=0;tick<hours*6;tick++){
+    if(threeMeals&&[0,36,72].includes(elapsedTicks+tick))member.energy=Math.min(150,member.energy+mealRecoveryAtEnergy(member.energy));
+    helps+=600*(goodCamp?1.2:1)/(member.stats.speed*energyIntervalFactor(member.energy));
+    member.energy=Math.max(0,member.energy-1);
+   }
+   const regular=Math.min(helps,member.stats.carry*(goodCamp?1.2:1)/member.averageSize);
+   const extra=Math.max(0,helps-regular);
+   const triggers=Number.isFinite(member.stats.skill)&&member.skillName?expectedStoredSkills(regular,member.stats.skill,member.stockLimit):0;
+   member.skillTriggers+=triggers;
+   if(member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery))teamRecovery+=triggers*member.skillRecovery;
+   if(periodIndex<periods.length-1&&member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    member.energy=Math.min(150,member.energy+triggers*member.skillRecovery*member.stats.energyFactor);
+   if(member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    allyRecovery+=triggers*member.skillRecovery;
+   for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+regular*member.chance*slot.qty/member.slots.length);
+   member.berries+=regular*(1-member.chance)*member.stats.berryQty+extra*member.stats.berryQty;
+   member.overflow+=extra*member.stats.berryQty;
+  }
+  // The sleep period ends at the next wake-up; its stored skills do not change today's production.
+  if(periodIndex<periods.length-1&&(teamRecovery>0||allyRecovery>0)){
+   // Random ally target is approximated as an equal share; actual targeting favors low energy.
+   for(const member of valid)member.energy=Math.min(150,member.energy+(teamRecovery+allyRecovery/valid.length)*member.stats.energyFactor);
+  }
+  elapsedTicks+=hours*6;
+ });
+ for(const member of valid){
+  member.berryEnergyBase=member.berries*berryEnergyAtLevel(member.berryBase,member.level);
+  member.berryEnergy=member.berryEnergyBase*(favorites.has(member.berryName)?2:1)*areaFactor;
+ }
+ const foods=new Map();
+ valid.forEach(member=>member.foods.forEach((qty,name)=>foods.set(name,(foods.get(name)||0)+qty)));
+ const berryEnergy=valid.reduce((sum,member)=>sum+member.berryEnergy,0);
+ const skillEnergyBase=valid.reduce((sum,member)=>sum+(['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
+ const skillEnergy=skillEnergyBase*areaFactor;
+ return {members,foods,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
+}

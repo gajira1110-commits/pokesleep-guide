@@ -2,6 +2,39 @@
   "id": "fancy_apple_curry",
   "name": "とくせんリンゴカレー",
   "category": "カレー・シチュー",
-  "ingredients": [{"ingredientId": "fancy_apple", "qty": 7}],
-  "energy": {"min": {"level": 1, "value": 748}, "max": {"level": 70, "value": 2678}}
+  "ingredients": [
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 7
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 748
+    },
+    "max": {
+      "level": 70,
+      "value": 2678
+    },
+    "observed": [
+      {
+        "level": 18,
+        "value": 980,
+        "source": "user-screenshot/IMG_1516.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1516.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
 }

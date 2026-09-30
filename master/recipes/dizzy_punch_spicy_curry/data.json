@@ -1,0 +1,40 @@
+{
+  "id": "dizzy_punch_spicy_curry",
+  "name": "ピヨピヨパンチ辛口カレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "coffee",
+      "qty": 11
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 11
+    },
+    {
+      "ingredientId": "honey",
+      "qty": 11
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 32,
+        "value": 9522,
+        "source": "user-screenshot/IMG_1514.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1514.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

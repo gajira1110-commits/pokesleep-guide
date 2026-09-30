@@ -1,0 +1,40 @@
+{
+  "id": "attract_apple_cheese_salad",
+  "name": "メロメロりんごのチーズサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 15
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 5
+    },
+    {
+      "ingredientId": "pure_oil",
+      "qty": 3
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 11,
+        "value": 3159,
+        "source": "user-screenshot/IMG_1521.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1521.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

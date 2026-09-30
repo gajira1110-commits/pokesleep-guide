@@ -1,0 +1,40 @@
+{
+  "id": "sweet_scent_chocolate_cake",
+  "name": "あまいかおりチョコケーキ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "honey",
+      "qty": 9
+    },
+    {
+      "ingredientId": "soothing_cacao",
+      "qty": 8
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 7
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 16,
+        "value": 4324,
+        "source": "user-screenshot/IMG_1525.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1525.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

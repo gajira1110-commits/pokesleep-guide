@@ -24,11 +24,26 @@
     "max": {
       "level": 70,
       "value": 10532
-    }
+    },
+    "observed": [
+      {
+        "level": 29,
+        "value": 4648,
+        "source": "user-screenshot/IMG_1520.png"
+      }
+    ]
   },
   "verifiedAt": "2026-09-30",
   "sources": [
-    "https://game8.jp/pokemonsleep/546429",
-    "https://wikiwiki.jp/poke_sleep/%E6%96%99%E7%90%86/%E3%83%AC%E3%82%B7%E3%83%94%E3%81%94%E3%81%A8%E3%81%AE%E7%8D%B2%E5%BE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%A8%E3%83%8A%E3%82%B8%E3%83%BC%E9%87%8F"
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1520.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
   ]
 }

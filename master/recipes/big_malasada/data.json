@@ -1,0 +1,40 @@
+{
+  "id": "big_malasada",
+  "name": "おおきいマラサダ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "pure_oil",
+      "qty": 10
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 7
+    },
+    {
+      "ingredientId": "honey",
+      "qty": 6
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 11,
+        "value": 3588,
+        "source": "user-screenshot/IMG_1525.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1525.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

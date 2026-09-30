@@ -1,0 +1,44 @@
+{
+  "id": "bulk_up_bean_curry",
+  "name": "ビルドアップマメカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "greengrass_soybeans",
+      "qty": 12
+    },
+    {
+      "ingredientId": "bean_meat",
+      "qty": 6
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 4
+    },
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 4
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 43,
+        "value": 7014,
+        "source": "user-screenshot/IMG_1514.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1514.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

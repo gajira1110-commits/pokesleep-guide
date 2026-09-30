@@ -1,0 +1,44 @@
+{
+  "id": "role_play_pumpkaboo_stew",
+  "name": "なりきりバケッチャシチュー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "plump_pumpkin",
+      "qty": 10
+    },
+    {
+      "ingredientId": "bean_meat",
+      "qty": 16
+    },
+    {
+      "ingredientId": "potato",
+      "qty": 18
+    },
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 25
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 28,
+        "value": 24213,
+        "source": "user-screenshot/IMG_1513.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1513.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

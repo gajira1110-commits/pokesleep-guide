@@ -1,0 +1,36 @@
+{
+  "id": "grilled_tail_curry",
+  "name": "あぶりテールカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "tasty_tail",
+      "qty": 8
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 25
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 23,
+        "value": 10626,
+        "source": "user-screenshot/IMG_1514.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1514.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

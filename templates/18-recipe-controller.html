@@ -63,20 +63,26 @@
  function render(){
   const categoryRecipes=recipes.filter(r=>r.category===selectedCategory);
   const filtered=categoryRecipes.filter(r=>!selectedIngredient||r.ingredients.some(i=>i.name===selectedIngredient));
-  filtered.sort((a,b)=>sort.value==='name'?a.name.localeCompare(b.name,'ja'):
-   sort.value==='energy-asc'?(Number(a.energy?.max?.value)||0)-(Number(b.energy?.max?.value)||0):
-   (Number(b.energy?.max?.value)||0)-(Number(a.energy?.max?.value)||0));
+  filtered.sort((a,b)=>{
+   if(sort.value==='name')return a.name.localeCompare(b.name,'ja');
+   const av=a.energy?.max?.value,bv=b.energy?.max?.value;
+   if(!Number.isFinite(av)||!Number.isFinite(bv))return Number.isFinite(av)?-1:Number.isFinite(bv)?1:a.name.localeCompare(b.name,'ja');
+   return sort.value==='energy-asc'?av-bv:bv-av;
+  });
   count.textContent=`${filtered.length} / ${categoryRecipes.length} 件の確認済みレシピ`;
   list.replaceChildren();
   if(!filtered.length){const empty=document.createElement('p');empty.className='note';empty.textContent=categoryRecipes.length?'該当する料理はありません。':'この部門のレシピはまだ確認・登録していません。';list.append(empty);return}
   for(const recipe of filtered){
    const card=document.createElement('details');card.className='psg-recipe-entry';card.dataset.recipeId=recipe.id;
    const summary=document.createElement('summary');summary.className='psg-recipe-heading';
-   const title=document.createElement('strong');title.textContent=recipe.name;
+   const title=document.createElement('strong');title.className='psg-recipe-title';if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=44;art.height=44;art.className='psg-recipe-art';art.onerror=()=>{art.hidden=true};title.append(art)}const titleText=document.createElement('span');titleText.textContent=recipe.name;title.append(titleText);
    const energy=document.createElement('div');energy.className='psg-recipe-energy';
    const max=document.createElement('strong');max.className='psg-recipe-energy-max';
-   max.innerHTML=Number.isFinite(recipe.energy?.max?.value)?`<small>Lv.${recipe.energy.max.level}</small> ${recipe.energy.max.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
-   const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1 未確認）';
+   const verified=recipe.energy?.max;
+   const observed=[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];
+   const shown=verified||observed;
+   max.innerHTML=Number.isFinite(shown?.value)?`<small>${verified?'':'確認値 '}Lv.${shown.level}</small> ${shown.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
+   const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1・Lv.70 未確認）';
    energy.append(max,min);summary.append(title,energy);
    const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
    for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.title=item.name;chip.setAttribute('aria-label',`${item.name} ${item.qty}個`);chip.append(icon(item.name));const qty=document.createElement('b');qty.textContent=`×${item.qty}`;chip.append(qty);ingredientRow.append(chip)}
