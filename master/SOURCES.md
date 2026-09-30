@@ -71,3 +71,8 @@ v181のデータ追加：[ロコン](https://wiki.pokesleep.com/ja/pokemon/vulpi
 v182のデータ追加：[ニャース](https://wiki.pokesleep.com/ja/pokemon/meowth)・[ペルシアン](https://wiki.pokesleep.com/ja/pokemon/persian)の能力、食材、進化、寝顔、ワカクサ本島・ラピスラズリ湖畔の最低ランクとDPRを非公式資料で照合。確率は推定値。[おてつだいブースト](https://wiki.pokesleep.com/ja/main-skills/helperboost)の「みず」版Lv.1–6の基礎回数と異なるみずタイプ種数による追加回数を登録し、日産の即時おてつだいへは未反映。[たんじゅんホワイトシチュー](https://game8.jp/pokemonsleep/546423)と[ねがいごとアップルパイ](https://game8.jp/pokemonsleep/546444)の必要食材、Lv.1／Lv.70エナジーを照合。画像・EXデータは未登録。
 
 v183のデータ追加：[ライコウ](https://wiki.pokesleep.com/ja/pokemon/raikou)・[エンテイ](https://wiki.pokesleep.com/ja/pokemon/entei)・[スイクン](https://wiki.pokesleep.com/ja/pokemon/suicune)の能力・食材・寝顔3種・通常フィールドのランクとDPRを照合。確率は推定値。[公式のお知らせ](https://www.pokemonsleep.net/news/333032323439373435303334373732343831/)で3匹を特別なポケモンと確認し、チーム内合計1匹に制限。チームからの選択・保存データ読込・バックアップ復元に共通の制限を適用。[おてつだいブースト](https://wiki.pokesleep.com/ja/main-skills/helperboost)のでんき版Lv.1–6を追加。即時おてつだいによる日産は未反映。画像とEX出現データは未登録。
+
+
+v190：2026-09-30にコイル、レアコイル、ジバコイルの能力・食材・進化条件・各3種の寝顔を照合。出典は各ポケモンのdata.jsonに記録。ユーザー提供の実機画像IMG_1530.png（コイル・レアコイル）とIMG_1539.png（ジバコイル）でも寝顔の分母が3と確認できる。発見済みの分子は取り込まない。食材・スキル確率は非公式資料の推定値。画像・フィールド別出現値は未投入。
+
+メインスキル「ビルドアップ(料理アシストS)」をLv.1〜7の食材数と大成功確率上昇量付きで追加。名称・効果の存在は公式Ver.3.3.0、数値は攻略・検証Wikiの効果量表で照合。スキル一覧の表示用で、チーム日産や料理大成功計算への適用は未対応。

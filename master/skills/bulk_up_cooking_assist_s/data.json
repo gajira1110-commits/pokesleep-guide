@@ -1,0 +1,54 @@
+{
+  "id": "bulk_up_cooking_assist_s",
+  "name": "ビルドアップ(料理アシストS)",
+  "maxLevel": 7,
+  "tags": [
+    "食材",
+    "料理",
+    "大成功"
+  ],
+  "effectType": "cooking_assist",
+  "levels": {
+    "1": {
+      "amount": 6,
+      "chanceBonus": 1,
+      "description": "ランダムな食材を6個ゲットし、料理の大成功確率を1%上げる"
+    },
+    "2": {
+      "amount": 8,
+      "chanceBonus": 2,
+      "description": "ランダムな食材を8個ゲットし、料理の大成功確率を2%上げる"
+    },
+    "3": {
+      "amount": 11,
+      "chanceBonus": 2,
+      "description": "ランダムな食材を11個ゲットし、料理の大成功確率を2%上げる"
+    },
+    "4": {
+      "amount": 14,
+      "chanceBonus": 3,
+      "description": "ランダムな食材を14個ゲットし、料理の大成功確率を3%上げる"
+    },
+    "5": {
+      "amount": 17,
+      "chanceBonus": 3,
+      "description": "ランダムな食材を17個ゲットし、料理の大成功確率を3%上げる"
+    },
+    "6": {
+      "amount": 21,
+      "chanceBonus": 4,
+      "description": "ランダムな食材を21個ゲットし、料理の大成功確率を4%上げる"
+    },
+    "7": {
+      "amount": 24,
+      "chanceBonus": 5,
+      "description": "ランダムな食材を24個ゲットし、料理の大成功確率を5%上げる"
+    }
+  },
+  "sources": [
+    "https://www.pokemonsleep.net/news/333730373236393633383034383937323831/",
+    "https://wikiwiki.jp/poke_sleep/メインスキル/料理アシスト/ビルドアップ"
+  ],
+  "verifiedAt": "2026-09-30",
+  "calculationStatus": "未対応"
+}
