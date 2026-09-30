@@ -1,0 +1,40 @@
+{
+  "id": "spore_mushroom_salad",
+  "name": "キノコのほうしサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 17
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 8
+    },
+    {
+      "ingredientId": "pure_oil",
+      "qty": 8
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 14,
+        "value": 7265,
+        "source": "user-screenshot/IMG_1519.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1519.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "sacred_sword_sukiyaki_curry",
+  "name": "いあいぎりすき焼きカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "large_leek",
+      "qty": 27
+    },
+    {
+      "ingredientId": "bean_meat",
+      "qty": 26
+    },
+    {
+      "ingredientId": "honey",
+      "qty": 26
+    },
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 22
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 47,
+        "value": 46887,
+        "source": "user-screenshot/IMG_1512.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1512.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

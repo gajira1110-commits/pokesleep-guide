@@ -3,13 +3,50 @@
   "name": "ワカクサカレーパン",
   "category": "カレー・シチュー",
   "ingredients": [
-    {"ingredientId": "warming_ginger", "qty": 20},
-    {"ingredientId": "fiery_herb", "qty": 20},
-    {"ingredientId": "greengrass_soybeans", "qty": 8},
-    {"ingredientId": "pure_oil", "qty": 15}
+    {
+      "ingredientId": "warming_ginger",
+      "qty": 20
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 20
+    },
+    {
+      "ingredientId": "greengrass_soybeans",
+      "qty": 8
+    },
+    {
+      "ingredientId": "pure_oil",
+      "qty": 15
+    }
   ],
   "energy": {
-    "min": {"level": 1, "value": 10945},
-    "max": {"level": 70, "value": 39183}
-  }
+    "min": {
+      "level": 1,
+      "value": 10945
+    },
+    "max": {
+      "level": 70,
+      "value": 39183
+    },
+    "observed": [
+      {
+        "level": 24,
+        "value": 15870,
+        "source": "user-screenshot/IMG_1513.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1513.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
 }

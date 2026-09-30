@@ -1,0 +1,40 @@
+{
+  "id": "slowpoke_tail_pepper_salad",
+  "name": "ヤドンテールのペッパーサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "ingredientId": "tasty_tail",
+      "qty": 10
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 10
+    },
+    {
+      "ingredientId": "pure_oil",
+      "qty": 15
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 21,
+        "value": 11192,
+        "source": "user-screenshot/IMG_1519.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1519.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}
