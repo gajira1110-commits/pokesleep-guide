@@ -1,0 +1,125 @@
+let teamInitialEnergy=100;
+let teamGoodCamp=false;
+let teamMeals=true;
+const berryChoices=[...document.querySelectorAll('.psg-favorite-berry')];
+for(const select of berryChoices){
+ for(const name of [...knownBerryNames].sort((a,b)=>a.localeCompare(b,'ja'))){
+  select.add(new Option(name,name));
+ }
+ select.onchange=()=>{
+  fieldProfile.weekly[fieldProfile.selectedFieldId]={weekKey:currentFieldWeek(),berries:berryChoices.map(choice=>choice.value)};
+  saveFieldProfile();
+ };
+}
+const fieldSelect=document.getElementById('fieldSelect');
+const homeFieldSelect=document.getElementById('homeFieldSelect');
+const homeMealSelect=document.getElementById('homeMealSelect');
+function activeMealCategory(){return fieldProfile.meal?.weekKey===currentFieldWeek()?fieldProfile.meal.category:''}
+homeMealSelect.onchange=()=>{fieldProfile.meal=homeMealSelect.value?{weekKey:currentFieldWeek(),category:homeMealSelect.value}:null;saveFieldProfile()};
+const fieldOrder=['greengrass','cyan','taupe','snowdrop','lapis','old_gold','amber'];
+for(const id of fieldOrder){
+ const field=window.PS_CATALOG?.fields?.[id];
+ if(field){fieldSelect.add(new Option(field.name,id));homeFieldSelect.add(new Option(field.name,id))}
+}
+const areaBonusInput=document.getElementById('fieldAreaBonus');
+function activeFieldBerries(){
+ const entry=fieldProfile.weekly[fieldProfile.selectedFieldId];
+ return entry?.weekKey===currentFieldWeek()?entry.berries:(window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.favoriteBerries||[]);
+}
+function berryIcon(name){
+ const src=window.PS_IMAGE_FILES?.berries?.[name];if(!src)return null;
+ const image=document.createElement('img');image.className='psg-master-berry-icon';image.src=src;image.alt=name;image.title=name;image.width=28;image.height=28;return image;
+}
+function renderFieldGallery(){
+ const host=document.getElementById('fieldGallery');host.replaceChildren();
+ for(const id of fieldOrder){
+  const field=window.PS_CATALOG.fields[id];if(!field)continue;
+  const button=document.createElement('button');button.type='button';button.className='psg-field-choice';button.dataset.fieldId=id;
+  button.setAttribute('aria-pressed',String(id===fieldProfile.selectedFieldId));
+  const image=window.PS_IMAGE_FILES.fields[id];
+  if(image){const img=document.createElement('img');img.src=image;img.alt='';img.width=76;img.height=86;button.append(img)}
+  const label=document.createElement('div'),name=document.createElement('strong');name.textContent=field.name;label.append(name);
+  const favorites=document.createElement('div');favorites.className='psg-field-berry-icons';
+  for(const berry of field.favoriteBerries||[]){const icon=berryIcon(berry);if(icon)favorites.append(icon)}
+  if(favorites.childElementCount)label.append(favorites);button.append(label);
+  button.onclick=()=>{fieldSelect.value=id;fieldSelect.dispatchEvent(new Event('change'))};host.append(button);
+ }
+ for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
+  const row=document.createElement('div');row.className='psg-field-choice';
+  const image=document.createElement('img');image.src=`assets/fields/${id}/image.webp`;image.alt='';image.width=76;image.height=86;row.append(image);
+  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='計算設定は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);host.append(row);
+ }
+}
+function renderFieldControls(){
+ renderFieldGallery();
+ fieldSelect.value=fieldProfile.selectedFieldId;
+ homeFieldSelect.value=fieldProfile.selectedFieldId;
+ homeMealSelect.value=activeMealCategory();
+ areaBonusInput.value=String(fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ const berries=activeFieldBerries();
+ berryChoices.forEach((choice,index)=>{choice.value=berries[index]||''});
+ const field=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId];
+ document.getElementById('fieldWeekLabel').textContent=`今週：${currentFieldWeek()}開始（端末の現地時間・月曜4時切替）・${field?.favoriteMode==='fixed'?'通常は固定3種':'毎週ランダム'}`;
+ document.getElementById('fieldFavoriteReset').hidden=fieldProfile.weekly[fieldProfile.selectedFieldId]?.weekKey!==currentFieldWeek();
+ const fieldName=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.name||'フィールド未設定';
+ const summary=document.getElementById('teamFieldSummary');summary.replaceChildren(document.createTextNode(`${fieldName}・エリア＋${areaBonusInput.value}％・好物 `));
+ for(const berry of berries.filter(Boolean)){const icon=berryIcon(berry);if(icon)summary.append(icon);else summary.append(document.createTextNode(berry+' '))}
+ if(!berries.filter(Boolean).length)summary.append(document.createTextNode('未設定'));
+ renderFieldEncounters(field);
+}
+function renderFieldEncounters(field){
+ const host=document.getElementById('fieldEncounterList');if(!host)return;
+ host.replaceChildren();
+ const encounters=field?.encounters||[];
+ const rankFilter=document.getElementById('fieldRankFilter');
+ const rankOrder={ノーマル:0,スーパー:1,ハイパー:2,マスター:3};
+ const rankValue=rank=>rankOrder[rank.tier]*100+rank.level;
+ const oldValue=rankFilter.value;
+ const rankOptions=(field?.rankThresholds||[]).map(rank=>[`${rank.tier}:${rank.level}`,rank]);
+ rankFilter.replaceChildren(new Option('すべて表示',''));
+ for(const [value,rank] of rankOptions)rankFilter.add(new Option(`${rank.tier}${rank.level}まで`,value));
+ rankFilter.value=oldValue;
+ if(!rankFilter.value)rankFilter.value='';
+ rankFilter.onchange=()=>renderFieldEncounters(field);
+ const selected=rankOptions.find(([value])=>value===rankFilter.value)?.[1];
+ document.getElementById('fieldRankEnergy').textContent=selected?`${selected.tier}${selected.level}に必要なカビゴンエナジー：${selected.energy.toLocaleString()}`:'ランクを選ぶと必要なカビゴンエナジーを表示します。';
+ const rankList=document.getElementById('fieldRankThresholdList');rankList.replaceChildren();
+ for(const [,rank] of rankOptions){const line=document.createElement('div');line.className='psg-field-encounter-row';const label=document.createElement('span');label.textContent=`${rank.tier}${rank.level}`;const energy=document.createElement('strong');energy.textContent=rank.energy.toLocaleString();line.append(label,energy);rankList.append(line)}
+ if(!encounters.length){document.getElementById('fieldEncounterCount').textContent='';const p=document.createElement('p');p.className='note';p.textContent='このフィールドの出現データは未投入です。';host.append(p);return}
+ const visible=selected?encounters.filter(item=>rankValue(item.rank)<=rankValue(selected)):encounters;
+ document.getElementById('fieldEncounterCount').textContent=`${visible.length} / ${encounters.length} 件の収録済み寝顔`;
+ const grouped=new Map();
+ for(const item of visible){
+  const no=String(Number(item.sleepStyleId.split('_')[0]));
+  const pokemon=window.PS_CATALOG.pokemon?.[no];
+  const style=window.PS_CATALOG.sleepStyles?.[no]?.find(row=>row[2]===item.sleepStyleId);
+  if(!pokemon||!style)continue;
+  if(!grouped.has(no))grouped.set(no,{pokemon,rows:[]});
+  grouped.get(no).rows.push({item,style});
+ }
+ for(const {pokemon,rows} of [...grouped.values()].sort((a,b)=>a.pokemon.no-b.pokemon.no)){
+  const section=document.createElement('section');section.className='psg-field-species';
+  const title=document.createElement('button');title.type='button';title.className='psg-field-species-name';
+  title.textContent=`No.${String(pokemon.no).padStart(3,'0')} ${pokemon.name} ›`;
+  title.onclick=()=>window.openPokemonDetail?.(pokemon.no);
+  section.append(title);
+  for(const {item,style} of rows.sort((a,b)=>a.style[1]-b.style[1])){
+   const row=document.createElement('div');row.className='psg-field-encounter-row';
+   const name=document.createElement('span');name.textContent=`★${style[1]} ${style[0]}`;
+   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+   row.append(name,rank);section.append(row);
+  }
+  host.append(section);
+ }
+ if(!visible.length){const p=document.createElement('p');p.className='note';p.textContent='このランクまでに収録済みの寝顔はありません。';host.append(p)}
+}
+function selectField(id){fieldProfile.selectedFieldId=id;document.getElementById('fieldRankFilter').value='';saveFieldProfile()}
+fieldSelect.onchange=()=>selectField(fieldSelect.value);
+homeFieldSelect.onchange=()=>selectField(homeFieldSelect.value);
+document.getElementById('fieldFavoriteReset').onclick=()=>{delete fieldProfile.weekly[fieldProfile.selectedFieldId];saveFieldProfile()};
+areaBonusInput.onchange=()=>{
+ fieldProfile.areaBonuses[fieldProfile.selectedFieldId]=Math.max(0,Math.min(200,Number(areaBonusInput.value)||0));
+ saveFieldProfile();
+};
+document.getElementById('teamFieldLink').onclick=()=>{renderFieldControls();go('fieldPage')};
+renderFieldControls();

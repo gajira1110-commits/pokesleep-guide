@@ -1,0 +1,118 @@
+/* Individual records may later contain:
+ favorite:boolean, training:boolean,
+ shiny:'confirmed'|'not_shiny'|'unknown'.
+ Shiny is not exposed as a freely editable tag. */
+const screens=[...document.querySelectorAll('.screen')],tabs=[...document.querySelectorAll('nav button')];
+
+function go(id,push=true){
+ if(push&&state.screen!==id)state.history.push(state.screen);
+ state.screen=id;
+ if(id==='fieldPage')renderFieldControls();
+ screens.forEach(s=>s.classList.toggle('active',s.id===id));
+ const activeTab=['recipePage','skillPage','fieldPage'].includes(id)?'info':id;
+ tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));
+ window.scrollTo(0,0);
+ requestAnimationFrame(updateTeamFaceDock);
+}
+tabs.forEach(b=>b.onclick=()=>{state.history=[];go(b.dataset.tab,false)});
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>go(state.history.pop()||'home',false));
+document.querySelectorAll('[data-info-page]').forEach(b=>b.onclick=()=>go(b.dataset.infoPage));
+
+const typeClass=t=>({'くさ':'grass','ほのお':'fire','みず':'water','でんき':'electric','むし':'bug','ノーマル':'normal','どく':'poison','じめん':'ground','ひこう':'flying','ゴースト':'ghost','エスパー':'psychic','こおり':'ice','はがね':'steel','かくとう':'fighting','いわ':'rock','あく':'dark','ドラゴン':'dragon','フェアリー':'fairy'}[t]||'normal');
+const typeSymbol=t=>({'くさ':'草','ほのお':'炎','むし':'虫','みず':'水','でんき':'電','どく':'毒','ノーマル':'普'}[t]||t);
+// Small original SVG previews; actual ingredient WebP files take priority when added.
+const filterIconShapes={
+ 'くさ':`<path d="M15 46C18 24 35 13 51 13c0 22-11 39-32 38" fill="#78bf87" stroke="#35845a" stroke-width="3"/><path d="M17 51c7-11 15-18 29-29" fill="none" stroke="#35845a" stroke-width="3"/><path d="M30 37l-3-11m8 6 12-1" stroke="#4e9d67" stroke-width="2"/>`,
+ 'ほのお':`<path d="M32 8c3 12 12 16 8 26 6-4 6-9 7-11 12 21 0 36-15 36C16 59 9 45 17 32c1 6 5 7 7 8-4-13 2-25 8-32z" fill="#f47546" stroke="#cb4939" stroke-width="2"/><path d="M32 31c2 9 7 12 4 20-3 6-12 4-12-4 0-6 5-12 8-16z" fill="#ffd47c"/>`,
+ 'むし':`<path d="M24 23 18 11m22 12 6-12M19 34l-10-3m10 12-10 6m36-15 10-3m-10 12 10 6" stroke="#5f8158" stroke-width="3" stroke-linecap="round"/><ellipse cx="32" cy="36" rx="15" ry="20" fill="#9acb78" stroke="#4d8751" stroke-width="3"/><path d="M17 31h30M32 31v24" stroke="#4d8751" stroke-width="2"/><circle cx="26" cy="25" r="2" fill="#233d38"/><circle cx="38" cy="25" r="2" fill="#233d38"/>`,
+ 'あまいミツ':`<path d="M16 23h32l-3 30H19z" fill="#e6a53a" stroke="#965e32" stroke-width="3"/><path d="M14 19q18-7 36 0v7H14z" fill="#ffd980" stroke="#965e32" stroke-width="3"/><path d="M25 25v12q3 5 6 0V26m6 0v8q3 4 6 0v-9" fill="#ffeb9e" stroke="#c6872c" stroke-width="2"/>`,
+ 'とくせんリンゴ':`<path d="M32 19c-5-8-14-6-18 0-9 15 1 36 13 36 4 0 6-2 10 0 12 0 23-21 14-36-4-6-13-8-19 0z" fill="#e95f50" stroke="#ac453a" stroke-width="3"/><path d="M32 20c0-7 3-11 9-13" fill="none" stroke="#755332" stroke-width="3"/><path d="M34 15c6-9 13-8 18-7-3 8-10 12-18 10z" fill="#79ac67" stroke="#4e8255" stroke-width="2"/>`,
+ 'あんみんトマト':`<circle cx="32" cy="36" r="21" fill="#ee6651" stroke="#ac403d" stroke-width="3"/><path d="M32 20c-6-11-3-14 0-13 4 5 2 10 0 13z" fill="#6c9f60"/><path d="m32 21-8-5 2 9-8 4 10-1 4 6 4-6 10 1-8-4 2-9z" fill="#77ac66" stroke="#4d7e50" stroke-width="2"/><circle cx="23" cy="39" r="3" fill="#fa9b7e"/>`,
+ 'ほっこりポテト':`<path d="M16 32C15 18 25 13 37 17c13 1 20 11 15 25-6 15-25 15-36 4-5-5-4-10 0-14z" fill="#d5aa68" stroke="#8c693f" stroke-width="3"/><circle cx="26" cy="28" r="2" fill="#a47b48"/><circle cx="41" cy="36" r="2" fill="#a47b48"/><circle cx="29" cy="45" r="2" fill="#a47b48"/>`,
+ 'マメミート':`<path d="M13 33c0-13 14-22 29-18 12 4 16 19 8 30-8 12-24 10-34 1-5-4-6-9-3-13z" fill="#d77b78" stroke="#8f4c4d" stroke-width="3"/><path d="M19 36c5-5 12-5 17-1 6 3 11 1 16-3" fill="none" stroke="#f6c3ad" stroke-width="4" stroke-linecap="round"/><circle cx="26" cy="24" r="3" fill="#f7d9c6"/>`,
+ 'あったかジンジャー':`<path d="M22 43 15 32l9-6 7 7 6-16 12 4-5 15 11 6-6 11-15-7-7 10-11-5z" fill="#e7bb7c" stroke="#ac774d" stroke-width="3" stroke-linejoin="round"/><path d="m24 28 9 10m7-5 7 8" stroke="#f5d9ab" stroke-width="3"/>`,
+ 'げきからハーブ':`<path d="M31 53c-4-14-3-28 6-42" fill="none" stroke="#628b55" stroke-width="4"/><path d="M31 29c-12-16-20-8-18 1 1 7 12 10 18 6m3-13c2-17 15-17 19-11 4 7-7 15-19 17m-2 15c9-12 18-9 20-3 1 6-10 11-20 10" fill="#83b56a" stroke="#448354" stroke-width="2"/>`,
+ 'ワカクサ大豆':`<path d="M11 39c2-14 19-19 41-11 3 22-18 29-39 19z" fill="#8bc676" stroke="#4e8d59" stroke-width="3"/><circle cx="24" cy="37" r="5" fill="#d2e5a2"/><circle cx="36" cy="39" r="5" fill="#d2e5a2"/><circle cx="46" cy="37" r="4" fill="#d2e5a2"/>`,
+ 'リラックスカカオ':`<path d="M32 11c-13 1-21 10-20 24 1 12 10 20 20 20s19-8 20-20C53 21 45 12 32 11z" fill="#a36f4d" stroke="#704b37" stroke-width="3"/><path d="M32 15v36m0-36c-8 8-10 20-8 31m8-31c8 8 10 20 8 31" fill="none" stroke="#d2a47a" stroke-width="3"/>`,
+ 'モーモーミルク':`<path d="M24 8h16v8l5 6v33H19V22l5-6z" fill="#f9fcfb" stroke="#6691ad" stroke-width="3"/><path d="M19 25h26v29H19z" fill="#eef6fa"/><path d="M24 8h16v8H24z" fill="#82b7d4"/><path d="M19 36c8-6 18 6 26 0v9c-8 6-18-6-26 0z" fill="#8ac2dd"/>`,
+ 'ワカクサコーン':`<path d="M17 41c2 11 9 16 15 17 6-1 13-6 15-17l-15 5z" fill="#63a76a" stroke="#4a8758" stroke-width="2"/><path d="M22 14q10-8 20 0v31q-10 9-20 0z" fill="#eec75e" stroke="#ac803a" stroke-width="3"/><path d="M22 24h20M22 34h20M28 16v30m8-30v30" stroke="#fff0a4" stroke-width="2"/>`,
+ 'ピュアなオイル':`<path d="M27 7h10v7H27z" fill="#c3b592" stroke="#817755" stroke-width="2"/><path d="M23 16h18l4 9v28H19V25z" fill="#f5d874" stroke="#a58037" stroke-width="3"/><path d="M22 30h20v20H22z" fill="#f7e5a2"/><path d="M27 7h10v7H27z" fill="#dfebe7"/>`,
+ 'とくせんエッグ':`<path d="M32 11c-10 0-19 19-19 29 0 11 8 18 19 18s19-7 19-18c0-10-9-29-19-29z" fill="#f6e8c5" stroke="#b8a782" stroke-width="3"/><path d="M19 42c2 7 7 10 13 10" fill="none" stroke="#fff7e4" stroke-width="3" stroke-linecap="round"/>`,
+ 'あじわいキノコ':`<path d="M29 34h8l3 20H26z" fill="#f0e2ca" stroke="#976c57" stroke-width="3"/><path d="M11 32c1-14 11-22 21-22s20 8 21 22c-11 7-31 7-42 0z" fill="#af725f" stroke="#754c42" stroke-width="3"/><circle cx="24" cy="24" r="4" fill="#f7e2d1"/><circle cx="42" cy="29" r="3" fill="#f7e2d1"/>`,
+ 'つやつやアボカド':`<path d="M33 10c8-1 19 10 19 25 0 14-9 23-20 23S12 49 12 35c0-14 11-26 21-25z" fill="#7cb56a" stroke="#477c52" stroke-width="3"/><path d="M33 17c7 0 13 9 13 19 0 10-6 16-14 16s-14-6-14-16c0-10 7-19 15-19z" fill="#e9df8e"/><circle cx="32" cy="39" r="9" fill="#a56d4b"/>`,
+ 'ずっしりカボチャ':`<path d="M32 19v-9h7" fill="none" stroke="#56865b" stroke-width="4" stroke-linecap="round"/><path d="M32 20C16 13 9 24 11 39c2 13 13 19 21 16 8 3 19-3 21-16 2-15-5-26-21-19z" fill="#e39b57" stroke="#a56540" stroke-width="3"/><path d="M32 20c-11 8-11 26 0 35m0-35c11 8 11 26 0 35" fill="none" stroke="#efb475" stroke-width="3"/>`
+ ,'めざましコーヒー':`<ellipse cx="23" cy="28" rx="10" ry="15" transform="rotate(-25 23 28)" fill="#8d6043" stroke="#61432f" stroke-width="3"/><path d="M20 16q10 12 6 25" fill="none" stroke="#cf9a68" stroke-width="3"/><ellipse cx="42" cy="40" rx="10" ry="15" transform="rotate(30 42 40)" fill="#9f704b" stroke="#61432f" stroke-width="3"/><path d="M47 28q-11 11-10 23" fill="none" stroke="#dfb17c" stroke-width="3"/>`
+ ,'おいしいシッポ':`<path d="M16 48c0-13 9-31 27-36 5-1 9 4 7 9-4 10-13 16-23 21-3 2-4 6-4 11z" fill="#eaa897" stroke="#a86666" stroke-width="3"/><path d="M21 43c8-13 18-20 28-23" fill="none" stroke="#f8d1b8" stroke-width="3"/>`
+ ,'ふといながねぎ':`<path d="M28 55c0-17 1-27 3-38l8 1c-2 15-2 27-3 37z" fill="#f1f2d5" stroke="#8a9e70" stroke-width="2"/><path d="M30 25C19 20 14 13 12 6c13 2 20 10 23 19M35 24c4-11 11-16 20-18-2 10-8 18-19 24" fill="#71b979" stroke="#43895d" stroke-width="2"/>`
+};
+const filterIconData=name=>filterIconShapes[name]?`data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#faf8ee"/>${filterIconShapes[name]}</svg>`)}`:null;
+window.PS_INGREDIENT_FALLBACK_ICON=filterIconData;
+const typeFilterArt=t=>window.PS_TYPE_IMAGES?.[t]?`<img class="psg-type-icon" src="${window.PS_TYPE_IMAGES[t]}" alt="">`:filterIconData(t)?`<img src="${filterIconData(t)}" alt="">`:`<span class="filter-pictogram" aria-hidden="true">${typeSymbol(t)}</span>`;
+window.PS_TYPE_ART=typeFilterArt;
+const ingredientFilterArt=name=>{
+ const visual=ingredientVisual(name);
+ if(visual?.image)return window.PS_DEV_ASSETS.image(visual.image,'ingredient',name,'full','');
+ return filterIconData(name)?`<img src="${filterIconData(name)}" alt="">`:'';
+};
+const filterCaption=name=>`<span class="filter-caption">${name}</span>`;
+const specialtyIconPaths={'きのみ':'berry_pixel.png','食材':'ingredient_pixel.png','スキル':'skill_pixel.png','オール':'all_pixel.png'};
+const hydrateSpecialtyIcons=root=>root.querySelectorAll('[data-specialty-icon]').forEach(img=>{img.src=window.PS_SPECIALTY_IMAGES[img.dataset.specialtyIcon]||''});
+const specIcon=s=>specialtyIconPaths[s]?`<img class="psg-specialty-icon" data-specialty-icon="${specialtyIconPaths[s].replace('_pixel.png','')}" alt="${s}">`:'◌';
+const ingredientVisual=name=>window.PS_CATALOG?.ingredientVisual(name);
+const ingIcon=ingredient=>{const name=ingredient?.name,visual=ingredientVisual(name);return !name?'◌':visual?.image?window.PS_DEV_ASSETS.image(visual.image,'ingredient',name,'full',name):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'};
+const searchKey=text=>String(text||'').normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).toLowerCase();
+function matchesDexFilters(p,q,filters){
+ return (!q||searchKey(p.name).includes(q))
+   &&(!filters.types.size||filters.types.has(p.type))
+   &&(!filters.ingredients.size||p.ingredients?.some(x=>filters.ingredients.has(x.name)))
+   &&(!filters.specs.size||filters.specs.has(p.specialty));
+}
+function discoveryLabel(p){
+ const styles=window.PS_CATALOG.sleepStyles?.[p.no]||[],saved=readSleepBackup();
+ return styles.length?`${styles.filter(style=>saved[style.id]===true).length}/${styles.length}`:'—/—';
+}
+
+function renderFilters(){
+ const types=[...new Set(master.pokemon.map(p=>p.type).filter(Boolean))];
+ const ingredients=[...new Set(master.pokemon.flatMap(p=>(p.ingredients||[]).map(x=>x.name)).filter(Boolean))];
+  typeFilters.innerHTML=types.length?types.map(t=>`<button class="filter-option type-${typeClass(t)}${state.filters.types.has(t)?' on':''}" data-type="${t}" aria-label="${t}">${typeFilterArt(t)}${filterCaption(t)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  ingredientFilters.innerHTML=ingredients.length?ingredients.map(name=>`<button class="filter-option${state.filters.ingredients.has(name)?' on':''}" data-ingredient="${name}" aria-label="${name}" title="${name}">${ingredientFilterArt(name)}${filterCaption(name)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  const boxTypes=document.getElementById('boxTypeFilters');
+  const boxIngredients=document.getElementById('boxIngredientFilters');
+  boxTypes.innerHTML=types.length?types.map(t=>`<button class="filter-option type-${typeClass(t)}${state.boxFilters.types.has(t)?' on':''}" data-type="${t}" aria-label="${t}">${typeFilterArt(t)}${filterCaption(t)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  boxIngredients.innerHTML=ingredients.length?ingredients.map(name=>`<button class="filter-option${state.boxFilters.ingredients.has(name)?' on':''}" data-ingredient="${name}" aria-label="${name}" title="${name}">${ingredientFilterArt(name)}${filterCaption(name)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  typeFilters.querySelectorAll('[data-type]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.filters.types.has(b.dataset.type)?state.filters.types.delete(b.dataset.type):state.filters.types.add(b.dataset.type);renderDex()});
+  ingredientFilters.querySelectorAll('[data-ingredient]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.filters.ingredients.has(b.dataset.ingredient)?state.filters.ingredients.delete(b.dataset.ingredient):state.filters.ingredients.add(b.dataset.ingredient);renderDex()});
+  boxTypes.querySelectorAll('[data-type]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.boxFilters.types.has(b.dataset.type)?state.boxFilters.types.delete(b.dataset.type):state.boxFilters.types.add(b.dataset.type);renderBox()});
+  boxIngredients.querySelectorAll('[data-ingredient]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.boxFilters.ingredients.has(b.dataset.ingredient)?state.boxFilters.ingredients.delete(b.dataset.ingredient):state.boxFilters.ingredients.add(b.dataset.ingredient);renderBox()});
+ specialtyFilters.querySelectorAll('[data-spec]').forEach(b=>b.onclick=()=>{b.classList.toggle('active');state.filters.specs.has(b.dataset.spec)?state.filters.specs.delete(b.dataset.spec):state.filters.specs.add(b.dataset.spec);renderDex()});
+}
+function setupMenus(){
+ document.querySelectorAll('.filter-select>.filter-main').forEach(btn=>btn.onclick=e=>{
+   e.stopPropagation();const host=btn.parentElement,was=host.classList.contains('open');
+   document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open'));
+   if(!was)host.classList.add('open');
+ });
+ document.querySelectorAll('.filter-panel').forEach(p=>p.onclick=e=>e.stopPropagation());
+ document.addEventListener('click',()=>document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open')));
+ document.querySelectorAll('#boxSpecialtyFilters [data-spec]').forEach(b=>b.onclick=()=>{const v=b.dataset.spec;b.classList.toggle('on');state.boxFilters.specs.has(v)?state.boxFilters.specs.delete(v):state.boxFilters.specs.add(v);renderBox()});
+ document.querySelectorAll('#boxTagFilters [data-tag]').forEach(b=>b.onclick=()=>{b.classList.toggle('on');const v=b.dataset.tag;state.boxFilters.tags.has(v)?state.boxFilters.tags.delete(v):state.boxFilters.tags.add(v);renderBox()});
+}
+function renderSelectedFilters(kind){
+ const filters=kind==='box'?state.boxFilters:state.filters;
+ const node=document.getElementById(kind+'SelectedFilters');if(!node)return;
+ node.replaceChildren();
+ const labels={types:'タイプ',ingredients:'食材',specs:'得意',tags:'タグ'};
+ const tags={favorite:'★ お気に入り',training:'🌱 育成',special:'✨ 特別',shiny:'🌈 色違い'};
+ const fields={types:'type',ingredients:'ingredient',specs:'spec',tags:'tag'};
+ for(const [key,values] of Object.entries(filters)){
+  const menu=document.querySelector(`[data-menu="${kind}-${{types:'type',ingredients:'ing',specs:'spec',tags:'tag'}[key]}"]>.filter-main`);
+  menu?.classList.toggle('active',values.size>0);
+  for(const option of document.querySelectorAll(`#${kind}CompactFilters [data-${fields[key]}]`)){
+   const active=values.has(option.dataset[fields[key]]);option.classList.toggle(option.classList.contains('filter-option')?'on':'active',active);option.setAttribute('aria-pressed',String(active));
+  }
+  for(const value of values){const chip=document.createElement('button');chip.type='button';chip.textContent=`${labels[key]}：${key==='tags'?tags[value]:value} ×`;chip.setAttribute('aria-label',`${labels[key]} ${key==='tags'?tags[value]:value}の条件を解除`);chip.onclick=()=>{values.delete(value);kind==='box'?renderBox():renderDex()};node.append(chip)}
+ }
+ node.hidden=!node.childElementCount;
+ if(!node.hidden){const clear=document.createElement('button');clear.type='button';clear.className='psg-filter-clear';clear.textContent='全解除';clear.onclick=()=>{Object.values(filters).forEach(values=>values.clear());kind==='box'?renderBox():renderDex()};node.append(clear)}
+}
