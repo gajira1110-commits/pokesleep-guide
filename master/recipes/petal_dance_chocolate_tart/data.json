@@ -19,7 +19,15 @@
         "value": 4010,
         "source": "user-screenshot/IMG_1525.png"
       }
-    ]
+    ],
+    "min": {
+      "level": 1,
+      "value": 3314
+    },
+    "max": {
+      "level": 70,
+      "value": 11864
+    }
   },
   "sources": [
     {
@@ -30,6 +38,24 @@
         "name",
         "ingredients",
         "energy.observed"
+      ]
+    },
+    {
+      "type": "web",
+      "url": "https://game8.jp/pokemonsleep/543261",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "energy.min",
+        "energy.max"
+      ]
+    },
+    {
+      "type": "web",
+      "url": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "energy.min",
+        "energy.max"
       ]
     }
   ]

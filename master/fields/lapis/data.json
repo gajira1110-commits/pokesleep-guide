@@ -192,6 +192,70 @@
         "level": 13
       },
       "drowsyPower": 275196000
+    },
+    {
+      "sleepStyleId": "0175_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0175_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0175_03",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0175_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0176_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 2090000
+    },
+    {
+      "sleepStyleId": "0176_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 5472000
+    },
+    {
+      "sleepStyleId": "0176_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 16644000
+    },
+    {
+      "sleepStyleId": "0176_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 22154000
     }
   ],
   "rankThresholds": [
