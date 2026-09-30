@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v197</title>
+  <title>PokéSleep Guide — Review v198</title>
 
 
 
@@ -120,7 +120,7 @@ window.PS_CATALOG.recipesByIngredient={};
 for(const recipe of Object.values(window.PS_CATALOG.recipes)){
   recipe.image=window.PS_IMAGE_FILES.recipes[recipe.id]||null;
   for(const ingredient of recipe.ingredients){
-    (window.PS_CATALOG.recipesByIngredient[ingredient.name]??=[]).push({id:recipe.id,name:recipe.name,image:recipe.image,amount:ingredient.qty});
+    (window.PS_CATALOG.recipesByIngredient[ingredient.name]??=[]).push({id:recipe.id,name:recipe.name,image:recipe.image,category:recipe.category,amount:ingredient.qty});
   }
 }
 window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name]||null;
@@ -198,5 +198,5 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
 <style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v197</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v198</small></header>
 <main>

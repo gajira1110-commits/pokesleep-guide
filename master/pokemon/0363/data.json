@@ -1,0 +1,93 @@
+{
+  "no": 363,
+  "name": "タマザラシ",
+  "type": "こおり",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "チーゴのみ",
+  "berryQty": 2,
+  "help": 5600,
+  "carry": 9,
+  "foodRate": 22.4,
+  "skillRate": 2.3,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 364,
+    "to": "トドグラー",
+    "candy": 40,
+    "level": 24
+  },
+  "sleepStyles": [
+    {
+      "id": "0363_01",
+      "name": "こてん寝",
+      "stars": 1
+    },
+    {
+      "id": "0363_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0363_03",
+      "name": "てたたき寝",
+      "stars": 3
+    },
+    {
+      "id": "0363_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/タマザラシ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}

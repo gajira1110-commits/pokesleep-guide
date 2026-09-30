@@ -32,7 +32,7 @@
 #detailFoods .psg-food-recipes-label{font-size:11px;font-weight:850;color:#111;margin-bottom:5px;line-height:1.2}
 #detailFoods .psg-food-recipe-strip{display:flex;gap:5px;align-items:center;min-width:0;overflow-x:auto;scrollbar-width:none}
 #detailFoods .psg-food-recipe-strip::-webkit-scrollbar{display:none}
-#detailFoods .psg-food-recipe-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1 0 0;min-width:0;max-width:84px;height:58px;border:1px solid #f1e8db;border-radius:9px;background:#fff}
+#detailFoods .psg-food-recipe-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1 0 0;min-width:0;max-width:84px;height:58px;border:1px solid #f1e8db;border-radius:9px;background:var(--recipe-category-bg,#fff)}
 #detailFoods .psg-food-recipe-tile img{width:37px;height:37px;object-fit:contain}
 #detailFoods .psg-food-recipe-missing{display:grid;place-items:center;width:37px;height:37px;font-size:25px;line-height:1;color:#91a39b}
 #detailFoods .psg-food-recipe-tile small{font-size:10px;font-weight:900}
@@ -227,3 +227,10 @@
 .psg-type-icon{display:block;object-fit:contain;object-position:center;image-rendering:pixelated}
 #dexDetail .v51-type-badge{display:grid;place-items:center;position:absolute;right:7px;bottom:7px;width:30px;height:30px;padding:0;border:0;background:transparent;box-shadow:none}
 #dexDetail .v51-type-badge img{width:30px;height:30px;object-fit:contain}
+
+/* Field portraits reuse the approved September 29 pixel artwork. */
+.psg-field-gallery{display:grid;gap:8px;margin-bottom:16px}
+.psg-field-choice{display:flex;align-items:center;gap:14px;width:100%;padding:8px 14px;text-align:left;border:1px solid #dce7df;border-radius:16px;background:#fff;color:#253c30;font:inherit;cursor:pointer}
+.psg-field-choice img{width:76px;height:86px;object-fit:contain;flex-shrink:0;image-rendering:pixelated}
+.psg-field-choice strong{font-size:16px}
+.psg-field-choice[aria-pressed="true"]{border-color:#65a382;background:#edf8ee}

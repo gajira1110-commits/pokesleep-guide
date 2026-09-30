@@ -1,0 +1,93 @@
+{
+  "no": 147,
+  "name": "ミニリュウ",
+  "type": "ドラゴン",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ヤチェのみ",
+  "berryQty": 1,
+  "help": 5000,
+  "carry": 9,
+  "foodRate": 25.0,
+  "skillRate": 2.0,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 7
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 7
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 148,
+    "to": "ハクリュー",
+    "candy": 40,
+    "level": 23
+  },
+  "sleepStyles": [
+    {
+      "id": "0147_01",
+      "name": "とぐろ寝",
+      "stars": 1
+    },
+    {
+      "id": "0147_02",
+      "name": "くねく寝",
+      "stars": 2
+    },
+    {
+      "id": "0147_03",
+      "name": "ほぐれ寝",
+      "stars": 3
+    },
+    {
+      "id": "0147_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/ミニリュウ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}

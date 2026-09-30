@@ -1,0 +1,88 @@
+{
+  "no": 76,
+  "name": "ゴローニャ",
+  "type": "いわ",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "オボンのみ",
+  "berryQty": 1,
+  "help": 3100,
+  "carry": 26,
+  "foodRate": 28.0,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 5
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0076_01",
+      "name": "どっしり寝",
+      "stars": 1
+    },
+    {
+      "id": "0076_02",
+      "name": "におうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0076_03",
+      "name": "ごろごろ寝",
+      "stars": 3
+    },
+    {
+      "id": "0076_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/ゴローニャ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}

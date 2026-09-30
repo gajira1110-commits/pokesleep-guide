@@ -1,0 +1,88 @@
+{
+  "no": 94,
+  "name": "ゲンガー",
+  "type": "ゴースト",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ブリーのみ",
+  "berryQty": 1,
+  "help": 2200,
+  "carry": 28,
+  "foodRate": 16.1,
+  "skillRate": 2.4,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 6
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0094_01",
+      "name": "いたずら寝",
+      "stars": 1
+    },
+    {
+      "id": "0094_02",
+      "name": "にやにや寝",
+      "stars": 2
+    },
+    {
+      "id": "0094_03",
+      "name": "べろべろばー寝",
+      "stars": 3
+    },
+    {
+      "id": "0094_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/ゲンガー",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}

@@ -1,0 +1,88 @@
+{
+  "no": 92,
+  "name": "ゴース",
+  "type": "ゴースト",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ブリーのみ",
+  "berryQty": 1,
+  "help": 3800,
+  "carry": 10,
+  "foodRate": 14.4,
+  "skillRate": 1.5,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 6
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 93,
+    "to": "ゴースト",
+    "candy": 40,
+    "level": 19
+  },
+  "sleepStyles": [
+    {
+      "id": "0092_01",
+      "name": "にこにこ寝",
+      "stars": 1
+    },
+    {
+      "id": "0092_02",
+      "name": "ガスふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0092_03",
+      "name": "べろべろばー寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/ゴース",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 3
+}

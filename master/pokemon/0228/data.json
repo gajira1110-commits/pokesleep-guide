@@ -1,0 +1,93 @@
+{
+  "no": 228,
+  "name": "デルビル",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ウイのみ",
+  "berryQty": 2,
+  "help": 4900,
+  "carry": 10,
+  "foodRate": 20.1,
+  "skillRate": 3.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 229,
+    "to": "ヘルガー",
+    "candy": 40,
+    "level": 18
+  },
+  "sleepStyles": [
+    {
+      "id": "0228_01",
+      "name": "とおぼえ寝",
+      "stars": 1
+    },
+    {
+      "id": "0228_02",
+      "name": "のび寝",
+      "stars": 2
+    },
+    {
+      "id": "0228_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0228_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/デルビル",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}

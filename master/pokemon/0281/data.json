@@ -1,0 +1,103 @@
+{
+  "no": 281,
+  "name": "キルリア",
+  "type": "エスパー",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "マゴのみ",
+  "berryQty": 1,
+  "help": 3500,
+  "carry": 18,
+  "foodRate": 14.6,
+  "skillRate": 4.3,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "evolution": [
+    {
+      "toNo": 282,
+      "to": "サーナイト",
+      "level": 23,
+      "candy": 80
+    },
+    {
+      "toNo": 475,
+      "to": "エルレイド",
+      "candy": 80,
+      "item": "めざめいし",
+      "extra": "♂のみ"
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0281_01",
+      "name": "すわりおじぎ寝",
+      "stars": 1
+    },
+    {
+      "id": "0281_02",
+      "name": "レヴェランス寝",
+      "stars": 2
+    },
+    {
+      "id": "0281_03",
+      "name": "おどりながら寝",
+      "stars": 3
+    },
+    {
+      "id": "0281_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/キルリア",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/ラルトス/ラルトスの進化",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4
+}
