@@ -9,7 +9,7 @@ h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(-
 .btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .psg-team-card .note{margin:8px 0}
 .psg-skill-index input{display:block;width:100%;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px}.psg-skill-entry{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.psg-skill-entry summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;cursor:pointer;color:#171d1a}.psg-skill-entry summary strong{font-size:18px}.psg-skill-tags{font-size:13px;color:#527a62}.psg-skill-levels{padding:0 14px}.psg-skill-level{display:flex;gap:16px;padding:10px 0;border-top:1px solid var(--line)}.psg-skill-level b{min-width:44px}.psg-skill-species-label{font-weight:700;padding:12px 14px 6px}.psg-skill-species{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px}
-.psg-recipe-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.psg-recipe-filters label{font-size:13px;font-weight:700}.psg-recipe-filters input,.psg-recipe-filters select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px;color:#18221b}.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:12px;background:var(--recipe-category-bg,#fff)}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-headline{display:flex;flex-direction:column;gap:2px}.psg-recipe-headline strong{font-size:17px}.psg-recipe-headline small,.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;padding:4px 8px;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
+.psg-recipe-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.psg-recipe-filters label{font-size:13px;font-weight:700}.psg-recipe-filters input,.psg-recipe-filters select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px;color:#18221b}.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--recipe-category-bg,#fff)}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-headline{display:flex;flex-direction:column;gap:2px}.psg-recipe-headline strong{font-size:17px}.psg-recipe-headline small,.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
 .toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer;font:inherit;color:inherit;text-align:left}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
 nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
@@ -32,7 +32,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-face-sprite{display:block;flex:none;width:100%;max-height:100%;aspect-ratio:145/108;background-image:var(--psg-face-sheet);background-repeat:no-repeat;background-size:1412.414% 1066.667%;background-position:var(--face-x) var(--face-y);image-rendering:pixelated;border-radius:7px}
 .dex-card .dex-art>.psg-face-sprite{max-width:124px}
 .psg-team-face>.psg-face-sprite,.psg-recipe-provider-art>.psg-face-sprite,.v31-evo-image>.psg-face-sprite{width:100%;height:auto}
-#boxGrid .psg-box-card{display:flex;flex-direction:column;gap:4px}
+#boxGrid .psg-box-card{display:flex;flex-direction:column;}
 .psg-box-card-art{width:100%;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:8px;color:#82918a;font-size:10px}
 .psg-box-card-art>.psg-face-sprite{max-width:104px}
 .psg-box-card-art>img{width:100%;height:100%;object-fit:contain}
@@ -80,7 +80,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .detail-pane{display:none}.detail-pane.on{display:block}
 .hero{border-radius:18px;padding:14px;margin-bottom:10px}.hero-top{display:flex;align-items:center;gap:12px}.hero-art{width:92px;height:92px;background:rgba(255,255,255,.72);border-radius:18px;display:grid;place-items:center;font-size:42px}.hero-info{flex:1}.hero-info h2{margin:0 0 7px}.white-row{background:#fff;border-radius:10px;padding:7px 9px;font-size:12px;margin-top:5px}
 .detail-nav{display:grid;grid-template-columns:70px 1fr 70px;align-items:center;gap:5px;margin-bottom:9px}.detail-nav strong{text-align:center;font-size:13px}.detail-nav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 5px;font-weight:800}
-.food-row{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #edf1ef}.food-row:last-child{border:0}.food-letter{font-weight:900}.unknown{color:#8b9792;font-size:12px}
+.food-row{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #edf1ef}.food-row:last-child{border:0}.unknown{color:#8b9792;font-size:12px}
 
 /* source: stable-v3-filter-style */
 .compact-filter{margin:0 0 10px}
@@ -124,56 +124,24 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 
 /* source: stable-v5-dex-detail-style */
 #dexDetail{--accent:#168fe6}
-#dexDetail .detail-head{margin:0 0 8px}
-#dexDetail .detail-head h2{text-align:center;font-size:18px}
-#dexDetail .detail-nav{grid-template-columns:1fr 1.35fr 1fr;margin-bottom:10px}
-#dexDetail .detail-nav button{min-height:52px;border-radius:14px}
+#dexDetail .detail-head h2{text-align:center;}
 #dexDetail .detail-nav strong{font-size:15px;line-height:1.25}
-#dexDetail .hero{padding:10px;border-radius:18px}
-#dexDetail .hero-top{align-items:stretch}
-#dexDetail .hero-art{width:34%;min-width:104px;height:154px;font-size:44px}
-#dexDetail .hero-info{gap:8px}
+#dexDetail .hero{border-radius:18px}
+#dexDetail .hero-art{min-width:104px;}
 #dexDetail .hero-info h2{text-align:center;font-size:26px;margin:0}
-#dexDetail .white-row{margin:0;padding:10px;min-height:44px;font-weight:900}
-#dexDetail .stats{gap:0;border-radius:15px;border:1px solid var(--line)}
-#dexDetail .stat{min-height:68px;padding:10px}
-#dexDetail .stat:nth-child(odd){border-right:1px solid var(--line)}
-#dexDetail .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-#dexDetail .stat small{font-weight:800}
-#dexDetail .stat b{font-size:18px}
-#dexDetail .detail-tabs{margin:10px 0}
-#dexDetail .detail-tabs button{border-radius:13px}
-#dexDetail .detail-tabs button.on{background:#0aa05a;border-color:#0aa05a}
-#dexDetail .ability-card{padding:0;overflow:hidden}
-#dexDetail .ability-title{gap:10px;padding:12px 14px 9px;font-weight:950}
-#dexDetail .rate-badge{background:#ffe7ef;color:#e93170;padding:6px 9px}
-.food-table-head,.food-line{grid-template-columns:minmax(118px,1.35fr) repeat(3,minmax(48px,.58fr)) minmax(112px,1.4fr);align-items:center}
-.food-table-head{font-weight:900}
-.food-table-head span{margin:0 2px}
-.food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
-.food-line{min-height:68px;padding:6px 10px}
-.food-id{grid-template-columns:34px 34px 1fr;min-width:0}
-.food-letter{height:42px;color:#11965b}
+#dexDetail .white-row{margin:0;}
+#dexDetail .stats{gap:0;}
+#dexDetail .ability-card{padding:0;}
 .food-line:nth-of-type(3) .food-letter{background:#fff0f4;color:#e52e68}
 .food-line:nth-of-type(4) .food-letter{background:#fff5df;color:#b86c00}
-.food-icon{font-size:25px;text-align:center}
-.food-name{font-weight:900;overflow:hidden;text-overflow:ellipsis}
-.food-qty{font-weight:950;font-size:14px}
-.recipe-strip{gap:5px;align-items:center;min-width:0}
-.recipe-ph{flex:0 0 31px;height:31px;border:1px solid #f3dfc3;font-size:13px}
-.recipe-more{font-weight:900}
-.skill-box{padding:12px}
-.skill-top{display:flex;gap:8px;align-items:center}
-.skill-icon{width:48px;height:48px;font-size:24px}
-.skill-name{font-weight:950;flex:1}
-.skill-level{padding:7px 9px;font-weight:900}
-.skill-desc{margin:8px 0 0;color:#53625c}
+.food-name{overflow:hidden;text-overflow:ellipsis}
+.recipe-strip{min-width:0}
+.skill-name{flex:1}
+.skill-desc{color:#53625c}
 @media(max-width:430px){
- #dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:8px}
- #dexDetail .hero-art{width:100%;min-width:0;height:145px}
+ #dexDetail .hero-top{display:grid;}
+ #dexDetail .hero-art{width:100%;min-width:0;}
  #dexDetail .hero-info h2{font-size:23px}
- .food-table-head,.food-line{grid-template-columns:minmax(112px,1.3fr) repeat(3,48px) minmax(86px,1fr)}
- .recipe-ph:nth-child(n+4){display:none}
 }
 
 /* source: stable-v6-rebuild */
@@ -183,23 +151,21 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #dexDetail .detail-head h2{font-size:18px;margin:0}
 #dexDetail .detail-head .btn{border:0;background:transparent;color:#118fe6;font-weight:900;padding:8px}
 #dexDetail .dex-fav{font-size:25px;color:#102066}
-#dexDetail .detail-nav{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:8px;align-items:center;margin-bottom:10px}
+#dexDetail .detail-nav{grid-template-columns:1fr 1.25fr 1fr;gap:8px;align-items:center;margin-bottom:10px}
 #dexDetail .detail-nav button{background:#fff;border:1px solid var(--line);border-radius:14px;min-height:56px;padding:7px}
 #dexDetail .detail-nav .current{border:0;background:transparent;text-align:center;line-height:1.15}
 #dexDetail .detail-nav .current small{font-weight:900}
 #dexDetail .detail-nav .current strong{display:block;font-size:26px;margin-top:3px}
-#dexDetail .hero{padding:0;background:transparent;border:0;box-shadow:none}
-#dexDetail .hero-top{display:grid;grid-template-columns:35% 1fr;gap:9px}
-#dexDetail .hero-art{width:100%;height:176px;border-radius:16px;background:rgba(255,255,255,.46);border:1px solid rgba(0,0,0,.06);display:grid;place-items:center;font-size:45px}
-#dexDetail .hero-info{display:flex;flex-direction:column;gap:9px}
+#dexDetail .hero{box-shadow:none}
+#dexDetail .hero-art{border-radius:16px;border:1px solid rgba(0,0,0,.06);display:grid;place-items:center;font-size:45px}
 #dexDetail .hero-info>h2{display:none}
-#dexDetail .white-row{background:#fff;border-radius:14px;min-height:52px;padding:9px;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:15px}
-#dexDetail .stats{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;flex:1}
-#dexDetail .stat{min-height:74px;border:0;border-radius:0;padding:10px;display:flex;flex-direction:column;justify-content:center}
+#dexDetail .white-row{background:#fff;border-radius:14px;padding:9px;display:flex;align-items:center;justify-content:center;font-weight:950;font-size:15px}
+#dexDetail .stats{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+#dexDetail .stat{border:0;border-radius:0;display:flex;flex-direction:column;justify-content:center}
 #dexDetail .stat:nth-child(odd){border-right:1px solid #e7ece9}
 #dexDetail .stat:nth-child(-n+2){border-bottom:1px solid #e7ece9}
-#dexDetail .stat small{font-size:11px;font-weight:850}
-#dexDetail .stat b{font-size:20px;margin-top:4px}
+#dexDetail .stat small{font-weight:850}
+#dexDetail .stat b{margin-top:4px}
 #dexDetail .detail-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
 #dexDetail .detail-tabs button{min-height:48px;border-radius:13px;background:#fff;border:1px solid var(--line);font-size:15px;font-weight:950}
 #dexDetail .detail-tabs button.on{background:#08a35b;color:#fff;border-color:#08a35b}
@@ -207,8 +173,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #dexDetail .ability-title{display:flex;align-items:center;gap:9px;padding:12px 13px 8px;font-size:23px;font-weight:950}
 #dexDetail .rate-badge{font-size:12px;background:#ffe6ef;color:#e72d70;border-radius:8px;padding:6px 9px}
 .food-table-head,.food-line{display:grid;grid-template-columns:minmax(120px,1.35fr) repeat(3,50px) minmax(92px,1fr);align-items:center}
-.food-table-head{padding:0 10px 5px;color:#168fe6;font-size:10px;font-weight:950}
-.food-table-head span{text-align:center;background:#eaf5ff;border-radius:7px;padding:4px 2px;margin:0 2px}
+.food-table-head{padding:0 10px 5px;color:#168fe6;}
+.food-table-head span{text-align:center;background:#eaf5ff;border-radius:7px;margin:0 2px}
 .food-table-head span:first-child,.food-table-head span:last-child{background:transparent}
 .food-line{min-height:70px;border-top:1px solid #edf1ef;padding:6px 10px}
 .food-id{display:grid;grid-template-columns:34px 32px 1fr;align-items:center;gap:5px;min-width:0}
@@ -216,7 +182,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .food-line:nth-child(2) .food-letter{background:#fff0f4;color:#e52e68}
 .food-line:nth-child(3) .food-letter{background:#fff5df;color:#b86c00}
 .food-icon{font-size:24px;text-align:center}.food-name{font-size:11px;font-weight:900}
-.food-qty{text-align:center;font-size:14px;font-weight:950}
+.food-qty{text-align:center;font-weight:950}
 .recipe-strip{display:flex;gap:4px;overflow:hidden;align-items:center}
 .recipe-ph{flex:0 0 30px;height:30px;border-radius:50%;background:#fff4e5;border:1px solid #f0dfc7;display:grid;place-items:center;font-size:13px}
 .recipe-more{margin-left:auto;color:#ef8a00;font-size:22px;font-weight:950}
@@ -224,11 +190,11 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .skill-top{display:grid;grid-template-columns:50px 1fr auto;gap:9px;align-items:center}
 .skill-icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#b648df;color:#fff;font-size:25px}
 .skill-name{font-weight:950}.skill-level{white-space:nowrap;background:#edf6ff;border-radius:9px;padding:7px;color:#168fe6;font-weight:950}
-.skill-desc{font-size:12px;line-height:1.55;margin:8px 0 0}
+.skill-desc{margin:8px 0 0}
 .skill-detail-toggle{width:100%;border:0;border-top:1px solid #edf1ef;background:#fff;padding:10px;font-weight:900;color:#32423b}
 .skill-levels{display:none;border-top:1px solid #edf1ef;padding:7px 10px 10px}
 .skill-levels.open{display:block}
-.skill-level-row{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:7px 4px;border-bottom:1px solid #f0f2f1;font-size:12px}
+.skill-level-row{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:7px 4px;border-bottom:1px solid #f0f2f1;}
 .skill-level-row:last-child{border-bottom:0}
 .skill-level-row b{color:#168fe6}
 #evolutionCard{border-radius:17px}
@@ -238,15 +204,12 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
  .food-table-head,.food-line{grid-template-columns:minmax(110px,1.3fr) repeat(3,45px) minmax(82px,.95fr)}
  .recipe-ph:nth-child(n+4){display:none}
 }
-
-/* source: stable-v7-hero-fix */
-#dexDetail .hero-top{grid-template-columns:minmax(105px,35%) minmax(0,65%)!important;align-items:stretch!important}
-#dexDetail .hero-art{grid-column:1!important;grid-row:1!important;width:100%!important;height:100%!important;min-height:205px!important}
-#dexDetail .hero-info{grid-column:2!important;grid-row:1!important;gap:8px!important}
+#dexDetail .hero-art{grid-column:1!important;grid-row:1!important;width:100%!important;}
+#dexDetail .hero-info{grid-column:2!important;grid-row:1!important;}
 #dexDetail .white-row{flex:0 0 auto!important;min-height:48px!important}
-#dexDetail .stats{min-width:0!important;flex:1 1 auto!important;grid-template-columns:1fr 1fr!important}
-#dexDetail .stat{min-width:0!important;padding:8px!important}
-#dexDetail .stat b{font-size:17px!important;word-break:keep-all}
+#dexDetail .stats{min-width:0!important;}
+#dexDetail .stat{min-width:0!important;}
+#dexDetail .stat b{word-break:keep-all}
 @media(max-width:430px){
  #dexDetail .hero-top{grid-template-columns:34% 66%!important;gap:7px!important}
  #dexDetail .hero-art{min-height:190px!important}
@@ -254,13 +217,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
  #dexDetail .stat small{font-size:9px!important}
  #dexDetail .stat b{font-size:15px!important}
 }
-
-/* source: stable-v9-layout */
-/* v9 test case: left is art; right owns navigation, name, traits and all four metrics */
-#dexDetail .detail-nav{display:none!important}
-#dexDetail .hero-top{gap:8px!important}
-#dexDetail .hero-art{min-height:255px!important}
-#dexDetail .hero-info{gap:7px!important}
 .v9-poke-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .v9-poke-nav button{min-width:0;border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:6px 4px;font-size:10px;font-weight:900;line-height:1.25}
 .v9-poke-nav button:disabled{opacity:.35}
@@ -269,10 +225,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .v9-name strong{display:block;font-size:21px;line-height:1.05}
 .v9-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 .v9-trait{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
-#dexDetail .stats{flex:1!important}
-#dexDetail .stat{min-height:62px!important}
-#dexDetail .stat small{font-size:9px!important}
-#dexDetail .stat b{font-size:14px!important}
 .v9-est{font-size:8px;color:#8a6c00;font-weight:800}
 .v9-skill-level-select{display:flex;gap:4px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
 .v9-skill-level-select button{flex:0 0 38px;border:1px solid #dbe4df;background:#fff;border-radius:8px;padding:6px 2px;font-size:11px;font-weight:900}
@@ -284,10 +236,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 /* source: stable-v10-detail-cleanup */
 /* Single-detail-controller cleanup */
 #dexDetail .detail-nav{display:none!important}
-#dexDetail .hero-info>.white-row{display:none!important} /* remove duplicate type/sleep/specialty row */
-#dexDetail .hero-top{gap:9px!important}
-#dexDetail .hero-art{min-height:250px!important;height:100%!important}
-#dexDetail .hero-info{gap:7px!important;min-width:0!important}
+#dexDetail .hero-info>.white-row{display:none!important}
 .v10-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .v10-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900;min-width:0}
 .v10-nav button:disabled{opacity:.35}
@@ -297,22 +246,18 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .v10-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 .v10-traits span{background:#fff;border-radius:9px;padding:6px 2px;text-align:center;font-size:10px;font-weight:900}
 #dexDetail .stats{width:100%!important;display:grid!important;grid-template-columns:1fr 1fr!important;flex:1!important}
-#dexDetail .stat{min-height:61px!important;padding:7px!important}
+#dexDetail .stat{padding:7px!important}
 #dexDetail .stat small{font-size:9px!important} #dexDetail .stat b{font-size:15px!important}
-.food-table-head{font-size:14px!important}
 .food-table-head span{padding:7px 3px!important}
-.food-qty{font-size:17px!important}
-.skill-desc{font-size:16px!important;font-weight:700}
-.skill-level-row{font-size:14px!important;line-height:1.5}
+.skill-level-row{line-height:1.5}
 .v10-evo{width:100%;border:1px solid #dbe4df;background:#fff;border-radius:10px;padding:10px;font-weight:900}
 
 /* source: stable-v11-fixes */
 /* Actual DOM structure fix: stats is moved inside .hero-info by JS */
 #dexDetail .hero{padding:10px!important}
-#dexDetail .hero-top{gap:9px!important;align-items:stretch!important}
-#dexDetail .hero-art{min-height:265px!important;height:100%!important}
-#dexDetail .hero-info{min-width:0!important;gap:7px!important}
-#dexDetail .hero-info>.stats{margin-top:0!important;flex:1!important}
+#dexDetail .hero-art{height:100%!important}
+#dexDetail .hero-info{min-width:0!important;}
+#dexDetail .hero-info>.stats{margin-top:0!important;}
 .v11-nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .v11-nav button{border:1px solid #dbe4df;background:#fff;border-radius:11px;padding:7px 4px;font-size:10px;font-weight:900}
 .v11-nav button:disabled{opacity:.35}
@@ -321,7 +266,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .v11-name strong{display:block;font-size:22px}
 .v11-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 .v11-traits span{background:#fff;border-radius:9px;padding:7px 2px;text-align:center;font-size:11px;font-weight:900}
-#dexDetail .stat{min-height:62px!important}
 .food-table-head{font-size:15px!important;font-weight:950!important}
 .food-qty{font-size:18px!important}
 .skill-desc{font-size:17px!important;line-height:1.65!important;font-weight:750!important}
