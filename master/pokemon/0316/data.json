@@ -1,0 +1,94 @@
+{
+  "no": 316,
+  "name": "ゴクリン",
+  "type": "どく",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "カゴのみ",
+  "berryQty": 1,
+  "help": 5900,
+  "carry": 8,
+  "foodRate": 21.4,
+  "skillRate": 6.3,
+  "rateStatus": "推定",
+  "mainSkillId": "dream_shard_magnet_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0316_01",
+      "name": "ふうせん寝",
+      "stars": 1
+    },
+    {
+      "id": "0316_02",
+      "name": "うなずき寝",
+      "stars": 2
+    },
+    {
+      "id": "0316_03",
+      "name": "おおぐちあけ寝",
+      "stars": 3
+    },
+    {
+      "id": "0316_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/gulpin",
+    "https://wikiwiki.jp/poke_sleep/ゴクリン",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 317,
+    "to": "マルノーム",
+    "level": 20,
+    "candy": 40
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "aura_sphere_dream_shards",
+  "name": "はどうだん(ゆめのかけらゲットS)",
+  "maxLevel": 8,
+  "tags": [
+    "ゆめのかけら",
+    "エナジー"
+  ],
+  "effectType": "fixed_dream_shards_energy",
+  "levels": {
+    "1": {
+      "shards": 240,
+      "energy": 200,
+      "description": "ゆめのかけらを240個ゲットし、カビゴンのエナジーを200増やす"
+    },
+    "2": {
+      "shards": 340,
+      "energy": 285,
+      "description": "ゆめのかけらを340個ゲットし、カビゴンのエナジーを285増やす"
+    },
+    "3": {
+      "shards": 480,
+      "energy": 393,
+      "description": "ゆめのかけらを480個ゲットし、カビゴンのエナジーを393増やす"
+    },
+    "4": {
+      "shards": 670,
+      "energy": 542,
+      "description": "ゆめのかけらを670個ゲットし、カビゴンのエナジーを542増やす"
+    },
+    "5": {
+      "shards": 920,
+      "energy": 748,
+      "description": "ゆめのかけらを920個ゲットし、カビゴンのエナジーを748増やす"
+    },
+    "6": {
+      "shards": 1260,
+      "energy": 1033,
+      "description": "ゆめのかけらを1260個ゲットし、カビゴンのエナジーを1033増やす"
+    },
+    "7": {
+      "shards": 1800,
+      "energy": 1501,
+      "description": "ゆめのかけらを1800個ゲットし、カビゴンのエナジーを1501増やす"
+    },
+    "8": {
+      "shards": 2500,
+      "energy": 2042,
+      "description": "ゆめのかけらを2500個ゲットし、カビゴンのエナジーを2042増やす"
+    }
+  },
+  "nativePokemonNos": [
+    448
+  ],
+  "sources": [
+    "https://www.pokemonsleep.net/news/343239303735303933343939343132343831/",
+    "https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット/はどうだん",
+    "https://wiki.pokesleep.com/ja/main-skills/auraspheredreamshardmagnets"
+  ],
+  "verifiedAt": "2026-10-01",
+  "calculationStatus": "基礎期待値対応（確率は推定）"
+}

@@ -142,3 +142,35 @@ v195：追加おてつだいの予想
 
 不足一覧は AUDIT.md / AUDIT.json。未登録・未掲載をゲーム内の未実装や出現不可と解釈しないでください。次の照合候補であるルカリオの「はどうだん」は公式Ver.3.7.0で変更を確認しましたが、効果表と種族情報の追加は今回に含めません。
 公式: https://www.pokemonsleep.net/news/343239303735303933343939343132343831/
+
+## v212（2026-10-01）
+
+リオル・ルカリオの基本能力・食材・進化・寝顔8件と通常フィールド出現15件を追加。能力と進化は各種族ページ、確率は推定値一覧、寝顔のIDと正式名は寝顔一覧で照合。通常出現はリオルがワカクサ本島・トープ洞窟・ウノハナ雪原、ルカリオがウノハナ雪原。未掲載のフィールドやEXの出現不可を断定しない。
+
+- https://wiki.pokesleep.com/ja/pokemon/riolu
+- https://wiki.pokesleep.com/ja/pokemon/lucario
+- https://wikiwiki.jp/poke_sleep/リオル
+- https://wikiwiki.jp/poke_sleep/ルカリオ
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+
+ルカリオの「はどうだん(ゆめのかけらゲットS)」は公式Ver.3.7.0で確認。リオルは通常のゆめのかけらゲットSを維持。Lv.1〜8の効果量は下記2資料で一致した値を登録。日産計算は既存の発動回数の近似に、エナジーとゆめのかけらを分離して加算する。エリア補正はエナジーだけへ適用し、イベント補正やゆめのかけらボーナスは未反映。
+
+- https://www.pokemonsleep.net/news/343239303735303933343939343132343831/
+- https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット/はどうだん
+- https://wiki.pokesleep.com/ja/main-skills/auraspheredreamshardmagnets
+
+## v213（2026-10-01）
+
+ゴクリン・マルノームの基本能力、食材、Lv.20・アメ40個の進化条件、寝顔8件、通常フィールド出現18件を追加。基本能力・進化は2資料、確率と寝顔IDは一覧で照合。出現情報はポケスリ総合資料サイトの各種族ページで確認。EXは流用せず保留。
+
+- https://wiki.pokesleep.com/ja/pokemon/gulpin
+- https://wiki.pokesleep.com/ja/pokemon/swalot
+- https://wikiwiki.jp/poke_sleep/ゴクリン
+- https://wikiwiki.jp/poke_sleep/マルノーム
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+
+ランダム版のLv.1〜8の既存効果範囲は https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット と一致。日産では範囲平均の近似を使用し、切り上げ・獲得量分布・イベントボーナスは含めない旨をスキルデータと画面へ明記。エリア補正やエナジー換算は適用しない。確率・発動回数も推定。
+
+同スキルを持つヤミラミは確率一覧で確認し、nativePokemonNosへ記録。種族本体の基本能力・寝顔・出現記録は未登録のため次の照合対象。

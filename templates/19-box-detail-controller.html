@@ -24,11 +24,12 @@ function boxDailySkillText(estimate){
  if(!member||member.missing||!Number.isFinite(member.stats?.skill)||!member.skillName)return '１日の発動予想：条件・発動率未確認';
  const n=member.skillTriggers;let amount='';
  if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))amount=`・ランダム食材 約${(n*member.skillAmount).toFixed(1)}個（種類未指定・別集計）`;
- else if(['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))amount=`・エナジー 約${Math.round(n*member.skillEnergy*result.areaFactor).toLocaleString()}（エリア補正込み）`;
+ else if(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))amount=`・エナジー 約${Math.round(n*member.skillEnergy*result.areaFactor).toLocaleString()}（エリア補正込み）`;
  else if(['team_energy_recovery','self_energy_recovery','ally_energy_recovery'].includes(member.skillEffectType)&&Number.isFinite(member.skillRecovery))amount='（回復による速度変化は予想に反映）';
  else if(member.boost&&Number.isFinite(member.skillHelps))amount=`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`;
  else if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))amount=`（1匹に${member.skillHelps}回／発動・対象は均等配分して日産に反映）`;
- else amount='（効果の日産加算は未対応）';
+ else if(!Number.isFinite(member.skillShards))amount='（効果の日産加算は未対応）';
+ if(Number.isFinite(member.skillShards))amount+=`・ゆめのかけら 約${Math.round(n*member.skillShards).toLocaleString()}個${member.skillEffectType==='variable_dream_shards'?'（範囲平均の近似）':''}`;
  return `１日 約${n.toFixed(1)}回${amount}`;
 }
 function syncLevel(){

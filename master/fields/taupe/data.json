@@ -360,6 +360,38 @@
         "level": 1
       },
       "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0447_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0447_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0447_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 8322000
+    },
+    {
+      "sleepStyleId": "0447_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 11780000
     }
   ],
   "rankThresholds": [
@@ -540,6 +572,7 @@
     }
   ],
   "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/ditto"
+    "https://wiki.pokesleep.com/ja/pokemon/ditto",
+    "https://wiki.pokesleep.com/ja/pokemon/riolu"
   ]
 }

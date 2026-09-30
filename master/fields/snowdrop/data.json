@@ -385,9 +385,141 @@
         "level": 5
       },
       "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0447_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0447_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0447_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 8322000
+    },
+    {
+      "sleepStyleId": "0447_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0448_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0448_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 27132000
+    },
+    {
+      "sleepStyleId": "0448_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 59052000
+    },
+    {
+      "sleepStyleId": "0448_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "drowsyPower": 73112000
+    },
+    {
+      "sleepStyleId": "0316_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0316_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0316_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0316_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0317_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0317_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0317_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0317_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 28766000
     }
   ],
   "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/ditto"
+    "https://wiki.pokesleep.com/ja/pokemon/ditto",
+    "https://wiki.pokesleep.com/ja/pokemon/riolu",
+    "https://wiki.pokesleep.com/ja/pokemon/lucario",
+    "https://wiki.pokesleep.com/ja/pokemon/gulpin",
+    "https://wiki.pokesleep.com/ja/pokemon/swalot"
   ]
 }
