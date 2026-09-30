@@ -166,11 +166,11 @@
 #dexDetail .v31-evo-step{min-width:19px!important;width:19px!important}
 #dexDetail .v31-evo-line{gap:3px!important}
 #boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-#boxDetail .psg-v106-ingredient{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;min-height:0;padding:5px 2px;border-radius:13px;background:#fff;color:#111}
+#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:4px;row-gap:1px;min-width:0;min-height:0;padding:5px 2px;border-radius:13px;background:#fff;color:#111}
 #boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
-#boxDetail .psg-v106-unlock{font-size:12px;line-height:1.2;min-height:15px}
-#boxDetail .psg-v106-ingredient-image{display:grid;place-items:center;width:44px;height:44px}
-#boxDetail .psg-v106-ingredient-image img{width:44px;height:44px;object-fit:contain}
+#boxDetail .psg-v106-unlock{grid-column:1 / -1;text-align:center;font-size:12px;line-height:1.2;min-height:15px}
+#boxDetail .psg-v106-ingredient-image{display:grid;place-items:center;width:32px;height:32px}
+#boxDetail .psg-v106-ingredient-image img{width:32px;height:32px;object-fit:contain}
 #boxDetail .psg-v106-ingredient strong{font-size:15px}
 #boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
 #boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
@@ -187,7 +187,7 @@
   #boxDetail .psg-box-section{padding:10px;margin-bottom:7px}
   #boxDetail .psg-box-section h3{margin-bottom:8px}
   #boxDetail .psg-box-line{min-height:44px;padding:4px 0}
-  #boxDetail .psg-v106-ingredient{min-height:0;gap:2px;padding:4px 2px}
+  #boxDetail .psg-v106-ingredient{min-height:0;column-gap:3px;row-gap:1px;padding:3px 2px}
   #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:74px}
   #dexDetail{border-radius:0!important}
   #dexDetail .hero-top{grid-template-columns:minmax(102px,34%) minmax(0,1fr)!important;grid-template-rows:auto!important;align-items:start!important}
@@ -238,11 +238,11 @@
   #detailFoods .psg-food-head{padding-top:3px;padding-bottom:5px}
   #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:68px}
   #detailFoods .psg-food-id{padding-block:3px}
-  #detailFoods .psg-food-id img{width:44px;height:44px}
+  #detailFoods .psg-food-id img{width:32px;height:32px}
   #detailFoods .psg-food-levels{min-height:68px}
   #detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{padding:3px 2px}
   #detailFoods .psg-food-recipe-tile{height:58px;position:relative}
-  #detailFoods .psg-food-recipe-tile img{width:44px;height:44px;object-fit:contain}
+  #detailFoods .psg-food-recipe-tile img{width:32px;height:32px;object-fit:contain}
   #detailFoods .psg-food-recipe-tile small{position:absolute;right:1px;bottom:1px;min-width:16px;padding:1px 2px;border-radius:7px;background:rgba(255,255,255,.94);font-size:9px;line-height:1}
   #dexDetail .v51-type-badge{right:7px!important;bottom:7px!important;width:30px!important;height:30px!important;padding:0!important;border:1px solid #d8e5de!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:rgba(255,255,255,.96)!important;box-shadow:0 1px 5px rgba(30,57,42,.16)!important}
   #dexDetail .v51-type-badge img{width:23px!important;height:23px!important;object-fit:contain!important;image-rendering:pixelated}
@@ -338,8 +338,8 @@
 }
 
 /* Compact individual controls and two-column subskill tiles. */
-#boxDetail .psg-box-flags{display:flex;gap:6px;margin:0 0 7px}
-#boxDetail .psg-box-flags .btn{min-height:40px;padding:6px 10px;font-size:13px}
+#boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
+#boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
 #boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
 #boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
 #boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:10px;padding:5px 4px}
@@ -350,3 +350,8 @@
 #boxDetail .psg-box-subskill.is-locked{opacity:.48}
 #boxDetail .psg-editor-note{margin:0;font-weight:400}
 #boxDetail #boxEditor{scroll-margin-top:110px}
+
+.psg-selected-filters:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;padding:5px 0}
+.psg-selected-filters button{max-width:100%;overflow-wrap:anywhere;border:1px solid #8abd9e;background:#eaf5ee;color:#285c3d;border-radius:9px;padding:5px 7px;min-height:32px;font-size:12px;font-weight:700}
+.psg-selected-filters .psg-filter-clear{background:#fff;color:#526259;border-color:#d6e2da}
+@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
