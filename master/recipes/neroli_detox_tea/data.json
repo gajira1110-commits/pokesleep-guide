@@ -1,38 +1,34 @@
 {
-  "id": "wish_apple_pie",
-  "name": "ねがいごとアップルパイ",
+  "id": "neroli_detox_tea",
+  "name": "ネロリのデトックスティー",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
-      "ingredientId": "moomoo_milk",
-      "qty": 4
+      "ingredientId": "warming_ginger",
+      "qty": 11
     },
     {
       "ingredientId": "fancy_apple",
-      "qty": 12
+      "qty": 15
+    },
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 9
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 1748
-    },
-    "max": {
-      "level": 70,
-      "value": 6258
-    },
     "observed": [
       {
-        "level": 7,
-        "value": 1940,
-        "source": "user-screenshot/IMG_1526.png"
+        "level": 17,
+        "value": 6584,
+        "source": "user-screenshot/IMG_1525.png"
       }
     ]
   },
   "sources": [
     {
       "type": "user_screenshot",
-      "file": "IMG_1526.png",
+      "file": "IMG_1525.png",
       "date": "2026-09-30",
       "verifiedFields": [
         "name",

@@ -1,34 +1,30 @@
 {
-  "id": "hot_milk",
-  "name": "モーモーホットミルク",
+  "id": "slow_and_steady_vegetable_juice",
+  "name": "マイペースやさいジュース",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
-      "ingredientId": "moomoo_milk",
+      "ingredientId": "tomato",
+      "qty": 9
+    },
+    {
+      "ingredientId": "fancy_apple",
       "qty": 7
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 814
-    },
-    "max": {
-      "level": 70,
-      "value": 2914
-    },
     "observed": [
       {
-        "level": 19,
-        "value": 1083,
-        "source": "user-screenshot/IMG_1527.png"
+        "level": 14,
+        "value": 2386,
+        "source": "user-screenshot/IMG_1525.png"
       }
     ]
   },
   "sources": [
     {
       "type": "user_screenshot",
-      "file": "IMG_1527.png",
+      "file": "IMG_1525.png",
       "date": "2026-09-30",
       "verifiedFields": [
         "name",

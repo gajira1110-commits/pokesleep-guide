@@ -1,0 +1,44 @@
+{
+  "id": "lovely_kiss_fruit_au_lait",
+  "name": "あくまのキッスフルーツオレ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "fancy_apple",
+      "qty": 11
+    },
+    {
+      "ingredientId": "moomoo_milk",
+      "qty": 9
+    },
+    {
+      "ingredientId": "honey",
+      "qty": 7
+    },
+    {
+      "ingredientId": "soothing_cacao",
+      "qty": 8
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 50,
+        "value": 11456,
+        "source": "user-screenshot/IMG_1523.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1523.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

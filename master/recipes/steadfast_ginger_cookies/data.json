@@ -1,0 +1,44 @@
+{
+  "id": "steadfast_ginger_cookies",
+  "name": "ふくつのジンジャークッキー",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "honey",
+      "qty": 14
+    },
+    {
+      "ingredientId": "warming_ginger",
+      "qty": 12
+    },
+    {
+      "ingredientId": "soothing_cacao",
+      "qty": 5
+    },
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 4
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 48,
+        "value": 11417,
+        "source": "user-screenshot/IMG_1523.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1523.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
+}

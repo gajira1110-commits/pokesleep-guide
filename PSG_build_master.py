@@ -20,6 +20,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '10-box-detail.html',
     '11-navigation.html',
     '12-core-controller.html',
+    '21-day-calculator.html',
     '19-box-detail-controller.html',
     '20-core-initialize.html',
     '13-catalog-adapter.html',
@@ -45,7 +46,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v192_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v193_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -209,9 +210,20 @@ def catalog_and_images():
         seen_recipes.add(identity)
         assert key == recipe['id'] and recipe['name'] and recipe.get('ingredients')
         assert recipe.get('category') in ('カレー・シチュー','サラダ','デザート・ドリンク'), key
-        assert recipe.get('energy',{}).get('min',{}).get('level') == 1, key
-        assert recipe.get('energy',{}).get('max',{}).get('level') == 70, key
-        assert 0 < recipe['energy']['min']['value'] <= recipe['energy']['max']['value'], key
+        energy = recipe.get('energy', {})
+        for bound,level in (('min',1),('max',70)):
+            if bound in energy:
+                assert energy[bound].get('level') == level, key
+                assert isinstance(energy[bound].get('value'),int) and energy[bound]['value'] > 0, key
+        if 'min' in energy and 'max' in energy:
+            assert energy['min']['value'] <= energy['max']['value'], key
+        observed = energy.get('observed', [])
+        assert isinstance(observed,list), key
+        assert energy.get('min') or energy.get('max') or observed, f'{key}: no verified energy'
+        assert len({v.get('level') for v in observed}) == len(observed), key
+        for value in observed:
+            assert isinstance(value.get('level'),int) and 1 <= value['level'] <= 70, key
+            assert isinstance(value.get('value'),int) and value['value'] > 0 and value.get('source'), key
         seen_ingredients = set()
         for ingredient in recipe['ingredients']:
             ingredient_id = ingredient.pop('ingredientId')
@@ -242,7 +254,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v192') == 2
+    assert source.count('Review v193') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

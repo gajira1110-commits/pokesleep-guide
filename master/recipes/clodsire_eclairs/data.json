@@ -1,38 +1,30 @@
 {
-  "id": "spooky_face_pancakes",
-  "name": "ドキドキこわいかおパンケーキ",
+  "id": "clodsire_eclairs",
+  "name": "ドオーのエクレア",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
-      "qty": 24,
-      "ingredientId": "fancy_egg"
+      "ingredientId": "soothing_cacao",
+      "qty": 30
     },
     {
-      "qty": 29,
-      "ingredientId": "tomato"
+      "ingredientId": "moomoo_milk",
+      "qty": 26
     },
     {
-      "qty": 32,
-      "ingredientId": "honey"
+      "ingredientId": "coffee",
+      "qty": 24
     },
     {
-      "qty": 18,
-      "ingredientId": "plump_pumpkin"
+      "ingredientId": "honey",
+      "qty": 22
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 24354
-    },
-    "max": {
-      "level": 70,
-      "value": 87187
-    },
     "observed": [
       {
-        "level": 57,
-        "value": 68922,
+        "level": 65,
+        "value": 69756,
         "source": "user-screenshot/IMG_1522.png"
       }
     ]

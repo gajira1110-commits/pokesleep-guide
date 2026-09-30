@@ -1,38 +1,30 @@
 {
-  "id": "spooky_face_pancakes",
-  "name": "ドキドキこわいかおパンケーキ",
+  "id": "zippy_zap_spiced_cola",
+  "name": "スパークスパイスコーラ",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
-      "qty": 24,
-      "ingredientId": "fancy_egg"
+      "ingredientId": "fancy_apple",
+      "qty": 35
     },
     {
-      "qty": 29,
-      "ingredientId": "tomato"
+      "ingredientId": "warming_ginger",
+      "qty": 20
     },
     {
-      "qty": 32,
-      "ingredientId": "honey"
+      "ingredientId": "large_leek",
+      "qty": 20
     },
     {
-      "qty": 18,
-      "ingredientId": "plump_pumpkin"
+      "ingredientId": "coffee",
+      "qty": 12
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 24354
-    },
-    "max": {
-      "level": 70,
-      "value": 87187
-    },
     "observed": [
       {
-        "level": 57,
-        "value": 68922,
+        "level": 63,
+        "value": 56156,
         "source": "user-screenshot/IMG_1522.png"
       }
     ]

@@ -1,38 +1,38 @@
 {
-  "id": "wish_apple_pie",
-  "name": "ねがいごとアップルパイ",
+  "id": "jigglypuff_flan",
+  "name": "プリンのプリンアラモード",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
+      "ingredientId": "honey",
+      "qty": 20
+    },
+    {
+      "ingredientId": "fancy_egg",
+      "qty": 15
+    },
+    {
       "ingredientId": "moomoo_milk",
-      "qty": 4
+      "qty": 10
     },
     {
       "ingredientId": "fancy_apple",
-      "qty": 12
+      "qty": 10
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 1748
-    },
-    "max": {
-      "level": 70,
-      "value": 6258
-    },
     "observed": [
       {
-        "level": 7,
-        "value": 1940,
-        "source": "user-screenshot/IMG_1526.png"
+        "level": 55,
+        "value": 20580,
+        "source": "user-screenshot/IMG_1523.png"
       }
     ]
   },
   "sources": [
     {
       "type": "user_screenshot",
-      "file": "IMG_1526.png",
+      "file": "IMG_1523.png",
       "date": "2026-09-30",
       "verifiedFields": [
         "name",

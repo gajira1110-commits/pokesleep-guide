@@ -1,34 +1,34 @@
 {
-  "id": "hot_milk",
-  "name": "モーモーホットミルク",
+  "id": "grass_mixer_smoothie",
+  "name": "グラスミキサースムージー",
   "category": "デザート・ドリンク",
   "ingredients": [
     {
+      "ingredientId": "shiny_avocado",
+      "qty": 18
+    },
+    {
+      "ingredientId": "tomato",
+      "qty": 16
+    },
+    {
       "ingredientId": "moomoo_milk",
-      "qty": 7
+      "qty": 14
     }
   ],
   "energy": {
-    "min": {
-      "level": 1,
-      "value": 814
-    },
-    "max": {
-      "level": 70,
-      "value": 2914
-    },
     "observed": [
       {
-        "level": 19,
-        "value": 1083,
-        "source": "user-screenshot/IMG_1527.png"
+        "level": 10,
+        "value": 9635,
+        "source": "user-screenshot/IMG_1524.png"
       }
     ]
   },
   "sources": [
     {
       "type": "user_screenshot",
-      "file": "IMG_1527.png",
+      "file": "IMG_1524.png",
       "date": "2026-09-30",
       "verifiedFields": [
         "name",

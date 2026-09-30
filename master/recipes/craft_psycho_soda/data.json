@@ -1,5 +1,40 @@
 {
-  "id": "craft_psycho_soda", "name": "クラフトサイコソーダ", "category": "デザート・ドリンク",
-  "ingredients": [{"ingredientId": "honey", "qty": 9}],
-  "energy": {"min": {"level": 1, "value": 1079}, "max": {"level": 70, "value": 3863}}
+  "id": "craft_psycho_soda",
+  "name": "クラフトサイコソーダ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "ingredientId": "honey",
+      "qty": 9
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 1079
+    },
+    "max": {
+      "level": 70,
+      "value": 3863
+    },
+    "observed": [
+      {
+        "level": 11,
+        "value": 1284,
+        "source": "user-screenshot/IMG_1526.png"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1526.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    }
+  ]
 }
