@@ -16,6 +16,14 @@ function berryEnergyAtLevel(base,level){
 function mealRecoveryAtEnergy(energy){
  return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
 }
+function helperBoostContext(effectType,effect,items,catalog){
+ const types={helper_boost_fire:['ほのお','bonusByUniqueFire'],helper_boost_water:['みず','bonusByUniqueWater'],helper_boost_electric:['でんき','bonusByUniqueElectric']};
+ const config=types[effectType];if(!config)return null;
+ const [type,key]=config;
+ const unique=new Set(items.filter(item=>catalog?.pokemon?.[item.no]?.type===type).map(item=>item.no)).size;
+ const bonus=effect?.[key]?.[Math.min(5,unique)];
+ return {type,unique,helps:Number.isFinite(effect?.helps)&&Number.isFinite(bonus)?effect.helps+bonus:null};
+}
 function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true,favoriteBerries=[],areaBonus=0){
  const interval=[2,4,8].includes(Number(collectionHours))?Number(collectionHours):4;
  const startingEnergy=Math.max(0,Math.min(150,Math.round(Number(initialEnergy)||0)));
@@ -25,7 +33,8 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
  const speedContext=teamSpeedContext(ids,box,catalog);
  const periods=[];for(let h=0;h<16;h+=interval)periods.push(Math.min(interval,16-h));
  periods.push(8); // No collection during sleep; collect at wake-up.
- const members=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean).map(item=>{
+ const items=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
+ const members=items.map(item=>{
   const species=catalog?.pokemon?.[item.no],stats=speedContext.members.get(item.id);
   const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
    const chosen=item.ingredients?.[slot.unlock];
@@ -47,19 +56,20 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
   const skill=catalog?.skills?.[species.mainSkillId];
   const skillLevel=Math.max(1,Math.min(skill?.maxLevel||7,item.skillLevel||1));
   const skillEffect=skill?.levels?.[skillLevel];
+  const boost=helperBoostContext(skill?.effectType,skillEffect,items,catalog);
   const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
   return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
    berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
-   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,
+   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,skillExtraHelps:0,randomIngredients:0,
    skillName:skill?.name||null,skillEffectType:skill?.effectType,
    skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
     (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
-   skillRecovery:skillEffect?.recovery,skillHelps:skillEffect?.helps,missing:false};
+   skillRecovery:skillEffect?.recovery,skillHelps:boost?boost.helps:skillEffect?.helps,boost,missing:false};
  });
  const valid=members.filter(m=>!m.missing);
  let elapsedTicks=0;
  periods.forEach((hours,periodIndex)=>{
-  let teamRecovery=0,allyRecovery=0;
+  let teamRecovery=0,allyRecovery=0,bonusHelps=0;
   for(const member of valid){
    let helps=0;
    for(let tick=0;tick<hours*6;tick++){
@@ -71,6 +81,9 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
    const extra=Math.max(0,helps-regular);
    const triggers=Number.isFinite(member.stats.skill)&&member.skillName?expectedStoredSkills(regular,member.stats.skill,member.stockLimit):0;
    member.skillTriggers+=triggers;
+   if(member.boost&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps;
+   if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps/items.length;
+   if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))member.randomIngredients+=triggers*member.skillAmount;
    if(member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery))teamRecovery+=triggers*member.skillRecovery;
    if(periodIndex<periods.length-1&&member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery))
     member.energy=Math.min(150,member.energy+triggers*member.skillRecovery*member.stats.energyFactor);
@@ -79,6 +92,14 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
    for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+regular*member.chance*slot.qty/member.slots.length);
    member.berries+=regular*(1-member.chance)*member.stats.berryQty+extra*member.stats.berryQty;
    member.overflow+=extra*member.stats.berryQty;
+  }
+  // Immediate helps bypass normal carry and never produce further skill rolls.
+  // Use skills and collect their products at every collection boundary.
+  for(const member of valid){
+   const immediate=Math.min(bonusHelps,999/member.averageSize);
+   member.skillExtraHelps+=immediate;
+   for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+immediate*member.chance*slot.qty/member.slots.length);
+   member.berries+=immediate*(1-member.chance)*member.stats.berryQty;
   }
   // The sleep period ends at the next wake-up; its stored skills do not change today's production.
   if(periodIndex<periods.length-1&&(teamRecovery>0||allyRecovery>0)){
@@ -96,5 +117,6 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
  const berryEnergy=valid.reduce((sum,member)=>sum+member.berryEnergy,0);
  const skillEnergyBase=valid.reduce((sum,member)=>sum+(['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
  const skillEnergy=skillEnergyBase*areaFactor;
- return {members,foods,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
+ const randomIngredients=valid.reduce((sum,member)=>sum+member.randomIngredients,0);
+ return {members,foods,randomIngredients,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
 }

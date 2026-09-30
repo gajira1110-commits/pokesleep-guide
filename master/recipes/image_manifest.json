@@ -1,0 +1,609 @@
+Warning: truncated output (original token count: 26087)
+Total output lines: 630
+
+{
+  "version": 195,
+  "date": "2026-09-30",
+  "format": "128x128 transparent lossless WebP",
+  "images": [
+    {
+      "id": "apple_juice",
+      "name": "とくせんリンゴジュース",
+      "asset": "apple_juice/image.webp",
+      "bytes": 14014,
+      "source": "exec-0979bf34-7066-4b7d-8e87-5f284c739b5c.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"とくせんリンゴジュース\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: とくせんリンゴジュース, apple_juice, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "bean_burger_curry",
+      "name": "マメバーグカレー",
+      "asset": "bean_burger_curry/image.webp",
+      "bytes": 19014,
+      "source": "exec-a17de5b9-d50a-485e-8c5c-f2c4ac94b8f4.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"マメバーグカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: マメバーグカレー, bean_burger_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "big_malasada",
+      "name": "おおきいマラサダ",
+      "asset": "big_malasada/image.webp",
+      "bytes": 19104,
+      "source": "exec-014a35b6-039a-4dcd-873e-0fb2d19830fa.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"おおきいマラサダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: おおきいマラサダ, big_malasada, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "boiling_hot_salad",
+      "name": "ごろごろねっとうサラダ",
+      "asset": "boiling_hot_salad/image.webp",
+      "bytes": 20372,
+      "source": "exec-ffda6db4-0e02-42ae-934c-47e3f71f6f2a.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ごろごろねっとうサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ごろごろねっとうサラダ, boiling_hot_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "apple_acid_yogurt_salad",
+      "name": "りんごさんヨーグルトサラダ",
+      "asset": "apple_acid_yogurt_salad/image.webp",
+      "bytes": 21010,
+      "source": "exec-56f599ce-b559-4ee2-9567-73e574c82b53.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"りんごさんヨーグルトサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: りんごさんヨーグルトサラダ, apple_acid_yogurt_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "bean_ham_salad",
+      "name": "マメハムサラダ",
+      "asset": "bean_ham_salad/image.webp",
+      "bytes": 20176,
+      "source": "exec-535bb476-0d8a-4a74-96dc-ffc3a28d9826.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"マメハムサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: マメハムサラダ, bean_ham_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "baby_honey_curry",
+      "name": "ベイビィハニーカレー",
+      "asset": "baby_honey_curry/image.webp",
+      "bytes": 17232,
+      "source": "exec-8c71dd79-366c-4852-8cdd-03be4672b075.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ベイビィハニーカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ベイビィハニーカレー, baby_honey_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "attract_apple_cheese_salad",
+      "name": "メロメロりんごのチーズサラダ",
+      "asset": "attract_apple_cheese_salad/image.webp",
+      "bytes": 19428,
+      "source": "exec-34655c15-97d6-4a90-af5b-b741a233f1be.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"メロメロりんごのチーズサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: メロメロりんごのチーズサラダ, attract_apple_cheese_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "bouncing_curry_udon",
+      "name": "とびはねるカレーうどん",
+      "asset": "bouncing_curry_udon/image.webp",
+      "bytes": 20352,
+      "source": "exec-981d96c9-fdfc-47c4-8e73-9aebe5fdb9cc.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"とびはねるカレーうどん\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: とびはねるカレーうどん, bouncing_curry_udon, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "calm_mind_fruit_salad",
+      "name": "めいそうスイートサラダ",
+      "asset": "calm_mind_fruit_salad/image.webp",
+      "bytes": 18802,
+      "source": "exec-7722b056-36d8-4e1b-ac53-b987cd9e7edc.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"めいそうスイートサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: めいそうスイートサラダ, calm_mind_fruit_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "crunch_avocado_salad",
+      "name": "くだけるアボカドサラダ",
+      "asset": "crunch_avocado_salad/image.webp",
+      "bytes": 20372,
+      "source": "exec-cfafd56e-4806-4fac-ba78-e90052f38a90.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"くだけるアボカドサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: くだけるアボカドサラダ, crunch_avocado_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "defiant_coffee_salad",
+      "name": "まけんきコーヒーサラダ",
+      "asset": "defiant_coffee_salad/image.webp",
+      "bytes": 22424,
+      "source": "exec-c81ff3c0-b121-4c7a-a185-a09330ebee87.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"まけんきコーヒーサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: まけんきコーヒーサラダ, defiant_coffee_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "choice_apple_salad",
+      "name": "とくせんリンゴサラダ",
+      "asset": "choice_apple_salad/image.webp",
+      "bytes": 20914,
+      "source": "exec-05c1120b-f337-468b-8eaa-86c6e0aae24d.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. The reference is STYLE ONLY. Draw a small plate/bowl of sliced fresh red apples for とくせんリンゴサラダ (choice apple salad); no waffles. Target recipe: とくせんリンゴサラダ, choice_apple_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "bulk_up_bean_curry",
+      "name": "ビルドアップマメカレー",
+      "asset": "bulk_up_bean_curry/image.webp",
+      "bytes": 18972,
+      "source": "exec-781c9e22-287b-47bf-a396-20f98eec3800.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ビルドアップマメカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ビルドアップマメカレー, bulk_up_bean_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "dizzy_punch_spicy_curry",
+      "name": "ピヨピヨパンチ辛口カレー",
+      "asset": "dizzy_punch_spicy_curry/image.webp",
+      "bytes": 17890,
+      "source": "exec-3baf7072-9bcb-40b0-b662-43152291737b.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ピヨピヨパンチ辛口カレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ピヨピヨパンチ辛口カレー, dizzy_punch_spicy_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "clodsire_eclairs",
+      "name": "ドオーのエクレア",
+      "asset": "clodsire_eclairs/image.webp",
+      "bytes": 16794,
+      "source": "exec-13bb1a8b-3e47-41e3-b802-16a84ddfe7db.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ドオーのエクレア\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ドオーのエクレア, clodsire_eclairs, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "craft_psycho_soda",
+      "name": "クラフトサイコソーダ",
+      "asset": "craft_psycho_soda/image.webp",
+      "bytes": 13220,
+      "source": "exec-ad1989b5-bfd5-4f3a-a792-6d36cbf72de0.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"クラフトサイコソーダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: クラフトサイコソーダ, craft_psycho_soda, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "egg_bomb_curry",
+      "name": "おやこあいカレー",
+      "asset": "egg_bomb_curry/image.webp",
+      "bytes": 17778,
+      "source": "exec-4a3569e7-9a2e-476e-892b-07b6379d98b7.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"おやこあいカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: おやこあいカレー, egg_bomb_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "explosion_popcorn",
+      "name": "だいばくはつポップコーン",
+      "asset": "explosion_popcorn/image.webp",
+      "bytes": 20372,
+      "source": "exec-5f912e03-8c67-4adc-93e8-6518420625e7.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"だいばくはつポップコーン\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: だいばくはつポップコーン, explosion_popcorn, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "early_bird_coffee_jelly",
+      "name": "はやおきコーヒーゼリー",
+      "asset": "early_bird_coffee_jelly/image.webp",
+      "bytes": 18878,
+      "source": "exec-3654180d-2bd0-46d9-bb90-436613d0fe0b.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"はやおきコーヒーゼリー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: はやおきコーヒーゼリー, early_bird_coffee_jelly, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "dream_eater_butter_curry",
+      "name": "ぜったいねむりバターカレー",
+      "asset": "dream_eater_butter_curry/image.webp",
+      "bytes": 18818,
+      "source": "exec-283a674e-c68d-4077-8459-5906e2a28047.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ぜったいねむりバターカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ぜったいねむりバターカレー, dream_eater_butter_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "cross_chop_salad",
+      "name": "クロスチョップドサラダ",
+      "asset": "cross_chop_salad/image.webp",
+      "bytes": 21600,
+      "source": "exec-6db48303-fe25-450e-b04e-46a92113d86c.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"クロスチョップドサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: クロスチョップドサラダ, cross_chop_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "flower_gift_macarons",
+      "name": "フラワーギフトマカロン",
+      "asset": "flower_gift_macarons/image.webp",
+      "bytes": 19508,
+      "source": "exec-8f1be94e-c975-4e14-b272-a0caba023b36.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"フラワーギフトマカロン\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: フラワーギフトマカロン, flower_gift_macarons, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "gluttony_potato_salad",
+      "name": "くいしんぼうポテトサラダ",
+      "asset": "gluttony_potato_salad/image.webp",
+      "bytes": 19158,
+      "source": "exec-2eaf9496-6478-4f14-972c-9513b78b3f9e.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"くいしんぼうポテトサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: くいしんぼうポテトサラダ, gluttony_potato_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "fury_attack_chocolate_meat_salad",
+      "name": "ムラっけチョコミートサラダ",
+      "asset": "fury_attack_chocolate_meat_salad/image.webp",
+      "bytes": 20582,
+      "source": "exec-c582edbd-f7db-4981-b712-54107df74038.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ムラっけチョコミートサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ムラっけチョコミートサラダ, fury_attack_chocolate_meat_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "grass_mixer_smoothie",
+      "name": "グラスミキサースムージー",
+      "asset": "grass_mixer_smoothie/image.webp",
+      "bytes": 15630,
+      "source": "exec-0ac8281e-a87e-4030-bc4e-a93aaae4390c.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"グラスミキサースムージー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: グラスミキサースムージー, grass_mixer_smoothie, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "greengrass_curry_bun",
+      "name": "ワカクサカレーパン",
+      "asset": "greengrass_curry_bun/image.webp",
+      "bytes": 19442,
+      "source": "exec-b71da453-9814-431e-b502-b79f6cd7b2d7.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ワカクサカレーパン\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ワカクサカレーパン, greengrass_curry_bun, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "drought_katsu_curry",
+      "name": "ひでりカツレツカレー",
+      "asset": "drought_katsu_curry/image.webp",
+      "bytes": 20122,
+      "source": "exec-af704bd7-03bf-42a3-b2f1-f4a20a7fa035.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ひでりカツレツカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ひでりカツレツカレー, drought_katsu_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "fancy_apple_curry",
+      "name": "とくせんリンゴカレー",
+      "asset": "fancy_apple_curry/image.webp",
+      "bytes": 18346,
+      "source": "exec-4a17b0e1-6e75-4539-ac3c-f29e5e723ee1.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"とくせんリンゴカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: とくせんリンゴカレー, fancy_apple_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "grilled_tail_curry",
+      "name": "あぶりテールカレー",
+      "asset": "grilled_tail_curry/image.webp",
+      "bytes": 19294,
+      "source": "exec-6d0f9c67-cdde-4931-a35a-5ab7c2018853.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"あぶりテールカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: あぶりテールカレー, grilled_tail_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "ginger_tea",
+      "name": "ひのこのジンジャーティー",
+      "asset": "ginger_tea/image.webp",
+      "bytes": 18740,
+      "source": "exec-4dd43b30-1536-4373-a52c-a5b71039a38f.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ひのこのジンジャーティー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ひのこのジンジャーティー, ginger_tea, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "fury_attack_corn_salad",
+      "name": "みだれづきコーンサラダ",
+      "asset": "fury_attack_corn_salad/image.webp",
+      "bytes": 20160,
+      "source": "exec-3342876b-5507-4db8-b505-e4887848e8d3.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"みだれづきコーンサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: みだれづきコーンサラダ, fury_attack_corn_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "hearty_cheeseburger_curry",
+      "name": "満腹チーズバーグカレー",
+      "asset": "hearty_cheeseburger_curry/image.webp",
+      "bytes": 17792,
+      "source": "exec-6a69e681-4b9d-457a-88fd-fc252341e841.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"満腹チーズバーグカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: 満腹チーズバーグカレー, hearty_cheeseburger_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "hearty_white_stew",
+      "name": "ほっこりホワイトシチュー",
+      "asset": "hearty_white_stew/image.webp",
+      "bytes": 17054,
+      "source": "exec-14d0822d-36e3-46a3-b29e-816c5d5ab191.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ほっこりホワイトシチュー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ほっこりホワイトシチュー, hearty_white_stew, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "heat_wave_tofu_salad",
+      "name": "ねっぷうとうふサラダ",
+      "asset": "heat_wave_tofu_salad/image.webp",
+      "bytes": 20488,
+      "source": "exec-1519eae7-4482-45ef-845d-b5e00492a7e3.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ねっぷうとうふサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ねっぷうとうふサラダ, heat_wave_tofu_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "hidden_power_stew",
+      "name": "めざめるパワーシチュー",
+      "asset": "hidden_power_stew/image.webp",
+      "bytes": 18840,
+      "source": "exec-82c5f120-8b4b-470a-b3b0-b3d101728ca3.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"めざめるパワーシチュー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: めざめるパワーシチュー, hidden_power_stew, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "greengrass_salad",
+      "name": "ワカクササラダ",
+      "asset": "greengrass_salad/image.webp",
+      "bytes": 19262,
+      "source": "exec-c75f36fa-baed-42ad-a711-c117596cf846.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ワカクササラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ワカクササラダ, greengrass_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "huge_power_soy_donuts",
+      "name": "ちからもちソイドーナッツ",
+      "asset": "huge_power_soy_donuts/image.webp",
+      "bytes": 19122,
+      "source": "exec-5b69972f-9f47-4e8a-99ff-6a5cee0784c2.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel…1087 tokens truncated…STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: プリンのプリンアラモード, jigglypuff_flan, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "immunity_leek_salad",
+      "name": "めんえきねぎサラダ",
+      "asset": "immunity_leek_salad/image.webp",
+      "bytes": 21020,
+      "source": "exec-049b8475-3a49-4641-9ee0-47b623ef370a.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"めんえきねぎサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: めんえきねぎサラダ, immunity_leek_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "lovely_kiss_fruit_au_lait",
+      "name": "あくまのキッスフルーツオレ",
+      "asset": "lovely_kiss_fruit_au_lait/image.webp",
+      "bytes": 13718,
+      "source": "exec-61585d84-01a1-4faa-b090-5ff8728b3fa5.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"あくまのキッスフルーツオレ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: あくまのキッスフルーツオレ, lovely_kiss_fruit_au_lait, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "inferno_corn_keema_curry",
+      "name": "れんごくコーンキーマカレー",
+      "asset": "inferno_corn_keema_curry/image.webp",
+      "bytes": 19518,
+      "source": "exec-42c5a63f-19df-445b-99a2-3e228e804050.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"れんごくコーンキーマカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: れんごくコーンキーマカレー, inferno_corn_keema_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "hot_milk",
+      "name": "モーモーホットミルク",
+      "asset": "hot_milk/image.webp",
+      "bytes": 12148,
+      "source": "exec-f5ef4d02-7c98-43cc-a09a-425f8f3f5867.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"モーモーホットミルク\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: モーモーホットミルク, hot_milk, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "melty_omelette_curry",
+      "name": "とけるオムカレー",
+      "asset": "melty_omelette_curry/image.webp",
+      "bytes": 16056,
+      "source": "exec-15736be2-c87f-4ee1-88cf-09f0a799f156.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"とけるオムカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: とけるオムカレー, melty_omelette_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "mold_breaker_corn_tiramisu",
+      "name": "かたやぶりコーンティラミス",
+      "asset": "mold_breaker_corn_tiramisu/image.webp",
+      "bytes": 20998,
+      "source": "exec-fa57068d-02f4-46e7-ac92-b6ff7d0d8f1f.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"かたやぶりコーンティラミス\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: かたやぶりコーンティラミス, mold_breaker_corn_tiramisu, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "ninja_salad",
+      "name": "ニンジャサラダ",
+      "asset": "ninja_salad/image.webp",
+      "bytes": 20648,
+      "source": "exec-f3f43a84-445f-4d09-b466-54b10196075b.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ニンジャサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ニンジャサラダ, ninja_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "limber_corn_stew",
+      "name": "じゅうなんコーンシチュー",
+      "asset": "limber_corn_stew/image.webp",
+      "bytes": 20458,
+      "source": "exec-bfabb45d-a8d6-419b-a175-a030e57b8170.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"じゅうなんコーンシチュー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: じゅうなんコーンシチュー, limber_corn_stew, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "moomoo_caprese",
+      "name": "モーモーカプレーゼ",
+      "asset": "moomoo_caprese/image.webp",
+      "bytes": 19258,
+      "source": "exec-e25c2f38-0af3-48c5-b951-e693c93f28a4.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"モーモーカプレーゼ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: モーモーカプレーゼ, moomoo_caprese, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "overheat_salad",
+      "name": "オーバーヒートサラダ",
+      "asset": "overheat_salad/image.webp",
+      "bytes": 20580,
+      "source": "exec-2f8cd505-7732-455c-9625-4ebe11923802.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"オーバーヒートサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: オーバーヒートサラダ, overheat_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "role_play_pumpkaboo_stew",
+      "name": "なりきりバケッチャシチュー",
+      "asset": "role_play_pumpkaboo_stew/image.webp",
+      "bytes": 16490,
+      "source": "exec-db1a0410-fd02-4272-90eb-17e68c6eec5c.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"なりきりバケッチャシチュー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: なりきりバケッチャシチュー, role_play_pumpkaboo_stew, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "neroli_detox_tea",
+      "name": "ネロリのデトックスティー",
+      "asset": "neroli_detox_tea/image.webp",
+      "bytes": 18190,
+      "source": "exec-0dc8909e-9668-401d-9a56-06d94c36275d.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ネロリのデトックスティー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ネロリのデトックスティー, neroli_detox_tea, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "petal_dance_chocolate_tart",
+      "name": "はなびらのまいチョコタルト",
+      "asset": "petal_dance_chocolate_tart/image.webp",
+      "bytes": 21928,
+      "source": "exec-6b3020f5-b90e-45b8-8072-6d485359dd46.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"はなびらのまいチョコタルト\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: はなびらのまいチョコタルト, petal_dance_chocolate_tart, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "sacred_sword_sukiyaki_curry",
+      "name": "いあいぎりすき焼きカレー",
+      "asset": "sacred_sword_sukiyaki_curry/image.webp",
+      "bytes": 19606,
+      "source": "exec-0a5c259c-f768-409a-86f5-988b33d6cadc.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"いあいぎりすき焼きカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: いあいぎりすき焼きカレー, sacred_sword_sukiyaki_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "slowpoke_tail_pepper_salad",
+      "name": "ヤドンテールのペッパーサラダ",
+      "asset": "slowpoke_tail_pepper_salad/image.webp",
+      "bytes": 20324,
+      "source": "exec-2291efd0-3050-409f-b45f-d9187b52a0f8.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ヤドンテールのペッパーサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ヤドンテールのペッパーサラダ, slowpoke_tail_pepper_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "simple_white_stew",
+      "name": "たんじゅんホワイトシチュー",
+      "asset": "simple_white_stew/image.webp",
+      "bytes": 18846,
+      "source": "exec-3d818951-c8f1-45f8-b71c-dee7cfa494f8.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"たんじゅんホワイトシチュー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: たんじゅんホワイトシチュー, simple_white_stew, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "slow_and_steady_vegetable_juice",
+      "name": "マイペースやさいジュース",
+      "asset": "slow_and_steady_vegetable_juice/image.webp",
+      "bytes": 13572,
+      "source": "exec-adeebccf-0d24-4cb5-bfe5-efc896599bf6.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"マイペースやさいジュース\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: マイペースやさいジュース, slow_and_steady_vegetable_juice, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "petal_blizzard_mimosa_salad",
+      "name": "はなふぶきミモザサラダ",
+      "asset": "petal_blizzard_mimosa_salad/image.webp",
+      "bytes": 21412,
+      "source": "exec-558d98f3-8974-4a83-9a19-e58137c6d904.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"はなふぶきミモザサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: はなふぶきミモザサラダ, petal_blizzard_mimosa_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "ripened_sweet_potato",
+      "name": "じゅくせいスイートポテト",
+      "asset": "ripened_sweet_potato/image.webp",
+      "bytes": 17666,
+      "source": "exec-ed29b84b-0d8c-4493-b738-b729ce2b537b.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"じゅくせいスイートポテト\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: じゅくせいスイートポテト, ripened_sweet_potato, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "ninja_curry",
+      "name": "ニンジャカレー",
+      "asset": "ninja_curry/image.webp",
+      "bytes": 17648,
+      "source": "exec-071bc0b2-c261-438b-991a-0018d75fe622.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ニンジャカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ニンジャカレー, ninja_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "snow_cloak_caesar_salad",
+      "name": "ゆきかきシーザーサラダ",
+      "asset": "snow_cloak_caesar_salad/image.webp",
+      "bytes": 21060,
+      "source": "exec-8fa271e1-bbdb-4083-a839-1244e16657f6.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ゆきかきシーザーサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ゆきかきシーザーサラダ, snow_cloak_caesar_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "solar_power_tomato_curry",
+      "name": "サンパワートマトカレー",
+      "asset": "solar_power_tomato_curry/image.webp",
+      "bytes": 19112,
+      "source": "exec-d6e71f68-90a9-41ff-b781-5cf2f36f6d45.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"サンパワートマトカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: サンパワートマトカレー, solar_power_tomato_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "snoozy_tomato_salad",
+      "name": "あんみんトマトサラダ",
+      "asset": "snoozy_tomato_salad/image.webp",
+      "bytes": 21622,
+      "source": "exec-359b3284-2ca6-4ec1-bd2e-2029bce2bf58.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"あんみんトマトサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: あんみんトマトサラダ, snoozy_tomato_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "spore_mushroom_curry",
+      "name": "キノコのほうしカレー",
+      "asset": "spore_mushroom_curry/image.webp",
+      "bytes": 18574,
+      "source": "exec-9bcdb4ff-0d00-4fc3-a6f1-bfc29e1a0e38.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"キノコのほうしカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: キノコのほうしカレー, spore_mushroom_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "spicy_leek_curry",
+      "name": "からくちネギもりカレー",
+      "asset": "spicy_leek_curry/image.webp",
+      "bytes": 20962,
+      "source": "exec-36cb5a13-7047-4a7b-b7e7-949506a4c3b7.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"からくちネギもりカレー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: からくちネギもりカレー, spicy_leek_curry, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "stomping_guacamole_chips",
+      "name": "じならしワカモレチップス",
+      "asset": "stomping_guacamole_chips/image.webp",
+      "bytes": 21932,
+      "source": "exec-39c275c8-72c9-4017-abaf-c1584547437c.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"じならしワカモレチップス\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: じならしワカモレチップス, stomping_guacamole_chips, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "spore_mushroom_salad",
+      "name": "キノコのほうしサラダ",
+      "asset": "spore_mushroom_salad/image.webp",
+      "bytes": 20714,
+      "source": "exec-fc039c26-454f-49dd-b6fd-8f87088beb7d.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"キノコのほうしサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: キノコのほうしサラダ, spore_mushroom_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "spooky_face_pancakes",
+      "name": "ドキドキこわいかおパンケーキ",
+      "asset": "spooky_face_pancakes/image.webp",
+      "bytes": 19208,
+      "source": "exec-e968a84f-8ca5-40a5-98d4-d0ca5b1345f2.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ドキドキこわいかおパンケーキ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ドキドキこわいかおパンケーキ, spooky_face_pancakes, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "steadfast_ginger_cookies",
+      "name": "ふくつのジンジャークッキー",
+      "asset": "steadfast_ginger_cookies/image.webp",
+      "bytes": 18310,
+      "source": "exec-affa0c42-87c9-4766-9194-7bc63d8bacb4.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ふくつのジンジャークッキー\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ふくつのジンジャークッキー, steadfast_ginger_cookies, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "superpower_extreme_salad",
+      "name": "ばかぢからワイルドサラダ",
+      "asset": "superpower_extreme_salad/image.webp",
+      "bytes": 22284,
+      "source": "exec-4d7874ac-4cbf-4363-9ac5-1c42e593f89a.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ばかぢからワイルドサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ばかぢからワイルドサラダ, superpower_extreme_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "zippy_zap_spiced_cola",
+      "name": "スパークスパイスコーラ",
+      "asset": "zippy_zap_spiced_cola/image.webp",
+      "bytes": 18192,
+      "source": "exec-ee3ace92-2186-431b-a8ae-051bd5886214.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"スパークスパイスコーラ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: スパークスパイスコーラ, zippy_zap_spiced_cola, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "sweet_scent_chocolate_cake",
+      "name": "あまいかおりチョコケーキ",
+      "asset": "sweet_scent_chocolate_cake/image.webp",
+      "bytes": 17274,
+      "source": "exec-027fa482-65e7-44ba-92eb-3cf3cfb65445.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"あまいかおりチョコケーキ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: あまいかおりチョコケーキ, sweet_scent_chocolate_cake, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "teatime_corn_scones",
+      "name": "おちゃかいコーンスコーン",
+      "asset": "teatime_corn_scones/image.webp",
+      "bytes": 19322,
+      "source": "exec-9f98afbb-e0bc-4637-80f7-560e0eca8cfa.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"おちゃかいコーンスコーン\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: おちゃかいコーンスコーン, teatime_corn_scones, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "verdant_avocado_gratin",
+      "name": "しんりょくアボカドグラタン",
+      "asset": "verdant_avocado_gratin/image.webp",
+      "bytes": 22336,
+      "source": "exec-2eef675a-d198-4c1f-b802-2ec5b8e68b15.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"しんりょくアボカドグラタン\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: しんりょくアボカドグラタン, verdant_avocado_gratin, category カレー・シチュー. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "water_veil_tofu_salad",
+      "name": "うるおいとうふサラダ",
+      "asset": "water_veil_tofu_salad/image.webp",
+      "bytes": 21274,
+      "source": "exec-608c251a-fd4b-4d4d-b6bf-00d11fd08ee8.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"うるおいとうふサラダ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: うるおいとうふサラダ, water_veil_tofu_salad, category サラダ. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "wish_apple_pie",
+      "name": "ねがいごとアップルパイ",
+      "asset": "wish_apple_pie/image.webp",
+      "bytes": 18540,
+      "source": "exec-ebe89d92-74e2-443c-8c55-ae52b010efc2.png",
+      "prompt": "Use case: style-transfer. Create ONE standalone transparent pixel-art recipe icon for a mobile food list. Image 1 is the edit target: game screenshot containing several recipes. Locate ONLY the dish illustration beside the exact Japanese recipe title \"ねがいごとアップルパイ\" and redraw that single dish. Image 2 is STYLE ONLY: the approved honey waffle pixel icon. Do NOT draw waffles unless the target dish itself is waffles. Target recipe: ねがいごとアップルパイ, wish_apple_pie, category デザート・ドリンク. Preserve the reference dish's distinctive food, vessel, garnish, shapes and colors. Match the approved icon's retro game pixel style: hard square pixel clusters, stepped dark outlines, limited palette, three-quarter overhead food view, readable compact silhouette. Full dish centered inside a square with 8% clear margin; do not clip the plate or glass. Actual transparent background. No screenshot UI, names, numbers, level labels, frames, decorative backdrop, watermark, smooth painting or gradients. One dish icon only, not a sprite sheet or montage."
+    },
+    {
+      "id": "honey_gathering_chocolate_waffles",
+      "name": "みつあつめチョコワッフル",
+      "asset": "honey_gathering_chocolate_waffles/image.webp",
+      "source": "IMG_1522.png",
+      "prompt": "Approved v194 reference: standalone transparent retro pixel-art honey chocolate waffle icon, stepped outlines, no UI or text."
+    }
+  ]
+}
