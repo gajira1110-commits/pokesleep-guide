@@ -32,3 +32,16 @@ ctx.window.PS_CATALOG.skills.s={maxLevel:1,name:'magnet',effectType:'random_ingr
 ctx.teamSpeedContext=()=>({members:new Map(ctx.state.box.map((item,i)=>[item.id,{speed:3600,carry:10000,food:50,berryQty:1,skill:i?0:100,energyFactor:1}]))});
 const magnet=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);assert.equal(magnet.randomIngredients,30);assert.equal(magnet.foods.get('a'),24);
 console.log('Boost species count, mixed types, support distribution, overflow bypass, no recursion, random-food separate totals passed.');
+
+// Aura Sphere: field bonus applies only to energy; shards are a separate resource.
+ctx.window.PS_CATALOG.skills.s={maxLevel:8,name:'aura',effectType:'fixed_dream_shards_energy',levels:{1:{shards:240,energy:200},8:{shards:2500,energy:2042}}};
+ctx.state.box[0].skillLevel=1;
+let aura=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
+assert.equal(aura.members[0].skillTriggers,5);assert.equal(aura.dreamShards,1200);assert.equal(aura.skillEnergyBase,1000);assert.equal(aura.skillEnergy,1500);
+ctx.state.box[0].skillLevel=8;
+aura=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
+assert.equal(aura.dreamShards,12500);assert.equal(aura.skillEnergy,15315);
+ctx.window.PS_CATALOG.skills.s={maxLevel:8,name:'shards',effectType:'fixed_dream_shards',levels:{8:{shards:2500}}};
+const shards=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
+assert.equal(shards.dreamShards,12500);assert.equal(shards.skillEnergy,0);
+console.log('Aura Sphere Lv.1/8, separate dream shards, field bonus only on energy and fixed-shard skill passed.');

@@ -1,0 +1,94 @@
+{
+  "no": 447,
+  "name": "リオル",
+  "type": "かくとう",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "クラボのみ",
+  "berryQty": 1,
+  "help": 4200,
+  "carry": 9,
+  "foodRate": 12.6,
+  "skillRate": 3.8,
+  "rateStatus": "推定",
+  "mainSkillId": "dream_shard_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0447_01",
+      "name": "ひざかかえ寝",
+      "stars": 1
+    },
+    {
+      "id": "0447_02",
+      "name": "しゅぎょうちゅう寝",
+      "stars": 2
+    },
+    {
+      "id": "0447_03",
+      "name": "かたひざたて寝",
+      "stars": 3
+    },
+    {
+      "id": "0447_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/riolu",
+    "https://wikiwiki.jp/poke_sleep/リオル",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://www.pokemonsleep.net/news/343239303735303933343939343132343831/"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 448,
+    "to": "ルカリオ",
+    "candy": 80,
+    "extra": "一緒に睡眠150時間・06:00〜18:00"
+  }
+}

@@ -2,11 +2,11 @@
   "asOf": "2026-10-01",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
-    "pokemon": 90,
-    "skills": 22,
+    "pokemon": 92,
+    "skills": 23,
     "recipes": 78,
-    "sleepStyles": 358,
-    "normalFieldEncounters": 409
+    "sleepStyles": 366,
+    "normalFieldEncounters": 424
   },
   "missingCoreFields": [],
   "missingEvolutionTargets": [],

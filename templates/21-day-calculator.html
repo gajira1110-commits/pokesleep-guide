@@ -64,6 +64,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
    skillName:skill?.name||null,skillEffectType:skill?.effectType,
    skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
     (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillShards:skillEffect?.shards ?? (skill?.effectType==='variable_dream_shards'&&Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
    skillRecovery:skillEffect?.recovery,skillHelps:boost?boost.helps:skillEffect?.helps,boost,missing:false};
  });
  const valid=members.filter(m=>!m.missing);
@@ -115,8 +116,9 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
  const foods=new Map();
  valid.forEach(member=>member.foods.forEach((qty,name)=>foods.set(name,(foods.get(name)||0)+qty)));
  const berryEnergy=valid.reduce((sum,member)=>sum+member.berryEnergy,0);
- const skillEnergyBase=valid.reduce((sum,member)=>sum+(['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
+ const skillEnergyBase=valid.reduce((sum,member)=>sum+(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
  const skillEnergy=skillEnergyBase*areaFactor;
+ const dreamShards=valid.reduce((sum,member)=>sum+(Number.isFinite(member.skillShards)?member.skillTriggers*member.skillShards:0),0);
  const randomIngredients=valid.reduce((sum,member)=>sum+member.randomIngredients,0);
- return {members,foods,randomIngredients,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
+ return {members,foods,randomIngredients,dreamShards,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
 }

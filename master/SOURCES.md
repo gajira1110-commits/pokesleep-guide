@@ -142,3 +142,20 @@ v195：追加おてつだいの予想
 
 不足一覧は AUDIT.md / AUDIT.json。未登録・未掲載をゲーム内の未実装や出現不可と解釈しないでください。次の照合候補であるルカリオの「はどうだん」は公式Ver.3.7.0で変更を確認しましたが、効果表と種族情報の追加は今回に含めません。
 公式: https://www.pokemonsleep.net/news/343239303735303933343939343132343831/
+
+## v212（2026-10-01）
+
+リオル・ルカリオの基本能力・食材・進化・寝顔8件と通常フィールド出現15件を追加。能力と進化は各種族ページ、確率は推定値一覧、寝顔のIDと正式名は寝顔一覧で照合。通常出現はリオルがワカクサ本島・トープ洞窟・ウノハナ雪原、ルカリオがウノハナ雪原。未掲載のフィールドやEXの出現不可を断定しない。
+
+- https://wiki.pokesleep.com/ja/pokemon/riolu
+- https://wiki.pokesleep.com/ja/pokemon/lucario
+- https://wikiwiki.jp/poke_sleep/リオル
+- https://wikiwiki.jp/poke_sleep/ルカリオ
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+
+ルカリオの「はどうだん(ゆめのかけらゲットS)」は公式Ver.3.7.0で確認。リオルは通常のゆめのかけらゲットSを維持。Lv.1〜8の効果量は下記2資料で一致した値を登録。日産計算は既存の発動回数の近似に、エナジーとゆめのかけらを分離して加算する。エリア補正はエナジーだけへ適用し、イベント補正やゆめのかけらボーナスは未反映。
+
+- https://www.pokemonsleep.net/news/343239303735303933343939343132343831/
+- https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット/はどうだん
+- https://wiki.pokesleep.com/ja/main-skills/auraspheredreamshardmagnets
