@@ -22,10 +22,9 @@
 /* source: psg-v51-block1-3223 */
 /* v51 — Block 1 mobile 3-2-2-3 layout. v50 Blocks 2–4 are intentionally untouched. */
 @media(max-width:620px){
-  #dexDetail .detail-head{top:0!important;z-index:50!important;
+  #dexDetail .detail-head{
     display:grid!important;grid-template-columns:auto minmax(0,1fr) auto!important;
-    align-items:center!important;gap:6px!important;padding:6px 10px!important;
-    min-height:44px!important;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(10px);
+    align-items:center!important;gap:6px!important;
   }
   #dexDetail .detail-head>[data-back]{grid-column:1!important;padding:6px 4px!important;white-space:nowrap!important;}
   #dexDetail .detail-head h2{
@@ -33,7 +32,7 @@
     gap:5px!important;min-width:0!important;margin:0!important;white-space:nowrap!important;overflow:hidden!important;
     font-size:15px!important;line-height:1.15!important;
   }
-  #dexDetail .v51-head-no{color:#68736d!important;flex:0 0 auto!important;}
+  #dexDetail .v51-head-no{flex:0 0 auto!important;}
   #dexDetail .v51-head-name{}
   #dexDetail .v51-head-nav{grid-column:3!important;display:flex!important;gap:3px!important;}
   #dexDetail .v51-head-nav button{
@@ -44,21 +43,16 @@
 
   #dexDetail .hero{padding:7px!important;}
   #dexDetail .hero-top{
-    display:grid!important;grid-template-columns:minmax(108px,37%) minmax(0,1fr)!important;
-    grid-template-rows:1fr!important;gap:6px!important;align-items:stretch!important;
+    display:grid!important;gap:6px!important;
   }
   #dexDetail .hero-art{
-    position:relative!important;grid-column:1!important;grid-row:1!important;min-height:166px!important;transform:none!important;align-self:stretch!important;
+    position:relative!important;transform:none!important;
   }
   #dexDetail .v51-type-badge{
-    position:absolute!important;right:5px!important;bottom:5px!important;z-index:2!important;
-    display:inline-flex!important;align-items:center!important;gap:2px!important;
-    padding:0!important;border-radius:0!important;background:transparent!important;
-    border:0!important;color:var(--type-accent)!important;
+    position:absolute!important;z-index:2!important;align-items:center!important;gap:2px!important;color:var(--type-accent)!important;
     font-size:10px!important;font-weight:950!important;line-height:1!important;white-space:nowrap!important;
   }
-  #dexDetail .hero-info{display:flex!important;flex-direction:column!important;
-    justify-content:space-between!important;gap:4px!important;min-width:0!important;
+  #dexDetail .hero-info{display:flex!important;flex-direction:column!important;min-width:0!important;
   }
   #dexDetail #v12Header{width:100%!important;min-width:0!important;margin:0!important;}
   #dexDetail .v19-identity{display:none!important;}
@@ -67,11 +61,10 @@
   }
   #dexDetail .v19-traits span{
     min-width:0!important;min-height:31px!important;padding:3px 2px!important;display:flex!important;align-items:center!important;
-    justify-content:center!important;gap:2px!important;white-space:nowrap!important;overflow:hidden!important;font-size:9.5px!important;line-height:1!important;
+    justify-content:center!important;gap:2px!important;white-space:nowrap!important;overflow:hidden!important;line-height:1!important;
   }
   #dexDetail .v44-berry-visual{width:19px!important;height:19px!important;flex:0 0 19px!important;font-size:16px!important;}
   #dexDetail .v44-berry-visual img{width:19px!important;height:19px!important;}
-  #dexDetail .v19-traits .v44-berry-trait b{font-size:10.5px!important;}
 
   /* middle two rows = 1-4, 2 columns x 2 rows */
   #dexDetail .hero-info>.stats{
@@ -79,33 +72,22 @@
     gap:3px!important;width:100%!important;margin:0!important;
   }
   #dexDetail .hero-info>.stats .stat{
-    min-width:0!important;min-height:48px!important;padding:4px 2px!important;gap:2px!important;
+    min-width:0!important;
   }
-  #dexDetail .hero-info>.stats .stat small{gap:1px!important;
-    margin:0!important;padding:0!important;font-size:7.8px!important;letter-spacing:-.04em!important;white-space:nowrap!important;line-height:1.05!important;
+  #dexDetail .hero-info>.stats .stat small{padding:0!important;font-size:7.8px!important;letter-spacing:-.04em!important;white-space:nowrap!important;line-height:1.05!important;
   }
   #dexDetail .hero-info>.stats .stat .v45-stat-icon{font-size:8.5px!important;flex:0 0 auto!important;}
   #dexDetail .hero-info>.stats .stat b{
     display:block!important;width:100%!important;margin:0!important;text-align:center!important;font-size:13px!important;line-height:1.1!important;
     white-space:nowrap!important;color:#111!important;
   }
-
-  /* bottom row = former 1-5, 3 columns */
-  #dexDetail .v12-tabs{gap:3px!important;margin:0!important;
-  }
-  #dexDetail .v12-tabs button{min-width:0!important;min-height:32px!important;padding:4px 2px!important;font-size:10px!important;border-radius:9px!important;}
+  #dexDetail .v12-tabs button{min-width:0!important;}
 }
 
 /* source: psg-v52-block1-refine */
 /* v52 — agreed mobile refinements: 1-1 black No., 1-2 square, 1-3 larger, 1-4/1-5 natural centering, 1-6 full width, quieter A/B/C, stronger skill name. */
 @media(max-width:620px){
-  /* 1-1 */
-  #dexDetail .v51-head-no{font-size:10.5px!important;}
-
-  /* 1-2: artwork area is a true square; it no longer stretches to the right column height. */
-  #dexDetail .hero-top{align-items:start!important;}
   #dexDetail .hero-art{height:auto!important;
-    align-self:start!important;
   }
 
   /* 1-3: keep three columns, but give the labels more presence. */
@@ -114,8 +96,6 @@
 
   /* 1-4 / 1-5: center icon+label as one unit, then center the value below it. */
   #dexDetail .hero-info>.stats .stat{}
-  #dexDetail .hero-info>.stats .stat small{gap:2px!important;
-  }
   #dexDetail .hero-info>.stats .stat>b{}
 
   /* 1-6: independent full-width row below image + 3/2/2 information area. */
@@ -127,14 +107,10 @@
   }
   #dexDetail .v12-tabs button{min-height:38px!important;padding:5px 3px!important;font-size:12px!important;border-radius:10px!important;}
 
-  /* Block 2: A/B/C are guides, not the visual focus. */
-  #detailFoods .v24-letter{font-size:11px!important;opacity:.68!important;}
-
   /* Block 3: skill name is the primary heading; activation probability stays secondary. */
   #v12Ability .skill-name{}
   #v12Ability .skill-rate-inline{font-weight:750!important;}
 }
-
 
 /* PSG v57 — approved visual refinement pass (based on verified v56 behavior). */
 @media(max-width:620px){
@@ -160,8 +136,7 @@
 
   /* 1-2: square stays fixed; the artwork display region is vertically centered within it. */
   #dexDetail .hero-art{
-    display:flex!important;align-items:center!important;justify-content:center!important;
-    aspect-ratio:1 / 1!important;overflow:hidden!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;
   }
   #dexDetail .hero-art>img{
     display:block!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important;
@@ -173,10 +148,9 @@
 
   /* 1-4 / 1-5: center the icon+label as one visual group and the value beneath it. */
   #dexDetail .hero-info>.stats .stat{
-    display:flex!important;flex-direction:column!important;gap:3px!important;
+    display:flex!important;flex-direction:column!important;
   }
-  #dexDetail .hero-info>.stats .stat small{gap:3px!important;
-    width:auto!important;max-width:100%!important;margin:0 auto!important;
+  #dexDetail .hero-info>.stats .stat small{gap:3px!important;max-width:100%!important;margin:0 auto!important;
   }
   #dexDetail .hero-info>.stats .stat>b{display:block!important;margin:0!important;}
 
@@ -184,26 +158,20 @@
   #detailFoods .v24-food-name{
     display:grid!important;grid-template-columns:3fr 7fr!important;align-items:stretch!important;gap:3px!important;padding:4px!important;
   }
-  #detailFoods .v24-letter{
-    width:100%!important;height:100%!important;min-width:0!important;min-height:42px!important;
-    display:grid!important;place-items:center!important;border-radius:8px!important;
-    font-size:10px!important;font-weight:750!important;opacity:.72!important;
+  #detailFoods .v24-letter{min-height:42px!important;
+    display:grid!important;place-items:center!important;opacity:.72!important;
   }
   #detailFoods .v24-food-main{width:100%!important;min-width:0!important;align-items:center!important;justify-content:center!important;}
   #detailFoods .v24-food-icon{font-size:25px!important;line-height:1!important;}
   #detailFoods .slot-A .v24-food-name{background:#f7fcf9!important;}
   #detailFoods .slot-B .v24-food-name{background:#fff8fa!important;}
   #detailFoods .slot-C .v24-food-name{background:#fffbf4!important;}
-  #detailFoods .slot-A .v24-letter{background:#edf9f2!important;color:#16885a!important;}
-  #detailFoods .slot-B .v24-letter{background:#fff0f5!important;color:#bd4b72!important;}
-  #detailFoods .slot-C .v24-letter{background:#fff5e5!important;color:#8e6727!important;}
 
   /* Block 3: skill name leads; probability remains secondary/neutral. */
-  #v12Ability .skill-name{font-size:22px!important;line-height:1.12!important;color:#111!important;}
+  #v12Ability .skill-name{color:#111!important;}
   #v12Ability .skill-rate-inline,
   #v12Ability .skill-rate-inline strong{font-size:12px!important;font-weight:750!important;color:#111!important;}
 }
-
 
 /* PSG v58 — focused mobile refinement: attached header, stronger Pokémon name, A/B/C tint through quantities. */
 @media(max-width:620px){
@@ -228,7 +196,6 @@
   #detailFoods .slot-C .v24-food-name,
   #detailFoods .slot-C .v24-level{}
 }
-
 
 /* PSG v59 — focused visual polish only.
    No navigation/routing changes. Skill-specific icon data is reserved for a later version. */
@@ -337,7 +304,6 @@
   #v12Ability .ability-card:has(#detailSkill){
     padding-top:3px!important;
     padding-bottom:3px!important;
-    margin-bottom:1px!important;
   }
   #v12Ability .skill-box{
     row-gap:0!important;
@@ -387,5 +353,4 @@
     color:#111!important;
   }
 }
-
 

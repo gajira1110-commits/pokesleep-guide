@@ -2,7 +2,6 @@
 /* v12: fixed hero, right-side information, tabs switch only the content below */
 #dexDetail{--type-bg:#eaf7ed;--type-accent:#55a66b}
 #dexDetail .hero{
-  background:var(--type-bg)!important;
   border-color:color-mix(in srgb,var(--type-accent) 22%, #dfe8e2)!important;
 }
 #dexDetail .hero-top{
@@ -18,7 +17,6 @@
 #dexDetail .hero-info{
   display:flex!important;
   flex-direction:column!important;
-  gap:8px!important;
 }
 .v12-title-row{
   display:grid;
@@ -44,10 +42,8 @@
 }
 .v12-nav button:disabled{opacity:.32}
 #dexDetail .hero-info>.stats{
-  display:grid!important;grid-template-columns:1fr 1fr!important;
-  width:100%!important;margin:0!important;flex:1!important;
-  background:rgba(255,255,255,.68)!important
-}
+  display:grid!important;
+  width:100%!important;margin:0!important;}
 #dexDetail .stat{min-height:59px!important}
 .v12-tabs{
   display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
@@ -81,7 +77,6 @@
   padding:20px;text-align:center;font-weight:800;color:#6f7c75
 }
 @media(max-width:620px){
-  #dexDetail .hero-top{grid-template-columns:38% minmax(0,62%)!important;gap:6px!important}
   .v12-title-row{grid-template-columns:1fr;padding:6px}
   .v12-traits{justify-content:flex-start}
   .v12-name strong{font-size:18px}
@@ -99,8 +94,8 @@
 .psg-team-face-dock-cell{min-width:0;padding:2px;border:1px solid #dfe8e3;border-radius:9px;background:#fff;cursor:pointer}
 .psg-team-face-dock-cell .psg-team-face{width:100%;height:42px;border-radius:6px}
 .psg-team-face-dock[hidden]{display:none}
-.psg-team-row{display:flex;align-items:center;gap:7px;margin:7px 0}
-.psg-team-choose{display:flex;align-items:center;gap:9px;flex:1;min-width:0;min-height:58px;padding:5px 9px;text-align:left;background:#fff;color:#111;border:1px solid #dfe8e3;border-radius:12px;cursor:pointer;font:inherit}
+.psg-team-row{display:flex;align-items:center;gap:7px;}
+.psg-team-choose{display:flex;align-items:center;gap:9px;flex:1;min-width:0;padding:5px 9px;text-align:left;background:#fff;color:#111;border:1px solid #dfe8e3;border-radius:12px;cursor:pointer;font:inherit}
 .psg-team-face{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;border-radius:10px;background:#f2f6f4;color:#83918a;font-size:9px;font-weight:700;overflow:hidden}
 .psg-team-face img{width:100%;height:100%;object-fit:contain}
 .psg-team-identity{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -234,13 +229,6 @@
 .psg-team-recipe-status{color:#68766f;font-size:.8em;line-height:1.35;overflow-wrap:anywhere}
 .psg-team-recipe-status.is-covered{color:#267650;font-weight:700}
 .psg-team-recipe-row:focus-visible,.psg-team-recipe-group-title:focus-visible{outline:2px solid #438ac8;outline-offset:-2px}
-
-/* v13: slightly larger navigation and number */
-#dexDetail .v12-nav button{
-  min-height:42px!important;
-  font-size:12px!important;
-  padding:9px 6px!important;
-}
 #dexDetail .v12-name small{
   font-size:14px!important;
   line-height:1.15!important;
@@ -255,22 +243,18 @@
   padding:0!important;
 }
 #dexDetail .hero-info>.stats .stat{
-  min-height:64px!important;
   padding:7px 4px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
   text-align:center!important;
   background:rgba(255,255,255,.76)!important;
-  border-radius:10px!important;
 }
 #dexDetail .hero-info>.stats .stat small{
-  font-size:9px!important;
   white-space:nowrap!important;
 }
 #dexDetail .hero-info>.stats .stat b{
   margin-top:5px!important;
-  font-size:15px!important;
 }
 /* Berry is a compact standalone chip rather than a fourth metric */
 .v13-berry{
@@ -333,40 +317,15 @@
 }
 
 #v12Ability .section-head:has(#foodRateBadge){display:none!important}
-
-/* source: stable-v19-three-fixes */
-/* Identity and traits */
-#dexDetail .v19-identity{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-  padding:8px 10px;background:rgba(255,255,255,.74);border-radius:12px;
-}
-#dexDetail .v19-identity .v19-no{font-size:14px;font-weight:950}
-#dexDetail .v19-identity strong{font-size:21px;line-height:1.1}
-#dexDetail .v19-type{
-  margin-left:auto;padding:5px 8px;background:#fff;border-radius:999px;
-  font-size:11px;font-weight:950;white-space:nowrap
+#dexDetail .v19-type{border-radius:999px;white-space:nowrap
 }
 #dexDetail .v19-traits{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px
 }
-#dexDetail .v19-traits span{
-  min-height:34px;display:flex;align-items:center;justify-content:center;
-  padding:5px;background:rgba(255,255,255,.76);border-radius:9px;
-  font-size:10px;font-weight:900;text-align:center
+#dexDetail .v19-traits span{display:flex;align-items:center;justify-content:center;
+  padding:5px;background:rgba(255,255,255,.76);text-align:center
 }
 #v13Berry{display:none!important}
-
-/* Food: larger, readability-first; no strict vertical-axis requirement */
-#detailFoods{font-size:13px!important}
-#detailFoods .v13-food-head{
-  min-height:46px!important;
-  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
-  font-size:11px!important;
-}
-#detailFoods .v13-food-row{
-  min-height:68px!important;
-  grid-template-columns:minmax(145px,1.5fr) 50px 54px 54px minmax(130px,1.25fr)!important;
-}
 #detailFoods .v13-food-name{font-size:13px!important;gap:7px!important}
 #detailFoods .v13-food-name .food-letter{
   width:23px!important;height:23px!important;font-size:11px!important
@@ -376,32 +335,14 @@
 #detailFoods .v13-recipes{font-size:22px!important;padding:6px 3px!important}
 #detailFoods .v13-food-rate{padding:4px 7px!important}
 
-/* Keep only one current skill level controller visible */
-#v12Ability #v12SkillLv{align-items:center;gap:7px}
-#v12Ability #v12SkillLv button{min-width:48px!important;min-height:44px!important}
-
 @media(max-width:620px){
   #dexDetail .v19-identity{gap:5px;padding:7px}
-  #dexDetail .v19-identity .v19-no{font-size:12px}
-  #dexDetail .v19-identity strong{font-size:18px}
-  #dexDetail .v19-type{font-size:10px;padding:4px 6px}
-  #dexDetail .v19-traits span{font-size:9px}
-  #detailFoods{overflow-x:auto}
-  #detailFoods .v13-food-head,#detailFoods .v13-food-row{
-    min-width:560px!important;
-  }
 }
 
 /* source: stable-v20b-precise-refine */
 /* Keep v19 geometry; enlarge only the information the user specified. */
 #dexDetail .v19-type{
   font-weight:950!important;
-  padding:6px 10px!important;
-}
-
-/* Berry / sleep type / specialty: keep the same row, make content larger */
-#dexDetail .v19-traits span{
-  min-height:38px!important;
 }
 
 /* Food header: distribute labels horizontally with better visual balance */
@@ -455,7 +396,6 @@
   margin-left:0!important;
 }
 @media(max-width:620px){
-  #detailFoods{overflow-x:auto!important}
   #detailFoods .v13-food-head,#detailFoods .v13-food-row{min-width:585px!important}
   .v20b-skill-line{gap:6px!important}
   .v20b-skill-rate{font-size:10px!important;padding:4px 5px!important}
