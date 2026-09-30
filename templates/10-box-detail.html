@@ -1,0 +1,24 @@
+<section id="boxDetail" class="screen">
+ <div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2><small id="boxHeaderNo"></small><span id="boxTitle">個体詳細</span></h2><span id="boxHeaderMeta" aria-label="現在レベル"></span></div>
+ <div class="psg-box-hero card">
+  <div class="psg-box-identity"><div class="psg-v106-media"><div id="boxArtwork" class="psg-box-artwork" aria-label="ポケモンの画像"></div></div>
+   <div class="psg-box-facts"><div id="boxTraits" class="psg-box-traits"></div><div id="boxStats" class="psg-box-stats"></div></div></div>
+  <div class="psg-box-level"><div class="psg-box-level-controls"><button class="btn" id="minus" aria-label="レベルを１下げる">−</button><b id="lv">Lv.1</b><button class="btn" id="plus" aria-label="レベルを１上げる">＋</button></div><input id="lvRange" type="range" min="1" max="70" value="1" aria-label="レベルを選択"></div>
+ </div>
+ <section class="psg-box-section card"><h3>食材</h3><div id="boxIngredientRows"></div><div class="psg-box-forecast"><b>１日の獲得予想</b><p>計算データ未確認</p></div></section>
+ <section class="psg-box-section card"><h3>サブスキル</h3><div id="boxSubskillRows"></div></section>
+ <section class="psg-box-section card"><h3>メインスキル</h3><div id="boxMainSkill"></div></section>
+ <section class="psg-box-section card"><h3>性格と補正</h3><div id="boxNature"></div></section>
+ <section class="psg-box-section card"><h3>個体の評価</h3><div id="boxEvaluation"></div></section>
+ <section class="psg-box-section card"><h3>育成・進化</h3><div id="boxGrowth"></div></section>
+ <details class="psg-box-editor card" id="boxEditor"><summary>⚙️ 個体を編集</summary>
+   <form id="boxEditForm"><label>性格<select name="nature" id="boxEditNature"></select></label>
+    <label class="psg-editor-check"><input name="mint" type="checkbox">まっしろミント適用済み</label>
+    <label>スキルLv<input name="skillLevel" type="number" min="1" max="7" inputmode="numeric"></label>
+    <label>役割<input name="role" maxlength="40" placeholder="例：食材役"></label>
+    <div id="boxEditIngredients"></div><div id="boxEditSubskills"></div>
+    <button type="submit" class="btn primary">個体データを保存</button><p id="boxEditMessage" role="status"></p>
+   </form>
+ </details>
+ <div class="card"><details><summary><b>… サブメニュー</b></summary><div class="pills" style="margin-top:10px"><button class="btn" type="button" id="boxEditShortcut">⚙️ 個体値設定</button><button class="btn" type="button" id="boxRemoveBtn">削除</button></div></details></div>
+</section>

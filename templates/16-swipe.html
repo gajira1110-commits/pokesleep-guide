@@ -1,0 +1,58 @@
+<script id="psg-swipe-navigation">
+(()=>{
+  const screens=["home","box","dex","info"];
+  const minDistance=64,boxMinDistance=48,edgeWidth=56;
+  let start=null;
+  const interactive="button,a,input,select,textarea,[contenteditable='true']";
+  function insideHorizontalScroller(target,screen){
+    for(let node=target;node&&node!==screen.parentElement;node=node.parentElement){
+      if(node.scrollWidth>node.clientWidth+2&&/(auto|scroll)/.test(getComputedStyle(node).overflowX))return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart",event=>{
+    start=null;
+    if(event.touches.length!==1)return;
+    // Box cards are buttons that fill most of the screen; allow a sideways drag
+    // from their surface, while the tap still opens the individual as usual.
+    const boxCard=event.target.closest?.('#boxGrid .poke');
+    if(event.target.closest?.(interactive)&&!boxCard)return;
+    // Dex cards are tappable, but a gesture starting on their surface can switch screens.
+    if(event.target.closest?.("[role='button']")&&!event.target.closest?.("#dexGrid .dex-card"))return;
+    if(event.target.closest?.("#detailEvolution,#detailFoods .v24-recipes"))return;
+    const screen=document.querySelector("main > .screen.active");
+    if(!screen||(!screens.includes(screen.id)&&screen.id!=="dexDetail"))return;
+    if(insideHorizontalScroller(event.target,screen))return;
+    const touch=event.touches[0],width=window.innerWidth;
+    const edge=touch.clientX<=edgeWidth?"left":touch.clientX>=width-edgeWidth?"right":null;
+    // Browser edge gestures belong to the browser; detail history starts inside the page.
+    if(screen.id==="dexDetail"&&edge)return;
+    start={x:touch.clientX,y:touch.clientY,screen:screen.id};
+  },{passive:true});
+  document.addEventListener("touchend",event=>{
+    if(!start||event.changedTouches.length!==1)return;
+    const gesture=start;start=null;
+    if(!document.getElementById(gesture.screen)?.classList.contains("active"))return;
+    const touch=event.changedTouches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
+    if(Math.abs(dx)<(gesture.screen==='box'?boxMinDistance:minDistance)||Math.abs(dx)<Math.abs(dy)*1.35)return;
+    if(gesture.screen==="dexDetail"){
+      if(dx>0)window.PS_DETAIL_NAV?.back();
+      if(dx<0)window.PS_DETAIL_NAV?.forward();
+      return;
+    }
+    const index=screens.indexOf(gesture.screen),next=screens[index+(dx<0?1:-1)];
+    if(!next||!window.PS?.go)return;
+    if((gesture.screen==="dex"||gesture.screen==="box")&&window.PS)window.PS.ignoreCardClicksUntil=Date.now()+400;
+    window.PS.state.history.length=0;
+    window.PS.go(next,false);
+  },{passive:true});
+  document.addEventListener("touchcancel",()=>{start=null},{passive:true});
+})();
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+<script id="psg-recipe-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const list=document.getElementById('recipeList'),count=document.getElementById('recipeCount');
+ const ingredientOptions=document.getElementById('recipeIngredientOptions'),ingredientButton=document.getElementById('recipeIngredientButton');
+ const sort=document.getElementById('recipeSort');
+ if(!catalog||!list||!ingredientOptions||!ingredientButton||!sort)return;
+ const recipes=Object.values(catalog.recipes||{});
+ const categoryButtons=[...document.querySelectorAll('[data-recipe-category]')];
+ let selectedCategory='カレー・シチュー',selectedIngredient='';
+ function icon(name){
+  const visual=catalog.ingredientVisual?.(name);
+  const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  if(src){const img=document.createElement('img');img.src=src;img.alt='';return img}
+  const text=document.createElement('span');text.textContent=visual?.fallback||'◌';return text;
+ }
+ function ingredientChoices(){
+  ingredientOptions.replaceChildren();
+  const names=[...new Set(recipes.filter(r=>r.category===selectedCategory).flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
+  for(const name of names){
+   const option=document.createElement('button');option.type='button';option.className='filter-option psg-recipe-filter-option';
+   option.setAttribute('aria-label',name);option.setAttribute('aria-pressed',String(name===selectedIngredient));option.title=name;
+   option.append(icon(name));const caption=document.createElement('span');caption.textContent=name;option.append(caption);
+   option.onclick=e=>{e.stopPropagation();selectedIngredient=selectedIngredient===name?'':name;ingredientButton.classList.toggle('active',!!selectedIngredient);ingredientButton.firstChild.textContent=selectedIngredient||'食材';ingredientOptions.parentElement.classList.remove('open');ingredientButton.setAttribute('aria-expanded','false');ingredientChoices();render()};
+   ingredientOptions.append(option);
+  }
+ }
+ function providerGroup(item){
+  const section=document.createElement('section');section.className='psg-recipe-provider-group';
+  const heading=document.createElement('strong');heading.append(icon(item.name),document.createTextNode(item.name));section.append(heading);
+  // Use only species whose own verified slots contain the ingredient; evolution does not imply the same slot.
+  const providers=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible).flatMap(p=>{
+   const slots=p.ingredientSlots?.filter(s=>s.candidates.some(c=>c.name===item.name))||[];
+   return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
+  });
+  if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
+  const parentOf=new Map();for(const p of Object.values(catalog.pokemon||{})){
+   const edges=Array.isArray(p.evolution)?p.evolution:p.evolution?[p.evolution]:[];
+   edges.forEach(e=>{if(e.toNo)parentOf.set(Number(e.toNo),Number(p.no))});
+  }
+  const root=no=>{const seen=new Set();while(parentOf.has(no)&&!seen.has(no)){seen.add(no);no=parentOf.get(no)}return no};
+  const families=new Map();for(const provider of providers){const key=root(provider.species.no);(families.get(key)||families.set(key,[]).get(key)).push(provider)}
+  const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
+  for(const family of families.values()){
+   const row=document.createElement('div');row.className='psg-recipe-family';
+   family.sort((a,b)=>a.species.no-b.species.no).forEach(({species,unlock},index)=>{
+    if(index){const arrow=document.createElement('span');arrow.textContent='›';arrow.setAttribute('aria-hidden','true');row.append(arrow)}
+    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
+    const art=document.createElement('span');art.className='psg-recipe-provider-art';
+    if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
+    else{
+      const img=document.createElement('img');img.src=window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
+      const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';missing.hidden=true;
+      img.onerror=()=>{img.hidden=true;missing.hidden=false};art.append(img,missing);
+    }
+    if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
+    button.title=species.name;button.append(art);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);row.append(button);
+   });wrap.append(row);
+  }
+  section.append(wrap);return section;
+ }
+ function render(){
+  const categoryRecipes=recipes.filter(r=>r.category===selectedCategory);
+  const filtered=categoryRecipes.filter(r=>!selectedIngredient||r.ingredients.some(i=>i.name===selectedIngredient));
+  filtered.sort((a,b)=>sort.value==='name'?a.name.localeCompare(b.name,'ja'):
+   sort.value==='energy-asc'?(Number(a.energy?.max?.value)||0)-(Number(b.energy?.max?.value)||0):
+   (Number(b.energy?.max?.value)||0)-(Number(a.energy?.max?.value)||0));
+  count.textContent=`${filtered.length} / ${categoryRecipes.length} 件の確認済みレシピ`;
+  list.replaceChildren();
+  if(!filtered.length){const empty=document.createElement('p');empty.className='note';empty.textContent=categoryRecipes.length?'該当する料理はありません。':'この部門のレシピはまだ確認・登録していません。';list.append(empty);return}
+  for(const recipe of filtered){
+   const card=document.createElement('details');card.className='psg-recipe-entry';card.dataset.recipeId=recipe.id;
+   const summary=document.createElement('summary');summary.className='psg-recipe-heading';
+   const title=document.createElement('strong');title.textContent=recipe.name;
+   const energy=document.createElement('div');energy.className='psg-recipe-energy';
+   const max=document.createElement('strong');max.className='psg-recipe-energy-max';
+   max.innerHTML=Number.isFinite(recipe.energy?.max?.value)?`<small>Lv.${recipe.energy.max.level}</small> ${recipe.energy.max.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
+   const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1 未確認）';
+   energy.append(max,min);summary.append(title,energy);
+   const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
+   for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.title=item.name;chip.setAttribute('aria-label',`${item.name} ${item.qty}個`);chip.append(icon(item.name));const qty=document.createElement('b');qty.textContent=`×${item.qty}`;chip.append(qty);ingredientRow.append(chip)}
+   const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;ingredientRow.append(pot);
+   const chevron=document.createElement('span');chevron.className='psg-recipe-chevron';chevron.textContent='▾';chevron.setAttribute('aria-hidden','true');ingredientRow.append(chevron);
+   summary.append(ingredientRow);card.append(summary);
+   const detail=document.createElement('div');detail.className='psg-recipe-expanded';
+   const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
+   recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
+   const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
+   card.append(detail);card.addEventListener('toggle',()=>{if(card.open)list.querySelectorAll('.psg-recipe-entry').forEach(other=>{if(other!==card)other.open=false})});
+   list.append(card);
+  }
+ }
+ sort.addEventListener('change',render);
+ categoryButtons.forEach(button=>button.addEventListener('click',()=>{
+  selectedCategory=button.dataset.recipeCategory;
+  categoryButtons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  selectedIngredient='';ingredientButton.firstChild.textContent='食材';ingredientButton.classList.remove('active');ingredientOptions.parentElement.classList.remove('open');ingredientChoices();render();
+ }));
+ window.PS_OPEN_RECIPE=id=>{
+  const recipe=catalog.recipes?.[id];if(!recipe)return;
+  categoryButtons.find(button=>button.dataset.recipeCategory===recipe.category)?.click();
+  window.PS?.go('recipePage');
+  const entry=[...list.querySelectorAll('.psg-recipe-entry')].find(card=>card.dataset.recipeId===id);
+  if(entry)entry.open=true;
+ };
+ document.querySelector('[data-info-page="recipePage"]')?.addEventListener('click',render);
+ ingredientChoices();
+ render();
+})();
+</script>
+</body></html>

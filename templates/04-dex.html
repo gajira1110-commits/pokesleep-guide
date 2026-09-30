@@ -1,0 +1,19 @@
+<section id="dex" class="screen">
+<div class="psg-list-sticky">
+<div class="toolbar"><h2 style="flex:1">ポケモン図鑑</h2><input id="dexSearch" style="max-width:150px" placeholder="名前検索"></div>
+<div class="compact-filter" id="dexCompactFilters">
+ <div class="dex-filter-controls">
+  <div class="filter-select" data-menu="dex-type"><button class="filter-main" aria-expanded="false">タイプ <span>▼</span></button><div class="filter-panel" id="typeFilters" aria-label="タイプで絞り込み"></div></div>
+  <div class="filter-select" data-menu="dex-ing"><button class="filter-main" aria-expanded="false">食材 <span>▼</span></button><div class="filter-panel" id="ingredientFilters" aria-label="食材で絞り込み"></div></div>
+ </div>
+ <div class="spec-row" id="specialtyFilters">
+  <button class="filter-main" data-spec="きのみ"><img class="psg-specialty-icon" data-specialty-icon="berry" alt="">きのみ</button>
+  <button class="filter-main" data-spec="食材"><img class="psg-specialty-icon" data-specialty-icon="ingredient" alt="">食材</button>
+  <button class="filter-main" data-spec="スキル"><img class="psg-specialty-icon" data-specialty-icon="skill" alt="">スキル</button>
+  <button class="filter-main" data-spec="オール"><img class="psg-specialty-icon" data-specialty-icon="all" alt="">オール</button>
+ </div>
+</div>
+</div>
+<div class="note" id="dexCount" style="margin:0 2px 4px">0 / 0</div>
+<div id="dexGrid" class="grid"></div><div id="dexEmpty" class="card empty">図鑑データは次段階で再調査して投入します。<br>未確認値は推測で埋めません。</div>
+</section>
