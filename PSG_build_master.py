@@ -42,7 +42,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v188_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v189_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -199,7 +199,11 @@ def catalog_and_images():
             assert rank['tier'] in tiers and isinstance(rank['level'],int) and rank['level'] >= 1, field_id
             assert isinstance(encounter['drowsyPower'],int) and encounter['drowsyPower'] > 0, field_id
             assert drowsy_by_style.setdefault(style_id,encounter['drowsyPower']) == encounter['drowsyPower'], f'{style_id}: inconsistent DPR'
+    seen_recipes = set()
     for key,(recipe,folder) in kinds['recipes'].items():
+        identity = (recipe.get('category'), recipe.get('name'))
+        assert identity not in seen_recipes, f'duplicate recipe: {identity}'
+        seen_recipes.add(identity)
         assert key == recipe['id'] and recipe['name'] and recipe.get('ingredients')
         assert recipe.get('category') in ('カレー・シチュー','サラダ','デザート・ドリンク'), key
         assert recipe.get('energy',{}).get('min',{}).get('level') == 1, key
@@ -235,7 +239,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v188') == 2
+    assert source.count('Review v189') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

@@ -104,7 +104,6 @@ function teamFoodIcon(name){
 function renderTeamFood(){
  const ingredients=document.getElementById('teamIngredientList'),recipes=document.getElementById('teamRecipeList');
  if(!ingredients||!recipes)return;
- const openCategories=new Set([...recipes.querySelectorAll('.psg-team-recipe-group[open]')].map(node=>node.dataset.category));
  ingredients.replaceChildren();recipes.replaceChildren();
  const {confirmed,unconfirmed}=teamFoodContext();
  if(!team.some(Boolean)){
@@ -122,11 +121,13 @@ function renderTeamFood(){
   if(unconfirmed.length){const note=document.createElement('p');note.className='note';note.textContent=`未確認：${unconfirmed.join('、')}`;ingredients.append(note)}
  }
  const catalogRecipes=Object.values(window.PS_CATALOG?.recipes||{});
- for(const category of ['カレー・シチュー','サラダ','デザート・ドリンク']){
+ const selectedCategory=activeMealCategory();
+ if(!selectedCategory){const hint=document.createElement('p');hint.className='note';hint.textContent='今週の料理を選ぶと、そのカテゴリの食材チェックを表示します。';recipes.append(hint);return}
+ for(const category of [selectedCategory]){
   const categoryRecipes=catalogRecipes.filter(r=>r.category===category).sort((a,b)=>(b.energy?.max?.value||0)-(a.energy?.max?.value||0));
   if(!categoryRecipes.length)continue;
   const group=document.createElement('details');group.className='psg-team-recipe-group';group.dataset.category=category;
-  group.open=openCategories.has(category);
+  group.open=true;
   const heading=document.createElement('summary');heading.className='psg-team-recipe-group-title';
   const title=document.createElement('strong');title.textContent=category;
   const count=document.createElement('small');
@@ -273,7 +274,9 @@ function normalizeFieldProfile(raw){
    weekly[id]={weekKey:entry.weekKey,berries:entry.berries.slice(0,3).map(name=>knownBerryNames.has(name)?name:'')};
   }
  }
- return {selectedFieldId,areaBonuses,weekly};
+ const categories=['カレー・シチュー','サラダ','デザート・ドリンク'];
+ const meal=raw?.meal&&typeof raw.meal.weekKey==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(raw.meal.weekKey)&&categories.includes(raw.meal.category)?{weekKey:raw.meal.weekKey,category:raw.meal.category}:null;
+ return {selectedFieldId,areaBonuses,weekly,meal};
 }
 function readFieldProfile(){
  try{return normalizeFieldProfile(JSON.parse(localStorage.getItem(FIELD_STORAGE_KEY)||'{}'))}
@@ -281,8 +284,8 @@ function readFieldProfile(){
 }
 let fieldProfile=readFieldProfile();
 function saveFieldProfile(){
- try{localStorage.setItem(FIELD_STORAGE_KEY,JSON.stringify(fieldProfile));renderFieldControls();renderTeamDay();return true}
- catch{fieldProfile=readFieldProfile();renderFieldControls();alert('フィールド設定を保存できませんでした。');return false}
+ try{localStorage.setItem(FIELD_STORAGE_KEY,JSON.stringify(fieldProfile));renderFieldControls();renderTeamDay();renderTeamFood();return true}
+ catch{fieldProfile=readFieldProfile();renderFieldControls();renderTeamFood();alert('フィールド設定を保存できませんでした。');return false}
 }
 const backupFile=document.getElementById('backupFile');
 const backupPreview=document.getElementById('backupPreview');
@@ -437,7 +440,26 @@ function setupMenus(){
  document.querySelectorAll('#boxSpecialtyFilters [data-spec]').forEach(b=>b.onclick=()=>{const v=b.dataset.spec;b.classList.toggle('on');state.boxFilters.specs.has(v)?state.boxFilters.specs.delete(v):state.boxFilters.specs.add(v);renderBox()});
  document.querySelectorAll('#boxTagFilters [data-tag]').forEach(b=>b.onclick=()=>{b.classList.toggle('on');const v=b.dataset.tag;state.boxFilters.tags.has(v)?state.boxFilters.tags.delete(v):state.boxFilters.tags.add(v);renderBox()});
 }
+function renderSelectedFilters(kind){
+ const filters=kind==='box'?state.boxFilters:state.filters;
+ const node=document.getElementById(kind+'SelectedFilters');if(!node)return;
+ node.replaceChildren();
+ const labels={types:'タイプ',ingredients:'食材',specs:'得意',tags:'タグ'};
+ const tags={favorite:'★ お気に入り',training:'🌱 育成',special:'✨ 特別',shiny:'🌈 色違い'};
+ const fields={types:'type',ingredients:'ingredient',specs:'spec',tags:'tag'};
+ for(const [key,values] of Object.entries(filters)){
+  const menu=document.querySelector(`[data-menu="${kind}-${{types:'type',ingredients:'ing',specs:'spec',tags:'tag'}[key]}"]>.filter-main`);
+  menu?.classList.toggle('active',values.size>0);
+  for(const option of document.querySelectorAll(`#${kind}CompactFilters [data-${fields[key]}]`)){
+   const active=values.has(option.dataset[fields[key]]);option.classList.toggle(option.classList.contains('filter-option')?'on':'active',active);option.setAttribute('aria-pressed',String(active));
+  }
+  for(const value of values){const chip=document.createElement('button');chip.type='button';chip.textContent=`${labels[key]}：${key==='tags'?tags[value]:value} ×`;chip.setAttribute('aria-label',`${labels[key]} ${key==='tags'?tags[value]:value}の条件を解除`);chip.onclick=()=>{values.delete(value);kind==='box'?renderBox():renderDex()};node.append(chip)}
+ }
+ node.hidden=!node.childElementCount;
+ if(!node.hidden){const clear=document.createElement('button');clear.type='button';clear.className='psg-filter-clear';clear.textContent='全解除';clear.onclick=()=>{Object.values(filters).forEach(values=>values.clear());kind==='box'?renderBox():renderDex()};node.append(clear)}
+}
 function renderDex(){
+ renderSelectedFilters('dex');
  const q=searchKey(dexSearch.value.trim());
  const all=master.pokemon;
  const a=all.filter(p=>matchesDexFilters(p,q,state.filters));
@@ -460,6 +482,7 @@ function val(v,suffix=''){return v===null||v===undefined?'未確認':`${v}${suff
 document.querySelectorAll('.detail-tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.detail-tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.detail-pane').forEach(x=>x.classList.toggle('on',x.id==='pane-'+b.dataset.pane))});
 
 function renderBox(){
+ renderSelectedFilters('box');
  const q=searchKey(boxSearch.value.trim()),a=state.box.filter(x=>{
  const text=!q||searchKey(x.name).includes(q);
   const species=window.PS_CATALOG?.pokemon[x.no];
@@ -467,7 +490,7 @@ function renderBox(){
   const ingredient=!state.boxFilters.ingredients.size||species?.ingredients?.some(item=>state.boxFilters.ingredients.has(item.name));
  const spec=!state.boxFilters.specs.size||state.boxFilters.specs.has(x.specialty);
  const tags=!state.boxFilters.tags.size||[...state.boxFilters.tags].every(t=>
-   t==='favorite'?!!x.favorite:t==='training'?!!x.training:t==='special'?!!x.specialTeamLimited:t==='shiny'?x.shiny==='confirmed':true);
+   t==='favorite'?!!x.favorite:t==='training'?!!x.training:t==='special'?species?.specialTeamLimited===true:t==='shiny'?x.shiny==='confirmed':true);
   return text&&type&&ingredient&&spec&&tags;
  });
   document.querySelector('[data-menu="box-type"]>.filter-main')?.classList.toggle('active',state.boxFilters.types.size>0);
@@ -655,6 +678,9 @@ for(const select of berryChoices){
 }
 const fieldSelect=document.getElementById('fieldSelect');
 const homeFieldSelect=document.getElementById('homeFieldSelect');
+const homeMealSelect=document.getElementById('homeMealSelect');
+function activeMealCategory(){return fieldProfile.meal?.weekKey===currentFieldWeek()?fieldProfile.meal.category:''}
+homeMealSelect.onchange=()=>{fieldProfile.meal=homeMealSelect.value?{weekKey:currentFieldWeek(),category:homeMealSelect.value}:null;saveFieldProfile()};
 const fieldOrder=['greengrass','cyan','taupe','snowdrop','lapis','old_gold','amber'];
 for(const id of fieldOrder){
  const field=window.PS_CATALOG?.fields?.[id];
@@ -668,6 +694,7 @@ function activeFieldBerries(){
 function renderFieldControls(){
  fieldSelect.value=fieldProfile.selectedFieldId;
  homeFieldSelect.value=fieldProfile.selectedFieldId;
+ homeMealSelect.value=activeMealCategory();
  areaBonusInput.value=String(fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
  const berries=activeFieldBerries();
  berryChoices.forEach((choice,index)=>{choice.value=berries[index]||''});
@@ -794,9 +821,9 @@ function syncLevel(){
  boxTitle.textContent=item.name;
  document.getElementById('boxHeaderNo').textContent=`No.${String(item.no).padStart(3,'0')}`;
  document.getElementById('boxFavorite').setAttribute('aria-pressed',String(!!item.favorite));
- document.getElementById('boxFavorite').textContent=item.favorite?'★ お気に入り':'☆ お気に入り';
+ document.getElementById('boxFavorite').textContent=item.favorite?'★':'☆';
  document.getElementById('boxTraining').setAttribute('aria-pressed',String(!!item.training));
- document.getElementById('boxTraining').textContent=item.training?'✓ 育成対象':'育成';
+ document.getElementById('boxTraining').textContent='🌱';
  const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
  document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">💤 ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
  hydrateSpecialtyIcons(document.getElementById('boxTraits'));

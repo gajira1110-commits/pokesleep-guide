@@ -1,0 +1,30 @@
+{
+  "id": "solar_power_tomato_curry",
+  "name": "サンパワートマトカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "tomato",
+      "qty": 10
+    },
+    {
+      "ingredientId": "fiery_herb",
+      "qty": 5
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 2078
+    },
+    "max": {
+      "level": 70,
+      "value": 7439
+    }
+  },
+  "verifiedAt": "2026-09-30",
+  "sources": [
+    "https://game8.jp/pokemonsleep/542832",
+    "https://wikiwiki.jp/poke_sleep/%E6%96%99%E7%90%86/%E3%83%AC%E3%82%B7%E3%83%94%E3%81%94%E3%81%A8%E3%81%AE%E7%8D%B2%E5%BE%97%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%A8%E3%83%8A%E3%82%B8%E3%83%BC%E9%87%8F"
+  ]
+}
