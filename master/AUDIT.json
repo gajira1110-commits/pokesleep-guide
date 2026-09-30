@@ -1,0 +1,1195 @@
+{
+  "asOf": "2026-10-01",
+  "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
+  "counts": {
+    "pokemon": 90,
+    "skills": 22,
+    "recipes": 78,
+    "sleepStyles": 358,
+    "normalFieldEncounters": 409
+  },
+  "missingCoreFields": [],
+  "missingEvolutionTargets": [],
+  "missingSkillLevels": [],
+  "skillsWithoutRegisteredSpecies": [
+    {
+      "id": "berry_burst",
+      "name": "きのみバースト"
+    },
+    {
+      "id": "cooking_chance_s",
+      "name": "料理チャンスS"
+    },
+    {
+      "id": "dream_shard_magnet_s_variable",
+      "name": "ゆめのかけらゲットS（ランダム）"
+    }
+  ],
+  "pokemonWithoutAnyNormalEncounter": [
+    {
+      "no": 50,
+      "name": "ディグダ"
+    },
+    {
+      "no": 51,
+      "name": "ダグトリオ"
+    },
+    {
+      "no": 56,
+      "name": "マンキー"
+    },
+    {
+      "no": 57,
+      "name": "オコリザル"
+    },
+    {
+      "no": 74,
+      "name": "イシツブテ"
+    },
+    {
+      "no": 75,
+      "name": "ゴローン"
+    },
+    {
+      "no": 76,
+      "name": "ゴローニャ"
+    },
+    {
+      "no": 81,
+      "name": "コイル"
+    },
+    {
+      "no": 82,
+      "name": "レアコイル"
+    },
+    {
+      "no": 84,
+      "name": "ドードー"
+    },
+    {
+      "no": 85,
+      "name": "ドードリオ"
+    },
+    {
+      "no": 92,
+      "name": "ゴース"
+    },
+    {
+      "no": 93,
+      "name": "ゴースト"
+    },
+    {
+      "no": 94,
+      "name": "ゲンガー"
+    },
+    {
+      "no": 133,
+      "name": "イーブイ"
+    },
+    {
+      "no": 134,
+      "name": "シャワーズ"
+    },
+    {
+      "no": 135,
+      "name": "サンダース"
+    },
+    {
+      "no": 136,
+      "name": "ブースター"
+    },
+    {
+      "no": 147,
+      "name": "ミニリュウ"
+    },
+    {
+      "no": 148,
+      "name": "ハクリュー"
+    },
+    {
+      "no": 149,
+      "name": "カイリュー"
+    },
+    {
+      "no": 196,
+      "name": "エーフィ"
+    },
+    {
+      "no": 197,
+      "name": "ブラッキー"
+    },
+    {
+      "no": 214,
+      "name": "ヘラクロス"
+    },
+    {
+      "no": 228,
+      "name": "デルビル"
+    },
+    {
+      "no": 229,
+      "name": "ヘルガー"
+    },
+    {
+      "no": 280,
+      "name": "ラルトス"
+    },
+    {
+      "no": 281,
+      "name": "キルリア"
+    },
+    {
+      "no": 282,
+      "name": "サーナイト"
+    },
+    {
+      "no": 363,
+      "name": "タマザラシ"
+    },
+    {
+      "no": 364,
+      "name": "トドグラー"
+    },
+    {
+      "no": 365,
+      "name": "トドゼルガ"
+    },
+    {
+      "no": 462,
+      "name": "ジバコイル"
+    },
+    {
+      "no": 470,
+      "name": "リーフィア"
+    },
+    {
+      "no": 471,
+      "name": "グレイシア"
+    },
+    {
+      "no": 475,
+      "name": "エルレイド"
+    },
+    {
+      "no": 700,
+      "name": "ニンフィア"
+    }
+  ],
+  "missingNormalEncounters": [
+    {
+      "no": 50,
+      "name": "ディグダ",
+      "sleepStyleIds": [
+        "0050_01",
+        "0050_02",
+        "0050_03"
+      ]
+    },
+    {
+      "no": 51,
+      "name": "ダグトリオ",
+      "sleepStyleIds": [
+        "0051_01",
+        "0051_02",
+        "0051_03"
+      ]
+    },
+    {
+      "no": 56,
+      "name": "マンキー",
+      "sleepStyleIds": [
+        "0056_01",
+        "0056_02",
+        "0056_03",
+        "0056_04"
+      ]
+    },
+    {
+      "no": 57,
+      "name": "オコリザル",
+      "sleepStyleIds": [
+        "0057_01",
+        "0057_02",
+        "0057_03",
+        "0057_04"
+      ]
+    },
+    {
+      "no": 70,
+      "name": "ウツドン",
+      "sleepStyleIds": [
+        "0070_03"
+      ]
+    },
+    {
+      "no": 71,
+      "name": "ウツボット",
+      "sleepStyleIds": [
+        "0071_03"
+      ]
+    },
+    {
+      "no": 74,
+      "name": "イシツブテ",
+      "sleepStyleIds": [
+        "0074_01",
+        "0074_02",
+        "0074_03",
+        "0074_04"
+      ]
+    },
+    {
+      "no": 75,
+      "name": "ゴローン",
+      "sleepStyleIds": [
+        "0075_01",
+        "0075_02",
+        "0075_03",
+        "0075_04"
+      ]
+    },
+    {
+      "no": 76,
+      "name": "ゴローニャ",
+      "sleepStyleIds": [
+        "0076_01",
+        "0076_02",
+        "0076_03",
+        "0076_04"
+      ]
+    },
+    {
+      "no": 81,
+      "name": "コイル",
+      "sleepStyleIds": [
+        "0081_01",
+        "0081_02",
+        "0081_03"
+      ]
+    },
+    {
+      "no": 82,
+      "name": "レアコイル",
+      "sleepStyleIds": [
+        "0082_01",
+        "0082_02",
+        "0082_03"
+      ]
+    },
+    {
+      "no": 84,
+      "name": "ドードー",
+      "sleepStyleIds": [
+        "0084_01",
+        "0084_02",
+        "0084_03",
+        "0084_04"
+      ]
+    },
+    {
+      "no": 85,
+      "name": "ドードリオ",
+      "sleepStyleIds": [
+        "0085_01",
+        "0085_02",
+        "0085_03",
+        "0085_04"
+      ]
+    },
+    {
+      "no": 92,
+      "name": "ゴース",
+      "sleepStyleIds": [
+        "0092_01",
+        "0092_02",
+        "0092_03"
+      ]
+    },
+    {
+      "no": 93,
+      "name": "ゴースト",
+      "sleepStyleIds": [
+        "0093_01",
+        "0093_02",
+        "0093_03"
+      ]
+    },
+    {
+      "no": 94,
+      "name": "ゲンガー",
+      "sleepStyleIds": [
+        "0094_01",
+        "0094_02",
+        "0094_03",
+        "0094_04"
+      ]
+    },
+    {
+      "no": 133,
+      "name": "イーブイ",
+      "sleepStyleIds": [
+        "0133_01",
+        "0133_02",
+        "0133_03",
+        "0133_04"
+      ]
+    },
+    {
+      "no": 134,
+      "name": "シャワーズ",
+      "sleepStyleIds": [
+        "0134_01",
+        "0134_02",
+        "0134_03",
+        "0134_04"
+      ]
+    },
+    {
+      "no": 135,
+      "name": "サンダース",
+      "sleepStyleIds": [
+        "0135_01",
+        "0135_02",
+        "0135_03",
+        "0135_04"
+      ]
+    },
+    {
+      "no": 136,
+      "name": "ブースター",
+      "sleepStyleIds": [
+        "0136_01",
+        "0136_02",
+        "0136_03",
+        "0136_04"
+      ]
+    },
+    {
+      "no": 147,
+      "name": "ミニリュウ",
+      "sleepStyleIds": [
+        "0147_01",
+        "0147_02",
+        "0147_03",
+        "0147_04"
+      ]
+    },
+    {
+      "no": 148,
+      "name": "ハクリュー",
+      "sleepStyleIds": [
+        "0148_01",
+        "0148_02",
+        "0148_03",
+        "0148_04"
+      ]
+    },
+    {
+      "no": 149,
+      "name": "カイリュー",
+      "sleepStyleIds": [
+        "0149_01",
+        "0149_02",
+        "0149_03",
+        "0149_04"
+      ]
+    },
+    {
+      "no": 196,
+      "name": "エーフィ",
+      "sleepStyleIds": [
+        "0196_01",
+        "0196_02",
+        "0196_03",
+        "0196_04"
+      ]
+    },
+    {
+      "no": 197,
+      "name": "ブラッキー",
+      "sleepStyleIds": [
+        "0197_01",
+        "0197_02",
+        "0197_03",
+        "0197_04"
+      ]
+    },
+    {
+      "no": 214,
+      "name": "ヘラクロス",
+      "sleepStyleIds": [
+        "0214_01",
+        "0214_02",
+        "0214_03",
+        "0214_04"
+      ]
+    },
+    {
+      "no": 228,
+      "name": "デルビル",
+      "sleepStyleIds": [
+        "0228_01",
+        "0228_02",
+        "0228_03",
+        "0228_04"
+      ]
+    },
+    {
+      "no": 229,
+      "name": "ヘルガー",
+      "sleepStyleIds": [
+        "0229_01",
+        "0229_02",
+        "0229_03",
+        "0229_04"
+      ]
+    },
+    {
+      "no": 280,
+      "name": "ラルトス",
+      "sleepStyleIds": [
+        "0280_01",
+        "0280_02",
+        "0280_03",
+        "0280_04"
+      ]
+    },
+    {
+      "no": 281,
+      "name": "キルリア",
+      "sleepStyleIds": [
+        "0281_01",
+        "0281_02",
+        "0281_03",
+        "0281_04"
+      ]
+    },
+    {
+      "no": 282,
+      "name": "サーナイト",
+      "sleepStyleIds": [
+        "0282_01",
+        "0282_02",
+        "0282_03",
+        "0282_04"
+      ]
+    },
+    {
+      "no": 363,
+      "name": "タマザラシ",
+      "sleepStyleIds": [
+        "0363_01",
+        "0363_02",
+        "0363_03",
+        "0363_04"
+      ]
+    },
+    {
+      "no": 364,
+      "name": "トドグラー",
+      "sleepStyleIds": [
+        "0364_01",
+        "0364_02",
+        "0364_03",
+        "0364_04"
+      ]
+    },
+    {
+      "no": 365,
+      "name": "トドゼルガ",
+      "sleepStyleIds": [
+        "0365_01",
+        "0365_02",
+        "0365_03",
+        "0365_04"
+      ]
+    },
+    {
+      "no": 462,
+      "name": "ジバコイル",
+      "sleepStyleIds": [
+        "0462_01",
+        "0462_02",
+        "0462_03"
+      ]
+    },
+    {
+      "no": 470,
+      "name": "リーフィア",
+      "sleepStyleIds": [
+        "0470_01",
+        "0470_02",
+        "0470_03",
+        "0470_04"
+      ]
+    },
+    {
+      "no": 471,
+      "name": "グレイシア",
+      "sleepStyleIds": [
+        "0471_01",
+        "0471_02",
+        "0471_03",
+        "0471_04"
+      ]
+    },
+    {
+      "no": 475,
+      "name": "エルレイド",
+      "sleepStyleIds": [
+        "0475_01",
+        "0475_02",
+        "0475_03",
+        "0475_04"
+      ]
+    },
+    {
+      "no": 700,
+      "name": "ニンフィア",
+      "sleepStyleIds": [
+        "0700_01",
+        "0700_02",
+        "0700_03",
+        "0700_04"
+      ]
+    }
+  ],
+  "recipeEnergyBoundsMissing": [
+    {
+      "id": "apple_acid_yogurt_salad",
+      "name": "りんごさんヨーグルトサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "attract_apple_cheese_salad",
+      "name": "メロメロりんごのチーズサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "big_malasada",
+      "name": "おおきいマラサダ",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "bulk_up_bean_curry",
+      "name": "ビルドアップマメカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "cross_chop_salad",
+      "name": "クロスチョップドサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "crunch_avocado_salad",
+      "name": "くだけるアボカドサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "defiant_coffee_salad",
+      "name": "まけんきコーヒーサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "dizzy_punch_spicy_curry",
+      "name": "ピヨピヨパンチ辛口カレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "drought_katsu_curry",
+      "name": "ひでりカツレツカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "egg_bomb_curry",
+      "name": "おやこあいカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "explosion_popcorn",
+      "name": "だいばくはつポップコーン",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "fury_attack_chocolate_meat_salad",
+      "name": "ムラっけチョコミートサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "fury_attack_corn_salad",
+      "name": "みだれづきコーンサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "gluttony_potato_salad",
+      "name": "くいしんぼうポテトサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "grilled_tail_curry",
+      "name": "あぶりテールカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "hearty_cheeseburger_curry",
+      "name": "満腹チーズバーグカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "hearty_white_stew",
+      "name": "ほっこりホワイトシチュー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "heat_wave_tofu_salad",
+      "name": "ねっぷうとうふサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "hidden_power_stew",
+      "name": "めざめるパワーシチュー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "hustle_protein_smoothie",
+      "name": "はりきりプロテインスムージー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "immunity_leek_salad",
+      "name": "めんえきねぎサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "jigglypuff_flan",
+      "name": "プリンのプリンアラモード",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "light_soy_cake",
+      "name": "かるわざソイケーキ",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "limber_corn_stew",
+      "name": "じゅうなんコーンシチュー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "lovely_kiss_fruit_au_lait",
+      "name": "あくまのキッスフルーツオレ",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "melty_omelette_curry",
+      "name": "とけるオムカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "mold_breaker_corn_tiramisu",
+      "name": "かたやぶりコーンティラミス",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "neroli_detox_tea",
+      "name": "ネロリのデトックスティー",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "ninja_curry",
+      "name": "ニンジャカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "ninja_salad",
+      "name": "ニンジャサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "overheat_salad",
+      "name": "オーバーヒートサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "petal_blizzard_mimosa_salad",
+      "name": "はなふぶきミモザサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "role_play_pumpkaboo_stew",
+      "name": "なりきりバケッチャシチュー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "sacred_sword_sukiyaki_curry",
+      "name": "いあいぎりすき焼きカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "slow_and_steady_vegetable_juice",
+      "name": "マイペースやさいジュース",
+      "missing": [
+        "max"
+      ]
+    },
+    {
+      "id": "slowpoke_tail_pepper_salad",
+      "name": "ヤドンテールのペッパーサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "snow_cloak_caesar_salad",
+      "name": "ゆきかきシーザーサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "spicy_leek_curry",
+      "name": "からくちネギもりカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "spore_mushroom_curry",
+      "name": "キノコのほうしカレー",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "spore_mushroom_salad",
+      "name": "キノコのほうしサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "superpower_extreme_salad",
+      "name": "ばかぢからワイルドサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "water_veil_tofu_salad",
+      "name": "うるおいとうふサラダ",
+      "missing": [
+        "min",
+        "max"
+      ]
+    },
+    {
+      "id": "zippy_zap_spiced_cola",
+      "name": "スパークスパイスコーラ",
+      "missing": [
+        "max"
+      ]
+    }
+  ],
+  "pokemonWithoutPerRecordSources": [
+    {
+      "no": 1,
+      "name": "フシギダネ"
+    },
+    {
+      "no": 2,
+      "name": "フシギソウ"
+    },
+    {
+      "no": 3,
+      "name": "フシギバナ"
+    },
+    {
+      "no": 4,
+      "name": "ヒトカゲ"
+    },
+    {
+      "no": 5,
+      "name": "リザード"
+    },
+    {
+      "no": 6,
+      "name": "リザードン"
+    },
+    {
+      "no": 7,
+      "name": "ゼニガメ"
+    },
+    {
+      "no": 8,
+      "name": "カメール"
+    },
+    {
+      "no": 9,
+      "name": "カメックス"
+    },
+    {
+      "no": 10,
+      "name": "キャタピー"
+    },
+    {
+      "no": 11,
+      "name": "トランセル"
+    },
+    {
+      "no": 12,
+      "name": "バタフリー"
+    },
+    {
+      "no": 19,
+      "name": "コラッタ"
+    },
+    {
+      "no": 20,
+      "name": "ラッタ"
+    },
+    {
+      "no": 23,
+      "name": "アーボ"
+    },
+    {
+      "no": 24,
+      "name": "アーボック"
+    },
+    {
+      "no": 25,
+      "name": "ピカチュウ"
+    },
+    {
+      "no": 26,
+      "name": "ライチュウ"
+    },
+    {
+      "no": 27,
+      "name": "サンド"
+    },
+    {
+      "no": 28,
+      "name": "サンドパン"
+    },
+    {
+      "no": 37,
+      "name": "ロコン"
+    },
+    {
+      "no": 38,
+      "name": "キュウコン"
+    },
+    {
+      "no": 39,
+      "name": "プリン"
+    },
+    {
+      "no": 40,
+      "name": "プクリン"
+    },
+    {
+      "no": 50,
+      "name": "ディグダ"
+    },
+    {
+      "no": 51,
+      "name": "ダグトリオ"
+    },
+    {
+      "no": 52,
+      "name": "ニャース"
+    },
+    {
+      "no": 53,
+      "name": "ペルシアン"
+    },
+    {
+      "no": 54,
+      "name": "コダック"
+    },
+    {
+      "no": 55,
+      "name": "ゴルダック"
+    },
+    {
+      "no": 58,
+      "name": "ガーディ"
+    },
+    {
+      "no": 59,
+      "name": "ウインディ"
+    },
+    {
+      "no": 69,
+      "name": "マダツボミ"
+    },
+    {
+      "no": 70,
+      "name": "ウツドン"
+    },
+    {
+      "no": 71,
+      "name": "ウツボット"
+    },
+    {
+      "no": 79,
+      "name": "ヤドン"
+    },
+    {
+      "no": 80,
+      "name": "ヤドラン"
+    },
+    {
+      "no": 84,
+      "name": "ドードー"
+    },
+    {
+      "no": 85,
+      "name": "ドードリオ"
+    },
+    {
+      "no": 158,
+      "name": "ワニノコ"
+    },
+    {
+      "no": 159,
+      "name": "アリゲイツ"
+    },
+    {
+      "no": 160,
+      "name": "オーダイル"
+    },
+    {
+      "no": 172,
+      "name": "ピチュー"
+    },
+    {
+      "no": 174,
+      "name": "ププリン"
+    },
+    {
+      "no": 179,
+      "name": "メリープ"
+    },
+    {
+      "no": 180,
+      "name": "モココ"
+    },
+    {
+      "no": 181,
+      "name": "デンリュウ"
+    },
+    {
+      "no": 199,
+      "name": "ヤドキング"
+    },
+    {
+      "no": 243,
+      "name": "ライコウ"
+    },
+    {
+      "no": 244,
+      "name": "エンテイ"
+    },
+    {
+      "no": 245,
+      "name": "スイクン"
+    }
+  ],
+  "unregisteredNationalNos001To151": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    21,
+    22,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    72,
+    73,
+    77,
+    78,
+    83,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    150,
+    151
+  ]
+}
