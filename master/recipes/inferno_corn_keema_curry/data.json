@@ -1,0 +1,33 @@
+{
+  "id": "inferno_corn_keema_curry",
+  "name": "れんごくコーンキーマカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "qty": 24,
+      "ingredientId": "bean_meat"
+    },
+    {
+      "qty": 27,
+      "ingredientId": "fiery_herb"
+    },
+    {
+      "qty": 12,
+      "ingredientId": "warming_ginger"
+    },
+    {
+      "qty": 14,
+      "ingredientId": "greengrass_corn"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 13690
+    },
+    "max": {
+      "level": 70,
+      "value": 49010
+    }
+  }
+}

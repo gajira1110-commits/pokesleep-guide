@@ -1,0 +1,33 @@
+{
+  "id": "dream_eater_butter_curry",
+  "name": "ぜったいねむりバターカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "qty": 12,
+      "ingredientId": "soothing_cacao"
+    },
+    {
+      "qty": 10,
+      "ingredientId": "moomoo_milk"
+    },
+    {
+      "qty": 18,
+      "ingredientId": "potato"
+    },
+    {
+      "qty": 15,
+      "ingredientId": "tomato"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 9010
+    },
+    "max": {
+      "level": 70,
+      "value": 32256
+    }
+  }
+}

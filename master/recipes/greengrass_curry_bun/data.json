@@ -1,0 +1,15 @@
+{
+  "id": "greengrass_curry_bun",
+  "name": "ワカクサカレーパン",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {"ingredientId": "warming_ginger", "qty": 20},
+    {"ingredientId": "fiery_herb", "qty": 20},
+    {"ingredientId": "greengrass_soybeans", "qty": 8},
+    {"ingredientId": "pure_oil", "qty": 15}
+  ],
+  "energy": {
+    "min": {"level": 1, "value": 10945},
+    "max": {"level": 70, "value": 39183}
+  }
+}

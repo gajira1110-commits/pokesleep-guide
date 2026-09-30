@@ -1,0 +1,21 @@
+{
+  "id": "baby_honey_curry",
+  "name": "ベイビィハニーカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "qty": 7,
+      "ingredientId": "honey"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 839
+    },
+    "max": {
+      "level": 70,
+      "value": 3004
+    }
+  }
+}

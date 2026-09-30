@@ -1,0 +1,33 @@
+{
+  "id": "teatime_corn_scones",
+  "name": "おちゃかいコーンスコーン",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "qty": 9,
+      "ingredientId": "moomoo_milk"
+    },
+    {
+      "qty": 20,
+      "ingredientId": "fancy_apple"
+    },
+    {
+      "qty": 20,
+      "ingredientId": "warming_ginger"
+    },
+    {
+      "qty": 18,
+      "ingredientId": "greengrass_corn"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 10925
+    },
+    "max": {
+      "level": 70,
+      "value": 39112
+    }
+  }
+}

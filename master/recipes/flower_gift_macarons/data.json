@@ -1,0 +1,33 @@
+{
+  "id": "flower_gift_macarons",
+  "name": "フラワーギフトマカロン",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "qty": 25,
+      "ingredientId": "soothing_cacao"
+    },
+    {
+      "qty": 10,
+      "ingredientId": "moomoo_milk"
+    },
+    {
+      "qty": 25,
+      "ingredientId": "fancy_egg"
+    },
+    {
+      "qty": 17,
+      "ingredientId": "honey"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 13834
+    },
+    "max": {
+      "level": 70,
+      "value": 49526
+    }
+  }
+}

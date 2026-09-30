@@ -1,0 +1,36 @@
+{
+  "id": "energy_cheer_s",
+  "name": "げんきエールS",
+  "maxLevel": 6,
+  "tags": [
+    "げんき",
+    "ランダム"
+  ],
+  "effectType": "ally_energy_recovery",
+  "levels": {
+    "1": {
+      "recovery": 12,
+      "description": "チームのポケモン1匹のげんきを12回復する"
+    },
+    "2": {
+      "recovery": 15,
+      "description": "チームのポケモン1匹のげんきを15回復する"
+    },
+    "3": {
+      "recovery": 20,
+      "description": "チームのポケモン1匹のげんきを20回復する"
+    },
+    "4": {
+      "recovery": 25,
+      "description": "チームのポケモン1匹のげんきを25回復する"
+    },
+    "5": {
+      "recovery": 33,
+      "description": "チームのポケモン1匹のげんきを33回復する"
+    },
+    "6": {
+      "recovery": 44,
+      "description": "チームのポケモン1匹のげんきを44回復する"
+    }
+  }
+}

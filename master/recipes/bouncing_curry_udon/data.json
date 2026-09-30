@@ -1,0 +1,33 @@
+{
+  "id": "bouncing_curry_udon",
+  "name": "とびはねるカレーうどん",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "qty": 20,
+      "ingredientId": "bean_meat"
+    },
+    {
+      "qty": 22,
+      "ingredientId": "fiery_herb"
+    },
+    {
+      "qty": 39,
+      "ingredientId": "warming_ginger"
+    },
+    {
+      "qty": 31,
+      "ingredientId": "tasty_mushroom"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 25539
+    },
+    "max": {
+      "level": 70,
+      "value": 91430
+    }
+  }
+}

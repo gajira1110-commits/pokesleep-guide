@@ -1,0 +1,12 @@
+{
+  "id": "helper_boost_water", "name": "おてつだいブースト（みず）", "maxLevel": 6,
+  "tags": ["おてつだい", "チーム"], "effectType": "helper_boost_water",
+  "levels": {
+    "1": {"helps": 2, "bonusByUniqueWater": [0,0,0,1,2,4], "description": "チーム全員が各2回分すぐにおてつだい。異なるみずタイプ3～5種で各1／2／4回を追加"},
+    "2": {"helps": 3, "bonusByUniqueWater": [0,0,0,1,2,4], "description": "チーム全員が各3回分すぐにおてつだい。異なるみずタイプ3～5種で各1／2／4回を追加"},
+    "3": {"helps": 3, "bonusByUniqueWater": [0,0,0,2,3,5], "description": "チーム全員が各3回分すぐにおてつだい。異なるみずタイプ3～5種で各2／3／5回を追加"},
+    "4": {"helps": 4, "bonusByUniqueWater": [0,0,0,2,3,5], "description": "チーム全員が各4回分すぐにおてつだい。異なるみずタイプ3～5種で各2／3／5回を追加"},
+    "5": {"helps": 4, "bonusByUniqueWater": [0,0,1,3,4,6], "description": "チーム全員が各4回分すぐにおてつだい。異なるみずタイプ2～5種で各1／3／4／6回を追加"},
+    "6": {"helps": 5, "bonusByUniqueWater": [0,0,1,3,4,6], "description": "チーム全員が各5回分すぐにおてつだい。異なるみずタイプ2～5種で各1／3／4／6回を追加"}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "spooky_face_pancakes",
+  "name": "ドキドキこわいかおパンケーキ",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "qty": 24,
+      "ingredientId": "fancy_egg"
+    },
+    {
+      "qty": 29,
+      "ingredientId": "tomato"
+    },
+    {
+      "qty": 32,
+      "ingredientId": "honey"
+    },
+    {
+      "qty": 18,
+      "ingredientId": "plump_pumpkin"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 24354
+    },
+    "max": {
+      "level": 70,
+      "value": 87187
+    }
+  }
+}

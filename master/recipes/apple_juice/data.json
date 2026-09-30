@@ -1,0 +1,21 @@
+{
+  "id": "apple_juice",
+  "name": "とくせんリンゴジュース",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "qty": 8,
+      "ingredientId": "fancy_apple"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 855
+    },
+    "max": {
+      "level": 70,
+      "value": 3061
+    }
+  }
+}

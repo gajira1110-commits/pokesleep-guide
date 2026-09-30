@@ -1,0 +1,21 @@
+{
+  "id": "bean_burger_curry",
+  "name": "マメバーグカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "qty": 7,
+      "ingredientId": "bean_meat"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 856
+    },
+    "max": {
+      "level": 70,
+      "value": 3064
+    }
+  }
+}
