@@ -27,7 +27,15 @@
         "value": 69756,
         "source": "user-screenshot/IMG_1522.png"
       }
-    ]
+    ],
+    "min": {
+      "level": 1,
+      "value": 20885
+    },
+    "max": {
+      "level": 70,
+      "value": 74768
+    }
   },
   "sources": [
     {
@@ -38,6 +46,15 @@
         "name",
         "ingredients",
         "energy.observed"
+      ]
+    },
+    {
+      "type": "web",
+      "url": "https://game8.jp/pokemonsleep/668068",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "energy.min",
+        "energy.max"
       ]
     }
   ]

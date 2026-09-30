@@ -1,0 +1,87 @@
+{
+  "no": 197,
+  "name": "ブラッキー",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 3200,
+  "carry": 19,
+  "foodRate": 21.9,
+  "skillRate": 10.1,
+  "rateStatus": "推定",
+  "mainSkillId": "moonlight_energy_charge_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0197_01",
+      "name": "みかづき寝",
+      "stars": 1
+    },
+    {
+      "id": "0197_02",
+      "name": "おすわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0197_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0197_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/umbreon",
+    "https://wikiwiki.jp/poke_sleep/ブラッキー",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-09-30"
+}

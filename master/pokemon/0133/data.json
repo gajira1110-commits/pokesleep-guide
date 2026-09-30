@@ -1,0 +1,138 @@
+{
+  "no": 133,
+  "name": "イーブイ",
+  "type": "ノーマル",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "キーのみ",
+  "berryQty": 1,
+  "help": 3700,
+  "carry": 12,
+  "foodRate": 19.2,
+  "skillRate": 5.5,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0133_01",
+      "name": "まるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0133_02",
+      "name": "たれみみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0133_03",
+      "name": "げんきいっぱい寝",
+      "stars": 3
+    },
+    {
+      "id": "0133_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/eevee",
+    "https://wikiwiki.jp/poke_sleep/イーブイ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/イーブイ/イーブイの進化"
+  ],
+  "verifiedAt": "2026-09-30",
+  "evolution": [
+    {
+      "toNo": 134,
+      "to": "シャワーズ",
+      "candy": 80,
+      "item": "みずのいし"
+    },
+    {
+      "toNo": 135,
+      "to": "サンダース",
+      "candy": 80,
+      "item": "かみなりのいし"
+    },
+    {
+      "toNo": 136,
+      "to": "ブースター",
+      "candy": 80,
+      "item": "ほのおのいし"
+    },
+    {
+      "toNo": 196,
+      "to": "エーフィ",
+      "candy": 80,
+      "extra": "一緒に睡眠150時間・06:00〜18:00"
+    },
+    {
+      "toNo": 197,
+      "to": "ブラッキー",
+      "candy": 80,
+      "extra": "一緒に睡眠150時間・18:00〜06:00"
+    },
+    {
+      "toNo": 470,
+      "to": "リーフィア",
+      "candy": 80,
+      "item": "リーフのいし"
+    },
+    {
+      "toNo": 471,
+      "to": "グレイシア",
+      "candy": 80,
+      "item": "こおりのいし"
+    },
+    {
+      "toNo": 700,
+      "to": "ニンフィア",
+      "candy": 80,
+      "extra": "一緒に睡眠150時間"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "no": 471,
+  "name": "グレイシア",
+  "type": "こおり",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "チーゴのみ",
+  "berryQty": 1,
+  "help": 3200,
+  "carry": 17,
+  "foodRate": 21.9,
+  "skillRate": 6.3,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0471_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0471_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0471_03",
+      "name": "ぺったり寝",
+      "stars": 3
+    },
+    {
+      "id": "0471_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/glaceon",
+    "https://wikiwiki.jp/poke_sleep/グレイシア",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-09-30"
+}
