@@ -1,0 +1,92 @@
+{
+  "no": 176,
+  "name": "トゲチック",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "モモンのみ",
+  "berryQty": 1,
+  "help": 3800,
+  "carry": 15,
+  "foodRate": 16.3,
+  "skillRate": 5.6,
+  "rateStatus": "推定",
+  "mainSkillId": "metronome",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0176_01",
+      "name": "すわりはばたき寝",
+      "stars": 1
+    },
+    {
+      "id": "0176_02",
+      "name": "たちはばたき寝",
+      "stars": 2
+    },
+    {
+      "id": "0176_03",
+      "name": "うかびぱたぱた寝",
+      "stars": 3
+    },
+    {
+      "id": "0176_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/togetic",
+    "https://wikiwiki.jp/poke_sleep/トゲチック",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-09-30",
+  "evolution": {
+    "toNo": 468,
+    "to": "トゲキッス",
+    "candy": 80,
+    "item": "ひかりのいし"
+  }
+}
