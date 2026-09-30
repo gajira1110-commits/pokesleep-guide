@@ -256,6 +256,46 @@
         "level": 3
       },
       "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0132_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 4
+      },
+      "drowsyPower": 5472000
+    },
+    {
+      "sleepStyleId": "0132_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0132_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0132_10",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0132_13",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 115976000
     }
   ],
   "rankThresholds": [
@@ -434,5 +474,8 @@
       "level": 20,
       "energy": 5193272
     }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/ditto"
   ]
 }

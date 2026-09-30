@@ -186,14 +186,70 @@
     }
   ],
   "encounters": [
-    {"sleepStyleId":"0019_01","rank":{"tier":"ノーマル","level":1},"drowsyPower":76000},
-    {"sleepStyleId":"0019_02","rank":{"tier":"ノーマル","level":1},"drowsyPower":1558000},
-    {"sleepStyleId":"0019_03","rank":{"tier":"スーパー","level":1},"drowsyPower":6574000},
-    {"sleepStyleId":"0019_04","rank":{"tier":"スーパー","level":1},"drowsyPower":9120000},
-    {"sleepStyleId":"0020_01","rank":{"tier":"ノーマル","level":4},"drowsyPower":1824000},
-    {"sleepStyleId":"0020_02","rank":{"tier":"スーパー","level":3},"drowsyPower":5054000},
-    {"sleepStyleId":"0020_03","rank":{"tier":"ハイパー","level":4},"drowsyPower":15466000},
-    {"sleepStyleId":"0020_04","rank":{"tier":"スーパー","level":4},"drowsyPower":20824000},
+    {
+      "sleepStyleId": "0019_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0019_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0019_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 6574000
+    },
+    {
+      "sleepStyleId": "0019_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0020_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 4
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0020_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 5054000
+    },
+    {
+      "sleepStyleId": "0020_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 15466000
+    },
+    {
+      "sleepStyleId": "0020_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 20824000
+    },
     {
       "sleepStyleId": "0179_01",
       "rank": {
@@ -289,6 +345,49 @@
         "level": 2
       },
       "drowsyPower": 59052000
+    },
+    {
+      "sleepStyleId": "0132_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 5472000
+    },
+    {
+      "sleepStyleId": "0132_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0132_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0132_12",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0132_13",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 115976000
     }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/ditto"
   ]
 }
