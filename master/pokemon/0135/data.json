@@ -1,0 +1,87 @@
+{
+  "no": 135,
+  "name": "サンダース",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 2200,
+  "carry": 22,
+  "foodRate": 15.1,
+  "skillRate": 3.9,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0135_01",
+      "name": "ふせ寝",
+      "stars": 1
+    },
+    {
+      "id": "0135_02",
+      "name": "おすわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0135_03",
+      "name": "ゆめではしり寝",
+      "stars": 3
+    },
+    {
+      "id": "0135_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/jolteon",
+    "https://wikiwiki.jp/poke_sleep/サンダース",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-09-30"
+}

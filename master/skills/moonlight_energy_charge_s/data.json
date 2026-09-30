@@ -1,0 +1,49 @@
+{
+  "id": "moonlight_energy_charge_s",
+  "name": "つきのひかり（げんきチャージS）",
+  "maxLevel": 6,
+  "tags": [
+    "げんき",
+    "自分",
+    "追加回復"
+  ],
+  "effectType": "moonlight_energy_recovery",
+  "levels": {
+    "1": {
+      "selfRecovery": 12,
+      "bonusRecovery": 6.3,
+      "description": "自分のげんきを12回復する。大成功時は、さらにチームのポケモン1匹のげんきを6.3回復する。"
+    },
+    "2": {
+      "selfRecovery": 16.2,
+      "bonusRecovery": 7.7,
+      "description": "自分のげんきを16.2回復する。大成功時は、さらにチームのポケモン1匹のげんきを7.7回復する。"
+    },
+    "3": {
+      "selfRecovery": 21.2,
+      "bonusRecovery": 10.1,
+      "description": "自分のげんきを21.2回復する。大成功時は、さらにチームのポケモン1匹のげんきを10.1回復する。"
+    },
+    "4": {
+      "selfRecovery": 26.6,
+      "bonusRecovery": 13,
+      "description": "自分のげんきを26.6回復する。大成功時は、さらにチームのポケモン1匹のげんきを13回復する。"
+    },
+    "5": {
+      "selfRecovery": 33.6,
+      "bonusRecovery": 17.2,
+      "description": "自分のげんきを33.6回復する。大成功時は、さらにチームのポケモン1匹のげんきを17.2回復する。"
+    },
+    "6": {
+      "selfRecovery": 43.4,
+      "bonusRecovery": 22.8,
+      "description": "自分のげんきを43.4回復する。大成功時は、さらにチームのポケモン1匹のげんきを22.8回復する。"
+    }
+  },
+  "sources": [
+    "https://www.pokemonsleep.net/news/313933383736363033303032393435353337/",
+    "https://wikiwiki.jp/poke_sleep/メインスキル/げんきチャージ/つきのひかり"
+  ],
+  "verifiedAt": "2026-09-30",
+  "calculationStatus": "追加回復の確率を含む期待値は未対応"
+}
