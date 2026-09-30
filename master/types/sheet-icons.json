@@ -1,0 +1,167 @@
+{
+  "source": "assets/types/all_18_pixel.png",
+  "icons": {
+    "normal": {
+      "sha256": "cf77b238fec194b3ac87bd16d5a1287f30738a0c377bf2f13364632cb3826bf5",
+      "bounds": [
+        41,
+        36,
+        252,
+        257
+      ]
+    },
+    "fire": {
+      "sha256": "a119353997510402dec8094db567d7ae4dd4c513d3d7c38ac673bd2c4893d682",
+      "bounds": [
+        323,
+        35,
+        253,
+        257
+      ]
+    },
+    "water": {
+      "sha256": "0b0a5fc570ef55fefb33de21aee22b865d963cc1d491093fdc1b8e0b15d4fd4e",
+      "bounds": [
+        606,
+        35,
+        256,
+        258
+      ]
+    },
+    "grass": {
+      "sha256": "06223bb436eb9df00d14d467ac8d6b51acb83fbab36af644837526a1e2f1e1a6",
+      "bounds": [
+        901,
+        35,
+        255,
+        258
+      ]
+    },
+    "electric": {
+      "sha256": "1bd008efb58a33f873cb71fcbbe0421f8412ed955c63eed3e806124c0a6bfe89",
+      "bounds": [
+        1191,
+        35,
+        254,
+        258
+      ]
+    },
+    "ice": {
+      "sha256": "1b6c74a2bb1995edd25674b361e6fc1fae58e9f86bc642f7c2557213f5aa7d32",
+      "bounds": [
+        1476,
+        35,
+        256,
+        258
+      ]
+    },
+    "fighting": {
+      "sha256": "f7f7adee584f5396f5d393309d3a93efd049c908de007b54493e101daa240d54",
+      "bounds": [
+        41,
+        303,
+        252,
+        256
+      ]
+    },
+    "poison": {
+      "sha256": "0cfe45da44653228cb8cf6b28b35250dc047d0f67581d3072ce0f778fca18701",
+      "bounds": [
+        323,
+        303,
+        253,
+        256
+      ]
+    },
+    "ground": {
+      "sha256": "6760aa5648f9154a64bc1999339c0fb3371a7a1cad79af4949a17b760417f4c3",
+      "bounds": [
+        605,
+        303,
+        257,
+        256
+      ]
+    },
+    "flying": {
+      "sha256": "3c85020d3310a8b9512ef60125ba4f089550aa2517d825c99372737258ce87de",
+      "bounds": [
+        901,
+        303,
+        255,
+        256
+      ]
+    },
+    "psychic": {
+      "sha256": "6e257d477818171a9e675dd578f0479713305711dfd76321a6c64ce4dcb0ee98",
+      "bounds": [
+        1191,
+        303,
+        254,
+        257
+      ]
+    },
+    "bug": {
+      "sha256": "b0d91786cb7a2e77236ec723b6c653ffac7940969170919978699ef771c87873",
+      "bounds": [
+        1476,
+        303,
+        256,
+        256
+      ]
+    },
+    "rock": {
+      "sha256": "b75f00e10894e6a71279950eac875582b66a5fb1817348f0f8c101b66a9f4a0d",
+      "bounds": [
+        41,
+        570,
+        252,
+        257
+      ]
+    },
+    "ghost": {
+      "sha256": "1fb4a564675ae55b98d913fcd90a379d6b79a75f97f0609d7231ccc7a1f3747f",
+      "bounds": [
+        323,
+        570,
+        253,
+        257
+      ]
+    },
+    "dragon": {
+      "sha256": "e67502c711a78de745758ec9387a1cdce459bae9de767ceae260b80d024788ee",
+      "bounds": [
+        604,
+        570,
+        257,
+        257
+      ]
+    },
+    "dark": {
+      "sha256": "fde58d1940eab8c34ef18dd6a08d9b5db79b3659adde5b7a256c719e596dde91",
+      "bounds": [
+        901,
+        570,
+        255,
+        257
+      ]
+    },
+    "steel": {
+      "sha256": "8fe2a2ddf2c57df95e4a4a350ca72d151579514ac24f12e198c7fe399d3df911",
+      "bounds": [
+        1191,
+        570,
+        255,
+        257
+      ]
+    },
+    "fairy": {
+      "sha256": "5a0210878c66540b8a6ad2c8748872aea42582cb1f68bb1c8281439456fbce4d",
+      "bounds": [
+        1476,
+        570,
+        255,
+        257
+      ]
+    }
+  }
+}
