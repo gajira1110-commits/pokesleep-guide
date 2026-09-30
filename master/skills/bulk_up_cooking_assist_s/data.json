@@ -50,5 +50,8 @@
     "https://wikiwiki.jp/poke_sleep/メインスキル/料理アシスト/ビルドアップ"
   ],
   "verifiedAt": "2026-09-30",
-  "calculationStatus": "未対応"
+  "calculationStatus": "未対応",
+  "nativePokemonNos": [
+    214
+  ]
 }

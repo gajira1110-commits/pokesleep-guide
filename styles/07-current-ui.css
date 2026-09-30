@@ -165,13 +165,15 @@
 #dexDetail .v106-evo-conditions{order:2!important;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:850;color:#111;white-space:nowrap;line-height:1.15}
 #dexDetail .v31-evo-step{min-width:19px!important;width:19px!important}
 #dexDetail .v31-evo-line{gap:3px!important}
+#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:7px}
+#boxDetail .psg-box-food-heading h3{margin:0;font-size:18px}
 #boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto auto;justify-content:center;align-items:center;column-gap:3px;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
+#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:3px;row-gap:0;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
 #boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
 #boxDetail .psg-v106-unlock{text-align:center;font-size:11px;line-height:1.2;white-space:nowrap}
-#boxDetail .psg-v106-ingredient-image{display:grid;place-items:center;width:28px;height:28px}
+#boxDetail .psg-v106-ingredient-image{grid-row:1 / 3;display:grid;place-items:center;width:28px;height:28px}
 #boxDetail .psg-v106-ingredient-image img{width:28px;height:28px;object-fit:contain}
-#boxDetail .psg-v106-ingredient strong{font-size:13px;white-space:nowrap}
+#boxDetail .psg-v106-ingredient strong{grid-column:2;text-align:center;font-size:13px;line-height:1.1;white-space:nowrap}
 #boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
 #boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
 #boxDetail .psg-box-level-controls{grid-column:1;display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0}
@@ -337,16 +339,16 @@
   #dexDetail .v12-tabs button[data-v12tab="field"].active{background:#f0f6f1!important;color:#347a4b!important;border:0!important;border-bottom:2px solid #4d9662!important}
 }
 
-/* Compact individual controls and two-column subskill tiles. */
+/* Compact individual controls and three-column subskill tiles. */
 #boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
 #boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
 #boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
-#boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-#boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:10px;padding:5px 4px}
-#boxDetail .psg-subskill-top{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;line-height:1.2}
-#boxDetail .psg-subskill-badge{width:32px;height:32px;object-fit:contain}
-#boxDetail .psg-subskill-unknown{display:grid;place-items:center;width:28px;height:28px;color:#81908a}
-#boxDetail .psg-box-subskill>strong{text-align:center;overflow-wrap:anywhere;font-size:12px;line-height:1.3}
+#boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+#boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:9px;padding:3px}
+#boxDetail .psg-subskill-top{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;line-height:1.2}
+#boxDetail .psg-subskill-badge{width:24px;height:24px;object-fit:contain}
+#boxDetail .psg-subskill-unknown{display:grid;place-items:center;width:24px;height:24px;color:#81908a}
+#boxDetail .psg-box-subskill>strong{text-align:center;overflow-wrap:anywhere;font-size:11px;line-height:1.2}
 #boxDetail .psg-box-subskill.is-locked{opacity:.48}
 #boxDetail .psg-editor-note{margin:0;font-weight:400}
 #boxDetail #boxEditor{scroll-margin-top:110px}
@@ -355,3 +357,9 @@
 .psg-selected-filters button{max-width:100%;overflow-wrap:anywhere;border:1px solid #8abd9e;background:#eaf5ee;color:#285c3d;border-radius:9px;padding:5px 7px;min-height:32px;font-size:12px;font-weight:700}
 .psg-selected-filters .psg-filter-clear{background:#fff;color:#526259;border-color:#d6e2da}
 @media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
+
+#boxDetail .psg-box-nature-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px;align-items:center}
+#boxDetail .psg-box-nature-row .psg-box-lead{margin:0}
+#boxDetail .psg-box-nature-effects{display:grid;gap:2px;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+#boxDetail .psg-nature-up{color:#b04436}
+#boxDetail .psg-nature-down{color:#346baa}
