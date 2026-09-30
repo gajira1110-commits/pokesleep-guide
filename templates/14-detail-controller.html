@@ -354,8 +354,23 @@
      return;
    }
    card.style.display="";
-   // Heavy branching: base at left-center, destinations in a 3-column grid on the right.
-   if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
+   // Eevee's eight destinations need the full width for readable requirements.
+   if(Number(root.no)===133&&rootBranches.length>1){
+     const commonCandy=rootBranches.every(e=>e.candy===rootBranches[0].candy)?rootBranches[0].candy:null;
+     const cells=rootBranches.map(e=>{
+       const conditions=[];
+       if(commonCandy==null&&e.candy!=null)conditions.push(`アメ${e.candy}個`);
+       if(e.level!=null)conditions.push(`Lv.${e.level}`);
+       if(e.item)conditions.push(e.item);
+       if(e.extra){
+         conditions.push(detailEsc(e.extra.replace('一緒に睡眠','睡眠').split('・')[0]));
+         if(e.extra.includes('06:00〜18:00'))conditions.push('昼 06:00〜18:00');
+         else if(e.extra.includes('18:00〜06:00'))conditions.push('夜 18:00〜06:00');
+       }
+       return evoNode(byNo(e.toNo),m.no,'psg-eevee-destination',{conditions},true);
+     }).join('');
+     el.innerHTML=`<div class="psg-eevee-family"><div class="psg-eevee-origin">${evoNode(root,m.no,'psg-eevee-root')}<div class="psg-eevee-common">進化先を選ぶ${commonCandy!=null?`<strong>共通：アメ${commonCandy}個</strong>`:''}</div></div><div class="psg-eevee-grid">${cells}</div></div>`;
+   }else if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
      el.innerHTML=nestedEvolutionTree(root,m.no);
    }else if(rootBranches.length>1){
      const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div></div>`}).join("");
@@ -428,4 +443,3 @@
  switchTab("ability");
 })();
 </script>
-

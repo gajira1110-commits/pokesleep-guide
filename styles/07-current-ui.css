@@ -142,6 +142,19 @@
 #dexDetail .v31-branch-cell .v31-evo-node{width:100%!important}
 #dexDetail .v31-branch-cell .v111-evo-body{display:flex;justify-content:center}
 
+/* Eevee: compact origin above eight full-width, three-column destinations. */
+#dexDetail .psg-eevee-origin{display:flex;align-items:center;gap:12px;margin:4px 0 10px}
+#dexDetail .psg-eevee-root{width:88px!important;flex:none;padding:5px!important}
+#dexDetail .psg-eevee-root .v31-evo-image{width:42px!important;height:42px!important}
+#dexDetail .psg-eevee-common{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#52635b}
+#dexDetail .psg-eevee-common strong{font-size:13px;color:#111}
+#dexDetail .psg-eevee-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;align-items:stretch}
+#dexDetail .psg-eevee-destination{width:100%!important;padding:8px 3px!important;box-sizing:border-box}
+#dexDetail .psg-eevee-destination .v111-evo-body{display:flex!important;flex-direction:column;align-items:center;gap:7px}
+#dexDetail .psg-eevee-destination .v31-evo-image{width:54px!important;height:54px!important}
+#dexDetail .psg-eevee-destination .v106-evo-conditions{align-items:center!important;text-align:center!important;font-size:clamp(8px,2.5vw,11px)!important;line-height:1.35!important;overflow-wrap:normal;min-height:30px}
+#dexDetail .psg-eevee-destination .v106-evo-conditions>span{white-space:nowrap}
+
 /* Sleep-style gallery: master entries are ordered by stars and shown two across. */
 .psg-info-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:15px}
 .psg-info-link{width:100%;display:grid;grid-template-columns:1fr auto;gap:3px;text-align:left;align-items:center;cursor:pointer;color:#16221b}
