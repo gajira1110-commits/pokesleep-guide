@@ -1,0 +1,79 @@
+ // Discoveries are stored by permanent sleep-style ID, never by position or name.
+ const SLEEP_FOUND_KEY='psg-sleep-discoveries-v1';
+ function readSleepFound(){
+   try{
+     const saved=JSON.parse(localStorage.getItem(SLEEP_FOUND_KEY)||'{}');
+     return saved&&typeof saved==='object'&&!Array.isArray(saved)?saved:{};
+   }catch{return {}}
+ }
+ let sleepFound=readSleepFound();
+ function renderSleepStyles(m){
+   sleep.replaceChildren();
+   const styles=(V.sleepStyles?.[m.no]||[]).filter(x=>x&&x.id&&Number.isInteger(Number(x.stars))&&Number(x.stars)>=1&&Number(x.stars)<=5)
+     .slice().sort((a,b)=>Number(a.stars)-Number(b.stars)||Number(a.order||0)-Number(b.order||0)||String(a.id).localeCompare(String(b.id)));
+   const registered=styles.filter(x=>sleepFound[x.id]).length;
+   const sleepTab=tabs.querySelector('[data-v12tab="sleep"]');
+   sleepTab.querySelector('.psg-sleep-tab-count').textContent=`${registered}/${styles.length}`;
+   sleepTab.setAttribute('aria-label',`寝顔図鑑、${styles.length}種類中${registered}種類登録済み`);
+   if(!styles.length){
+     const empty=document.createElement('p');empty.className='psg-sleep-empty';
+     empty.textContent='寝顔データ未登録。確認できた寝顔をマスターデータに追加すると、ここに★順で表示します。';
+     sleep.appendChild(empty);return;
+   }
+   const grid=document.createElement('div');grid.className='psg-sleep-grid';
+   styles.forEach(style=>{
+     const card=document.createElement('article');card.className='psg-sleep-card';
+     const photo=document.createElement('div');photo.className='psg-sleep-photo';
+     const fallback=document.createElement('span');fallback.className='psg-sleep-no-image';fallback.textContent='No image';
+     if(style.image){
+       const img=document.createElement('img');img.src=style.image;img.alt=style.name||'寝顔';img.loading='lazy';
+       img.onerror=()=>{img.remove();photo.appendChild(fallback)};
+       photo.appendChild(img);
+     }else photo.appendChild(fallback);
+     const toggle=document.createElement('button');toggle.type='button';toggle.className='psg-sleep-toggle';
+     toggle.setAttribute('aria-pressed',sleepFound[style.id]?'true':'false');
+     toggle.setAttribute('aria-label',`${m.name} ${style.name||'寝顔'} ${sleepFound[style.id]?'登録済み。タップして未登録にする':'未登録。タップして登録する'}`);
+     toggle.textContent=sleepFound[style.id]?'✓':'○';
+     toggle.onclick=()=>{
+       const updated={...sleepFound};
+       if(updated[style.id])delete updated[style.id];else updated[style.id]=true;
+       try{localStorage.setItem(SLEEP_FOUND_KEY,JSON.stringify(updated));sleepFound=updated;renderSleepStyles(m);window.PS?.renderDex?.()}
+       catch{toggle.setAttribute('aria-label','保存できませんでした。端末の保存設定を確認してください')}
+     };
+     photo.appendChild(toggle);card.appendChild(photo);
+     const caption=document.createElement('div');caption.className='psg-sleep-caption';
+     const stars=document.createElement('strong');stars.className='psg-sleep-stars';stars.textContent=`★${style.stars}`;
+     const name=document.createElement('span');name.textContent=style.name||'名称未確認';
+     caption.append(stars,name);card.appendChild(caption);grid.appendChild(card);
+   });
+   sleep.appendChild(grid);
+ }
+ function renderPokemonFields(m){
+   field.replaceChildren();
+   const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
+   const note=document.createElement('p');note.className='note';note.textContent='資料を投入した出現情報のみ表示。未掲載は出現しないという意味ではありません。';field.append(note);
+   let found=false;
+   for(const entry of Object.values(V.fields||{})){
+     const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
+     if(!rows.length)continue;
+     found=true;
+     const section=document.createElement('section');section.className='psg-field-species';
+     const heading=document.createElement('h4');heading.textContent=entry.name;section.append(heading);
+     for(const item of rows){
+       const style=V.sleepStyles?.[m.no]?.find(row=>row[2]===item.sleepStyleId);
+       if(!style)continue;
+       const line=document.createElement('div');line.className='psg-field-encounter-row';
+       const label=document.createElement('span');label.textContent=`★${style[1]} ${style[0]}`;
+       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+       line.append(label,rank);section.append(line);
+     }
+     field.append(section);
+   }
+   if(!found){const empty=document.createElement('p');empty.className='v12-placeholder';empty.textContent='フィールド出現データ未投入';field.append(empty)}
+ }
+ window.PSG_REFRESH_SLEEP_FOUND=()=>{
+   sleepFound=readSleepFound();
+   const pokemon=byNo(currentNo);
+   if(pokemon)renderSleepStyles(pokemon);
+ };
+
