@@ -29,7 +29,7 @@ function boxDailySkillText(estimate){
  else if(member.boost&&Number.isFinite(member.skillHelps))amount=`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`;
  else if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))amount=`（1匹に${member.skillHelps}回／発動・対象は均等配分して日産に反映）`;
  else if(!Number.isFinite(member.skillShards))amount='（効果の日産加算は未対応）';
- if(Number.isFinite(member.skillShards))amount+=`・ゆめのかけら 約${Math.round(n*member.skillShards).toLocaleString()}個`;
+ if(Number.isFinite(member.skillShards))amount+=`・ゆめのかけら 約${Math.round(n*member.skillShards).toLocaleString()}個${member.skillEffectType==='variable_dream_shards'?'（範囲平均の近似）':''}`;
  return `１日 約${n.toFixed(1)}回${amount}`;
 }
 function syncLevel(){

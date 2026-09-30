@@ -449,11 +449,77 @@
         "level": 2
       },
       "drowsyPower": 73112000
+    },
+    {
+      "sleepStyleId": "0316_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0316_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0316_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0316_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0317_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0317_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0317_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0317_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 28766000
     }
   ],
   "sources": [
     "https://wiki.pokesleep.com/ja/pokemon/ditto",
     "https://wiki.pokesleep.com/ja/pokemon/riolu",
-    "https://wiki.pokesleep.com/ja/pokemon/lucario"
+    "https://wiki.pokesleep.com/ja/pokemon/lucario",
+    "https://wiki.pokesleep.com/ja/pokemon/gulpin",
+    "https://wiki.pokesleep.com/ja/pokemon/swalot"
   ]
 }

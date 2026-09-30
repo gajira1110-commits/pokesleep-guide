@@ -159,3 +159,18 @@ v195：追加おてつだいの予想
 - https://www.pokemonsleep.net/news/343239303735303933343939343132343831/
 - https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット/はどうだん
 - https://wiki.pokesleep.com/ja/main-skills/auraspheredreamshardmagnets
+
+## v213（2026-10-01）
+
+ゴクリン・マルノームの基本能力、食材、Lv.20・アメ40個の進化条件、寝顔8件、通常フィールド出現18件を追加。基本能力・進化は2資料、確率と寝顔IDは一覧で照合。出現情報はポケスリ総合資料サイトの各種族ページで確認。EXは流用せず保留。
+
+- https://wiki.pokesleep.com/ja/pokemon/gulpin
+- https://wiki.pokesleep.com/ja/pokemon/swalot
+- https://wikiwiki.jp/poke_sleep/ゴクリン
+- https://wikiwiki.jp/poke_sleep/マルノーム
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+
+ランダム版のLv.1〜8の既存効果範囲は https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット と一致。日産では範囲平均の近似を使用し、切り上げ・獲得量分布・イベントボーナスは含めない旨をスキルデータと画面へ明記。エリア補正やエナジー換算は適用しない。確率・発動回数も推定。
+
+同スキルを持つヤミラミは確率一覧で確認し、nativePokemonNosへ記録。種族本体の基本能力・寝顔・出現記録は未登録のため次の照合対象。

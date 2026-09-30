@@ -26,7 +26,7 @@ function renderTeamDay(){
   const berry=berryIcon(member.berryName);if(berry)detail.prepend(berry);row.append(detail);if(!member.missing&&member.foods.size)row.append(foodTiles(member.foods));list.append(row);
  }
  host.append(list);
- if(result.dreamShards>0){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`ゆめのかけら期待値：約${Math.round(result.dreamShards).toLocaleString()}個（スキル分・エナジーとは別集計）`;host.append(total)}
+ if(result.dreamShards>0){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`ゆめのかけら期待値：約${Math.round(result.dreamShards).toLocaleString()}個（スキル分・エナジーとは別集計${result.members.some(m=>m.skillEffectType==='variable_dream_shards')?'・ランダムは範囲平均の近似':''}）`;host.append(total)}
  if(result.randomIngredients>0){const extra=document.createElement('p');extra.className='psg-day-total';extra.textContent=`ランダム食材 合計 約${result.randomIngredients.toFixed(1)}個（種類未指定・上の食材合計とは別集計）`;host.append(extra)}
  if(result.foods.size){const total=document.createElement('div');total.className='psg-day-total';const label=document.createElement('strong');label.textContent='食材合計';total.append(label,foodTiles(result.foods));host.append(total)}
  if(result.members.some(member=>!member.missing)){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`きのみ＋スキルのエナジー期待値：約${Math.round(result.berryEnergy+result.skillEnergy).toLocaleString()}（きのみ 約${Math.round(result.berryEnergy).toLocaleString()}・スキル 約${Math.round(result.skillEnergy).toLocaleString()}／好物・エリア補正込み）`;host.append(total)}

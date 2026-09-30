@@ -45,3 +45,12 @@ ctx.window.PS_CATALOG.skills.s={maxLevel:8,name:'shards',effectType:'fixed_dream
 const shards=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
 assert.equal(shards.dreamShards,12500);assert.equal(shards.skillEnergy,0);
 console.log('Aura Sphere Lv.1/8, separate dream shards, field bonus only on energy and fixed-shard skill passed.');
+
+ctx.window.PS_CATALOG.skills.s={maxLevel:8,name:'random shards',effectType:'variable_dream_shards',levels:{1:{min:120,max:480},8:{min:1150,max:4600}}};
+ctx.state.box[0].skillLevel=1;
+let randomShards=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
+assert.equal(randomShards.dreamShards,1500);assert.equal(randomShards.skillEnergy,0);
+ctx.state.box[0].skillLevel=8;
+randomShards=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
+assert.equal(randomShards.dreamShards,14375);assert.equal(randomShards.skillEnergy,0);
+console.log('Random dream shards Lv.1/8 midpoint estimate, no field bonus or energy conversion passed.');

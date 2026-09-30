@@ -688,6 +688,38 @@
         "level": 2
       },
       "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0316_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0316_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0316_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0316_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9918000
     }
   ],
   "rankThresholds": [
@@ -870,6 +902,7 @@
   "sources": [
     "https://wiki.pokesleep.com/ja/pokemon/ditto",
     "https://wiki.pokesleep.com/ja/pokemon/mr-mime",
-    "https://wiki.pokesleep.com/ja/pokemon/mime-jr"
+    "https://wiki.pokesleep.com/ja/pokemon/mime-jr",
+    "https://wiki.pokesleep.com/ja/pokemon/gulpin"
   ]
 }

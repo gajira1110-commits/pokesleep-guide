@@ -2,11 +2,11 @@
   "asOf": "2026-10-01",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
-    "pokemon": 92,
+    "pokemon": 94,
     "skills": 23,
     "recipes": 78,
-    "sleepStyles": 366,
-    "normalFieldEncounters": 424
+    "sleepStyles": 374,
+    "normalFieldEncounters": 442
   },
   "missingCoreFields": [],
   "missingEvolutionTargets": [],
@@ -19,10 +19,6 @@
     {
       "id": "cooking_chance_s",
       "name": "料理チャンスS"
-    },
-    {
-      "id": "dream_shard_magnet_s_variable",
-      "name": "ゆめのかけらゲットS（ランダム）"
     }
   ],
   "pokemonWithoutAnyNormalEncounter": [
