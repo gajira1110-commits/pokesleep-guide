@@ -1,9 +1,8 @@
 """Validate master folders and produce the GitHub Pages review with external image assets."""
-import base64
-import hashlib
 import json
-import mimetypes
 from pathlib import Path
+
+from PSG_image_assets import image_path, face_sheet_script, type_sheet_config
 
 ROOT = Path(__file__).resolve().parent
 MASTER = ROOT / 'master'
@@ -33,6 +32,10 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'detail/06-evolution.html',
     'detail/07-navigation.html',
     '15-auto-images.html',
+    'images/02-type-alignment.html',
+    'images/03-type-sheet.html',
+    'images/04-catalog-assets.html',
+    'images/05-refresh.html',
     '16-swipe.html',
     '17-skill-controller.html',
     '18-recipe-controller.html',
@@ -53,7 +56,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v208_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v209_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -67,16 +70,6 @@ def records(kind):
         assert key not in result, f'duplicate {kind} id: {key}'
         result[key] = (obj, path.parent)
     return result
-
-
-def inline_image(folder, basename):
-    found = [p for p in folder.glob(f'{basename}.*') if p.suffix.lower() in ('.webp', '.png', '.jpg', '.jpeg', '.svg')]
-    assert len(found) <= 1, f'ambiguous image: {folder}/{basename}'
-    if not found:
-        return None
-    image = found[0]
-    mime = mimetypes.guess_type(image.name)[0]
-    return image.relative_to(ROOT).as_posix()
 
 
 def catalog_and_images():
@@ -110,25 +103,25 @@ def catalog_and_images():
         catalog[kind] = {}
         for key, (obj, folder) in records(kind).items():
             assert obj.get('name') and obj.get('icon') == 'icon.webp', f'invalid icon record: {kind}/{key}'
-            image = inline_image(folder, 'icon')
+            image = image_path(ROOT, folder, 'icon')
             assert image, f'missing icon: {kind}/{key}'
             catalog[kind][key] = {**obj, 'image':image}
         assert len(catalog[kind]) == (4 if kind == 'specialties' else 3), f'incomplete {kind}'
     for key, name in json.loads((MASTER / 'sleepTypes/manifest.json').read_text()).items():
-        icon = inline_image(MASTER / 'sleepTypes' / key, 'icon')
+        icon = image_path(ROOT, MASTER / 'sleepTypes' / key, 'icon')
         assert icon, f'missing sleep type icon: {key}'
         images['sleepTypes'][name] = icon
     type_names = json.loads((MASTER / 'types/manifest.json').read_text())
     assert len(type_names) == 18 and len(set(type_names.values())) == 18, 'type image manifest must cover 18 unique types'
     for type_id,name in type_names.items():
         assert type_id.isascii() and type_id.replace('_','').isalnum(), f'invalid type ID: {type_id}'
-        icon = inline_image(MASTER / 'types' / type_id, 'icon')
+        icon = image_path(ROOT, MASTER / 'types' / type_id, 'icon')
         if icon:
             images['types'][name] = icon
     badges = json.loads((ROOT / 'assets/subskills/manifest.json').read_text())
     assert set(badges) == set(skill_names), 'subskill badge manifest must cover all master records'
     for name,filename in badges.items():
-        custom = inline_image(MASTER / 'subskills/icons', filename.rsplit('.',1)[0])
+        custom = image_path(ROOT, MASTER / 'subskills/icons', filename.rsplit('.',1)[0])
         if custom:
             images['subskills'][name] = custom
         else:
@@ -147,21 +140,21 @@ def catalog_and_images():
         assert [(rank.get('tier'),rank.get('level')) for rank in ranks] == expected_ranks, f'{key}: invalid rank order'
         assert ranks[0]['energy'] == 0 and all(isinstance(rank['energy'],int) and rank['energy'] > ranks[i-1]['energy'] for i,rank in enumerate(ranks) if i), f'{key}: invalid energy thresholds'
         catalog['fields'][key] = field
-        image = inline_image(folder,'image')
+        image = image_path(ROOT, folder,'image')
         if image:
             images['fields'][key] = image
     for key,(berry,folder) in kinds['berries'].items():
         assert berry['id'] == key and berry.get('name') and isinstance(berry.get('baseEnergy'),int) and berry['baseEnergy'] > 0
         assert berry['name'] not in catalog['berries'], f'duplicate berry name: {berry["name"]}'
         catalog['berries'][berry['name']] = berry['baseEnergy']
-        icon = inline_image(folder, 'icon')
+        icon = image_path(ROOT, folder, 'icon')
         if icon:
             images['berries'][berry['name']] = icon
     catalog['berryNames'] = sorted(set(catalog['berries']) | {name for field in catalog['fields'].values() for name in field['favoriteBerries']})
     for key,(obj,folder) in ingredients.items():
         assert obj['id'] == key and obj['name']
         catalog['ingredientAssets'][obj['name']] = {field:value for field,value in obj.items() if field not in ('id','name')}
-        icon = inline_image(folder, 'icon')
+        icon = image_path(ROOT, folder, 'icon')
         if icon:
             images['ingredients'][obj['name']] = icon
     for key,(obj,folder) in kinds['skills'].items():
@@ -170,7 +163,7 @@ def catalog_and_images():
             assert sorted(map(int,obj['levels'])) == list(range(1,obj['maxLevel']+1)), key
             assert all(isinstance(level.get('min'),int) and isinstance(level.get('max'),int) and 0 < level['min'] <= level['max'] for level in obj['levels'].values()), key
         catalog['skills'][key] = obj
-        icon = inline_image(folder, 'icon')
+        icon = image_path(ROOT, folder, 'icon')
         if icon:
             images['skills'][key] = icon
     for key,(obj,folder) in kinds['pokemon'].items():
@@ -193,7 +186,7 @@ def catalog_and_images():
             assert style['id'].startswith(f'{int(key):04d}_') and style['id'] not in seen_styles
             assert style['name'] and 1 <= style['stars'] <= 5
             seen_styles.add(style['id'])
-            photo = inline_image(folder / 'sleep', style['id'])
+            photo = image_path(ROOT, folder / 'sleep', style['id'])
             if photo:
                 images['sleepStyles'][style['id']] = photo
         catalog['sleepStyles'][key] = [[style['name'],style['stars'],style['id']] for style in styles]
@@ -206,7 +199,7 @@ def catalog_and_images():
                 candidate['name'] = ingredients[ingredient_id][0]['name']
         catalog['pokemon'][key] = obj
         for role, asset_key in (('face','pokemonFaces'),('full','pokemon')):
-            image = inline_image(folder,role)
+            image = image_path(ROOT, folder,role)
             if image:
                 images[asset_key][key] = image
     style_index = {style[2]:(no,style) for no,styles in catalog['sleepStyles'].items() for style in styles}
@@ -252,7 +245,7 @@ def catalog_and_images():
             assert isinstance(ingredient.get('qty'),int) and ingredient['qty'] > 0
             ingredient['name'] = ingredients[ingredient_id][0]['name']
         catalog['recipes'][key] = recipe
-        image = inline_image(folder,'image')
+        image = image_path(ROOT, folder,'image')
         if image:
             images['recipes'][key] = image
     # The old catalog entries may contain pending numbers. New records are authoritative.
@@ -273,29 +266,17 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v208') == 2
+    assert source.count('Review v209') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
                  'for(const [kind,entries] of Object.entries('+js_images+'))'
                  'Object.assign(window.PS_IMAGE_FILES[kind],entries);')
-    sheet_uri = FACE_SHEET.relative_to(ROOT).as_posix()
-    face_script = FACE_SCRIPT.read_text()
-    assert face_script.count('/* PSG_BUILD_FACE_SHEET */') == 1
-    face_script = face_script.replace('/* PSG_BUILD_FACE_SHEET */',json.dumps(sheet_uri))
+    face_script = face_sheet_script(ROOT, FACE_SCRIPT, FACE_SHEET)
     css_text = ''.join(path.read_text() for path in STYLE_FILES)
     if not CSS.exists() or CSS.read_text() != css_text:
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
-    # Restore default icons from their full sheet bounds. A replacement master
-    # icon with a different hash takes priority over the original sheet artwork.
-    sheet_meta = json.loads((MASTER / 'types/sheet-icons.json').read_text())
-    sheet_icons = {}
-    for type_id, name in json.loads((MASTER / 'types/manifest.json').read_text()).items():
-        info = sheet_meta['icons'][type_id]
-        custom_path = images['types'].get(name)
-        if not custom_path or hashlib.sha256((ROOT / custom_path).read_bytes()).hexdigest() == info['sha256']:
-            sheet_icons[name] = info['bounds']
-    type_uri = {'url':TYPE_SHEET.relative_to(ROOT).as_posix(),'icons':sheet_icons}
+    type_uri = type_sheet_config(ROOT, MASTER, images['types'], TYPE_SHEET)
     html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_TYPE_SHEET */',json.dumps(type_uri))
     assert MARKER not in html
     PREVIEW.write_text(html)

@@ -27,7 +27,11 @@
 | `detail/05-skill.html` | メインスキル・効果・各レベルの表示 |
 | `detail/06-evolution.html` | 進化条件・系統探索・通常進化・途中分岐・イーブイの表示 |
 | `detail/07-navigation.html` | 詳細を開く処理、一覧への復帰、戻る／進む履歴、イベント接続、クロージャの終了 |
-| `15-auto-images.html` | 画像パスの接続 |
+| `15-auto-images.html` | 自動画像処理の共通状態・読み込みキャッシュ、クロージャの開始 |
+| `images/02-type-alignment.html` | タイプアイコンの可視領域の検出、中央配置 |
+| `images/03-type-sheet.html` | 旧タイプシートの切り抜き、採用済みマスター画像を優先 |
+| `images/04-catalog-assets.html` | ポケモン・きのみ・食材・スキルの画像パス接続 |
+| `images/05-refresh.html` | 読み込み完了後の画面更新、クロージャの終了 |
 | `16-swipe.html` | スワイプ操作 |
 | `17-skill-controller.html` | スキル一覧の処理 |
 | `18-recipe-controller.html` | 料理一覧の処理 |
@@ -48,3 +52,15 @@
 - 公開入口：`window.openPokemonDetail`、`window.openDexCard`、`window.PS_DETAIL_NAV` は07、寝顔再読み込みの `window.PSG_REFRESH_SLEEP_FOUND` は02です。既存の呼び出し元が使う入口を維持します。
 
 v208の分割では処理内容を変更せず、断片の連結が元のコントローラーと完全一致することを確認しました。生成テンプレート・review.htmlも、Reviewのバージョン表示以外はv207と同一です。
+
+## 画像処理を編集するとき
+
+15 → images/02 → 03 → 04 → 05 も同じスクリプトの断片です。単独のscriptタグで囲まず、順番を維持してください。`catalog`、`assets`、`explicit`、`lookup`、`jobs` は15の共通状態です。公開入口 `PS_AUTO_ASSETS.ready` は05で設定します。
+
+- タイプの位置合わせは02、旧シートからの切り抜きは03を編集します。採用済みの画像は描き直さず、表示用の画像だけを中央配置します。
+- 未登録画像の自動探索は04を編集します。明示されたマスター画像を優先し、存在しないファイルは現在の表示を維持します。同じパスの読み込みは15のキャッシュを共有します。
+- 読み込み後の一覧・詳細の再表示は05を編集します。
+- ビルド側の画像パス・シート設定は `PSG_image_assets.py` にあります。`PSG_build_master.py` はこのモジュールを呼び出します。
+- 顔シートの座標は `PSG_face_sheet.js`、画像のプレースホルダーと共通設定は `01-shell-head.html`、採用画像そのものは `master/` を編集します。
+
+v209の整理でも、生成テンプレート・review.htmlはバージョン表示以外v208と同一です。画像ファイルと座標は変更していません。
