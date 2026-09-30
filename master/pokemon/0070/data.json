@@ -1,0 +1,86 @@
+{
+  "no": 70,
+  "name": "ウツドン",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 3800,
+  "carry": 17,
+  "foodRate": 23.5,
+  "skillRate": 4.0,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0070_01",
+      "name": "ようかいえき寝",
+      "stars": 1
+    },
+    {
+      "id": "0070_02",
+      "name": "ふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0070_03",
+      "name": "くっつき寝",
+      "stars": 3
+    },
+    {
+      "id": "0070_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 71,
+    "to": "ウツボット",
+    "item": "リーフのいし",
+    "candy": 80
+  }
+}

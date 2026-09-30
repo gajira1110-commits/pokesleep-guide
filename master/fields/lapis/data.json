@@ -1,0 +1,374 @@
+{
+  "id": "lapis",
+  "name": "ラピスラズリ湖畔",
+  "mode": "normal",
+  "favoriteMode": "fixed",
+  "favoriteBerries": [
+    "ドリのみ",
+    "マゴのみ",
+    "クラボのみ"
+  ],
+  "encounters": [
+    {
+      "sleepStyleId": "0052_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0052_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0052_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 8322000
+    },
+    {
+      "sleepStyleId": "0052_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0053_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0053_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0053_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0053_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0001_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0001_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0001_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0001_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0002_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0002_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0002_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0002_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0003_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0003_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 3
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0003_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0003_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0245_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 3
+      },
+      "drowsyPower": 46208000
+    },
+    {
+      "sleepStyleId": "0245_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 130074000
+    },
+    {
+      "sleepStyleId": "0245_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 13
+      },
+      "drowsyPower": 275196000
+    }
+  ],
+  "rankThresholds": [
+    {
+      "tier": "ノーマル",
+      "level": 1,
+      "energy": 0
+    },
+    {
+      "tier": "ノーマル",
+      "level": 2,
+      "energy": 12938
+    },
+    {
+      "tier": "ノーマル",
+      "level": 3,
+      "energy": 29756
+    },
+    {
+      "tier": "ノーマル",
+      "level": 4,
+      "energy": 48515
+    },
+    {
+      "tier": "ノーマル",
+      "level": 5,
+      "energy": 71156
+    },
+    {
+      "tier": "スーパー",
+      "level": 1,
+      "energy": 97031
+    },
+    {
+      "tier": "スーパー",
+      "level": 2,
+      "energy": 130668
+    },
+    {
+      "tier": "スーパー",
+      "level": 3,
+      "energy": 171420
+    },
+    {
+      "tier": "スーパー",
+      "level": 4,
+      "energy": 219936
+    },
+    {
+      "tier": "スーパー",
+      "level": 5,
+      "energy": 272333
+    },
+    {
+      "tier": "ハイパー",
+      "level": 1,
+      "energy": 328610
+    },
+    {
+      "tier": "ハイパー",
+      "level": 2,
+      "energy": 388122
+    },
+    {
+      "tier": "ハイパー",
+      "level": 3,
+      "energy": 452809
+    },
+    {
+      "tier": "ハイパー",
+      "level": 4,
+      "energy": 522025
+    },
+    {
+      "tier": "ハイパー",
+      "level": 5,
+      "energy": 596086
+    },
+    {
+      "tier": "マスター",
+      "level": 1,
+      "energy": 675330
+    },
+    {
+      "tier": "マスター",
+      "level": 2,
+      "energy": 760123
+    },
+    {
+      "tier": "マスター",
+      "level": 3,
+      "energy": 850851
+    },
+    {
+      "tier": "マスター",
+      "level": 4,
+      "energy": 958702
+    },
+    {
+      "tier": "マスター",
+      "level": 5,
+      "energy": 1075709
+    },
+    {
+      "tier": "マスター",
+      "level": 6,
+      "energy": 1202596
+    },
+    {
+      "tier": "マスター",
+      "level": 7,
+      "energy": 1340143
+    },
+    {
+      "tier": "マスター",
+      "level": 8,
+      "energy": 1489190
+    },
+    {
+      "tier": "マスター",
+      "level": 9,
+      "energy": 1650645
+    },
+    {
+      "tier": "マスター",
+      "level": 10,
+      "energy": 1825483
+    },
+    {
+      "tier": "マスター",
+      "level": 11,
+      "energy": 2014758
+    },
+    {
+      "tier": "マスター",
+      "level": 12,
+      "energy": 2219603
+    },
+    {
+      "tier": "マスター",
+      "level": 13,
+      "energy": 2441243
+    },
+    {
+      "tier": "マスター",
+      "level": 14,
+      "energy": 2680993
+    },
+    {
+      "tier": "マスター",
+      "level": 15,
+      "energy": 2925574
+    },
+    {
+      "tier": "マスター",
+      "level": 16,
+      "energy": 3188730
+    },
+    {
+      "tier": "マスター",
+      "level": 17,
+      "energy": 3454577
+    },
+    {
+      "tier": "マスター",
+      "level": 18,
+      "energy": 3739033
+    },
+    {
+      "tier": "マスター",
+      "level": 19,
+      "energy": 4166848
+    },
+    {
+      "tier": "マスター",
+      "level": 20,
+      "energy": 5193272
+    }
+  ]
+}

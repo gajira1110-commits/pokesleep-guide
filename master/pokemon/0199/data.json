@@ -1,0 +1,80 @@
+{
+  "no": 199,
+  "name": "ヤドキング",
+  "type": "みず",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3400,
+  "carry": 22,
+  "foodRate": 16.6,
+  "skillRate": 8.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0199_01",
+      "name": "ぐうたら寝",
+      "stars": 1
+    },
+    {
+      "id": "0199_02",
+      "name": "けんじゃ寝",
+      "stars": 2
+    },
+    {
+      "id": "0199_03",
+      "name": "ひらめき寝",
+      "stars": 3
+    },
+    {
+      "id": "0199_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

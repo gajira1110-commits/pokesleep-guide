@@ -1,0 +1,81 @@
+{
+  "no": 55,
+  "name": "ゴルダック",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3400,
+  "carry": 19,
+  "foodRate": 16.2,
+  "skillRate": 12.5,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 6
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0055_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0055_02",
+      "name": "おしりかき寝",
+      "stars": 2
+    },
+    {
+      "id": "0055_03",
+      "name": "およぎ寝",
+      "stars": 3
+    },
+    {
+      "id": "0055_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

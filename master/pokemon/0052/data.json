@@ -1,0 +1,17 @@
+{
+  "no": 52, "name": "ニャース", "type": "ノーマル", "sleepType": "すやすや", "specialty": "スキル",
+  "berry": "キーのみ", "berryQty": 1, "help": 4400, "carry": 9,
+  "foodRate": 16.3, "skillRate": 4.2, "rateStatus": "推定", "mainSkillId": "dream_shard_magnet_s", "dexVisible": true,
+  "ingredientSlotStatus": "verified", "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "moomoo_milk", "qty": 1}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "moomoo_milk", "qty": 2}, {"ingredientId": "bean_meat", "qty": 2}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "moomoo_milk", "qty": 4}, {"ingredientId": "bean_meat", "qty": 3}]}
+  ],
+  "sleepStyles": [
+    {"id": "0052_01", "name": "まるまり寝", "stars": 1},
+    {"id": "0052_02", "name": "すわり寝", "stars": 2},
+    {"id": "0052_03", "name": "ネコにこばん寝", "stars": 3},
+    {"id": "0052_04", "name": "おなかのうえ寝", "stars": 4}
+  ],
+  "evolution": {"toNo": 53, "to": "ペルシアン", "level": 21, "candy": 40}
+}

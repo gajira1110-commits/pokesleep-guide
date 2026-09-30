@@ -1,0 +1,80 @@
+{
+  "no": 85,
+  "name": "ドードリオ",
+  "type": "ひこう",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "シーヤのみ",
+  "berryQty": 2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "help": 2300,
+  "carry": 26,
+  "foodRate": 18.4,
+  "skillRate": 2.0,
+  "sleepStyles": [
+    {
+      "id": "0085_01",
+      "name": "みはり寝",
+      "stars": 1
+    },
+    {
+      "id": "0085_02",
+      "name": "みはりさぼり寝",
+      "stars": 2
+    },
+    {
+      "id": "0085_03",
+      "name": "みつご寝",
+      "stars": 3
+    },
+    {
+      "id": "0085_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

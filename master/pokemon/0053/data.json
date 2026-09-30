@@ -1,0 +1,16 @@
+{
+  "no": 53, "name": "ペルシアン", "type": "ノーマル", "sleepType": "すやすや", "specialty": "スキル",
+  "berry": "キーのみ", "berryQty": 1, "help": 2800, "carry": 17,
+  "foodRate": 16.9, "skillRate": 4.4, "rateStatus": "推定", "mainSkillId": "dream_shard_magnet_s", "dexVisible": true,
+  "ingredientSlotStatus": "verified", "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "moomoo_milk", "qty": 1}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "moomoo_milk", "qty": 2}, {"ingredientId": "bean_meat", "qty": 2}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "moomoo_milk", "qty": 4}, {"ingredientId": "bean_meat", "qty": 3}]}
+  ],
+  "sleepStyles": [
+    {"id": "0053_01", "name": "ゆうが寝", "stars": 1},
+    {"id": "0053_02", "name": "ふんばり寝", "stars": 2},
+    {"id": "0053_03", "name": "ごめん寝", "stars": 3},
+    {"id": "0053_04", "name": "おなかのうえ寝", "stars": 4}
+  ]
+}

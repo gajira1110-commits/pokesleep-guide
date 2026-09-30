@@ -1,0 +1,81 @@
+{
+  "no": 50,
+  "name": "ディグダ",
+  "type": "じめん",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "フィラのみ",
+  "berryQty": 1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "help": 4300,
+  "carry": 10,
+  "foodRate": 19.2,
+  "skillRate": 2.1,
+  "sleepStyles": [
+    {
+      "id": "0050_01",
+      "name": "ちちゅう寝",
+      "stars": 1
+    },
+    {
+      "id": "0050_02",
+      "name": "ちじょう寝",
+      "stars": 2
+    },
+    {
+      "id": "0050_03",
+      "name": "あなをほる寝",
+      "stars": 3
+    }
+  ],
+  "evolution": {
+    "toNo": 51,
+    "to": "ダグトリオ",
+    "level": 20,
+    "candy": 40
+  }
+}

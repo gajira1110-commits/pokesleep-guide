@@ -1,0 +1,77 @@
+{
+  "no": 243,
+  "name": "ライコウ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "specialTeamLimited": true,
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 2100,
+  "carry": 22,
+  "foodRate": 19.2,
+  "skillRate": 1.9,
+  "rateStatus": "推定",
+  "mainSkillId": "helper_boost_electric",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 3
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0243_01",
+      "name": "ちからため寝",
+      "stars": 1
+    },
+    {
+      "id": "0243_02",
+      "name": "めいそう寝",
+      "stars": 2
+    },
+    {
+      "id": "0243_03",
+      "name": "いかずち寝",
+      "stars": 3
+    }
+  ],
+  "evolution": null
+}

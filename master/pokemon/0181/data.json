@@ -1,0 +1,76 @@
+{
+  "no": 181,
+  "name": "デンリュウ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 2500,
+  "carry": 25,
+  "foodRate": 13.0,
+  "skillRate": 4.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0181_01",
+      "name": "しっぽかき寝",
+      "stars": 1
+    },
+    {
+      "id": "0181_02",
+      "name": "くびふり寝",
+      "stars": 2
+    },
+    {
+      "id": "0181_03",
+      "name": "しっぽかがやき寝",
+      "stars": 3
+    },
+    {
+      "id": "0181_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}
