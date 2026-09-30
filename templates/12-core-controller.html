@@ -593,6 +593,10 @@ function activeFieldBerries(){
  const entry=fieldProfile.weekly[fieldProfile.selectedFieldId];
  return entry?.weekKey===currentFieldWeek()?entry.berries:(window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.favoriteBerries||[]);
 }
+function berryIcon(name){
+ const src=window.PS_IMAGE_FILES?.berries?.[name];if(!src)return null;
+ const image=document.createElement('img');image.className='psg-master-berry-icon';image.src=src;image.alt=name;image.title=name;image.width=28;image.height=28;return image;
+}
 function renderFieldGallery(){
  const host=document.getElementById('fieldGallery');host.replaceChildren();
  for(const id of fieldOrder){
@@ -601,7 +605,10 @@ function renderFieldGallery(){
   button.setAttribute('aria-pressed',String(id===fieldProfile.selectedFieldId));
   const image=window.PS_IMAGE_FILES.fields[id];
   if(image){const img=document.createElement('img');img.src=image;img.alt='';img.width=76;img.height=86;button.append(img)}
-  const name=document.createElement('strong');name.textContent=field.name;button.append(name);
+  const label=document.createElement('div'),name=document.createElement('strong');name.textContent=field.name;label.append(name);
+  const favorites=document.createElement('div');favorites.className='psg-field-berry-icons';
+  for(const berry of field.favoriteBerries||[]){const icon=berryIcon(berry);if(icon)favorites.append(icon)}
+  if(favorites.childElementCount)label.append(favorites);button.append(label);
   button.onclick=()=>{fieldSelect.value=id;fieldSelect.dispatchEvent(new Event('change'))};host.append(button);
  }
  for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
@@ -622,7 +629,9 @@ function renderFieldControls(){
  document.getElementById('fieldWeekLabel').textContent=`今週：${currentFieldWeek()}開始（端末の現地時間・月曜4時切替）・${field?.favoriteMode==='fixed'?'通常は固定3種':'毎週ランダム'}`;
  document.getElementById('fieldFavoriteReset').hidden=fieldProfile.weekly[fieldProfile.selectedFieldId]?.weekKey!==currentFieldWeek();
  const fieldName=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.name||'フィールド未設定';
- document.getElementById('teamFieldSummary').textContent=`${fieldName}・エリア＋${areaBonusInput.value}％・好物 ${berries.filter(Boolean).join(' / ')||'未設定'}`;
+ const summary=document.getElementById('teamFieldSummary');summary.replaceChildren(document.createTextNode(`${fieldName}・エリア＋${areaBonusInput.value}％・好物 `));
+ for(const berry of berries.filter(Boolean)){const icon=berryIcon(berry);if(icon)summary.append(icon);else summary.append(document.createTextNode(berry+' '))}
+ if(!berries.filter(Boolean).length)summary.append(document.createTextNode('未設定'));
  renderFieldEncounters(field);
 }
 function renderFieldEncounters(field){
@@ -706,7 +715,7 @@ function renderTeamDay(){
   const detail=document.createElement('span');
   const skillText=member.skillName?` ／ ${member.skillName} 約${member.skillTriggers.toFixed(1)}回${member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount)?`（ランダム食材 約${(member.skillTriggers*member.skillAmount).toFixed(1)}個）`:['fixed_energy','variable_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?`（エナジー期待値 約${Math.round(member.skillTriggers*member.skillEnergy*result.areaFactor).toLocaleString()}）`:member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（チーム各匹＋${member.skillRecovery}）`:member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（自分のげんき＋${member.skillRecovery}）`:member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（1匹のげんき＋${member.skillRecovery}・対象は仮配分）`:member.boost&&Number.isFinite(member.skillHelps)?`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`:member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps)?`（即時おてつだい約${(member.skillTriggers*member.skillHelps).toFixed(1)}回・均等配分して日産に反映）`:''}`:'';
   detail.textContent=member.missing?`未確認：${member.reasons.join('・')}`:`きのみ 約${member.berries.toFixed(1)}個（満杯後 約${member.overflow.toFixed(1)}個・エナジー 約${Math.round(member.berryEnergy).toLocaleString()}${result.favorites.has(member.berryName)?'・好物':''}）${skillText}`;
-  row.append(detail);if(!member.missing&&member.foods.size)row.append(foodTiles(member.foods));list.append(row);
+  const berry=berryIcon(member.berryName);if(berry)detail.prepend(berry);row.append(detail);if(!member.missing&&member.foods.size)row.append(foodTiles(member.foods));list.append(row);
  }
  host.append(list);
  if(result.randomIngredients>0){const extra=document.createElement('p');extra.className='psg-day-total';extra.textContent=`ランダム食材 合計 約${result.randomIngredients.toFixed(1)}個（種類未指定・上の食材合計とは別集計）`;host.append(extra)}
