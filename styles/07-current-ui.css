@@ -120,7 +120,7 @@
   #detailFoods .psg-food-recipe-tile img{width:32px;height:32px;object-fit:contain}
   #detailFoods .psg-food-recipe-tile small{position:absolute;right:1px;bottom:1px;min-width:16px;padding:1px 2px;border-radius:7px;background:rgba(255,255,255,.94);font-size:9px;line-height:1}
   #dexDetail .v51-type-badge{right:7px!important;bottom:7px!important;width:30px!important;height:30px!important;padding:0!important;border:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:transparent!important;box-shadow:none!important}
-  #dexDetail .v51-type-badge img{width:30px!important;height:30px!important;object-fit:contain!important;image-rendering:pixelated}
+  #dexDetail .v51-type-badge img{width:30px!important;height:30px!important;object-fit:contain!important;image-rendering:auto}
   #dexDetail .v51-type-badge .filter-pictogram{font-size:12px}
 }
 /* Evolution: face on the left and outgoing requirements on the right. */
@@ -224,7 +224,7 @@
 [data-meal-category="カレー・シチュー"],[data-recipe-category="カレー・シチュー"]{--recipe-category-bg:#fff6dc;--recipe-category-border:#cfac4d}
 [data-meal-category="サラダ"],[data-recipe-category="サラダ"]{--recipe-category-bg:#edf8ee;--recipe-category-border:#78ad82}
 [data-meal-category="デザート・ドリンク"],[data-recipe-category="デザート・ドリンク"]{--recipe-category-bg:#fff0f5;--recipe-category-border:#d994ad}
-.psg-type-icon{display:block;object-fit:contain;object-position:center;image-rendering:pixelated}
+.psg-type-icon{display:block;object-fit:contain;object-position:center;image-rendering:auto}
 #dexDetail .v51-type-badge{display:grid;place-items:center;position:absolute;right:7px;bottom:7px;width:30px;height:30px;padding:0;border:0;background:transparent;box-shadow:none}
 #dexDetail .v51-type-badge img{width:30px;height:30px;object-fit:contain}
 
@@ -234,3 +234,16 @@
 .psg-field-choice img{width:76px;height:86px;object-fit:contain;flex-shrink:0;image-rendering:pixelated}
 .psg-field-choice strong{font-size:16px}
 .psg-field-choice[aria-pressed="true"]{border-color:#65a382;background:#edf8ee}
+
+/* A later-stage fork keeps the shared ancestors at left and both destinations at right. */
+#dexDetail .psg-evolution-tree{display:grid;grid-template-columns:repeat(var(--evo-columns),minmax(0,1fr));gap:8px 10px;align-items:center;padding:4px 0}
+#dexDetail .psg-evo-tree-cell{position:relative;display:flex;align-items:center;min-width:0;height:100%}
+#dexDetail .psg-evo-tree-cell:not([data-depth="0"])::before{content:'›';position:absolute;left:-9px;top:50%;transform:translateY(-50%);font-size:19px;color:#52635b}
+#dexDetail .psg-evo-tree-node{width:100%!important;min-width:0!important;padding:8px 3px!important;align-self:center;box-sizing:border-box}
+#dexDetail .psg-evo-tree-node .v111-evo-body{display:flex!important;flex-direction:column!important;align-items:center;gap:7px}
+#dexDetail .psg-evo-tree-node .v31-evo-image{width:46px!important;height:46px!important;transform:none!important}
+#dexDetail .psg-evo-tree-node .v106-evo-conditions{align-items:center!important;text-align:center!important;font-size:10px!important;min-height:24px}
+#dexDetail .psg-evo-tree-node .v31-evo-name{font-size:clamp(10px,2.6vw,13px)!important}
+
+#dexDetail .v31-evo-type{background:transparent!important;box-shadow:none!important}
+#dexDetail .v31-evo-type .psg-type-icon{width:100%!important;height:100%!important;image-rendering:auto}

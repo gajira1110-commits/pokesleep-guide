@@ -47,11 +47,11 @@ function centeredTypeImage(source){
      if(size>bestSize){bestSize=size;left=l;top=t;right=r;bottom=b}
     }
     if(right<left){resolve(null);return}
-    const width=right-left+1,height=bottom-top+1,scale=56/Math.max(width,height);
-    const target=document.createElement('canvas');target.width=64;target.height=64;
-    const draw=target.getContext('2d');draw.imageSmoothingEnabled=false;
+    const width=right-left+1,height=bottom-top+1,scale=112/Math.max(width,height);
+    const target=document.createElement('canvas');target.width=128;target.height=128;
+    const draw=target.getContext('2d');draw.imageSmoothingEnabled=true;draw.imageSmoothingQuality="high";
     const w=Math.round(width*scale),h=Math.round(height*scale);
-    draw.drawImage(image,left,top,width,height,Math.floor((64-w)/2),Math.floor((64-h)/2),w,h);
+    draw.drawImage(image,left,top,width,height,Math.floor((128-w)/2),Math.floor((128-h)/2),w,h);
     resolve(target.toDataURL('image/png'));
    }catch{resolve(null)}
   };image.src=source;
@@ -62,26 +62,22 @@ async function alignTypeImages(){
   const centered=await centeredTypeImage(source);if(centered)window.PS_TYPE_IMAGES[name]=centered;return Boolean(centered);
  }));return aligned.some(Boolean);
 }
+// Re-extract complete circles from the original sheet; custom master icons retain priority.
+const typeSheetConfig=/* PSG_BUILD_TYPE_SHEET */;
 const typeSheet=new Image();
-if(Object.keys(window.PS_TYPE_IMAGES).length<18||/master\/types\/fairy\/icon\.png$/.test(window.PS_TYPE_IMAGES['フェアリー']||''))jobs.push(new Promise(resolve=>{
+if(Object.keys(typeSheetConfig.icons).length)jobs.push(new Promise(resolve=>{
  typeSheet.onload=async()=>{
-  const names=['ノーマル','ほのお','みず','くさ','でんき','こおり','かくとう','どく','じめん','ひこう','エスパー','むし','いわ','ゴースト','ドラゴン','あく','はがね','フェアリー'];
-  const width=typeSheet.naturalWidth/6,height=typeSheet.naturalHeight/3;
-  names.forEach((name,index)=>{
-   const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;
-   const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;
-   context.drawImage(typeSheet,(index%6)*width,Math.floor(index/6)*height,width,height,0,0,64,64);
-   if(!window.PS_TYPE_IMAGES[name])window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
-  });
-  if(/master\/types\/fairy\/icon\.png$/.test(window.PS_TYPE_IMAGES['フェアリー']||'')){
-   const canvas=document.createElement('canvas');canvas.width=280;canvas.height=280;
-   canvas.getContext('2d').drawImage(typeSheet,1460,565,280,280,0,0,280,280);
-   window.PS_TYPE_IMAGES['フェアリー']=canvas.toDataURL('image/png');
-  }
-  await alignTypeImages();resolve(true);
+  try{
+   for(const [name,[x,y,w,h]] of Object.entries(typeSheetConfig.icons)){
+    const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+    canvas.getContext('2d').drawImage(typeSheet,x,y,w,h,0,0,w,h);
+    window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
+   }
+   resolve(await alignTypeImages());
+  }catch{resolve(await alignTypeImages())}
  };
- typeSheet.onerror=()=>resolve(false);
- typeSheet.src=/* PSG_BUILD_TYPE_SHEET */;
+ typeSheet.onerror=async()=>resolve(await alignTypeImages());
+ typeSheet.src=typeSheetConfig.url;
 }));
 else jobs.push(alignTypeImages());
 for(const pokemon of Object.values(catalog.pokemon)){

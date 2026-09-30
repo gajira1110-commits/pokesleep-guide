@@ -1,5 +1,6 @@
 """Validate master folders and produce the GitHub Pages review with external image assets."""
 import base64
+import hashlib
 import json
 import mimetypes
 from pathlib import Path
@@ -46,7 +47,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v198_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v199_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -254,7 +255,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v198') == 2
+    assert source.count('Review v199') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -267,9 +268,16 @@ def build():
     css_text = ''.join(path.read_text() for path in STYLE_FILES)
     if not CSS.exists() or CSS.read_text() != css_text:
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
-    # Individual master icons take priority. Keep the legacy sheet only while
-    # a type is missing, so the self-contained review does not embed it twice.
-    type_uri = TYPE_SHEET.relative_to(ROOT).as_posix()
+    # Restore default icons from their full sheet bounds. A replacement master
+    # icon with a different hash takes priority over the original sheet artwork.
+    sheet_meta = json.loads((MASTER / 'types/sheet-icons.json').read_text())
+    sheet_icons = {}
+    for type_id, name in json.loads((MASTER / 'types/manifest.json').read_text()).items():
+        info = sheet_meta['icons'][type_id]
+        custom_path = images['types'].get(name)
+        if not custom_path or hashlib.sha256((ROOT / custom_path).read_bytes()).hexdigest() == info['sha256']:
+            sheet_icons[name] = info['bounds']
+    type_uri = {'url':TYPE_SHEET.relative_to(ROOT).as_posix(),'icons':sheet_icons}
     html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_TYPE_SHEET */',json.dumps(type_uri))
     assert MARKER not in html
     PREVIEW.write_text(html)
