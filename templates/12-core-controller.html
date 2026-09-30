@@ -27,7 +27,7 @@ function normalizeBox(raw){
     subskills:Array.isArray(x.subskills)?x.subskills.slice(0,5).map(s=>String(s||'').slice(0,80)):[],
     nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
     skillLevel:Number.isInteger(x.skillLevel)?Math.max(1,Math.min(7,x.skillLevel)):1,
-    role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true}));
+    role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true,ribbonHours:[0,200,500,1000,2000].includes(x.ribbonHours)?x.ribbonHours:0}));
 }
 function readBox(){
  try{return normalizeBox(JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]'))}
@@ -35,8 +35,8 @@ function readBox(){
 }
 function commitBox(next){
  try{
-  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training})=>
-   ({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training}))));
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>
+   ({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours}))));
   state.box=next;
   renderBox();
   return true;
@@ -243,7 +243,7 @@ function updateTeamFaceDock(){
 window.addEventListener('scroll',updateTeamFaceDock,{passive:true});
 window.addEventListener('resize',updateTeamFaceDock,{passive:true});
 document.getElementById('teamReorder').onclick=()=>{teamReorderMode=!teamReorderMode;teamReorderFrom=null;renderTeam()};
-const backupBoxFields=({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training})=>({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training});
+const backupBoxFields=({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours});
 const knownSleepIds=new Set(Object.values(window.PS_CATALOG?.sleepStyles||{}).flat().map(s=>s.id));
 function normalizeSleepFound(raw){
  if(!raw||typeof raw!=='object'||Array.isArray(raw))return {};
@@ -793,7 +793,10 @@ function syncLevel(){
  lv.textContent='Lv.'+item.level;lvRange.value=item.level;
  boxTitle.textContent=item.name;
  document.getElementById('boxHeaderNo').textContent=`No.${String(item.no).padStart(3,'0')}`;
- document.getElementById('boxHeaderMeta').textContent=`Lv.${item.level}`;
+ document.getElementById('boxFavorite').setAttribute('aria-pressed',String(!!item.favorite));
+ document.getElementById('boxFavorite').textContent=item.favorite?'★ お気に入り':'☆ お気に入り';
+ document.getElementById('boxTraining').setAttribute('aria-pressed',String(!!item.training));
+ document.getElementById('boxTraining').textContent=item.training?'✓ 育成対象':'育成';
  const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
  document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">💤 ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
  hydrateSpecialtyIcons(document.getElementById('boxTraits'));
@@ -818,7 +821,11 @@ function syncLevel(){
   return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="${index?'Lv.'+unlock+' ':' '}${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}">${index?`<b class="psg-v106-unlock">Lv.${unlock}</b>`:'<b class="psg-v106-unlock" aria-hidden="true">&nbsp;</b>'}<span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
  });
  document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
- document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{const name=item.subskills?.[index]||'';const badge=window.PS_IMAGE_FILES.subskills?.[name];return `<div class="psg-box-line ${item.level<unlock?'is-locked':''}"><span class="psg-level-label">Lv.${unlock}</span><span class="psg-line-body">${badge?`<img class="psg-subskill-badge" src="${badge}" alt="">`:''}${boxEsc(name||'未確認')}</span><span class="psg-line-state">${unlock>MAX_POKEMON_LEVEL?'上限未到達':item.level>=unlock?'解放済み':'未解放'}</span></div>`}).join('');
+ document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{
+  const name=item.subskills?.[index]||'',badge=window.PS_IMAGE_FILES.subskills?.[name];
+  const locked=unlock>MAX_POKEMON_LEVEL||item.level<unlock;
+  return `<div class="psg-box-subskill ${locked?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}${locked?' 未解放':''}"><div class="psg-subskill-top"><b>Lv.${unlock}</b>${badge?`<img class="psg-subskill-badge" src="${badge}" alt="">`:'<span class="psg-subskill-unknown" aria-hidden="true">◌</span>'}</div><strong>${boxEsc(name||'未確認')}</strong></div>`;
+ }).join('');
  const skill=window.PS_CATALOG?.skills?.[p?.mainSkillId];
  const skillLv=Math.min(Math.max(1,item.skillLevel||1),skill?.maxLevel||7);
  const currentEffect=skill?.levels?.[skillLv];
@@ -832,12 +839,29 @@ function syncLevel(){
  document.getElementById('boxEvaluation').innerHTML=`<p>役割：${boxEsc(item.role||'未設定')}</p><p>食材確率 ×${calc.foodFactor.toFixed(2)} / スキル確率 ×${calc.skillFactor.toFixed(2)}</p><p class="psg-box-muted">単体の個体補正の比較用。チームのおてつだいボーナスはホームのおてつだい時間に反映。げんき・回収間隔・所持数満杯を含む日産計算には条件設定が必要。スキルLvは現在値を別途設定（スキルレベルアップS/Mを二重加算しない）。理想個体との差は未判定。</p>`;
  const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
  document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b><div class="psg-box-muted">現在Lv.${item.level}から：アメ 未確認／ゆめのかけら 未確認</div></div>`).join(''):'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
+ document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}${item.ribbonHours?'（計算補正は未反映）':''}</p>`);
  const parent=p?.evolution;
  if(parent&&!Array.isArray(parent))document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">進化先：${boxEsc(parent.to||'未確認')}　${parent.level?'Lv.'+parent.level:''}${parent.candy?'・アメ'+parent.candy+'個':''}</p>`);
  fillBoxEditor(item,p);
 }
+// Form setting stays within a connected, registered evolution family. It never spends game resources.
+function evolutionFamily(no){
+ const pokemon=boxCatalog(),family=new Set([Number(no)]);
+ const targets=p=>[...(Array.isArray(p.evolution)?p.evolution:[p.evolution])].filter(Boolean).map(e=>Number(e.toNo));
+ let changed=true;
+ while(changed){changed=false;for(const p of pokemon)for(const target of targets(p)){
+  if(!pokemon.some(x=>Number(x.no)===target))continue;
+  if(family.has(Number(p.no))||family.has(target))for(const n of [Number(p.no),target])if(!family.has(n)){family.add(n);changed=true}
+ }}
+ return pokemon.filter(p=>family.has(Number(p.no))).sort((a,b)=>Number(a.no)-Number(b.no));
+}
 function fillBoxEditor(item,p){
  const form=document.getElementById('boxEditForm');
+ form.elements.evolution.innerHTML=evolutionFamily(item.no).map(x=>`<option value="${x.no}">${boxEsc(x.name)}</option>`).join('');
+ form.elements.evolution.value=String(item.no);
+ form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+ form.elements.ribbonHours.value=String(item.ribbonHours||0);
+ form.elements.favorite.checked=!!item.favorite;form.elements.training.checked=!!item.training;
  const natureOptions=['',...NATURE_ROWS.flat()];
  if(item.nature&&!natureOptions.includes(item.nature))natureOptions.push(item.nature);
  form.elements.nature.innerHTML=natureOptions.map(name=>`<option value="${boxEsc(name)}">${boxEsc(name||'未確認')}${name&&!NATURE_EFFECTS[name]?'（未対応）':''}</option>`).join('');
@@ -861,7 +885,12 @@ function updateLevel(level){
 minus.onclick=()=>updateLevel(Math.max(1,(state.selected?.level||1)-1));
 plus.onclick=()=>updateLevel(Math.min(MAX_POKEMON_LEVEL,(state.selected?.level||1)+1));
 lvRange.oninput=()=>updateLevel(+lvRange.value);
-document.getElementById('boxEditShortcut').onclick=()=>{const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})};
+function showBoxEditor(){const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})}
+ document.getElementById('boxEditShortcut').onclick=showBoxEditor;document.getElementById('boxHeaderEdit').onclick=showBoxEditor;
+ for(const [id,field] of [['boxFavorite','favorite'],['boxTraining','training']])document.getElementById(id).onclick=()=>{
+  if(!state.selected)return;const changed={...state.selected,[field]:!state.selected[field]};
+  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
+ };
 document.getElementById('boxEditForm').onsubmit=e=>{
  e.preventDefault();const item=state.selected,p=selectedSpecies();if(!item||!p)return;
  const form=e.currentTarget;const data=new FormData(form),ingredients={};
@@ -869,8 +898,11 @@ document.getElementById('boxEditForm').onsubmit=e=>{
   const value=String(data.get(`ingredient-${unlock}`)||'');
   if(p.ingredientSlots?.find(s=>s.unlock===unlock)?.candidates?.some(c=>c.name===value))ingredients[unlock]=value;
  }
- const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[p.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
- const changed={...item,ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
+ const target=evolutionFamily(item.no).find(x=>Number(x.no)===Number(data.get('evolution')))||p;
+ for(const [unlock,name] of Object.entries(ingredients))if(!target.ingredientSlots?.find(s=>s.unlock===Number(unlock))?.candidates?.some(c=>c.name===name)){document.getElementById('boxEditMessage').textContent='進化先の食材候補と一致しません。食材を確認してください。';return}
+ const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[target.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
+ const ribbonHours=Number(data.get('ribbonHours'));
+ const changed={...item,no:Number(target.no),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
  const filled=changed.subskills.filter(Boolean);
  if(new Set(filled).size!==filled.length){document.getElementById('boxEditMessage').textContent='同じサブスキルを重複して設定できません';return}
  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel();document.getElementById('boxEditMessage').textContent='保存しました'}
