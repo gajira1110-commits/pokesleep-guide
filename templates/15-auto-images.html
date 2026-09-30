@@ -20,9 +20,51 @@ function exists(path){
 const jobs=[];
 function tryPath(path,apply){jobs.push(exists(path).then(ok=>{if(ok){apply(path);return true}return false}))}
 window.PS_TYPE_IMAGES={...window.PS_IMAGE_FILES.types};
+// Center the visible pixels, rather than the uneven transparent sheet margins.
+// Original files stay intact; all type-icon consumers share these display images.
+function centeredTypeImage(source){
+ return new Promise(resolve=>{
+  const image=new Image();image.onerror=()=>resolve(null);
+  image.onload=()=>{
+   try{
+    const scan=document.createElement('canvas');scan.width=image.naturalWidth;scan.height=image.naturalHeight;
+    const ctx=scan.getContext('2d');ctx.drawImage(image,0,0);
+    const pixels=ctx.getImageData(0,0,scan.width,scan.height).data;
+    let left=scan.width,top=scan.height,right=-1,bottom=-1,bestSize=0;
+    // Ignore disconnected fragments from neighboring cells in the source sheet.
+    const seen=new Uint8Array(scan.width*scan.height);
+    for(let start=0;start<seen.length;start++){
+     if(seen[start]||pixels[start*4+3]<=8)continue;
+     const stack=[start];seen[start]=1;let size=0,l=scan.width,t=scan.height,r=-1,b=-1;
+     while(stack.length){
+      const i=stack.pop(),x=i%scan.width,y=Math.floor(i/scan.width);size++;
+      l=Math.min(l,x);t=Math.min(t,y);r=Math.max(r,x);b=Math.max(b,y);
+      for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+       const nx=x+dx,ny=y+dy;if(nx<0||ny<0||nx>=scan.width||ny>=scan.height)continue;
+       const n=ny*scan.width+nx;if(!seen[n]&&pixels[n*4+3]>8){seen[n]=1;stack.push(n)}
+      }
+     }
+     if(size>bestSize){bestSize=size;left=l;top=t;right=r;bottom=b}
+    }
+    if(right<left){resolve(null);return}
+    const width=right-left+1,height=bottom-top+1,scale=56/Math.max(width,height);
+    const target=document.createElement('canvas');target.width=64;target.height=64;
+    const draw=target.getContext('2d');draw.imageSmoothingEnabled=false;
+    const w=Math.round(width*scale),h=Math.round(height*scale);
+    draw.drawImage(image,left,top,width,height,Math.floor((64-w)/2),Math.floor((64-h)/2),w,h);
+    resolve(target.toDataURL('image/png'));
+   }catch{resolve(null)}
+  };image.src=source;
+ });
+}
+async function alignTypeImages(){
+ const aligned=await Promise.all(Object.entries(window.PS_TYPE_IMAGES).map(async([name,source])=>{
+  const centered=await centeredTypeImage(source);if(centered)window.PS_TYPE_IMAGES[name]=centered;return Boolean(centered);
+ }));return aligned.some(Boolean);
+}
 const typeSheet=new Image();
 if(Object.keys(window.PS_TYPE_IMAGES).length<18)jobs.push(new Promise(resolve=>{
- typeSheet.onload=()=>{
+ typeSheet.onload=async()=>{
   const names=['ノーマル','ほのお','みず','くさ','でんき','こおり','かくとう','どく','じめん','ひこう','エスパー','むし','いわ','ゴースト','ドラゴン','あく','はがね','フェアリー'];
   const width=typeSheet.naturalWidth/6,height=typeSheet.naturalHeight/3;
   names.forEach((name,index)=>{
@@ -30,11 +72,12 @@ if(Object.keys(window.PS_TYPE_IMAGES).length<18)jobs.push(new Promise(resolve=>{
    const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;
    context.drawImage(typeSheet,(index%6)*width,Math.floor(index/6)*height,width,height,0,0,64,64);
    if(!window.PS_TYPE_IMAGES[name])window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
-  });resolve(true);
+  });await alignTypeImages();resolve(true);
  };
  typeSheet.onerror=()=>resolve(false);
  typeSheet.src=/* PSG_BUILD_TYPE_SHEET */;
 }));
+else jobs.push(alignTypeImages());
 for(const pokemon of Object.values(catalog.pokemon)){
   if(!explicit.pokemon[pokemon.no]&&!pokemon.image){
     tryPath(assets.path('pokemon',pokemon.no,'full'),path=>{pokemon.image=path;if(!explicit.pokemonFaces[pokemon.no]&&!pokemon.faceImage)pokemon.faceImage=path});

@@ -19,8 +19,8 @@
 #boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
 #boxDetail #boxIdentity:empty{display:none}
 #boxDetail .psg-box-art-badges{position:absolute;right:7px;bottom:7px;display:flex;align-items:center;gap:4px;z-index:2}
-#boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.96);border:1px solid #d8e5de;box-shadow:0 1px 5px rgba(30,57,42,.16)}
-#boxDetail .psg-box-art-badge img{width:23px;height:23px;object-fit:contain;image-rendering:pixelated}
+#boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:0;background:transparent;border:0;box-shadow:none}
+#boxDetail .psg-box-art-badge img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
 #boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
 #boxDetail .psg-box-hero{background:#eef8f0;border-color:#cfe8d4}
 #boxDetail .psg-box-identity{display:grid;grid-template-columns:minmax(100px,36%) 1fr;gap:10px;align-items:stretch}
