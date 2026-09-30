@@ -1,0 +1,100 @@
+ function evolutionEntries(m){
+   if(!m?.evolution)return [];
+   return Array.isArray(m.evolution)?m.evolution:[m.evolution];
+ }
+ function evolutionConditions(e){
+   if(Array.isArray(e.conditions)&&e.conditions.length)return e.conditions;
+   const out=[];
+   if(e.level!=null)out.push(`Lv.${e.level}`);
+   if(e.candy!=null)out.push(`アメ${e.candy}個`);
+   if(e.item)out.push(e.item);
+   if(e.extra)out.push(e.extra);
+   return out.length?out:["条件未確認"];
+ }
+ function parentsOf(no){
+   return Object.values(V.pokemon).filter(p=>evolutionEntries(p).some(e=>Number(e.toNo)===Number(no)));
+ }
+ function rootOf(m){
+   let cur=m,seen=new Set();
+   while(cur&&!seen.has(cur.no)){
+     seen.add(cur.no);const ps=parentsOf(cur.no);if(!ps.length)break;cur=ps[0];
+   }
+   return cur||m;
+ }
+ function descendantsOf(root){
+   const out=[],seen=new Set();
+   const walk=p=>{if(!p||seen.has(p.no))return;seen.add(p.no);out.push(p);evolutionEntries(p).forEach(e=>walk(byNo(e.toNo)))};
+   walk(root);return out;
+ }
+ function evoNode(p,currentNo,cls="",condition=null,incoming=false){
+   if(!p)return "";
+   const face=window.PS_IMAGE_FILES.pokemonFaces?.[p.no]||(p.faceImage&&p.faceImage!==p.image?p.faceImage:null);
+   const image=window.PS_DEV_ASSETS.image(face,'pokemon',p.no,'face',p.name);
+   const isCurrent=Number(p.no)===Number(currentNo);
+   const conditions=condition?`<span class="v106-evo-conditions">${evolutionConditions(condition).map((x,i)=>`<span>${x}${i===0&&!incoming?'<span class="v111-evo-next" aria-hidden="true">›</span>':''}</span>`).join("")}</span>`:"";
+   return `<button class="v31-evo-node ${isCurrent?"is-current":""} ${cls}" data-evo-no="${p.no}"><span class="v31-evo-name">${p.name}</span><span class="v111-evo-body"><span class="v31-evo-image">${image}<span class="v31-evo-type">${window.PS_TYPE_ART?.(p.type)||iconForType(p.type)}</span></span>${conditions}</span></button>`;
+ }
+ function nestedEvolutionTree(root,currentNo){
+   const leafCount=(p,seen=new Set())=>{
+     if(!p||seen.has(p.no))return 0;
+     const next=new Set(seen).add(p.no),edges=evolutionEntries(p).filter(e=>byNo(e.toNo));
+     return edges.length?edges.reduce((n,e)=>n+leafCount(byNo(e.toNo),next),0):1;
+   };
+   let columns=1;const cells=[];
+   const walk=(p,depth,row,incoming=null,seen=new Set())=>{
+     if(!p||seen.has(p.no))return;
+     const next=new Set(seen).add(p.no),span=Math.max(1,leafCount(p,seen));columns=Math.max(columns,depth+1);
+     cells.push(`<div class="psg-evo-tree-cell" data-depth="${depth}" style="grid-column:${depth+1};grid-row:${row} / span ${span}">${evoNode(p,currentNo,'psg-evo-tree-node',incoming,true)}</div>`);
+     let childRow=row;
+     for(const edge of evolutionEntries(p)){
+       const child=byNo(edge.toNo);if(!child||next.has(child.no))continue;
+       walk(child,depth+1,childRow,edge,next);childRow+=Math.max(1,leafCount(child,next));
+     }
+   };
+   walk(root,0,1);return `<div class="psg-evolution-tree" style="--evo-columns:${columns}">${cells.join('')}</div>`;
+ }
+ function renderEvolution(m){
+   const el=document.getElementById("detailEvolution"),card=document.getElementById("evolutionCard");
+   if(!el||!card)return;
+   const root=rootOf(m),family=descendantsOf(root),rootBranches=evolutionEntries(root);
+   if(family.length<=1){
+     card.style.display=m.evolutionStatus==="未確認"?"":"none";
+     el.textContent=m.evolutionStatus==="未確認"?"進化条件未確認":"";
+     return;
+   }
+   card.style.display="";
+   // Eevee's eight destinations need the full width for readable requirements.
+   if(Number(root.no)===133&&rootBranches.length>1){
+     const commonCandy=rootBranches.every(e=>e.candy===rootBranches[0].candy)?rootBranches[0].candy:null;
+     const cells=rootBranches.map(e=>{
+       const conditions=[];
+       if(commonCandy==null&&e.candy!=null)conditions.push(`アメ${e.candy}個`);
+       if(e.level!=null)conditions.push(`Lv.${e.level}`);
+       if(e.item)conditions.push(e.item);
+       if(e.extra){
+         conditions.push(detailEsc(e.extra.replace('一緒に睡眠','睡眠').split('・')[0]));
+         if(e.extra.includes('06:00〜18:00'))conditions.push('昼 06:00〜18:00');
+         else if(e.extra.includes('18:00〜06:00'))conditions.push('夜 18:00〜06:00');
+       }
+       return evoNode(byNo(e.toNo),m.no,'psg-eevee-destination',{conditions},true);
+     }).join('');
+     el.innerHTML=`<div class="psg-eevee-family"><div class="psg-eevee-origin">${evoNode(root,m.no,'psg-eevee-root')}<div class="psg-eevee-common">進化先を選ぶ${commonCandy!=null?`<strong>共通：アメ${commonCandy}個</strong>`:''}</div></div><div class="psg-eevee-grid">${cells}</div></div>`;
+   }else if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
+     el.innerHTML=nestedEvolutionTree(root,m.no);
+   }else if(rootBranches.length>1){
+     const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div></div>`}).join("");
+     el.innerHTML=`<div class="v31-branch-layout"><div class="v31-branch-root">${evoNode(root,m.no,"is-root")}</div><div class="v31-big-arrow">›</div><div class="v31-branch-grid ${rootBranches.length===2?'is-two':''}">${cells}</div></div>`;
+   }else{
+     // Normal line: render the full known evolution family, not Pokédex-number adjacency.
+     const chain=[];let cur=root,guard=0;
+     while(cur&&guard++<12){chain.push(cur);const es=evolutionEntries(cur);if(es.length!==1)break;cur=byNo(es[0].toNo)}
+     let html='<div class="v31-evo-line">';
+     chain.forEach((p,i)=>{
+       const edge=i<chain.length-1?evolutionEntries(p)[0]:null;
+       html+=evoNode(p,m.no,"",edge);
+       // The source card carries the arrow and outgoing requirement.
+     });
+     html+='</div>';el.innerHTML=html;
+   }
+   el.querySelectorAll("[data-evo-no]").forEach(btn=>btn.onclick=()=>{const no=Number(btn.dataset.evoNo);if(no&&no!==currentNo)openPokemonDetail(no,{pushHistory:true})});
+ }
