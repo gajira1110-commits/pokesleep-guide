@@ -136,7 +136,7 @@
      toggle.onclick=()=>{
        const updated={...sleepFound};
        if(updated[style.id])delete updated[style.id];else updated[style.id]=true;
-       try{localStorage.setItem(SLEEP_FOUND_KEY,JSON.stringify(updated));sleepFound=updated;renderSleepStyles(m)}
+       try{localStorage.setItem(SLEEP_FOUND_KEY,JSON.stringify(updated));sleepFound=updated;renderSleepStyles(m);window.PS?.renderDex?.()}
        catch{toggle.setAttribute('aria-label','保存できませんでした。端末の保存設定を確認してください')}
      };
      photo.appendChild(toggle);card.appendChild(photo);
@@ -428,5 +428,4 @@
  switchTab("ability");
 })();
 </script>
-
 

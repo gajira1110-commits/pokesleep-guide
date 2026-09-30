@@ -83,13 +83,13 @@
   #dexDetail .hero-info #v12Header{width:100%!important;min-width:0!important;flex:none!important}
   #dexDetail .hero-info .v19-traits,#boxDetail .psg-box-facts .psg-box-traits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:2px!important;width:100%!important}
   #dexDetail .hero-info .v19-traits>span,#boxDetail .psg-box-facts .psg-box-trait{height:30px!important;min-height:30px!important;min-width:0!important;padding:2px 0!important;font-size:8px!important;line-height:1!important;white-space:nowrap!important;gap:0!important;border-radius:8px!important}
-  #dexDetail .hero-info .v44-berry-visual,#dexDetail .hero-info .v44-berry-visual img{width:14px!important;height:14px!important;flex:0 0 14px!important}
+  #dexDetail .hero-info .v44-berry-visual,#dexDetail .hero-info .v44-berry-visual img{width:25px!important;height:25px!important;flex:0 0 25px!important;padding:0!important;background:transparent!important}
   #dexDetail .hero-info .v44-berry-trait b,#boxDetail .psg-box-facts .psg-box-trait b{font-size:8px!important}
   #dexDetail .hero-info .psg-specialty-icon,#boxDetail .psg-box-facts .psg-specialty-icon{width:30px!important;height:30px!important;object-fit:contain}
   #dexDetail .psg-v106-media #v12Header{width:100%!important}
   #dexDetail .psg-v106-media .v19-traits,#boxDetail .psg-v106-media .psg-box-traits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:2px!important;width:100%!important}
   #dexDetail .psg-v106-media .v19-traits>span,#boxDetail .psg-v106-media .psg-box-trait{min-height:30px!important;height:30px!important;padding:2px 0!important;font-size:8px!important;line-height:1!important;gap:0!important;white-space:nowrap!important;border-radius:8px!important}
-  #dexDetail .psg-v106-media .v44-berry-visual,#dexDetail .psg-v106-media .v44-berry-visual img{width:14px!important;height:14px!important;flex:0 0 14px!important}
+  #dexDetail .psg-v106-media .v44-berry-visual,#dexDetail .psg-v106-media .v44-berry-visual img{width:25px!important;height:25px!important;flex:0 0 25px!important;padding:0!important;background:transparent!important}
   #dexDetail .psg-v106-media .v44-berry-trait b,#boxDetail .psg-v106-media .psg-box-trait b{font-size:8px!important}
   #dexDetail .psg-v106-media .psg-specialty-icon,#boxDetail .psg-v106-media .psg-specialty-icon{width:23px;height:23px;object-fit:contain}
 }
@@ -229,10 +229,14 @@
 #dexDetail .v51-type-badge img{width:30px;height:30px;object-fit:contain}
 
 /* Field portraits reuse the approved September 29 pixel artwork. */
-.psg-field-gallery{display:grid;gap:8px;margin-bottom:16px}
-.psg-field-choice{display:flex;align-items:center;gap:14px;width:100%;padding:8px 14px;text-align:left;border:1px solid #dce7df;border-radius:16px;background:#fff;color:#253c30;font:inherit;cursor:pointer}
-.psg-field-choice img{width:76px;height:86px;object-fit:contain;flex-shrink:0;image-rendering:pixelated}
-.psg-field-choice strong{font-size:16px}
+.psg-field-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.psg-field-choice{display:flex;align-items:center;gap:7px;min-width:0;width:100%;padding:8px;text-align:left;border:1px solid #dce7df;border-radius:16px;background:#fff;color:#253c30;font:inherit;cursor:pointer}
+.psg-field-choice>img{width:48px;height:64px;object-fit:contain;flex-shrink:0;image-rendering:auto}
+.psg-field-choice>div{min-width:0}
+.psg-field-choice strong{font-size:12px;overflow-wrap:anywhere;line-height:1.35;display:block}
+.psg-field-choice .psg-field-berry-icons{gap:1px;flex-wrap:wrap}
+.psg-field-choice .psg-master-berry-icon{width:20px!important;height:20px!important}
+@media(min-width:600px){.psg-field-choice>img{width:68px;height:80px}.psg-field-choice strong{font-size:15px}}
 .psg-field-choice[aria-pressed="true"]{border-color:#65a382;background:#edf8ee}
 
 /* A later-stage fork keeps the shared ancestors at left and both destinations at right. */
