@@ -23,9 +23,10 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .dex-card{position:relative;min-width:0;min-height:162px;padding:8px 6px 9px;overflow:hidden;display:flex;flex-direction:column}
 .dex-card .dex-heading{min-width:0;min-height:36px;display:flex;align-items:flex-start;justify-content:space-between;gap:2px}
 .dex-card .dex-identity{min-width:0;flex:1;color:#111}
-.dex-card .dex-no{display:block;font-size:10px;font-weight:800;line-height:1.1}
+.dex-card .dex-number-row{display:flex;align-items:center;justify-content:space-between;gap:3px;min-width:0}
+.dex-card .dex-no{display:block;font-size:9px;font-weight:800;line-height:1.1;white-space:nowrap}
 .dex-card .dex-name{display:block;font-weight:900;font-size:13px;line-height:1.2;overflow-wrap:anywhere}
-.dex-card .dex-discovery{flex:none;font-size:10px;font-weight:800;white-space:nowrap;color:#52635b}
+.dex-card .dex-discovery{flex:none;font-size:8px;font-weight:700;white-space:nowrap;color:#52635b}
 .dex-card .dex-art{height:92px;display:grid;place-items:center;color:#9aa7a2}
 .dex-card .dex-art img{width:100%;height:100%;object-fit:contain}
 .psg-face-sprite{display:block;flex:none;width:100%;max-height:100%;aspect-ratio:145/108;background-image:var(--psg-face-sheet);background-repeat:no-repeat;background-size:1412.414% 1066.667%;background-position:var(--face-x) var(--face-y);image-rendering:pixelated;border-radius:7px}

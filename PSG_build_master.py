@@ -47,7 +47,7 @@ FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v201_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v202_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -100,6 +100,14 @@ def catalog_and_images():
     images = {key:{} for key in ('pokemon','pokemonFaces','ingredients','berries','skills','recipes','sleepStyles','fields','subskills','types','sleepTypes')}
     catalog = {**data,'pokemon':{},'sleepStyles':{},'recipes':{},'skills':{},'ingredientAssets':{},'berries':{},'fields':{},
                'natures':natures,'subskills':subskills['records']}
+    for kind in ('specialties', 'sleepTypes'):
+        catalog[kind] = {}
+        for key, (obj, folder) in records(kind).items():
+            assert obj.get('name') and obj.get('icon') == 'icon.webp', f'invalid icon record: {kind}/{key}'
+            image = inline_image(folder, 'icon')
+            assert image, f'missing icon: {kind}/{key}'
+            catalog[kind][key] = {**obj, 'image':image}
+        assert len(catalog[kind]) == (4 if kind == 'specialties' else 3), f'incomplete {kind}'
     for key, name in json.loads((MASTER / 'sleepTypes/manifest.json').read_text()).items():
         icon = inline_image(MASTER / 'sleepTypes' / key, 'icon')
         assert icon, f'missing sleep type icon: {key}'
@@ -259,7 +267,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v201') == 2
+    assert source.count('Review v202') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
