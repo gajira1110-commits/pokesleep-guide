@@ -1,6 +1,6 @@
 # HTMLの編集場所
 
-`PSG_build_master.py` は以下を番号順に連結し、`review.html` を生成します。従来の `PSG_source_template.html` は互換用の結合結果で、ビルド時に再生成されます。画面の変更は該当する `templates/` のファイルに加えてください。
+`PSG_build_master.py` は以下を `TEMPLATE_PARTS` の指定順に連結し、`review.html` を生成します。従来の `PSG_source_template.html` は互換用の結合結果で、ビルド時に再生成されます。画面の変更は該当する `templates/` のファイルに加えてください。
 
 | ファイル | 内容 |
 | --- | --- |
@@ -15,7 +15,9 @@
 | `09-dex-detail.html` | 図鑑詳細 |
 | `10-box-detail.html` | 個体詳細 |
 | `11-navigation.html` | ナビゲーションと共通の画面構造 |
-| `12-core-controller.html` | ボックス・チーム・図鑑一覧の処理 |
+| `12-core-controller.html` | 保存・補正計算、チーム・一覧の処理、共通クロージャの開始 |
+| `19-box-detail-controller.html` | ボックス詳細の表示・個体編集・レベル操作 |
+| `20-core-initialize.html` | 一覧イベント・追加削除・初期化、共通クロージャの終了 |
 | `13-catalog-adapter.html` | 図鑑データの接続 |
 | `14-detail-controller.html` | 図鑑詳細の処理 |
 | `15-auto-images.html` | 画像パスの接続 |
@@ -24,3 +26,5 @@
 | `18-recipe-controller.html` | 料理一覧の処理 |
 
 ファイル境界は表示順を保つためのものです。新しい部品を追加する場合は、`PSG_build_master.py` の `TEMPLATE_PARTS` に挿入位置を指定してください。CSSは `styles/` を編集します。
+
+12 → 19 → 20 は同じスクリプトとクロージャの断片です。順番を変えたり単独の script タグで囲んだりしないでください。個体詳細の変更は19、HTMLは10、CSSは08-box-detail.cssで行います。

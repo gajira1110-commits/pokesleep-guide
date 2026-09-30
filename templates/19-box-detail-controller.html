@@ -1,0 +1,128 @@
+// Box detail fragment: assembled inside the core controller closure.
+const boxEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const selectedSpecies=()=>window.PS_CATALOG?.pokemon?.[state.selected?.no]||null;
+function openBox(id){state.selected=state.box.find(x=>x.id===id);if(!state.selected)return;boxTitle.textContent=state.selected.name;syncLevel();go('boxDetail')}
+function syncLevel(){
+ const item=state.selected;if(!item)return;
+ const p=selectedSpecies();
+ const calc=individualCorrections(item,p);
+ lv.textContent='Lv.'+item.level;lvRange.value=item.level;
+ boxTitle.textContent=item.name;
+ document.getElementById('boxHeaderNo').textContent=`No.${String(item.no).padStart(3,'0')}`;
+ document.getElementById('boxFavorite').setAttribute('aria-pressed',String(!!item.favorite));
+ document.getElementById('boxFavorite').textContent=item.favorite?'★':'☆';
+ document.getElementById('boxTraining').setAttribute('aria-pressed',String(!!item.training));
+ document.getElementById('boxTraining').textContent='🌱';
+ const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
+ document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">💤 ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
+ hydrateSpecialtyIcons(document.getElementById('boxTraits'));
+ const artwork=document.getElementById('boxArtwork');
+ document.querySelector('#boxDetail .psg-box-hero').style.setProperty('--box-type-bg',({'くさ':'#e8f7ec','ほのお':'#fff0e8','むし':'#f1f5df','みず':'#e9f4ff','でんき':'#fff8d9'}[p?.type]||'#f3f6f4'));
+ const badges=p?`<div class="psg-box-art-badges"><span class="psg-box-art-badge" title="タイプ：${boxEsc(p.type)}" aria-label="タイプ：${boxEsc(p.type)}">${typeFilterArt(p.type)}</span></div>`:'';
+ artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image,'pokemon',p?.no,'full',item.name)||'No image')+badges;
+ hydrateSpecialtyIcons(artwork);
+ const naturePending=(!item.nature&&!item.mint)||calc.unknown.length;
+ const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);
+ const rateNote=(factor,kind)=>{const next=factor===1?nextRateUnlock(kind):null;return next?`推定・Lv.${next}で補正`:`推定・×${factor.toFixed(2)}`};
+ const fields=[['おてつだい時間',calc.speed,'秒','Lv・個体補正',naturePending],['最大所持数',calc.carry,'','補正反映',false],['食材確率',calc.food,'%',rateNote(calc.foodFactor,'foodRateBonus'),naturePending],['スキル発動確率',calc.skill,'%',rateNote(calc.skillFactor,'skillRateBonus'),naturePending]];
+ document.getElementById('boxStats').innerHTML=fields.map(([title,value,unit,note,pending])=>`<div class="psg-box-stat"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`).join('');
+ const slots=p?.ingredientSlots||[];
+ const ingredientRows=[1,30,60].map((unlock,index)=>{
+  const slot=slots.find(s=>s.unlock===unlock);
+  const name=item.ingredients?.[unlock]||((slot?.candidates?.length===1)?slot.candidates[0].name:'');
+  const choice=slot?.candidates?.find(x=>x.name===name);
+  const image=name&&window.PS_CATALOG.ingredientVisual(name)?.image;
+  const iconSource=image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  const icon=iconSource?`<img src="${iconSource}" alt="${boxEsc(name)}">`:'';
+  return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}"><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">${unlock===1?'初期':'Lv.'+unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
+ });
+ document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
+ document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{
+  const name=item.subskills?.[index]||'',badge=window.PS_IMAGE_FILES.subskills?.[name];
+  const locked=unlock>MAX_POKEMON_LEVEL||item.level<unlock;
+  return `<div class="psg-box-subskill ${locked?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}${locked?' 未解放':''}"><div class="psg-subskill-top"><b>Lv.${unlock}</b>${badge?`<img class="psg-subskill-badge" src="${badge}" alt="">`:'<span class="psg-subskill-unknown" aria-hidden="true">◌</span>'}</div><strong>${boxEsc(name||'未確認')}</strong></div>`;
+ }).join('');
+ const skill=window.PS_CATALOG?.skills?.[p?.mainSkillId];
+ const skillLv=Math.min(Math.max(1,item.skillLevel||1),skill?.maxLevel||7);
+ const currentEffect=skill?.levels?.[skillLv];
+ const effect=skill?.effectType==='random_ingredients'&&currentEffect?.amount!=null?`１回の効果量：ランダムな食材 ${currentEffect.amount}個`:skill?.effectType==='fixed_energy'&&currentEffect?.energy!=null?`１回の効果量：カビゴンのエナジーを ${currentEffect.energy.toLocaleString()} 増やす`:skill?.effectType==='variable_energy'&&currentEffect?.min!=null&&currentEffect?.max!=null?`１回の効果量：カビゴンのエナジーを ${currentEffect.min.toLocaleString()}～${currentEffect.max.toLocaleString()} 増やす`:skill?.effectType==='team_energy_recovery'&&currentEffect?.recovery!=null?`１回の効果量：チーム各匹のげんき＋${currentEffect.recovery}`:currentEffect?.description?`１回の効果量：${boxEsc(currentEffect.description)}`:'効果量 未確認';
+ const skillArt=skill?.image?window.PS_DEV_ASSETS.image(skill.image,'skill',skill.id,'full',skill.name):'';
+ const isBoost=skill?.effectType?.startsWith('helper_boost_')&&currentEffect?.helps!=null;
+ const summary=isBoost?`チーム全員が各${currentEffect.helps}回分おてつだい＋タイプ種類数ボーナス`:effect;
+ document.getElementById('boxMainSkill').innerHTML=`<div class="psg-box-lead">${skillArt?`<span class="psg-box-skill-art">${skillArt}</span>`:''}${boxEsc(skill?.name||'未確認')}　Lv.${skillLv}</div><p class="psg-box-effect">${summary}</p><p class="psg-box-pending">１日の期待値：計算データ未確認</p><details class="psg-box-explanation"><summary>効果・計算の詳細</summary>${isBoost?`<p>${effect}</p>`:''}<p class="psg-box-muted">スキルLv補正・発動回数の計算データ未確認</p></details>`;
+ const mintIcon='<span class="psg-mint-mark" title="まっしろミント適用済み" aria-label="まっしろミント適用済み"><svg width="17" height="17" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16C3 7 9 3 17 3c0 8-4 14-12 14" fill="#fff" stroke="#5d9c75" stroke-width="1.5"/><path d="M4 17c3-4 6-7 11-10" fill="none" stroke="#5d9c75" stroke-width="1.2"/></svg></span>';
+ const labels={speed:'おてつだい速度',energy:'げんき回復',food:'食材確率',skill:'スキル確率',exp:'EXP'};
+ const natureText=item.mint?'ミント適用：性格補正なし':!item.nature?'性格未入力（無補正として仮計算）':!NATURE_EFFECTS[item.nature]?'性格名未対応（無補正として仮計算）':calc.nature.up?`${labels[calc.nature.up]}↑ / ${labels[calc.nature.down]}↓`:'性格補正なし';
+ const natureEffects=!item.mint&&calc.nature.up?`<span class="psg-nature-up">${boxEsc(labels[calc.nature.up])} ↑</span><span class="psg-nature-down">${boxEsc(labels[calc.nature.down])} ↓</span>`:`<span class="psg-box-muted">${boxEsc(natureText)}</span>`;
+ document.getElementById('boxNature').innerHTML=`<div class="psg-box-nature-row"><div class="psg-box-lead">${boxEsc(item.nature||'未確認')}${item.mint?mintIcon:''}</div><div class="psg-box-nature-effects">${natureEffects}</div></div>${calc.unknown.length?'<p class="psg-box-muted">未対応：'+boxEsc(calc.unknown.join('・'))+'。</p>':''}`;
+ document.getElementById('boxEvaluation').innerHTML=`<p>役割：${boxEsc(item.role||'未設定')}</p><p>食材確率 ×${calc.foodFactor.toFixed(2)} / スキル確率 ×${calc.skillFactor.toFixed(2)}</p><details class="psg-box-explanation"><summary>評価の説明</summary><p class="psg-box-muted">単体の個体補正の比較用。チームのおてつだいボーナスはホームのおてつだい時間に反映。げんき・回収間隔・所持数満杯を含む日産計算には条件設定が必要。スキルLvは現在値を別途設定（スキルレベルアップS/Mを二重加算しない）。理想個体との差は未判定。</p></details>`;
+ const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
+ document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b></div>`).join('')+'<p class="psg-box-muted">必要アメ・ゆめのかけら：未確認</p>':'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
+ document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}${item.ribbonHours?'（計算補正は未反映）':''}</p>`);
+ const parent=p?.evolution;
+ if(parent&&!Array.isArray(parent))document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">進化先：${boxEsc(parent.to||'未確認')}　${parent.level?'Lv.'+parent.level:''}${parent.candy?'・アメ'+parent.candy+'個':''}</p>`);
+ fillBoxEditor(item,p);
+}
+// Form setting stays within a connected, registered evolution family. It never spends game resources.
+function evolutionFamily(no){
+ const pokemon=boxCatalog(),family=new Set([Number(no)]);
+ const targets=p=>[...(Array.isArray(p.evolution)?p.evolution:[p.evolution])].filter(Boolean).map(e=>Number(e.toNo));
+ let changed=true;
+ while(changed){changed=false;for(const p of pokemon)for(const target of targets(p)){
+  if(!pokemon.some(x=>Number(x.no)===target))continue;
+  if(family.has(Number(p.no))||family.has(target))for(const n of [Number(p.no),target])if(!family.has(n)){family.add(n);changed=true}
+ }}
+ return pokemon.filter(p=>family.has(Number(p.no))).sort((a,b)=>Number(a.no)-Number(b.no));
+}
+function fillBoxEditor(item,p){
+ const form=document.getElementById('boxEditForm');
+ form.elements.evolution.innerHTML=evolutionFamily(item.no).map(x=>`<option value="${x.no}">${boxEsc(x.name)}</option>`).join('');
+ form.elements.evolution.value=String(item.no);
+ form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+ form.elements.ribbonHours.value=String(item.ribbonHours||0);
+ form.elements.favorite.checked=!!item.favorite;form.elements.training.checked=!!item.training;
+ const natureOptions=['',...NATURE_ROWS.flat()];
+ if(item.nature&&!natureOptions.includes(item.nature))natureOptions.push(item.nature);
+ form.elements.nature.innerHTML=natureOptions.map(name=>`<option value="${boxEsc(name)}">${boxEsc(name||'未確認')}${name&&!NATURE_EFFECTS[name]?'（未対応）':''}</option>`).join('');
+ form.elements.nature.value=item.nature||'';
+ form.elements.mint.checked=!!item.mint;
+ form.elements.skillLevel.value=item.skillLevel||1;
+ form.elements.role.value=item.role||'';
+ const slots=p?.ingredientSlots||[];
+ document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
+  const candidates=slots.find(s=>s.unlock===unlock)?.candidates||[];
+  const chosen=item.ingredients?.[unlock]||((candidates.length===1)?candidates[0].name:'');
+  return `<label>Lv.${unlock} 食材<select name="ingredient-${unlock}"><option value="">未確認</option>${candidates.map(c=>`<option value="${boxEsc(c.name)}" ${c.name===chosen?'selected':''}>${boxEsc(c.name)} ×${c.qty}</option>`).join('')}</select></label>`;
+ }).join('');
+ document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
+}
+function updateLevel(level){
+ if(!state.selected||!Number.isInteger(level)||level<1||level>MAX_POKEMON_LEVEL)return;
+ const changed={...state.selected,level};
+ if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
+}
+minus.onclick=()=>updateLevel(Math.max(1,(state.selected?.level||1)-1));
+plus.onclick=()=>updateLevel(Math.min(MAX_POKEMON_LEVEL,(state.selected?.level||1)+1));
+lvRange.oninput=()=>updateLevel(+lvRange.value);
+function showBoxEditor(){const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})}
+ document.getElementById('boxEditShortcut').onclick=showBoxEditor;document.getElementById('boxHeaderEdit').onclick=showBoxEditor;
+ for(const [id,field] of [['boxFavorite','favorite'],['boxTraining','training']])document.getElementById(id).onclick=()=>{
+  if(!state.selected)return;const changed={...state.selected,[field]:!state.selected[field]};
+  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
+ };
+document.getElementById('boxEditForm').onsubmit=e=>{
+ e.preventDefault();const item=state.selected,p=selectedSpecies();if(!item||!p)return;
+ const form=e.currentTarget;const data=new FormData(form),ingredients={};
+ for(const unlock of [1,30,60]){
+  const value=String(data.get(`ingredient-${unlock}`)||'');
+  if(p.ingredientSlots?.find(s=>s.unlock===unlock)?.candidates?.some(c=>c.name===value))ingredients[unlock]=value;
+ }
+ const target=evolutionFamily(item.no).find(x=>Number(x.no)===Number(data.get('evolution')))||p;
+ for(const [unlock,name] of Object.entries(ingredients))if(!target.ingredientSlots?.find(s=>s.unlock===Number(unlock))?.candidates?.some(c=>c.name===name)){document.getElementById('boxEditMessage').textContent='進化先の食材候補と一致しません。食材を確認してください。';return}
+ const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[target.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
+ const ribbonHours=Number(data.get('ribbonHours'));
+ const changed={...item,no:Number(target.no),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
+ const filled=changed.subskills.filter(Boolean);
+ if(new Set(filled).size!==filled.length){document.getElementById('boxEditMessage').textContent='同じサブスキルを重複して設定できません';return}
+ if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel();document.getElementById('boxEditMessage').textContent='保存しました'}
+};

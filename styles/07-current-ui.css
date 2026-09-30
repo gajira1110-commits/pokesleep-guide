@@ -1,99 +1,4 @@
-/* v95: dedicated layouts for the rebuilt Box screen and Dex food rows. */
-/* Box identity remains visible while reading its long sections. */
-#boxDetail .detail-head{
-  position:sticky;top:56px;z-index:69;display:flex;align-items:center;
-  gap:8px;min-height:48px;margin:0 -12px 10px;padding:5px 12px;
-  background:rgba(255,255,255,.97);border-bottom:1px solid #e1e8e4;
-  backdrop-filter:blur(12px);
-}
-#boxDetail .detail-head>[data-back]{flex:0 0 auto;padding:7px 9px;white-space:nowrap;font-size:13px}
-#boxDetail #boxTitle{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:17px;margin:0;font-weight:950}
-#boxDetail #boxHeaderEdit{flex:0 0 auto;font-size:11px;font-weight:900;color:#111;white-space:nowrap}
-@media(max-width:620px){
- #boxDetail .detail-head{top:calc(38px + env(safe-area-inset-top));min-height:44px}
- #boxDetail .detail-head>[data-back]{font-size:12px}
- #boxDetail #boxTitle{font-size:16px}
-}
-#boxDetail .detail-head h2{display:flex;align-items:baseline;justify-content:center;gap:5px;flex:1;min-width:0}
-#boxDetail #boxHeaderNo{font-size:10px;font-weight:900;white-space:nowrap;color:#111}
-#boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
-#boxDetail #boxIdentity:empty{display:none}
-#boxDetail .psg-box-art-badges{position:absolute;right:7px;bottom:7px;display:flex;align-items:center;gap:4px;z-index:2}
-#boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.96);border:1px solid #d8e5de;box-shadow:0 1px 5px rgba(30,57,42,.16)}
-#boxDetail .psg-box-art-badge img{width:23px;height:23px;object-fit:contain;image-rendering:pixelated}
-#boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
-#boxDetail .psg-box-hero{background:#eef8f0;border-color:#cfe8d4}
-#boxDetail .psg-box-identity{display:grid;grid-template-columns:minmax(100px,36%) 1fr;gap:10px;align-items:stretch}
-#boxDetail .psg-box-artwork{min-height:220px;background:#f8faf8;border:1px solid #dfe8e4;border-radius:18px;position:relative;overflow:hidden;display:grid;place-items:center}
-#boxDetail .psg-box-artwork img{max-width:100%;max-height:100%;object-fit:contain}
-#boxDetail .psg-box-facts{min-width:0;display:flex;flex-direction:column;gap:8px}
-#boxDetail #boxIdentity{font-weight:900;font-size:14px}
-#boxDetail .psg-box-stats{display:grid;gap:7px;flex:1}
-#boxDetail .psg-box-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;padding:5px 3px;background:#fff;border-radius:13px;text-align:center}
-#boxDetail .psg-box-stat small{font-size:10px;font-weight:900;color:#111}
-#boxDetail .psg-box-stat strong{font-size:clamp(14px,4vw,22px);line-height:1.25;overflow-wrap:anywhere}
-#boxDetail .psg-box-stat em{font-style:normal;color:#111;font-size:11px;font-weight:800}
-#boxDetail .psg-box-level{margin-top:12px;background:#fff;padding:10px;border-radius:13px}
-#boxDetail .psg-box-level label{font-weight:900}
-#boxDetail .psg-box-level-controls{justify-content:center;gap:10px;margin:6px 0}
-#boxDetail #boxLevelInput{width:65px;text-align:center;border:1px solid #dfe8e4;border-radius:8px;padding:8px}
-#boxDetail #lvRange{width:100%}
-#boxDetail .psg-box-section h3{font-size:20px;margin:0 0 7px;color:#111}
-#boxDetail .psg-box-section{background:#f3f7ff}
-#boxDetail .psg-box-line{display:flex;align-items:center;gap:8px;min-height:51px;border-bottom:1px solid #e2e9ed;padding:6px 0;min-width:0}
-#boxDetail .psg-box-line:last-child{border-bottom:0}
-#boxDetail .psg-box-line .psg-level-label{flex:0 0 62px;font-size:12px;font-weight:900}
-#boxDetail .psg-box-line .psg-line-body{flex:1;min-width:0;overflow-wrap:anywhere;font-weight:800}
-#boxDetail .psg-box-line .psg-subskill-badge{width:36px;height:36px;object-fit:contain;vertical-align:middle;margin-right:7px;flex:none}
-#boxDetail .psg-box-line .psg-line-state{font-size:11px;color:#111;white-space:nowrap;font-weight:800}
-#boxDetail .psg-box-line.is-locked{opacity:.63}
-#boxDetail .psg-box-ingredient-art{width:36px;height:36px;object-fit:contain;vertical-align:middle;margin-right:6px}
-#boxDetail .psg-box-ingredient-art img,#boxDetail .psg-box-skill-art img{width:36px;height:36px;object-fit:contain;vertical-align:middle}
-#boxDetail .psg-box-forecast{margin-top:7px;background:#fff;border-radius:10px;padding:7px 9px}
-#boxDetail .psg-box-forecast p{margin:4px 0 0;color:#111}
-#boxDetail .psg-box-lead{font-weight:950;font-size:19px;line-height:1.4}
-#boxDetail .psg-box-skill-art{width:42px;height:42px;object-fit:contain;vertical-align:middle;margin-right:8px}
-#boxDetail .psg-box-muted{color:#111;font-size:13px;line-height:1.5}
-#boxDetail .psg-mint-mark{display:inline-flex;border:1px solid #8ab99e;border-radius:50%;background:#fff;color:#56966e;width:25px;height:25px;align-items:center;justify-content:center;margin-left:7px;vertical-align:middle}
-#boxDetail .psg-milestone{background:#fff;border-radius:11px;padding:10px;margin-top:7px}
-#boxDetail .psg-box-editor summary{font-weight:900;cursor:pointer}
-#boxDetail #boxEditForm{display:grid;gap:10px;margin-top:12px}
-#boxDetail #boxEditForm label{display:grid;gap:3px;font-weight:800;font-size:13px}
-#boxDetail #boxEditForm input,#boxDetail #boxEditForm select{min-width:0;width:100%;border:1px solid #cbdad3;background:#fff;border-radius:8px;padding:9px;font-size:16px}
-#boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
-#boxDetail #boxEditForm .psg-editor-check input{width:auto}
-#boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
-@media(max-width:390px){#boxDetail .psg-box-artwork{min-height:190px}#boxDetail .psg-box-stat small{font-size:9px}#boxDetail .psg-box-stat strong{font-size:14px}}
-/* Box Block 1 shares the Dex geometry: square artwork, facts to the right,
-   and a full-width action row where the Dex shows tabs. */
-#boxDetail .psg-box-hero{padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
-#boxDetail .psg-box-identity{grid-template-columns:minmax(108px,37%) minmax(0,1fr);gap:6px;align-items:start}
-#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:rgba(255,255,255,.58);border-radius:16px}
-#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-#boxDetail .psg-box-facts{justify-content:space-between;gap:4px;align-self:stretch}
-#boxDetail .psg-box-traits{display:grid;grid-template-columns:31fr 38fr 31fr;gap:3px;min-width:0}
-#boxDetail .psg-box-trait{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:31px;padding:3px 2px;border-radius:9px;background:#fff;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;color:#111}
-#boxDetail .psg-box-trait-berry img{width:19px;height:19px;object-fit:contain;flex:none}
-#boxDetail .psg-box-trait-berry b{font-size:11px}
-#boxDetail .psg-box-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;flex:1;background:transparent;border:0}
-#boxDetail .psg-box-stat{min-height:48px;padding:3px 2px;border-radius:12px;gap:2px}
-#boxDetail .psg-box-stat small{font-size:clamp(7px,2.1vw,10px);line-height:1.12;letter-spacing:-.03em}
-#boxDetail .psg-box-stat strong{font-size:clamp(11px,3vw,18px);line-height:1.1}
-#boxDetail .psg-box-stat em{font-size:10px;line-height:1}
-#boxDetail .psg-box-level{grid-template-columns:auto 1fr;gap:4px 8px;margin-top:6px;padding:5px 8px;border-radius:10px}
-#boxDetail .psg-box-level label{grid-column:1;font-size:12px;white-space:nowrap;color:#111}
-#boxDetail .psg-box-level-controls{grid-column:2;justify-content:flex-end;gap:5px;margin:0}
-#boxDetail .psg-box-level-controls .btn{min-width:32px;min-height:32px;padding:0 4px}
-#boxDetail #lv{white-space:nowrap;font-size:13px}
-#boxDetail #boxLevelInput{width:43px;padding:4px;font-size:13px}
-#boxDetail #lvRange{grid-column:1/-1;min-height:20px}
-@media(max-width:390px){
- #boxDetail .psg-box-identity{grid-template-columns:minmax(104px,37%) minmax(0,1fr)}
- #boxDetail .psg-box-trait{font-size:9px}
- #boxDetail .psg-box-stat{min-height:45px}
- #boxDetail .psg-box-stat small{font-size:8px}
- #boxDetail .psg-box-stat strong{font-size:12px}
-}
+
 
 
 #pane-ability .ability-card:has(#detailFoods)>.ability-title,
@@ -165,31 +70,10 @@
 #dexDetail .v106-evo-conditions{order:2!important;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:850;color:#111;white-space:nowrap;line-height:1.15}
 #dexDetail .v31-evo-step{min-width:19px!important;width:19px!important}
 #dexDetail .v31-evo-line{gap:3px!important}
-#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:7px}
-#boxDetail .psg-box-food-heading h3{margin:0;font-size:18px}
-#boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:3px;row-gap:0;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
-#boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
-#boxDetail .psg-v106-unlock{text-align:center;font-size:11px;line-height:1.2;white-space:nowrap}
-#boxDetail .psg-v106-ingredient-image{grid-row:1 / 3;display:grid;place-items:center;width:28px;height:28px}
-#boxDetail .psg-v106-ingredient-image img{width:28px;height:28px;object-fit:contain}
-#boxDetail .psg-v106-ingredient strong{grid-column:2;text-align:center;font-size:13px;line-height:1.1;white-space:nowrap}
-#boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
-#boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
-#boxDetail .psg-box-level-controls{grid-column:1;display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0}
-#boxDetail .psg-box-level-controls .btn{min-width:35px;min-height:38px}
-#boxDetail #lv{min-width:34px;text-align:center;white-space:nowrap}
-#boxDetail #lvRange{grid-column:2;min-width:0;width:100%;min-height:40px;margin:0;touch-action:pan-x}
 @media(max-width:620px){
   main:has(#boxDetail.active),main:has(#dexDetail.active){padding-top:0!important}
   #boxDetail .detail-head,#dexDetail .detail-head{margin-top:0!important;margin-bottom:3px!important}
   #dexDetail .hero-info>.stats .stat{min-height:42px!important;padding:2px!important;gap:1px!important}
-  #boxDetail .psg-box-stat{min-height:46px;padding:2px}
-  #boxDetail .psg-box-stats{grid-template-rows:repeat(2,minmax(46px,1fr))}
-  #boxDetail .psg-box-section{padding:10px;margin-bottom:7px}
-  #boxDetail .psg-box-section h3{margin-bottom:8px}
-  #boxDetail .psg-box-line{min-height:44px;padding:4px 0}
-  #boxDetail .psg-v106-ingredient{min-height:34px;column-gap:2px;padding:2px 1px}
   #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:74px}
   #dexDetail{border-radius:0!important}
   #dexDetail .hero-top{grid-template-columns:minmax(102px,34%) minmax(0,1fr)!important;grid-template-rows:auto!important;align-items:start!important}
@@ -202,26 +86,17 @@
   #dexDetail .hero-info .v44-berry-visual,#dexDetail .hero-info .v44-berry-visual img{width:14px!important;height:14px!important;flex:0 0 14px!important}
   #dexDetail .hero-info .v44-berry-trait b,#boxDetail .psg-box-facts .psg-box-trait b{font-size:8px!important}
   #dexDetail .hero-info .psg-specialty-icon,#boxDetail .psg-box-facts .psg-specialty-icon{width:23px!important;height:23px!important;object-fit:contain}
-  #boxDetail .psg-box-facts{gap:3px!important}
-  #boxDetail .psg-box-facts .psg-box-trait-berry>img{width:15px!important;height:15px!important}
-  #boxDetail .psg-box-stats{flex:0 0 auto!important}
   #dexDetail .psg-v106-media #v12Header{width:100%!important}
   #dexDetail .psg-v106-media .v19-traits,#boxDetail .psg-v106-media .psg-box-traits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:2px!important;width:100%!important}
   #dexDetail .psg-v106-media .v19-traits>span,#boxDetail .psg-v106-media .psg-box-trait{min-height:30px!important;height:30px!important;padding:2px 0!important;font-size:8px!important;line-height:1!important;gap:0!important;white-space:nowrap!important;border-radius:8px!important}
   #dexDetail .psg-v106-media .v44-berry-visual,#dexDetail .psg-v106-media .v44-berry-visual img{width:14px!important;height:14px!important;flex:0 0 14px!important}
   #dexDetail .psg-v106-media .v44-berry-trait b,#boxDetail .psg-v106-media .psg-box-trait b{font-size:8px!important}
   #dexDetail .psg-v106-media .psg-specialty-icon,#boxDetail .psg-v106-media .psg-specialty-icon{width:23px;height:23px;object-fit:contain}
-  #boxDetail .psg-box-identity{grid-template-columns:minmax(102px,34%) minmax(0,1fr);align-items:start}
-  #boxDetail .psg-box-facts{justify-content:flex-start}
-  #boxDetail .psg-v106-media .psg-box-trait-berry>img{width:15px;height:15px}
-  #boxDetail .psg-v106-media .psg-box-traits{align-items:start}
 }
 /* Duplicate rates are omitted only while the complete identity panel is sticky. */
 @media(max-width:620px) and (orientation:portrait){
   #dexDetail>.psg-dex-sticky,#boxDetail>.psg-box-hero{position:sticky!important;top:calc(83px + env(safe-area-inset-top))!important;z-index:55!important}
-  #boxDetail>.psg-box-hero{box-shadow:0 2px 5px rgba(20,40,30,.10)!important}
   #detailFoods .psg-food-rate strong,#v12Ability .skill-rate-inline{display:none!important}
-  #boxDetail #boxEditor{scroll-margin-top:310px}
 }
 @media(max-width:620px) and (orientation:landscape){
   #dexDetail>.psg-dex-sticky,#boxDetail>.psg-box-hero{position:relative!important}
@@ -235,8 +110,6 @@
   #detailFoods .psg-food-stack{margin-inline:0!important;margin-bottom:5px!important}
   #v12Ability .ability-card:has(#detailSkill){margin-inline:0!important;margin-bottom:5px!important}
   #v12Ability #evolutionCard{margin-inline:0!important;margin-top:0!important;padding:9px 7px!important;background:rgba(255,255,255,.78)!important;border:1px solid #e1e9e6!important;border-radius:18px!important}
-  #boxDetail>.psg-box-hero,#boxDetail>.psg-box-section,#boxDetail>.psg-box-editor,#boxDetail>.card{box-sizing:border-box;width:100%;margin-inline:0}
-  #boxDetail>.psg-box-section{margin-bottom:6px}
   #detailFoods .psg-food-head{padding-top:3px;padding-bottom:5px}
   #detailFoods .psg-food-row,#detailFoods .psg-food-recipes,#detailFoods .psg-food-recipes.is-pending{min-height:68px}
   #detailFoods .psg-food-id{padding-block:3px}
@@ -339,27 +212,6 @@
   #dexDetail .v12-tabs button[data-v12tab="field"].active{background:#f0f6f1!important;color:#347a4b!important;border:0!important;border-bottom:2px solid #4d9662!important}
 }
 
-/* Compact individual controls and three-column subskill tiles. */
-#boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
-#boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
-#boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
-#boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
-#boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:9px;padding:3px}
-#boxDetail .psg-subskill-top{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;line-height:1.2}
-#boxDetail .psg-subskill-badge{width:24px;height:24px;object-fit:contain}
-#boxDetail .psg-subskill-unknown{display:grid;place-items:center;width:24px;height:24px;color:#81908a}
-#boxDetail .psg-box-subskill>strong{text-align:center;overflow-wrap:anywhere;font-size:11px;line-height:1.2}
-#boxDetail .psg-box-subskill.is-locked{opacity:.48}
-#boxDetail .psg-editor-note{margin:0;font-weight:400}
-#boxDetail #boxEditor{scroll-margin-top:110px}
-
 .psg-selected-filters:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;padding:5px 0}
 .psg-selected-filters button{max-width:100%;overflow-wrap:anywhere;border:1px solid #8abd9e;background:#eaf5ee;color:#285c3d;border-radius:9px;padding:5px 7px;min-height:32px;font-size:12px;font-weight:700}
 .psg-selected-filters .psg-filter-clear{background:#fff;color:#526259;border-color:#d6e2da}
-@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
-
-#boxDetail .psg-box-nature-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px;align-items:center}
-#boxDetail .psg-box-nature-row .psg-box-lead{margin:0}
-#boxDetail .psg-box-nature-effects{display:grid;gap:2px;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
-#boxDetail .psg-nature-up{color:#b04436}
-#boxDetail .psg-nature-down{color:#346baa}
