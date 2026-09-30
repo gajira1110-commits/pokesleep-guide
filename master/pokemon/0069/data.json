@@ -1,0 +1,86 @@
+{
+  "no": 69,
+  "name": "マダツボミ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 5200,
+  "carry": 8,
+  "foodRate": 23.3,
+  "skillRate": 3.9,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0069_01",
+      "name": "あしのばし寝",
+      "stars": 1
+    },
+    {
+      "id": "0069_02",
+      "name": "ようかいえき寝",
+      "stars": 2
+    },
+    {
+      "id": "0069_03",
+      "name": "ねをはる寝",
+      "stars": 3
+    },
+    {
+      "id": "0069_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 70,
+    "to": "ウツドン",
+    "level": 16,
+    "candy": 40
+  }
+}

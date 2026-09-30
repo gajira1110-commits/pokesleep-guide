@@ -1,0 +1,28 @@
+{
+  "no": 20,
+  "name": "ラッタ",
+  "type": "ノーマル",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "キーのみ",
+  "berryQty": 2,
+  "help": 2950,
+  "carry": 21,
+  "foodRate": 23.7,
+  "skillRate": 3.0,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "fancy_apple", "qty": 1}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "fancy_apple", "qty": 2}, {"ingredientId": "greengrass_soybeans", "qty": 2}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "fancy_apple", "qty": 4}, {"ingredientId": "greengrass_soybeans", "qty": 3}, {"ingredientId": "bean_meat", "qty": 3}]}
+  ],
+  "sleepStyles": [
+    {"id": "0020_01", "name": "はぎしり寝", "stars": 1},
+    {"id": "0020_02", "name": "ぼうだち寝", "stars": 2},
+    {"id": "0020_03", "name": "まえばかじり寝", "stars": 3},
+    {"id": "0020_04", "name": "おなかのうえ寝", "stars": 4}
+  ]
+}

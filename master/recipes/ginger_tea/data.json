@@ -1,0 +1,25 @@
+{
+  "id": "ginger_tea",
+  "name": "ひのこのジンジャーティー",
+  "category": "デザート・ドリンク",
+  "ingredients": [
+    {
+      "qty": 7,
+      "ingredientId": "fancy_apple"
+    },
+    {
+      "qty": 9,
+      "ingredientId": "warming_ginger"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 1913
+    },
+    "max": {
+      "level": 70,
+      "value": 6849
+    }
+  }
+}

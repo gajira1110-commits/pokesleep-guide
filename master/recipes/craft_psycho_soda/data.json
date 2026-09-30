@@ -1,0 +1,5 @@
+{
+  "id": "craft_psycho_soda", "name": "クラフトサイコソーダ", "category": "デザート・ドリンク",
+  "ingredients": [{"ingredientId": "honey", "qty": 9}],
+  "energy": {"min": {"level": 1, "value": 1079}, "max": {"level": 70, "value": 3863}}
+}

@@ -1,0 +1,80 @@
+{
+  "no": 59,
+  "name": "ウインディ",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ヒメリのみ",
+  "berryQty": 1,
+  "help": 2500,
+  "carry": 21,
+  "foodRate": 13.6,
+  "skillRate": 4.9,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0059_01",
+      "name": "ふせ寝",
+      "stars": 1
+    },
+    {
+      "id": "0059_02",
+      "name": "おすわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0059_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0059_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

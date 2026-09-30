@@ -1,0 +1,84 @@
+{
+  "id": "helper_boost_electric",
+  "name": "おてつだいブースト（でんき）",
+  "maxLevel": 6,
+  "tags": [
+    "おてつだい",
+    "チーム"
+  ],
+  "effectType": "helper_boost_electric",
+  "levels": {
+    "1": {
+      "helps": 2,
+      "description": "チーム全員が各2回分すぐにおてつだい。異なるでんきタイプ3～5種で各1／2／4回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        4
+      ]
+    },
+    "2": {
+      "helps": 3,
+      "description": "チーム全員が各3回分すぐにおてつだい。異なるでんきタイプ3～5種で各1／2／4回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        4
+      ]
+    },
+    "3": {
+      "helps": 3,
+      "description": "チーム全員が各3回分すぐにおてつだい。異なるでんきタイプ3～5種で各2／3／5回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        0,
+        2,
+        3,
+        5
+      ]
+    },
+    "4": {
+      "helps": 4,
+      "description": "チーム全員が各4回分すぐにおてつだい。異なるでんきタイプ3～5種で各2／3／5回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        0,
+        2,
+        3,
+        5
+      ]
+    },
+    "5": {
+      "helps": 4,
+      "description": "チーム全員が各4回分すぐにおてつだい。異なるでんきタイプ2～5種で各1／3／4／6回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        1,
+        3,
+        4,
+        6
+      ]
+    },
+    "6": {
+      "helps": 5,
+      "description": "チーム全員が各5回分すぐにおてつだい。異なるでんきタイプ2～5種で各1／3／4／6回を追加",
+      "bonusByUniqueElectric": [
+        0,
+        0,
+        1,
+        3,
+        4,
+        6
+      ]
+    }
+  }
+}

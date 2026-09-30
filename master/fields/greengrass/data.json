@@ -1,0 +1,1290 @@
+{
+  "id": "greengrass",
+  "name": "ワカクサ本島",
+  "mode": "normal",
+  "favoriteMode": "weekly_random",
+  "favoriteBerries": [],
+  "encounters": [
+    {
+      "sleepStyleId": "0052_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0052_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0052_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 8322000
+    },
+    {
+      "sleepStyleId": "0052_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0053_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0053_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0053_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0053_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0037_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 760000
+    },
+    {
+      "sleepStyleId": "0037_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 6574000
+    },
+    {
+      "sleepStyleId": "0037_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 25536000
+    },
+    {
+      "sleepStyleId": "0038_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 6004000
+    },
+    {
+      "sleepStyleId": "0038_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 22154000
+    },
+    {
+      "sleepStyleId": "0038_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0027_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2090000
+    },
+    {
+      "sleepStyleId": "0027_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 8322000
+    },
+    {
+      "sleepStyleId": "0027_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 48070000
+    },
+    {
+      "sleepStyleId": "0028_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0028_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 3
+      },
+      "drowsyPower": 31806000
+    },
+    {
+      "sleepStyleId": "0028_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 130074000
+    },
+    {
+      "sleepStyleId": "0023_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0023_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0023_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0024_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0024_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0024_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0019_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0019_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0019_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0020_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0020_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 5054000
+    },
+    {
+      "sleepStyleId": "0020_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0001_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0001_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0001_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0002_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0002_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0002_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0003_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0003_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0003_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 15
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0003_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 10
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0004_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0004_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0004_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0005_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0005_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0005_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0006_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0006_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0006_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 15
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0006_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 10
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0007_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0007_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0007_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0008_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0008_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0008_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0009_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0009_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0009_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 15
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0009_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 10
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0010_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0010_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0010_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0011_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 570000
+    },
+    {
+      "sleepStyleId": "0011_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0011_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 10830000
+    },
+    {
+      "sleepStyleId": "0011_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0012_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0012_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0012_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 10
+      },
+      "drowsyPower": 48070000
+    },
+    {
+      "sleepStyleId": "0012_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 59052000
+    },
+    {
+      "sleepStyleId": "0025_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0025_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0025_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0026_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0026_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0026_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 14
+      },
+      "drowsyPower": 48070000
+    },
+    {
+      "sleepStyleId": "0026_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 59052000
+    },
+    {
+      "sleepStyleId": "0039_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 4
+      },
+      "drowsyPower": 304000
+    },
+    {
+      "sleepStyleId": "0039_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 2508000
+    },
+    {
+      "sleepStyleId": "0039_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0040_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "drowsyPower": 5054000
+    },
+    {
+      "sleepStyleId": "0040_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0040_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 38304000
+    },
+    {
+      "sleepStyleId": "0054_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0054_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0054_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0158_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 418000
+    },
+    {
+      "sleepStyleId": "0158_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2812000
+    },
+    {
+      "sleepStyleId": "0158_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 13490000
+    },
+    {
+      "sleepStyleId": "0159_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0159_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0159_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0160_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 14326000
+    },
+    {
+      "sleepStyleId": "0160_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0160_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 15
+      },
+      "drowsyPower": 62776000
+    },
+    {
+      "sleepStyleId": "0160_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 10
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0172_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0172_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0172_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0174_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0174_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0174_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0069_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0069_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0069_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0070_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0070_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 5054000
+    },
+    {
+      "sleepStyleId": "0070_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0071_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0071_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0071_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 59052000
+    },
+    {
+      "sleepStyleId": "0079_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0079_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2090000
+    },
+    {
+      "sleepStyleId": "0079_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 10830000
+    },
+    {
+      "sleepStyleId": "0080_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 3154000
+    },
+    {
+      "sleepStyleId": "0080_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 7714000
+    },
+    {
+      "sleepStyleId": "0080_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0179_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0179_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 1558000
+    },
+    {
+      "sleepStyleId": "0179_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 9120000
+    },
+    {
+      "sleepStyleId": "0180_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 1824000
+    },
+    {
+      "sleepStyleId": "0180_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 5054000
+    },
+    {
+      "sleepStyleId": "0180_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0058_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 2
+      },
+      "drowsyPower": 76000
+    },
+    {
+      "sleepStyleId": "0058_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 2280000
+    },
+    {
+      "sleepStyleId": "0058_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 11780000
+    },
+    {
+      "sleepStyleId": "0243_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0243_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 13
+      },
+      "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0243_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 19
+      },
+      "drowsyPower": 243390000
+    },
+    {
+      "sleepStyleId": "0244_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 43700000
+    },
+    {
+      "sleepStyleId": "0244_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 13
+      },
+      "drowsyPower": 122854000
+    },
+    {
+      "sleepStyleId": "0244_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 19
+      },
+      "drowsyPower": 262428000
+    },
+    {
+      "sleepStyleId": "0245_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 46208000
+    },
+    {
+      "sleepStyleId": "0245_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 13
+      },
+      "drowsyPower": 130074000
+    },
+    {
+      "sleepStyleId": "0245_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 19
+      },
+      "drowsyPower": 275196000
+    }
+  ],
+  "rankThresholds": [
+    {
+      "tier": "ノーマル",
+      "level": 1,
+      "energy": 0
+    },
+    {
+      "tier": "ノーマル",
+      "level": 2,
+      "energy": 3118
+    },
+    {
+      "tier": "ノーマル",
+      "level": 3,
+      "energy": 7171
+    },
+    {
+      "tier": "ノーマル",
+      "level": 4,
+      "energy": 11693
+    },
+    {
+      "tier": "ノーマル",
+      "level": 5,
+      "energy": 17149
+    },
+    {
+      "tier": "スーパー",
+      "level": 1,
+      "energy": 23385
+    },
+    {
+      "tier": "スーパー",
+      "level": 2,
+      "energy": 31492
+    },
+    {
+      "tier": "スーパー",
+      "level": 3,
+      "energy": 41314
+    },
+    {
+      "tier": "スーパー",
+      "level": 4,
+      "energy": 53006
+    },
+    {
+      "tier": "スーパー",
+      "level": 5,
+      "energy": 65634
+    },
+    {
+      "tier": "ハイパー",
+      "level": 1,
+      "energy": 79197
+    },
+    {
+      "tier": "ハイパー",
+      "level": 2,
+      "energy": 93540
+    },
+    {
+      "tier": "ハイパー",
+      "level": 3,
+      "energy": 109130
+    },
+    {
+      "tier": "ハイパー",
+      "level": 4,
+      "energy": 125032
+    },
+    {
+      "tier": "ハイパー",
+      "level": 5,
+      "energy": 156121
+    },
+    {
+      "tier": "マスター",
+      "level": 1,
+      "energy": 187832
+    },
+    {
+      "tier": "マスター",
+      "level": 2,
+      "energy": 220177
+    },
+    {
+      "tier": "マスター",
+      "level": 3,
+      "energy": 253169
+    },
+    {
+      "tier": "マスター",
+      "level": 4,
+      "energy": 286821
+    },
+    {
+      "tier": "マスター",
+      "level": 5,
+      "energy": 321146
+    },
+    {
+      "tier": "マスター",
+      "level": 6,
+      "energy": 356158
+    },
+    {
+      "tier": "マスター",
+      "level": 7,
+      "energy": 391870
+    },
+    {
+      "tier": "マスター",
+      "level": 8,
+      "energy": 428296
+    },
+    {
+      "tier": "マスター",
+      "level": 9,
+      "energy": 465451
+    },
+    {
+      "tier": "マスター",
+      "level": 10,
+      "energy": 532707
+    },
+    {
+      "tier": "マスター",
+      "level": 11,
+      "energy": 601308
+    },
+    {
+      "tier": "マスター",
+      "level": 12,
+      "energy": 742056
+    },
+    {
+      "tier": "マスター",
+      "level": 13,
+      "energy": 885619
+    },
+    {
+      "tier": "マスター",
+      "level": 14,
+      "energy": 1029700
+    },
+    {
+      "tier": "マスター",
+      "level": 15,
+      "energy": 1199506
+    },
+    {
+      "tier": "マスター",
+      "level": 16,
+      "energy": 1486800
+    },
+    {
+      "tier": "マスター",
+      "level": 17,
+      "energy": 1795052
+    },
+    {
+      "tier": "マスター",
+      "level": 18,
+      "energy": 2165541
+    },
+    {
+      "tier": "マスター",
+      "level": 19,
+      "energy": 2604280
+    },
+    {
+      "tier": "マスター",
+      "level": 20,
+      "energy": 3245795
+    }
+  ]
+}

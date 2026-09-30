@@ -1,0 +1,15 @@
+{
+  "id": "cooking_chance_s",
+  "name": "料理チャンスS",
+  "maxLevel": 6,
+  "tags": ["料理", "大成功"],
+  "effectType": "cooking_tasty_chance",
+  "levels": {
+    "1": {"chancePercent": 4, "description": "料理の大成功確率を4%上げる"},
+    "2": {"chancePercent": 5, "description": "料理の大成功確率を5%上げる"},
+    "3": {"chancePercent": 6, "description": "料理の大成功確率を6%上げる"},
+    "4": {"chancePercent": 7, "description": "料理の大成功確率を7%上げる"},
+    "5": {"chancePercent": 8, "description": "料理の大成功確率を8%上げる"},
+    "6": {"chancePercent": 10, "description": "料理の大成功確率を10%上げる"}
+  }
+}

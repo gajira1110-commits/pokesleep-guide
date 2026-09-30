@@ -1,0 +1,33 @@
+{
+  "id": "boiling_hot_salad",
+  "name": "ごろごろねっとうサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "qty": 30,
+      "ingredientId": "potato"
+    },
+    {
+      "qty": 27,
+      "ingredientId": "tasty_mushroom"
+    },
+    {
+      "qty": 18,
+      "ingredientId": "greengrass_corn"
+    },
+    {
+      "qty": 20,
+      "ingredientId": "plump_pumpkin"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 25356
+    },
+    "max": {
+      "level": 70,
+      "value": 90774
+    }
+  }
+}

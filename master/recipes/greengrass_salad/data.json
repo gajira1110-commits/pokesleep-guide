@@ -1,0 +1,33 @@
+{
+  "id": "greengrass_salad",
+  "name": "ワカクササラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "qty": 9,
+      "ingredientId": "potato"
+    },
+    {
+      "qty": 22,
+      "ingredientId": "pure_oil"
+    },
+    {
+      "qty": 14,
+      "ingredientId": "tomato"
+    },
+    {
+      "qty": 17,
+      "ingredientId": "greengrass_corn"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 11393
+    },
+    "max": {
+      "level": 70,
+      "value": 40787
+    }
+  }
+}

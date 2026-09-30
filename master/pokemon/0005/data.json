@@ -1,0 +1,85 @@
+{
+  "no": 5,
+  "name": "リザード",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "ヒメリのみ",
+  "help": 3000,
+  "carry": 20,
+  "foodRate": 22.7,
+  "skillRate": 1.6,
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "qty": 2,
+          "ingredientId": "bean_meat"
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "qty": 5,
+          "ingredientId": "bean_meat"
+        },
+        {
+          "qty": 4,
+          "ingredientId": "warming_ginger"
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "qty": 7,
+          "ingredientId": "bean_meat"
+        },
+        {
+          "qty": 7,
+          "ingredientId": "warming_ginger"
+        },
+        {
+          "qty": 6,
+          "ingredientId": "fiery_herb"
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 6,
+    "to": "リザードン",
+    "level": 27,
+    "candy": 80
+  },
+  "sleepStyles": [
+    {
+      "id": "0005_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0005_02",
+      "name": "すわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0005_03",
+      "name": "ぐうたら寝",
+      "stars": 3
+    },
+    {
+      "id": "0005_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "berryQty": 1,
+  "rateStatus": "推定"
+}

@@ -1,0 +1,531 @@
+/* source: stable-v32-page-refine */
+/* v32 — approved finishing reservations for blocks 1–3. */
+/* 1-2: subtle alignment only; keep the accepted type surface. */
+#dexDetail .v19-identity{align-items:center!important}
+#dexDetail .v19-identity .v19-no{position:relative!important;top:-2px!important;color:#172019!important}
+#dexDetail .v19-identity strong{position:relative!important;left:-4px!important}
+/* 1-4/1-5: neutral black labels; values remain dominant by size. */
+#dexDetail .hero-info>.stats .stat small{color:#111!important;font-weight:950!important}
+
+/* 2: move the useful columns left and give recipes more room. */
+#v12Ability .ability-card:has(#detailFoods){padding-left:0!important;padding-right:2px!important}
+#detailFoods .v26-food-head,#detailFoods .v24-food-row{grid-template-columns:minmax(142px,1.25fr) 62px 62px 62px minmax(210px,1.9fr)!important}
+#detailFoods .v26-food-head{min-height:60px!important}
+#detailFoods .v26-food-rate{font-size:19px!important;text-align:left!important;padding-left:6px!important}
+#detailFoods .v26-food-rate strong{font-size:22px!important}
+#detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:17px!important;font-weight:950!important;background:transparent!important}
+#detailFoods .v24-food-name{padding-left:8px!important}
+#detailFoods .v24-letter{margin-left:8px!important}
+#detailFoods .v24-recipes{gap:7px!important;justify-content:center!important}
+#detailFoods .v24-placeholder{flex:0 0 auto!important}
+
+/* 3: semantic variable colors + compact 2-column x 3-row level detail. */
+:root{--skill-effect-food:#d82f67;--skill-effect-energy:#d56b16;--skill-effect-berry:#c64a43;--skill-effect-energy-recovery:#4f9a58;--skill-effect-help:#287fc0;--skill-effect-skill:#7557b4;--skill-effect-zone:#405aa8}
+#v12Ability .skill-var{font-weight:1000!important}
+#v12Ability .effect-food{color:var(--skill-effect-food)!important}
+#v12Ability .effect-energy{color:var(--skill-effect-energy)!important}
+#v12Ability .effect-berry{color:var(--skill-effect-berry)!important}
+#v12Ability .effect-energy-recovery{color:var(--skill-effect-energy-recovery)!important}
+#v12Ability .effect-help{color:var(--skill-effect-help)!important}
+#v12Ability .effect-skill{color:var(--skill-effect-skill)!important}
+#v12Ability .effect-zone{color:var(--skill-effect-zone)!important}
+#v12Ability .skill-levels.open{padding:9px 0 0!important;border-top:0!important;margin-top:8px!important}
+#v12Ability .v32-skill-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 18px!important;max-width:430px!important;margin:0 auto!important}
+#v12Ability .v32-skill-cell{display:grid!important;grid-template-columns:52px 1fr!important;align-items:center!important;gap:8px!important;min-height:42px!important;padding:6px 8px!important;border-bottom:1px solid rgba(55,83,112,.09)!important;font-size:14px!important}
+#v12Ability .v32-skill-cell>b{color:#33443c!important;font-weight:950!important}
+#v12Ability .v32-skill-cell>.skill-var{font-size:17px!important}
+@media(max-width:620px){
+ #detailFoods .v26-food-head,#detailFoods .v24-food-row{min-width:590px!important;grid-template-columns:140px 60px 60px 60px 270px!important}
+ #detailFoods .v26-food-rate{font-size:17px!important} #detailFoods .v26-food-rate strong{font-size:20px!important}
+ #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{font-size:16px!important}
+ #v12Ability .v32-skill-grid{gap:0 10px!important}
+ #v12Ability .v32-skill-cell{padding:5px 4px!important;font-size:13px!important}
+ #v12Ability .v32-skill-cell>.skill-var{font-size:16px!important}
+}
+
+/* source: stable-v33-blocks-finish-responsive */
+/* v33 — approved finishing pass. Mobile-first, viewport-responsive presentation. */
+/* 1-2: Pokémon name is the visual focus; number stays secondary and type stays to the right. */
+#dexDetail .v19-identity{display:grid!important;grid-template-columns:auto auto auto minmax(0,1fr)!important;align-items:center!important;column-gap:0!important}
+#dexDetail .v19-identity .v19-no{font-size:12px!important;font-weight:900!important;top:-4px!important;color:#172019!important;white-space:nowrap!important}
+#dexDetail .v19-identity strong{font-size:25px!important;font-weight:1000!important;left:0!important;min-width:0!important;white-space:nowrap!important;margin-left:1em!important}
+#dexDetail .v19-identity .v19-type{justify-self:start!important;white-space:nowrap!important;margin-left:.35em!important}
+
+/* 2: recipe data stays intact; only the visible preview count changes with viewport width. */
+#detailFoods .v24-recipes{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-width:0!important}
+#detailFoods .v24-placeholder{display:inline-grid!important;place-items:center!important}
+/* Wide: 5 previews. Medium: 4. Narrow: 3. */
+@media(max-width:760px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+@media(max-width:520px){#detailFoods .v24-recipes .v24-placeholder:nth-of-type(4),#detailFoods .v24-recipes .v24-placeholder:nth-of-type(5){display:none!important}}
+
+/* 3: probability styling matches ingredient probability. Normal effect/detail copy is black. */
+#v12Ability .skill-rate-inline{color:#26312b!important}
+#v12Ability .skill-rate-inline strong{color:#e83269!important}
+#v12Ability .v33-skill-effect-row{grid-template-columns:minmax(0,1fr) auto!important;grid-column:1 / -1!important;grid-row:2!important;align-items:center!important;gap:10px!important;padding-top:0!important;border-top:0!important}
+#v12Ability .v33-skill-effect-row .skill-desc{grid-column:auto!important;grid-row:auto!important;margin:0!important;padding:0!important;border:0!important;color:#111!important;font-size:14px!important;line-height:1.5!important}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{grid-column:auto!important;grid-row:auto!important;align-self:center!important;width:auto!important;border:0!important;background:transparent!important;padding:7px 2px!important;font-size:13px!important;font-weight:900!important;white-space:nowrap!important}
+#v12Ability .v32-skill-cell{color:#111!important}
+#v12Ability .v32-skill-cell>b{color:#111!important}
+
+/* 4: keep Level/Candy stacked; improve readability and scale of the evolution family. */
+#v12Ability #evolutionCard .section-title{font-size:18px!important}
+.v31-evo-line{gap:10px!important;padding:12px 4px 8px!important}
+.v31-evo-node{min-width:82px!important;gap:5px!important}
+.v31-evo-image{width:72px!important;height:72px!important}
+.v31-evo-node.is-current .v31-evo-image{width:88px!important;height:88px!important}
+.v31-evo-name{font-size:13px!important;font-weight:950!important;color:#111!important}
+.v31-evo-step{min-width:76px!important;gap:5px!important}
+.v31-evo-cond{font-size:12px!important;font-weight:850!important;line-height:1.3!important;color:#111!important}
+.v31-evo-cond span{color:#111!important}
+.v31-evo-cond span:first-child{font-weight:950!important}
+.v31-big-arrow{color:#39453f!important;font-weight:950!important}
+.v31-branch-cell .v31-evo-image{width:62px!important;height:62px!important}
+.v31-branch-cell .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+.v31-branch-cell .v31-evo-cond{font-size:11px!important;color:#111!important}
+
+/* Responsive finishing: preserve information, adjust density rather than shrinking everything. */
+@media(max-width:620px){
+ #dexDetail .v19-identity{column-gap:0!important}
+ #dexDetail .v19-identity .v19-no{font-size:11px!important;top:-3px!important}
+ #dexDetail .v19-identity strong{font-size:21px!important;left:0!important;margin-left:1em!important}
+ #v12Ability .v33-skill-effect-row{gap:6px!important}
+ #v12Ability .v33-skill-effect-row .skill-desc{font-size:13px!important}
+ #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:12px!important}
+ .v31-evo-line{gap:5px!important;justify-content:flex-start!important}
+ .v31-evo-node{min-width:70px!important}
+ .v31-evo-image{width:62px!important;height:62px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:76px!important;height:76px!important}
+ .v31-evo-name{font-size:12px!important}
+ .v31-evo-step{min-width:64px!important}
+ .v31-evo-cond{font-size:11px!important}
+}
+@media(max-width:390px){
+ #dexDetail .v19-identity strong{font-size:19px!important}
+ #dexDetail .v19-identity .v19-type{font-size:12px!important}
+ .v31-evo-image{width:58px!important;height:58px!important}
+ .v31-evo-node.is-current .v31-evo-image{width:70px!important;height:70px!important}
+ .v31-evo-step{min-width:58px!important}
+}
+
+/* source: dex-detail-final-skill-style */
+/* v38 structure cleanup — frozen visual design from v37.
+   Block 2 row separators + Block 3 skill presentation are centralized here. */
+
+/* Block 2: A/B/C rows are separated by spacing/background, not rules. */
+#detailFoods .v24-food-row{border-bottom:0!important;}
+/* v39: requested text-color refinements only. */
+#detailFoods .v26-level-pill,
+#detailFoods .v26-recipe-head{color:#111!important;}
+
+/* Block 3 heading: same visual scale as Block 2 heading. */
+#v12Ability .skill-name{font-size:19px!important;font-weight:950!important;}
+
+/* Block 3 surface: no internal separator rules or legacy pseudo-rules. */
+#v12Ability .skill-box,
+#v12Ability .skill-top,
+#v12Ability .v33-skill-effect-row,
+#v12Ability .v33-skill-effect-row .skill-desc,
+#v12Ability .skill-levels,
+#v12Ability .skill-levels.open,
+#v12Ability .v32-skill-grid,
+#v12Ability .v32-skill-cell{
+  border:0!important;border-top:0!important;border-bottom:0!important;
+  outline:0!important;box-shadow:none!important;background-image:none!important;
+}
+#v12Ability .skill-top::before,
+#v12Ability .skill-top::after,
+#v12Ability .v33-skill-effect-row::before,
+#v12Ability .v33-skill-effect-row::after,
+#v12Ability .v33-skill-effect-row .skill-desc::before,
+#v12Ability .v33-skill-effect-row .skill-desc::after,
+#v12Ability .v32-skill-cell::before,
+#v12Ability .v32-skill-cell::after{
+  content:none!important;display:none!important;border:0!important;box-shadow:none!important;
+}
+
+/* 3-2: Lv.1 begins under the skill-name text, excluding the icon column. */
+#v12Ability .v33-skill-effect-row{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,auto) auto!important;
+  justify-content:start!important;align-items:start!important;
+  column-gap:10px!important;row-gap:3px!important;
+  padding-left:27px!important;margin-top:7px!important;
+}
+#v12Ability .v33-skill-effect-row .skill-desc{
+  display:grid!important;grid-template-columns:auto minmax(0,1fr)!important;
+  align-items:baseline!important;column-gap:10px!important;
+  min-width:0!important;max-width:100%!important;
+  font-size:15px!important;line-height:1.55!important;
+}
+#v12Ability .v35-effect-level{white-space:nowrap!important;font-size:15px!important;}
+#v12Ability .v35-effect-copy{min-width:0!important;color:#111!important;font-size:15px!important;}
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{
+  justify-self:start!important;align-self:start!important;
+  padding:1px 2px!important;margin:0!important;font-size:14px!important;
+  color:#111!important;
+}
+
+/* Responsive behavior from frozen v37 design. */
+@media(max-width:620px){
+  #v12Ability .skill-name{font-size:17px!important;}
+  #v12Ability .v33-skill-effect-row{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    padding-left:25px!important;column-gap:6px!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{min-width:0!important;font-size:14px!important;}
+  #v12Ability .v35-effect-level,#v12Ability .v35-effect-copy{font-size:14px!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:13px!important;}
+}
+@media(max-width:430px){
+  #v12Ability .v33-skill-effect-row{grid-template-columns:minmax(0,1fr)!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{margin-left:calc(2.4em + 10px)!important;}
+}
+
+/* source: psg-v42-mobile-finish */
+/* PSG v42 — smartphone finishing pass + consolidation of v40/v41 mobile overrides.
+   Desktop rules and the completed Block 3 alignment model remain unchanged. */
+
+/* Natural No./name/type flow on all widths; remove old fixed-character offsets. */
+#dexDetail .v19-identity{
+  display:flex!important;align-items:baseline!important;justify-content:flex-start!important;
+  flex-wrap:wrap!important;gap:4px 7px!important;
+}
+#dexDetail .v19-identity .v19-no{position:static!important;top:auto!important;margin:0!important;}
+#dexDetail .v19-identity strong{position:static!important;left:auto!important;margin:0!important;}
+#dexDetail .v19-identity .v19-type{margin:0 0 0 2px!important;}
+
+/* 3-2 toggle must be true black, not inherited translucent gray. */
+#v12Ability .v33-skill-effect-row .skill-detail-toggle{color:#000!important;opacity:1!important;}
+
+@media(max-width:620px){
+  /* Block 1 — full-width 1-4/1-5. Keep artwork size, lower its visual center slightly. */
+  #dexDetail .hero{padding:8px!important;}
+  #dexDetail .hero-top{
+    grid-template-columns:minmax(88px,29%) minmax(0,1fr)!important;
+    grid-template-rows:auto auto auto!important;
+    gap:7px 8px!important;
+  }
+  #dexDetail .hero-art{height:138px!important;min-height:138px!important;transform:translateY(8px)!important;
+  }
+  #dexDetail .hero-info{display:contents!important;}
+  #dexDetail #v12Header{grid-column:2!important;grid-row:1!important;align-self:start!important;}
+  #dexDetail .hero-info>.stats{
+    grid-column:1 / -1!important;grid-row:2!important;margin:8px 0 0!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:5px!important;
+  }
+  #dexDetail .hero-info>.stats .stat{min-height:58px!important;padding:6px 4px!important;}
+  #dexDetail .hero-info>.stats .stat small{font-size:9.5px!important;letter-spacing:-.02em!important;}
+  #dexDetail .hero-info>.stats .stat b{font-size:18px!important;}
+  #dexDetail .v12-tabs{grid-column:1 / -1!important;grid-row:3!important;}
+  #dexDetail .v12-tabs button{min-height:44px!important;font-size:13px!important;}
+
+  /* Block 2 — compact two-row rate header; column labels centered to its total height. */
+  #v12Ability .ability-card:has(#detailFoods){padding:5px 2px 10px!important;}
+  #detailFoods{margin:0!important;width:100%!important;overflow:visible!important;}
+  #detailFoods .v26-food-head,#detailFoods .v24-food-row{
+    min-width:0!important;width:100%!important;
+    grid-template-columns:minmax(100px,1.08fr) 39px 39px 39px minmax(108px,1.35fr)!important;
+    column-gap:1px!important;
+  }
+  #detailFoods .v26-food-head{min-height:48px!important;margin-bottom:0!important;}
+  #detailFoods .v26-food-rate{
+    gap:0!important;padding:0 0 0 4px!important;font-size:13px!important;line-height:1.15!important;white-space:normal!important;
+  }
+  #detailFoods .v26-food-rate strong{display:block!important;line-height:1.1!important;margin-top:2px!important;}
+  #detailFoods .v26-level-pill,#detailFoods .v26-recipe-head{
+    align-self:center!important;font-size:12px!important;line-height:1.1!important;white-space:nowrap!important;
+  }
+  #detailFoods .v24-food-row{min-height:70px!important;}
+  #detailFoods .v24-food-name{padding-left:3px!important;gap:2px!important;min-width:0!important;}
+  #detailFoods .v24-letter{margin-left:0!important;flex:0 0 auto!important;}
+  #detailFoods .v24-food-main{}
+  #detailFoods .v24-food-main b{font-size:10.5px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+  #detailFoods .v24-food-icon{font-size:18px!important;}
+  #detailFoods .v24-level{font-size:12px!important;}
+  #detailFoods .v24-recipes{gap:3px!important;justify-content:flex-start!important;overflow:hidden!important;}
+  #detailFoods .v24-placeholder{font-size:18px!important;min-width:20px!important;}
+  #detailFoods .v24-more{flex:0 0 auto!important;}
+
+  /* Block 3 — same usable width as Block 2; preserve the accepted text alignment. */
+  #v12Ability .ability-card:has(#detailSkill){padding:10px 2px!important;}
+  #v12Ability .skill-box{row-gap:4px!important;}
+  #v12Ability .skill-name{font-size:18px!important;}
+  #v12Ability .skill-rate-inline{font-size:14px!important;}
+  #v12Ability .skill-rate-inline strong{font-size:18px!important;}
+  #v12Ability .v33-skill-effect-row{row-gap:1px!important;}
+  #v12Ability .v33-skill-effect-row .skill-desc,
+  #v12Ability .v35-effect-level,#v12Ability .v35-effect-copy{font-size:15px!important;}
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{font-size:14px!important;padding-top:2px!important;padding-bottom:2px!important;}
+
+  /* Simple level tables: keep 2x3 structure but remove the oversized vertical air. */
+  #v12Ability .skill-levels.open{padding-top:4px!important;margin-top:3px!important;}
+  #v12Ability .v32-skill-grid{gap:0 10px!important;}
+  #v12Ability .v32-skill-cell{
+    grid-template-columns:44px 1fr!important;min-height:30px!important;
+    padding:2px 4px!important;font-size:13px!important;line-height:1.25!important;
+  }
+  #v12Ability .v32-skill-cell>.skill-var{font-size:16px!important;}
+}
+@media(max-width:390px){
+  /* Keep three recipe previews on narrow phones; underlying recipe data remains intact. */
+  #detailFoods .v24-recipes .v24-placeholder:nth-of-type(3){display:inline-grid!important;}
+  #detailFoods .v24-recipes .v24-placeholder:nth-of-type(n+4){display:none!important;}
+}
+
+/* source: psg-v43-mobile-blocks23 */
+/* PSG v43 — smartphone Block 2/3 finishing.
+   Desktop presentation and Block 4 are intentionally untouched. */
+@media(max-width:620px){
+  /* Block 2: A/B/C + ingredient icon on phone. When an icon is not
+     registered, show the known ingredient name instead of an empty circle. */
+  #detailFoods .v26-food-head,
+  #detailFoods .v24-food-row{
+    grid-template-columns:minmax(58px,.72fr) 42px 42px 42px minmax(116px,1.48fr)!important;
+    column-gap:2px!important;
+  }
+  #detailFoods .v24-food-main:not(.name-fallback) b{display:none!important;}
+  #detailFoods .v24-food-main.name-fallback .v24-food-icon{display:none!important;}
+  #detailFoods .v24-food-main.name-fallback b{
+    display:block!important;
+    margin:0!important;
+    font-size:11px!important;
+    line-height:1.2!important;
+    text-align:center!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  #detailFoods .v24-food-name{
+    padding-left:4px!important;gap:5px!important;justify-content:flex-start!important;
+  }
+  #detailFoods .v24-food-main{display:flex!important;justify-content:flex-start!important;}
+  #detailFoods .v24-food-icon{font-size:20px!important;}
+
+  /* 2-1: three visual groups — rate / unlock level / recipes. */
+  #detailFoods .v26-food-head{
+    min-height:50px!important;
+    align-items:center!important;
+  }
+  #detailFoods .v26-food-rate{
+    grid-column:1!important;
+    display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;
+    padding-left:3px!important;
+  }
+  #detailFoods .v43-food-title{
+    display:flex!important;align-items:center!important;gap:3px!important;
+    font-size:13px!important;font-weight:950!important;white-space:nowrap!important;
+  }
+  #detailFoods .v43-food-icon{display:inline-block!important;width:18px!important;text-align:center!important;}
+  #detailFoods .v26-food-rate strong{
+    margin:2px 0 0 21px!important; /* starts under 食, not under 🥕 */
+    font-size:16px!important;line-height:1.05!important;
+  }
+  #detailFoods .v43-unlock-head{
+    grid-column:2 / 5!important;
+    align-self:stretch!important;
+    display:grid!important;grid-template-rows:1fr 1fr!important;
+    align-items:center!important;justify-items:stretch!important;
+    font-size:12px!important;font-weight:950!important;line-height:1!important;
+  }
+  #detailFoods .v43-unlock-head>span:first-child{
+    align-self:end!important;justify-self:center!important;padding-bottom:3px!important;white-space:nowrap!important;
+  }
+  #detailFoods .v43-unlock-levels{
+    align-self:start!important;display:grid!important;grid-template-columns:repeat(3,42px)!important;
+    justify-content:center!important;text-align:center!important;padding-top:3px!important;
+  }
+  #detailFoods .v43-unlock-levels b{font-size:12px!important;font-weight:950!important;}
+  #detailFoods .v26-recipe-head{
+    grid-column:5!important;align-self:center!important;justify-self:center!important;
+    width:100%!important;text-align:center!important;font-size:12px!important;line-height:1.1!important;
+  }
+
+  /* Block 3: make 3-1 + 3-2 read as one compact skill unit. */
+  #v12Ability .ability-card:has(#detailSkill){padding-bottom:7px!important;}
+  #v12Ability .skill-box{}
+  #v12Ability .v33-skill-effect-row{
+    margin-top:0!important;padding-top:1px!important;row-gap:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    margin-top:0!important;margin-bottom:0!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{
+    margin-top:0!important;padding-top:1px!important;padding-bottom:1px!important;line-height:1.25!important;
+  }
+  #v12Ability .skill-levels.open{padding-top:2px!important;}
+
+  /* Short/simple Lv.2–Lv.7: Lv.2–4 left, Lv.5–7 right. */
+  #v12Ability .v32-skill-grid.v43-compact-3{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(3,auto)!important;
+    grid-auto-flow:column!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell{
+    grid-template-columns:auto 1fr!important;
+    min-height:25px!important;
+    column-gap:4px!important;font-size:12px!important;line-height:1.15!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell>.skill-var{font-size:14px!important;}
+
+  /* Medium detail falls back to 2 columns; long/complex content remains content-driven. */
+  #v12Ability .v32-skill-grid.v43-compact-2{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:2px 8px!important;
+  }
+  #v12Ability .v32-skill-grid.v43-detail-long{
+    display:grid!important;grid-template-columns:1fr!important;gap:3px!important;
+  }
+}
+
+/* source: psg-v44-mobile-ability-finish */
+@media(max-width:620px){
+  /* 1-3: image + quantity / sleep type / specialty, all one line.
+     berryImage can be supplied by master data later; emoji is only the current fallback. */
+  #dexDetail .v19-traits{
+    gap:5px!important;
+  }
+  #dexDetail .v19-traits span{
+    min-height:38px!important;
+    padding:5px 4px!important;
+    gap:4px!important;
+    font-size:12px!important;
+  }
+  #dexDetail .v19-traits .v44-berry-trait b{font-size:13px!important;font-weight:950!important;}
+  #dexDetail .v44-berry-visual{
+    width:24px!important;height:24px!important;flex:0 0 24px!important;
+    padding:0!important;overflow:visible!important;font-size:20px!important;
+  }
+  #dexDetail .v44-berry-visual img{
+    display:block!important;width:24px!important;height:24px!important;object-fit:contain!important;
+  }
+
+  /* 3 block root fix:
+     stop using the legacy grid for the skill box on phone.
+     Normal document flow now determines the 3-1 -> 3-2 distance. */
+  #v12Ability .skill-box{
+    width:100%!important;
+  }
+  #v12Ability .skill-top{
+    display:block!important;
+    width:100%!important;
+  }
+  #v12Ability .v33-skill-effect-row{
+    width:100%!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    display:grid!important;
+    grid-template-columns:auto minmax(0,1fr)!important;
+    align-items:baseline!important;
+    column-gap:9px!important;
+    width:100%!important;
+    line-height:1.42!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-detail-toggle{
+    display:block!important;
+    width:auto!important;
+    min-width:118px!important;
+    margin:1px 0 0 auto!important;
+    padding:5px 2px 4px 18px!important;
+    text-align:right!important;
+    line-height:1.2!important;
+    color:#000!important;
+    opacity:1!important;
+    background:transparent!important;
+    border:0!important;
+    touch-action:manipulation!important;
+  }
+  #v12Ability .skill-levels,
+  #v12Ability .skill-levels.open{
+    margin:1px 0 0!important;
+    padding:2px 0 0!important;
+  }
+  #v12Ability .skill-levels{}
+  #v12Ability .skill-levels.open{}
+
+  /* Keep v43's content-aware detail layouts, but tighten the simple case. */
+  #v12Ability .v32-skill-grid.v43-compact-3{
+    max-width:none!important;
+    gap:1px 5px!important;
+  }
+  #v12Ability .v32-skill-grid.v43-compact-3 .v32-skill-cell{
+    min-height:24px!important;
+    padding:1px 3px!important;
+  }
+}
+
+/* source: psg-v49-mobile-polish */
+/* PSG v49 — cleanup polish only.
+   Consolidates the v45–v47 smartphone overrides into one valid cascade layer.
+   No reserved new feature (such as max carry) is added here. */
+@media(max-width:620px){
+  /* 1-4: visual centering by the whole stat, not by label text excluding the icon. */
+  #dexDetail .hero-info>.stats .stat{
+  }
+  #dexDetail .hero-info>.stats .stat small{
+  }
+  #dexDetail .hero-info>.stats .v45-stat-icon,
+  #dexDetail .hero-info>.stats .v45-stat-text{
+    display:inline!important;
+    width:auto!important;
+    min-width:0!important;
+    text-align:inherit!important;
+  }
+  #dexDetail .hero-info>.stats .stat>b{
+  }
+
+  /* Probability values are neutral information, not semantic effect colors. */
+  #dexDetail .hero-info>.stats .stat:nth-child(2)>b,
+  #dexDetail .hero-info>.stats .stat:nth-child(3)>b,
+  #detailFoods .v26-food-rate>strong,
+  #v12Ability .skill-rate-inline,
+  #v12Ability .skill-rate-inline strong{color:#111!important;}
+
+  /* Block 3: four explicit visual rows: title/rate, Lv.1, toggle, detail. */
+  #v12Ability .ability-card:has(#detailSkill){
+    padding-top:6px!important;
+    padding-bottom:5px!important;
+  }
+  #v12Ability .skill-box{display:block!important;margin:0!important;padding:0!important;}
+  #v12Ability .skill-top{margin:0!important;padding:0!important;}
+  #v12Ability .v33-skill-effect-row{
+    display:block!important;
+    margin:3px 0 0!important;
+    padding:0 0 0 25px!important;
+  }
+  #v12Ability .v33-skill-effect-row .skill-desc{
+    padding:0!important;
+  }
+  #v12Ability .v47-skill-toggle-row{
+    display:flex!important;
+    justify-content:flex-end!important;
+    align-items:center!important;
+    width:100%!important;
+    min-height:25px!important;
+    margin:1px 0 0!important;
+    padding:0 8px 0 25px!important;
+  }
+  #v12Ability .v47-skill-toggle-row .skill-detail-toggle{
+    display:block!important;
+    width:auto!important;
+    min-width:126px!important;
+    margin:0!important;
+    padding:4px 0 4px 18px!important;
+    border:0!important;
+    background:transparent!important;
+    color:#000!important;
+    opacity:1!important;
+    text-align:right!important;
+    font-size:14px!important;
+    line-height:1.2!important;
+    touch-action:manipulation!important;
+  }
+  #v12Ability .skill-levels,
+  #v12Ability .skill-levels.open{width:100%!important;margin:0!important;padding:0!important;}
+  #v12Ability .skill-levels{display:none!important;}
+  #v12Ability .skill-levels.open{display:block!important;}
+  #v12Ability .v32-skill-grid.v43-compact-3{margin:0!important;row-gap:1px!important;}
+
+  /* Tighten only the transition into Block 4; Block 4 internals stay untouched. */
+  #v12Ability .ability-card:has(#detailSkill){margin-bottom:5px!important;}
+  #evolutionCard{margin-top:5px!important;}
+}
+

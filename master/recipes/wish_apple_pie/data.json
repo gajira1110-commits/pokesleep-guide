@@ -1,0 +1,5 @@
+{
+  "id": "wish_apple_pie", "name": "ねがいごとアップルパイ", "category": "デザート・ドリンク",
+  "ingredients": [{"ingredientId": "moomoo_milk", "qty": 4}, {"ingredientId": "fancy_apple", "qty": 12}],
+  "energy": {"min": {"level": 1, "value": 1748}, "max": {"level": 70, "value": 6258}}
+}

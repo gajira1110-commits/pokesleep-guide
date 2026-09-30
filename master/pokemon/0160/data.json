@@ -1,0 +1,77 @@
+{
+  "no": 160,
+  "name": "オーダイル",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "オレンのみ",
+  "berryQty": 2,
+  "help": 2800,
+  "carry": 29,
+  "foodRate": 25.7,
+  "skillRate": 5.5,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0160_01",
+      "name": "はんきゅう寝",
+      "stars": 1
+    },
+    {
+      "id": "0160_02",
+      "name": "いかく寝",
+      "stars": 2
+    },
+    {
+      "id": "0160_03",
+      "name": "おおぐちあけ寝",
+      "stars": 3
+    },
+    {
+      "id": "0160_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

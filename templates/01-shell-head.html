@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>PokéSleep Guide — Review v186</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="psg-specialty-image-data">/* PSG_BUILD_SPECIALTY_IMAGES */</script>
+<script id="psg-image-files">
+/* 画像を後から入れる場所。画像ファイルはHTMLと同じ公開先の assets/ に置く。
+   例: pokemon: { 1: 'assets/pokemon/001.png' }
+   未登録は空のままにする。権利を確認できたファイルだけ指定する。
+   pokemonFaces は図鑑カード専用。省略時は pokemon の画像を共用する。
+   skills / recipes / sleepStyles / fields は今後の各画面を作る際の予約欄。 */
+window.PS_IMAGE_FILES = {
+  pokemon: {},       // 図鑑No. -> 詳細・進化・図鑑カード共通
+  pokemonFaces: {},  // 図鑑No. -> 顔を中心にしたカード専用画像（任意）
+  ingredients: {},   // 正式な食材名 -> 図鑑と詳細の食材アイコン
+  berries: {},       // きのみ名 -> 詳細上部のきのみアイコン
+  types: {},         // タイプ名 -> フィルターなどのタイプアイコン
+  skills: {},        // スキルID -> 詳細のスキル固有アイコン
+  recipes: {},       // レシピID -> 対応料理（表示実装時に接続）
+  sleepStyles: {},   // 寝顔ID -> 写真ファイル（寝顔名・★はPS_CATALOGに置く）
+  fields: {},        // フィールドID -> フィールドタブ（表示実装時に接続）
+  subskills: {}      // サブスキル名 -> 小型バッジ
+};
+</script>
+<script id="psg-image-filename-preview">
+/* 'public': plain English placeholder. 'development': preview the intended filename.
+   Keep public mode when promoting a reviewed version to the official release. */
+window.PS_IMAGE_PREVIEW_MODE = 'public';
+window.PS_DEV_ASSETS = {
+  ingredientIds:{'あまいミツ':'honey','あんみんトマト':'tomato','ほっこりポテト':'potato','マメミート':'bean_meat','あったかジンジャー':'warming_ginger','げきからハーブ':'fiery_herb','ワカクサ大豆':'greengrass_soybeans','とくせんリンゴ':'fancy_apple','リラックスカカオ':'soothing_cacao','モーモーミルク':'moomoo_milk','ワカクサコーン':'greengrass_corn','ピュアなオイル':'pure_oil','とくせんエッグ':'fancy_egg','あじわいキノコ':'tasty_mushroom','つやつやアボカド':'shiny_avocado','ずっしりカボチャ':'plump_pumpkin'},
+  berryIds:{'ドリのみ':'dori','ヒメリのみ':'himeri','ラムのみ':'ramu'},
+  path(kind,id,role='full'){
+    if(kind==='pokemon')return `assets/pokemon/${String(id).padStart(4,'0')}_default_${role}.webp`;
+    const group=kind==='ingredient'?'ingredients':kind==='berry'?'berries':'skills';
+    const key=kind==='ingredient'?this.ingredientIds[id]:kind==='berry'?this.berryIds[id]:id;
+    return key?`assets/${group}/${key}.webp`:null;
+  },
+  preview(path,small=false){
+    const development=window.PS_IMAGE_PREVIEW_MODE==='development';
+    const filename=path.split('/').pop();
+    const split=filename.lastIndexOf('_');
+    const lines=development?(small?[filename]:split>0?[filename.slice(0,split+1),filename.slice(split+1)]:[filename]):['No image'];
+    const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+    const text=lines.map((line,i)=>`<text x="100" y="${small?111:lines.length===1?108:90+i*29}" text-anchor="middle" font-size="${small?Math.max(12,Math.min(21,160/line.length*2)):line.length>17?13:17}" font-weight="700" fill="#374e49">${esc(line)}</text>`).join('');
+    const heading=development?`<text x="100" y="${small?63:57}" text-anchor="middle" font-size="${small?26:21}" fill="#729288">画像待ち</text>`:'';
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect x="3" y="3" width="194" height="194" rx="20" fill="#f8faf8" stroke="#adbbb3" stroke-width="3" stroke-dasharray="6 5"/>${heading}${text}</svg>`;
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  },
+  title(path){return window.PS_IMAGE_PREVIEW_MODE==='development'?path||'':''},
+  image(src,kind,id,role='full',alt=''){
+    if(kind==='pokemon'&&role==='face'&&window.PS_FACE_ART?.usesSheet(id))return window.PS_FACE_ART.html(id,alt);
+    const path=this.path(kind,id,role);
+    if(!src&&!path)return '';
+    const url=src||this.preview(path,kind!=='pokemon');
+    return `<img class="${src?'':'psg-asset-preview'}" src="${url}" alt="${alt}" title="${this.title(path)}"${src&&path?` data-preview-path="${path}"`:''}>`;
+  }
+};
+document.addEventListener('error',event=>{
+  const img=event.target;
+  if(img instanceof HTMLImageElement&&img.dataset.previewPath){
+    img.src=window.PS_DEV_ASSETS.preview(img.dataset.previewPath);
+    img.classList.add('psg-asset-preview');
+    delete img.dataset.previewPath;
+  }
+},true);
+</script>
+<script id="psg-face-sheet">
+/* PSG_BUILD_FACE_SCRIPT */
+</script>
+<script id="psg-catalog">
+/* One generated catalog supplies the Dex list and detail renderer. */
+/* PSG_BUILD_CATALOG */
+for(const [no,styles] of Object.entries(window.PS_CATALOG.sleepStyles)){
+  window.PS_CATALOG.sleepStyles[no]=styles.map(([name,stars,explicitId],index)=>{
+    const id=explicitId||`${String(no).padStart(4,'0')}_${String(index+1).padStart(2,'0')}`;
+    return {id,stars,name,image:window.PS_IMAGE_FILES.sleepStyles[id]||`assets/sleep/${id}.webp`};
+  });
+}
+/* Render-only preview rows are derived from the verified slot candidates.
+   The complete candidate sets remain in ingredientSlots for future screens. */
+for(const pokemon of Object.values(window.PS_CATALOG.pokemon)){
+  const assets=window.PS_IMAGE_FILES;
+  pokemon.image=assets.pokemon[pokemon.no]||pokemon.image||null;
+  pokemon.faceImage=assets.pokemonFaces[pokemon.no]||pokemon.image;
+  pokemon.berryImage=assets.berries[pokemon.berry]||pokemon.berryImage||null;
+  if(!pokemon.ingredientSlots)continue;
+  const rows=new Map();
+  pokemon.ingredientSlots.forEach((slot,levelIndex)=>{
+    for(const candidate of slot.candidates){
+      if(!rows.has(candidate.name))rows.set(candidate.name,[null,null,null]);
+      rows.get(candidate.name)[levelIndex]=candidate.qty;
+    }
+  });
+  pokemon.ingredients=[...rows].map(([name,qty],i)=>({slot:["A","B","C"][i],name,qty}));
+}
+for(const [name,image] of Object.entries(window.PS_IMAGE_FILES.ingredients)){
+  window.PS_CATALOG.ingredientAssets[name]={...window.PS_CATALOG.ingredientAssets[name],image};
+}
+for(const [id,image] of Object.entries(window.PS_IMAGE_FILES.skills)){
+  if(window.PS_CATALOG.skills[id])window.PS_CATALOG.skills[id].image=image;
+}
+window.PS_CATALOG.recipesByIngredient={};
+for(const recipe of Object.values(window.PS_CATALOG.recipes)){
+  recipe.image=window.PS_IMAGE_FILES.recipes[recipe.id]||null;
+  for(const ingredient of recipe.ingredients){
+    (window.PS_CATALOG.recipesByIngredient[ingredient.name]??=[]).push({id:recipe.id,name:recipe.name,image:recipe.image,amount:ingredient.qty});
+  }
+}
+window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name]||null;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
+</head>
+<body>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v186</small></header>
+<main>

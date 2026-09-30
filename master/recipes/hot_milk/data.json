@@ -1,0 +1,5 @@
+{
+  "id": "hot_milk", "name": "モーモーホットミルク", "category": "デザート・ドリンク",
+  "ingredients": [{"ingredientId": "moomoo_milk", "qty": 7}],
+  "energy": {"min": {"level": 1, "value": 814}, "max": {"level": 70, "value": 2914}}
+}

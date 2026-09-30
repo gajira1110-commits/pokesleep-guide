@@ -1,0 +1,19 @@
+{
+  "status": "community-verified",
+  "source": "https://wikiwiki.jp/poke_sleep/%E3%81%9B%E3%81%84%E3%81%8B%E3%81%8F",
+  "factors": {
+    "speed": {"up": 0.9, "down": 1.075, "meaning": "おてつだい時間"},
+    "energy": {"up": 1.2, "down": 0.88, "meaning": "げんき回復量"},
+    "food": {"up": 1.2, "down": 0.8, "meaning": "食材確率", "status": "estimated"},
+    "skill": {"up": 1.2, "down": 0.8, "meaning": "スキル確率", "status": "estimated"},
+    "exp": {"up": 1.18, "down": 0.82, "meaning": "EXP獲得量"}
+  },
+  "axes": ["speed", "energy", "food", "skill", "exp"],
+  "rows": [
+    ["がんばりや", "さみしがり", "いじっぱり", "やんちゃ", "ゆうかん"],
+    ["ずぶとい", "すなお", "わんぱく", "のうてんき", "のんき"],
+    ["ひかえめ", "おっとり", "てれや", "うっかりや", "れいせい"],
+    ["おだやか", "おとなしい", "しんちょう", "きまぐれ", "なまいき"],
+    ["おくびょう", "せっかち", "ようき", "むじゃき", "まじめ"]
+  ]
+}

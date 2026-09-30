@@ -1,0 +1,28 @@
+{
+  "no": 24,
+  "name": "アーボック",
+  "type": "どく",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "カゴのみ",
+  "berryQty": 2,
+  "help": 3400,
+  "carry": 19,
+  "foodRate": 26.4,
+  "skillRate": 5.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "bean_meat", "qty": 1}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "bean_meat", "qty": 2}, {"ingredientId": "fancy_egg", "qty": 2}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "bean_meat", "qty": 4}, {"ingredientId": "fancy_egg", "qty": 3}, {"ingredientId": "fiery_herb", "qty": 3}]}
+  ],
+  "sleepStyles": [
+    {"id": "0024_01", "name": "とぐろ寝", "stars": 1},
+    {"id": "0024_02", "name": "かたむき寝", "stars": 2},
+    {"id": "0024_03", "name": "ほぐれ寝", "stars": 3},
+    {"id": "0024_04", "name": "おなかのうえ寝", "stars": 4}
+  ]
+}

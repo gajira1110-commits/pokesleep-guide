@@ -1,0 +1,30 @@
+{
+  "id": "energy_for_everyone_s",
+  "name": "げんきオールS",
+  "maxLevel": 6,
+  "tags": [
+    "げんき",
+    "チーム"
+  ],
+  "effectType": "team_energy_recovery",
+  "levels": {
+    "1": {
+      "recovery": 5
+    },
+    "2": {
+      "recovery": 7
+    },
+    "3": {
+      "recovery": 9
+    },
+    "4": {
+      "recovery": 11
+    },
+    "5": {
+      "recovery": 15
+    },
+    "6": {
+      "recovery": 18
+    }
+  }
+}

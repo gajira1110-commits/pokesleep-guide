@@ -1,0 +1,17 @@
+{
+  "no": 26, "name": "ライチュウ", "type": "でんき", "sleepType": "すやすや", "specialty": "きのみ",
+  "berry": "ウブのみ", "berryQty": 2, "help": 2200, "carry": 31,
+  "foodRate": 22.4, "skillRate": 3.2, "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed", "dexVisible": true, "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "fancy_apple", "qty": 1}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "fancy_apple", "qty": 2}, {"ingredientId": "warming_ginger", "qty": 2}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "fancy_apple", "qty": 4}, {"ingredientId": "warming_ginger", "qty": 3}, {"ingredientId": "fancy_egg", "qty": 3}]}
+  ],
+  "sleepStyles": [
+    {"id":"0026_01","name":"しっぽゆらゆら寝","stars":1},
+    {"id":"0026_02","name":"すわり寝","stars":2},
+    {"id":"0026_03","name":"しっぽアース寝","stars":3},
+    {"id":"0026_04","name":"おなかのうえ寝","stars":4}
+  ]
+}

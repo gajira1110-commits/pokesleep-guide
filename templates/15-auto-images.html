@@ -1,0 +1,74 @@
+<script id="psg-auto-image-paths">
+/* Only verified species and registered asset IDs are queried. Missing files leave the existing UI alone. */
+(()=>{'use strict';
+const catalog=window.PS_CATALOG;
+const assets=window.PS_DEV_ASSETS;
+const explicit=window.PS_IMAGE_FILES;
+const lookup=new Map();
+function exists(path){
+  if(!path)return Promise.resolve(false);
+  if(lookup.has(path))return lookup.get(path);
+  const task=new Promise(resolve=>{
+    const image=new Image();
+    image.onload=()=>resolve(image.naturalWidth>0);
+    image.onerror=()=>resolve(false);
+    image.src=path;
+  });
+  lookup.set(path,task);
+  return task;
+}
+const jobs=[];
+function tryPath(path,apply){jobs.push(exists(path).then(ok=>{if(ok){apply(path);return true}return false}))}
+window.PS_TYPE_IMAGES={...window.PS_IMAGE_FILES.types};
+const typeSheet=new Image();
+if(Object.keys(window.PS_TYPE_IMAGES).length<18)jobs.push(new Promise(resolve=>{
+ typeSheet.onload=()=>{
+  const names=['ノーマル','ほのお','みず','くさ','でんき','こおり','かくとう','どく','じめん','ひこう','エスパー','むし','いわ','ゴースト','ドラゴン','あく','はがね','フェアリー'];
+  const width=typeSheet.naturalWidth/6,height=typeSheet.naturalHeight/3;
+  names.forEach((name,index)=>{
+   const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;
+   const context=canvas.getContext('2d');context.imageSmoothingEnabled=false;
+   context.drawImage(typeSheet,(index%6)*width,Math.floor(index/6)*height,width,height,0,0,64,64);
+   if(!window.PS_TYPE_IMAGES[name])window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
+  });resolve(true);
+ };
+ typeSheet.onerror=()=>resolve(false);
+ typeSheet.src=/* PSG_BUILD_TYPE_SHEET */;
+}));
+for(const pokemon of Object.values(catalog.pokemon)){
+  if(!explicit.pokemon[pokemon.no]&&!pokemon.image){
+    tryPath(assets.path('pokemon',pokemon.no,'full'),path=>{pokemon.image=path;if(!explicit.pokemonFaces[pokemon.no]&&!pokemon.faceImage)pokemon.faceImage=path});
+  }
+  if(!explicit.pokemonFaces[pokemon.no]){
+    tryPath(assets.path('pokemon',pokemon.no,'face'),path=>{pokemon.faceImage=path});
+  }
+  if(pokemon.berry&&!explicit.berries[pokemon.berry]&&!pokemon.berryImage){
+    tryPath(assets.path('berry',pokemon.berry),path=>{pokemon.berryImage=path});
+  }
+  for(const slot of pokemon.ingredientSlots||[])for(const candidate of slot.candidates||[]){
+    const name=candidate.name,visual=catalog.ingredientAssets[name];
+    if(!name||explicit.ingredients[name]||visual?.image)continue;
+    tryPath(assets.path('ingredient',name),path=>{
+      const current=catalog.ingredientAssets[name]||{};
+      catalog.ingredientAssets[name]={...current,image:path};
+    });
+  }
+  const skill=catalog.skills[pokemon.mainSkillId];
+  if(skill&&!explicit.skills[skill.id]&&!skill.image){
+    tryPath(assets.path('skill',skill.id),path=>{skill.image=path});
+  }
+}
+window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
+  if(found.some(Boolean)){
+    window.PS?.renderFilters();window.PS?.renderDex();window.PS?.renderBox();
+    if(document.getElementById('boxDetail')?.classList.contains('active'))window.PS?.refreshBoxDetail?.();
+    if(document.getElementById('dexDetail')?.classList.contains('active')){
+      const label=document.getElementById('detailNoName')?.textContent||'';
+      const no=Number(label.match(/No\.?\s*(\d+)/i)?.[1]);
+      if(no)window.openPokemonDetail?.(no);
+    }
+  }
+  return {found:found.filter(Boolean).length,checked:lookup.size};
+})};
+})();
+</script>

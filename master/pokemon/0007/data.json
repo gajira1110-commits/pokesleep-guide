@@ -1,0 +1,18 @@
+{
+  "no": 7, "name": "ゼニガメ", "type": "みず", "sleepType": "ぐっすり", "specialty": "食材",
+  "berry": "オレンのみ", "berryQty": 1, "help": 4500, "carry": 10,
+  "foodRate": 27.1, "skillRate": 2.0, "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s", "dexVisible": true, "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {"unlock": 1, "candidates": [{"ingredientId": "moomoo_milk", "qty": 2}]},
+    {"unlock": 30, "candidates": [{"ingredientId": "moomoo_milk", "qty": 5}, {"ingredientId": "soothing_cacao", "qty": 3}]},
+    {"unlock": 60, "candidates": [{"ingredientId": "moomoo_milk", "qty": 7}, {"ingredientId": "soothing_cacao", "qty": 5}, {"ingredientId": "bean_meat", "qty": 7}]}
+  ],
+  "evolution": {"toNo": 8, "to": "カメール", "level": 12, "candy": 40},
+  "sleepStyles": [
+    {"id":"0007_01","name":"からにこもる寝","stars":1},
+    {"id":"0007_02","name":"こもらない寝","stars":2},
+    {"id":"0007_03","name":"ひっくりかえり寝","stars":3},
+    {"id":"0007_04","name":"おなかのうえ寝","stars":4}
+  ]
+}

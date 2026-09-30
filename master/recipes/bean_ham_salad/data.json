@@ -1,0 +1,21 @@
+{
+  "id": "bean_ham_salad",
+  "name": "マメハムサラダ",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "qty": 8,
+      "ingredientId": "bean_meat"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 978
+    },
+    "max": {
+      "level": 70,
+      "value": 3501
+    }
+  }
+}

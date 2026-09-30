@@ -1,0 +1,85 @@
+{
+  "no": 11,
+  "name": "トランセル",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ラムのみ",
+  "help": 4200,
+  "carry": 18,
+  "foodRate": 20.8,
+  "skillRate": 1.8,
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "qty": 1,
+          "ingredientId": "honey"
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "qty": 2,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 2,
+          "ingredientId": "tomato"
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "qty": 4,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 3,
+          "ingredientId": "tomato"
+        },
+        {
+          "qty": 4,
+          "ingredientId": "greengrass_soybeans"
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 12,
+    "to": "バタフリー",
+    "level": 8,
+    "candy": 80
+  },
+  "sleepStyles": [
+    {
+      "id": "0011_01",
+      "name": "じっと寝",
+      "stars": 1
+    },
+    {
+      "id": "0011_02",
+      "name": "ゆらゆら寝",
+      "stars": 2
+    },
+    {
+      "id": "0011_03",
+      "name": "かたくなる寝",
+      "stars": 3
+    },
+    {
+      "id": "0011_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "berryQty": 2,
+  "rateStatus": "推定"
+}

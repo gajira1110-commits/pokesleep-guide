@@ -1,0 +1,95 @@
+{
+  "no": 79,
+  "name": "ヤドン",
+  "type": "みず",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 5700,
+  "carry": 9,
+  "foodRate": 15.1,
+  "skillRate": 7.8,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0079_01",
+      "name": "ぐでぐで寝",
+      "stars": 1
+    },
+    {
+      "id": "0079_02",
+      "name": "ぼーっと寝",
+      "stars": 2
+    },
+    {
+      "id": "0079_03",
+      "name": "まぬけだ寝",
+      "stars": 3
+    },
+    {
+      "id": "0079_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": [
+    {
+      "toNo": 80,
+      "to": "ヤドラン",
+      "level": 28,
+      "candy": 40
+    },
+    {
+      "toNo": 199,
+      "to": "ヤドキング",
+      "item": "おうじゃのしるし",
+      "extra": "つながりのヒモ",
+      "candy": 80
+    }
+  ]
+}

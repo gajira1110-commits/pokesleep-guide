@@ -1,0 +1,82 @@
+{
+  "no": 158,
+  "name": "ワニノコ",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "オレンのみ",
+  "berryQty": 2,
+  "help": 4500,
+  "carry": 11,
+  "foodRate": 25.3,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 159,
+    "to": "アリゲイツ",
+    "level": 14,
+    "candy": 40
+  },
+  "sleepStyles": [
+    {
+      "id": "0158_01",
+      "name": "はんきゅう寝",
+      "stars": 1
+    },
+    {
+      "id": "0158_02",
+      "name": "あまがみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0158_03",
+      "name": "おおぐちあけ寝",
+      "stars": 3
+    },
+    {
+      "id": "0158_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

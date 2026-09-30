@@ -1,0 +1,33 @@
+{
+  "id": "stomping_guacamole_chips",
+  "name": "じならしワカモレチップス",
+  "category": "サラダ",
+  "ingredients": [
+    {
+      "qty": 22,
+      "ingredientId": "greengrass_soybeans"
+    },
+    {
+      "qty": 30,
+      "ingredientId": "fiery_herb"
+    },
+    {
+      "qty": 25,
+      "ingredientId": "greengrass_corn"
+    },
+    {
+      "qty": 28,
+      "ingredientId": "shiny_avocado"
+    }
+  ],
+  "energy": {
+    "min": {
+      "level": 1,
+      "value": 25162
+    },
+    "max": {
+      "level": 70,
+      "value": 90080
+    }
+  }
+}

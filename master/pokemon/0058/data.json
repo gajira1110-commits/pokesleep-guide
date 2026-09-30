@@ -1,0 +1,86 @@
+{
+  "no": 58,
+  "name": "ガーディ",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ヒメリのみ",
+  "berryQty": 1,
+  "help": 4300,
+  "carry": 8,
+  "foodRate": 13.8,
+  "skillRate": 5.0,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0058_01",
+      "name": "のび寝",
+      "stars": 1
+    },
+    {
+      "id": "0058_02",
+      "name": "おすわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0058_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0058_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 59,
+    "to": "ウインディ",
+    "item": "ほのおのいし",
+    "candy": 80
+  }
+}

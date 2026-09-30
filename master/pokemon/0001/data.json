@@ -1,0 +1,86 @@
+{
+  "no": 1,
+  "name": "フシギダネ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 4400,
+  "carry": 11,
+  "foodRate": 25.7,
+  "skillRate": 1.9,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "qty": 2,
+          "ingredientId": "honey"
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "qty": 5,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 4,
+          "ingredientId": "tomato"
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "qty": 7,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 7,
+          "ingredientId": "tomato"
+        },
+        {
+          "qty": 6,
+          "ingredientId": "potato"
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 2,
+    "to": "フシギソウ",
+    "level": 12,
+    "candy": 40
+  },
+  "sleepStyles": [
+    {
+      "id": "0001_01",
+      "name": "こうごうせい寝",
+      "stars": 1
+    },
+    {
+      "id": "0001_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0001_03",
+      "name": "ツルだし寝",
+      "stars": 3
+    },
+    {
+      "id": "0001_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "no": 80,
+  "name": "ヤドラン",
+  "type": "みず",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3800,
+  "carry": 21,
+  "foodRate": 19.7,
+  "skillRate": 8.0,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0080_01",
+      "name": "なかよし寝",
+      "stars": 1
+    },
+    {
+      "id": "0080_02",
+      "name": "よだれ寝",
+      "stars": 2
+    },
+    {
+      "id": "0080_03",
+      "name": "しっぽかまれ寝",
+      "stars": 3
+    },
+    {
+      "id": "0080_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

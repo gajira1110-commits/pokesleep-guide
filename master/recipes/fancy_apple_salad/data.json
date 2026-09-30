@@ -1,0 +1,7 @@
+{
+  "id": "fancy_apple_salad",
+  "name": "とくせんリンゴサラダ",
+  "category": "サラダ",
+  "ingredients": [{"ingredientId": "fancy_apple", "qty": 8}],
+  "energy": {"min": {"level": 1, "value": 855}, "max": {"level": 70, "value": 3061}}
+}

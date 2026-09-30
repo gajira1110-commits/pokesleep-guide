@@ -1,0 +1,86 @@
+{
+  "no": 39,
+  "name": "プリン",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "モモンのみ",
+  "berryQty": 1,
+  "help": 3900,
+  "carry": 14,
+  "foodRate": 18.2,
+  "skillRate": 4.3,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 40,
+    "to": "プクリン",
+    "item": "つきのいし",
+    "candy": 80
+  },
+  "sleepStyles": [
+    {
+      "id": "0039_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0039_02",
+      "name": "ぼんやり寝",
+      "stars": 2
+    },
+    {
+      "id": "0039_03",
+      "name": "うたう寝",
+      "stars": 3
+    },
+    {
+      "id": "0039_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ]
+}

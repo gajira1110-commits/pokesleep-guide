@@ -1,0 +1,77 @@
+{
+  "no": 245,
+  "name": "スイクン",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "specialTeamLimited": true,
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 17,
+  "foodRate": 27.7,
+  "skillRate": 2.6,
+  "rateStatus": "推定",
+  "mainSkillId": "helper_boost_water",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0245_01",
+      "name": "ちからため寝",
+      "stars": 1
+    },
+    {
+      "id": "0245_02",
+      "name": "めいそう寝",
+      "stars": 2
+    },
+    {
+      "id": "0245_03",
+      "name": "きたかぜ寝",
+      "stars": 3
+    }
+  ],
+  "evolution": null
+}
