@@ -7,6 +7,7 @@ on:
       - 'master/**'
       - 'templates/**'
       - 'styles/**'
+      - 'vendor/enigma-swap/**'
       - 'PSG_face_sheet.js'
       - 'PSG_build_master.py'
       - 'PSG_import_cooking.py'

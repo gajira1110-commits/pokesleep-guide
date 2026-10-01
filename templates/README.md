@@ -16,6 +16,7 @@
 | `09-dex-detail.html` | 図鑑詳細 |
 | `10-box-detail.html` | 個体詳細 |
 | `11-navigation.html` | ナビゲーションと共通の画面構造 |
+| `12-swap-engine.html` | 原本ES modulesからビルドする独立の通常おてつだい・交代計算 |
 | `12-core-controller.html` | 共通状態・保存キー・ボックス読込保存、クロージャの開始 |
 | `core/02-team.html` | チーム保存読み込み・構成・食材候補の集計 |
 | `team/02-food-view.html` | チームの食材・対応料理表示 |
@@ -28,6 +29,7 @@
 | `core/07-corrections.html` | レベル上限・サブスキル解放・性格と個体補正・チーム速度補正 |
 | `core/08-fields.html` | フィールド選択・一覧・寝顔出現・好物・今週の料理の操作 |
 | `core/09-day-view.html` | ホームの日産予想表示・キャンプ・食事・起床時げんきの操作 |
+| `team/05-swap-assist.html` | Box対応・3食不足・非同期交代探索・条件変更時キャンセル |
 | `21-day-calculator.html` | ホームとボックス共通の日産近似計算 |
 | `19-box-detail-controller.html` | ボックス詳細の共通参照・開く入口 |
 | `box/02-daily-forecast.html` | 日産予想の接続・食材とスキル予想表示 |

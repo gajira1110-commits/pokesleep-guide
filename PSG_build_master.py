@@ -1,5 +1,6 @@
 """Validate master folders and produce the GitHub Pages review with external image assets."""
 import json
+import re
 from pathlib import Path
 
 from PSG_image_assets import image_path, face_sheet_script
@@ -21,6 +22,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '09-dex-detail.html',
     '10-box-detail.html',
     '11-navigation.html',
+    '12-swap-engine.html',
     '12-core-controller.html',
     'core/02-team.html',
     'team/02-food-view.html',
@@ -35,6 +37,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'core/08-fields.html',
     'core/09-day-view.html',
     '21-day-calculator.html',
+    'team/05-swap-assist.html',
     '19-box-detail-controller.html',
     'box/02-daily-forecast.html',
     'box/03-view.html',
@@ -82,6 +85,7 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '12-recipe-evaluation.css',
     '13-daily-supply.css',
     '14-ingredients.css',
+    '15-swap-assist.css',
 ))
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
@@ -314,6 +318,17 @@ def catalog_and_images():
     return catalog, images
 
 
+def swap_engine():
+    folder = ROOT / 'vendor/enigma-swap'
+    daily = re.sub(r'\bexport ', '', (folder / 'daily-supply.mjs').read_text())
+    swap = re.sub(r'^import .*?;\n', '', (folder / 'swap-assist.mjs').read_text(), count=1)
+    swap = re.sub(r'\bexport ', '', swap)
+    return ('window.PS_SWAP_ENGINE=(()=>{const daily=(()=>{' + daily +
+            '\nreturn {modifiers,selectSlots,InputError,countEvents,BASELINE,ribbon};})();' +
+            '\nconst {modifiers,selectSlots,InputError,countEvents,BASELINE}=daily;\n' + swap +
+            '\nreturn {simulateTeam,evaluateSwap,findSwapOptionsAsync,berryUnitEnergy,ribbon:daily.ribbon};})();')
+
+
 def build():
     catalog, images = catalog_and_images()
     core = ('help','carry','berryQty','foodRate','skillRate','ingredientSlots')
@@ -327,7 +342,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v246') == 2
+    assert source.count('Review v247') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -337,7 +352,8 @@ def build():
     css_text = ''.join(path.read_text() for path in STYLE_FILES)
     if not CSS.exists() or CSS.read_text() != css_text:
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
-    html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script)
+    assert source.count('/* PSG_BUILD_SWAP_ENGINE */') == 1
+    html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_SWAP_ENGINE */',swap_engine())
     assert MARKER not in html
     PREVIEW.write_text(html)
     print(f'{len(catalog["pokemon"])} pokemon, {len(catalog["sleepStyles"])} sleep groups, '
