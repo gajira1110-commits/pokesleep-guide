@@ -1,21 +1,17 @@
 {
-  "id": "cyan",
-  "name": "シアンの砂浜",
-  "mode": "normal",
-  "favoriteMode": "fixed",
-  "favoriteBerries": [
-    "シーヤのみ",
-    "オレンのみ",
-    "モモンのみ"
-  ],
+  "id": "cyan_ex",
+  "name": "シアンの砂浜 EX",
+  "mode": "expert",
+  "favoriteMode": "weekly_random",
+  "favoriteBerries": [],
   "encounters": [
     {
       "sleepStyleId": "0007_01",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
         "level": 1
       },
-      "drowsyPower": 418000,
       "unlockEnergy": 0,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
@@ -24,12 +20,12 @@
     },
     {
       "sleepStyleId": "0007_02",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
-        "level": 3
+        "level": 5
       },
-      "drowsyPower": 2812000,
-      "unlockEnergy": 11090,
+      "unlockEnergy": 228205,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -37,12 +33,12 @@
     },
     {
       "sleepStyleId": "0007_03",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 4
+        "level": 2
       },
-      "drowsyPower": 9918000,
-      "unlockEnergy": 81971,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -50,12 +46,12 @@
     },
     {
       "sleepStyleId": "0007_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 1
+        "level": 3
       },
-      "drowsyPower": 13490000,
-      "unlockEnergy": 36164,
+      "unlockEnergy": 548434,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -63,12 +59,12 @@
     },
     {
       "sleepStyleId": "0008_01",
+      "drowsyPower": null,
       "rank": {
-        "tier": "スーパー",
-        "level": 1
+        "tier": "ノーマル",
+        "level": 5
       },
-      "drowsyPower": 3154000,
-      "unlockEnergy": 36164,
+      "unlockEnergy": 228205,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -76,12 +72,12 @@
     },
     {
       "sleepStyleId": "0008_02",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 5
+        "level": 2
       },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 101499,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -89,12 +85,12 @@
     },
     {
       "sleepStyleId": "0008_03",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 1
+        "tier": "スーパー",
+        "level": 5
       },
-      "drowsyPower": 22154000,
-      "unlockEnergy": 256544,
+      "unlockEnergy": 860468,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -102,12 +98,12 @@
     },
     {
       "sleepStyleId": "0008_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "ハイパー",
         "level": 1
       },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 122474,
+      "unlockEnergy": 1037612,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -115,12 +111,12 @@
     },
     {
       "sleepStyleId": "0009_01",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 2
+        "tier": "スーパー",
+        "level": 4
       },
-      "drowsyPower": 14326000,
-      "unlockEnergy": 291842,
+      "unlockEnergy": 698799,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -128,12 +124,12 @@
     },
     {
       "sleepStyleId": "0009_02",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 6
+        "tier": "ハイパー",
+        "level": 1
       },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 472043,
+      "unlockEnergy": 1037612,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -141,12 +137,12 @@
     },
     {
       "sleepStyleId": "0009_03",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 12
+        "tier": "ハイパー",
+        "level": 5
       },
-      "drowsyPower": 62776000,
-      "unlockEnergy": 910662,
+      "unlockEnergy": 1907355,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -154,128 +150,24 @@
     },
     {
       "sleepStyleId": "0009_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "マスター",
-        "level": 7
+        "level": 1
       },
-      "drowsyPower": 77102000,
-      "unlockEnergy": 528891,
+      "unlockEnergy": 2194292,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
     },
     {
-      "sleepStyleId": "0010_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0010_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 2
-      },
-      "drowsyPower": 1558000,
-      "unlockEnergy": 4822,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0010_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 3
-      },
-      "drowsyPower": 6574000,
-      "unlockEnergy": 63889,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0010_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 9120000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0025_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0025_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 4
-      },
-      "drowsyPower": 2280000,
-      "unlockEnergy": 18082,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0025_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 5
-      },
-      "drowsyPower": 8322000,
-      "unlockEnergy": 101499,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0025_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 11780000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
       "sleepStyleId": "0039_01",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
         "level": 1
       },
-      "drowsyPower": 304000,
       "unlockEnergy": 0,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
@@ -284,12 +176,12 @@
     },
     {
       "sleepStyleId": "0039_02",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
         "level": 5
       },
-      "drowsyPower": 2508000,
-      "unlockEnergy": 26520,
+      "unlockEnergy": 228205,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -297,12 +189,12 @@
     },
     {
       "sleepStyleId": "0039_03",
+      "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 1
+        "tier": "スーパー",
+        "level": 2
       },
-      "drowsyPower": 9120000,
-      "unlockEnergy": 122474,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -310,12 +202,12 @@
     },
     {
       "sleepStyleId": "0039_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 1
+        "level": 3
       },
-      "drowsyPower": 12692000,
-      "unlockEnergy": 36164,
+      "unlockEnergy": 548434,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -323,12 +215,12 @@
     },
     {
       "sleepStyleId": "0040_01",
+      "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 4
+        "tier": "スーパー",
+        "level": 1
       },
-      "drowsyPower": 5054000,
-      "unlockEnergy": 195283,
+      "unlockEnergy": 309675,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -336,12 +228,12 @@
     },
     {
       "sleepStyleId": "0040_02",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
+        "tier": "スーパー",
         "level": 3
       },
-      "drowsyPower": 11780000,
-      "unlockEnergy": 330670,
+      "unlockEnergy": 548434,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -349,12 +241,12 @@
     },
     {
       "sleepStyleId": "0040_03",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 9
+        "tier": "ハイパー",
+        "level": 1
       },
-      "drowsyPower": 30476000,
-      "unlockEnergy": 660210,
+      "unlockEnergy": 1037612,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -362,12 +254,12 @@
     },
     {
       "sleepStyleId": "0040_04",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 4
+        "tier": "ハイパー",
+        "level": 3
       },
-      "drowsyPower": 38304000,
-      "unlockEnergy": 373381,
+      "unlockEnergy": 1444644,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -375,11 +267,11 @@
     },
     {
       "sleepStyleId": "0054_01",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
         "level": 1
       },
-      "drowsyPower": 76000,
       "unlockEnergy": 0,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
@@ -388,12 +280,12 @@
     },
     {
       "sleepStyleId": "0054_02",
+      "drowsyPower": null,
       "rank": {
         "tier": "ノーマル",
-        "level": 3
+        "level": 1
       },
-      "drowsyPower": 1558000,
-      "unlockEnergy": 11090,
+      "unlockEnergy": 0,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -401,12 +293,12 @@
     },
     {
       "sleepStyleId": "0054_03",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 4
+        "level": 1
       },
-      "drowsyPower": 6574000,
-      "unlockEnergy": 81971,
+      "unlockEnergy": 309675,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -414,12 +306,12 @@
     },
     {
       "sleepStyleId": "0054_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 1
+        "level": 2
       },
-      "drowsyPower": 9120000,
-      "unlockEnergy": 36164,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -427,12 +319,12 @@
     },
     {
       "sleepStyleId": "0055_01",
+      "drowsyPower": null,
       "rank": {
-        "tier": "スーパー",
-        "level": 2
+        "tier": "ノーマル",
+        "level": 5
       },
-      "drowsyPower": 3154000,
-      "unlockEnergy": 48700,
+      "unlockEnergy": 228205,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -440,12 +332,12 @@
     },
     {
       "sleepStyleId": "0055_02",
+      "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 1
+        "tier": "スーパー",
+        "level": 2
       },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 122474,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -453,12 +345,12 @@
     },
     {
       "sleepStyleId": "0055_03",
+      "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 2
+        "tier": "スーパー",
+        "level": 5
       },
-      "drowsyPower": 22154000,
-      "unlockEnergy": 291842,
+      "unlockEnergy": 860468,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -466,571 +358,12 @@
     },
     {
       "sleepStyleId": "0055_04",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 2
-      },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 144654,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0158_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 418000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0158_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 3
-      },
-      "drowsyPower": 2812000,
-      "unlockEnergy": 11090,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0158_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 9918000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0158_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 13490000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0159_01",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 3154000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0159_02",
-      "rank": {
-        "tier": "スーパー",
-        "level": 5
-      },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 101499,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0159_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 1
-      },
-      "drowsyPower": 22154000,
-      "unlockEnergy": 256544,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0159_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "ハイパー",
         "level": 1
       },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 122474,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0160_01",
-      "rank": {
-        "tier": "マスター",
-        "level": 2
-      },
-      "drowsyPower": 14326000,
-      "unlockEnergy": 291842,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0160_02",
-      "rank": {
-        "tier": "マスター",
-        "level": 6
-      },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 472043,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0160_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 12
-      },
-      "drowsyPower": 62776000,
-      "unlockEnergy": 910662,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0160_04",
-      "rank": {
-        "tier": "マスター",
-        "level": 7
-      },
-      "drowsyPower": 77102000,
-      "unlockEnergy": 528891,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0174_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0174_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 2
-      },
-      "drowsyPower": 1558000,
-      "unlockEnergy": 4822,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0174_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 3
-      },
-      "drowsyPower": 6574000,
-      "unlockEnergy": 63889,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0174_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 9120000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0069_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0069_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 2
-      },
-      "drowsyPower": 1824000,
-      "unlockEnergy": 4822,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0069_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 3
-      },
-      "drowsyPower": 7144000,
-      "unlockEnergy": 63889,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0069_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 9918000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0079_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0079_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 3
-      },
-      "drowsyPower": 2090000,
-      "unlockEnergy": 11090,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0079_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0079_04",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 1
-      },
-      "drowsyPower": 10830000,
-      "unlockEnergy": 122474,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0080_01",
-      "rank": {
-        "tier": "スーパー",
-        "level": 3
-      },
-      "drowsyPower": 3154000,
-      "unlockEnergy": 63889,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0080_02",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 2
-      },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 144654,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0080_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 3
-      },
-      "drowsyPower": 22154000,
-      "unlockEnergy": 330670,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0080_04",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 3
-      },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 168763,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0199_01",
-      "rank": {
-        "tier": "マスター",
-        "level": 2
-      },
-      "drowsyPower": 16644000,
-      "unlockEnergy": 291842,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0199_02",
-      "rank": {
-        "tier": "マスター",
-        "level": 6
-      },
-      "drowsyPower": 31806000,
-      "unlockEnergy": 472043,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0199_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 12
-      },
-      "drowsyPower": 68666000,
-      "unlockEnergy": 910662,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0199_04",
-      "rank": {
-        "tier": "マスター",
-        "level": 7
-      },
-      "drowsyPower": 85614000,
-      "unlockEnergy": 528891,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0245_01",
-      "rank": {
-        "tier": "マスター",
-        "level": 6
-      },
-      "drowsyPower": 46208000,
-      "unlockEnergy": 472043,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0245_02",
-      "rank": {
-        "tier": "マスター",
-        "level": 10
-      },
-      "drowsyPower": 130074000,
-      "unlockEnergy": 735875,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0245_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 16
-      },
-      "drowsyPower": 275196000,
-      "unlockEnergy": 1709820,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0122_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 5
-      },
-      "drowsyPower": 3154000,
-      "unlockEnergy": 26520,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0122_02",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 7714000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0122_03",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 5
-      },
-      "drowsyPower": 22154000,
-      "unlockEnergy": 224455,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0122_04",
-      "rank": {
-        "tier": "マスター",
-        "level": 1
-      },
-      "drowsyPower": 28766000,
-      "unlockEnergy": 256544,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0439_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0439_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 3
-      },
-      "drowsyPower": 2280000,
-      "unlockEnergy": 11090,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0439_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 8322000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0439_04",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 1
-      },
-      "drowsyPower": 11780000,
-      "unlockEnergy": 122474,
+      "unlockEnergy": 1037612,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1038,12 +371,12 @@
     },
     {
       "sleepStyleId": "0132_01",
+      "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 2
+        "level": 1
       },
-      "drowsyPower": 5472000,
-      "unlockEnergy": 48700,
+      "unlockEnergy": 309675,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1051,25 +384,12 @@
     },
     {
       "sleepStyleId": "0132_02",
+      "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 1
+        "tier": "スーパー",
+        "level": 3
       },
-      "drowsyPower": 12692000,
-      "unlockEnergy": 122474,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0132_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 2
-      },
-      "drowsyPower": 31806000,
-      "unlockEnergy": 291842,
+      "unlockEnergy": 548434,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1077,12 +397,12 @@
     },
     {
       "sleepStyleId": "0132_04",
+      "drowsyPower": null,
       "rank": {
         "tier": "ハイパー",
-        "level": 2
+        "level": 3
       },
-      "drowsyPower": 40926000,
-      "unlockEnergy": 144654,
+      "unlockEnergy": 1444644,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1090,12 +410,25 @@
     },
     {
       "sleepStyleId": "0132_07",
+      "drowsyPower": null,
       "rank": {
         "tier": "ハイパー",
-        "level": 2
+        "level": 3
       },
-      "drowsyPower": 40926000,
-      "unlockEnergy": 144654,
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0132_10",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1103,221 +436,13 @@
     },
     {
       "sleepStyleId": "0132_13",
+      "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 2
+        "tier": "マスター",
+        "level": 4
       },
-      "drowsyPower": 115976000,
-      "unlockEnergy": 144654,
+      "unlockEnergy": 3141221,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0316_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 1
-      },
-      "drowsyPower": 76000,
-      "unlockEnergy": 0,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0316_02",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 3
-      },
-      "drowsyPower": 1824000,
-      "unlockEnergy": 11090,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0316_03",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 7144000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0316_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 1
-      },
-      "drowsyPower": 9918000,
-      "unlockEnergy": 36164,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0252_01",
-      "rank": {
-        "tier": "ノーマル",
-        "level": 3
-      },
-      "drowsyPower": 1216000,
-      "unlockEnergy": 11090,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0252_02",
-      "rank": {
-        "tier": "スーパー",
-        "level": 2
-      },
-      "drowsyPower": 12692000,
-      "unlockEnergy": 48700,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0252_03",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 3
-      },
-      "drowsyPower": 35796000,
-      "unlockEnergy": 168763,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0252_04",
-      "rank": {
-        "tier": "スーパー",
-        "level": 3
-      },
-      "drowsyPower": 40926000,
-      "unlockEnergy": 63889,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0253_01",
-      "rank": {
-        "tier": "スーパー",
-        "level": 4
-      },
-      "drowsyPower": 4636000,
-      "unlockEnergy": 81971,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0253_02",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 3
-      },
-      "drowsyPower": 20824000,
-      "unlockEnergy": 168763,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0253_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 4
-      },
-      "drowsyPower": 55594000,
-      "unlockEnergy": 373381,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0253_04",
-      "rank": {
-        "tier": "ハイパー",
-        "level": 4
-      },
-      "drowsyPower": 68666000,
-      "unlockEnergy": 195283,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0254_01",
-      "rank": {
-        "tier": "マスター",
-        "level": 4
-      },
-      "drowsyPower": 33478000,
-      "unlockEnergy": 373381,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0254_02",
-      "rank": {
-        "tier": "マスター",
-        "level": 8
-      },
-      "drowsyPower": 65702000,
-      "unlockEnergy": 591424,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0254_03",
-      "rank": {
-        "tier": "マスター",
-        "level": 14
-      },
-      "drowsyPower": 179018000,
-      "unlockEnergy": 1184155,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
-      "verifiedAt": "2026-10-01",
-      "status": "攻略資料掲載値・ゲーム内未照合",
-      "eventOnly": false
-    },
-    {
-      "sleepStyleId": "0254_04",
-      "rank": {
-        "tier": "マスター",
-        "level": 9
-      },
-      "drowsyPower": 195358000,
-      "unlockEnergy": 660210,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
@@ -1342,7 +467,7 @@
         "tier": "ノーマル",
         "level": 5
       },
-      "unlockEnergy": 26520,
+      "unlockEnergy": 228205,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1352,10 +477,10 @@
       "sleepStyleId": "0133_03",
       "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 1
+        "tier": "スーパー",
+        "level": 2
       },
-      "unlockEnergy": 122474,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1366,61 +491,373 @@
       "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 1
+        "level": 3
       },
-      "unlockEnergy": 36164,
+      "unlockEnergy": 548434,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
     },
     {
-      "sleepStyleId": "0134_01",
+      "sleepStyleId": "0147_01",
       "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 2
+        "tier": "ハイパー",
+        "level": 3
       },
-      "unlockEnergy": 291842,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
     },
     {
-      "sleepStyleId": "0134_02",
+      "sleepStyleId": "0147_02",
       "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 6
+        "tier": "ハイパー",
+        "level": 3
       },
-      "unlockEnergy": 472043,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
     },
     {
-      "sleepStyleId": "0134_03",
+      "sleepStyleId": "0147_03",
       "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 12
+        "tier": "スーパー",
+        "level": 5
       },
-      "unlockEnergy": 910662,
-      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "unlockEnergy": 860468,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
     },
     {
-      "sleepStyleId": "0134_04",
+      "sleepStyleId": "0147_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "unlockEnergy": 1037612,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0148_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "unlockEnergy": 228205,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0148_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "unlockEnergy": 698799,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0148_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0148_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "unlockEnergy": 1665846,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0149_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0149_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0149_03",
       "drowsyPower": null,
       "rank": {
         "tier": "マスター",
         "level": 7
       },
-      "unlockEnergy": 528891,
+      "unlockEnergy": 4237798,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0149_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 4654094,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0158_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "unlockEnergy": 0,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0158_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "unlockEnergy": 228205,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0158_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "unlockEnergy": 418230,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0158_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "unlockEnergy": 548434,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0159_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "unlockEnergy": 228205,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0159_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "unlockEnergy": 418230,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0159_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "unlockEnergy": 860468,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0159_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "unlockEnergy": 1037612,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0160_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "unlockEnergy": 698799,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0160_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "unlockEnergy": 1037612,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0160_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "unlockEnergy": 1907355,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0160_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0174_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "unlockEnergy": 0,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0174_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "unlockEnergy": 0,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0174_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "unlockEnergy": 309675,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0174_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1431,9 +868,9 @@
       "drowsyPower": null,
       "rank": {
         "tier": "スーパー",
-        "level": 4
+        "level": 2
       },
-      "unlockEnergy": 81971,
+      "unlockEnergy": 418230,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1443,10 +880,10 @@
       "sleepStyleId": "0214_02",
       "drowsyPower": null,
       "rank": {
-        "tier": "ハイパー",
-        "level": 3
+        "tier": "スーパー",
+        "level": 4
       },
-      "unlockEnergy": 168763,
+      "unlockEnergy": 698799,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1456,10 +893,10 @@
       "sleepStyleId": "0214_03",
       "drowsyPower": null,
       "rank": {
-        "tier": "マスター",
-        "level": 4
+        "tier": "ハイパー",
+        "level": 3
       },
-      "unlockEnergy": 373381,
+      "unlockEnergy": 1444644,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
@@ -1472,8 +909,463 @@
         "tier": "ハイパー",
         "level": 4
       },
-      "unlockEnergy": 195283,
+      "unlockEnergy": 1665846,
       "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0245_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0245_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "unlockEnergy": 3489192,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0245_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 12
+      },
+      "unlockEnergy": 6656321,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0252_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "unlockEnergy": 0,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0252_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "unlockEnergy": 548434,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0252_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "unlockEnergy": 1235275,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0252_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0253_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "unlockEnergy": 228205,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0253_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "unlockEnergy": 860468,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0253_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "unlockEnergy": 1665846,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0253_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0254_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "unlockEnergy": 1235275,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0254_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "unlockEnergy": 1907355,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0254_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 4654094,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0254_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "unlockEnergy": 5118523,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0258_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "unlockEnergy": 0,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0258_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "unlockEnergy": 548434,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0258_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "unlockEnergy": 1235275,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0258_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 1444644,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0259_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "unlockEnergy": 228205,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0259_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "unlockEnergy": 860468,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0259_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "unlockEnergy": 1665846,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0259_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0260_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "unlockEnergy": 1235275,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0260_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "unlockEnergy": 1907355,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0260_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 4654094,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0260_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "unlockEnergy": 5118523,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/ぐっすり",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0468_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "unlockEnergy": 698799,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0468_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "unlockEnergy": 1235275,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0468_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0468_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "unlockEnergy": 2495790,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0700_01",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "unlockEnergy": 548434,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0700_02",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "unlockEnergy": 1037612,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0700_03",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "unlockEnergy": 1907355,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0700_04",
+      "drowsyPower": null,
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "unlockEnergy": 2194292,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/すやすや",
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
@@ -1488,181 +1380,172 @@
     {
       "tier": "ノーマル",
       "level": 2,
-      "energy": 4822
+      "energy": 41895
     },
     {
       "tier": "ノーマル",
       "level": 3,
-      "energy": 11090
+      "energy": 96358
     },
     {
       "tier": "ノーマル",
       "level": 4,
-      "energy": 18082
+      "energy": 157104
     },
     {
       "tier": "ノーマル",
       "level": 5,
-      "energy": 26520
+      "energy": 228205
     },
     {
       "tier": "スーパー",
       "level": 1,
-      "energy": 36164
+      "energy": 309675
     },
     {
       "tier": "スーパー",
       "level": 2,
-      "energy": 48700
+      "energy": 418230
     },
     {
       "tier": "スーパー",
       "level": 3,
-      "energy": 63889
+      "energy": 548434
     },
     {
       "tier": "スーパー",
       "level": 4,
-      "energy": 81971
+      "energy": 698799
     },
     {
       "tier": "スーパー",
       "level": 5,
-      "energy": 101499
+      "energy": 860468
     },
     {
       "tier": "ハイパー",
       "level": 1,
-      "energy": 122474
+      "energy": 1037612
     },
     {
       "tier": "ハイパー",
       "level": 2,
-      "energy": 144654
+      "energy": 1235275
     },
     {
       "tier": "ハイパー",
       "level": 3,
-      "energy": 168763
+      "energy": 1444644
     },
     {
       "tier": "ハイパー",
       "level": 4,
-      "energy": 195283
+      "energy": 1665846
     },
     {
       "tier": "ハイパー",
       "level": 5,
-      "energy": 224455
+      "energy": 1907355
     },
     {
       "tier": "マスター",
       "level": 1,
-      "energy": 256544
+      "energy": 2194292
     },
     {
       "tier": "マスター",
       "level": 2,
-      "energy": 291842
+      "energy": 2495790
     },
     {
       "tier": "マスター",
       "level": 3,
-      "energy": 330670
+      "energy": 2813784
     },
     {
       "tier": "マスター",
       "level": 4,
-      "energy": 373381
+      "energy": 3141221
     },
     {
       "tier": "マスター",
       "level": 5,
-      "energy": 420363
+      "energy": 3489192
     },
     {
       "tier": "マスター",
       "level": 6,
-      "energy": 472043
+      "energy": 3851643
     },
     {
       "tier": "マスター",
       "level": 7,
-      "energy": 528891
+      "energy": 4237798
     },
     {
       "tier": "マスター",
       "level": 8,
-      "energy": 591424
+      "energy": 4654094
     },
     {
       "tier": "マスター",
       "level": 9,
-      "energy": 660210
+      "energy": 5118523
     },
     {
       "tier": "マスター",
       "level": 10,
-      "energy": 735875
+      "energy": 5609891
     },
     {
       "tier": "マスター",
       "level": 11,
-      "energy": 819107
+      "energy": 6124856
     },
     {
       "tier": "マスター",
       "level": 12,
-      "energy": 910662
+      "energy": 6656321
     },
     {
       "tier": "マスター",
       "level": 13,
-      "energy": 1018462
+      "energy": 7217801
     },
     {
       "tier": "マスター",
       "level": 14,
-      "energy": 1184155
+      "energy": 7802011
     },
     {
       "tier": "マスター",
       "level": 15,
-      "energy": 1379432
+      "energy": 8552888
     },
     {
       "tier": "マスター",
       "level": 16,
-      "energy": 1709820
+      "energy": 9410567
     },
     {
       "tier": "マスター",
       "level": 17,
-      "energy": 2064310
+      "energy": 10274627
     },
     {
       "tier": "マスター",
       "level": 18,
-      "energy": 2490372
+      "energy": 11147108
     },
     {
       "tier": "マスター",
       "level": 19,
-      "energy": 2994922
+      "energy": 12160074
     },
     {
       "tier": "マスター",
       "level": 20,
-      "energy": 3732664
+      "energy": 14780152
     }
-  ],
-  "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/ditto",
-    "https://wiki.pokesleep.com/ja/pokemon/mr-mime",
-    "https://wiki.pokesleep.com/ja/pokemon/mime-jr",
-    "https://wiki.pokesleep.com/ja/pokemon/gulpin",
-    "https://wiki.pokesleep.com/ja/pokemon/treecko",
-    "https://wiki.pokesleep.com/ja/pokemon/grovyle",
-    "https://wiki.pokesleep.com/ja/pokemon/sceptile"
   ]
 }

@@ -64,7 +64,7 @@ ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v222_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v223_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -137,7 +137,7 @@ def catalog_and_images():
             assert svg.is_file(), svg
             images['subskills'][name] = svg.relative_to(ROOT).as_posix()
     for key,(field,folder) in kinds['fields'].items():
-        assert field['id'] == key and field.get('name') and field.get('mode') == 'normal'
+        assert field['id'] == key and field.get('name') and field.get('mode') in ('normal','expert')
         assert field.get('favoriteMode') in ('fixed','weekly_random'), key
         favorites = field.get('favoriteBerries')
         assert isinstance(favorites,list) and len(favorites) == (3 if field['favoriteMode'] == 'fixed' else 0), key
@@ -221,8 +221,11 @@ def catalog_and_images():
             seen.add(style_id)
             rank = encounter['rank']
             assert rank['tier'] in tiers and isinstance(rank['level'],int) and rank['level'] >= 1, field_id
-            assert isinstance(encounter['drowsyPower'],int) and encounter['drowsyPower'] > 0, field_id
-            assert drowsy_by_style.setdefault(style_id,encounter['drowsyPower']) == encounter['drowsyPower'], f'{style_id}: inconsistent DPR'
+            assert encounter['drowsyPower'] is None or (isinstance(encounter['drowsyPower'],int) and encounter['drowsyPower'] > 0), field_id
+            if encounter.get('unlockEnergy') is not None:
+                assert any(r['tier']==rank['tier'] and r['level']==rank['level'] and r['energy']==encounter['unlockEnergy'] for r in field['rankThresholds']), field_id
+            if encounter['drowsyPower'] is not None:
+                assert drowsy_by_style.setdefault(style_id,encounter['drowsyPower']) == encounter['drowsyPower'], f'{style_id}: inconsistent DPR'
     seen_recipes = set()
     for key,(recipe,folder) in kinds['recipes'].items():
         identity = (recipe.get('category'), recipe.get('name'))
@@ -274,7 +277,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v222') == 2
+    assert source.count('Review v223') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
