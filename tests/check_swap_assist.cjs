@@ -22,6 +22,10 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   assert.match(await page.locator('.psg-swap-option').first().textContent(),/22.7 \/ 21個/);assert.match(await page.locator('.psg-swap-option').first().textContent(),/スキル差：未計算/);
   assert.match(await page.locator('.psg-swap-option').first().textContent(),/とくせんリンゴ -8.7個/);
   assert.match(await page.locator('.psg-swap-option').first().textContent(),/好物きのみを設定/);
+  await page.selectOption('#swapRecipe','sacred_sword_sukiyaki_curry');await calculate();
+  assert.match(await page.locator('#swapStatus').textContent(),/ふといながねぎ.*とくせんエッグ.*拾える個体/);
+  assert.match(await page.locator('#swapResults').textContent(),/ふといながねぎ 81個／3食/);assert.match(await page.locator('#swapResults').textContent(),/とくせんエッグ 66個／3食/);assert.equal(await page.locator('.psg-swap-option').count(),0);
+  await page.selectOption('#swapRecipe','simple_white_stew');await calculate();
   // Known normal field: berry delta becomes numeric and remains separate from skill delta.
   await page.selectOption('#homeFieldSelect','cyan');assert.equal(await page.locator('.psg-swap-option').count(),0);await calculate();
   assert.match(await page.locator('.psg-swap-option').first().textContent(),/きのみエナジー差：[+−][\d,]+/);

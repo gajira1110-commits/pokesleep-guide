@@ -84,6 +84,18 @@ function swapFoodSummary(requirements){
  }return list;
 }
 function appendSwapNote(host,text){const p=document.createElement('p');p.className='note';p.textContent=text;host.append(p)}
+function swapUnavailableFoods(request){
+ const supplied=new Set();
+ for(const member of request.members){
+  const {level,configuration}=member.individual;
+  for(const [j,unlock] of [1,30,60].entries()){
+   if(level<unlock)continue;
+   const candidate=member.species['食材候補'].find(x=>x['候補']===configuration[j]);
+   if(candidate?.[`Lv${unlock}`]>0)supplied.add(candidate['食材']);
+  }
+ }
+ return Object.keys(request.demand).filter(name=>!supplied.has(name));
+}
 function swapInputLabel(field){
  if(String(field).includes('configuration'))return '食材の選択';
  return ({level:'レベル',nature:'性格',mintNeutralized:'ミント',subskills:'サブスキル','subskills[5]':'サブスキル',sleepHours:'リボンの睡眠時間',remainingEvolutions:'進化データ',teamHelpingBonusCount:'おてつだいボーナス',mythicalIndividualState:'特殊な個体状態'})[field]||'未確認・未対応の条件';
@@ -101,14 +113,22 @@ async function calculateSwap(){
  for(const message of input.rejected)appendSwapNote(host,`候補を保留：${message}`);
  if(baseline.feasible){status.textContent='現在の5匹で3食分を満たす見込みです（1日合計）。';return}
  if(!input.candidateIds.length){status.textContent='不足を表示しました。控えを選び、起点げんきを入力すると交代候補を探せます。';return}
+ const unavailable=swapUnavailableFoods(input.request);
+ if(unavailable.length){
+  status.textContent=`${unavailable.join('・')}を拾える個体が、現在のチームと選んだ控えにいません。`;
+  appendSwapNote(host,`集める担当なし：${unavailable.map(name=>`${name} ${input.request.demand[name]}個／3食`).join('・')}`);
+  appendSwapNote(host,'解放済みの食材構成で比較しています。食材ゲットなどのスキル収集・在庫は含みません。担当を追加するか、目標料理を変更してください。');
+  return;
+ }
  swapAbort=new AbortController();const controller=swapAbort;
  swapUI('swapCalculate').disabled=true;swapUI('swapCancel').hidden=false;status.textContent='交代候補を計算中…';
  try{
   const result=await window.PS_SWAP_ENGINE.findSwapOptionsAsync(input.request,{candidateIds:input.candidateIds,startHours:[Number(swapUI('swapStart').value)],stepHours:.5,endHour:16,maxResults:5,maxEvaluations:1500},{signal:controller.signal,batchSize:10,onProgress:progress=>{if(generation===swapGeneration)status.textContent=`計算中… ${progress.tested}件確認・候補${progress.found}件`}});
   if(generation!==swapGeneration)return;
   if(result.status==='cancelled'){status.textContent='計算を中止しました。交代候補は確定していません。';return}
-  const messages={estimated_options:'3食分を補える交代候補（見込み）',estimated_partial_options:'途中の候補です。探索上限に達したため、順位は未確定です。',no_option_on_grid:'選んだ控え・開始時刻・時間刻み内では候補が見つかりませんでした。',search_limit_reached:'探索上限に達しました。候補の確認は未完了です。',already_sufficient:'現在の5匹で3食分を満たす見込みです。'};
+  const messages={estimated_options:'3食分を補える交代候補（見込み）',estimated_partial_options:'途中の候補です。探索上限に達したため、順位は未確定です。',no_option_on_grid:'1匹の交代で全食材の3食分を満たす候補は見つかりませんでした。',search_limit_reached:'探索上限に達しました。候補の確認は未完了です。',already_sufficient:'現在の5匹で3食分を満たす見込みです。'};
   status.textContent=messages[result.status]||`${swapInputLabel(result.field)}を確認してください。`;
+  if(result.status==='no_option_on_grid')appendSwapNote(host,'食材が増えても、別の食材が不足する交代は候補に表示しません。上の不足数を確認し、料理・控え・開始時刻を変えてください。複数匹の交代は未対応です。');
   for(const rejected of result.rejected||[])appendSwapNote(host,`候補を保留：${state.box.find(x=>x.id===rejected.inId)?.name||'控え'}（${swapInputLabel(rejected.field)}）`);
   for(const option of result.options||[]){
    const out=state.box.find(x=>x.id===option.outId),incoming=state.box.find(x=>x.id===option.inId),row=document.createElement('div');row.className='psg-swap-option';
