@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v231</title>
+  <title>PokéSleep Guide — Review v232</title>
 
 
 
@@ -216,7 +216,7 @@ window.PS_TYPE_THEME={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v231</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v232</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -2268,7 +2268,10 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
   for(const recipe of filtered){
    const card=document.createElement('details');card.className='psg-recipe-entry';card.dataset.recipeId=recipe.id;card.dataset.mealCategory=recipe.category;
    const summary=document.createElement('summary');summary.className='psg-recipe-heading';
-   const title=document.createElement('strong');title.className='psg-recipe-title';if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=44;art.height=44;art.className='psg-recipe-art';art.loading='lazy';art.decoding='async';art.onerror=()=>{art.hidden=true};title.append(art)}const titleText=document.createElement('span');titleText.textContent=recipe.name;title.append(titleText);
+   const artWrap=document.createElement('span');artWrap.className='psg-recipe-art-wrap';
+   if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=88;art.height=88;art.className='psg-recipe-art';art.loading='lazy';art.decoding='async';artWrap.append(art)}else artWrap.textContent='No image';
+   const copy=document.createElement('span');copy.className='psg-recipe-copy';
+   const title=document.createElement('strong');title.className='psg-recipe-title';title.textContent=recipe.name;
    const energy=document.createElement('div');energy.className='psg-recipe-energy';
    const max=document.createElement('strong');max.className='psg-recipe-energy-max';
    const verified=recipe.energy?.max;
@@ -2276,17 +2279,25 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
    const shown=verified||observed;
    max.innerHTML=Number.isFinite(shown?.value)?`<small>${verified?'':'確認値 '}Lv.${shown.level}</small> ${shown.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
    const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1・Lv.70 未確認）';
-   energy.append(max,min);summary.append(title,energy);
+   energy.append(max);
    const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
    for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.title=item.name;chip.setAttribute('aria-label',`${item.name} ${item.qty}個`);chip.append(icon(item.name));const qty=document.createElement('b');qty.textContent=`×${item.qty}`;chip.append(qty);ingredientRow.append(chip)}
-   const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;ingredientRow.append(pot);
-   const chevron=document.createElement('span');chevron.className='psg-recipe-chevron';chevron.textContent='▾';chevron.setAttribute('aria-hidden','true');ingredientRow.append(chevron);
-   summary.append(ingredientRow);card.append(summary);
+   const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;energy.append(pot);
+   const chevron=document.createElement('span');chevron.className='psg-recipe-chevron';chevron.textContent='詳細 ▼';
+   copy.append(title,energy,ingredientRow,chevron);summary.append(artWrap,copy);card.append(summary);
    const detail=document.createElement('div');detail.className='psg-recipe-expanded';
-   const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
-   recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
-   const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
-   card.append(detail);card.addEventListener('toggle',()=>{if(card.open)list.querySelectorAll('.psg-recipe-entry').forEach(other=>{if(other!==card)other.open=false})});
+   let populated=false;
+   const populateDetail=()=>{
+    if(populated)return;populated=true;
+    detail.append(min);
+    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
+    recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
+    const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
+   };
+   card.append(detail);card.addEventListener('toggle',()=>{
+    chevron.textContent=card.open?'閉じる ▲':'詳細 ▼';
+    if(card.open){populateDetail();list.querySelectorAll('.psg-recipe-entry').forEach(other=>{if(other!==card)other.open=false})}
+   });
    list.append(card);
   }
  }
@@ -2303,7 +2314,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
   const entry=[...list.querySelectorAll('.psg-recipe-entry')].find(card=>card.dataset.recipeId===id);
   if(entry)entry.open=true;
  };
- document.querySelector('[data-info-page="recipePage"]')?.addEventListener('click',render);
+ // Navigation reuses the current list; providers are built only when details open.
  ingredientChoices();
  render();
 })();
