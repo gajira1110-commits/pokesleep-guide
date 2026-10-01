@@ -1,6 +1,32 @@
-let teamInitialEnergy=100;
-let teamGoodCamp=false;
-let teamMeals=true;
+const DAY_SETTINGS_KEY='psg-day-settings-v1';
+function normalizeDaySettings(value){
+ const input=value&&typeof value==='object'?value:{};
+ const energy=Number(input.initialEnergy);
+ return {collectionHours:[1,2,4,8].includes(Number(input.collectionHours))?Number(input.collectionHours):4,
+ initialEnergy:input.initialEnergy!==null&&input.initialEnergy!==''&&Number.isFinite(energy)?Math.max(0,Math.min(150,Math.round(energy))):100,
+ goodCamp:input.goodCamp===true,meals:input.meals!==false};
+}
+function readDaySettings(){try{return normalizeDaySettings(JSON.parse(localStorage.getItem(DAY_SETTINGS_KEY)||'{}'))}catch{return normalizeDaySettings({})}}
+const daySettings=readDaySettings();
+let teamInitialEnergy=daySettings.initialEnergy;
+let teamGoodCamp=daySettings.goodCamp;
+let teamMeals=daySettings.meals;
+function syncDayControls(){
+ document.getElementById('teamCollectionInterval').value=String(daySettings.collectionHours);
+ document.getElementById('teamInitialEnergy').value=String(teamInitialEnergy);
+ for(const [id,label,active] of [['teamGoodCamp','いいキャンプ',teamGoodCamp],['teamMeals','食事3回',teamMeals]]){
+  const button=document.getElementById(id);button.setAttribute('aria-pressed',String(active));button.textContent=`${label}：${active?'ON':'OFF'}`;
+ }
+ document.querySelectorAll('.psg-day-energy-options button').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.energy)===teamInitialEnergy)));
+}
+function saveDaySettings(){
+ const next=normalizeDaySettings({collectionHours:document.getElementById('teamCollectionInterval').value,initialEnergy:teamInitialEnergy,goodCamp:teamGoodCamp,meals:teamMeals});
+ Object.assign(daySettings,next);syncDayControls();
+ try{localStorage.setItem(DAY_SETTINGS_KEY,JSON.stringify(next));document.getElementById('teamDaySaveStatus').textContent='条件をこの端末に保存しました。'}
+ catch{document.getElementById('teamDaySaveStatus').textContent='条件を保存できませんでした。今回の表示には反映しています。'}
+ renderTeamDay();
+}
+syncDayControls();
 const berryChoices=[...document.querySelectorAll('.psg-favorite-berry')];
 for(const select of berryChoices){
  for(const name of [...knownBerryNames].sort((a,b)=>a.localeCompare(b,'ja'))){

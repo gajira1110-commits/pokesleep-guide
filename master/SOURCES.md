@@ -234,3 +234,12 @@ v195：追加おてつだいの予想
 - https://wikiwiki.jp/poke_sleep/デデンネ
 - https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
 - https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+
+## v221（2026-10-01）
+
+アブソルの基本能力・食材・寝顔4件を追加。確率は推定基礎値。フィールド出現条件は別途収集データの統合待ち。
+
+- https://wiki.pokesleep.com/ja/pokemon/absol
+- https://wikiwiki.jp/poke_sleep/アブソル
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
