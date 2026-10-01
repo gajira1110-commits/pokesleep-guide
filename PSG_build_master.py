@@ -21,6 +21,9 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '11-navigation.html',
     '12-core-controller.html',
     'core/02-team.html',
+    'team/02-food-view.html',
+    'team/03-cards.html',
+    'team/04-face-dock.html',
     'core/03-profiles.html',
     'core/04-backup.html',
     'core/05-navigation-and-filters.html',
@@ -31,6 +34,10 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'core/09-day-view.html',
     '21-day-calculator.html',
     '19-box-detail-controller.html',
+    'box/02-daily-forecast.html',
+    'box/03-view.html',
+    'box/04-editor.html',
+    'box/05-actions.html',
     '20-core-initialize.html',
     '13-catalog-adapter.html',
     '14-detail-controller.html',
@@ -48,6 +55,10 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '16-swipe.html',
     '17-skill-controller.html',
     '18-recipe-controller.html',
+    'recipes/02-ingredient-filter.html',
+    'recipes/03-providers.html',
+    'recipes/04-list-view.html',
+    'recipes/05-events.html',
 ))
 CSS = ROOT / 'PSG_styles.css'
 STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
@@ -290,7 +301,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v238') == 2
+    assert source.count('Review v239') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

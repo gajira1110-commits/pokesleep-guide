@@ -1,0 +1,29 @@
+ function providerGroup(item){
+  const section=document.createElement('section');section.className='psg-recipe-provider-group';
+  const heading=document.createElement('strong');heading.append(icon(item.name),document.createTextNode(item.name));section.append(heading);
+  // Use only species whose own verified slots contain the ingredient; evolution does not imply the same slot.
+  const providers=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible).flatMap(p=>{
+   const slots=p.ingredientSlots?.filter(s=>s.candidates.some(c=>c.name===item.name))||[];
+   return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
+  });
+  if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
+  const terminal=providers.filter(({species})=>{
+   const edges=Array.isArray(species.evolution)?species.evolution:species.evolution?[species.evolution]:[];
+   return !edges.some(edge=>edge.toNo);
+  });
+  const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
+  for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
+    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
+    const art=document.createElement('span');art.className='psg-recipe-provider-art';
+    if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
+    else{
+      const img=document.createElement('img');img.src=window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
+      const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';missing.hidden=true;
+      img.onerror=()=>{img.hidden=true;missing.hidden=false};art.append(img,missing);
+    }
+    if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
+    button.title=species.name;button.append(art);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);wrap.append(button);
+  }
+  section.append(wrap);return section;
+ }
