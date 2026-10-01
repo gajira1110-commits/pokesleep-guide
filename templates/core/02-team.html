@@ -94,7 +94,7 @@ function renderTeamFood(){
    const missing=recipe.ingredients.filter(item=>!confirmed.has(item.name));
    const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;
    const name=document.createElement('strong');name.textContent=recipe.name;
-   const meta=document.createElement('span');meta.className='psg-team-recipe-meta';const verified=recipe.energy?.max,shown=verified||[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];meta.textContent=shown?`${verified?'':'確認値 '}Lv.${shown.level} ${shown.value.toLocaleString()} エナジー`:'エナジー未確認';
+   const meta=document.createElement('span');meta.className='psg-team-recipe-meta';const verified=recipe.energy?.max,shown=verified||[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];meta.textContent=shown?`${shown.status==='推定'?'推定 ':verified?'':'確認値 '}Lv.${shown.level} ${shown.value.toLocaleString()} エナジー`:'エナジー未確認';
    const status=document.createElement('span');status.className=`psg-team-recipe-status ${missing.length?'is-unconfirmed':'is-covered'}`;
    status.textContent=!team.some(Boolean)?'チーム未設定':missing.length?`未確認：${missing.map(item=>item.name).join('・')}`:'食材の種類が揃う';
    row.append(name,meta,status);

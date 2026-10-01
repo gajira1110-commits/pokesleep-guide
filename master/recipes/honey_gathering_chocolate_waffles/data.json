@@ -23,11 +23,17 @@
   "energy": {
     "min": {
       "level": 1,
-      "value": 25484
+      "value": 25484,
+      "status": "資料確認",
+      "source": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "checkedAt": "2026-10-01"
     },
     "max": {
       "level": 70,
-      "value": 91233
+      "value": 91233,
+      "status": "推定",
+      "source": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "checkedAt": "2026-10-01"
     },
     "observed": [
       {
@@ -35,7 +41,9 @@
         "value": 91233,
         "source": "user-screenshot/IMG_1522.png"
       }
-    ]
+    ],
+    "note": "Lv70は資料掲載の計算参考値。ゲーム内全件実測未確認。端数処理の確定値として扱わない",
+    "conditions": "レシピ本体のみ。追加食材・フィールド・大成功・イベント補正を含みません。"
   },
   "sources": [
     {
@@ -46,6 +54,18 @@
         "name",
         "ingredients",
         "energy.observed"
+      ]
+    },
+    {
+      "type": "research",
+      "file": "PSG_recipe_energy_Lv1_Lv70_20261001(1).zip",
+      "url": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "date": "2026-10-01",
+      "verifiedFields": [
+        "energy.min"
+      ],
+      "estimatedFields": [
+        "energy.max"
       ]
     }
   ]

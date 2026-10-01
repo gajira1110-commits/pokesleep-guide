@@ -76,7 +76,7 @@
    const card=document.createElement('details');card.className='psg-recipe-entry';card.dataset.recipeId=recipe.id;card.dataset.mealCategory=recipe.category;
    const summary=document.createElement('summary');summary.className='psg-recipe-heading';
    const artWrap=document.createElement('span');artWrap.className='psg-recipe-art-wrap';
-   if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=88;art.height=88;art.className='psg-recipe-art';art.loading='lazy';art.decoding='async';artWrap.append(art)}else artWrap.textContent='No image';
+   if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=64;art.height=64;art.className='psg-recipe-art';art.loading='lazy';art.decoding='async';artWrap.append(art)}else artWrap.textContent='No image';
    const copy=document.createElement('span');copy.className='psg-recipe-copy';
    const title=document.createElement('strong');title.className='psg-recipe-title';title.textContent=recipe.name;
    const energy=document.createElement('div');energy.className='psg-recipe-energy';
@@ -84,7 +84,7 @@
    const verified=recipe.energy?.max;
    const observed=[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];
    const shown=verified||observed;
-   max.innerHTML=Number.isFinite(shown?.value)?`<small>${verified?'':'確認値 '}Lv.${shown.level}</small> ${shown.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
+   max.innerHTML=Number.isFinite(shown?.value)?`<small>${shown.status==='推定'?'推定 ':verified?'':'確認値 '}Lv.${shown.level}</small> ${shown.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
    const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1・Lv.70 未確認）';
    energy.append(max);
    const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
@@ -97,6 +97,7 @@
    const populateDetail=()=>{
     if(populated)return;populated=true;
     detail.append(min);
+    const energyNote=document.createElement('p');energyNote.className='note';energyNote.textContent=[recipe.energy?.note,recipe.energy?.conditions].filter(Boolean).join('。');detail.append(energyNote);
     const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
     recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
     const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
