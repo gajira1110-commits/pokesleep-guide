@@ -59,12 +59,12 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '06-mobile-overrides.css',
     '07-current-ui.css',
     '08-box-detail.css',
+    '09-list-cards.css',
 ))
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v237_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -290,7 +290,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v237') == 2
+    assert source.count('Review v238') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -303,7 +303,6 @@ def build():
     html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script)
     assert MARKER not in html
     PREVIEW.write_text(html)
-    SNAPSHOT.write_text(html)
     print(f'{len(catalog["pokemon"])} pokemon, {len(catalog["sleepStyles"])} sleep groups, '
           f'{len(catalog["recipes"])} recipes: {len(html)} characters')
 
