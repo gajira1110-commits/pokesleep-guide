@@ -1,0 +1,94 @@
+{
+  "no": 215,
+  "name": "ニューラ",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ウイのみ",
+  "berryQty": 2,
+  "help": 3200,
+  "carry": 17,
+  "foodRate": 25.5,
+  "skillRate": 1.9,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_chance_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0215_01",
+      "name": "まるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0215_02",
+      "name": "ぼうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0215_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0215_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/sneasel",
+    "https://wikiwiki.jp/poke_sleep/ニューラ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 461,
+    "to": "マニューラ",
+    "candy": 80,
+    "item": "するどいツメ",
+    "extra": "夜の時間帯（18:00〜翌05:59）"
+  }
+}

@@ -1308,6 +1308,54 @@
         "level": 2
       },
       "drowsyPower": 28766000
+    },
+    {
+      "sleepStyleId": "0215_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 6004000
+    },
+    {
+      "sleepStyleId": "0215_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 27132000
+    },
+    {
+      "sleepStyleId": "0215_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 93290000
+    },
+    {
+      "sleepStyleId": "0461_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 33478000
+    },
+    {
+      "sleepStyleId": "0461_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 11
+      },
+      "drowsyPower": 77102000
+    },
+    {
+      "sleepStyleId": "0461_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 12
+      },
+      "drowsyPower": 215612000
     }
   ],
   "rankThresholds": [
@@ -1491,6 +1539,8 @@
     "https://wiki.pokesleep.com/ja/pokemon/ditto",
     "https://wiki.pokesleep.com/ja/pokemon/riolu",
     "https://wiki.pokesleep.com/ja/pokemon/gulpin",
-    "https://wiki.pokesleep.com/ja/pokemon/swalot"
+    "https://wiki.pokesleep.com/ja/pokemon/swalot",
+    "https://wiki.pokesleep.com/ja/pokemon/sneasel",
+    "https://wiki.pokesleep.com/ja/pokemon/weavile"
   ]
 }

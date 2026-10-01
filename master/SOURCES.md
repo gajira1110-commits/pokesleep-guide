@@ -174,3 +174,18 @@ v195：追加おてつだいの予想
 ランダム版のLv.1〜8の既存効果範囲は https://wikiwiki.jp/poke_sleep/メインスキル/ゆめのかけらゲット と一致。日産では範囲平均の近似を使用し、切り上げ・獲得量分布・イベントボーナスは含めない旨をスキルデータと画面へ明記。エリア補正やエナジー換算は適用しない。確率・発動回数も推定。
 
 同スキルを持つヤミラミは確率一覧で確認し、nativePokemonNosへ記録。種族本体の基本能力・寝顔・出現記録は未登録のため次の照合対象。
+
+## v214（2026-10-01）
+
+ヤミラミ・ニューラ・マニューラの基本能力・食材、寝顔12件、通常フィールド出現18件を追加。確率は基礎の推定値を使用し天井込みと混同しない。ニューラの進化条件は「するどいツメ・アメ80個」に加え、poke_sleepの進化表で確認した夜18:00〜翌05:59を登録。EXの出現値は保留。
+
+- https://wiki.pokesleep.com/ja/pokemon/sableye
+- https://wiki.pokesleep.com/ja/pokemon/sneasel
+- https://wiki.pokesleep.com/ja/pokemon/weavile
+- https://wikiwiki.jp/poke_sleep/ヤミラミ
+- https://wikiwiki.jp/poke_sleep/ニューラ
+- https://wikiwiki.jp/poke_sleep/マニューラ
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+
+料理チャンスSは https://wiki.pokesleep.com/ja/main-skills/tastychances でLv.1〜6の4/5/6/7/8/10%を照合。nativePokemonNosは今回登録した2種のみを記録し、全所持種の一覧とは扱わない。大成功後のリセット・蓄積上限・料理条件をモデル化していないため日産エナジーには換算しない。

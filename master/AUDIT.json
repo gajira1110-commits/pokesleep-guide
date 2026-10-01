@@ -2,11 +2,11 @@
   "asOf": "2026-10-01",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
-    "pokemon": 94,
+    "pokemon": 97,
     "skills": 23,
     "recipes": 78,
-    "sleepStyles": 374,
-    "normalFieldEncounters": 442
+    "sleepStyles": 386,
+    "normalFieldEncounters": 460
   },
   "missingCoreFields": [],
   "missingEvolutionTargets": [],
@@ -15,10 +15,6 @@
     {
       "id": "berry_burst",
       "name": "きのみバースト"
-    },
-    {
-      "id": "cooking_chance_s",
-      "name": "料理チャンスS"
     }
   ],
   "pokemonWithoutAnyNormalEncounter": [
