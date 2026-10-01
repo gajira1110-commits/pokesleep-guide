@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {mealTiming,findMealOptionsAsync,simulateTeam} from '../vendor/enigma-swap/swap-assist.mjs';
+const member=(id,food,capacity=1000)=>({boxId:id,species:{id,'名前':id,'基準おてつだい時間秒':3600,'初期最大所持数':capacity,'食材確率推定pct':100,'きのみ個数':1,'きのみ基礎エナジー':20,'食材候補':[{'候補':'A','食材':food,Lv1:1}]},individual:{level:1,configuration:'A',nature:'まじめ',mintNeutralized:false,subskills:[null,null,null,null,null],sleepHours:0,remainingEvolutions:0},initialEnergy:0,recoveryEvents:[],berryEnergyPerUnit:20});
+const req={members:[member('a','milk'),member('b','egg'),member('c','other'),member('d','other'),member('e','other'),member('reserve','leek')],teamIds:['a','b','c','d','e'],collectionHours:[0,3,6,9,12,15,16,24],demand:{milk:2,egg:5,leek:1}};
+let result=mealTiming(req);assert.equal(result.timing.foods.milk.hour,3);assert.equal(result.timing.foods.egg.hour,6);assert.equal(result.timing.foods.leek.status,'no_provider');assert.equal(result.timing.hour,null);
+assert.equal(result.ingredients.milk,24);assert.equal(simulateTeam(req).ingredients.milk,result.ingredients.milk);
+const cap={...req,members:req.members.map(x=>x.boxId==='a'?member('a','milk',1):x)};assert.equal(mealTiming(cap).timing.foods.milk.hour,6,'Capacity and collections must affect time');
+const swap={outId:'b',inId:'reserve',startHour:0,endHour:2};result=mealTiming(req,swap);assert.equal(result.timing.foods.leek.hour,2,'Outgoing reserve is collected at return');assert.equal(result.timing.foods.egg.hour,9,'Outgoing provider loss delays another food');
+const options=await findMealOptionsAsync(req,{candidateIds:['reserve'],focus:'leek'});assert.equal(options.status,'estimated');assert(options.options.length>0);assert(options.options.every(x=>x.timing.foods.leek.hour!==null));
+const incomplete={...req,demand:{...req.demand,missing:3}};const partialMeal=await findMealOptionsAsync(incomplete,{candidateIds:['reserve'],focus:'leek'});assert(partialMeal.options.length>0);assert(partialMeal.options.every(x=>x.timing.hour===null),'Missing other food must not suppress useful single-food swaps');
+const huge={...req,demand:{leek:1000}};const improved=await findMealOptionsAsync(huge,{candidateIds:['reserve'],focus:'leek'});assert(improved.options[0].partial);assert.equal(improved.options[0].timing.foods.leek.hour,null);
+const limited=await findMealOptionsAsync(req,{candidateIds:['reserve'],focus:'leek',maxEvaluations:1});assert.equal(limited.searchComplete,false);
+const abort=new AbortController();abort.abort();assert.equal((await findMealOptionsAsync(req,{candidateIds:['reserve'],focus:'leek'},{signal:abort.signal})).status,'cancelled');
+console.log('Meal timing: collection boundaries, no daily extrapolation, capacity, swap collection, outgoing losses, missing other food, partial improvement, limit, cancel passed.');
