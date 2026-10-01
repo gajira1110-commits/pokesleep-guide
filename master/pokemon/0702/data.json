@@ -1,0 +1,87 @@
+{
+  "no": 702,
+  "name": "デデンネ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 2500,
+  "carry": 19,
+  "foodRate": 17.7,
+  "skillRate": 4.5,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_chance_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0702_01",
+      "name": "しっぽまるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0702_02",
+      "name": "かおごしごし寝",
+      "stars": 2
+    },
+    {
+      "id": "0702_03",
+      "name": "ほっぺすりすり寝",
+      "stars": 3
+    },
+    {
+      "id": "0702_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/dedenne",
+    "https://wikiwiki.jp/poke_sleep/デデンネ",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01"
+}

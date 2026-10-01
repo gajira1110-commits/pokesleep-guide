@@ -2309,7 +2309,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:0;background:transparent;border:0;box-shadow:none}
 #boxDetail .psg-box-art-badge img{width:30px;height:30px;object-fit:contain;image-rendering:auto}
 #boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
-#boxDetail .psg-box-hero{border-color:#cfe8d4}
+#boxDetail .psg-box-hero{border-color:color-mix(in srgb,var(--box-type-accent,#55a66b) 22%,#dfe8e2)}
 #boxDetail .psg-box-identity{display:grid;}
 #boxDetail .psg-box-artwork{border:1px solid #dfe8e4;position:relative;overflow:hidden;display:grid;place-items:center}
 #boxDetail .psg-box-artwork img{max-width:100%;max-height:100%;object-fit:contain}

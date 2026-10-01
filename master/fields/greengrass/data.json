@@ -1572,6 +1572,30 @@
         "level": 12
       },
       "drowsyPower": 195358000
+    },
+    {
+      "sleepStyleId": "0702_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0702_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 25536000
+    },
+    {
+      "sleepStyleId": "0702_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "drowsyPower": 68666000
     }
   ],
   "rankThresholds": [
@@ -1766,6 +1790,7 @@
     "https://wiki.pokesleep.com/ja/pokemon/blaziken",
     "https://wiki.pokesleep.com/ja/pokemon/mudkip",
     "https://wiki.pokesleep.com/ja/pokemon/marshtomp",
-    "https://wiki.pokesleep.com/ja/pokemon/swampert"
+    "https://wiki.pokesleep.com/ja/pokemon/swampert",
+    "https://wiki.pokesleep.com/ja/pokemon/dedenne"
   ]
 }

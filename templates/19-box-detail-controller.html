@@ -47,7 +47,8 @@ function syncLevel(){
  document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
  hydrateSpecialtyIcons(document.getElementById('boxTraits'));
  const artwork=document.getElementById('boxArtwork');
- document.querySelector('#boxDetail .psg-box-hero').style.setProperty('--box-type-bg',({'くさ':'#e8f7ec','ほのお':'#fff0e8','むし':'#f1f5df','みず':'#e9f4ff','でんき':'#fff8d9'}[p?.type]||'#f3f6f4'));
+ const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
+ hero.style.setProperty('--box-type-bg',theme[0]);hero.style.setProperty('--box-type-accent',theme[1]);
  const badges=p?`<div class="psg-box-art-badges"><span class="psg-box-art-badge" title="タイプ：${boxEsc(p.type)}" aria-label="タイプ：${boxEsc(p.type)}">${typeFilterArt(p.type)}</span></div>`:'';
  artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image,'pokemon',p?.no,'full',item.name)||'No image')+badges;
  hydrateSpecialtyIcons(artwork);

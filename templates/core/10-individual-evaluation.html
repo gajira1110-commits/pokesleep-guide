@@ -26,6 +26,10 @@ function individualEvaluation(item,p){
  const rates=individualOpportunities(item,p),neutral=individualOpportunities({level:item.level,mint:true,subskills:[]},p),ideal=individualIdeal(p,item.level);
  return {reasons,rows:Object.keys(rates).map(role=>({role,ideal:ideal[role],ratio:ideal[role]?.rate>0&&rates[role]!=null?rates[role]/ideal[role].rate:null,neutral:neutral[role]>0&&rates[role]!=null?rates[role]/neutral[role]:null}))};
 }
+function individualGrowthEvaluation(item,p){
+ const level=SUBSKILL_LEVELS.find(n=>n>item.level&&n<=MAX_POKEMON_LEVEL);
+ return level?{level,...individualEvaluation({...item,level},p)}:null;
+}
 function renderIndividualEvaluation(item,p){
  const e=individualEvaluation(item,p),labels={berry:'きのみ',food:'食材おてつだい',skill:'スキル発動機会'},roles={きのみ:'berry',食材:'food',スキル:'skill'};
  const body=e.reasons.length?`<p>評価待ち</p><ul>${e.reasons.map(x=>`<li>${boxEsc(x)}</li>`).join('')}</ul>`:e.rows.map(r=>{
@@ -33,5 +37,7 @@ function renderIndividualEvaluation(item,p){
   const pct=Math.min(100,r.ratio*100);
   return `<div class="psg-individual-row"><strong>${labels[r.role]}${roles[p.specialty]===r.role?'（得意）':''}</strong><p>理想比 <b>${pct.toFixed(1)}%</b> ／ 差 ${(100-pct).toFixed(1)}pt</p><p class="psg-box-muted">無補正比 ${r.neutral==null?'—':`×${r.neutral.toFixed(2)}`}</p><details><summary>比較した理想構成</summary><p>${boxEsc(r.ideal.nature)} ／ ${r.ideal.subskills.length?r.ideal.subskills.map(boxEsc).join('・'):'解放サブスキルなし'}</p></details></div>`;
  }).join('');
- return `<p>Lv.${boxEsc(item.level)}・同じ種族での補正評価</p>${body}<details class="psg-box-explanation"><summary>評価の条件と計算式</summary><p class="psg-box-muted">同じげんき・所持数が満杯になる前で比較。性格25種と解放済み枠のサブスキル組合せから、各役割を最大にする構成を別々に求めます。きのみ＝おてつだい回数×（1−食材確率）×個数、食材＝おてつだい回数×食材確率、スキル＝おてつだい回数×スキル確率。自分のおてつだいボーナスは1回反映します。</p><p class="psg-box-muted">確率は推定値。食材の種類・個数、所持数、回収間隔、スキルLv・効果・ストック、回復、他メンバーへの支援、リボンはこの比較に含みません。日産量や総合順位ではありません。未解放のサブスキルは評価対象外です。</p></details>`;
+ const growth=individualGrowthEvaluation(item,p);
+ const future=growth?`<details class="psg-box-explanation"><summary>次のサブスキル解放 Lv.${growth.level} の評価</summary><p class="psg-box-muted">設定済みの性格・サブスキルで、同じ種族のLv.${growth.level}の理想と比較します。進化は含みません。</p>${growth.reasons.length?`<p>評価待ち：${growth.reasons.map(boxEsc).join('／')}</p>`:growth.rows.map(r=>`<p>${labels[r.role]}：${r.ratio==null?'未判定':`理想比 ${(Math.min(1,r.ratio)*100).toFixed(1)}%`}</p>`).join('')}</details>`:'';
+ return `<p>Lv.${boxEsc(item.level)}・同じ種族での補正評価</p>${body}${future}<details class="psg-box-explanation"><summary>評価の条件と計算式</summary><p class="psg-box-muted">同じげんき・所持数が満杯になる前で比較。性格25種と解放済み枠のサブスキル組合せから、各役割を最大にする構成を別々に求めます。きのみ＝おてつだい回数×（1−食材確率）×個数、食材＝おてつだい回数×食材確率、スキル＝おてつだい回数×スキル確率。自分のおてつだいボーナスは1回反映します。</p><p class="psg-box-muted">確率は推定値。食材の種類・個数、所持数、回収間隔、スキルLv・効果・ストック、回復、他メンバーへの支援、リボンはこの比較に含みません。日産量や総合順位ではありません。未解放のサブスキルは評価対象外です。</p></details>`;
 }
