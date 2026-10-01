@@ -13,7 +13,7 @@
 | `07-current-ui.css` | 現行の共通画像、料理、情報、寝顔、進化など |
 | `08-box-detail.css` | ボックス個体詳細と編集フォーム |
 | `09-list-cards.css` | 図鑑カードの見出し・画像・下部アイコン |
-| `10-detail-facts.css` | 図鑑・個体詳細Block 1の右側2列・4段の共通配置 |
+| `10-detail-facts.css` | 図鑑・個体詳細Block 1の右側4・2・2の3段配置 |
 | `11-cooking.css` | 比較Lv・鍋試算・折りたたみ資料表 |
 | `12-recipe-evaluation.css` | 料理モード切替・3指標の圧縮表示・評価注記 |
 | `13-daily-supply.css` | 専任収集負担・食材の日産量・担当構成の圧縮表示 |

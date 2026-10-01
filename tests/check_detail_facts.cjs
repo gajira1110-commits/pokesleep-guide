@@ -20,10 +20,15 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
     assert.equal(result.overflow,false);
     assert.equal(result.traits.length,4);assert.equal(result.stats.length,4);
     for(let i=0;i<4;i++){
-     assert(result.traits[i].x<result.stats[i].x);
-     assert(Math.abs(result.traits[i].y-result.stats[i].y)<1,'Fact rows must align');
-     if(i)assert(result.traits[i].y>result.traits[i-1].y);
+     assert(Math.abs(result.traits[i].y-result.traits[0].y)<1,'Four traits must share the top row');
+     if(i)assert(result.traits[i].x>result.traits[i-1].x);
+     assert(result.stats[i].y>result.traits[0].y);
     }
+    assert(Math.abs(result.stats[0].y-result.stats[1].y)<1);
+    assert(Math.abs(result.stats[2].y-result.stats[3].y)<1);
+    assert(result.stats[2].y>result.stats[0].y);
+    assert(result.stats[0].x<result.stats[1].x);
+    assert(Math.abs(result.stats[0].x-result.stats[2].x)<1);
    };
    verify(await check('#dexDetail .hero-info'));
    await page.evaluate(()=>{
@@ -38,8 +43,8 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
    await page.evaluate(()=>{PS.state.selected.ribbonHours=0;PS.refreshBoxDetail()});
    assert((await page.locator('.psg-detail-ribbon').textContent()).includes('リボンなし'));
    assert.deepEqual(errors,[]);
-   if(width===390){await page.screenshot({path:'/tmp/psg240-box.png'});await page.evaluate(()=>openPokemonDetail(1));await page.screenshot({path:'/tmp/psg240-dex.png'});}
-   console.log(`${width}px: four-row traits, friend points, ribbon change/save, no overflow or JS errors`);
+   if(width===390){await page.screenshot({path:'/tmp/psg245-box.png'});await page.evaluate(()=>openPokemonDetail(1));await page.screenshot({path:'/tmp/psg245-dex.png'});}
+   console.log(`${width}px: 4/2/2 rows, friend points, ribbon change/save, no overflow or JS errors`);
    await page.close();
   }
  }finally{await browser.close()}
