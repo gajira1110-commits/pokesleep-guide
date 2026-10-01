@@ -1,5 +1,8 @@
 # PokéSleep Guide マスターの更新
 
+現行の実装状況・資料の採用状態・ToDoは [引継ぎ](../docs/HANDOFF.md) を参照。以下の版別記述は当時の履歴です。
+
+
 このフォルダーを編集し、`python3 PSG_build_master.py` を実行すると、スマホで開ける単一ファイル `review.html` が生成されます。`index.html` は生成対象ではありません。
 
 画面のCSSは `styles/` の番号順のファイルを編集します。生成器が `PSG_styles.css` を互換用に再生成します。編集順序は [styles/README.md](../styles/README.md) を参照してください。
@@ -55,7 +58,7 @@ v166では `assets/faces/kanto_vol1_sheet.png` の顔部分を25種の一覧・�
 
 同梱の `.github/workflows/build-review.yml` をリポジトリに配置して、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に一度だけ変更します。`main` にマスターフォルダーの追加・編集をアップロードすると Actions が `review.html` を生成し、既存の `index.html` と `assets/` を合わせて公開します。必ず既存の `index.html` と `assets/` をリポジトリに残してください。設定を切り替えるまでは、従来どおり生成済み `review.html` をアップロードすれば確認できます。
 
-確認用URL: https://gajira1110-commits.github.io/pokesleep-guide/review.html
+確認用URL: https://psguide-dev.github.io/pokesleep-guide/review.html
 
 既存のボックスと寝顔の保存キーは変更していません。公開前に生成済みレビューで登録済みデータが見えるか確認してください。
 
