@@ -2,10 +2,10 @@
   "asOf": "2026-10-01",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
-    "pokemon": 107,
+    "pokemon": 108,
     "skills": 23,
     "recipes": 78,
-    "sleepStyles": 426,
+    "sleepStyles": 430,
     "normalFieldEncounters": 546
   },
   "missingCoreFields": [],
@@ -128,6 +128,10 @@
     {
       "no": 282,
       "name": "サーナイト"
+    },
+    {
+      "no": 359,
+      "name": "アブソル"
     },
     {
       "no": 363,
@@ -459,6 +463,16 @@
         "0282_02",
         "0282_03",
         "0282_04"
+      ]
+    },
+    {
+      "no": 359,
+      "name": "アブソル",
+      "sleepStyleIds": [
+        "0359_01",
+        "0359_02",
+        "0359_03",
+        "0359_04"
       ]
     },
     {

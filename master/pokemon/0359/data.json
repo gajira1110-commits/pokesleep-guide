@@ -1,0 +1,87 @@
+{
+  "no": 359,
+  "name": "アブソル",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 2950,
+  "carry": 21,
+  "foodRate": 17.8,
+  "skillRate": 3.8,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 5
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 8
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 7
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 12
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 7
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0359_01",
+      "name": "こうばこずわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0359_02",
+      "name": "きけんさっち寝",
+      "stars": 2
+    },
+    {
+      "id": "0359_03",
+      "name": "へそてん寝",
+      "stars": 3
+    },
+    {
+      "id": "0359_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/absol",
+    "https://wikiwiki.jp/poke_sleep/アブソル",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01"
+}

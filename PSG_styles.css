@@ -2452,3 +2452,5 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-individual-row{padding:12px 0;border-top:1px solid #dde5e0;overflow-wrap:anywhere}
 .psg-individual-row p{margin:6px 0}
 .psg-individual-row details{font-size:13px}
+
+.psg-evaluation-role{margin:8px 0}.psg-individual-row.is-primary{background:#fff;border:1px solid #d9e5df;border-radius:12px;padding:12px}.psg-evaluation-other{margin:12px 0}
