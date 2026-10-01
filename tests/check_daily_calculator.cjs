@@ -65,3 +65,11 @@ assert.equal(vm.runInContext('normalizeDaySettings({initialEnergy:0}).initialEne
 assert.equal(vm.runInContext('normalizeDaySettings({initialEnergy:200}).initialEnergy',ctx),150);
 assert.equal(vm.runInContext('normalizeDaySettings({collectionHours:3}).collectionHours',ctx),4);
 console.log('Hourly collection and normalized saved settings passed.');
+for(const id of ['super_luck_ingredient_select_s','hyper_cutter_ingredient_select_s']){
+ const skill=JSON.parse(fs.readFileSync(path.join(__dirname,'../master/skills',id,'data.json'),'utf8'));
+ ctx.window.PS_CATALOG.skills.s=skill;ctx.state.box[0].skillLevel=7;
+ const uncertain=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false)',ctx);
+ assert.equal(uncertain.randomIngredients,0);assert.equal(uncertain.dreamShards,0);assert.equal(uncertain.skillEnergy,0);
+ assert(uncertain.members[0].skillTriggers>0);assert(uncertain.members[0].skillCalculationNote.includes('未確定'));
+}
+console.log('Uncertain ingredient/shard draws are excluded; trigger estimate and explicit note retained.');

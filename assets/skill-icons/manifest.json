@@ -98,5 +98,13 @@
   "present_ingredient_magnet_s": {
     "name": "プレゼント",
     "path": "assets/skill-icons/present_ingredient_magnet_s.webp"
+  },
+  "super_luck_ingredient_select_s": {
+    "name": "きょううん",
+    "path": "assets/skill-icons/super_luck_ingredient_select_s.webp"
+  },
+  "hyper_cutter_ingredient_select_s": {
+    "name": "かいりきバサミ",
+    "path": "assets/skill-icons/hyper_cutter_ingredient_select_s.webp"
   }
 }
