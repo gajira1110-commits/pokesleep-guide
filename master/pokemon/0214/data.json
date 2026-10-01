@@ -83,7 +83,20 @@
     "https://wiki.pokesleep.com/ja/pokemon/heracross",
     "https://wikiwiki.jp/poke_sleep/ヘラクロス",
     "https://www.pokemonsleep.net/news/333730373236393633383034383937323831/",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%A9%E3%82%AF%E3%83%AD%E3%82%B9"
   ],
-  "verifiedAt": "2026-09-30"
+  "verifiedAt": "2026-09-30",
+  "friendPoints": 16,
+  "expType": 600,
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0214_ヘラクロス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%A9%E3%82%AF%E3%83%AD%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

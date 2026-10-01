@@ -89,5 +89,15 @@
     "チルット",
     "↓　Lv.26＋チルットのアメ×40",
     "チルタリス"
-  ]
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0334_チルタリス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%81%E3%83%AB%E3%82%BF%E3%83%AA%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

@@ -82,5 +82,20 @@
     "to": "ウツボット",
     "item": "リーフのいし",
     "candy": 80
-  }
+  },
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0070_ウツドン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%89%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%89%E3%83%B3"
+  ]
 }

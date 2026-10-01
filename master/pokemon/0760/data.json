@@ -89,5 +89,15 @@
     "ヌイコグマ",
     "↓　Lv.20＋ヌイコグマのアメ×40",
     "キテルグマ"
-  ]
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0760_キテルグマ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

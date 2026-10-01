@@ -15,15 +15,87 @@
   "dexVisible": true,
   "ingredientSlotStatus": "verified",
   "ingredientSlots": [
-    {"unlock": 1, "candidates": [{"ingredientId": "fancy_apple", "qty": 1}]},
-    {"unlock": 30, "candidates": [{"ingredientId": "fancy_apple", "qty": 2}, {"ingredientId": "greengrass_soybeans", "qty": 2}]},
-    {"unlock": 60, "candidates": [{"ingredientId": "fancy_apple", "qty": 4}, {"ingredientId": "greengrass_soybeans", "qty": 3}, {"ingredientId": "bean_meat", "qty": 3}]}
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 3
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
   ],
   "sleepStyles": [
-    {"id": "0019_01", "name": "かおかき寝", "stars": 1},
-    {"id": "0019_02", "name": "くびかしげ寝", "stars": 2},
-    {"id": "0019_03", "name": "まえばかじり寝", "stars": 3},
-    {"id": "0019_04", "name": "おなかのうえ寝", "stars": 4}
+    {
+      "id": "0019_01",
+      "name": "かおかき寝",
+      "stars": 1
+    },
+    {
+      "id": "0019_02",
+      "name": "くびかしげ寝",
+      "stars": 2
+    },
+    {
+      "id": "0019_03",
+      "name": "まえばかじり寝",
+      "stars": 3
+    },
+    {
+      "id": "0019_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
   ],
-  "evolution": {"toNo": 20, "to": "ラッタ", "level": 15, "candy": 40}
+  "evolution": {
+    "toNo": 20,
+    "to": "ラッタ",
+    "level": 15,
+    "candy": 40
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0019_コラッタ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%A9%E3%83%83%E3%82%BF",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%A9%E3%83%83%E3%82%BF"
+  ]
 }

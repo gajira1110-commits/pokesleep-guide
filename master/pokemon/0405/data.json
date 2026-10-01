@@ -91,5 +91,15 @@
     "ルクシオ",
     "↓ Lv.23＋コリンクのアメ×80",
     "レントラー"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0405_レントラー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A9%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

@@ -76,5 +76,20 @@
     }
   ],
   "berryQty": 2,
-  "rateStatus": "推定"
+  "rateStatus": "推定",
+  "friendPoints": 15,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0012_バタフリー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%BF%E3%83%95%E3%83%AA%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%BF%E3%83%95%E3%83%AA%E3%83%BC"
+  ]
 }

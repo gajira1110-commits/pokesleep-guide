@@ -87,5 +87,15 @@
   "expType": 600,
   "evolutionNotes": [
     "なし"
-  ]
+  ],
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0701_ルチャブル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AB%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

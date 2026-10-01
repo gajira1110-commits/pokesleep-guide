@@ -15,15 +15,87 @@
   "dexVisible": true,
   "ingredientSlotStatus": "verified",
   "ingredientSlots": [
-    {"unlock": 1, "candidates": [{"ingredientId": "fancy_apple", "qty": 1}]},
-    {"unlock": 30, "candidates": [{"ingredientId": "fancy_apple", "qty": 2}, {"ingredientId": "warming_ginger", "qty": 2}]},
-    {"unlock": 60, "candidates": [{"ingredientId": "fancy_apple", "qty": 4}, {"ingredientId": "warming_ginger", "qty": 3}, {"ingredientId": "fancy_egg", "qty": 3}]}
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        }
+      ]
+    }
   ],
-  "evolution": {"toNo": 25, "to": "ピカチュウ", "extra": "一緒に睡眠50時間", "candy": 20},
+  "evolution": {
+    "toNo": 25,
+    "to": "ピカチュウ",
+    "extra": "一緒に睡眠50時間",
+    "candy": 20
+  },
   "sleepStyles": [
-    {"id": "0172_01", "name": "おだやか寝", "stars": 1},
-    {"id": "0172_02", "name": "すわり寝", "stars": 2},
-    {"id": "0172_03", "name": "ほうでん寝", "stars": 3},
-    {"id": "0172_04", "name": "おなかのうえ寝", "stars": 4}
+    {
+      "id": "0172_01",
+      "name": "おだやか寝",
+      "stars": 1
+    },
+    {
+      "id": "0172_02",
+      "name": "すわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0172_03",
+      "name": "ほうでん寝",
+      "stars": 3
+    },
+    {
+      "id": "0172_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0172_ピチュー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%83%81%E3%83%A5%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%83%81%E3%83%A5%E3%83%BC"
   ]
 }

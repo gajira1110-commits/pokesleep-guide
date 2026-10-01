@@ -84,5 +84,15 @@
     "イワーク",
     "↓　メタルコート＋つながりのヒモ＋イワークのアメ×80",
     "ハガネール"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0208_ハガネール",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%82%AC%E3%83%8D%E3%83%BC%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

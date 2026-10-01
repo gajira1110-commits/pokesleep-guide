@@ -7,9 +7,9 @@
   "berry": "ラムのみ",
   "help": 4400,
   "carry": 11,
-  "foodRate": 17.9, "skillRate": 0.8, "rateStatus": "推定",
   "foodRate": 17.9,
   "skillRate": 0.8,
+  "rateStatus": "推定",
   "mainSkillId": "ingredient_magnet_s",
   "dexVisible": true,
   "verified": true,
@@ -82,5 +82,20 @@
       "stars": 4
     }
   ],
-  "berryQty": 2
+  "berryQty": 2,
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0010_キャタピー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A3%E3%82%BF%E3%83%94%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A3%E3%82%BF%E3%83%94%E3%83%BC"
+  ]
 }

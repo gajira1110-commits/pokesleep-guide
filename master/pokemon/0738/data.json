@@ -91,5 +91,15 @@
     "デンヂムシ",
     "↓ かみなりのいし＋アゴジムシのアメ80",
     "クワガノン"
-  ]
+  ],
+  "transferCandy": 11,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0738_クワガノン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%82%AC%E3%83%8E%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

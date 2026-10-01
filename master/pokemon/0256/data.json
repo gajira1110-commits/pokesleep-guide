@@ -81,7 +81,8 @@
     "https://wiki.pokesleep.com/ja/pokemon/combusken",
     "https://wikiwiki.jp/poke_sleep/ワカシャモ",
     "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
-    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%AF%E3%82%AB%E3%82%B7%E3%83%A3%E3%83%A2"
   ],
   "verifiedAt": "2026-10-01",
   "evolution": {
@@ -89,5 +90,17 @@
     "to": "バシャーモ",
     "level": 27,
     "candy": 80
+  },
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0256_ワカシャモ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AF%E3%82%AB%E3%82%B7%E3%83%A3%E3%83%A2",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
   }
 }

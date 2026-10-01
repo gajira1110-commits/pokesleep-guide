@@ -15,14 +15,81 @@
   "dexVisible": true,
   "ingredientSlotStatus": "verified",
   "ingredientSlots": [
-    {"unlock": 1, "candidates": [{"ingredientId": "plump_pumpkin", "qty": 1}]},
-    {"unlock": 30, "candidates": [{"ingredientId": "plump_pumpkin", "qty": 2}, {"ingredientId": "greengrass_corn", "qty": 4}]},
-    {"unlock": 60, "candidates": [{"ingredientId": "plump_pumpkin", "qty": 4}, {"ingredientId": "greengrass_corn", "qty": 6}, {"ingredientId": "potato", "qty": 7}]}
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 6
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 7
+        }
+      ]
+    }
   ],
   "sleepStyles": [
-    {"id": "0028_01", "name": "かおごしごし寝", "stars": 1},
-    {"id": "0028_02", "name": "こっくり寝", "stars": 2},
-    {"id": "0028_03", "name": "つちうまり寝", "stars": 3},
-    {"id": "0028_04", "name": "おなかのうえ寝", "stars": 4}
+    {
+      "id": "0028_01",
+      "name": "かおごしごし寝",
+      "stars": 1
+    },
+    {
+      "id": "0028_02",
+      "name": "こっくり寝",
+      "stars": 2
+    },
+    {
+      "id": "0028_03",
+      "name": "つちうまり寝",
+      "stars": 3
+    },
+    {
+      "id": "0028_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0028_サンドパン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%B3%E3%83%89%E3%83%91%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%B3%E3%83%89%E3%83%91%E3%83%B3"
   ]
 }

@@ -10,7 +10,7 @@ function syncLevel(){
  document.getElementById('boxTraining').setAttribute('aria-pressed',String(!!item.training));
  document.getElementById('boxTraining').textContent='🌱';
  const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
- document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
+ document.getElementById('boxTraits').innerHTML=`<span class="psg-detail-trait psg-detail-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-detail-trait">${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-detail-trait psg-detail-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span><span class="psg-detail-trait psg-detail-ribbon" title="おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}（計算補正は未反映）" aria-label="おやすみリボン ${item.ribbonHours?item.ribbonHours+'時間':'なし'}">${window.PS_UI_ART.icon('ribbons',item.ribbonHours)}<small>${item.ribbonHours?item.ribbonHours+'h':'リボンなし'}</small></span>`;
  hydrateSpecialtyIcons(document.getElementById('boxTraits'));
  const artwork=document.getElementById('boxArtwork');
  const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
@@ -22,7 +22,7 @@ function syncLevel(){
  const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);
  const rateNote=(factor,kind)=>{const next=factor===1?nextRateUnlock(kind):null;return next?`推定・Lv.${next}で補正`:`推定・×${factor.toFixed(2)}`};
  const fields=[['おてつだい時間',calc.speed,'秒','Lv・個体補正',naturePending],['最大所持数',calc.carry,'','補正反映',false],['食材確率',calc.food,'%',rateNote(calc.foodFactor,'foodRateBonus'),naturePending],['スキル発動確率',calc.skill,'%',rateNote(calc.skillFactor,'skillRateBonus'),naturePending]];
- document.getElementById('boxStats').innerHTML=fields.map(([title,value,unit,note,pending])=>`<div class="psg-box-stat"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`).join('');
+ document.getElementById('boxStats').innerHTML=fields.map(([title,value,unit,note,pending])=>`<div class="psg-detail-stat"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`).join('');
  const slots=p?.ingredientSlots||[];
  const ingredientRows=[1,30,60].map((unlock,index)=>{
   const slot=slots.find(s=>s.unlock===unlock);
@@ -56,7 +56,6 @@ function syncLevel(){
  document.getElementById('boxEvaluation').innerHTML=renderIndividualEvaluation(item,p);
  const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
  document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b></div>`).join('')+'<p class="psg-box-muted">必要アメ・ゆめのかけら：未確認</p>':'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
- document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">${window.PS_UI_ART.icon('ribbons',item.ribbonHours)}おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}${item.ribbonHours?'（計算補正は未反映）':''}</p>`);
  const parent=p?.evolution;
  if(parent&&!Array.isArray(parent))document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">進化先：${boxEsc(parent.to||'未確認')}　${parent.level?'Lv.'+parent.level:''}${parent.candy?'・アメ'+parent.candy+'個':''}</p>`);
  fillBoxEditor(item,p);

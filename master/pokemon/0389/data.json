@@ -86,5 +86,15 @@
     "ハヤシガメ",
     "↓ Lv.24＋ナエトルのアメx80",
     "ドダイトス"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0389_ドダイトス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%83%80%E3%82%A4%E3%83%88%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

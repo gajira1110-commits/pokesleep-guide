@@ -179,7 +179,6 @@
 #v12Ability .v33-skill-effect-row .skill-detail-toggle{color:#000!important;opacity:1!important;}
 
 @media(max-width:620px){
-  #dexDetail #v12Header{grid-column:2!important;grid-row:1!important;align-self:start!important;}
   #dexDetail .hero-info>.stats{
     grid-column:1 / -1!important;grid-row:2!important;
   }

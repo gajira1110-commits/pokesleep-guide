@@ -75,8 +75,21 @@
     "candy": 40
   },
   "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/magnemite"
+    "https://wiki.pokesleep.com/ja/pokemon/magnemite",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%A4%E3%83%AB"
   ],
   "verifiedAt": "2026-09-30",
-  "sleepStyleCount": 3
+  "sleepStyleCount": 3,
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0081_コイル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%A4%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

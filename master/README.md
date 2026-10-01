@@ -2,6 +2,8 @@
 
 現行の実装状況・資料の採用状態・ToDoは [引継ぎ](../docs/HANDOFF.md) を参照。以下の版別記述は当時の履歴です。
 
+v240の取得・育成補助項目は `PSG_import_acquisition.py` で資料ZIPから補完します。名前と全国番号の完全一致を必須とし、既存値との不一致で停止。未確定はnullを保持します。個別 `acquisitionSource` に資料・確認日・確認状態を記録し、集計と元ZIPハッシュは `data-import/acquisition-v240.json` に保存。EXPタイプ・送付アメはマスター補完のみで、必要育成資源の計算にはまだ接続していません。
+
 
 このフォルダーを編集し、`python3 PSG_build_master.py` を実行すると、スマホで開ける単一ファイル `review.html` が生成されます。`index.html` は生成対象ではありません。
 

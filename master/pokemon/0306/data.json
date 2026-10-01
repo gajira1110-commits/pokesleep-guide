@@ -91,5 +91,15 @@
     "コドラ",
     "↓ Lv.32＋ココドラのアメ80",
     "ボスゴドラ"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0306_ボスゴドラ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%82%B9%E3%82%B4%E3%83%89%E3%83%A9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

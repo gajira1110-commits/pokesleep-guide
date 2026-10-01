@@ -80,7 +80,20 @@
   "sources": [
     "https://wiki.pokesleep.com/ja/pokemon/swampert",
     "https://wikiwiki.jp/poke_sleep/ラグラージ",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%B0%E3%83%A9%E3%83%BC%E3%82%B8"
   ],
-  "verifiedAt": "2026-10-01"
+  "verifiedAt": "2026-10-01",
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0260_ラグラージ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%B0%E3%83%A9%E3%83%BC%E3%82%B8",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

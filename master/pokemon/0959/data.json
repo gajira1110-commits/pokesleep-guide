@@ -86,5 +86,15 @@
     "ナカヌチャン",
     "↓ Lv.29＋カヌチャンのアメx80",
     "デカヌチャン"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0959_デカヌチャン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%87%E3%82%AB%E3%83%8C%E3%83%81%E3%83%A3%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

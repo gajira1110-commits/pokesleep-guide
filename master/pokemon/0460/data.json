@@ -84,5 +84,15 @@
     "ユキカブリ",
     "↓　Lv.30＋ユキカブリのアメ×40",
     "ユキノオー"
-  ]
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0460_ユキノオー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%83%8E%E3%82%AA%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }
