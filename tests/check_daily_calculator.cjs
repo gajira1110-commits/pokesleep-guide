@@ -54,3 +54,14 @@ ctx.state.box[0].skillLevel=8;
 randomShards=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,4,0,false,false,[],50)',ctx);
 assert.equal(randomShards.dreamShards,14375);assert.equal(randomShards.skillEnergy,0);
 console.log('Random dream shards Lv.1/8 midpoint estimate, no field bonus or energy conversion passed.');
+
+const hourly=vm.runInContext('dailyBaseline(team,state.box,window.PS_CATALOG,1,0,false,false)',ctx);
+assert.equal(hourly.interval,1);assert.equal(hourly.periods.length,17);
+assert.equal(hourly.periods.reduce((a,b)=>a+b,0),24);
+const settingsSource=fs.readFileSync(path.join(__dirname,'../templates/core/08-fields.html'),'utf8').split('function readDaySettings')[0];
+vm.runInContext(settingsSource,ctx);
+assert.equal(vm.runInContext('normalizeDaySettings({}).initialEnergy',ctx),100);
+assert.equal(vm.runInContext('normalizeDaySettings({initialEnergy:0}).initialEnergy',ctx),0);
+assert.equal(vm.runInContext('normalizeDaySettings({initialEnergy:200}).initialEnergy',ctx),150);
+assert.equal(vm.runInContext('normalizeDaySettings({collectionHours:3}).collectionHours',ctx),4);
+console.log('Hourly collection and normalized saved settings passed.');
