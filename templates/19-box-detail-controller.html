@@ -119,6 +119,8 @@ function fillBoxEditor(item,p){
  form.elements.nature.value=item.nature||'';
  form.elements.mint.checked=!!item.mint;
  form.elements.skillLevel.value=item.skillLevel||1;
+ form.elements.role.querySelector('[data-legacy]')?.remove();
+ if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
  form.elements.role.value=item.role||'';
  const slots=p?.ingredientSlots||[];
  document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
