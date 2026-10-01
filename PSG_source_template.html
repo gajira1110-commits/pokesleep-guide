@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v217</title>
+  <title>PokéSleep Guide — Review v218</title>
 
 
 
@@ -203,7 +203,7 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
 <style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v217</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v218</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -916,6 +916,43 @@ function teamSpeedContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
  const members=new Map(selected.map(item=>[item.id,individualCorrections(item,catalog?.pokemon?.[item.no],bonus)]));
  return {bonus,bonusCount:selected.filter(item=>contribution(item)>0).length,members};
 }
+const INDIVIDUAL_IDEALS=new Map();
+function individualOpportunities(item,p){
+ const active=SUBSKILL_LEVELS.filter(n=>n<=item.level).map((_,i)=>item.subskills?.[i]);
+ const bonus=active.reduce((s,n)=>s+(SUBSKILLS[n]?.effect==='teamSpeedReduction'?SUBSKILLS[n].value:0),0);
+ const c=individualCorrections(item,p,bonus),h=Number.isFinite(c.speed)&&c.speed>0?3600/c.speed:null;
+ return {berry:h!=null&&Number.isFinite(c.food)&&Number.isFinite(c.berryQty)?h*(1-c.food/100)*c.berryQty:null,food:h!=null&&Number.isFinite(c.food)?h*c.food/100:null,skill:h!=null&&Number.isFinite(c.skill)?h*c.skill/100:null};
+}
+function individualIdeal(p,level){
+ const key=JSON.stringify([p.no,level,p.help,p.foodRate,p.skillRate,p.berryQty]);
+ if(INDIVIDUAL_IDEALS.has(key))return INDIVIDUAL_IDEALS.get(key);
+ const names=SUBSKILL_NAMES.filter(n=>['berryQtyBonus','teamSpeedReduction','speedReduction','foodRateBonus','skillRateBonus'].includes(SUBSKILLS[n].effect));
+ const count=SUBSKILL_LEVELS.filter(n=>n<=level).length,best={berry:null,food:null,skill:null};
+ function visit(start,skills){
+  if(skills.length===count){for(const nature of Object.keys(NATURE_EFFECTS)){const rates=individualOpportunities({level,nature,subskills:skills},p);for(const role of Object.keys(best))if(rates[role]!=null&&(!best[role]||rates[role]>best[role].rate))best[role]={rate:rates[role],nature,subskills:[...skills]};}return;}
+  for(let i=start;i<names.length;i++)visit(i+1,[...skills,names[i]]);
+ }
+ visit(0,[]);INDIVIDUAL_IDEALS.set(key,best);return best;
+}
+function individualEvaluation(item,p){
+ const reasons=[],count=SUBSKILL_LEVELS.filter(n=>n<=item.level).length,active=(item.subskills||[]).slice(0,count);
+ if(!item.mint&&!Object.hasOwn(NATURE_EFFECTS,item.nature))reasons.push('性格を設定してください');
+ for(let i=0;i<count;i++)if(!SUBSKILLS[active[i]])reasons.push(`Lv.${SUBSKILL_LEVELS[i]}のサブスキルを設定してください`);
+ if(new Set(active.filter(Boolean)).size!==active.filter(Boolean).length)reasons.push('サブスキルの重複を修正してください');
+ if(!Number.isInteger(item.level)||item.level<1||item.level>MAX_POKEMON_LEVEL)reasons.push('対応範囲内のレベルを設定してください');
+ if(reasons.length)return {reasons,rows:[]};
+ const rates=individualOpportunities(item,p),neutral=individualOpportunities({level:item.level,mint:true,subskills:[]},p),ideal=individualIdeal(p,item.level);
+ return {reasons,rows:Object.keys(rates).map(role=>({role,ideal:ideal[role],ratio:ideal[role]?.rate>0&&rates[role]!=null?rates[role]/ideal[role].rate:null,neutral:neutral[role]>0&&rates[role]!=null?rates[role]/neutral[role]:null}))};
+}
+function renderIndividualEvaluation(item,p){
+ const e=individualEvaluation(item,p),labels={berry:'きのみ',food:'食材おてつだい',skill:'スキル発動機会'},roles={きのみ:'berry',食材:'food',スキル:'skill'};
+ const body=e.reasons.length?`<p>評価待ち</p><ul>${e.reasons.map(x=>`<li>${boxEsc(x)}</li>`).join('')}</ul>`:e.rows.map(r=>{
+  if(r.ratio==null)return `<p>${labels[r.role]}：基礎データ不足のため未判定</p>`;
+  const pct=Math.min(100,r.ratio*100);
+  return `<div class="psg-individual-row"><strong>${labels[r.role]}${roles[p.specialty]===r.role?'（得意）':''}</strong><p>理想比 <b>${pct.toFixed(1)}%</b> ／ 差 ${(100-pct).toFixed(1)}pt</p><p class="psg-box-muted">無補正比 ${r.neutral==null?'—':`×${r.neutral.toFixed(2)}`}</p><details><summary>比較した理想構成</summary><p>${boxEsc(r.ideal.nature)} ／ ${r.ideal.subskills.length?r.ideal.subskills.map(boxEsc).join('・'):'解放サブスキルなし'}</p></details></div>`;
+ }).join('');
+ return `<p>Lv.${boxEsc(item.level)}・同じ種族での補正評価</p>${body}<details class="psg-box-explanation"><summary>評価の条件と計算式</summary><p class="psg-box-muted">同じげんき・所持数が満杯になる前で比較。性格25種と解放済み枠のサブスキル組合せから、各役割を最大にする構成を別々に求めます。きのみ＝おてつだい回数×（1−食材確率）×個数、食材＝おてつだい回数×食材確率、スキル＝おてつだい回数×スキル確率。自分のおてつだいボーナスは1回反映します。</p><p class="psg-box-muted">確率は推定値。食材の種類・個数、所持数、回収間隔、スキルLv・効果・ストック、回復、他メンバーへの支援、リボンはこの比較に含みません。日産量や総合順位ではありません。未解放のサブスキルは評価対象外です。</p></details>`;
+}
 let teamInitialEnergy=100;
 let teamGoodCamp=false;
 let teamMeals=true;
@@ -1304,7 +1341,7 @@ function syncLevel(){
  const natureText=item.mint?'ミント適用：性格補正なし':!item.nature?'性格未入力（無補正として仮計算）':!NATURE_EFFECTS[item.nature]?'性格名未対応（無補正として仮計算）':calc.nature.up?`${labels[calc.nature.up]}↑ / ${labels[calc.nature.down]}↓`:'性格補正なし';
  const natureEffects=!item.mint&&calc.nature.up?`<span class="psg-nature-up">${boxEsc(labels[calc.nature.up])} ↑</span><span class="psg-nature-down">${boxEsc(labels[calc.nature.down])} ↓</span>`:`<span class="psg-box-muted">${boxEsc(natureText)}</span>`;
  document.getElementById('boxNature').innerHTML=`<div class="psg-box-nature-row"><div class="psg-box-lead">${boxEsc(item.nature||'未確認')}${item.mint?mintIcon:''}</div><div class="psg-box-nature-effects">${natureEffects}</div></div>${calc.unknown.length?'<p class="psg-box-muted">未対応：'+boxEsc(calc.unknown.join('・'))+'。</p>':''}`;
- document.getElementById('boxEvaluation').innerHTML=`<p>役割：${boxEsc(item.role||'未設定')}</p><p>食材確率 ×${calc.foodFactor.toFixed(2)} / スキル確率 ×${calc.skillFactor.toFixed(2)}</p><details class="psg-box-explanation"><summary>評価の説明</summary><p class="psg-box-muted">単体の個体補正の比較用。チームのおてつだいボーナスはホームのおてつだい時間に反映。げんき・回収間隔・所持数満杯を含む日産計算には条件設定が必要。スキルLvは現在値を別途設定（スキルレベルアップS/Mを二重加算しない）。理想個体との差は未判定。</p></details>`;
+ document.getElementById('boxEvaluation').innerHTML=renderIndividualEvaluation(item,p);
  const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
  document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b></div>`).join('')+'<p class="psg-box-muted">必要アメ・ゆめのかけら：未確認</p>':'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
  document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}${item.ribbonHours?'（計算補正は未反映）':''}</p>`);

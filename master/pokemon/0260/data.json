@@ -1,0 +1,86 @@
+{
+  "no": 260,
+  "name": "ラグラージ",
+  "type": "じめん",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "フィラのみ",
+  "berryQty": 2,
+  "help": 2800,
+  "carry": 30,
+  "foodRate": 14.6,
+  "skillRate": 3.4,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_chance_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 4
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0260_01",
+      "name": "ゆめでおよぎ寝",
+      "stars": 1
+    },
+    {
+      "id": "0260_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0260_03",
+      "name": "どろあそび寝",
+      "stars": 3
+    },
+    {
+      "id": "0260_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/swampert",
+    "https://wikiwiki.jp/poke_sleep/ラグラージ",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-10-01"
+}
