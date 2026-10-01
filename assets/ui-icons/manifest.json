@@ -1,0 +1,31 @@
+{
+  "items": {
+    "まっしろミント": "assets/ui-icons/white_mint.webp",
+    "ほのおのいし": "assets/ui-icons/fire_stone.webp",
+    "みずのいし": "assets/ui-icons/water_stone.webp",
+    "かみなりのいし": "assets/ui-icons/thunder_stone.webp",
+    "リーフのいし": "assets/ui-icons/leaf_stone.webp",
+    "こおりのいし": "assets/ui-icons/ice_stone.webp",
+    "つきのいし": "assets/ui-icons/moon_stone.webp",
+    "ひかりのいし": "assets/ui-icons/shiny_stone.webp",
+    "つながりのヒモ": "assets/ui-icons/linking_cord.webp",
+    "おうじゃのしるし": "assets/ui-icons/kings_rock.webp",
+    "メタルコート": "assets/ui-icons/metal_coat.webp",
+    "めざめいし": "assets/ui-icons/dawn_stone.webp",
+    "するどいツメ": "assets/ui-icons/razor_claw.webp",
+    "まんまるいし": "assets/ui-icons/oval_stone.webp",
+    "やみのいし": "assets/ui-icons/dusk_stone.webp"
+  },
+  "ranks": {
+    "ノーマル": "assets/ui-icons/rank_normal.webp",
+    "スーパー": "assets/ui-icons/rank_great.webp",
+    "ハイパー": "assets/ui-icons/rank_ultra.webp",
+    "マスター": "assets/ui-icons/rank_master.webp"
+  },
+  "ribbons": {
+    "200": "assets/ui-icons/ribbon_200.webp",
+    "500": "assets/ui-icons/ribbon_500.webp",
+    "1000": "assets/ui-icons/ribbon_1000.webp",
+    "2000": "assets/ui-icons/ribbon_2000.webp"
+  }
+}

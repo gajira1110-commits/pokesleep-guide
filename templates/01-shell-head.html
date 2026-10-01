@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v233</title>
+  <title>PokéSleep Guide — Review v234</title>
 
 
 
@@ -37,6 +37,9 @@ window.PS_IMAGE_FILES = {
   sleepTypes: {},    // 睡眠タイプ名 -> 共通バッジ
   sleepStyles: {},   // 寝顔ID -> 写真ファイル（寝顔名・★はPS_CATALOGに置く）
   fields: {},        // フィールドID -> フィールドタブ（表示実装時に接続）
+  items: {},        // アイテム名 -> 進化条件・ミント
+  ranks: {},        // ランク名 -> フィールドの条件表示
+  ribbons: {},      // 睡眠時間 -> おやすみリボン
   subskills: {}      // サブスキル名 -> 小型バッジ
 };
 </script>
@@ -214,7 +217,14 @@ window.PS_TYPE_THEME={
    "はがね":["#eef2f4","#82939c"],"フェアリー":["#faeaf2","#c77c9f"]
  };
 </script>
+<script>
+window.PS_UI_ART={
+ escape:value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
+ icon(kind,key){const src=window.PS_IMAGE_FILES?.[kind]?.[key];return src?`<img class="psg-ui-icon psg-ui-${kind}" src="${this.escape(src)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''},
+ rank(element,tier){const src=window.PS_IMAGE_FILES?.ranks?.[tier];if(!src)return;const img=document.createElement('img');img.src=src;img.alt='';img.className='psg-ui-icon psg-ui-ranks';img.loading='lazy';img.decoding='async';element.prepend(img)}
+};
+</script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v233</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v234</small></header>
 <main>

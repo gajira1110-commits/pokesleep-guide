@@ -11,6 +11,11 @@
    if(e.extra)out.push(e.extra);
    return out.length?out:["条件未確認"];
  }
+ function evolutionConditionMarkup(value){
+   let text=detailEsc(value);
+   for(const name of Object.keys(window.PS_IMAGE_FILES.items||{}))if(String(value).includes(name))text=text.replace(name,window.PS_UI_ART.icon('items',name)+name);
+   return text;
+ }
  function parentsOf(no){
    return Object.values(V.pokemon).filter(p=>evolutionEntries(p).some(e=>Number(e.toNo)===Number(no)));
  }
@@ -31,7 +36,7 @@
    const face=window.PS_IMAGE_FILES.pokemonFaces?.[p.no]||(p.faceImage&&p.faceImage!==p.image?p.faceImage:null);
    const image=window.PS_DEV_ASSETS.image(face,'pokemon',p.no,'face',p.name);
    const isCurrent=Number(p.no)===Number(currentNo);
-   const conditions=condition?`<span class="v106-evo-conditions">${evolutionConditions(condition).map((x,i)=>`<span>${x}${i===0&&!incoming?'<span class="v111-evo-next" aria-hidden="true">›</span>':''}</span>`).join("")}</span>`:"";
+   const conditions=condition?`<span class="v106-evo-conditions">${evolutionConditions(condition).map((x,i)=>`<span>${evolutionConditionMarkup(x)}${i===0&&!incoming?'<span class="v111-evo-next" aria-hidden="true">›</span>':''}</span>`).join("")}</span>`:"";
    return `<button class="v31-evo-node ${isCurrent?"is-current":""} ${cls}" data-evo-no="${p.no}"><span class="v31-evo-name">${p.name}</span><span class="v111-evo-body"><span class="v31-evo-image">${image}<span class="v31-evo-type">${window.PS_TYPE_ART?.(p.type)||iconForType(p.type)}</span></span>${conditions}</span></button>`;
  }
  function nestedEvolutionTree(root,currentNo){
@@ -82,7 +87,7 @@
    }else if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
      el.innerHTML=nestedEvolutionTree(root,m.no);
    }else if(rootBranches.length>1){
-     const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${x}</span>`).join("")}</div></div>`}).join("");
+     const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${evolutionConditionMarkup(x)}</span>`).join("")}</div></div>`}).join("");
      el.innerHTML=`<div class="v31-branch-layout"><div class="v31-branch-root">${evoNode(root,m.no,"is-root")}</div><div class="v31-big-arrow">›</div><div class="v31-branch-grid ${rootBranches.length===2?'is-two':''}">${cells}</div></div>`;
    }else{
      // Normal line: render the full known evolution family, not Pokédex-number adjacency.
