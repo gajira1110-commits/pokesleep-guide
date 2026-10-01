@@ -53,6 +53,7 @@
 | `recipes/02-ingredient-filter.html` | 食材アイコン・フィルター候補 |
 | `recipes/03-providers.html` | 最終進化の食材拾得候補 |
 | `recipes/03-cooking.html` | 比較Lv・実測値優先のエナジー・鍋試算・資料表 |
+| `recipes/03-daily-supply.html` | 共通条件の日産量・専任収集負担・実際の構成・日産ティアと前提 |
 | `recipes/03-evaluation.html` | 料理3指標・評価モード・状態維持・評価基準 |
 | `recipes/04-list-view.html` | 並び順・料理カード・遅延詳細表示 |
 | `recipes/05-events.html` | 絞り込み・カテゴリ切替・料理を開く入口 |
