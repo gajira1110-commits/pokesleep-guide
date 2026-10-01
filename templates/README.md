@@ -16,7 +16,10 @@
 | `10-box-detail.html` | 個体詳細 |
 | `11-navigation.html` | ナビゲーションと共通の画面構造 |
 | `12-core-controller.html` | 共通状態・保存キー・ボックス読込保存、クロージャの開始 |
-| `core/02-team.html` | チーム構成・食材・料理チェック・メンバー選択・並べ替え・顔ドック |
+| `core/02-team.html` | チーム保存読み込み・構成・食材候補の集計 |
+| `team/02-food-view.html` | チームの食材・対応料理表示 |
+| `team/03-cards.html` | チームカード・選択保存・並び替え |
+| `team/04-face-dock.html` | スクロール時の固定顔表示 |
 | `core/03-profiles.html` | 寝顔記録の検証、フィールド・週の料理・好物・エリアボーナスの保存 |
 | `core/04-backup.html` | バックアップ書き出し・復元プレビュー・確認・失敗時の保存復旧 |
 | `core/05-navigation-and-filters.html` | 共通画面ナビ、検索・タイプ・食材・得意フィルター、代替アイコン |
@@ -25,7 +28,11 @@
 | `core/08-fields.html` | フィールド選択・一覧・寝顔出現・好物・今週の料理の操作 |
 | `core/09-day-view.html` | ホームの日産予想表示・キャンプ・食事・起床時げんきの操作 |
 | `21-day-calculator.html` | ホームとボックス共通の日産近似計算 |
-| `19-box-detail-controller.html` | ボックス詳細の表示・個体編集・レベル操作 |
+| `19-box-detail-controller.html` | ボックス詳細の共通参照・開く入口 |
+| `box/02-daily-forecast.html` | 日産予想の接続・食材とスキル予想表示 |
+| `box/03-view.html` | 個体詳細の表示更新 |
+| `box/04-editor.html` | 進化系統・編集フォームの準備 |
+| `box/05-actions.html` | レベル・お気に入り・育成・編集保存の操作 |
 | `20-core-initialize.html` | 一覧イベント・追加削除・初期化、共通クロージャの終了 |
 | `13-catalog-adapter.html` | 図鑑データの接続 |
 | `14-detail-controller.html` | 図鑑詳細の共通状態・DOM初期化、クロージャの開始 |
@@ -42,11 +49,19 @@
 | `images/05-refresh.html` | 読み込み完了後の画面更新、クロージャの終了 |
 | `16-swipe.html` | スワイプ操作 |
 | `17-skill-controller.html` | スキル一覧の処理 |
-| `18-recipe-controller.html` | 料理一覧の処理 |
+| `18-recipe-controller.html` | 料理一覧の共通DOM・状態 |
+| `recipes/02-ingredient-filter.html` | 食材アイコン・フィルター候補 |
+| `recipes/03-providers.html` | 最終進化の食材拾得候補 |
+| `recipes/04-list-view.html` | 並び順・料理カード・遅延詳細表示 |
+| `recipes/05-events.html` | 絞り込み・カテゴリ切替・料理を開く入口 |
 
 ファイル境界は表示順を保つためのものです。新しい部品を追加する場合は、`PSG_build_master.py` の `TEMPLATE_PARTS` に挿入位置を指定してください。CSSは `styles/` を編集します。
 
-12 → core/02〜09 → 21 → 19 → 20 は同じスクリプトとクロージャの断片です。順番を変えたり単独の script タグで囲んだりしないでください。個体詳細の変更は19、HTMLは10、CSSは08-box-detail.cssで行います。
+12 → core/02 → team/02〜04 → core/03〜09 → 21 → 19 → box/02〜05 → 20 は同じスクリプトとクロージャの断片です。順番を変えたり単独の script タグで囲んだりしないでください。個体詳細はbox/各担当、HTMLは10、CSSは08-box-detail.cssで編集します。
+
+18 → recipes/02〜05も同じスクリプトの断片です。v239は料理、チーム、Box詳細の順に担当別へ分割し、連結後のJavaScriptをv238と完全一致させています。保存キー・計算式・公開入口は変更していません。日産の計算そのものは21に残します。
+
+ビルド後の構文検証：`node tests/check_fragment_assembly.cjs`。整理前とのJS完全一致を確認する場合は比較用リポジトリのパスを追加します。画面比較：`node tests/check_refactor_ui.cjs <比較用リポジトリ>`（Playwright Firefoxが必要）。
 
 日産の基本数値検証：`node tests/check_daily_calculator.cjs`。UI確認とは別に24時間・げんき0・所持数十分の既知条件、キャンプ、満杯、未選択を検証します。
 

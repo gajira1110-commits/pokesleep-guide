@@ -1,0 +1,17 @@
+ function icon(name){
+  const visual=catalog.ingredientVisual?.(name);
+  const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  if(src){const img=document.createElement('img');img.src=src;img.alt='';return img}
+  const text=document.createElement('span');text.textContent=visual?.fallback||'◌';return text;
+ }
+ function ingredientChoices(){
+  ingredientOptions.replaceChildren();
+  const names=[...new Set(recipes.filter(r=>r.category===selectedCategory).flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
+  for(const name of names){
+   const option=document.createElement('button');option.type='button';option.className='filter-option psg-recipe-filter-option';
+   option.setAttribute('aria-label',name);option.setAttribute('aria-pressed',String(name===selectedIngredient));option.title=name;
+   option.append(icon(name));const caption=document.createElement('span');caption.textContent=name;option.append(caption);
+   option.onclick=e=>{e.stopPropagation();selectedIngredient=selectedIngredient===name?'':name;ingredientButton.classList.toggle('active',!!selectedIngredient);ingredientButton.firstChild.textContent=selectedIngredient||'食材';ingredientOptions.parentElement.classList.remove('open');ingredientButton.setAttribute('aria-expanded','false');ingredientChoices();render()};
+   ingredientOptions.append(option);
+  }
+ }
