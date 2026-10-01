@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 from PSG_image_assets import image_path, face_sheet_script
+from PSG_import_cooking import validate as validate_cooking
 
 ROOT = Path(__file__).resolve().parent
 MASTER = ROOT / 'master'
@@ -57,6 +58,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '18-recipe-controller.html',
     'recipes/02-ingredient-filter.html',
     'recipes/03-providers.html',
+    'recipes/03-cooking.html',
     'recipes/04-list-view.html',
     'recipes/05-events.html',
 ))
@@ -72,6 +74,7 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '08-box-detail.css',
     '09-list-cards.css',
     '10-detail-facts.css',
+    '11-cooking.css',
 ))
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
@@ -127,6 +130,8 @@ def catalog_and_images():
             images[kind][name] = path
     catalog = {**data,'pokemon':{},'sleepStyles':{},'recipes':{},'skills':{},'ingredientAssets':{},'berries':{},'fields':{},
                'natures':natures,'subskills':subskills['records']}
+    catalog['cooking'] = json.loads((MASTER / 'cooking/data.json').read_text())
+    validate_cooking(catalog['cooking'])
     for kind in ('specialties', 'sleepTypes'):
         catalog[kind] = {}
         for key, (obj, folder) in records(kind).items():
@@ -302,7 +307,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v240') == 2
+    assert source.count('Review v241') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

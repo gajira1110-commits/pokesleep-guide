@@ -9,6 +9,7 @@ on:
       - 'styles/**'
       - 'PSG_face_sheet.js'
       - 'PSG_build_master.py'
+      - 'PSG_import_cooking.py'
       - 'PSG_source_template.html'
       - 'PSG_styles.css'
       - 'PSG_specialty_images.js'
