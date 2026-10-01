@@ -43,21 +43,7 @@
  supplyNote('専任収集負担＝食材ごとの必要数÷最良担当日産量を合計。1匹・日は、この条件で1匹を1日編成する収集力の単位です。共有の理論下限は、実在する食材構成の供給ベクトルを線形計画で配分した参考値。分数・同種複数・別構成を許すため、実際の必要枠数・Box交代時間・5匹で作れるかの判定には使いません。');
  supplyNote('調査候補には現行図鑑未収録の種族を含みます。期間限定・衣装、個体状態未指定のミュウ・ダークライは除外。比較Lvを超える進化条件の種族は育成経由の候補から除外。低Lvの進化後直接捕獲や厳選負担は評価しません。上位3系統は別々の選択肢であり、1匹の量として合算しません。');
  supplyNote('周期位相・待機キュー・げんき0〜1付近等は未確定を含む近似です。1日合計の見込みであり、朝昼晩の食事時点にそろう保証はありません。食事の間隔は同じ長さではありません。');
- const dailyLevel=document.createElement('select');dailyLevel.id='ingredientSupplyLevel';dailyLevel.setAttribute('aria-label','食材日産量の比較レベル');
- for(const value of ['30','60']){const option=document.createElement('option');option.value=value;option.textContent=`担当Lv${value}`;dailyLevel.append(option)}
- const toolbar=document.createElement('div');toolbar.className='psg-cooking-controls';toolbar.append(dailyLevel);referenceContent.append(toolbar);
- const tiersView=document.createElement('div');tiersView.id='ingredientDailyTiers';referenceContent.append(tiersView);
- function renderDailyTiers(){
-  tiersView.replaceChildren();
-  const entries=Object.entries(supply.tiers[dailyLevel.value]).sort((a,b)=>b[1].daily-a[1].daily||a[0].localeCompare(b[0],'ja'));
-  for(const [name,row] of entries){
-   const details=document.createElement('details');details.className='psg-cooking-reference psg-supply-tier';details.dataset.ingredient=name;
-   const summary=document.createElement('summary');summary.append(icon(name));const title=document.createElement('strong');title.textContent=`${name} ${row.tier}`;
-   const quantity=document.createElement('span');quantity.className='psg-supply-daily';quantity.textContent=`${supplyNumber(row.daily)}個/日`;summary.append(title,quantity);details.append(summary);
-   for(const provider of row.top)details.append(providerText(provider));tiersView.append(details);
-  }
- }
- dailyLevel.addEventListener('change',renderDailyTiers);renderDailyTiers();
+ const ingredientLink=document.createElement('button');ingredientLink.type='button';ingredientLink.className='btn';ingredientLink.textContent='食材の一覧を見る';ingredientLink.addEventListener('click',()=>window.PS?.go('ingredientPage'));referenceContent.append(ingredientLink);
  const sensitivity=document.createElement('details');sensitivity.className='psg-cooking-reference';const caption=document.createElement('summary');caption.textContent='回収・料理回復を変えた場合の参考比較';sensitivity.append(caption);
  const explanation=document.createElement('p');explanation.className='note';explanation.textContent='以下は基準（回収3時間・料理回復なし）から日産ティアが変わる食材数。料理回復ありは何らかの料理を3食食べる条件で、目標料理を3食作れる保証ではありません。基準は変更していません。';sensitivity.append(explanation);
  for(const row of supply.sensitivitySummary['集計']){const p=document.createElement('p');p.className='note';const match=/collect(\d)h_meals(\d)/.exec(row['シナリオ']);p.textContent=`回収${match[1]}時間・料理回復${match[2]==='1'?'あり':'なし'}・Lv${row['Lv']}：ティア変化 ${row['ティア変化食材数']}/19食材`;sensitivity.append(p)}

@@ -33,6 +33,8 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   if(width===390)await page.screenshot({path:'/tmp/psg243-burden.png'});
   await page.locator('[data-recipe-id="spicy_leek_curry"] .psg-supply-detail button').last().click();
   assert(await page.locator('#dailySupplyReference').evaluate(el=>el.open));
+  await page.locator('#dailySupplyReference button').filter({hasText:'食材の一覧を見る'}).click();
+  await page.selectOption('#ingredientIndexSort','daily');
   for(const level of ['30','60']){
    await page.selectOption('#ingredientSupplyLevel',level);
    assert.equal(await page.locator('.psg-supply-tier').count(),19);
