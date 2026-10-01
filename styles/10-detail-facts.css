@@ -11,6 +11,8 @@
 .psg-detail-berry-visual{display:grid;place-items:center;width:23px;height:23px;flex:none}
 .psg-detail-berry b{font-size:10px}
 .psg-detail-specialty>img{width:29px!important;height:29px!important}
+.psg-detail-trait:has(.psg-sleep-type-icon){padding:1px;gap:0}
+.psg-detail-trait .psg-sleep-type-icon{width:30px;height:30px}
 .psg-detail-ribbon small{font-size:8px;white-space:nowrap}
 .psg-detail-friend small{font-size:clamp(7px,1.9vw,9px);font-weight:800;white-space:normal;overflow-wrap:anywhere}
 .psg-detail-friend b{font-size:14px}
