@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v229</title>
+  <title>PokéSleep Guide — Review v230</title>
 
 
 
@@ -24,11 +24,11 @@
 /* 画像を後から入れる場所。画像ファイルはHTMLと同じ公開先の assets/ に置く。
    例: pokemon: { 1: 'assets/pokemon/001.png' }
    未登録は空のままにする。権利を確認できたファイルだけ指定する。
-   pokemonFaces は図鑑カード専用。省略時は pokemon の画像を共用する。
+   pokemonFaces は顔画像。詳細用の pokemon が未登録なら顔画像を共用する。
    skills / recipes / sleepStyles / fields は今後の各画面を作る際の予約欄。 */
 window.PS_IMAGE_FILES = {
   pokemon: {},       // 図鑑No. -> 詳細・進化・図鑑カード共通
-  pokemonFaces: {},  // 図鑑No. -> 顔を中心にしたカード専用画像（任意）
+  pokemonFaces: {},  // 図鑑No. -> 図鑑・ボックス共用の顔画像（任意）
   ingredients: {},   // 正式な食材名 -> 図鑑と詳細の食材アイコン
   berries: {},       // きのみ名 -> 詳細上部のきのみアイコン
   types: {},         // タイプ名 -> フィルターなどのタイプアイコン
@@ -102,7 +102,7 @@ window.PS_SLEEP_ICON=name=>{
    The complete candidate sets remain in ingredientSlots for future screens. */
 for(const pokemon of Object.values(window.PS_CATALOG.pokemon)){
   const assets=window.PS_IMAGE_FILES;
-  pokemon.image=assets.pokemon[pokemon.no]||pokemon.image||null;
+  pokemon.image=assets.pokemon[pokemon.no]||pokemon.image||assets.pokemonFaces[pokemon.no]||null;
   pokemon.faceImage=assets.pokemonFaces[pokemon.no]||pokemon.image;
   pokemon.berryImage=assets.berries[pokemon.berry]||pokemon.berryImage||null;
   if(!pokemon.ingredientSlots)continue;
@@ -216,7 +216,7 @@ window.PS_TYPE_THEME={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v229</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v230</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -1354,7 +1354,7 @@ function syncLevel(){
  const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
  hero.style.setProperty('--box-type-bg',theme[0]);hero.style.setProperty('--box-type-accent',theme[1]);
  const badges=p?`<div class="psg-box-art-badges"><span class="psg-box-art-badge" title="タイプ：${boxEsc(p.type)}" aria-label="タイプ：${boxEsc(p.type)}">${typeFilterArt(p.type)}</span></div>`:'';
- artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image,'pokemon',p?.no,'full',item.name)||'No image')+badges;
+ artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image||p?.faceImage,'pokemon',p?.no,p?.image===p?.faceImage?'face':'full',item.name)||'No image')+badges;
  hydrateSpecialtyIcons(artwork);
  const naturePending=(!item.nature&&!item.mint)||calc.unknown.length;
  const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);
@@ -1730,7 +1730,8 @@ if(window.PS?.master&&window.PS_CATALOG){
      art.replaceChildren();
      const preview=window.PS_DEV_ASSETS;
      const img=document.createElement('img');
-     const expected=preview.path('pokemon',m.no,'full');
+     const role=m.image&&m.image===window.PS_IMAGE_FILES.pokemonFaces?.[m.no]?'face':'full';
+     const expected=preview.path('pokemon',m.no,role);
      img.src=m.image||preview.preview(expected);
      img.alt=m.name;
      img.classList.toggle('psg-asset-preview',!m.image);
