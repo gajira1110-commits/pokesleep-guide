@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v214</title>
+  <title>PokéSleep Guide — Review v215</title>
 
 
 
@@ -203,7 +203,7 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
 <style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v214</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v215</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -1938,24 +1938,8 @@ async function alignTypeImages(){
   const centered=await centeredTypeImage(source);if(centered)window.PS_TYPE_IMAGES[name]=centered;return Boolean(centered);
  }));return aligned.some(Boolean);
 }
-// Re-extract complete circles from the original sheet; custom master icons retain priority.
-const typeSheetConfig=/* PSG_BUILD_TYPE_SHEET */;
-const typeSheet=new Image();
-if(Object.keys(typeSheetConfig.icons).length)jobs.push(new Promise(resolve=>{
- typeSheet.onload=async()=>{
-  try{
-   for(const [name,[x,y,w,h]] of Object.entries(typeSheetConfig.icons)){
-    const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
-    canvas.getContext('2d').drawImage(typeSheet,x,y,w,h,0,0,w,h);
-    window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
-   }
-   resolve(await alignTypeImages());
-  }catch{resolve(await alignTypeImages())}
- };
- typeSheet.onerror=async()=>resolve(await alignTypeImages());
- typeSheet.src=typeSheetConfig.url;
-}));
-else jobs.push(alignTypeImages());
+// All 18 type badges come directly from their common master files.
+jobs.push(alignTypeImages());
 for(const pokemon of Object.values(catalog.pokemon)){
   if(!explicit.pokemon[pokemon.no]&&!pokemon.image){
     tryPath(assets.path('pokemon',pokemon.no,'full'),path=>{pokemon.image=path;if(!explicit.pokemonFaces[pokemon.no]&&!pokemon.faceImage)pokemon.faceImage=path});

@@ -1,9 +1,9 @@
-"""Resolve existing master artwork and prepare legacy sheet configuration.
+"""Resolve common master artwork and prepare the face sheet reference.
 
 No image pixels are rewritten during the build. Runtime rendering lives in
 templates/images; master files remain the source of adopted artwork.
 """
-import hashlib
+
 import json
 
 
@@ -23,15 +23,3 @@ def face_sheet_script(root, script, sheet):
     assert source.count('/* PSG_BUILD_FACE_SHEET */') == 1
     return source.replace('/* PSG_BUILD_FACE_SHEET */',
                           json.dumps(sheet.relative_to(root).as_posix()))
-
-
-def type_sheet_config(root, master, images, sheet):
-    """Use original sheet bounds only when no replacement icon was adopted."""
-    metadata = json.loads((master / 'types/sheet-icons.json').read_text())
-    icons = {}
-    for type_id, name in json.loads((master / 'types/manifest.json').read_text()).items():
-        info = metadata['icons'][type_id]
-        custom_path = images.get(name)
-        if not custom_path or hashlib.sha256((root / custom_path).read_bytes()).hexdigest() == info['sha256']:
-            icons[name] = info['bounds']
-    return {'url': sheet.relative_to(root).as_posix(), 'icons': icons}
