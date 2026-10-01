@@ -441,3 +441,8 @@
   #v12Ability .v32-skill-grid.v43-compact-3{margin:0!important;row-gap:1px!important;}
 }
 
+
+#v12Ability .effect-shards{color:#aa8216!important}
+#v12Ability .psg-skill-values{font-size:16px;overflow-wrap:anywhere}
+#v12Ability .psg-skill-values small{display:block;font-size:10px;font-weight:500;color:#66776e}
+#v12Ability .psg-skill-variable-note{font-size:12px;margin:4px 0 8px;color:#53655b}

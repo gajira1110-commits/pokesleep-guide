@@ -18,7 +18,7 @@
     <label>性格<select name="nature" id="boxEditNature"></select></label>
     <label class="psg-editor-check"><input name="mint" type="checkbox">まっしろミント適用済み</label>
     <label>スキルLv<input name="skillLevel" type="number" min="1" max="7" inputmode="numeric"></label>
-    <label>役割<input name="role" maxlength="40" placeholder="例：食材役"></label>
+    <label>役割<select name="role"><option value="">未設定</option><option value="きのみ">きのみ</option><option value="食材">食材</option><option value="スキル">スキル</option></select></label>
     <div id="boxEditIngredients"></div><div id="boxEditSubskills"></div>
     <button type="submit" class="btn primary">個体データを保存</button><p id="boxEditMessage" role="status"></p>
    </form>

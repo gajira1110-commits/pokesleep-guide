@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v219</title>
+  <title>PokéSleep Guide — Review v220</title>
 
 
 
@@ -216,7 +216,7 @@ window.PS_TYPE_THEME={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v219</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v220</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -347,7 +347,7 @@ window.PS_TYPE_THEME={
     <label>性格<select name="nature" id="boxEditNature"></select></label>
     <label class="psg-editor-check"><input name="mint" type="checkbox">まっしろミント適用済み</label>
     <label>スキルLv<input name="skillLevel" type="number" min="1" max="7" inputmode="numeric"></label>
-    <label>役割<input name="role" maxlength="40" placeholder="例：食材役"></label>
+    <label>役割<select name="role"><option value="">未設定</option><option value="きのみ">きのみ</option><option value="食材">食材</option><option value="スキル">スキル</option></select></label>
     <div id="boxEditIngredients"></div><div id="boxEditSubskills"></div>
     <button type="submit" class="btn primary">個体データを保存</button><p id="boxEditMessage" role="status"></p>
    </form>
@@ -1393,6 +1393,8 @@ function fillBoxEditor(item,p){
  form.elements.nature.value=item.nature||'';
  form.elements.mint.checked=!!item.mint;
  form.elements.skillLevel.value=item.skillLevel||1;
+ form.elements.role.querySelector('[data-legacy]')?.remove();
+ if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
  form.elements.role.value=item.role||'';
  const slots=p?.ingredientSlots||[];
  document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
@@ -1733,6 +1735,26 @@ if(window.PS?.master&&window.PS_CATALOG){
    }).join('');
    host.innerHTML=`<div class="psg-food-head"><div class="psg-food-rate"><span>食材</span><strong>${m.foodRate!=null?m.foodRate+'%':'未確認'}</strong></div><div class="psg-food-head-levels"><span></span><span>Lv.30</span><span>Lv.60</span></div><b>対応料理</b></div>${rows?`<div class="psg-food-stack">${rows}</div>`:'<p class="unknown">食材データ未確認</p>'}`;
  }
+ function skillVariables(s,x,lv){
+  const value=(v,kind,unit='')=>`<span class="skill-var effect-${kind}">${detailEsc(typeof v==='number'?v.toLocaleString():v)}${unit}</span>`;
+  const type=s.effectType;
+  if(type==='random_main_skill')return `抽選スキル ${value('Lv.'+lv,'skill')}<small>（対象スキルの上限まで）</small>`;
+  if(type==='team_skill_copy')return 'ランダムな1種類';
+  if(type==='variable_energy'||type==='variable_dream_shards')return value(x.min+'～'+x.max,type==='variable_energy'?'energy':'shards',type==='variable_energy'?'':'個');
+  if(type==='fixed_dream_shards_energy')return value(x.shards,'shards','個')+' ／ '+value(x.energy,'energy');
+  if(type==='moonlight_energy_recovery')return '自分 '+value(x.selfRecovery,'energy-recovery')+' ／ 追加 '+value(x.bonusRecovery,'energy-recovery');
+  if(type==='berry_burst')return '自分 '+value(x.selfBerries,'berry','個')+' ／ 各 '+value(x.teamBerriesEach,'berry','個');
+  if(type==='cooking_assist')return value(x.amount,'food','個')+' ／ '+value(x.chanceBonus,'skill','%');
+  if(type.startsWith('helper_boost_')){const bonuses=Object.entries(x).find(([k])=>k.startsWith('bonusByUnique'))?.[1];return '基本 '+value(x.helps,'help','回')+(bonuses?' ／ 追加 '+value(bonuses.slice(3).join('／'),'help','回'):'');}
+  if(x.amount!=null)return value(x.amount,'food','個');
+  if(x.energy!=null)return value(x.energy,'energy');
+  if(x.recovery!=null)return value(x.recovery,'energy-recovery');
+  if(x.shards!=null)return value(x.shards,'shards','個');
+  if(x.helps!=null)return value(x.helps,'help','回');
+  if(x.capacity!=null)return value(x.capacity,'zone','個');
+  if(x.chancePercent!=null)return value(x.chancePercent,'skill','%');
+  return '効果未確認';
+ }
  function renderSkill(m){
    const s=skillOf(m);if(!s)return;
    const skillIcon=document.querySelector('#v12Ability .skill-icon');
@@ -1751,7 +1773,7 @@ if(window.PS?.master&&window.PS_CATALOG){
    const lv1=s.levels?.[1];
    const effect=document.getElementById("detailSkillEffect");
    if(effect){
-     const effectCopy=s.effectType==='random_ingredients'&&lv1?.amount!=null?`ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。`:s.effectType==='fixed_energy'&&lv1?.energy!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.energy.toLocaleString()}</strong> 増やす。`:s.effectType==='variable_energy'&&lv1?.min!=null&&lv1?.max!=null?`カビゴンのエナジーを <strong class="skill-var">${lv1.min.toLocaleString()}～${lv1.max.toLocaleString()}</strong> 増やす。`:s.effectType==='team_energy_recovery'&&lv1?.recovery!=null?`チーム全員のげんきを <strong class="skill-var">${lv1.recovery}</strong> 回復する。`:lv1?.description?detailEsc(lv1.description):'効果未確認';
+     const effectCopy=s.effectType==='random_ingredients'&&lv1?.amount!=null?`ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。`:s.effectType==='fixed_energy'&&lv1?.energy!=null?`カビゴンのエナジーを <strong class="skill-var effect-energy">${lv1.energy.toLocaleString()}</strong> 増やす。`:s.effectType==='variable_energy'&&lv1?.min!=null&&lv1?.max!=null?`カビゴンのエナジーを <strong class="skill-var effect-energy">${lv1.min.toLocaleString()}～${lv1.max.toLocaleString()}</strong> 増やす。`:s.effectType==='team_energy_recovery'&&lv1?.recovery!=null?`チーム全員のげんきを <strong class="skill-var effect-energy-recovery">${lv1.recovery}</strong> 回復する。`:lv1?.description?detailEsc(lv1.description):'効果未確認';
      effect.innerHTML=`<b class="v35-effect-level">Lv.1</b><span class="v35-effect-copy">${effectCopy}</span>`;
      effect.classList.add("skill-desc");
    }
@@ -1761,9 +1783,11 @@ if(window.PS?.master&&window.PS_CATALOG){
    const levels=document.getElementById("skillLevels");
    if(levels){
      const detail=Object.entries(s.levels||{}).filter(([lv])=>Number(lv)>1).sort((a,b)=>Number(a[0])-Number(b[0]));
-     const simpleCompact = detail.length===6 && detail.every(([lv,x])=>x && (x.amount!=null||x.energy!=null||x.recovery!=null||x.helps!=null) && String(x.amount??x.energy??x.recovery??x.helps).length<=4);
-     const layoutClass = simpleCompact ? "v43-compact-3" : (detail.length<=6 ? "v43-compact-2" : "v43-detail-long");
-     levels.innerHTML=`<div class="v32-skill-grid ${layoutClass}">${detail.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="skill-var effect-food">${s.effectType==='random_ingredients'&&x.amount!=null?x.amount+'個':s.effectType==='fixed_energy'&&x.energy!=null?x.energy.toLocaleString():s.effectType==='variable_energy'&&x.min!=null&&x.max!=null?x.min.toLocaleString()+'～'+x.max.toLocaleString():s.effectType==='team_energy_recovery'&&x.recovery!=null?'全員＋'+x.recovery:s.effectType==='self_energy_recovery'&&x.recovery!=null?'自分＋'+x.recovery:s.effectType==='ally_energy_recovery'&&x.recovery!=null?'1匹＋'+x.recovery:s.effectType==='extra_help'&&x.helps!=null?'おてつだい'+x.helps+'回':x.description?detailEsc(x.description):'効果未確認'}</strong></div>`).join("")}</div>`;
+     const compact=detail.length<=6&&detail.every(([lv,x])=>skillVariables(s,x,lv).replace(/<[^>]*>/g,'').length<=10);
+     const layoutClass=compact&&detail.length===6?'v43-compact-3':detail.length<=6?'v43-compact-2':'v43-detail-long';
+     const note=s.effectType==='random_main_skill'?'選ばれたメインスキルは、ゆびをふると同じレベルで発動します（対象スキルの上限まで）。':s.effectType.startsWith('helper_boost_')?'追加回数は同じタイプの異なるポケモンが3／4／5種類いる場合。':s.effectType==='fixed_dream_shards_energy'?'ゆめのかけら ／ エナジー':s.effectType==='cooking_assist'?'食材数 ／ 大成功確率':s.effectType==='moonlight_energy_recovery'?'追加は大成功時にチーム内の1匹へ。':'';
+     levels.innerHTML=(note?`<p class="psg-skill-variable-note">${detailEsc(note)}</p>`:'')+`<div class="v32-skill-grid ${layoutClass}">${detail.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="psg-skill-values">${skillVariables(s,x,lv)}</strong></div>`).join('')}</div>`;
+
    }
  }
  function evolutionEntries(m){
