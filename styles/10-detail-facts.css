@@ -1,30 +1,22 @@
-/* Shared Block 1: artwork, then two aligned columns of four facts. */
-#dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:stretch;align-content:start;gap:3px!important;min-width:0;align-self:start}
+/* Shared Block 1: four traits above two rows of two basic stats. */
+#dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{display:grid!important;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-items:start;align-content:start;gap:3px!important;min-width:0;align-self:start}
 .psg-detail-facts #v12Header{grid-column:1;grid-row:1;margin:0;min-width:0}
-.psg-detail-traits,.psg-detail-stats{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(4,minmax(35px,auto));gap:3px;min-width:0;margin:0;padding:0}
-.psg-detail-traits{grid-column:1;grid-row:1}
-.psg-detail-stats{grid-column:2;grid-row:1;background:transparent;border:0}
-.psg-detail-trait,.psg-detail-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;min-height:35px;box-sizing:border-box;gap:1px;padding:2px;border-radius:8px;background:#fff;color:#111;text-align:center;line-height:1.1}
-.psg-detail-trait{font-size:10px;font-weight:850}
-.psg-detail-trait:not(.psg-detail-friend){flex-direction:row}
-.psg-detail-trait img,.psg-detail-trait .psg-specialty-icon,.psg-detail-trait .psg-ui-icon{width:25px;height:25px;object-fit:contain;margin:0;flex:none}
-.psg-detail-berry{flex-direction:row;gap:2px}
-.psg-detail-berry-visual{display:grid;place-items:center;width:25px;height:25px}
-.psg-detail-berry b{font-size:11px}
-.psg-detail-specialty{flex-direction:row}
-.psg-detail-specialty>img{width:31px!important;height:31px!important}
-.psg-detail-ribbon{flex-direction:row;gap:2px;flex-wrap:wrap}
-.psg-detail-ribbon small{font-size:9px;white-space:nowrap}
-.psg-detail-friend small{font-size:clamp(7px,2vw,10px);font-weight:800;white-space:nowrap}
+.psg-detail-traits,.psg-detail-stats{display:grid;gap:3px;min-width:0;margin:0;padding:0}
+.psg-detail-traits{grid-column:1;grid-row:1;grid-template-columns:repeat(4,minmax(0,1fr))}
+.psg-detail-stats{grid-column:1;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));background:transparent;border:0}
+.psg-detail-trait,.psg-detail-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;box-sizing:border-box;gap:1px;padding:2px;border-radius:8px;background:#fff;color:#111;text-align:center;line-height:1.1}
+.psg-detail-trait{min-height:44px;font-size:clamp(8px,2.1vw,10px);font-weight:850;overflow-wrap:anywhere}
+.psg-detail-trait img,.psg-detail-trait .psg-specialty-icon,.psg-detail-trait .psg-ui-icon{width:23px;height:23px;object-fit:contain;margin:0;flex:none}
+.psg-detail-berry{flex-direction:row;gap:1px}
+.psg-detail-berry-visual{display:grid;place-items:center;width:23px;height:23px;flex:none}
+.psg-detail-berry b{font-size:10px}
+.psg-detail-specialty>img{width:29px!important;height:29px!important}
+.psg-detail-ribbon small{font-size:8px;white-space:nowrap}
+.psg-detail-friend small{font-size:clamp(7px,1.9vw,9px);font-weight:800;white-space:normal;overflow-wrap:anywhere}
 .psg-detail-friend b{font-size:14px}
+.psg-detail-stat{min-height:38px}
 .psg-detail-stat small{font-size:clamp(8px,2.2vw,11px);font-weight:850;white-space:nowrap;letter-spacing:-.04em}
 .psg-detail-stat b,.psg-detail-stat strong{font-size:clamp(12px,3.1vw,18px);font-weight:900;line-height:1.1;overflow-wrap:anywhere}
 .psg-detail-stat em{font-size:8px;font-weight:650;font-style:normal;line-height:1.1;overflow-wrap:anywhere}
 .psg-detail-stat .v45-stat-icon{display:none}
-@media(min-width:621px){.psg-detail-traits,.psg-detail-stats{grid-template-rows:repeat(4,minmax(48px,auto))}}
-@supports(grid-template-rows:subgrid){
- #dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{grid-template-rows:repeat(4,minmax(35px,auto))}
- .psg-detail-facts #v12Header{display:grid;grid-row:1 / span 4;grid-template-rows:subgrid}
- .psg-detail-traits,.psg-detail-stats{grid-row:1 / span 4;grid-template-rows:subgrid}
- @media(min-width:621px){#dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{grid-template-rows:repeat(4,minmax(48px,auto))}}
-}
+@media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
