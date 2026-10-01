@@ -10,6 +10,7 @@
 | `04-dex.html` | 図鑑一覧 |
 | `05-info.html` | 情報の入口 |
 | `06-skills.html` | スキル一覧 |
+| `06-ingredients.html` | 食材ページの検索・並び順・Lv切替・一覧の入口 |
 | `07-recipes.html` | 料理一覧 |
 | `08-fields.html` | フィールド |
 | `09-dex-detail.html` | 図鑑詳細 |
@@ -54,6 +55,7 @@
 | `recipes/03-providers.html` | 最終進化の食材拾得候補 |
 | `recipes/03-cooking.html` | 比較Lv・実測値優先のエナジー・鍋試算・資料表 |
 | `recipes/03-daily-supply.html` | 共通条件の日産量・専任収集負担・実際の構成・日産ティアと前提 |
+| `ingredients/01-index.html` | 食材19種類・日産量・担当・対応料理・出典。料理コントローラーの共通関数を再利用する断片 |
 | `recipes/03-evaluation.html` | 料理3指標・評価モード・状態維持・評価基準 |
 | `recipes/04-list-view.html` | 並び順・料理カード・遅延詳細表示 |
 | `recipes/05-events.html` | 絞り込み・カテゴリ切替・料理を開く入口 |
