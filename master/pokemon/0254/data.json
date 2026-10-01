@@ -80,7 +80,20 @@
   "sources": [
     "https://wiki.pokesleep.com/ja/pokemon/sceptile",
     "https://wikiwiki.jp/poke_sleep/ジュカイン",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B8%E3%83%A5%E3%82%AB%E3%82%A4%E3%83%B3"
   ],
-  "verifiedAt": "2026-10-01"
+  "verifiedAt": "2026-10-01",
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0254_ジュカイン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B8%E3%83%A5%E3%82%AB%E3%82%A4%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

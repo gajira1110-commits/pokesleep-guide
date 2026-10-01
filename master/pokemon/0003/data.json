@@ -15,9 +15,45 @@
   "dexVisible": true,
   "ingredientSlotStatus": "verified",
   "ingredientSlots": [
-    {"unlock": 1, "candidates": [{"ingredientId": "honey", "qty": 2}]},
-    {"unlock": 30, "candidates": [{"ingredientId": "honey", "qty": 5}, {"ingredientId": "tomato", "qty": 4}]},
-    {"unlock": 60, "candidates": [{"ingredientId": "honey", "qty": 7}, {"ingredientId": "tomato", "qty": 7}, {"ingredientId": "potato", "qty": 6}]}
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        }
+      ]
+    }
   ],
   "evolution": null,
   "sleepStyles": [
@@ -41,5 +77,20 @@
       "name": "おなかのうえ寝",
       "stars": 4
     }
+  ],
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0003_フシギバナ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%83%90%E3%83%8A",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%83%90%E3%83%8A"
   ]
 }

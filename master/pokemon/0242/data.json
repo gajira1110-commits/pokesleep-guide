@@ -93,5 +93,15 @@
     "ラッキー",
     "↓　チームに入れて睡眠150時間＋ラッキーのアメ×80",
     "ハピナス"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0242_ハピナス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%94%E3%83%8A%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

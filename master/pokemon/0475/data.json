@@ -81,8 +81,21 @@
   "sources": [
     "https://wikiwiki.jp/poke_sleep/エルレイド",
     "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A8%E3%83%AB%E3%83%AC%E3%82%A4%E3%83%89"
   ],
   "verifiedAt": "2026-09-30",
-  "sleepStyleCount": 4
+  "sleepStyleCount": 4,
+  "friendPoints": 22,
+  "expType": 600,
+  "transferCandy": 11,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0475_エルレイド",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A8%E3%83%AB%E3%83%AC%E3%82%A4%E3%83%89",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

@@ -71,5 +71,20 @@
       "name": "みつごなかよし寝",
       "stars": 3
     }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0051_ダグトリオ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA"
   ]
 }

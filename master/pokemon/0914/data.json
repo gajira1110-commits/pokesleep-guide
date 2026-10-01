@@ -91,5 +91,15 @@
     "ウェルカモ",
     "↓ Lv.27＋クワッスのアメx80",
     "ウェーニバル"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0914_ウェーニバル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

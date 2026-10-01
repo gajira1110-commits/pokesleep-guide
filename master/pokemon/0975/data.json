@@ -84,5 +84,15 @@
     "アルクジラ",
     "↓こおりのいし＋アルクジラのアメx80",
     "ハルクジラ"
-  ]
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0975_ハルクジラ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

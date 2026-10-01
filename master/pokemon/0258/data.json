@@ -80,7 +80,8 @@
   "sources": [
     "https://wiki.pokesleep.com/ja/pokemon/mudkip",
     "https://wikiwiki.jp/poke_sleep/ミズゴロウ",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%BA%E3%82%B4%E3%83%AD%E3%82%A6"
   ],
   "verifiedAt": "2026-10-01",
   "evolution": {
@@ -88,5 +89,17 @@
     "to": "ヌマクロー",
     "level": 12,
     "candy": 40
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0258_ミズゴロウ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%BA%E3%82%B4%E3%83%AD%E3%82%A6",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
   }
 }

@@ -81,8 +81,21 @@
   "sources": [
     "https://wikiwiki.jp/poke_sleep/ゲンガー",
     "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
-    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B2%E3%83%B3%E3%82%AC%E3%83%BC"
   ],
   "verifiedAt": "2026-09-30",
-  "sleepStyleCount": 4
+  "sleepStyleCount": 4,
+  "friendPoints": 22,
+  "expType": 600,
+  "transferCandy": 11,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0094_ゲンガー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B2%E3%83%B3%E3%82%AC%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

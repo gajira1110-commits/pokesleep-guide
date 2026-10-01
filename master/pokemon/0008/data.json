@@ -1,18 +1,101 @@
 {
-  "no": 8, "name": "カメール", "type": "みず", "sleepType": "ぐっすり", "specialty": "食材",
-  "berry": "オレンのみ", "berryQty": 1, "help": 3400, "carry": 19,
-  "foodRate": 27.1, "skillRate": 2.0, "rateStatus": "推定",
-  "mainSkillId": "ingredient_magnet_s", "dexVisible": true, "ingredientSlotStatus": "verified",
+  "no": 8,
+  "name": "カメール",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3400,
+  "carry": 19,
+  "foodRate": 27.1,
+  "skillRate": 2.0,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
   "ingredientSlots": [
-    {"unlock": 1, "candidates": [{"ingredientId": "moomoo_milk", "qty": 2}]},
-    {"unlock": 30, "candidates": [{"ingredientId": "moomoo_milk", "qty": 5}, {"ingredientId": "soothing_cacao", "qty": 3}]},
-    {"unlock": 60, "candidates": [{"ingredientId": "moomoo_milk", "qty": 7}, {"ingredientId": "soothing_cacao", "qty": 5}, {"ingredientId": "bean_meat", "qty": 7}]}
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 5
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 7
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 7
+        }
+      ]
+    }
   ],
-  "evolution": {"toNo": 9, "to": "カメックス", "level": 27, "candy": 80},
+  "evolution": {
+    "toNo": 9,
+    "to": "カメックス",
+    "level": 27,
+    "candy": 80
+  },
   "sleepStyles": [
-    {"id":"0008_01","name":"からにこもる寝","stars":1},
-    {"id":"0008_02","name":"こもらない寝","stars":2},
-    {"id":"0008_03","name":"つっぷし寝","stars":3},
-    {"id":"0008_04","name":"おなかのうえ寝","stars":4}
+    {
+      "id": "0008_01",
+      "name": "からにこもる寝",
+      "stars": 1
+    },
+    {
+      "id": "0008_02",
+      "name": "こもらない寝",
+      "stars": 2
+    },
+    {
+      "id": "0008_03",
+      "name": "つっぷし寝",
+      "stars": 3
+    },
+    {
+      "id": "0008_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0008_カメール",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%BC%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%BC%E3%83%AB"
   ]
 }

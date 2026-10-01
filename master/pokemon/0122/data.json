@@ -82,7 +82,20 @@
     "https://wikiwiki.jp/poke_sleep/バリヤード",
     "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
     "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
-    "https://www.pokemonsleep.net/news/323133343231303831373832393130393737/"
+    "https://www.pokemonsleep.net/news/323133343231303831373832393130393737/",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%AA%E3%83%A4%E3%83%BC%E3%83%89"
   ],
-  "verifiedAt": "2026-10-01"
+  "verifiedAt": "2026-10-01",
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0122_バリヤード",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%AA%E3%83%A4%E3%83%BC%E3%83%89",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

@@ -82,7 +82,8 @@
     "https://wikiwiki.jp/poke_sleep/リオル",
     "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
     "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
-    "https://www.pokemonsleep.net/news/343239303735303933343939343132343831/"
+    "https://www.pokemonsleep.net/news/343239303735303933343939343132343831/",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%AA%E3%83%AB"
   ],
   "verifiedAt": "2026-10-01",
   "evolution": {
@@ -90,5 +91,17 @@
     "to": "ルカリオ",
     "candy": 80,
     "extra": "一緒に睡眠150時間・06:00〜18:00"
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0447_リオル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%AA%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
   }
 }

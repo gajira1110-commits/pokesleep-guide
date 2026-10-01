@@ -82,7 +82,8 @@
     "https://wiki.pokesleep.com/ja/pokemon/eevee",
     "https://wikiwiki.jp/poke_sleep/イーブイ",
     "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
-    "https://wikiwiki.jp/poke_sleep/イーブイ/イーブイの進化"
+    "https://wikiwiki.jp/poke_sleep/イーブイ/イーブイの進化",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%BC%E3%83%96%E3%82%A4"
   ],
   "verifiedAt": "2026-09-30",
   "evolution": [
@@ -134,5 +135,17 @@
       "candy": 80,
       "extra": "一緒に睡眠150時間"
     }
-  ]
+  ],
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0133_イーブイ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%BC%E3%83%96%E3%82%A4",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

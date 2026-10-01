@@ -100,5 +100,15 @@
       "level": 36,
       "candy": 40
     }
-  ]
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0714_オンバット",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AA%E3%83%B3%E3%83%90%E3%83%83%E3%83%88",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
 }

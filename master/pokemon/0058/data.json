@@ -82,5 +82,20 @@
     "to": "ウインディ",
     "item": "ほのおのいし",
     "candy": 80
-  }
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0058_ガーディ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AC%E3%83%BC%E3%83%87%E3%82%A3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AC%E3%83%BC%E3%83%87%E3%82%A3"
+  ]
 }
