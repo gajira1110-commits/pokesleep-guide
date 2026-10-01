@@ -34,17 +34,12 @@
    return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
   });
   if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
-  const parentOf=new Map();for(const p of Object.values(catalog.pokemon||{})){
-   const edges=Array.isArray(p.evolution)?p.evolution:p.evolution?[p.evolution]:[];
-   edges.forEach(e=>{if(e.toNo)parentOf.set(Number(e.toNo),Number(p.no))});
-  }
-  const root=no=>{const seen=new Set();while(parentOf.has(no)&&!seen.has(no)){seen.add(no);no=parentOf.get(no)}return no};
-  const families=new Map();for(const provider of providers){const key=root(provider.species.no);(families.get(key)||families.set(key,[]).get(key)).push(provider)}
+  const terminal=providers.filter(({species})=>{
+   const edges=Array.isArray(species.evolution)?species.evolution:species.evolution?[species.evolution]:[];
+   return !edges.some(edge=>edge.toNo);
+  });
   const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
-  for(const family of families.values()){
-   const row=document.createElement('div');row.className='psg-recipe-family';
-   family.sort((a,b)=>a.species.no-b.species.no).forEach(({species,unlock},index)=>{
-    if(index){const arrow=document.createElement('span');arrow.textContent='›';arrow.setAttribute('aria-hidden','true');row.append(arrow)}
+  for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
     const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
     const art=document.createElement('span');art.className='psg-recipe-provider-art';
     if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
@@ -55,8 +50,7 @@
     }
     if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
     button.title=species.name;button.append(art);
-    button.onclick=()=>window.openPokemonDetail?.(species.no);row.append(button);
-   });wrap.append(row);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);wrap.append(button);
   }
   section.append(wrap);return section;
  }
@@ -98,7 +92,7 @@
     if(populated)return;populated=true;
     detail.append(min);
     const energyNote=document.createElement('p');energyNote.className='note';energyNote.textContent=[recipe.energy?.note,recipe.energy?.conditions].filter(Boolean).join('。');detail.append(energyNote);
-    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
+    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン（最終進化）';detail.append(heading);
     recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
     const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
    };

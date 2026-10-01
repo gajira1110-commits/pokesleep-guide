@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v235</title>
+  <title>PokéSleep Guide — Review v236</title>
 
 
 
@@ -226,7 +226,7 @@ window.PS_UI_ART={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v235</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v236</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -559,7 +559,7 @@ function renderTeam(){
  hint.textContent=teamReorderFrom===null?'移動する個体を選び、移動先の枠をタップしてください。':`${teamReorderFrom+1}匹目を選択中。移動先の枠をタップしてください。`;
  const teamSpeeds=teamSpeedContext();
  team.forEach((id,index)=>{
-  const individual=state.box.find(x=>x.id===id),boxPosition=state.box.findIndex(x=>x.id===id)+1;
+  const individual=state.box.find(x=>x.id===id);
   const row=document.createElement('div');row.className='psg-team-row';
   if(teamReorderMode)row.classList.add('is-reordering');
   if(teamReorderFrom===index)row.classList.add('is-reorder-source');
@@ -571,8 +571,7 @@ function renderTeam(){
   if(individual){const level=document.createElement('span');level.className='psg-team-card-level';level.textContent=`Lv.${individual.level}`;artwork.append(level)}
   choose.append(artwork);
   const identity=document.createElement('span');identity.className='psg-team-identity';
-  const detail=document.createElement('small');detail.textContent=individual?`Box ${boxPosition}番`:'未設定';
-  identity.append(detail);
+  if(!individual){const detail=document.createElement('small');detail.textContent='未設定';identity.append(detail)}
   if(individual){
    const speed=document.createElement('small');speed.className='psg-team-speed';
    const corrected=teamSpeeds.members.get(individual.id);
@@ -590,8 +589,7 @@ function renderTeam(){
    }
    teamBoxSlot=index;renderBoxTeamMode();renderBox();go('box');
   };
-  const number=document.createElement('span');number.className='psg-team-number';number.textContent=String(index+1);
-  row.append(number,choose);panel.append(row);
+  row.append(choose);panel.append(row);
  });
  const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
  const summary=document.getElementById('teamSummary');
@@ -2249,17 +2247,12 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
    return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
   });
   if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
-  const parentOf=new Map();for(const p of Object.values(catalog.pokemon||{})){
-   const edges=Array.isArray(p.evolution)?p.evolution:p.evolution?[p.evolution]:[];
-   edges.forEach(e=>{if(e.toNo)parentOf.set(Number(e.toNo),Number(p.no))});
-  }
-  const root=no=>{const seen=new Set();while(parentOf.has(no)&&!seen.has(no)){seen.add(no);no=parentOf.get(no)}return no};
-  const families=new Map();for(const provider of providers){const key=root(provider.species.no);(families.get(key)||families.set(key,[]).get(key)).push(provider)}
+  const terminal=providers.filter(({species})=>{
+   const edges=Array.isArray(species.evolution)?species.evolution:species.evolution?[species.evolution]:[];
+   return !edges.some(edge=>edge.toNo);
+  });
   const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
-  for(const family of families.values()){
-   const row=document.createElement('div');row.className='psg-recipe-family';
-   family.sort((a,b)=>a.species.no-b.species.no).forEach(({species,unlock},index)=>{
-    if(index){const arrow=document.createElement('span');arrow.textContent='›';arrow.setAttribute('aria-hidden','true');row.append(arrow)}
+  for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
     const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
     const art=document.createElement('span');art.className='psg-recipe-provider-art';
     if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
@@ -2270,8 +2263,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     }
     if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
     button.title=species.name;button.append(art);
-    button.onclick=()=>window.openPokemonDetail?.(species.no);row.append(button);
-   });wrap.append(row);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);wrap.append(button);
   }
   section.append(wrap);return section;
  }
@@ -2313,7 +2305,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     if(populated)return;populated=true;
     detail.append(min);
     const energyNote=document.createElement('p');energyNote.className='note';energyNote.textContent=[recipe.energy?.note,recipe.energy?.conditions].filter(Boolean).join('。');detail.append(energyNote);
-    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン';detail.append(heading);
+    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン（最終進化）';detail.append(heading);
     recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
     const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
    };

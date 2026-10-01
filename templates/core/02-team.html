@@ -139,7 +139,7 @@ function renderTeam(){
  hint.textContent=teamReorderFrom===null?'移動する個体を選び、移動先の枠をタップしてください。':`${teamReorderFrom+1}匹目を選択中。移動先の枠をタップしてください。`;
  const teamSpeeds=teamSpeedContext();
  team.forEach((id,index)=>{
-  const individual=state.box.find(x=>x.id===id),boxPosition=state.box.findIndex(x=>x.id===id)+1;
+  const individual=state.box.find(x=>x.id===id);
   const row=document.createElement('div');row.className='psg-team-row';
   if(teamReorderMode)row.classList.add('is-reordering');
   if(teamReorderFrom===index)row.classList.add('is-reorder-source');
@@ -151,8 +151,7 @@ function renderTeam(){
   if(individual){const level=document.createElement('span');level.className='psg-team-card-level';level.textContent=`Lv.${individual.level}`;artwork.append(level)}
   choose.append(artwork);
   const identity=document.createElement('span');identity.className='psg-team-identity';
-  const detail=document.createElement('small');detail.textContent=individual?`Box ${boxPosition}番`:'未設定';
-  identity.append(detail);
+  if(!individual){const detail=document.createElement('small');detail.textContent='未設定';identity.append(detail)}
   if(individual){
    const speed=document.createElement('small');speed.className='psg-team-speed';
    const corrected=teamSpeeds.members.get(individual.id);
@@ -170,8 +169,7 @@ function renderTeam(){
    }
    teamBoxSlot=index;renderBoxTeamMode();renderBox();go('box');
   };
-  const number=document.createElement('span');number.className='psg-team-number';number.textContent=String(index+1);
-  row.append(number,choose);panel.append(row);
+  row.append(choose);panel.append(row);
  });
  const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
  const summary=document.getElementById('teamSummary');
