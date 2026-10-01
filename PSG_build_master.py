@@ -59,6 +59,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'recipes/02-ingredient-filter.html',
     'recipes/03-providers.html',
     'recipes/03-cooking.html',
+    'recipes/03-daily-supply.html',
     'recipes/03-evaluation.html',
     'recipes/04-list-view.html',
     'recipes/05-events.html',
@@ -77,6 +78,7 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '10-detail-facts.css',
     '11-cooking.css',
     '12-recipe-evaluation.css',
+    '13-daily-supply.css',
 ))
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
@@ -135,6 +137,14 @@ def catalog_and_images():
     catalog['cooking'] = json.loads((MASTER / 'cooking/data.json').read_text())
     validate_cooking(catalog['cooking'])
     catalog['recipeEvaluation'] = json.loads((MASTER / 'cooking/evaluation.json').read_text())
+    catalog['dailySupply'] = json.loads((MASTER / 'cooking/daily-supply.json').read_text())
+    for level in ('30', '60'):
+        assert len(catalog['dailySupply']['tiers'][level]) == 19
+        assert len(catalog['dailySupply']['burdens'][level]) == 78
+        for row in catalog['dailySupply']['tiers'][level].values():
+            assert row['daily'] > 0 and row['tier'] in 'SABCD' and row['top']
+        for row in catalog['dailySupply']['burdens'][level].values():
+            assert 0 < row['relaxed'] <= row['dedicated'] + 1e-7
     for kind in ('specialties', 'sleepTypes'):
         catalog[kind] = {}
         for key, (obj, folder) in records(kind).items():
@@ -314,7 +324,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v242') == 2
+    assert source.count('Review v243') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

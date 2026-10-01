@@ -29,7 +29,7 @@
    const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;energy.append(pot);
    const chevron=document.createElement('span');chevron.className='psg-recipe-chevron';chevron.textContent='詳細 ▼';
    copy.append(title,energy,ingredientRow,chevron);summary.append(artWrap,copy);card.append(summary);
-   if(recipeMode==='evaluation'){energy.replaceChildren(pot);copy.append(evaluationSummary(recipe))}
+   if(recipeMode==='evaluation'){energy.replaceChildren(pot);copy.append(evaluationSummary(recipe),supplySummary(recipe))}
    const detail=document.createElement('div');detail.className='psg-recipe-expanded';
    let populated=false;
    const populateDetail=()=>{
@@ -38,6 +38,7 @@
     const levelNote=document.createElement('p');levelNote.className='note';const level=selectedLevel();levelNote.textContent=`比較Lv.${level['レベル']}・倍率×${level['倍率']}・累計 ${level['Lv1からの累計EXP'].toLocaleString()} EXP（資料確認）。実測・掲載値のないLvは暫定切り捨ての推定。レシピ本体のみ。`;detail.append(levelNote);
     const energyNote=document.createElement('p');energyNote.className='note';energyNote.textContent=[recipe.energy?.note,recipe.energy?.conditions].filter(Boolean).join('。');detail.append(energyNote);
     if(recipeMode==='evaluation'){
+     detail.append(supplyDetail(recipe));
      const data=recipeMetrics(recipe),rounding=catalog.recipeEvaluation.rounding[recipe.id];
      const note=document.createElement('p');note.className='note';note.textContent=`必要食材 ${data.quantity}個・基本エナジー合計 ${Number.isFinite(data.base)?data.base.toLocaleString():'未確定'}。掲載値 ${data.total.toLocaleString()}を評価に使用。${rounding?.difference?`四捨五入の参考式 ${rounding.reference.toLocaleString()}とは差 ${rounding.difference>0?'+':''}${rounding.difference}（端数処理未確定）。`:''}`;detail.append(note);
     }

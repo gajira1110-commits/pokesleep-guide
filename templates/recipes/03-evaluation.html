@@ -1,4 +1,5 @@
  const evaluationSort=document.getElementById('recipeEvaluationSort');
+ const burdenOption=document.createElement('option');burdenOption.value='burden';burdenOption.textContent='専任収集負担が小さい順';evaluationSort.append(burdenOption);
  const modeButtons=[...document.querySelectorAll('[data-recipe-mode]')];
  function recipeMetrics(recipe){
   const total=recipe.energy?.max?.value;
@@ -12,6 +13,11 @@
   return {numerator:data.total,denominator:key==='efficiency'?data.quantity:key==='amplification'?data.base:1};
  }
  function compareEvaluation(a,b){
+  if(evaluationSort.value==='burden'){
+   const av=supplyBurden(a).dedicated,bv=supplyBurden(b).dedicated;
+   if(!Number.isFinite(av)||!Number.isFinite(bv))return Number.isFinite(av)?-1:Number.isFinite(bv)?1:a.name.localeCompare(b.name,'ja');
+   return av-bv||a.name.localeCompare(b.name,'ja');
+  }
   const av=evaluationRatio(a),bv=evaluationRatio(b);
   const valid=v=>Number.isFinite(v.numerator)&&Number.isFinite(v.denominator)&&v.denominator>0;
   if(!valid(av)||!valid(bv))return valid(av)?-1:valid(bv)?1:a.name.localeCompare(b.name,'ja');
@@ -41,6 +47,7 @@
   sort.hidden=evaluation;evaluationSort.hidden=!evaluation;
   document.getElementById('recipeCompareControls').hidden=evaluation;
   document.getElementById('recipeEvaluationNote').hidden=!evaluation;
+  document.getElementById('recipeSupplyControls').hidden=!evaluation;
   updateLevelFacts();
  }));
  evaluationSort.addEventListener('change',()=>preserveRecipeDetails(()=>{}));
