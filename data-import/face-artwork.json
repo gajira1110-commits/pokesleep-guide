@@ -1,6 +1,6 @@
 {
-  "source": "PSG_pokemon_faces_rounded(1).zip",
-  "mappingSource": "PSG_pokemon_face_mapping(1).zip",
+  "source": "PSG_pokemon_faces_circle_black(1).zip",
+  "mappingSource": "PSG_pokemon_faces_circle_black(1).zip",
   "adopted": [
     {
       "name": "フシギダネ",
@@ -1612,5 +1612,6 @@
     }
   ],
   "duplicatePolicy": "同じポケモン・同じ姿は1枚のみ保持。姿違いは別画像として保持。",
-  "removedDuplicateCount": 25
+  "removedDuplicateCount": 25,
+  "appearance": "円形・黒縁2px。円の外は透明、内側背景は白。184×184px、ロスレスWebP。"
 }
