@@ -1,0 +1,91 @@
+{
+  "no": 213,
+  "name": "ツボツボ",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 3600,
+  "carry": 16,
+  "foodRate": 20.5,
+  "skillRate": 5.9,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_juice_energy_for_everyone",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0213_01",
+      "name": "からにこもる寝",
+      "stars": 1
+    },
+    {
+      "id": "0213_02",
+      "name": "こもらない寝",
+      "stars": 2
+    },
+    {
+      "id": "0213_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0213_03",
+      "name": "ジュースこぼれ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%84%E3%83%9C%E3%83%84%E3%83%9C",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 16,
+  "expType": 600,
+  "evolutionNotes": [
+    "なし"
+  ]
+}
