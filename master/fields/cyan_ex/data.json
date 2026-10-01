@@ -3396,6 +3396,70 @@
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_01",
+      "drowsyPower": 51946000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/sleep-styles/213-1",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "unlockEnergy": 548434,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_02",
+      "drowsyPower": 153824000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/sleep-styles/213-2",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "unlockEnergy": 1665846,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_03",
+      "drowsyPower": 429666000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/sleep-styles/213-3",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "unlockEnergy": 4237798,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_04",
+      "drowsyPower": 482410000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/sleep-styles/213-4",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 4654094,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
     }
   ],
   "rankThresholds": [

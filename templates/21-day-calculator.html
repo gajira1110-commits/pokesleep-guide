@@ -61,7 +61,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
   return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
    berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
    foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,skillExtraHelps:0,randomIngredients:0,
-   skillName:skill?.name||null,skillEffectType:skill?.effectType,
+   skillCalculationNote:skill?.calculationNote||null,skillName:skill?.name||null,skillEffectType:skill?.effectType,
    skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
     (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
    skillShards:skillEffect?.shards ?? (skill?.effectType==='variable_dream_shards'&&Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),

@@ -5,8 +5,9 @@ ROOT=Path(__file__).resolve().parent
 FIELD_IDS=dict(zip(['ワカクサ本島','シアンの砂浜','トープ洞窟','ウノハナ雪原','ラピスラズリ湖畔','ゴールド旧発電所','アンバー渓谷','ワカクサ本島 EX','シアンの砂浜 EX'],['greengrass','cyan','taupe','snowdrop','lapis','old_gold','amber','greengrass_ex','cyan_ex']))
 def run(archive):
  with zipfile.ZipFile(archive) as z:
-  data=json.loads(z.read('PSG_sleep_style_energy_master_20261001.json'))
-  ranks=z.read('PSG_snorlax_ranks_20261001.txt').decode('utf-8-sig')
+  files={n.split('/')[-1]:n for n in z.namelist()}
+  data=json.loads(z.read(files['PSG_sleep_style_energy_master_20261001.json']))
+  ranks=z.read(files['PSG_snorlax_ranks_20261001.txt']).decode('utf-8-sig')
  pokemon={p.parent.name:json.loads(p.read_text()) for p in (ROOT/'master/pokemon').glob('*/data.json')}
  fields={};pending=[];count=0
  for name,id in FIELD_IDS.items():

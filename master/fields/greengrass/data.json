@@ -7828,6 +7828,118 @@
       "verifiedAt": "2026-10-01",
       "status": "攻略資料掲載値・ゲーム内未照合",
       "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_01",
+      "drowsyPower": 12692000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/shuckle",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "unlockEnergy": 286821,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_02",
+      "drowsyPower": 49894000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/shuckle",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 428296,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0213_04",
+      "drowsyPower": 185516000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/shuckle",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "unlockEnergy": 465451,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0225_01",
+      "drowsyPower": 12692000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/delibird",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "unlockEnergy": 109130,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0225_02",
+      "drowsyPower": 25536000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/delibird",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "unlockEnergy": 220177,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0225_03",
+      "drowsyPower": 55594000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/delibird",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "unlockEnergy": 428296,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
+    },
+    {
+      "sleepStyleId": "0225_04",
+      "drowsyPower": 68666000,
+      "drowsyPowerSource": "https://wiki.pokesleep.com/ja/pokemon/delibird",
+      "drowsyPowerVerifiedAt": "2026-10-01",
+      "drowsyPowerStatus": "非公式コミュニティ資料の掲載値・ゲーム内実測未照合",
+      "rank": {
+        "tier": "マスター",
+        "level": 3
+      },
+      "unlockEnergy": 253169,
+      "source": "https://wikiwiki.jp/poke_sleep/出現ポケモン一覧/うとうと",
+      "verifiedAt": "2026-10-01",
+      "status": "攻略資料掲載値・ゲーム内未照合",
+      "eventOnly": false
     }
   ],
   "rankThresholds": [

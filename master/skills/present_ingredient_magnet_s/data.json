@@ -1,0 +1,54 @@
+{
+  "id": "present_ingredient_magnet_s",
+  "name": "プレゼント(食材ゲットS)",
+  "maxLevel": 7,
+  "tags": [
+    "追加効果"
+  ],
+  "effectType": "random_ingredients",
+  "levels": {
+    "1": {
+      "amount": 4,
+      "description": "ランダムな食材を4個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "2": {
+      "amount": 6,
+      "description": "ランダムな食材を6個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "3": {
+      "amount": 8,
+      "description": "ランダムな食材を8個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "4": {
+      "amount": 10,
+      "description": "ランダムな食材を10個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "5": {
+      "amount": 12,
+      "description": "ランダムな食材を12個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "6": {
+      "amount": 15,
+      "description": "ランダムな食材を15個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    },
+    "7": {
+      "amount": 17,
+      "description": "ランダムな食材を17個ゲットする。ときどき、チームの1匹のアメを4個ゲットする。",
+      "bonusCandy": 4
+    }
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット/プレゼント"
+  ],
+  "verifiedAt": "2026-10-01",
+  "calculationStatus": "基本効果のみ対応・追加効果は未対応",
+  "calculationNote": "追加アメの発生確率と対象の抽選は未確認。アメの期待値は計算に含めていません。",
+  "displayNote": "追加アメの発生確率と対象の抽選は未確認。アメの期待値は計算に含めていません。",
+  "iconAsset": "assets/skill-icons/present_ingredient_magnet_s.webp"
+}

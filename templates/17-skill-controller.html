@@ -5,6 +5,7 @@
  if(!catalog||!input||!list)return;
  const effects=(skill,level)=>{
   const value=skill.levels?.[level];
+  if(skill.displayNote&&value?.description)return value.description;
   if(skill.effectType==='random_ingredients'&&Number.isFinite(value?.amount))return `ランダムな食材を${value.amount}個ゲットする`;
   if(skill.effectType==='team_energy_recovery'&&Number.isFinite(value?.recovery))return `チーム全員のげんきを${value.recovery}回復する`;
   if(skill.effectType==='fixed_energy'&&Number.isFinite(value?.energy))return `カビゴンのエナジーを${value.energy.toLocaleString()}増やす`;
