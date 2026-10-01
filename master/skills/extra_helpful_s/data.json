@@ -36,5 +36,6 @@
       "helps": 12,
       "description": "チームのポケモン1匹のおてつだい12回分がすぐに完了する"
     }
-  }
+  },
+  "iconAsset": "assets/skill-icons/extra_helpful_s.webp"
 }

@@ -53,5 +53,6 @@
   "calculationStatus": "未対応",
   "nativePokemonNos": [
     214
-  ]
+  ],
+  "iconAsset": "assets/skill-icons/bulk_up_cooking_assist_s.webp"
 }

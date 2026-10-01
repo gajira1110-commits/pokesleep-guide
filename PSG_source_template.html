@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v223</title>
+  <title>PokéSleep Guide — Review v225</title>
 
 
 
@@ -216,7 +216,7 @@ window.PS_TYPE_THEME={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v223</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v225</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -1660,7 +1660,7 @@ if(window.PS?.master&&window.PS_CATALOG){
    const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
    const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
    let found=false;
-   for(const entry of Object.values(V.fields||{})){
+   for(const entry of Object.values(V.fields||{}).sort((a,b)=>(a.mode==='expert')-(b.mode==='expert'))){
      const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
      if(!rows.length)continue;
      found=true;
@@ -2162,6 +2162,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
    const summary=document.createElement('summary');
    const title=document.createElement('strong');title.textContent=skill.name;
    const tags=document.createElement('span');tags.className='psg-skill-tags';tags.textContent=(skill.tags||[]).join(' · ');
+   const iconSrc=window.PS_IMAGE_FILES?.skills?.[skill.id];if(iconSrc){const icon=document.createElement('img');icon.src=iconSrc;icon.alt='';icon.width=36;icon.height=36;icon.style.objectFit='contain';summary.append(icon)}
    summary.append(title,tags);item.append(summary);
    const rows=document.createElement('div');rows.className='psg-skill-levels';
    for(let level=1;level<=Math.min(10,Number(skill.maxLevel)||0);level++){

@@ -10,6 +10,12 @@ for field in fields:
  for e in field['encounters']:
   rank=next(r for r in field['rankThresholds'] if r['tier']==e['rank']['tier'] and r['level']==e['rank']['level'])
   assert rank['energy']==e['unlockEnergy']
-assert sum(e['drowsyPower'] is not None for f in fields for e in f['encounters'])==546
+assert sum(e['drowsyPower'] is not None for f in fields for e in f['encounters'])==1184
 assert len(json.loads((root/'data-import/sleep-conditions-pending.json').read_text())['records'])==1533
-print('9 fields, 1184 links, exact rank energy, unique IDs, existing DPR preserved, 1533 pending passed')
+print('9 fields, 1184 links, exact rank energy, unique IDs, supplied DPR recorded, 1533 pending passed')
+
+by_id={f['id']:f for f in fields}
+def power(field):return next(e['drowsyPower'] for e in by_id[field]['encounters'] if e['sleepStyleId']=='0001_01')
+assert power('greengrass')==418000
+assert power('greengrass_ex')==4180000
+print('Normal and EX retain distinct DPR values passed')
