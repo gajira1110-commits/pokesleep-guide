@@ -28,6 +28,10 @@ def run(archive):
   field=fields[row['フィールド']];id=styles[0]['id'];m=re.fullmatch(r'(ノーマル|スーパー|ハイパー|マスター)(\d+)',row['最低カビゴン評価']);assert m
   hit=next((e for e in field['encounters'] if e['sleepStyleId']==id),None)
   if hit is None:hit=dict(sleepStyleId=id,drowsyPower=None);field['encounters'].append(hit)
+  power=row.get('必要ねむけパワー')
+  if power is not None:
+   assert isinstance(power,int) and power>0
+   hit.update(drowsyPower=power,drowsyPowerSource=row.get('DPR出典'),drowsyPowerVerifiedAt=row.get('DPR確認日'),drowsyPowerStatus=row.get('DPR確認状態'))
   hit.update(rank=dict(tier=m[1],level=int(m[2])),unlockEnergy=row['解放エナジー'],source=row['出典'],verifiedAt=data['調査日'],status=row['確認状態'],eventOnly=row['イベント限定'])
   count+=1
  for field in fields.values():
