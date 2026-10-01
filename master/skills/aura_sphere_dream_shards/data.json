@@ -58,5 +58,6 @@
     "https://wiki.pokesleep.com/ja/main-skills/auraspheredreamshardmagnets"
   ],
   "verifiedAt": "2026-10-01",
-  "calculationStatus": "基礎期待値対応（確率は推定）"
+  "calculationStatus": "基礎期待値対応（確率は推定）",
+  "iconAsset": "assets/skill-icons/aura_sphere_dream_shards.webp"
 }

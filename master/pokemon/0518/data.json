@@ -1,0 +1,88 @@
+{
+  "no": 518,
+  "name": "ムシャーナ",
+  "type": "エスパー",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "マゴのみ",
+  "berryQty": 2,
+  "help": 2800,
+  "carry": 29,
+  "foodRate": 18.8,
+  "skillRate": 4.1,
+  "rateStatus": "推定",
+  "mainSkillId": "dream_shard_magnet_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 3
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0518_01",
+      "name": "ふゆうすりすり寝",
+      "stars": 1
+    },
+    {
+      "id": "0518_02",
+      "name": "かおごしごし寝",
+      "stars": 2
+    },
+    {
+      "id": "0518_03",
+      "name": "ゆめのけむり寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A0%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%8A",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ムンナ",
+    "↓ つきのいし＋ムンナのアメx80",
+    "ムシャーナ"
+  ]
+}

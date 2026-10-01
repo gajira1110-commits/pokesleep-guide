@@ -1,0 +1,93 @@
+{
+  "no": 558,
+  "name": "イワパレス",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 3200,
+  "carry": 22,
+  "foodRate": 23.9,
+  "skillRate": 6.4,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_draw_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 2
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 4
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0558_01",
+      "name": "からにこもる寝",
+      "stars": 1
+    },
+    {
+      "id": "0558_02",
+      "name": "こもらない寝",
+      "stars": 2
+    },
+    {
+      "id": "0558_03",
+      "name": "からのうえ寝",
+      "stars": 3
+    },
+    {
+      "id": "0558_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%AF%E3%83%91%E3%83%AC%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "イシズマイ",
+    "↓ Lv.26＋イシズマイのアメx40",
+    "イワパレス"
+  ]
+}

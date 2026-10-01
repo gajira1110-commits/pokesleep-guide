@@ -1,0 +1,99 @@
+{
+  "no": 353,
+  "name": "カゲボウズ",
+  "type": "ゴースト",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ブリーのみ",
+  "berryQty": 2,
+  "help": 3900,
+  "carry": 11,
+  "foodRate": 17.1,
+  "skillRate": 2.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0353_01",
+      "name": "ねがえりふゆう寝",
+      "stars": 1
+    },
+    {
+      "id": "0353_02",
+      "name": "こっくりふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0353_03",
+      "name": "さかさふゆう寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%B2%E3%83%9C%E3%82%A6%E3%82%BA",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "カゲボウズ",
+    "↓　Lv.28＋カゲボウズのアメ×40",
+    "ジュペッタ"
+  ],
+  "evolution": [
+    {
+      "toNo": 354,
+      "to": "ジュペッタ",
+      "conditions": [
+        "Lv.28＋カゲボウズのアメ×40"
+      ],
+      "level": 28,
+      "candy": 40
+    }
+  ]
+}

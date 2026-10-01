@@ -1,0 +1,105 @@
+{
+  "no": 35,
+  "name": "ピッピ",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "モモンのみ",
+  "berryQty": 2,
+  "help": 4000,
+  "carry": 21,
+  "foodRate": 16.8,
+  "skillRate": 3.6,
+  "rateStatus": "推定",
+  "mainSkillId": "metronome",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 3
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0035_01",
+      "name": "おだやか寝",
+      "stars": 1
+    },
+    {
+      "id": "0035_02",
+      "name": "こっくり寝",
+      "stars": 2
+    },
+    {
+      "id": "0035_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0035_03",
+      "name": "ゆびをふる寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%83%83%E3%83%94",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 7,
+  "expType": 600,
+  "evolutionNotes": [
+    "ピィ",
+    "↓　チームに入れて睡眠50時間＋ピッピのアメ×20",
+    "ピッピ",
+    "↓　つきのいし＋ピッピのアメ×80",
+    "ピクシー"
+  ],
+  "evolution": [
+    {
+      "toNo": 36,
+      "to": "ピクシー",
+      "conditions": [
+        "つきのいし＋ピッピのアメ×80"
+      ],
+      "candy": 80
+    }
+  ]
+}

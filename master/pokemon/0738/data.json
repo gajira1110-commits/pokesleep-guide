@@ -1,0 +1,95 @@
+{
+  "no": 738,
+  "name": "クワガノン",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 2800,
+  "carry": 29,
+  "foodRate": 19.4,
+  "skillRate": 5.1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 7
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 11
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0738_01",
+      "name": "かたむき寝",
+      "stars": 1
+    },
+    {
+      "id": "0738_02",
+      "name": "ホバリング寝",
+      "stars": 2
+    },
+    {
+      "id": "0738_03",
+      "name": "おなかはつでん寝",
+      "stars": 3
+    },
+    {
+      "id": "0738_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%82%AC%E3%83%8E%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 22,
+  "expType": 600,
+  "evolutionNotes": [
+    "アゴジムシ",
+    "↓ Lv.15＋アゴジムシのアメ40",
+    "デンヂムシ",
+    "↓ かみなりのいし＋アゴジムシのアメ80",
+    "クワガノン"
+  ]
+}

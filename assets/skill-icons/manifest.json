@@ -12,7 +12,7 @@
     "path": "assets/skill-icons/helper_boost_fire.webp"
   },
   "energy_charge_s_variable": {
-    "name": "エナジーチャージ",
+    "name": "エナジーチャージS",
     "path": "assets/skill-icons/energy_charge_s_variable.webp"
   },
   "energy_charge_s_self": {
@@ -60,7 +60,7 @@
     "path": "assets/skill-icons/cooking_power_up_s.webp"
   },
   "energy_charge_s_fixed": {
-    "name": "エナジーチャージ",
+    "name": "エナジーチャージS",
     "path": "assets/skill-icons/energy_charge_s_variable.webp"
   },
   "helper_boost_water": {
@@ -72,8 +72,8 @@
     "path": "assets/skill-icons/extra_helpful_s.webp"
   },
   "energy_charge_m": {
-    "name": "エナジーチャージ",
-    "path": "assets/skill-icons/energy_charge_s_variable.webp"
+    "name": "エナジーチャージM",
+    "path": "assets/skill-icons/energy_charge_m.webp"
   },
   "energy_cheer_s": {
     "name": "げんきエール",
@@ -86,5 +86,9 @@
   "moonlight_energy_charge_s": {
     "name": "つきのひかり",
     "path": "assets/skill-icons/moonlight_energy_charge_s.webp"
+  },
+  "aura_sphere_dream_shards": {
+    "name": "はどうだん",
+    "path": "assets/skill-icons/aura_sphere_dream_shards.webp"
   }
 }

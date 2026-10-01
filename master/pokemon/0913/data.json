@@ -1,0 +1,106 @@
+{
+  "no": 913,
+  "name": "ウェルカモ",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3600,
+  "carry": 19,
+  "foodRate": 25.9,
+  "skillRate": 2.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 7
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 6
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0913_01",
+      "name": "かたひざたて寝",
+      "stars": 1
+    },
+    {
+      "id": "0913_02",
+      "name": "かみととのえ寝",
+      "stars": 2
+    },
+    {
+      "id": "0913_03",
+      "name": "みだれがみ寝",
+      "stars": 3
+    },
+    {
+      "id": "0913_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%AB%E3%82%AB%E3%83%A2",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "クワッス",
+    "↓ Lv.12＋クワッスのアメx40",
+    "ウェルカモ",
+    "↓ Lv.27＋クワッスのアメx80",
+    "ウェーニバル"
+  ],
+  "evolution": [
+    {
+      "toNo": 914,
+      "to": "ウェーニバル",
+      "conditions": [
+        "Lv.27＋クワッスのアメx80"
+      ],
+      "level": 27,
+      "candy": 80
+    }
+  ]
+}

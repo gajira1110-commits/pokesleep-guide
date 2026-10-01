@@ -1,0 +1,106 @@
+{
+  "no": 906,
+  "name": "ニャオハ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 4600,
+  "carry": 10,
+  "foodRate": 20.8,
+  "skillRate": 2.3,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 9
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0906_01",
+      "name": "こうばこずわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0906_02",
+      "name": "ふみふみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0906_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0906_03",
+      "name": "へそてん寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%8B%E3%83%A3%E3%82%AA%E3%83%8F",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ニャオハ",
+    "↓ Lv.12＋ニャオハのアメx40",
+    "ニャローテ",
+    "↓ Lv.27＋ニャオハのアメx80",
+    "マスカーニャ"
+  ],
+  "evolution": [
+    {
+      "toNo": 907,
+      "to": "ニャローテ",
+      "conditions": [
+        "Lv.12＋ニャオハのアメx40"
+      ],
+      "level": 12,
+      "candy": 40
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "no": 440,
+  "name": "ピンプク",
+  "type": "ノーマル",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "キーのみ",
+  "berryQty": 1,
+  "help": 5400,
+  "carry": 7,
+  "foodRate": 21.0,
+  "skillRate": 1.3,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 5
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0440_01",
+      "name": "にこにこ寝",
+      "stars": 1
+    },
+    {
+      "id": "0440_02",
+      "name": "いしだいじ寝",
+      "stars": 2
+    },
+    {
+      "id": "0440_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0440_03",
+      "name": "ままごと寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%83%B3%E3%83%97%E3%82%AF",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ピンプク",
+    "まんまるいし",
+    "↓ ＋日中の時間帯(時刻が6:00~17:59の間)",
+    "＋ラッキーのアメ×80",
+    "ラッキー",
+    "↓　チームに入れて睡眠150時間＋ラッキーのアメ×80",
+    "ハピナス"
+  ]
+}

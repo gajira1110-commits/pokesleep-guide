@@ -1,0 +1,106 @@
+{
+  "no": 156,
+  "name": "マグマラシ",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "ヒメリのみ",
+  "berryQty": 2,
+  "help": 3000,
+  "carry": 23,
+  "foodRate": 21.1,
+  "skillRate": 4.1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 3
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0156_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0156_02",
+      "name": "つっぷし寝",
+      "stars": 2
+    },
+    {
+      "id": "0156_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0156_03",
+      "name": "ほのおふきあげ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%B0%E3%83%9E%E3%83%A9%E3%82%B7",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヒノアラシ",
+    "↓　Lv.11＋ヒノアラシのアメ×40",
+    "マグマラシ",
+    "↓　Lv.27＋ヒノアラシのアメ×80",
+    "バクフーン"
+  ],
+  "evolution": [
+    {
+      "toNo": 157,
+      "to": "バクフーン",
+      "conditions": [
+        "Lv.27＋ヒノアラシのアメ×80"
+      ],
+      "level": 27,
+      "candy": 80
+    }
+  ]
+}
