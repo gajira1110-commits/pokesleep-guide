@@ -20,3 +20,5 @@ assert(run({...base,level:25,subskills:['きのみの数S','きのみの数S']},
 for(const level of [1,10,25,50,70]){ctx.level=level;const ideals=vm.runInContext('individualIdeal(p,level)',ctx);for(const role of ['berry','food','skill']){const ideal=ideals[role];const result=run({level,nature:ideal.nature,subskills:ideal.subskills},'individualEvaluation');assert(Math.abs(result.rows.find(x=>x.role===role).ratio-1)<1e-12);}}
 ctx.p.foodRate=null;assert.equal(run(base,'individualEvaluation').rows[0].ratio,null);
 console.log('Individual evaluation: known math, own bonus once, locked skills, missing inputs, duplicate skills, mint, all ideal levels and missing rates passed.');
+
+ctx.p.foodRate=20;const futureItem={level:9,nature:'がんばりや',subskills:['きのみの数S']};const growth=run(futureItem,'individualGrowthEvaluation');assert.equal(growth.level,10);assert.equal(futureItem.level,9);assert.equal(growth.reasons.length,0);assert.equal(run({...futureItem,subskills:[]},'individualGrowthEvaluation').reasons.length,1);assert.equal(run({...futureItem,level:70},'individualGrowthEvaluation'),null);console.log('Growth evaluation: next unlock, missing future slot, no mutation and max level passed.');

@@ -272,6 +272,38 @@
         "level": 3
       },
       "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0702_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0702_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 25536000
+    },
+    {
+      "sleepStyleId": "0702_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 5
+      },
+      "drowsyPower": 55594000
+    },
+    {
+      "sleepStyleId": "0702_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 68666000
     }
   ],
   "rankThresholds": [
@@ -452,6 +484,7 @@
     }
   ],
   "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/ditto"
+    "https://wiki.pokesleep.com/ja/pokemon/ditto",
+    "https://wiki.pokesleep.com/ja/pokemon/dedenne"
   ]
 }

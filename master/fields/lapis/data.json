@@ -488,6 +488,38 @@
         "level": 6
       },
       "drowsyPower": 195358000
+    },
+    {
+      "sleepStyleId": "0702_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 7144000
+    },
+    {
+      "sleepStyleId": "0702_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 25536000
+    },
+    {
+      "sleepStyleId": "0702_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 55594000
+    },
+    {
+      "sleepStyleId": "0702_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 68666000
     }
   ],
   "rankThresholds": [
@@ -674,6 +706,7 @@
     "https://wiki.pokesleep.com/ja/pokemon/sceptile",
     "https://wiki.pokesleep.com/ja/pokemon/torchic",
     "https://wiki.pokesleep.com/ja/pokemon/combusken",
-    "https://wiki.pokesleep.com/ja/pokemon/blaziken"
+    "https://wiki.pokesleep.com/ja/pokemon/blaziken",
+    "https://wiki.pokesleep.com/ja/pokemon/dedenne"
   ]
 }

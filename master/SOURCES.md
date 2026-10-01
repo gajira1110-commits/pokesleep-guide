@@ -225,3 +225,12 @@ v195：追加おてつだいの予想
 - https://wikiwiki.jp/poke_sleep/ミズゴロウ
 - https://wikiwiki.jp/poke_sleep/ヌマクロー
 - https://wikiwiki.jp/poke_sleep/ラグラージ
+
+## v219（2026-10-01）
+
+デデンネの基本能力・食材・寝顔4件・通常出現11件を追加。確率は推定基礎値（天井込みの値を使用しない）。寝顔名・IDを一覧と照合。EXは保留。
+
+- https://wiki.pokesleep.com/ja/pokemon/dedenne
+- https://wikiwiki.jp/poke_sleep/デデンネ
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
+- https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
