@@ -5,7 +5,7 @@
 ## 反映状況
 
 - 公開済みの基準：v244、PR #58、マージSHA `4c7796f4e46456473a0221c019d7ebbb3f2f91a5`。生成・公開成功。ユーザー確認で文字量の整理を後続へ回す方針。
-- この変更：v245。詳細右側をユーザー指定の上から4・2・2の3段へ訂正。この文書を含むPRがmainへマージされた時点で反映済みになる。
+- この変更：v246。詳細右側の睡眠タイプアイコンを23pxから30pxへ拡大。4・2・2と行位置は維持。この文書を含むPRがmainへマージされた時点で反映済みになる。
 - リポジトリ： https://github.com/psguide-dev/pokesleep-guide
 - 実機確認： https://psguide-dev.github.io/pokesleep-guide/review.html （ヘッダーの版番号を確認）
 
