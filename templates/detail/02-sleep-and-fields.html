@@ -51,7 +51,7 @@
  function renderPokemonFields(m){
    field.replaceChildren();
    const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
-   const note=document.createElement('p');note.className='note';note.textContent='資料を投入した出現情報のみ表示。未掲載は出現しないという意味ではありません。';field.append(note);
+   const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
    let found=false;
    for(const entry of Object.values(V.fields||{})){
      const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
@@ -60,11 +60,12 @@
      const section=document.createElement('section');section.className='psg-field-species';
      const heading=document.createElement('h4');heading.textContent=entry.name;section.append(heading);
      for(const item of rows){
-       const style=V.sleepStyles?.[m.no]?.find(row=>row[2]===item.sleepStyleId);
+       const style=V.sleepStyles?.[m.no]?.find(row=>row.id===item.sleepStyleId);
        if(!style)continue;
        const line=document.createElement('div');line.className='psg-field-encounter-row';
-       const label=document.createElement('span');label.textContent=`★${style[1]} ${style[0]}`;
-       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+       const label=document.createElement('span');label.textContent=`★${style.stars} ${style.name}`;
+       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
        line.append(label,rank);section.append(line);
      }
      field.append(section);

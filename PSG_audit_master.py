@@ -22,7 +22,8 @@ def audit(as_of):
     pokemon, skills, recipes, fields = (records(kind) for kind in ('pokemon', 'skills', 'recipes', 'fields'))
     by_no = {p['no']: p for p in pokemon}
     sleep_ids = {s['id'] for p in pokemon for s in p.get('sleepStyles', [])}
-    encounters = [e for f in fields for e in f.get('encounters', [])]
+    encounters = [e for f in fields if f.get('mode')=='normal' for e in f.get('encounters', [])]
+    expert_encounters = [e for f in fields if f.get('mode')=='expert' for e in f.get('encounters', [])]
     linked = {e['sleepStyleId'] for e in encounters}
     core = ('help', 'carry', 'berryQty', 'foodRate', 'skillRate', 'ingredientSlots')
     missing_core = [{'no': p['no'], 'name': p['name'], 'fields': [k for k in core if k not in p]} for p in pokemon]
@@ -38,7 +39,7 @@ def audit(as_of):
     levels = [{'id': s['id'], 'name': s['name'], 'levels': [n for n in range(1, s['maxLevel'] + 1) if str(n) not in s.get('levels', {})]} for s in skills]
     bounds = [{'id': r['id'], 'name': r['name'], 'missing': [k for k in ('min', 'max') if not r.get('energy', {}).get(k)]} for r in recipes]
     result = {'asOf': as_of, 'scope': 'Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.',
-              'counts': {'pokemon': len(pokemon), 'skills': len(skills), 'recipes': len(recipes), 'sleepStyles': len(sleep_ids), 'normalFieldEncounters': len(encounters)},
+              'counts': {'pokemon': len(pokemon), 'skills': len(skills), 'recipes': len(recipes), 'sleepStyles': len(sleep_ids), 'normalFieldEncounters': len(encounters), 'expertFieldEncounters': len(expert_encounters), 'missingDrowsyPower': sum(e.get('drowsyPower') is None for e in encounters+expert_encounters)},
               'missingCoreFields': missing_core,
               'missingEvolutionTargets': missing_evolution,
               'missingSkillLevels': [x for x in levels if x['levels']],

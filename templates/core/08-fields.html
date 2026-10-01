@@ -73,7 +73,7 @@ function renderFieldGallery(){
  for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
   const row=document.createElement('div');row.className='psg-field-choice';
   const image=document.createElement('img');image.src=`assets/fields/${id}/image.webp`;image.alt='';image.width=76;image.height=86;row.append(image);
-  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='計算設定は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);host.append(row);
+  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='日産計算は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);const ranks=document.createElement('details');const summary=document.createElement('summary');summary.textContent='ランク・必要エナジー';ranks.append(summary);for(const rank of window.PS_CATALOG.fields[id]?.rankThresholds||[]){const line=document.createElement('p');line.className='note';line.textContent=`${rank.tier}${rank.level}：${rank.energy.toLocaleString()}`;ranks.append(line)}row.append(ranks);host.append(row);
  }
 }
 function renderFieldControls(){
@@ -132,7 +132,8 @@ function renderFieldEncounters(field){
   for(const {item,style} of rows.sort((a,b)=>a.style[1]-b.style[1])){
    const row=document.createElement('div');row.className='psg-field-encounter-row';
    const name=document.createElement('span');name.textContent=`★${style[1]} ${style[0]}`;
-   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
    row.append(name,rank);section.append(row);
   }
   host.append(section);

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v222</title>
+  <title>PokéSleep Guide — Review v223</title>
 
 
 
@@ -216,7 +216,7 @@ window.PS_TYPE_THEME={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v222</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v223</small></header>
 <main>
 <section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
 <div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
@@ -1055,7 +1055,7 @@ function renderFieldGallery(){
  for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
   const row=document.createElement('div');row.className='psg-field-choice';
   const image=document.createElement('img');image.src=`assets/fields/${id}/image.webp`;image.alt='';image.width=76;image.height=86;row.append(image);
-  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='計算設定は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);host.append(row);
+  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='日産計算は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);const ranks=document.createElement('details');const summary=document.createElement('summary');summary.textContent='ランク・必要エナジー';ranks.append(summary);for(const rank of window.PS_CATALOG.fields[id]?.rankThresholds||[]){const line=document.createElement('p');line.className='note';line.textContent=`${rank.tier}${rank.level}：${rank.energy.toLocaleString()}`;ranks.append(line)}row.append(ranks);host.append(row);
  }
 }
 function renderFieldControls(){
@@ -1114,7 +1114,8 @@ function renderFieldEncounters(field){
   for(const {item,style} of rows.sort((a,b)=>a.style[1]-b.style[1])){
    const row=document.createElement('div');row.className='psg-field-encounter-row';
    const name=document.createElement('span');name.textContent=`★${style[1]} ${style[0]}`;
-   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
    row.append(name,rank);section.append(row);
   }
   host.append(section);
@@ -1657,7 +1658,7 @@ if(window.PS?.master&&window.PS_CATALOG){
  function renderPokemonFields(m){
    field.replaceChildren();
    const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
-   const note=document.createElement('p');note.className='note';note.textContent='資料を投入した出現情報のみ表示。未掲載は出現しないという意味ではありません。';field.append(note);
+   const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
    let found=false;
    for(const entry of Object.values(V.fields||{})){
      const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
@@ -1666,11 +1667,12 @@ if(window.PS?.master&&window.PS_CATALOG){
      const section=document.createElement('section');section.className='psg-field-species';
      const heading=document.createElement('h4');heading.textContent=entry.name;section.append(heading);
      for(const item of rows){
-       const style=V.sleepStyles?.[m.no]?.find(row=>row[2]===item.sleepStyleId);
+       const style=V.sleepStyles?.[m.no]?.find(row=>row.id===item.sleepStyleId);
        if(!style)continue;
        const line=document.createElement('div');line.className='psg-field-encounter-row';
-       const label=document.createElement('span');label.textContent=`★${style[1]} ${style[0]}`;
-       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から`;
+       const label=document.createElement('span');label.textContent=`★${style.stars} ${style.name}`;
+       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
        line.append(label,rank);section.append(line);
      }
      field.append(section);
