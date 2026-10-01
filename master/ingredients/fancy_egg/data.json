@@ -1,5 +1,9 @@
 {
   "id": "fancy_egg",
   "name": "とくせんエッグ",
-  "fallback": "🥚"
+  "fallback": "🥚",
+  "baseEnergy": 115,
+  "baseEnergyStatus": "資料確認",
+  "baseEnergySource": "https://wikiwiki.jp/poke_sleep/食材/食材の一覧",
+  "baseEnergyCheckedAt": "2026-10-01"
 }
