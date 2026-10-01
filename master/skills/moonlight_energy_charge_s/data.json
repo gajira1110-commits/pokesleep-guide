@@ -45,5 +45,6 @@
     "https://wikiwiki.jp/poke_sleep/メインスキル/げんきチャージ/つきのひかり"
   ],
   "verifiedAt": "2026-09-30",
-  "calculationStatus": "追加回復の確率を含む期待値は未対応"
+  "calculationStatus": "追加回復の確率を含む期待値は未対応",
+  "iconAsset": "assets/skill-icons/moonlight_energy_charge_s.webp"
 }

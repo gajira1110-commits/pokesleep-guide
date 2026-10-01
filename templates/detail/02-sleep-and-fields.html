@@ -53,7 +53,7 @@
    const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
    const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
    let found=false;
-   for(const entry of Object.values(V.fields||{})){
+   for(const entry of Object.values(V.fields||{}).sort((a,b)=>(a.mode==='expert')-(b.mode==='expert'))){
      const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
      if(!rows.length)continue;
      found=true;

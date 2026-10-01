@@ -64,7 +64,7 @@ ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v223_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v224_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -171,7 +171,9 @@ def catalog_and_images():
             assert sorted(map(int,obj['levels'])) == list(range(1,obj['maxLevel']+1)), key
             assert all(isinstance(level.get('min'),int) and isinstance(level.get('max'),int) and 0 < level['min'] <= level['max'] for level in obj['levels'].values()), key
         catalog['skills'][key] = obj
-        icon = image_path(ROOT, folder, 'icon')
+        icon = obj.get('iconAsset') or image_path(ROOT, folder, 'icon')
+        if obj.get('iconAsset'):
+            assert icon.startswith('assets/skill-icons/') and (ROOT/icon).is_file(), key
         if icon:
             images['skills'][key] = icon
     for key,(obj,folder) in kinds['pokemon'].items():
@@ -277,7 +279,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v223') == 2
+    assert source.count('Review v224') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

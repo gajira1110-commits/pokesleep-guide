@@ -32,5 +32,6 @@
       "recovery": 44,
       "description": "チームのポケモン1匹のげんきを44回復する"
     }
-  }
+  },
+  "iconAsset": "assets/skill-icons/energy_cheer_s.webp"
 }

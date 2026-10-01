@@ -1,0 +1,90 @@
+{
+  "energy_for_everyone_s": {
+    "name": "げんきオール",
+    "path": "assets/skill-icons/energy_for_everyone_s.webp"
+  },
+  "cooking_chance_s": {
+    "name": "料理チャンス",
+    "path": "assets/skill-icons/cooking_chance_s.webp"
+  },
+  "helper_boost_fire": {
+    "name": "おてつだいブースト（ほのお）",
+    "path": "assets/skill-icons/helper_boost_fire.webp"
+  },
+  "energy_charge_s_variable": {
+    "name": "エナジーチャージ",
+    "path": "assets/skill-icons/energy_charge_s_variable.webp"
+  },
+  "energy_charge_s_self": {
+    "name": "げんきチャージ",
+    "path": "assets/skill-icons/energy_charge_s_self.webp"
+  },
+  "bulk_up_cooking_assist_s": {
+    "name": "ビルドアップ",
+    "path": "assets/skill-icons/bulk_up_cooking_assist_s.webp"
+  },
+  "berry_burst": {
+    "name": "きのみバースト",
+    "path": "assets/skill-icons/berry_burst.webp"
+  },
+  "dream_shard_magnet_s": {
+    "name": "ゆめのかけらゲット",
+    "path": "assets/skill-icons/dream_shard_magnet_s.webp"
+  },
+  "metronome": {
+    "name": "ゆびをふる",
+    "path": "assets/skill-icons/metronome.webp"
+  },
+  "ingredient_draw_s": {
+    "name": "食材セレクト",
+    "path": "assets/skill-icons/ingredient_draw_s.webp"
+  },
+  "ingredient_magnet_s": {
+    "name": "食材ゲット",
+    "path": "assets/skill-icons/ingredient_magnet_s.webp"
+  },
+  "dream_shard_magnet_s_variable": {
+    "name": "ゆめのかけらゲット",
+    "path": "assets/skill-icons/dream_shard_magnet_s.webp"
+  },
+  "transform_skill_copy": {
+    "name": "スキルコピー",
+    "path": "assets/skill-icons/transform_skill_copy.webp"
+  },
+  "helper_boost_electric": {
+    "name": "おてつだいブースト（でんき）",
+    "path": "assets/skill-icons/helper_boost_electric.webp"
+  },
+  "cooking_power_up_s": {
+    "name": "料理パワーアップ",
+    "path": "assets/skill-icons/cooking_power_up_s.webp"
+  },
+  "energy_charge_s_fixed": {
+    "name": "エナジーチャージ",
+    "path": "assets/skill-icons/energy_charge_s_variable.webp"
+  },
+  "helper_boost_water": {
+    "name": "おてつだいブースト（みず）",
+    "path": "assets/skill-icons/helper_boost_water.webp"
+  },
+  "extra_helpful_s": {
+    "name": "おてつだいサポート",
+    "path": "assets/skill-icons/extra_helpful_s.webp"
+  },
+  "energy_charge_m": {
+    "name": "エナジーチャージ",
+    "path": "assets/skill-icons/energy_charge_s_variable.webp"
+  },
+  "energy_cheer_s": {
+    "name": "げんきエール",
+    "path": "assets/skill-icons/energy_cheer_s.webp"
+  },
+  "mimic_skill_copy": {
+    "name": "スキルコピー",
+    "path": "assets/skill-icons/transform_skill_copy.webp"
+  },
+  "moonlight_energy_charge_s": {
+    "name": "つきのひかり",
+    "path": "assets/skill-icons/moonlight_energy_charge_s.webp"
+  }
+}

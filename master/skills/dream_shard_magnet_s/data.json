@@ -2,16 +2,44 @@
   "id": "dream_shard_magnet_s",
   "name": "ゆめのかけらゲットS",
   "maxLevel": 8,
-  "tags": ["ゆめのかけら", "固定"],
+  "tags": [
+    "ゆめのかけら",
+    "固定"
+  ],
   "effectType": "fixed_dream_shards",
   "levels": {
-    "1": {"shards": 240, "description": "ゆめのかけらを240個ゲットする"},
-    "2": {"shards": 340, "description": "ゆめのかけらを340個ゲットする"},
-    "3": {"shards": 480, "description": "ゆめのかけらを480個ゲットする"},
-    "4": {"shards": 670, "description": "ゆめのかけらを670個ゲットする"},
-    "5": {"shards": 920, "description": "ゆめのかけらを920個ゲットする"},
-    "6": {"shards": 1260, "description": "ゆめのかけらを1260個ゲットする"},
-    "7": {"shards": 1800, "description": "ゆめのかけらを1800個ゲットする"},
-    "8": {"shards": 2500, "description": "ゆめのかけらを2500個ゲットする"}
-  }
+    "1": {
+      "shards": 240,
+      "description": "ゆめのかけらを240個ゲットする"
+    },
+    "2": {
+      "shards": 340,
+      "description": "ゆめのかけらを340個ゲットする"
+    },
+    "3": {
+      "shards": 480,
+      "description": "ゆめのかけらを480個ゲットする"
+    },
+    "4": {
+      "shards": 670,
+      "description": "ゆめのかけらを670個ゲットする"
+    },
+    "5": {
+      "shards": 920,
+      "description": "ゆめのかけらを920個ゲットする"
+    },
+    "6": {
+      "shards": 1260,
+      "description": "ゆめのかけらを1260個ゲットする"
+    },
+    "7": {
+      "shards": 1800,
+      "description": "ゆめのかけらを1800個ゲットする"
+    },
+    "8": {
+      "shards": 2500,
+      "description": "ゆめのかけらを2500個ゲットする"
+    }
+  },
+  "iconAsset": "assets/skill-icons/dream_shard_magnet_s.webp"
 }

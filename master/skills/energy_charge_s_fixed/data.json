@@ -2,15 +2,40 @@
   "id": "energy_charge_s_fixed",
   "name": "エナジーチャージS",
   "maxLevel": 7,
-  "tags": ["エナジー", "固定"],
+  "tags": [
+    "エナジー",
+    "固定"
+  ],
   "effectType": "fixed_energy",
   "levels": {
-    "1": {"energy": 400, "description": "カビゴンのエナジーを400増やす"},
-    "2": {"energy": 569, "description": "カビゴンのエナジーを569増やす"},
-    "3": {"energy": 785, "description": "カビゴンのエナジーを785増やす"},
-    "4": {"energy": 1083, "description": "カビゴンのエナジーを1083増やす"},
-    "5": {"energy": 1496, "description": "カビゴンのエナジーを1496増やす"},
-    "6": {"energy": 2066, "description": "カビゴンのエナジーを2066増やす"},
-    "7": {"energy": 3212, "description": "カビゴンのエナジーを3212増やす"}
-  }
+    "1": {
+      "energy": 400,
+      "description": "カビゴンのエナジーを400増やす"
+    },
+    "2": {
+      "energy": 569,
+      "description": "カビゴンのエナジーを569増やす"
+    },
+    "3": {
+      "energy": 785,
+      "description": "カビゴンのエナジーを785増やす"
+    },
+    "4": {
+      "energy": 1083,
+      "description": "カビゴンのエナジーを1083増やす"
+    },
+    "5": {
+      "energy": 1496,
+      "description": "カビゴンのエナジーを1496増やす"
+    },
+    "6": {
+      "energy": 2066,
+      "description": "カビゴンのエナジーを2066増やす"
+    },
+    "7": {
+      "energy": 3212,
+      "description": "カビゴンのエナジーを3212増やす"
+    }
+  },
+  "iconAsset": "assets/skill-icons/energy_charge_s_variable.webp"
 }
