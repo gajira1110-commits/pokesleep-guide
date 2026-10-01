@@ -326,7 +326,7 @@ def swap_engine():
     return ('window.PS_SWAP_ENGINE=(()=>{const daily=(()=>{' + daily +
             '\nreturn {modifiers,selectSlots,InputError,countEvents,BASELINE,ribbon};})();' +
             '\nconst {modifiers,selectSlots,InputError,countEvents,BASELINE}=daily;\n' + swap +
-            '\nreturn {simulateTeam,evaluateSwap,findSwapOptionsAsync,berryUnitEnergy,ribbon:daily.ribbon};})();')
+            '\nreturn {simulateTeam,evaluateSwap,findSwapOptionsAsync,mealTiming,findMealOptionsAsync,berryUnitEnergy,ribbon:daily.ribbon};})();')
 
 
 def build():
@@ -342,7 +342,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v248') == 2
+    assert source.count('Review v249') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

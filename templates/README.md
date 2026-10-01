@@ -29,7 +29,7 @@
 | `core/07-corrections.html` | レベル上限・サブスキル解放・性格と個体補正・チーム速度補正 |
 | `core/08-fields.html` | フィールド選択・一覧・寝顔出現・好物・今週の料理の操作 |
 | `core/09-day-view.html` | ホームの日産予想表示・キャンプ・食事・起床時げんきの操作 |
-| `team/05-swap-assist.html` | Box対応・3食不足・非同期交代探索・条件変更時キャンセル |
+| `team/05-swap-assist.html` | Box対応・1食の食材別到達時間と改善探索・条件変更時キャンセル |
 | `21-day-calculator.html` | ホームとボックス共通の日産近似計算 |
 | `19-box-detail-controller.html` | ボックス詳細の共通参照・開く入口 |
 | `box/02-daily-forecast.html` | 日産予想の接続・食材とスキル予想表示 |

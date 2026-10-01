@@ -66,7 +66,7 @@ function assess(demand,supply){
   return Object.fromEntries(Object.entries(demand).map(([i,qty])=>[i,{required:qty,expected:supply[i]??0,
     deficit:Math.max(0,qty-(supply[i]??0)),surplus:Math.max(0,(supply[i]??0)-qty)}]));
 }
-function run(request,swap){
+function run(request,swap,{timeline=false}={}){
   const {map}=prepare(request);
   if(swap){
     need(request.teamIds.includes(swap.outId)&&map.has(swap.inId)&&!request.teamIds.includes(swap.inId),'swap.members','invalid_input');
@@ -74,6 +74,8 @@ function run(request,swap){
   }
   const ids=[...request.teamIds,...(swap?[swap.inId]:[])];
   const states=new Map(ids.map(id=>[id,stateFor(map.get(id))]));
+  for(const s of states.values())s.collected={};
+  const snapshots=[];
   let active=[...request.teamIds];
   const actions=[];
   for(const hour of request.collectionHours)actions.push({hour,type:'collect'});
@@ -105,15 +107,20 @@ function run(request,swap){
     }
     // Helps ending exactly at a collection/swap time are credited before collection.
     for(const id of active){const s=states.get(id);if(Math.abs(s.nextHelp-hour)<EPS){help(s);s.nextHelp=Infinity;}}
-    if(current.some(a=>a.type==='collect'))for(const id of active){const s=states.get(id);s.held=emptyDist(s.m.capacity);}
+    if(current.some(a=>a.type==='collect'))for(const id of active){const s=states.get(id);s.collected={...s.ingredients};s.held=emptyDist(s.m.capacity);}
     for(const a of current.filter(a=>a.type==='swapIn'||a.type==='swapOut')){
       const out=a.type==='swapIn'?swap.outId:swap.inId,inId=a.type==='swapIn'?swap.inId:swap.outId;
       const leaving=states.get(out),joining=states.get(inId);
       leaving.energy=energyAt(leaving,hour);leaving.anchor=hour;leaving.activeHours+=hour-leaving.enteredAt;
       leaving.active=false;leaving.enteredAt=null;leaving.nextHelp=Infinity;
       leaving.held=emptyDist(leaving.m.capacity); // Collect outgoing only; the other four retain inventory.
+      leaving.collected={...leaving.ingredients};
       joining.active=true;joining.anchor=hour;joining.enteredAt=hour;joining.nextHelp=Infinity;
       active=active.map(id=>id===out?inId:id);
+    }
+    if(timeline&&current.some(a=>['collect','swapIn','swapOut'].includes(a.type))){
+      const collected={};for(const s of states.values())add(collected,s.collected);
+      snapshots.push({hour,ingredients:collected});
     }
     schedule(hour);
   }
@@ -129,10 +136,58 @@ function run(request,swap){
   }
   const requirements=assess(request.demand,ingredients);
   return {status:'estimated',ingredients,requirements,feasible:Object.values(requirements).every(x=>x.deficit<=1e-7),
-    berryEnergy:knownBerry?berryEnergy:null,byMember,teamHelpingBonusHistory:teamHistory};
+    berryEnergy:knownBerry?berryEnergy:null,byMember,teamHelpingBonusHistory:teamHistory,...(timeline?{snapshots}:{})};
 }
 function safe(fn){try{return fn();}catch(e){if(e instanceof InputError)return {status:e.code,field:e.field};throw e;}}
 export function simulateTeam(request){return safe(()=>run(request,null));}
+function mealTimes(request,result){
+  const foods={};
+  for(const [name,required]of Object.entries(request.demand)){
+    const reached=result.snapshots.find(s=>(s.ingredients[name]??0)+1e-7>=required);
+    const expected=result.ingredients[name]??0;
+    foods[name]={required,expected,hour:reached?.hour??null,status:reached?'ready':expected>0?'over_day':'no_provider'};
+  }
+  return {foods,hour:Object.values(foods).every(f=>f.hour!==null)?Math.max(...Object.values(foods).map(f=>f.hour)):null};
+}
+export function mealTiming(request,swap=null){return safe(()=>{const result=run(request,swap,{timeline:true});return {...result,timing:mealTimes(request,result)}})}
+// App extension: improve one bottleneck without requiring every food to be ready.
+export async function findMealOptionsAsync(request,{candidateIds,focus,startHour=0,endHour=16,stepHours=.5,maxEvaluations=1500,maxResults=5},{signal,onProgress=()=>{},yieldToUI=()=>new Promise(r=>setTimeout(r,0))}={}){
+ return await (async()=>{try{
+  const baseline=run(request,null,{timeline:true}),timing=mealTimes(request,baseline);
+  need(Object.hasOwn(request.demand,focus),'focus','invalid_input');
+  need(Array.isArray(candidateIds)&&new Set(candidateIds).size===candidateIds.length,'candidateIds','invalid_input');
+  need(finite(startHour,0,24)&&finite(endHour,0,24)&&endHour>startHour&&finite(stepHours,1/60,24)&&Number.isInteger(maxEvaluations)&&maxEvaluations>0,'searchGrid','invalid_input');
+  const options=[],rejected=[];let tested=0,complete=true;
+  search:for(const inId of candidateIds){
+   const member=request.members.find(m=>m.boxId===inId);
+   const ready=safe(()=>{need(member&&!request.teamIds.includes(inId),'candidateIds.members','invalid_input');stateFor(member);return {status:'ready'}});
+   if(ready.status!=='ready'){rejected.push({inId,...ready});continue}
+   for(const outId of request.teamIds){
+    let best=null;
+    const finishes=[];for(let h=startHour+stepHours;h<endHour-EPS;h+=stepHours)finishes.push(h);finishes.push(endHour);
+    for(const end of finishes){
+     if(signal?.aborted)return {status:'cancelled'};
+     if(tested>=maxEvaluations){complete=false;if(best)options.push(best);break search}
+     const swap={outId,inId,startHour,endHour:end,durationHours:end-startHour};
+     const alternative=run(request,swap,{timeline:true}),after=mealTimes(request,alternative);tested++;
+     const beforeFood=timing.foods[focus],afterFood=after.foods[focus];
+     const faster=(afterFood.hour??Infinity)<(beforeFood.hour??Infinity);
+     const partial=beforeFood.hour===null&&afterFood.hour===null&&afterFood.expected>beforeFood.expected+1e-7;
+     if(faster||partial){
+      const option={...swap,timing:after,ingredients:alternative.ingredients,energy:energyDifference(baseline,alternative),partial};
+      const rank=x=>[x.timing.foods[focus].hour??Infinity,x.timing.hour??Infinity,x.partial?-x.timing.foods[focus].expected:x.durationHours,x.partial?x.durationHours:-x.timing.foods[focus].expected];
+      const better=(a,b)=>{const x=rank(a),y=rank(b);for(let i=0;i<x.length;i++){if(x[i]<y[i])return true;if(x[i]>y[i])return false}return false};
+      if(!best||better(option,best))best=option;
+     }
+     if(tested%10===0){onProgress({tested,found:options.length+(best?1:0)});await yieldToUI()}
+    }
+    if(best)options.push(best);
+   }
+  }
+  options.sort((a,b)=>(a.timing.foods[focus].hour??Infinity)-(b.timing.foods[focus].hour??Infinity)||(a.timing.hour??Infinity)-(b.timing.hour??Infinity)||b.timing.foods[focus].expected-a.timing.foods[focus].expected||a.durationHours-b.durationHours||a.outId.localeCompare(b.outId));
+  return {status:'estimated',baseline:{...baseline,timing},options:options.slice(0,maxResults),tested,searchComplete:complete,rejected};
+ }catch(e){if(e instanceof InputError)return {status:e.code,field:e.field};throw e}})();
+}
 export function energyDifference(baseline,alternative,skillEstimates=null){
   const berryDelta=baseline.berryEnergy===null||alternative.berryEnergy===null?null:alternative.berryEnergy-baseline.berryEnergy;
   let skillDelta=null;

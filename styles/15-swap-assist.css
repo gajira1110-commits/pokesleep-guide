@@ -7,10 +7,10 @@
 .psg-swap-candidate input[type=number]{min-width:0;width:66px;box-sizing:border-box;padding:4px;border-radius:6px;border:1px solid #d8e3dc;font-size:13px}
 .psg-swap-actions{display:flex;gap:6px;margin:8px 0}.psg-swap-actions button{padding:8px 12px;font-size:13px}
 .psg-swap-result{border-top:1px solid #e2e9e4;padding-top:6px;font-size:13px}
-.psg-swap-foods{display:flex;flex-wrap:wrap;gap:4px;margin:5px 0}
-.psg-swap-food{display:inline-flex;align-items:center;gap:3px;padding:3px 5px;border-radius:8px;background:#edf6ef;font-size:11px}
-.psg-swap-food.is-short{background:#fff0e6}.psg-swap-food img{width:23px;height:23px;object-fit:contain}
 .psg-swap-option{margin:7px 0;padding:7px;background:#f2f8f4;border-radius:9px}.psg-swap-option strong{font-size:13px}
 .psg-swap-option p{margin:4px 0;font-size:12px}.psg-swap-option summary{font-size:12px;cursor:pointer}
 .psg-swap-card .note{font-size:12px;margin:5px 0;line-height:1.45}
 .psg-swap-assumption{display:flex;align-items:flex-start;gap:5px;margin:7px 0;font-size:12px}.psg-swap-assumption input{flex:none}
+.psg-meal-total{display:block;font-size:15px;margin-bottom:7px}
+.psg-meal-food-times{display:grid;gap:4px}.psg-meal-food-time{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(70px,auto);gap:5px;align-items:center;text-align:left;padding:7px;border:1px solid #dbe5de;border-radius:9px;background:#fff;color:#111;min-width:0;font-size:12px}
+.psg-meal-food-time img{width:26px;height:26px;object-fit:contain}.psg-meal-food-time strong{font-size:12px;text-align:right;max-width:130px}.psg-meal-food-time.is-focus{background:#fff4df;border-color:#d5b369}

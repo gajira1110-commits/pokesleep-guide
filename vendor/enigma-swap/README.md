@@ -1,6 +1,6 @@
 # エニグマの通常おてつだい・交代予測
 
-`daily-supply.mjs` と `swap-assist.mjs` は `PSG_swap_assist_20261002.zip` の原本を変更せず保存しています。前者は `PSG_box_daily_module_20261001.zip` のものともバイト一致します。
+`daily-supply.mjs` は原本のままです。`swap-assist.mjs` はv249で回収履歴・1食の到達時刻・食材別改善探索を追加しました。通常の24時間出力は原本の9370個体・21247比較を再現しています。前者は `PSG_box_daily_module_20261001.zip` のものともバイト一致します。
 
 ビルドは各モジュールを別のクロージャへ収め、ブラウザ用の計算入口を生成します。Boxの対応・未確認入力・UIは `templates/team/05-swap-assist.html`、進化回数とリボンの共通接続は `templates/core/07-corrections.html` にあります。元の種族・料理・検算fixtureは重複取り込みせず、既存の照合済みmasterを参照します。
 
