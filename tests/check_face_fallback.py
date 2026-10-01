@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0,str(root));build=importlib.util.module_from_spec(spec);spec.loader.exec_module(build)
 _,images=build.catalog_and_images()
 adopted=json.loads((root/'data-import/face-artwork.json').read_text())['adopted']
-assert len(adopted)==24
+assert len(adopted)==211
 for row in adopted:
  key=str(row['no'])
  assert images['pokemonFaces'][key]==row['path']
@@ -18,4 +18,4 @@ try:
  assert images['pokemon']['1']=='master/pokemon/0001/full.webp'
  assert images['pokemonFaces']['1']=='master/pokemon/0001/face.webp'
 finally:full.unlink()
-print('24 named portraits shared; adding full art replaces only detail image.')
+print('211 mapped portraits shared; adding full art replaces only detail image.')
