@@ -2443,3 +2443,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
 #boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
 #boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}
+
+.psg-individual-row{padding:12px 0;border-top:1px solid #dde5e0;overflow-wrap:anywhere}
+.psg-individual-row p{margin:6px 0}
+.psg-individual-row details{font-size:13px}

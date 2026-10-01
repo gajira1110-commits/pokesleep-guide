@@ -214,3 +214,14 @@ v195：追加おてつだいの予想
 - https://wikiwiki.jp/poke_sleep/バシャーモ
 - https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧
 - https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
+
+## v218（2026-10-01）
+
+ミズゴロウ・ヌマクロー・ラグラージ、寝顔12件、通常出現21件を追加。確率は推定値。EXは保留。
+
+- https://wiki.pokesleep.com/ja/pokemon/mudkip
+- https://wiki.pokesleep.com/ja/pokemon/marshtomp
+- https://wiki.pokesleep.com/ja/pokemon/swampert
+- https://wikiwiki.jp/poke_sleep/ミズゴロウ
+- https://wikiwiki.jp/poke_sleep/ヌマクロー
+- https://wikiwiki.jp/poke_sleep/ラグラージ
