@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from PSG_image_assets import image_path, face_sheet_script, type_sheet_config
+from PSG_image_assets import image_path, face_sheet_script
 
 ROOT = Path(__file__).resolve().parent
 MASTER = ROOT / 'master'
@@ -62,9 +62,8 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
 FACE_SCRIPT = ROOT / 'PSG_face_sheet.js'
-TYPE_SHEET = ROOT / 'assets/types/all_18_pixel.png'
 PREVIEW = ROOT / 'review.html'
-SNAPSHOT = ROOT / 'PSG_v214_master_review.html'
+SNAPSHOT = ROOT / 'PSG_v215_master_review.html'
 MARKER = '/* PSG_BUILD_CATALOG */'
 
 
@@ -273,8 +272,8 @@ def build():
     source = ''.join(path.read_text() for path in TEMPLATE_PARTS)
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
-    assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == source.count('/* PSG_BUILD_TYPE_SHEET */') == 1
-    assert source.count('Review v214') == 2
+    assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
+    assert source.count('Review v215') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -284,8 +283,7 @@ def build():
     css_text = ''.join(path.read_text() for path in STYLE_FILES)
     if not CSS.exists() or CSS.read_text() != css_text:
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
-    type_uri = type_sheet_config(ROOT, MASTER, images['types'], TYPE_SHEET)
-    html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_TYPE_SHEET */',json.dumps(type_uri))
+    html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script)
     assert MARKER not in html
     PREVIEW.write_text(html)
     SNAPSHOT.write_text(html)

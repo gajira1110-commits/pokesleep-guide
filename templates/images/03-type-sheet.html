@@ -1,18 +1,2 @@
-// Re-extract complete circles from the original sheet; custom master icons retain priority.
-const typeSheetConfig=/* PSG_BUILD_TYPE_SHEET */;
-const typeSheet=new Image();
-if(Object.keys(typeSheetConfig.icons).length)jobs.push(new Promise(resolve=>{
- typeSheet.onload=async()=>{
-  try{
-   for(const [name,[x,y,w,h]] of Object.entries(typeSheetConfig.icons)){
-    const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
-    canvas.getContext('2d').drawImage(typeSheet,x,y,w,h,0,0,w,h);
-    window.PS_TYPE_IMAGES[name]=canvas.toDataURL('image/png');
-   }
-   resolve(await alignTypeImages());
-  }catch{resolve(await alignTypeImages())}
- };
- typeSheet.onerror=async()=>resolve(await alignTypeImages());
- typeSheet.src=typeSheetConfig.url;
-}));
-else jobs.push(alignTypeImages());
+// All 18 type badges come directly from their common master files.
+jobs.push(alignTypeImages());
