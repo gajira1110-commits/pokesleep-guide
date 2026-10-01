@@ -15,6 +15,7 @@
 | `09-list-cards.css` | 図鑑カードの見出し・画像・下部アイコン |
 | `10-detail-facts.css` | 図鑑・個体詳細Block 1の右側2列・4段の共通配置 |
 | `11-cooking.css` | 比較Lv・鍋試算・折りたたみ資料表 |
+| `12-recipe-evaluation.css` | 料理モード切替・3指標の圧縮表示・評価注記 |
 
 ## 編集方針
 

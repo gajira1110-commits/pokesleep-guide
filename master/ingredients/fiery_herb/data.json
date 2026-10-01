@@ -1,4 +1,8 @@
 {
   "id": "fiery_herb",
-  "name": "げきからハーブ"
+  "name": "げきからハーブ",
+  "baseEnergy": 130,
+  "baseEnergyStatus": "資料確認",
+  "baseEnergySource": "https://wikiwiki.jp/poke_sleep/食材/食材の一覧",
+  "baseEnergyCheckedAt": "2026-10-01"
 }

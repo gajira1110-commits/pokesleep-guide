@@ -2,9 +2,9 @@
  const levelRows=cooking.levels['レベル表'],potRows=cooking.pot['拡張表'];
  for(const row of levelRows){const option=document.createElement('option');option.value=row['レベル'];option.textContent=row['レベル'];levelSelect.append(option)}
  levelSelect.value='70';
- const selectedLevel=()=>levelRows[Number(levelSelect.value)-1];
+ const selectedLevel=()=>levelRows[recipeMode==='evaluation'?69:Number(levelSelect.value)-1];
  function energyAtLevel(recipe){
-  const level=Number(levelSelect.value),data=recipe.energy;
+  const level=selectedLevel()['レベル'],data=recipe.energy;
   const observed=data?.observed?.find(item=>item.level===level&&Number.isFinite(item.value));
   if(observed)return {...observed,status:'確認値'};
   for(const item of [data?.min,data?.max])if(item?.level===level&&Number.isFinite(item.value))return item;
