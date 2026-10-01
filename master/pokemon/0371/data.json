@@ -1,0 +1,106 @@
+{
+  "no": 371,
+  "name": "タツベイ",
+  "type": "ドラゴン",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ヤチェのみ",
+  "berryQty": 2,
+  "help": 5300,
+  "carry": 9,
+  "foodRate": 20.9,
+  "skillRate": 2.7,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0371_01",
+      "name": "そらとびたい寝",
+      "stars": 1
+    },
+    {
+      "id": "0371_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0371_03",
+      "name": "おちたまま寝",
+      "stars": 3
+    },
+    {
+      "id": "0371_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%BF%E3%83%84%E3%83%99%E3%82%A4",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 900,
+  "evolutionNotes": [
+    "タツベイ",
+    "↓ Lv.23＋タツベイのアメx40",
+    "コモルー",
+    "↓ Lv.38＋タツベイのアメx100",
+    "ボーマンダ"
+  ],
+  "evolution": [
+    {
+      "toNo": 372,
+      "to": "コモルー",
+      "conditions": [
+        "Lv.23＋タツベイのアメx40"
+      ],
+      "level": 23,
+      "candy": 40
+    }
+  ]
+}

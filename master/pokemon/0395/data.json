@@ -1,0 +1,95 @@
+{
+  "no": 395,
+  "name": "エンペルト",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "ベリブのみ",
+  "berryQty": 2,
+  "help": 3200,
+  "carry": 28,
+  "foodRate": 16.8,
+  "skillRate": 3.8,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0395_01",
+      "name": "どっしり寝",
+      "stars": 1
+    },
+    {
+      "id": "0395_02",
+      "name": "ばんざい寝",
+      "stars": 2
+    },
+    {
+      "id": "0395_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0395_03",
+      "name": "つばさなぎはらい寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A8%E3%83%B3%E3%83%9A%E3%83%AB%E3%83%88",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ポッチャマ",
+    "↓ Lv.12＋ポッチャマのアメx40",
+    "ポッタイシ",
+    "↓ Lv.27＋ポッチャマのアメx80",
+    "エンペルト"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "no": 390,
+  "name": "ヒコザル",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ヒメリのみ",
+  "berryQty": 1,
+  "help": 4100,
+  "carry": 10,
+  "foodRate": 11.4,
+  "skillRate": 3.3,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_burst",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0390_01",
+      "name": "おしりかき寝",
+      "stars": 1
+    },
+    {
+      "id": "0390_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0390_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0390_03",
+      "name": "おしりもやし寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%92%E3%82%B3%E3%82%B6%E3%83%AB",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヒコザル",
+    "↓ Lv.11＋ヒコザルのアメx40",
+    "モウカザル",
+    "↓ Lv.27＋ヒコザルのアメx80",
+    "ゴウカザル"
+  ],
+  "evolution": [
+    {
+      "toNo": 391,
+      "to": "モウカザル",
+      "conditions": [
+        "Lv.11＋ヒコザルのアメx40"
+      ],
+      "level": 11,
+      "candy": 40
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "no": 330,
+  "name": "フライゴン",
+  "type": "じめん",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "フィラのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 27,
+  "foodRate": 17.2,
+  "skillRate": 3.9,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 5
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 7
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 9
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 12
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0330_01",
+      "name": "まるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0330_02",
+      "name": "はばたき寝",
+      "stars": 2
+    },
+    {
+      "id": "0330_03",
+      "name": "おなかだし寝",
+      "stars": 3
+    },
+    {
+      "id": "0330_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%83%A9%E3%82%A4%E3%82%B4%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ナックラー",
+    "↓ Lv.26＋ナックラーのアメx40",
+    "ビブラーバ",
+    "↓ Lv.34＋ナックラーのアメx80",
+    "フライゴン"
+  ]
+}

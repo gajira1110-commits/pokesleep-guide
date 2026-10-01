@@ -1,0 +1,106 @@
+{
+  "no": 388,
+  "name": "ハヤシガメ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 3700,
+  "carry": 19,
+  "foodRate": 15.0,
+  "skillRate": 4.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 6
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0388_01",
+      "name": "こっくり寝",
+      "stars": 1
+    },
+    {
+      "id": "0388_02",
+      "name": "あしぶみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0388_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0388_03",
+      "name": "はっぱあそび寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%A4%E3%82%B7%E3%82%AC%E3%83%A1",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ナエトル",
+    "↓ Lv.14＋ナエトルのアメx40",
+    "ハヤシガメ",
+    "↓ Lv.24＋ナエトルのアメx80",
+    "ドダイトス"
+  ],
+  "evolution": [
+    {
+      "toNo": 389,
+      "to": "ドダイトス",
+      "conditions": [
+        "Lv.24＋ナエトルのアメx80"
+      ],
+      "level": 24,
+      "candy": 80
+    }
+  ]
+}

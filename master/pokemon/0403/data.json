@@ -1,0 +1,106 @@
+{
+  "no": 403,
+  "name": "コリンク",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 4400,
+  "carry": 11,
+  "foodRate": 18.1,
+  "skillRate": 1.8,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 7
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0403_01",
+      "name": "ゆめではしり寝",
+      "stars": 1
+    },
+    {
+      "id": "0403_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0403_03",
+      "name": "スパーク寝",
+      "stars": 3
+    },
+    {
+      "id": "0403_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%AA%E3%83%B3%E3%82%AF",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "コリンク",
+    "↓ Lv.11＋コリンクのアメ×40",
+    "ルクシオ",
+    "↓ Lv.23＋コリンクのアメ×80",
+    "レントラー"
+  ],
+  "evolution": [
+    {
+      "toNo": 404,
+      "to": "ルクシオ",
+      "conditions": [
+        "Lv.11＋コリンクのアメ×40"
+      ],
+      "level": 11,
+      "candy": 40
+    }
+  ]
+}

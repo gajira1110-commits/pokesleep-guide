@@ -1,0 +1,93 @@
+{
+  "no": 185,
+  "name": "ウソッキー",
+  "type": "いわ",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "オボンのみ",
+  "berryQty": 1,
+  "help": 4000,
+  "carry": 21,
+  "foodRate": 21.7,
+  "skillRate": 7.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0185_01",
+      "name": "きのふり寝",
+      "stars": 1
+    },
+    {
+      "id": "0185_02",
+      "name": "きのふりさぼり寝",
+      "stars": 2
+    },
+    {
+      "id": "0185_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0185_03",
+      "name": "きのふりしない寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%BD%E3%83%83%E3%82%AD%E3%83%BC",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 7,
+  "expType": 600,
+  "evolutionNotes": [
+    "ウソハチ",
+    "↓　Lv.12＋ウソッキーのアメ×20",
+    "ウソッキー"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "no": 360,
+  "name": "ソーナノ",
+  "type": "エスパー",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "マゴのみ",
+  "berryQty": 1,
+  "help": 5800,
+  "carry": 7,
+  "foodRate": 21.3,
+  "skillRate": 6.9,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0360_01",
+      "name": "しっぽもどし寝",
+      "stars": 1
+    },
+    {
+      "id": "0360_02",
+      "name": "がまん寝",
+      "stars": 2
+    },
+    {
+      "id": "0360_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0360_03",
+      "name": "きめポーズ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%BD%E3%83%BC%E3%83%8A%E3%83%8E",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ソーナノ",
+    "↓　Lv.11＋ソーナンスのアメ×20",
+    "ソーナンス"
+  ],
+  "evolution": [
+    {
+      "toNo": 202,
+      "to": "ソーナンス",
+      "conditions": [
+        "Lv.11＋ソーナンスのアメ×20"
+      ],
+      "level": 11,
+      "candy": 20
+    }
+  ]
+}

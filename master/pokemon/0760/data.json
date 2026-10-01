@@ -1,0 +1,93 @@
+{
+  "no": 760,
+  "name": "キテルグマ",
+  "type": "かくとう",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "クラボのみ",
+  "berryQty": 1,
+  "help": 2800,
+  "carry": 25,
+  "foodRate": 22.9,
+  "skillRate": 1.3,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 6
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 7
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 10
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 9
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0760_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0760_02",
+      "name": "ぼうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0760_03",
+      "name": "まるただき寝",
+      "stars": 3
+    },
+    {
+      "id": "0760_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヌイコグマ",
+    "↓　Lv.20＋ヌイコグマのアメ×40",
+    "キテルグマ"
+  ]
+}

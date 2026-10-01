@@ -1,0 +1,93 @@
+{
+  "no": 715,
+  "name": "オンバーン",
+  "type": "ドラゴン",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ヤチェのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 23,
+  "foodRate": 19.5,
+  "skillRate": 4.8,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0715_01",
+      "name": "みみふるわせ寝",
+      "stars": 1
+    },
+    {
+      "id": "0715_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0715_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0715_03",
+      "name": "ばくおんぱ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AA%E3%83%B3%E3%83%90%E3%83%BC%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "オンバット",
+    "↓ Lv.36＋オンバットのアメx40",
+    "オンバーン"
+  ]
+}

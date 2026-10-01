@@ -1,0 +1,106 @@
+{
+  "no": 288,
+  "name": "ヤルキモノ",
+  "type": "ノーマル",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "キーのみ",
+  "berryQty": 2,
+  "help": 3200,
+  "carry": 14,
+  "foodRate": 20.4,
+  "skillRate": 1.5,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0288_01",
+      "name": "ウズウズ寝",
+      "stars": 1
+    },
+    {
+      "id": "0288_02",
+      "name": "たいそう寝",
+      "stars": 2
+    },
+    {
+      "id": "0288_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0288_03",
+      "name": "なまけ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A4%E3%83%AB%E3%82%AD%E3%83%A2%E3%83%8E",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ナマケロ",
+    "↓　Lv.14＋ナマケロのアメ×40",
+    "ヤルキモノ",
+    "↓　Lv.27＋ナマケロのアメ×80",
+    "ケッキング"
+  ],
+  "evolution": [
+    {
+      "toNo": 289,
+      "to": "ケッキング",
+      "conditions": [
+        "Lv.27＋ナマケロのアメ×80"
+      ],
+      "level": 27,
+      "candy": 80
+    }
+  ]
+}

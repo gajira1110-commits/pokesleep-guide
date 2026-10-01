@@ -1,0 +1,90 @@
+{
+  "no": 697,
+  "name": "ガチゴラス",
+  "type": "いわ",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "オボンのみ",
+  "berryQty": 2,
+  "help": 2800,
+  "carry": 28,
+  "foodRate": 17.8,
+  "skillRate": 2.9,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0697_01",
+      "name": "どっしり寝",
+      "stars": 1
+    },
+    {
+      "id": "0697_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0697_03",
+      "name": "ほうこう寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AC%E3%83%81%E3%82%B4%E3%83%A9%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "チゴラス",
+    "Lv.29",
+    "↓　＋日中の時間帯(時刻が6:00~17:59の間)",
+    "＋チゴラスのアメ×80",
+    "ガチゴラス"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "no": 957,
+  "name": "カヌチャン",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "モモンのみ",
+  "berryQty": 2,
+  "help": 4500,
+  "carry": 12,
+  "foodRate": 20.2,
+  "skillRate": 1.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 3
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0957_01",
+      "name": "ハンマーだき寝",
+      "stars": 1
+    },
+    {
+      "id": "0957_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0957_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0957_03",
+      "name": "ハンマーにぎにぎ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%8C%E3%83%81%E3%83%A3%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "カヌチャン",
+    "↓ Lv.18＋カヌチャンのアメx40",
+    "ナカヌチャン",
+    "↓ Lv.29＋カヌチャンのアメx80",
+    "デカヌチャン"
+  ],
+  "evolution": [
+    {
+      "toNo": 958,
+      "to": "ナカヌチャン",
+      "conditions": [
+        "Lv.18＋カヌチャンのアメx40"
+      ],
+      "level": 18,
+      "candy": 40
+    }
+  ]
+}
