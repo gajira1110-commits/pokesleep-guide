@@ -1,0 +1,92 @@
+{
+  "no": 253,
+  "name": "ジュプトル",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 3300,
+  "carry": 16,
+  "foodRate": 15,
+  "skillRate": 3.5,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_burst",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0253_01",
+      "name": "かたひざたて寝",
+      "stars": 1
+    },
+    {
+      "id": "0253_02",
+      "name": "ゆめでかまえ寝",
+      "stars": 2
+    },
+    {
+      "id": "0253_03",
+      "name": "はっぱつつまれ寝",
+      "stars": 3
+    },
+    {
+      "id": "0253_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/grovyle",
+    "https://wikiwiki.jp/poke_sleep/ジュプトル",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 254,
+    "to": "ジュカイン",
+    "level": 27,
+    "candy": 80
+  }
+}

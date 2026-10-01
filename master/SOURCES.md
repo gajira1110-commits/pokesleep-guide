@@ -189,3 +189,15 @@ v195：追加おてつだいの予想
 - https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧
 
 料理チャンスSは https://wiki.pokesleep.com/ja/main-skills/tastychances でLv.1〜6の4/5/6/7/8/10%を照合。nativePokemonNosは今回登録した2種のみを記録し、全所持種の一覧とは扱わない。大成功後のリセット・蓄積上限・料理条件をモデル化していないため日産エナジーには換算しない。
+
+## v216（2026-10-01）
+
+キモリ・ジュプトル・ジュカインの基本能力・食材・進化・寝顔12件・通常フィールド出現33件を追加。基本能力と進化は種族ページを照合し、寝顔IDと正式名は寝顔一覧で確認。確率は基礎の推定値。最大所持数は現行の8/16/27を採用（古い8/11/17と混同しない）。EXは保留。nativePokemonNosは今回登録した3種であり全所持種の一覧ではない。
+
+- https://wiki.pokesleep.com/ja/pokemon/treecko
+- https://wiki.pokesleep.com/ja/pokemon/grovyle
+- https://wiki.pokesleep.com/ja/pokemon/sceptile
+- https://wikiwiki.jp/poke_sleep/キモリ
+- https://wikiwiki.jp/poke_sleep/ジュプトル
+- https://wikiwiki.jp/poke_sleep/ジュカイン
+- https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧

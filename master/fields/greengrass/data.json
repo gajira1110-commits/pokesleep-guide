@@ -1356,6 +1356,78 @@
         "level": 12
       },
       "drowsyPower": 215612000
+    },
+    {
+      "sleepStyleId": "0252_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 1216000
+    },
+    {
+      "sleepStyleId": "0252_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0252_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0253_01",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 2
+      },
+      "drowsyPower": 4636000
+    },
+    {
+      "sleepStyleId": "0253_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0253_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 2
+      },
+      "drowsyPower": 68666000
+    },
+    {
+      "sleepStyleId": "0254_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 7
+      },
+      "drowsyPower": 33478000
+    },
+    {
+      "sleepStyleId": "0254_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 11
+      },
+      "drowsyPower": 65702000
+    },
+    {
+      "sleepStyleId": "0254_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 12
+      },
+      "drowsyPower": 195358000
     }
   ],
   "rankThresholds": [
@@ -1541,6 +1613,9 @@
     "https://wiki.pokesleep.com/ja/pokemon/gulpin",
     "https://wiki.pokesleep.com/ja/pokemon/swalot",
     "https://wiki.pokesleep.com/ja/pokemon/sneasel",
-    "https://wiki.pokesleep.com/ja/pokemon/weavile"
+    "https://wiki.pokesleep.com/ja/pokemon/weavile",
+    "https://wiki.pokesleep.com/ja/pokemon/treecko",
+    "https://wiki.pokesleep.com/ja/pokemon/grovyle",
+    "https://wiki.pokesleep.com/ja/pokemon/sceptile"
   ]
 }

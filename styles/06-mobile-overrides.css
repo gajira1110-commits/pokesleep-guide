@@ -59,7 +59,7 @@
   #dexDetail .v19-traits{
     display:grid!important;grid-template-columns:31fr 38fr 31fr!important;gap:3px!important;width:100%!important;margin:0!important;
   }
-  #dexDetail .v19-traits span{
+  #dexDetail .v19-traits>span{
     min-width:0!important;min-height:31px!important;padding:3px 2px!important;display:flex!important;align-items:center!important;
     justify-content:center!important;gap:2px!important;white-space:nowrap!important;overflow:hidden!important;line-height:1!important;
   }
@@ -91,7 +91,7 @@
   }
 
   /* 1-3: keep three columns, but give the labels more presence. */
-  #dexDetail .v19-traits span{font-size:11px!important;font-weight:850!important;}
+  #dexDetail .v19-traits>span{font-size:11px!important;font-weight:850!important;}
   #dexDetail .v19-traits .v44-berry-trait b{font-size:11.5px!important;}
 
   /* 1-4 / 1-5: center icon+label as one unit, then center the value below it. */

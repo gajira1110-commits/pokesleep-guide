@@ -322,9 +322,11 @@
 #dexDetail .v19-traits{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px
 }
-#dexDetail .v19-traits span{display:flex;align-items:center;justify-content:center;
+#dexDetail .v19-traits>span{display:flex;align-items:center;justify-content:center;
   padding:5px;background:rgba(255,255,255,.76);text-align:center
 }
+#dexDetail .v44-berry-visual{display:inline-flex;align-items:center;justify-content:center;flex:none;width:25px;height:25px;padding:0;border:0;border-radius:0;background:transparent;overflow:visible;min-height:0}
+#dexDetail .v44-berry-visual img{display:block;width:100%;height:100%;object-fit:contain}
 #v13Berry{display:none!important}
 #detailFoods .v13-food-name{font-size:13px!important;gap:7px!important}
 #detailFoods .v13-food-name .food-letter{

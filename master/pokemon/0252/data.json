@@ -1,0 +1,92 @@
+{
+  "no": 252,
+  "name": "キモリ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 4500,
+  "carry": 8,
+  "foodRate": 17.2,
+  "skillRate": 3.5,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_burst",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0252_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0252_02",
+      "name": "かおごしごし寝",
+      "stars": 2
+    },
+    {
+      "id": "0252_03",
+      "name": "ゆめでのぼり寝",
+      "stars": 3
+    },
+    {
+      "id": "0252_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/treecko",
+    "https://wikiwiki.jp/poke_sleep/キモリ",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 253,
+    "to": "ジュプトル",
+    "level": 12,
+    "candy": 40
+  }
+}

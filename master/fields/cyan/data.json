@@ -720,6 +720,102 @@
         "level": 1
       },
       "drowsyPower": 9918000
+    },
+    {
+      "sleepStyleId": "0252_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 3
+      },
+      "drowsyPower": 1216000
+    },
+    {
+      "sleepStyleId": "0252_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 2
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0252_03",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 35796000
+    },
+    {
+      "sleepStyleId": "0252_04",
+      "rank": {
+        "tier": "スーパー",
+        "level": 3
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0253_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 4
+      },
+      "drowsyPower": 4636000
+    },
+    {
+      "sleepStyleId": "0253_02",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 3
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0253_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 55594000
+    },
+    {
+      "sleepStyleId": "0253_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 4
+      },
+      "drowsyPower": 68666000
+    },
+    {
+      "sleepStyleId": "0254_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 4
+      },
+      "drowsyPower": 33478000
+    },
+    {
+      "sleepStyleId": "0254_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 8
+      },
+      "drowsyPower": 65702000
+    },
+    {
+      "sleepStyleId": "0254_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 14
+      },
+      "drowsyPower": 179018000
+    },
+    {
+      "sleepStyleId": "0254_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 9
+      },
+      "drowsyPower": 195358000
     }
   ],
   "rankThresholds": [
@@ -903,6 +999,9 @@
     "https://wiki.pokesleep.com/ja/pokemon/ditto",
     "https://wiki.pokesleep.com/ja/pokemon/mr-mime",
     "https://wiki.pokesleep.com/ja/pokemon/mime-jr",
-    "https://wiki.pokesleep.com/ja/pokemon/gulpin"
+    "https://wiki.pokesleep.com/ja/pokemon/gulpin",
+    "https://wiki.pokesleep.com/ja/pokemon/treecko",
+    "https://wiki.pokesleep.com/ja/pokemon/grovyle",
+    "https://wiki.pokesleep.com/ja/pokemon/sceptile"
   ]
 }
