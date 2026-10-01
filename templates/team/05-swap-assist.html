@@ -1,0 +1,130 @@
+// Enigma's independent normal-help model. No inventory or Box records are changed.
+const swapChoices=new Map();
+let swapAbort=null,swapGeneration=0;
+const swapUI=id=>document.getElementById(id);
+function invalidateSwap(){
+ swapGeneration++;swapAbort?.abort();swapAbort=null;
+ swapUI('swapCancel').hidden=true;swapUI('swapCalculate').disabled=false;
+ swapUI('swapResults').replaceChildren();swapUI('swapStatus').textContent='条件を選んで計算してください。';
+}
+function renderTeamSwap(){
+ if(!swapUI('swapRecipe'))return;
+ invalidateSwap();
+ const select=swapUI('swapRecipe'),prior=select.value,category=activeMealCategory();
+ select.replaceChildren();
+ const recipes=Object.values(window.PS_CATALOG.recipes).filter(r=>r.category===category).sort((a,b)=>(b.energy?.max?.value||0)-(a.energy?.max?.value||0));
+ for(const recipe of recipes){const option=document.createElement('option');option.value=recipe.id;option.textContent=recipe.name;select.append(option)}
+ if(recipes.some(r=>r.id===prior))select.value=prior;
+ swapUI('swapConditions').textContent=`現チームの起点げんき ${teamInitialEnergy}（上の設定）・回復なし・通常条件。控えのげんきは下で指定。`;
+ const candidates=swapUI('swapCandidates');candidates.replaceChildren();
+ const reserve=state.box.filter(item=>!team.includes(item.id));
+ for(const item of reserve){
+  const saved=swapChoices.get(item.id)||{selected:false,energy:''};swapChoices.set(item.id,saved);
+  const row=document.createElement('div');row.className='psg-swap-candidate';row.dataset.boxId=item.id;
+  const check=document.createElement('input');check.type='checkbox';check.checked=saved.selected;check.setAttribute('aria-label',`${item.name} Lv.${item.level}を控え候補にする`);
+  const text=document.createElement('span');text.textContent=`${item.name} Lv.${item.level}`;
+  const energy=document.createElement('input');energy.type='number';energy.min='0';energy.max='150';energy.step='1';energy.placeholder='げんき';energy.value=saved.energy;energy.setAttribute('aria-label',`${item.name}の起点げんき`);
+  check.onchange=()=>{saved.selected=check.checked;invalidateSwap()};
+  energy.oninput=()=>{saved.energy=energy.value;invalidateSwap()};
+  row.append(check,text,energy);candidates.append(row);
+ }
+ if(!reserve.length){const p=document.createElement('p');p.className='note';p.textContent='Boxに控えを登録すると交代候補を探せます。';candidates.append(p)}
+ if(!category)swapUI('swapStatus').textContent='今週の料理を選んでください。';
+}
+function swapMember(item,initialEnergy){
+ const p=window.PS_CATALOG.pokemon[item.no];
+ if(!p)throw Error(`${item.name}：図鑑データがありません。`);
+ if(['ミュウ','ダークライ'].includes(p.name))throw Error(`${item.name}：特殊な個体状態には未対応です。`);
+ if(!Number.isFinite(initialEnergy)||initialEnergy<0||initialEnergy>150)throw Error(`${item.name}：起点げんき（0〜150）を入力してください。`);
+ const subskills=Array.from({length:5},(_,j)=>item.subskills?.[j]||null);
+ if(subskills.some(x=>x===null)&&!swapUI('swapAssumeSubskills').checked)throw Error(`${item.name}：サブスキルを確認するか「補正なしとして試算」を選んでください。`);
+ if(!item.nature&&!item.mint)throw Error(`${item.name}：Boxで性格を設定してください。`);
+ let configuration='';const candidates=new Map();
+ for(const slot of p.ingredientSlots.filter(s=>s.unlock<=item.level)){
+  const chosen=slot.candidates.length===1?slot.candidates[0]:slot.candidates.find(c=>c.name===item.ingredients?.[slot.unlock]);
+  if(!chosen)throw Error(`${item.name}：Lv.${slot.unlock}の食材を選んでください。`);
+  // Candidate position in each verified slot is the common A/B/C identity.
+  configuration+='ABC'[slot.candidates.indexOf(chosen)];
+ }
+ for(const slot of p.ingredientSlots)slot.candidates.forEach((c,j)=>{
+  const letter='ABC'[j],row=candidates.get(letter)||{'候補':letter,'食材':c.name};
+  if(row['食材']!==c.name)throw Error(`${item.name}：食材構成の照合が必要です。`);
+  row[`Lv${slot.unlock}`]=c.qty;candidates.set(letter,row);
+ });
+ const species={id:String(p.no),'名前':p.name,'基準おてつだい時間秒':p.help,'初期最大所持数':p.carry,'食材確率推定pct':p.foodRate,'きのみ個数':p.berryQty,'きのみ基礎エナジー':window.PS_CATALOG.berries[p.berry],'食材候補':[...candidates.values()]};
+ const individual={level:item.level,configuration,nature:item.mint?'まじめ':item.nature,mintNeutralized:!!item.mint,subskills,sleepHours:item.ribbonHours||0,remainingEvolutions:remainingEvolutionCount(item.no)};
+ const favorites=activeFieldBerries(),field=window.PS_CATALOG.fields[fieldProfile.selectedFieldId];
+ // Random favorites are unknown until all three are specified.
+ const berryKnown=field?.favoriteMode==='fixed'||(favorites.length===3&&new Set(favorites).size===3);
+ const berryEnergyPerUnit=berryKnown?window.PS_SWAP_ENGINE.berryUnitEnergy(species,item.level,{fieldBonusFraction:(fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0)/100,favoriteMultiplier:favorites.includes(p.berry)?2:1}):null;
+ return {boxId:item.id,species,individual,initialEnergy,recoveryEvents:[],berryEnergyPerUnit};
+}
+function swapRequest(recipe){
+ if(team.filter(Boolean).length!==5)throw Error('現在のチームを5匹にしてください。');
+ if(teamGoodCamp)throw Error('いいキャンプには未対応です。上の設定をOFFにして計算してください。');
+ if(window.PS_CATALOG.fields[fieldProfile.selectedFieldId]?.mode!=='normal')throw Error('通常フィールドを選んでください。EXには未対応です。');
+ const members=team.map(id=>swapMember(state.box.find(item=>item.id===id),teamInitialEnergy)),rejected=[],candidateIds=[];
+ for(const item of state.box.filter(x=>!team.includes(x.id)&&swapChoices.get(x.id)?.selected)){
+  const value=swapChoices.get(item.id).energy;
+  try{if(value==='')throw Error(`${item.name}：控えの起点げんきを入力してください。`);members.push(swapMember(item,Number(value)));candidateIds.push(item.id)}catch(error){rejected.push(error.message)}
+ }
+ const interval=Number(swapUI('swapInterval').value),collectionHours=[0];
+ for(let h=interval;h<16;h+=interval)collectionHours.push(h);
+ collectionHours.push(16,24);
+ const demand={};for(const item of recipe.ingredients)demand[item.name]=(demand[item.name]||0)+item.qty*3;
+ return {request:{members,teamIds:team.filter(Boolean),collectionHours,demand},candidateIds,rejected};
+}
+function swapFoodSummary(requirements){
+ const list=document.createElement('div');list.className='psg-swap-foods';
+ for(const [name,qty] of Object.entries(requirements)){
+  const chip=document.createElement('span');chip.className='psg-swap-food'+(qty.deficit>1e-7?' is-short':'');
+  chip.title=name;chip.append(teamFoodIcon(name));
+  const text=document.createElement('span');text.textContent=`${qty.expected.toFixed(1)} / ${qty.required}個${qty.deficit>1e-7?`（不足${qty.deficit.toFixed(1)}）`:''}`;
+  chip.append(text);list.append(chip);
+ }return list;
+}
+function appendSwapNote(host,text){const p=document.createElement('p');p.className='note';p.textContent=text;host.append(p)}
+function swapInputLabel(field){
+ if(String(field).includes('configuration'))return '食材の選択';
+ return ({level:'レベル',nature:'性格',mintNeutralized:'ミント',subskills:'サブスキル','subskills[5]':'サブスキル',sleepHours:'リボンの睡眠時間',remainingEvolutions:'進化データ',teamHelpingBonusCount:'おてつだいボーナス',mythicalIndividualState:'特殊な個体状態'})[field]||'未確認・未対応の条件';
+}
+async function calculateSwap(){
+ invalidateSwap();const generation=swapGeneration,host=swapUI('swapResults'),status=swapUI('swapStatus');
+ const recipe=window.PS_CATALOG.recipes[swapUI('swapRecipe').value];
+ if(!recipe){status.textContent='目標料理を選んでください。';return}
+ let input;
+ try{input=swapRequest(recipe)}catch(error){status.textContent=error.message;return}
+ const baseline=window.PS_SWAP_ENGINE.simulateTeam(input.request);
+ if(baseline.status!=='estimated'){status.textContent=`${swapInputLabel(baseline.field)}を確認してください。予測を保留しました。`;return}
+ appendSwapNote(host,`${recipe.name}・3食分の必要数と通常おてつだいの日産予測`);host.append(swapFoodSummary(baseline.requirements));
+ if(swapUI('swapAssumeSubskills').checked)appendSwapNote(host,'未確認のサブスキルは補正なしの仮定です。');
+ for(const message of input.rejected)appendSwapNote(host,`候補を保留：${message}`);
+ if(baseline.feasible){status.textContent='現在の5匹で3食分を満たす見込みです（1日合計）。';return}
+ if(!input.candidateIds.length){status.textContent='不足を表示しました。控えを選び、起点げんきを入力すると交代候補を探せます。';return}
+ swapAbort=new AbortController();const controller=swapAbort;
+ swapUI('swapCalculate').disabled=true;swapUI('swapCancel').hidden=false;status.textContent='交代候補を計算中…';
+ try{
+  const result=await window.PS_SWAP_ENGINE.findSwapOptionsAsync(input.request,{candidateIds:input.candidateIds,startHours:[Number(swapUI('swapStart').value)],stepHours:.5,endHour:16,maxResults:5,maxEvaluations:1500},{signal:controller.signal,batchSize:10,onProgress:progress=>{if(generation===swapGeneration)status.textContent=`計算中… ${progress.tested}件確認・候補${progress.found}件`}});
+  if(generation!==swapGeneration)return;
+  if(result.status==='cancelled'){status.textContent='計算を中止しました。交代候補は確定していません。';return}
+  const messages={estimated_options:'3食分を補える交代候補（見込み）',estimated_partial_options:'途中の候補です。探索上限に達したため、順位は未確定です。',no_option_on_grid:'選んだ控え・開始時刻・時間刻み内では候補が見つかりませんでした。',search_limit_reached:'探索上限に達しました。候補の確認は未完了です。',already_sufficient:'現在の5匹で3食分を満たす見込みです。'};
+  status.textContent=messages[result.status]||`${swapInputLabel(result.field)}を確認してください。`;
+  for(const rejected of result.rejected||[])appendSwapNote(host,`候補を保留：${state.box.find(x=>x.id===rejected.inId)?.name||'控え'}（${swapInputLabel(rejected.field)}）`);
+  for(const option of result.options||[]){
+   const out=state.box.find(x=>x.id===option.outId),incoming=state.box.find(x=>x.id===option.inId),row=document.createElement('div');row.className='psg-swap-option';
+   const title=document.createElement('strong');title.textContent=`${out.name} → ${incoming.name} 約${option.durationHours.toFixed(1)}時間`;row.append(title);
+   appendSwapNote(row,`起床${option.startHour===0?'時':`${option.startHour}時間後`}から交代、起床${option.endHour}時間後に戻す。`);
+   const delta=option.energy.berryDelta;
+   appendSwapNote(row,`きのみエナジー差：${delta===null?'好物きのみを設定すると算出':`${delta>=0?'+':'−'}${Math.round(Math.abs(delta)).toLocaleString()}`} ／ スキル差：未計算`);
+   const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='交代後の食材と増減';details.append(summary,swapFoodSummary(option.requirements));
+   // All foods are retained, including losses from the outgoing member.
+   const changes=Object.entries({...baseline.ingredients,...option.ingredients}).map(([name])=>({name,delta:(option.ingredients[name]||0)-(baseline.ingredients[name]||0)})).filter(x=>Math.abs(x.delta)>.05);
+   appendSwapNote(details,changes.map(x=>`${x.name} ${x.delta>=0?'+':''}${x.delta.toFixed(1)}個`).join('・'));row.append(details);host.append(row);
+  }
+ }catch(error){if(generation===swapGeneration)status.textContent='計算を完了できませんでした。条件を確認して再計算してください。';console.error(error)}
+ finally{if(generation===swapGeneration){swapAbort=null;swapUI('swapCancel').hidden=true;swapUI('swapCalculate').disabled=false}}
+}
+for(const id of ['swapRecipe','swapInterval','swapStart','swapAssumeSubskills'])swapUI(id).onchange=invalidateSwap;
+swapUI('swapCalculate').onclick=calculateSwap;
+swapUI('swapCancel').onclick=()=>swapAbort?.abort();
+swapUI('swapBasisLink').onclick=()=>{go('info');const details=swapUI('swapPredictionBasis');details.open=true;details.scrollIntoView({block:'start'})};

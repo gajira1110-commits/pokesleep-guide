@@ -18,6 +18,7 @@
 | `12-recipe-evaluation.css` | 料理モード切替・3指標の圧縮表示・評価注記 |
 | `13-daily-supply.css` | 専任収集負担・食材の日産量・担当構成の圧縮表示 |
 | `14-ingredients.css` | 食材の検索・一覧・詳細・対応料理 |
+| `15-swap-assist.css` | 3食分の補完・候補入力・交代結果 |
 
 ## 編集方針
 

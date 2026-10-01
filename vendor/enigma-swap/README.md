@@ -1,0 +1,9 @@
+# エニグマの通常おてつだい・交代予測
+
+`daily-supply.mjs` と `swap-assist.mjs` は `PSG_swap_assist_20261002.zip` の原本を変更せず保存しています。前者は `PSG_box_daily_module_20261001.zip` のものともバイト一致します。
+
+ビルドは各モジュールを別のクロージャへ収め、ブラウザ用の計算入口を生成します。Boxの対応・未確認入力・UIは `templates/team/05-swap-assist.html`、進化回数とリボンの共通接続は `templates/core/07-corrections.html` にあります。元の種族・料理・検算fixtureは重複取り込みせず、既存の照合済みmasterを参照します。
+
+原本ZIP全ファイルのSHA256、既存216種の照合件数、原本テスト結果は `data-import/swap-assist-v247.json`。ZIPの原本は採用前の資料として保持しています。
+
+通常おてつだい・明示げんき・在庫なし・1枠1往復の期待値です。スキル・回復・キャンプ・EX・特殊個体状態・料理利益は推測しません。詳細な画面前提は情報タブと `docs/HANDOFF.md` を参照してください。
