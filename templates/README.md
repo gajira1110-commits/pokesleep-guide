@@ -52,6 +52,7 @@
 | `18-recipe-controller.html` | 料理一覧の共通DOM・状態 |
 | `recipes/02-ingredient-filter.html` | 食材アイコン・フィルター候補 |
 | `recipes/03-providers.html` | 最終進化の食材拾得候補 |
+| `recipes/03-cooking.html` | 比較Lv・実測値優先のエナジー・鍋試算・資料表 |
 | `recipes/04-list-view.html` | 並び順・料理カード・遅延詳細表示 |
 | `recipes/05-events.html` | 絞り込み・カテゴリ切替・料理を開く入口 |
 
