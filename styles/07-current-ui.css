@@ -265,3 +265,10 @@
 .psg-field-berry-icons{display:flex;gap:4px;margin-top:6px}
 #teamFieldSummary .psg-master-berry-icon{margin:0 2px}
 .psg-day-row .psg-master-berry-icon{margin-right:4px}
+
+/* Shared rank, evolution item and ribbon artwork. Text remains readable without artwork. */
+.psg-ui-icon{display:inline-block;width:24px;height:24px;object-fit:contain;vertical-align:middle;margin-right:4px;flex-shrink:0}
+.psg-ui-ribbons{width:30px;height:30px}
+.v106-evo-conditions .psg-ui-icon,.v31-evo-cond .psg-ui-icon{width:20px;height:20px;margin-right:2px}
+.psg-ribbon-preview{display:inline-block;margin-left:4px;min-height:30px;vertical-align:middle}
+.psg-mint-mark .psg-ui-icon{width:24px;height:24px;margin:0}

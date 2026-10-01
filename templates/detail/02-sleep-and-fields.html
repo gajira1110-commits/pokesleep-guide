@@ -65,6 +65,7 @@
        const line=document.createElement('div');line.className='psg-field-encounter-row';
        const label=document.createElement('span');label.textContent=`★${style.stars} ${style.name}`;
        const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       window.PS_UI_ART.rank(rank,item.rank.tier);
        const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
        line.append(label,rank);section.append(line);
      }
