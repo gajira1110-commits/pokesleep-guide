@@ -3,6 +3,7 @@ function renderTeamDay(){
  const interval=document.getElementById('teamCollectionInterval').value;
  renderFieldControls();
  const result=dailyBaseline(team,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,activeFieldBerries(),fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ document.getElementById('teamDayConditions').textContent=`適用条件：起床時げんき${result.startingEnergy}・回収${result.interval}時間ごと・キャンプ${result.goodCamp?'ON':'OFF'}・食事3回${result.threeMeals?'ON':'OFF'}（起床後16時間・睡眠8時間）`;
  host.replaceChildren();
  if(!result.members.length){const p=document.createElement('p');p.className='note';p.textContent='チームを選ぶと獲得予想を表示します。';host.append(p);return}
  const foodTiles=foods=>{
@@ -31,21 +32,14 @@ function renderTeamDay(){
  if(result.foods.size){const total=document.createElement('div');total.className='psg-day-total';const label=document.createElement('strong');label.textContent='食材合計';total.append(label,foodTiles(result.foods));host.append(total)}
  if(result.members.some(member=>!member.missing)){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`きのみ＋スキルのエナジー期待値：約${Math.round(result.berryEnergy+result.skillEnergy).toLocaleString()}（きのみ 約${Math.round(result.berryEnergy).toLocaleString()}・スキル 約${Math.round(result.skillEnergy).toLocaleString()}／好物・エリア補正込み）`;host.append(total)}
 }
-document.getElementById('teamCollectionInterval').onchange=renderTeamDay;
-document.getElementById('teamGoodCamp').onclick=event=>{
- teamGoodCamp=!teamGoodCamp;
- event.currentTarget.setAttribute('aria-pressed',String(teamGoodCamp));
- event.currentTarget.textContent=`いいキャンプ：${teamGoodCamp?'ON':'OFF'}`;
- renderTeamDay();
-};
-document.getElementById('teamMeals').onclick=event=>{
- teamMeals=!teamMeals;
- event.currentTarget.setAttribute('aria-pressed',String(teamMeals));
- event.currentTarget.textContent=`食事3回：${teamMeals?'ON':'OFF'}`;
- renderTeamDay();
+document.getElementById('teamCollectionInterval').onchange=saveDaySettings;
+document.getElementById('teamGoodCamp').onclick=()=>{teamGoodCamp=!teamGoodCamp;saveDaySettings()};
+document.getElementById('teamMeals').onclick=()=>{teamMeals=!teamMeals;saveDaySettings()};
+document.getElementById('teamInitialEnergy').onchange=event=>{
+ const input=event.currentTarget;
+ if(input.value.trim()===''||!Number.isFinite(Number(input.value))){input.value=String(teamInitialEnergy);return}
+ teamInitialEnergy=Math.max(0,Math.min(150,Math.round(Number(input.value))));saveDaySettings();
 };
 document.querySelectorAll('.psg-day-energy-options button').forEach(button=>button.onclick=()=>{
- teamInitialEnergy=Number(button.dataset.energy);
- document.querySelectorAll('.psg-day-energy-options button').forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
- renderTeamDay();
+ teamInitialEnergy=Number(button.dataset.energy);saveDaySettings();
 });
