@@ -1,0 +1,93 @@
+{
+  "no": 256,
+  "name": "ワカシャモ",
+  "type": "かくとう",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "クラボのみ",
+  "berryQty": 2,
+  "help": 3400,
+  "carry": 21,
+  "foodRate": 17,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 6
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0256_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0256_02",
+      "name": "ジャンプ寝",
+      "stars": 2
+    },
+    {
+      "id": "0256_03",
+      "name": "キック寝",
+      "stars": 3
+    },
+    {
+      "id": "0256_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/combusken",
+    "https://wikiwiki.jp/poke_sleep/ワカシャモ",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "evolution": {
+    "toNo": 257,
+    "to": "バシャーモ",
+    "level": 27,
+    "candy": 80
+  }
+}

@@ -296,6 +296,198 @@
         "level": 4
       },
       "drowsyPower": 115976000
+    },
+    {
+      "sleepStyleId": "0252_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 1216000
+    },
+    {
+      "sleepStyleId": "0252_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 4
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0252_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 35796000
+    },
+    {
+      "sleepStyleId": "0252_04",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0253_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 4636000
+    },
+    {
+      "sleepStyleId": "0253_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0253_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 55594000
+    },
+    {
+      "sleepStyleId": "0253_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 68666000
+    },
+    {
+      "sleepStyleId": "0254_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 33478000
+    },
+    {
+      "sleepStyleId": "0254_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 65702000
+    },
+    {
+      "sleepStyleId": "0254_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 11
+      },
+      "drowsyPower": 179018000
+    },
+    {
+      "sleepStyleId": "0254_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 195358000
+    },
+    {
+      "sleepStyleId": "0255_01",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 1
+      },
+      "drowsyPower": 1216000
+    },
+    {
+      "sleepStyleId": "0255_02",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 4
+      },
+      "drowsyPower": 12692000
+    },
+    {
+      "sleepStyleId": "0255_03",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 35796000
+    },
+    {
+      "sleepStyleId": "0255_04",
+      "rank": {
+        "tier": "ノーマル",
+        "level": 5
+      },
+      "drowsyPower": 40926000
+    },
+    {
+      "sleepStyleId": "0256_01",
+      "rank": {
+        "tier": "スーパー",
+        "level": 1
+      },
+      "drowsyPower": 4636000
+    },
+    {
+      "sleepStyleId": "0256_02",
+      "rank": {
+        "tier": "スーパー",
+        "level": 5
+      },
+      "drowsyPower": 20824000
+    },
+    {
+      "sleepStyleId": "0256_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 55594000
+    },
+    {
+      "sleepStyleId": "0256_04",
+      "rank": {
+        "tier": "ハイパー",
+        "level": 1
+      },
+      "drowsyPower": 68666000
+    },
+    {
+      "sleepStyleId": "0257_01",
+      "rank": {
+        "tier": "マスター",
+        "level": 1
+      },
+      "drowsyPower": 33478000
+    },
+    {
+      "sleepStyleId": "0257_02",
+      "rank": {
+        "tier": "マスター",
+        "level": 5
+      },
+      "drowsyPower": 65702000
+    },
+    {
+      "sleepStyleId": "0257_03",
+      "rank": {
+        "tier": "マスター",
+        "level": 11
+      },
+      "drowsyPower": 179018000
+    },
+    {
+      "sleepStyleId": "0257_04",
+      "rank": {
+        "tier": "マスター",
+        "level": 6
+      },
+      "drowsyPower": 195358000
     }
   ],
   "rankThresholds": [
@@ -476,6 +668,12 @@
     }
   ],
   "sources": [
-    "https://wiki.pokesleep.com/ja/pokemon/ditto"
+    "https://wiki.pokesleep.com/ja/pokemon/ditto",
+    "https://wiki.pokesleep.com/ja/pokemon/treecko",
+    "https://wiki.pokesleep.com/ja/pokemon/grovyle",
+    "https://wiki.pokesleep.com/ja/pokemon/sceptile",
+    "https://wiki.pokesleep.com/ja/pokemon/torchic",
+    "https://wiki.pokesleep.com/ja/pokemon/combusken",
+    "https://wiki.pokesleep.com/ja/pokemon/blaziken"
   ]
 }

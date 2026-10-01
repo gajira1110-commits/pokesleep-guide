@@ -2,14 +2,46 @@
   "id": "berry_burst",
   "name": "きのみバースト",
   "maxLevel": 6,
-  "tags": ["きのみ", "チーム"],
+  "tags": [
+    "きのみ",
+    "チーム"
+  ],
   "effectType": "berry_burst",
   "levels": {
-    "1": {"selfBerries": 11, "teamBerriesEach": 1, "description": "自分のきのみを11個、チーム内のポケモンのきのみを各1個獲得する"},
-    "2": {"selfBerries": 14, "teamBerriesEach": 2, "description": "自分のきのみを14個、チーム内のポケモンのきのみを各2個獲得する"},
-    "3": {"selfBerries": 21, "teamBerriesEach": 2, "description": "自分のきのみを21個、チーム内のポケモンのきのみを各2個獲得する"},
-    "4": {"selfBerries": 24, "teamBerriesEach": 3, "description": "自分のきのみを24個、チーム内のポケモンのきのみを各3個獲得する"},
-    "5": {"selfBerries": 27, "teamBerriesEach": 4, "description": "自分のきのみを27個、チーム内のポケモンのきのみを各4個獲得する"},
-    "6": {"selfBerries": 30, "teamBerriesEach": 5, "description": "自分のきのみを30個、チーム内のポケモンのきのみを各5個獲得する"}
-  }
+    "1": {
+      "selfBerries": 11,
+      "teamBerriesEach": 1,
+      "description": "自分のきのみを11個、チーム内のポケモンのきのみを各1個獲得する"
+    },
+    "2": {
+      "selfBerries": 14,
+      "teamBerriesEach": 2,
+      "description": "自分のきのみを14個、チーム内のポケモンのきのみを各2個獲得する"
+    },
+    "3": {
+      "selfBerries": 21,
+      "teamBerriesEach": 2,
+      "description": "自分のきのみを21個、チーム内のポケモンのきのみを各2個獲得する"
+    },
+    "4": {
+      "selfBerries": 24,
+      "teamBerriesEach": 3,
+      "description": "自分のきのみを24個、チーム内のポケモンのきのみを各3個獲得する"
+    },
+    "5": {
+      "selfBerries": 27,
+      "teamBerriesEach": 4,
+      "description": "自分のきのみを27個、チーム内のポケモンのきのみを各4個獲得する"
+    },
+    "6": {
+      "selfBerries": 30,
+      "teamBerriesEach": 5,
+      "description": "自分のきのみを30個、チーム内のポケモンのきのみを各5個獲得する"
+    }
+  },
+  "nativePokemonNos": [
+    252,
+    253,
+    254
+  ]
 }

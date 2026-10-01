@@ -22,7 +22,7 @@
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
   gap:7px!important;
 }
-#dexDetail .v19-traits span,
+#dexDetail .v19-traits>span,
 #dexDetail .hero-info>.stats .stat{
   box-sizing:border-box!important;
   min-height:70px!important;
@@ -56,7 +56,7 @@
     padding:9px 5px!important;
   }
   #dexDetail .v19-identity{margin-bottom:5px!important}
-  #dexDetail .v19-traits span,
+  #dexDetail .v19-traits>span,
   #dexDetail .hero-info>.stats .stat{
     padding:6px 3px!important;
   }
@@ -92,11 +92,11 @@
 }
 
 /* 3rd line: stronger than before, but still below the main numeric values. */
-#dexDetail .v19-traits span{
+#dexDetail .v19-traits>span{
   min-height:66px!important;
   border-radius:12px!important;
 }
-#dexDetail .v19-traits span:first-letter{
+#dexDetail .v19-traits>span:first-letter{
   font-size:17px!important;
 }
 
@@ -132,7 +132,7 @@
     min-height:40px!important;
     font-size:10px!important;
   }
-  #dexDetail .v19-traits span,
+  #dexDetail .v19-traits>span,
   #dexDetail .hero-info>.stats .stat{min-height:62px!important}
 }
 
@@ -157,7 +157,7 @@
  border:0!important;box-shadow:none!important;background:var(--type-bg)!important;
  padding:7px 9px!important;margin-bottom:5px!important
 }
-#dexDetail .v19-traits span{font-size:15px!important;font-weight:950!important}
+#dexDetail .v19-traits>span{font-size:15px!important;font-weight:950!important}
 @media(max-width:620px){
  #dexDetail .v12-nav button,#dexDetail .v12-nav button:disabled{min-height:40px!important;padding:4px 7px!important;font-size:10px!important;gap:5px!important}
  #dexDetail .v29-nav-img{width:28px!important;height:28px!important;flex-basis:28px!important}

@@ -2,21 +2,16 @@
   "asOf": "2026-10-01",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
-    "pokemon": 97,
+    "pokemon": 103,
     "skills": 23,
     "recipes": 78,
-    "sleepStyles": 386,
-    "normalFieldEncounters": 460
+    "sleepStyles": 410,
+    "normalFieldEncounters": 514
   },
   "missingCoreFields": [],
   "missingEvolutionTargets": [],
   "missingSkillLevels": [],
-  "skillsWithoutRegisteredSpecies": [
-    {
-      "id": "berry_burst",
-      "name": "きのみバースト"
-    }
-  ],
+  "skillsWithoutRegisteredSpecies": [],
   "pokemonWithoutAnyNormalEncounter": [
     {
       "no": 50,

@@ -3,7 +3,7 @@
 #dexDetail .v19-identity strong{line-height:1.05!important;flex:0 0 auto!important}
 #dexDetail .v19-type{padding:5px 8px!important;flex:0 0 auto!important}
 #dexDetail .v19-traits,#dexDetail .hero-info>.stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
-#dexDetail .v19-traits span,#dexDetail .hero-info>.stats .stat{width:100%!important;box-sizing:border-box!important}
+#dexDetail .v19-traits>span,#dexDetail .hero-info>.stats .stat{width:100%!important;box-sizing:border-box!important}
 .v21-skill-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;align-items:center!important;gap:10px!important;width:100%!important}
 .v21-skill-rate{font-size:11px;font-weight:900;white-space:nowrap;padding:5px 8px;border-radius:999px;background:#f2f5f3}
 #v12SkillLv{justify-self:end!important;margin:0!important}
@@ -176,7 +176,7 @@
   grid-template-columns:repeat(3,minmax(0,1fr))!important;
   gap:7px!important;width:100%!important;
 }
-#dexDetail .v19-traits span{
+#dexDetail .v19-traits>span{
   border:1px solid rgba(0,0,0,.035)!important;
 }
 #dexDetail .hero-info>.stats .stat{border:1px solid rgba(0,0,0,.035)!important;
