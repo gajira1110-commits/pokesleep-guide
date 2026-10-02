@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-10-01",
+  "asOf": "2026-10-02",
   "scope": "Registered master records; unregistered national numbers 001-151 are not classified as unimplemented.",
   "counts": {
     "pokemon": 216,
-    "skills": 27,
+    "skills": 38,
     "recipes": 78,
     "sleepStyles": 852,
     "normalFieldEncounters": 1672,
@@ -13,7 +13,52 @@
   "missingCoreFields": [],
   "missingEvolutionTargets": [],
   "missingSkillLevels": [],
-  "skillsWithoutRegisteredSpecies": [],
+  "skillsWithoutRegisteredSpecies": [
+    {
+      "id": "almighty",
+      "name": "オールマイティー"
+    },
+    {
+      "id": "disguise_berry_burst",
+      "name": "ばけのかわ(きのみバースト)"
+    },
+    {
+      "id": "draco_meteor_berry_burst",
+      "name": "りゅうせいぐん(きのみバースト)"
+    },
+    {
+      "id": "healing_pulse_energy_cheer_s",
+      "name": "いやしのはどう(げんきエールS)"
+    },
+    {
+      "id": "lunar_blessing_energy_for_everyone_s",
+      "name": "みかづきのいのり(げんきオールS)"
+    },
+    {
+      "id": "minus_cooking_power_up_s",
+      "name": "マイナス(料理パワーアップS)"
+    },
+    {
+      "id": "nightmare_energy_charge_m",
+      "name": "ナイトメア(エナジーチャージM)"
+    },
+    {
+      "id": "nuzzle_energy_cheer_s",
+      "name": "ほっぺすりすり(げんきエールS)"
+    },
+    {
+      "id": "plus_ingredient_magnet_s",
+      "name": "プラス(食材ゲットS)"
+    },
+    {
+      "id": "psystrike_berry_zone",
+      "name": "サイコブレイク(きのみゾーン)"
+    },
+    {
+      "id": "stockpile_energy_charge_s",
+      "name": "たくわえる(エナジーチャージS)"
+    }
+  ],
   "pokemonWithoutAnyNormalEncounter": [],
   "missingNormalEncounters": [],
   "recipeEnergyBoundsMissing": [],

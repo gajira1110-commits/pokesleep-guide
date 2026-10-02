@@ -1,0 +1,180 @@
+{
+  "id": "almighty",
+  "name": "オールマイティー",
+  "maxLevel": 8,
+  "tags": [
+    "複合・特殊",
+    "効果表"
+  ],
+  "effectType": "reference_only",
+  "calculationStatus": "not_implemented",
+  "levels": {
+    "1": {
+      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1"
+      ],
+      "sourceRow": [
+        "オールマイティー",
+        "1",
+        "1"
+      ]
+    },
+    "2": {
+      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1"
+      ],
+      "sourceRow": [
+        "~",
+        "2",
+        "1"
+      ]
+    },
+    "3": {
+      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1"
+      ],
+      "sourceRow": [
+        "~",
+        "3",
+        "1"
+      ]
+    },
+    "4": {
+      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1"
+      ],
+      "sourceRow": [
+        "~",
+        "4",
+        "1"
+      ]
+    },
+    "5": {
+      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1"
+      ],
+      "sourceRow": [
+        "~",
+        "5",
+        "1"
+      ]
+    },
+    "6": {
+      "description": "アメ：1 ときどき 2。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1 ときどき 2"
+      ],
+      "sourceRow": [
+        "~",
+        "6",
+        "1 ときどき 2"
+      ]
+    },
+    "7": {
+      "description": "アメ：1 ときどき 3。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1 ときどき 3"
+      ],
+      "sourceRow": [
+        "~",
+        "7",
+        "1 ときどき 3"
+      ]
+    },
+    "8": {
+      "description": "アメ：1 ときどき 4。個体の選択スキルによる効果は別途。",
+      "referenceValues": [
+        "1 ときどき 4"
+      ],
+      "sourceRow": [
+        "~",
+        "8",
+        "1 ときどき 4"
+      ]
+    }
+  },
+  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "nativeSpecies": [
+    {
+      "speciesId": "0151_default",
+      "name": "ミュウ"
+    }
+  ],
+  "implementationRequirements": [
+    "個体ごとの選択スキル",
+    "解放済み候補・ひらめきのたね"
+  ],
+  "sources": [
+    {
+      "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+      "status": "資料確認",
+      "receivedAt": "2026-10-02",
+      "handoff": "PSG_Friday_forms_handoff_20261002.zip"
+    }
+  ],
+  "sourceTable": {
+    "スキルページ": "オールマイティー",
+    "出典": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+    "効果表": [
+      [
+        [
+          "~スキル",
+          "~Lv.",
+          "CENTER:~効果量"
+        ],
+        [
+          "~",
+          "~",
+          "CENTER:~アメ"
+        ],
+        [
+          "オールマイティー",
+          "1",
+          "1"
+        ],
+        [
+          "~",
+          "2",
+          "1"
+        ],
+        [
+          "~",
+          "3",
+          "1"
+        ],
+        [
+          "~",
+          "4",
+          "1"
+        ],
+        [
+          "~",
+          "5",
+          "1"
+        ],
+        [
+          "~",
+          "6",
+          "1 ときどき 2"
+        ],
+        [
+          "~",
+          "7",
+          "1 ときどき 3"
+        ],
+        [
+          "~",
+          "8",
+          "1 ときどき 4"
+        ]
+      ]
+    ],
+    "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
+    "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  }
+}

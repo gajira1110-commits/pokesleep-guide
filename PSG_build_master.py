@@ -212,6 +212,10 @@ def catalog_and_images():
             images['ingredients'][obj['name']] = icon
     for key,(obj,folder) in kinds['skills'].items():
         assert obj['id'] == key and obj.get('levels')
+        if obj.get('effectType') == 'reference_only':
+            assert obj.get('calculationStatus') == 'not_implemented' and obj.get('sources') and obj.get('sourceTable'), key
+            assert sorted(map(int,obj['levels'])) == list(range(1,obj['maxLevel']+1)), key
+            assert all(level.get('description') and level.get('referenceValues') for level in obj['levels'].values()), key
         if obj.get('effectType') == 'variable_energy':
             assert sorted(map(int,obj['levels'])) == list(range(1,obj['maxLevel']+1)), key
             assert all(isinstance(level.get('min'),int) and isinstance(level.get('max'),int) and 0 < level['min'] <= level['max'] for level in obj['levels'].values()), key
@@ -352,7 +356,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v261') == 2
+    assert source.count('Review v262') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

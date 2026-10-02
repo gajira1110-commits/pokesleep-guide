@@ -1,6 +1,7 @@
  function skillVariables(s,x,lv){
   const value=(v,kind,unit='')=>`<span class="skill-var effect-${kind}">${detailEsc(typeof v==='number'?v.toLocaleString():v)}${unit}</span>`;
   const type=s.effectType;
+  if(type==='reference_only')return detailEsc(x.description||'資料未確認');
   if(type==='conditional_ingredient_select')return value(x.amount,'food','個')+(x.shardsSmall!=null?' ／ '+value(x.shardsSmall+'／'+x.shardsLarge,'shards','個'):' ／ 追加 '+value(x.bonusAmount,'food','個'));
 
   if(x.bonusCandy!=null)return value(x.amount,'food','個')+' ／ 追加 '+value(x.bonusCandy,'skill','個');
