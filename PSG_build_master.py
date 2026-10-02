@@ -38,6 +38,8 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'core/07-corrections.html',
     'core/10-individual-evaluation.html',
     'core/08-fields.html',
+    'core/11-field-spawn.html',
+    'team/06-whistle.html',
     'core/09-day-view.html',
     'day/01-calculation-helpers.html',
     'day/02-member-context.html',
@@ -165,6 +167,14 @@ def catalog_and_images():
             assert values['cumulative_exp_at_target'] == cumulative
             assert values['exp_to_next'] == cumulative - previous[key] > 0
             previous[key] = cumulative
+    catalog['fieldSpawnCounts'] = json.loads((MASTER / 'research/field-spawn-counts.json').read_text())
+    assert len(catalog['fieldSpawnCounts']['fields']) == 9
+    for rows in catalog['fieldSpawnCounts']['fields'].values():
+        assert [row['count'] for row in rows] == [4, 5, 6, 7, 8]
+        for row in rows:
+            lo, hi = row['observedPreviousMax'], row['observedNextMin']
+            assert hi > 0 and (lo is None or 0 <= lo < hi)
+            assert row['exactThreshold'] == (hi if lo is not None and hi - lo == 1 else None)
     catalog['friendship'] = json.loads((MASTER / 'friendship/data.json').read_text())
     assert len(catalog['friendship']['medals']['ポケモン']) == 248
     assert len(catalog['friendship']['normalSpeciesMapping']) == len(kinds['pokemon'])
@@ -399,7 +409,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v284') == 2
+    assert source.count('Review v285') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

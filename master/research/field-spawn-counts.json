@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-02",
+  "sourceLibraryFile": "PSG_field_spawn_counts_20261002.txt",
+  "status": "共同検証による目安。公式閾値ではない",
+  "baseCount": 3,
+  "fields": {
+    "greengrass": [
+      {
+        "count": 4,
+        "observedPreviousMax": 965230,
+        "observedNextMin": 965232,
+        "displayEstimate": 965232,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ワカクサ本島"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 2073694,
+        "observedNextMin": 2073695,
+        "displayEstimate": 2073695,
+        "exactThreshold": 2073695,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ワカクサ本島"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 4626378,
+        "observedNextMin": 4626380,
+        "displayEstimate": 4626380,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ワカクサ本島"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 8331415,
+        "observedNextMin": 8331417,
+        "displayEstimate": 8331417,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ワカクサ本島"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 19563552,
+        "observedNextMin": 19563553,
+        "displayEstimate": 19563553,
+        "exactThreshold": 19563553,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ワカクサ本島"
+      }
+    ],
+    "cyan": [
+      {
+        "count": 4,
+        "observedPreviousMax": 1574329,
+        "observedNextMin": 1574330,
+        "displayEstimate": 1574330,
+        "exactThreshold": 1574330,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/シアンの砂浜"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 3511233,
+        "observedNextMin": 3511234,
+        "displayEstimate": 3511234,
+        "exactThreshold": 3511234,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/シアンの砂浜"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 7162380,
+        "observedNextMin": 7162381,
+        "displayEstimate": 7162381,
+        "exactThreshold": 7162381,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/シアンの砂浜"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 13488262,
+        "observedNextMin": 13488264,
+        "displayEstimate": 13488264,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/シアンの砂浜"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 30491709,
+        "observedNextMin": 30491710,
+        "displayEstimate": 30491710,
+        "exactThreshold": 30491710,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/シアンの砂浜"
+      }
+    ],
+    "taupe": [
+      {
+        "count": 4,
+        "observedPreviousMax": 1829446,
+        "observedNextMin": 1829448,
+        "displayEstimate": 1829448,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/トープ洞窟"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 4626378,
+        "observedNextMin": 4626380,
+        "displayEstimate": 4626380,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/トープ洞窟"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 9935822,
+        "observedNextMin": 9935824,
+        "displayEstimate": 9935824,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/トープ洞窟"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 19563552,
+        "observedNextMin": 19563553,
+        "displayEstimate": 19563553,
+        "exactThreshold": 19563553,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/トープ洞窟"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 43706481,
+        "observedNextMin": 43706487,
+        "displayEstimate": 43706487,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/トープ洞窟"
+      }
+    ],
+    "snowdrop": [
+      {
+        "count": 4,
+        "observedPreviousMax": 2821379,
+        "observedNextMin": 2821380,
+        "displayEstimate": 2821380,
+        "exactThreshold": 2821380,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ウノハナ雪原"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 7162380,
+        "observedNextMin": 7162381,
+        "displayEstimate": 7162381,
+        "exactThreshold": 7162381,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ウノハナ雪原"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 15469182,
+        "observedNextMin": 15469184,
+        "displayEstimate": 15469184,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ウノハナ雪原"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 28772755,
+        "observedNextMin": 28772756,
+        "displayEstimate": 28772756,
+        "exactThreshold": 28772756,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ウノハナ雪原"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 65693390,
+        "observedNextMin": 65693395,
+        "displayEstimate": 65693395,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ウノハナ雪原"
+      }
+    ],
+    "lapis": [
+      {
+        "count": 4,
+        "observedPreviousMax": 3153519,
+        "observedNextMin": 3153520,
+        "displayEstimate": 3153520,
+        "exactThreshold": 3153520,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ラピスラズリ湖畔"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 7730433,
+        "observedNextMin": 7730435,
+        "displayEstimate": 7730435,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ラピスラズリ湖畔"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 16659805,
+        "observedNextMin": 16659808,
+        "displayEstimate": 16659808,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ラピスラズリ湖畔"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 30491709,
+        "observedNextMin": 30491710,
+        "displayEstimate": 30491710,
+        "exactThreshold": 30491710,
+        "evidenceStatus": "共同検証表上特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ラピスラズリ湖畔"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 68664242,
+        "observedNextMin": 68664246,
+        "displayEstimate": 68664246,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ラピスラズリ湖畔"
+      }
+    ],
+    "old_gold": [
+      {
+        "count": 4,
+        "observedPreviousMax": 6009350,
+        "observedNextMin": 6010340,
+        "displayEstimate": 6010340,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ゴールド旧発電所"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 14339724,
+        "observedNextMin": 14339775,
+        "displayEstimate": 14339775,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ゴールド旧発電所"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 30491702,
+        "observedNextMin": 30491720,
+        "displayEstimate": 30491720,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ゴールド旧発電所"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 49915400,
+        "observedNextMin": 49915500,
+        "displayEstimate": 49915500,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ゴールド旧発電所"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 97351580,
+        "observedNextMin": 97371700,
+        "displayEstimate": 97371700,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/ゴールド旧発電所"
+      }
+    ],
+    "amber": [
+      {
+        "count": 4,
+        "observedPreviousMax": 5885562,
+        "observedNextMin": 6155325,
+        "displayEstimate": 6155325,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/アンバー渓谷"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 14256480,
+        "observedNextMin": 14391900,
+        "displayEstimate": 14391900,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/アンバー渓谷"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 29873600,
+        "observedNextMin": 30649800,
+        "displayEstimate": 30649800,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/アンバー渓谷"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 49856900,
+        "observedNextMin": 49943400,
+        "displayEstimate": 49943400,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/アンバー渓谷"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 97363700,
+        "observedNextMin": 97665900,
+        "displayEstimate": 97639600,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/アンバー渓谷",
+        "note": "要約目安97,639,600と最低観測97,665,900が不一致。目安は観測証拠として扱わない。"
+      }
+    ],
+    "greengrass_ex": [
+      {
+        "count": 4,
+        "observedPreviousMax": 4623782,
+        "observedNextMin": 6263136,
+        "displayEstimate": 6263136,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/ワカクサ本島EX"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 14226800,
+        "observedNextMin": 14530794,
+        "displayEstimate": 14530794,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/ワカクサ本島EX"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": 30458964,
+        "observedNextMin": 30727664,
+        "displayEstimate": 30727664,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/ワカクサ本島EX"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 49830600,
+        "observedNextMin": 50004200,
+        "displayEstimate": 50004200,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/ワカクサ本島EX"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 96979700,
+        "observedNextMin": 97371750,
+        "displayEstimate": 97371750,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/ワカクサ本島EX"
+      }
+    ],
+    "cyan_ex": [
+      {
+        "count": 4,
+        "observedPreviousMax": 199650,
+        "observedNextMin": 10881024,
+        "displayEstimate": 10881024,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/シアンの砂浜EX"
+      },
+      {
+        "count": 5,
+        "observedPreviousMax": 10881024,
+        "observedNextMin": 14985530,
+        "displayEstimate": 14985530,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/シアンの砂浜EX"
+      },
+      {
+        "count": 6,
+        "observedPreviousMax": null,
+        "observedNextMin": 32559840,
+        "displayEstimate": 32559840,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/シアンの砂浜EX",
+        "note": "前段最高値の原文「28,780,56」は桁不明のため下限未確認。"
+      },
+      {
+        "count": 7,
+        "observedPreviousMax": 46982248,
+        "observedNextMin": 54359300,
+        "displayEstimate": 54359300,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/シアンの砂浜EX"
+      },
+      {
+        "count": 8,
+        "observedPreviousMax": 96119400,
+        "observedNextMin": 106523300,
+        "displayEstimate": 106523300,
+        "exactThreshold": null,
+        "evidenceStatus": "境界未特定",
+        "sourceUrl": "https://wikiwiki.jp/poke_sleep/リサーチフィールド/EXモード/シアンの砂浜EX"
+      }
+    ]
+  }
+}

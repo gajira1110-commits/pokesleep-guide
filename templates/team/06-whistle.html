@@ -1,0 +1,70 @@
+// Three hours at the adopted maximum-energy rate. This never invokes daily skills.
+function whistleEstimate(ids,box,catalog,options={}){
+ const selected=ids.filter(Boolean).map(id=>box.find(item=>item.id===id));
+ const empty={members:[],foods:new Map(),berryEnergy:null,berryCount:null,pendingReasons:[]};
+ if(!selected.length)return empty;
+ if(selected.some(item=>!item))return {...empty,pendingReasons:['チーム個体が見つかりません']};
+ if(options.fieldMode==='ex')return {...empty,pendingReasons:['EXフィールドの補正は未対応']};
+ const speedContext=teamSpeedContext(ids,box,catalog),members=[],pendingReasons=[];
+ const favorites=new Set(options.favoriteBerries||[]),areaFactor=1+(options.areaBonus||0)/100;
+ for(const item of selected){
+  const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id),reasons=[];
+  if(!species||species.mythicalSettings||species.dailyCalculationStatus==='pending_special_skill')reasons.push('特殊な個体・追加状態は未対応');
+  if(!Number.isFinite(item.level)||item.level<1)reasons.push('レベル');
+  if(!options.assumeNeutral){
+   if(!item.nature&&!item.mint)reasons.push('性格未入力');
+   if(SUBSKILL_LEVELS.some((level,index)=>level<=item.level&&!item.subskills?.[index]))reasons.push('解放済みサブスキル未入力');
+  }
+  if(stats?.unknown?.length)reasons.push('性格・サブスキル未対応');
+  if(!Number.isFinite(stats?.speed)||stats.speed<=0)reasons.push('おてつだい時間');
+  if(!Number.isFinite(stats?.food)||stats.food<0||stats.food>100)reasons.push('食材確率');
+  if(!Number.isFinite(stats?.berryQty)||stats.berryQty<=0)reasons.push('きのみ個数');
+  const berryBase=catalog.berries?.[species?.berry];
+  if(!Number.isFinite(berryBase))reasons.push('きのみエナジー');
+  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
+   const candidate=slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(c=>c.name===item.ingredients?.[slot.unlock]);
+   if(!candidate||!Number.isFinite(candidate.qty)||candidate.qty<=0)reasons.push(`Lv.${slot.unlock}の食材選択・個数`);
+   return candidate;
+  });
+  if(!slots.length)reasons.push('食材枠');
+  if(reasons.length){pendingReasons.push(`${item.name}：${[...new Set(reasons)].join('・')}`);continue}
+  const helps=10800/(stats.speed*.45),chance=stats.food/100;
+  const berries=Math.floor(helps*(1-chance)*stats.berryQty+.5),foods=new Map();
+  // Round each slot before merging identical ingredient names or individuals.
+  for(const slot of slots)foods.set(slot.name,(foods.get(slot.name)||0)+Math.floor(helps*chance*slot.qty/slots.length+.5));
+  const berryEnergy=options.favoritesKnown===false?null:berries*berryEnergyAtLevel(berryBase,item.level)*(favorites.has(species.berry)?2:1)*areaFactor;
+  members.push({id:item.id,name:item.name,level:item.level,berryName:species.berry,berries,berryEnergy,foods,helpSeconds:stats.speed});
+ }
+ // A subset is never presented as the selected team's total.
+ if(pendingReasons.length)return {...empty,pendingReasons};
+ const foods=new Map();for(const member of members)for(const [name,qty] of member.foods)foods.set(name,(foods.get(name)||0)+qty);
+ return {members,foods,berryCount:members.reduce((sum,m)=>sum+m.berries,0),berryEnergy:members.some(m=>m.berryEnergy===null)?null:members.reduce((sum,m)=>sum+m.berryEnergy,0),pendingReasons};
+}
+let whistleComparison=null;
+function renderTeamWhistle(){
+ const host=document.getElementById('teamWhistleEstimate');if(!host)return;
+ host.replaceChildren();
+ const catalog=window.PS_CATALOG,field=catalog.fields[fieldProfile.selectedFieldId],favorites=activeFieldBerries();
+ const options={fieldMode:field?.mode,favoriteBerries:favorites,favoritesKnown:field?.favoriteMode==='fixed'||favorites.filter(Boolean).length===3&&new Set(favorites).size===3,areaBonus:fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0,assumeNeutral:document.getElementById('whistleAssumeNeutral').checked};
+ const result=whistleEstimate(team,state.box,catalog,options),pin=document.getElementById('whistleComparePin');
+ const context=JSON.stringify([fieldProfile.selectedFieldId,options.favoriteBerries,options.areaBonus,options.assumeNeutral]);
+ if(whistleComparison?.context!==context)whistleComparison=null;
+ pin.disabled=!result.members.length||!!result.pendingReasons.length;
+ const note=text=>{const p=document.createElement('p');p.className='note';p.textContent=text;host.append(p)};
+ pin.onclick=()=>{whistleComparison={context,result};renderTeamWhistle()};
+ if(result.pendingReasons.length){note(`計算保留：${result.pendingReasons.join(' ／ ')}`);return}
+ if(!result.members.length){note('チームを選ぶと笛1回分の獲得予想を表示します。');return}
+ const energy=document.createElement('p');energy.className='psg-day-total';energy.textContent=`きのみ 合計 約${result.berryCount}個 ／ ${result.berryEnergy===null?'エナジーは好物きのみの設定待ち':`エナジー 約${Math.round(result.berryEnergy).toLocaleString()}`}`;host.append(energy);
+ const tiles=document.createElement('div');tiles.className='psg-day-food-list psg-day-food-summary';
+ for(const [name,qty] of result.foods){const tile=document.createElement('span');tile.className='psg-day-food-tile';tile.setAttribute('aria-label',`${name} 約${qty}個`);tile.append(teamFoodIcon(name));const copy=document.createElement('span'),label=document.createElement('small'),amount=document.createElement('strong');label.textContent=name;amount.textContent=`約${qty}個`;copy.append(label,amount);tile.append(copy);tiles.append(tile)}host.append(tiles);
+ const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='個体別のきのみ';details.append(summary);
+ for(const member of result.members){const row=document.createElement('p');row.className='note';row.textContent=`${member.name} Lv.${member.level}：${member.berryName} 約${member.berries}個${member.berryEnergy===null?'':`・約${Math.round(member.berryEnergy).toLocaleString()}エナジー`}`;details.append(row)}host.append(details);
+ if(whistleComparison){
+  const before=whistleComparison.result,sign=n=>`${n>=0?'+':''}${n.toLocaleString()}`;
+  if(result.berryEnergy!==null&&before.berryEnergy!==null)note(`比較基準から：きのみエナジー ${sign(Math.round(result.berryEnergy-before.berryEnergy))}`);
+  const changes=[...new Set([...before.foods.keys(),...result.foods.keys()])].map(name=>[name,(result.foods.get(name)||0)-(before.foods.get(name)||0)]).filter(([,qty])=>qty!==0);
+  note(changes.length?changes.map(([name,qty])=>`${name} ${sign(qty)}個`).join(' ／ '):'比較基準からの食材個数の変化なし');
+ }else note('比較基準にすると、チームを変更したときの増減を表示します。条件変更・再読み込みで基準は解除されます。');
+}
+
+document.getElementById('whistleAssumeNeutral').onchange=renderTeamWhistle;

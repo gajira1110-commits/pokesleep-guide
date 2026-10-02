@@ -440,3 +440,7 @@
 .psg-style-field-rank .psg-ui-ranks{width:24px;height:24px;margin:0;flex:none}
 .psg-style-field-energy{font-size:.95em}
 .psg-style-field-condition{grid-column:1/-1;margin:0}
+
+.psg-whistle-assumption{display:flex;align-items:flex-start;gap:6px;font-size:12px;line-height:1.5;margin:8px 0}.psg-whistle-assumption input{flex:none;margin-top:3px}.psg-whistle-card>button{max-width:100%;white-space:normal;margin-top:8px}
+
+.psg-field-spawn>label{display:block;margin:8px 0;font-size:13px}.psg-field-spawn>select{max-width:100%}.psg-field-spawn input{width:72px}.psg-spawn-row{padding:8px 0;border-bottom:1px solid #e6ebe8;font-size:13px;overflow-wrap:anywhere}.psg-spawn-row strong{display:block}.psg-spawn-row .note{margin:4px 0}.psg-spawn-row details{font-size:12px}

@@ -1,0 +1,31 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=path.join(__dirname,'..');
+const catalog={berries:{berry:30},pokemon:{1:{berry:'berry',ingredientSlots:[{unlock:1,candidates:[{name:'same',qty:1}]},{unlock:30,candidates:[{name:'same',qty:1}]}]}}};
+const item={id:'one',no:1,name:'Test',level:30,nature:'まじめ',subskills:['known','known']};
+let speed=3600,food=50;
+const ctx={Map,Set,Number,Math,SUBSKILL_LEVELS:[10,25,50,70,80],speciesFor:item=>catalog.pokemon[item.no],teamSpeedContext:()=>({members:new Map([['one',{speed,food,berryQty:1,unknown:[]}]])}),berryEnergyAtLevel:()=>30};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'templates/team/06-whistle.html'),'utf8').split('let whistleComparison')[0],ctx);
+const estimate=(options={})=>ctx.whistleEstimate(['one'],[item],catalog,options);
+let r=estimate();assert.equal(r.foods.get('same'),4,'two slots round to 2 each, rather than rounding the merged 3.333 to 3');assert.equal(r.berryCount,3);assert.equal(r.berryEnergy,90);
+r=estimate({favoriteBerries:['berry'],areaBonus:50});assert.equal(r.berryEnergy,270);
+// Individual-slot rounding remains intact for a one-slot and three-slot configuration.
+catalog.pokemon[1].ingredientSlots.pop();r=estimate();assert.equal(r.foods.get('same'),3);
+catalog.pokemon[1].ingredientSlots.push({unlock:30,candidates:[{name:'second',qty:4}]},{unlock:60,candidates:[{name:'third',qty:6}]});
+item.level=60;item.subskills.push('known');r=estimate();assert.equal(r.foods.get('same'),1);assert.equal(r.foods.get('second'),4);assert.equal(r.foods.get('third'),7);
+// Current energy, collection, camp, meal and skill fields never enter this route.
+assert.deepEqual(estimate({goodCamp:true,initialEnergy:0,collectionHours:8}),estimate({goodCamp:false,initialEnergy:150,collectionHours:1}));
+speed=1800;assert(estimate().berryCount>r.berryCount,'uses team-corrected time');speed=3600;
+r=estimate({favoritesKnown:false});assert.equal(r.berryEnergy,null);assert(r.foods.size>0);
+food=null;r=estimate();assert(r.pendingReasons.length);assert.equal(r.berryCount,null);assert.equal(r.berryEnergy,null);assert.equal(r.foods.size,0);food=50;
+item.nature=null;assert(estimate().pendingReasons.length);assert.equal(estimate({assumeNeutral:true}).pendingReasons.length,0);item.nature='まじめ';
+item.ingredients={};catalog.pokemon[1].ingredientSlots[1].candidates.push({name:'alternative',qty:3});assert(estimate({assumeNeutral:true}).pendingReasons.length);catalog.pokemon[1].ingredientSlots[1].candidates.pop();
+catalog.pokemon[1].dailyCalculationStatus='pending_special_skill';assert(estimate().pendingReasons.length);delete catalog.pokemon[1].dailyCalculationStatus;
+assert(estimate({fieldMode:'ex'}).pendingReasons.length);assert(ctx.whistleEstimate(['missing'],[item],catalog).pendingReasons.length);
+console.log('Whistle: per-slot rounding, one/two/three slots, field energy, independent inputs and unknown-condition hold passed.');
+const rows=JSON.parse(fs.readFileSync(path.join(root,'master/research/field-spawn-counts.json'))).fields;
+vm.runInContext(fs.readFileSync(path.join(root,'templates/core/11-field-spawn.html'),'utf8').split('function renderFieldSpawn')[0],ctx);
+assert.equal(Object.values(rows).flat().length,45);assert.equal(Object.values(rows).flat().filter(r=>r.exactThreshold!==null).length,12);
+assert.equal(ctx.spawnEnergyBounds(rows.greengrass[4],100).estimate,195636);assert.equal(ctx.spawnEnergyBounds(rows.greengrass[4],50).estimate,391272);
+assert.equal(ctx.spawnEnergyBounds(rows.cyan_ex[2],100).lower,null);assert.equal(ctx.spawnEnergyBounds(rows.amber[4],100).estimate,976396);assert.equal(ctx.spawnEnergyBounds(rows.amber[4],100).upper,976659);
+assert.equal(ctx.spawnEnergyBounds(rows.greengrass[0],0),null);assert.equal(ctx.spawnEnergyBounds(rows.greengrass[0],101),null);
+console.log('Spawn data: 45 rows, 12 exact observations, score conversion, Amber conflict and unknown Cyan EX lower bound preserved.');
