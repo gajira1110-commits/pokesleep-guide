@@ -142,6 +142,9 @@ def catalog_and_images():
     catalog = {**data,'pokemon':{},'sleepStyles':{},'recipes':{},'skills':{},'ingredientAssets':{},'berries':{},'fields':{},
                'natures':natures,'subskills':subskills['records']}
     catalog['cooking'] = json.loads((MASTER / 'cooking/data.json').read_text())
+    catalog['friendship'] = json.loads((MASTER / 'friendship/data.json').read_text())
+    assert len(catalog['friendship']['medals']['ポケモン']) == 248
+    assert len(catalog['friendship']['normalSpeciesMapping']) == len(kinds['pokemon'])
     validate_cooking(catalog['cooking'])
     catalog['recipeEvaluation'] = json.loads((MASTER / 'cooking/evaluation.json').read_text())
     catalog['dailySupply'] = json.loads((MASTER / 'cooking/daily-supply.json').read_text())
@@ -356,7 +359,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v264') == 2
+    assert source.count('Review v265') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
