@@ -68,7 +68,7 @@ function matchesDexFilters(p,q,filters){
    &&(!filters.specs.size||filters.specs.has(p.specialty));
 }
 function discoveryLabel(p){
- const styles=window.PS_CATALOG.sleepStyles?.[p.no]||[],saved=readSleepBackup();
+ const styles=p.detailPreviewOnly?p.sleepStyles:window.PS_CATALOG.sleepStyles?.[p.no]||[],saved=readSleepBackup();
  return styles.length?`${styles.filter(style=>saved[style.id]===true).length}/${styles.length}`:'—/—';
 }
 

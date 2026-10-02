@@ -3,9 +3,7 @@ window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
     window.PS?.renderFilters();window.PS?.renderDex();window.PS?.renderBox();
     if(document.getElementById('boxDetail')?.classList.contains('active'))window.PS?.refreshBoxDetail?.();
     if(document.getElementById('dexDetail')?.classList.contains('active')){
-      const label=document.querySelector('#dexDetail .v51-head-no')?.textContent||'';
-      const no=Number(label.match(/No\.?\s*(\d+)/i)?.[1]);
-      if(no)window.openPokemonDetail?.(no);
+      window.PSG_REFRESH_DEX_DETAIL?.();
     }
   }
   return {found:found.filter(Boolean).length,checked:lookup.size};

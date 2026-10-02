@@ -1,0 +1,2559 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotTreeSha": "afffd80c73191d6800007db5a8156ddbde85b83f",
+  "species": [
+    {
+      "speciesId": "0025_captain",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0025_ピカチュウ(キャプテン)",
+      "no": 25,
+      "formId": "captain",
+      "name": "ピカチュウ(キャプテン)",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "きのみ",
+      "berry": "ウブのみ",
+      "berryQty": 2,
+      "help": 2500,
+      "carry": 21,
+      "foodRate": 17.5,
+      "skillRate": 1.8,
+      "rateStatus": "推定",
+      "mainSkillName": "食材ゲットS",
+      "mainSkillId": "ingredient_magnet_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 7,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 6,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ピカチュウ(キャプテン)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "しっぽたち寝",
+          "stars": 1
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 1,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%28%E3%82%AD%E3%83%A3%E3%83%97%E3%83%86%E3%83%B3%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0025_costumes",
+      "sleepStyleGroupId": "0025_captain"
+    },
+    {
+      "speciesId": "0025_halloween_23",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0025_ピカチュウ(ハロウィン・2023の帽子)",
+      "no": 25,
+      "formId": "halloween_23",
+      "name": "ピカチュウ(ハロウィン・2023の帽子)",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "きのみ",
+      "berry": "ウブのみ",
+      "berryQty": 2,
+      "help": 2500,
+      "carry": 18,
+      "foodRate": 21.8,
+      "skillRate": 2.8,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(ランダム)",
+      "mainSkillId": "energy_charge_s_variable",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 7,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 6,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ピカチュウ(ハロウィン)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "たれみみ寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%28%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0025_costumes",
+      "sleepStyleGroupId": "0025_halloween"
+    },
+    {
+      "speciesId": "0025_halloween_24",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0025_ピカチュウ(ハロウィン・2024の帽子)",
+      "no": 25,
+      "formId": "halloween_24",
+      "name": "ピカチュウ(ハロウィン・2024の帽子)",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "きのみ",
+      "berry": "ウブのみ",
+      "berryQty": 2,
+      "help": 2500,
+      "carry": 18,
+      "foodRate": 21.8,
+      "skillRate": 2.8,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(ランダム)",
+      "mainSkillId": "energy_charge_s_variable",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 7,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 6,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ピカチュウ(ハロウィン)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "たれみみ寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%28%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0025_costumes",
+      "sleepStyleGroupId": "0025_halloween"
+    },
+    {
+      "speciesId": "0025_holiday",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0025_ピカチュウ(ホリデー)",
+      "no": 25,
+      "formId": "holiday",
+      "name": "ピカチュウ(ホリデー)",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "ウブのみ",
+      "berryQty": 1,
+      "help": 2500,
+      "carry": 20,
+      "foodRate": 13.1,
+      "skillRate": 4.2,
+      "rateStatus": "推定",
+      "mainSkillName": "ゆめのかけらゲットS(固定)",
+      "mainSkillId": "dream_shard_magnet_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 7,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 6,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ピカチュウ(ホリデー)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%28%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0025_costumes",
+      "sleepStyleGroupId": "0025_holiday"
+    },
+    {
+      "speciesId": "0133_halloween",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0133_イーブイ(ハロウィン)",
+      "no": 133,
+      "formId": "halloween",
+      "name": "イーブイ(ハロウィン)",
+      "type": "ノーマル",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "キーのみ",
+      "berryQty": 1,
+      "help": 3200,
+      "carry": 18,
+      "foodRate": 12,
+      "skillRate": 4.6,
+      "rateStatus": "推定",
+      "mainSkillName": "食材ゲットS",
+      "mainSkillId": "ingredient_magnet_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "soothing_cacao",
+          "name": "リラックスカカオ",
+          "quantities": {
+            "1": null,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 9
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 4
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 6
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 9
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "イーブイ(ハロウィン)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "たれみみ寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%BC%E3%83%96%E3%82%A4%28%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0133_costumes",
+      "sleepStyleGroupId": "0133_halloween"
+    },
+    {
+      "speciesId": "0133_holiday",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0133_イーブイ(ホリデー)",
+      "no": 133,
+      "formId": "holiday",
+      "name": "イーブイ(ホリデー)",
+      "type": "ノーマル",
+      "sleepType": "すやすや",
+      "specialty": "きのみ",
+      "berry": "キーのみ",
+      "berryQty": 2,
+      "help": 3100,
+      "carry": 20,
+      "foodRate": 15.6,
+      "skillRate": 3.2,
+      "rateStatus": "推定",
+      "mainSkillName": "ゆめのかけらゲットS",
+      "mainSkillId": "dream_shard_magnet_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "soothing_cacao",
+          "name": "リラックスカカオ",
+          "quantities": {
+            "1": null,
+            "30": 1,
+            "60": 2
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "bean_meat",
+          "name": "マメミート",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 2
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 2
+            },
+            {
+              "ingredientId": "bean_meat",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "イーブイ(ホリデー)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%BC%E3%83%96%E3%82%A4%28%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0133_costumes",
+      "sleepStyleGroupId": "0133_holiday"
+    },
+    {
+      "speciesId": "0363_holiday",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0363_タマザラシ(ホリデー)",
+      "no": 363,
+      "formId": "holiday",
+      "name": "タマザラシ(ホリデー)",
+      "type": "こおり",
+      "sleepType": "ぐっすり",
+      "specialty": "スキル",
+      "berry": "チーゴのみ",
+      "berryQty": 1,
+      "help": 3300,
+      "carry": 20,
+      "foodRate": 21.4,
+      "skillRate": 5,
+      "rateStatus": "推定",
+      "mainSkillName": "料理チャンスS",
+      "mainSkillId": "cooking_chance_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "pure_oil",
+          "name": "ピュアなオイル",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "bean_meat",
+          "name": "マメミート",
+          "quantities": {
+            "1": null,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "pure_oil",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "pure_oil",
+              "qty": 2
+            },
+            {
+              "ingredientId": "bean_meat",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "pure_oil",
+              "qty": 4
+            },
+            {
+              "ingredientId": "bean_meat",
+              "qty": 4
+            },
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "衣装付きは通常個体の進化条件を継承しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "タマザラシ(ホリデー)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "こてん寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 4,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%BF%E3%83%9E%E3%82%B6%E3%83%A9%E3%82%B7%28%E3%83%9B%E3%83%AA%E3%83%87%E3%83%BC%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0363_costumes",
+      "sleepStyleGroupId": "0363_holiday"
+    },
+    {
+      "speciesId": "0710_large",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0710_バケッチャ(おおだま)",
+      "no": 710,
+      "formId": "large",
+      "name": "バケッチャ(おおだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 5500,
+      "carry": 15,
+      "foodRate": 12,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "道具": "つながりのヒモ",
+          "アメ種類": "バケッチャ",
+          "アメ個数": 80,
+          "最低レベル条件": "なし"
+        },
+        "状態": "推定",
+        "注記": "道具・アメ数はSleep資料で確認。同サイズを維持する遷移は今回Sleepの実測資料を確認できず推定。別サイズへ自動変換しない",
+        "proposedTargetSpeciesId": "0711_large",
+        "targetSourceRecordId": "0711_パンプジン(おおだま)"
+      },
+      "sleepStyleReferenceKey": "バケッチャ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うかびぱたぱた寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ひかりてらし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "evolution_transition_estimated"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%B1%E3%83%83%E3%83%81%E3%83%A3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0711_large",
+          "conditionsSource": {
+            "道具": "つながりのヒモ",
+            "アメ種類": "バケッチャ",
+            "アメ個数": 80,
+            "最低レベル条件": "なし"
+          },
+          "status": "推定",
+          "transitionEnabled": false
+        }
+      ],
+      "detailGroupId": "0710_sizes",
+      "sleepStyleGroupId": "0710_sizes"
+    },
+    {
+      "speciesId": "0710_small",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0710_バケッチャ(こだま)",
+      "no": 710,
+      "formId": "small",
+      "name": "バケッチャ(こだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 5300,
+      "carry": 7,
+      "foodRate": 12,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "道具": "つながりのヒモ",
+          "アメ種類": "バケッチャ",
+          "アメ個数": 80,
+          "最低レベル条件": "なし"
+        },
+        "状態": "推定",
+        "注記": "道具・アメ数はSleep資料で確認。同サイズを維持する遷移は今回Sleepの実測資料を確認できず推定。別サイズへ自動変換しない",
+        "proposedTargetSpeciesId": "0711_small",
+        "targetSourceRecordId": "0711_パンプジン(こだま)"
+      },
+      "sleepStyleReferenceKey": "バケッチャ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うかびぱたぱた寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ひかりてらし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "evolution_transition_estimated"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%B1%E3%83%83%E3%83%81%E3%83%A3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0711_small",
+          "conditionsSource": {
+            "道具": "つながりのヒモ",
+            "アメ種類": "バケッチャ",
+            "アメ個数": 80,
+            "最低レベル条件": "なし"
+          },
+          "status": "推定",
+          "transitionEnabled": false
+        }
+      ],
+      "detailGroupId": "0710_sizes",
+      "sleepStyleGroupId": "0710_sizes"
+    },
+    {
+      "speciesId": "0710_medium",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0710_バケッチャ(ちゅうだま)",
+      "no": 710,
+      "formId": "medium",
+      "name": "バケッチャ(ちゅうだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 5400,
+      "carry": 11,
+      "foodRate": 12,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "道具": "つながりのヒモ",
+          "アメ種類": "バケッチャ",
+          "アメ個数": 80,
+          "最低レベル条件": "なし"
+        },
+        "状態": "推定",
+        "注記": "道具・アメ数はSleep資料で確認。同サイズを維持する遷移は今回Sleepの実測資料を確認できず推定。別サイズへ自動変換しない",
+        "proposedTargetSpeciesId": "0711_medium",
+        "targetSourceRecordId": "0711_パンプジン(ちゅうだま)"
+      },
+      "sleepStyleReferenceKey": "バケッチャ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うかびぱたぱた寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ひかりてらし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "evolution_transition_estimated"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%B1%E3%83%83%E3%83%81%E3%83%A3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0711_medium",
+          "conditionsSource": {
+            "道具": "つながりのヒモ",
+            "アメ種類": "バケッチャ",
+            "アメ個数": 80,
+            "最低レベル条件": "なし"
+          },
+          "status": "推定",
+          "transitionEnabled": false
+        }
+      ],
+      "detailGroupId": "0710_sizes",
+      "sleepStyleGroupId": "0710_sizes"
+    },
+    {
+      "speciesId": "0710_jumbo",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0710_バケッチャ(ギガだま)",
+      "no": 710,
+      "formId": "jumbo",
+      "name": "バケッチャ(ギガだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 5600,
+      "carry": 21,
+      "foodRate": 12,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "道具": "つながりのヒモ",
+          "アメ種類": "バケッチャ",
+          "アメ個数": 80,
+          "最低レベル条件": "なし"
+        },
+        "状態": "推定",
+        "注記": "道具・アメ数はSleep資料で確認。同サイズを維持する遷移は今回Sleepの実測資料を確認できず推定。別サイズへ自動変換しない",
+        "proposedTargetSpeciesId": "0711_jumbo",
+        "targetSourceRecordId": "0711_パンプジン(ギガだま)"
+      },
+      "sleepStyleReferenceKey": "バケッチャ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うかびぱたぱた寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ひかりてらし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "evolution_transition_estimated"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%B1%E3%83%83%E3%83%81%E3%83%A3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0711_jumbo",
+          "conditionsSource": {
+            "道具": "つながりのヒモ",
+            "アメ種類": "バケッチャ",
+            "アメ個数": 80,
+            "最低レベル条件": "なし"
+          },
+          "status": "推定",
+          "transitionEnabled": false
+        }
+      ],
+      "detailGroupId": "0710_sizes",
+      "sleepStyleGroupId": "0710_sizes"
+    },
+    {
+      "speciesId": "0711_large",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0711_パンプジン(おおだま)",
+      "no": 711,
+      "formId": "large",
+      "name": "パンプジン(おおだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 3300,
+      "carry": 24,
+      "foodRate": 13,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "パンプジン",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "だきしめ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うでひろげ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "おどろかし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0711_sizes",
+      "sleepStyleGroupId": "0711_sizes"
+    },
+    {
+      "speciesId": "0711_small",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0711_パンプジン(こだま)",
+      "no": 711,
+      "formId": "small",
+      "name": "パンプジン(こだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 3100,
+      "carry": 15,
+      "foodRate": 13,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "パンプジン",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "だきしめ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うでひろげ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "おどろかし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0711_sizes",
+      "sleepStyleGroupId": "0711_sizes"
+    },
+    {
+      "speciesId": "0711_medium",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0711_パンプジン(ちゅうだま)",
+      "no": 711,
+      "formId": "medium",
+      "name": "パンプジン(ちゅうだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 3200,
+      "carry": 19,
+      "foodRate": 13,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "パンプジン",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "だきしめ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うでひろげ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "おどろかし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0711_sizes",
+      "sleepStyleGroupId": "0711_sizes"
+    },
+    {
+      "speciesId": "0711_jumbo",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0711_パンプジン(ギガだま)",
+      "no": 711,
+      "formId": "jumbo",
+      "name": "パンプジン(ギガだま)",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 3400,
+      "carry": 30,
+      "foodRate": 13,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "エナジーチャージS(固定)",
+      "mainSkillId": "energy_charge_s_fixed",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": null,
+            "30": 11,
+            "60": 18
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 15
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 5
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 11
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 7
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 18
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 15
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "パンプジン",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "だきしめ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "うでひろげ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "おどろかし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "detailGroupId": "0711_sizes",
+      "sleepStyleGroupId": "0711_sizes"
+    }
+  ],
+  "detailFormGroups": [
+    {
+      "groupId": "0025_costumes",
+      "no": 25,
+      "name": "ピカチュウ",
+      "kind": "costume",
+      "choices": [
+        {
+          "speciesId": "0025_default",
+          "label": "通常"
+        },
+        {
+          "speciesId": "0025_captain",
+          "label": "キャプテン"
+        },
+        {
+          "speciesId": "0025_halloween_23",
+          "label": "ハロウィン23"
+        },
+        {
+          "speciesId": "0025_halloween_24",
+          "label": "ハロウィン24"
+        },
+        {
+          "speciesId": "0025_holiday",
+          "label": "ホリデー"
+        }
+      ],
+      "boxDefaultSpeciesId": "0025_default",
+      "boxSelectionPolicy": "normal_default_or_explicit_costume",
+      "displayPolicyStatus": "integration_guidance",
+      "note": "詳細の姿選択はBoxの登録個体を変更しない。"
+    },
+    {
+      "groupId": "0133_costumes",
+      "no": 133,
+      "name": "イーブイ",
+      "kind": "costume",
+      "choices": [
+        {
+          "speciesId": "0133_default",
+          "label": "通常"
+        },
+        {
+          "speciesId": "0133_halloween",
+          "label": "ハロウィン"
+        },
+        {
+          "speciesId": "0133_holiday",
+          "label": "ホリデー"
+        }
+      ],
+      "boxDefaultSpeciesId": "0133_default",
+      "boxSelectionPolicy": "normal_default_or_explicit_costume",
+      "displayPolicyStatus": "integration_guidance",
+      "note": "詳細の姿選択はBoxの登録個体を変更しない。"
+    },
+    {
+      "groupId": "0363_costumes",
+      "no": 363,
+      "name": "タマザラシ",
+      "kind": "costume",
+      "choices": [
+        {
+          "speciesId": "0363_default",
+          "label": "通常"
+        },
+        {
+          "speciesId": "0363_holiday",
+          "label": "ホリデー"
+        }
+      ],
+      "boxDefaultSpeciesId": "0363_default",
+      "boxSelectionPolicy": "normal_default_or_explicit_costume",
+      "displayPolicyStatus": "integration_guidance",
+      "note": "詳細の姿選択はBoxの登録個体を変更しない。"
+    },
+    {
+      "groupId": "0710_sizes",
+      "no": 710,
+      "name": "バケッチャ",
+      "kind": "size",
+      "choices": [
+        {
+          "speciesId": "0710_small",
+          "label": "こだま"
+        },
+        {
+          "speciesId": "0710_medium",
+          "label": "ちゅうだま"
+        },
+        {
+          "speciesId": "0710_large",
+          "label": "おおだま"
+        },
+        {
+          "speciesId": "0710_jumbo",
+          "label": "ギガだま"
+        }
+      ],
+      "boxDefaultSpeciesId": null,
+      "boxSelectionPolicy": "explicit_size_required",
+      "displayPolicyStatus": "integration_guidance",
+      "note": "詳細の姿選択はBoxの登録個体を変更しない。"
+    },
+    {
+      "groupId": "0711_sizes",
+      "no": 711,
+      "name": "パンプジン",
+      "kind": "size",
+      "choices": [
+        {
+          "speciesId": "0711_small",
+          "label": "こだま"
+        },
+        {
+          "speciesId": "0711_medium",
+          "label": "ちゅうだま"
+        },
+        {
+          "speciesId": "0711_large",
+          "label": "おおだま"
+        },
+        {
+          "speciesId": "0711_jumbo",
+          "label": "ギガだま"
+        }
+      ],
+      "boxDefaultSpeciesId": null,
+      "boxSelectionPolicy": "explicit_size_required",
+      "displayPolicyStatus": "integration_guidance",
+      "note": "詳細の姿選択はBoxの登録個体を変更しない。"
+    }
+  ],
+  "sleepStyleGroups": {
+    "0025_captain": {
+      "sourceReferenceKey": "ピカチュウ(キャプテン)",
+      "speciesIds": [
+        "0025_captain"
+      ],
+      "styles": [
+        {
+          "id": "0025_captain_01",
+          "sourceStyleId": "1",
+          "name": "しっぽたち寝",
+          "stars": 1
+        }
+      ]
+    },
+    "0025_halloween": {
+      "sourceReferenceKey": "ピカチュウ(ハロウィン)",
+      "speciesIds": [
+        "0025_halloween_23",
+        "0025_halloween_24"
+      ],
+      "styles": [
+        {
+          "id": "0025_halloween_01",
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0025_halloween_02",
+          "sourceStyleId": "2",
+          "name": "たれみみ寝",
+          "stars": 2
+        }
+      ]
+    },
+    "0025_holiday": {
+      "sourceReferenceKey": "ピカチュウ(ホリデー)",
+      "speciesIds": [
+        "0025_holiday"
+      ],
+      "styles": [
+        {
+          "id": "0025_holiday_01",
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0025_holiday_02",
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ]
+    },
+    "0133_halloween": {
+      "sourceReferenceKey": "イーブイ(ハロウィン)",
+      "speciesIds": [
+        "0133_halloween"
+      ],
+      "styles": [
+        {
+          "id": "0133_halloween_01",
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0133_halloween_02",
+          "sourceStyleId": "2",
+          "name": "たれみみ寝",
+          "stars": 2
+        }
+      ]
+    },
+    "0133_holiday": {
+      "sourceReferenceKey": "イーブイ(ホリデー)",
+      "speciesIds": [
+        "0133_holiday"
+      ],
+      "styles": [
+        {
+          "id": "0133_holiday_01",
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0133_holiday_02",
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ]
+    },
+    "0363_holiday": {
+      "sourceReferenceKey": "タマザラシ(ホリデー)",
+      "speciesIds": [
+        "0363_holiday"
+      ],
+      "styles": [
+        {
+          "id": "0363_holiday_01",
+          "sourceStyleId": "1",
+          "name": "こてん寝",
+          "stars": 1
+        },
+        {
+          "id": "0363_holiday_02",
+          "sourceStyleId": "2",
+          "name": "プレゼント寝",
+          "stars": 2
+        }
+      ]
+    },
+    "0710_sizes": {
+      "sourceReferenceKey": "バケッチャ",
+      "speciesIds": [
+        "0710_large",
+        "0710_small",
+        "0710_medium",
+        "0710_jumbo"
+      ],
+      "styles": [
+        {
+          "id": "0710_sizes_01",
+          "sourceStyleId": "1",
+          "name": "うまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0710_sizes_02",
+          "sourceStyleId": "2",
+          "name": "うかびぱたぱた寝",
+          "stars": 2
+        },
+        {
+          "id": "0710_sizes_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0710_sizes_03",
+          "sourceStyleId": "3",
+          "name": "ひかりてらし寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0711_sizes": {
+      "sourceReferenceKey": "パンプジン",
+      "speciesIds": [
+        "0711_large",
+        "0711_small",
+        "0711_medium",
+        "0711_jumbo"
+      ],
+      "styles": [
+        {
+          "id": "0711_sizes_01",
+          "sourceStyleId": "1",
+          "name": "だきしめ寝",
+          "stars": 1
+        },
+        {
+          "id": "0711_sizes_02",
+          "sourceStyleId": "2",
+          "name": "うでひろげ寝",
+          "stars": 2
+        },
+        {
+          "id": "0711_sizes_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0711_sizes_03",
+          "sourceStyleId": "3",
+          "name": "おどろかし寝",
+          "stars": 3
+        }
+      ]
+    }
+  }
+}

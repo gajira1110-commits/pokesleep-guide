@@ -15,12 +15,14 @@
    const head=document.querySelector("#dexDetail .detail-head");
    if(head){
      const title=head.querySelector("h2");
-     if(title) title.innerHTML=`<span class="v51-head-no">No.${String(m.no).padStart(3,"0")}</span><span class="v51-head-name">${m.name}</span>`;
-     if(title){
+     const speciesId=m.speciesId||`${String(m.no).padStart(4,'0')}_default`;
+     const group=window.PS_FORMS?.groupFor(speciesId);
+     if(title) title.innerHTML=`<span class="v51-head-no">No.${String(m.no).padStart(3,"0")}</span><span class="v51-head-name">${detailEsc(group?.name||m.name)}</span>`;
+     if(title&&group?.choices.length>1){
        const costume=document.createElement('select');costume.className='psg-dex-costume';
-       costume.setAttribute('aria-label','衣装');costume.title='衣装別データ未登録';costume.disabled=true;
-       const normal=document.createElement('option');normal.value='default';normal.textContent='通常';costume.append(normal);
-       costume.hidden=costume.options.length<=1;title.append(costume);
+       costume.setAttribute('aria-label',group.kind==='size'?'サイズ':'衣装');
+       for(const choice of group.choices){const option=document.createElement('option');option.value=choice.speciesId;option.textContent=choice.label;costume.append(option)}
+       costume.value=speciesId;costume.onchange=()=>openPokemonDetail(costume.value,{keepScroll:true});title.append(costume);
      }
      head.querySelector(".v51-head-nav")?.remove();
      const nav=document.createElement("div");
@@ -47,6 +49,11 @@
    const art=document.getElementById("detailArt");
    if(art){
      art.replaceChildren();
+     if(m.detailPreviewOnly){
+       const missing=document.createElement('span');missing.className='psg-form-no-image';missing.textContent='No image';art.append(missing);
+       const badge=document.createElement('span');badge.className='v51-type-badge';badge.title='タイプ：'+m.type;badge.innerHTML=window.PS_TYPE_ART?.(m.type)||iconForType(m.type);art.append(badge);
+       return;
+     }
      const preview=window.PS_DEV_ASSETS;
      const img=document.createElement('img');
      const role=m.image&&m.image===window.PS_IMAGE_FILES.pokemonFaces?.[m.no]?'face':'full';
@@ -67,6 +74,6 @@
  function renderStats(m){
    stats.innerHTML=`<div class="psg-detail-stat"><small><span class="v45-stat-icon">⏱</span><span class="v45-stat-text">おてつだい時間</span></small><b>${m.help?.toLocaleString()||"—"}秒</b></div>
    <div class="psg-detail-stat"><small><span class="v45-stat-icon">🎒</span><span class="v45-stat-text">最大所持数</span></small><b>${m.carry??"未確認"}</b></div>
-   <div class="psg-detail-stat"><small><span class="v45-stat-icon">🥕</span><span class="v45-stat-text">食材確率</span></small><b>${m.foodRate??"—"}%</b></div>
-   <div class="psg-detail-stat"><small><span class="v45-stat-icon">✨</span><span class="v45-stat-text">スキル発動確率</span></small><b>${m.skillRate??"—"}%</b></div>`;
+   <div class="psg-detail-stat"><small><span class="v45-stat-icon">🥕</span><span class="v45-stat-text">食材確率${m.detailPreviewOnly&&m.rateStatus==='推定'?'（推定）':''}</span></small><b>${m.foodRate??"—"}%</b></div>
+   <div class="psg-detail-stat"><small><span class="v45-stat-icon">✨</span><span class="v45-stat-text">スキル発動確率${m.detailPreviewOnly&&m.rateStatus==='推定'?'（推定）':''}</span></small><b>${m.skillRate??"—"}%</b></div>`;
  }

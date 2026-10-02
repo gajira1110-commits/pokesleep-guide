@@ -61,6 +61,12 @@
  function renderEvolution(m){
    const el=document.getElementById("detailEvolution"),card=document.getElementById("evolutionCard");
    if(!el||!card)return;
+   if(m.detailPreviewOnly){
+     const transitions=m.evolutionTransitions||[];
+     card.style.display=transitions.length?'':'none';
+     el.textContent=transitions.length?'同サイズへの進化は未確認です。サイズを自動で変更する処理は行いません。':'';
+     return;
+   }
    const root=rootOf(m),family=descendantsOf(root),rootBranches=evolutionEntries(root);
    if(family.length<=1){
      card.style.display=m.evolutionStatus==="未確認"?"":"none";
