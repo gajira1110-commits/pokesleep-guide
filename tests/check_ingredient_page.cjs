@@ -22,7 +22,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   const expectedCount=await page.evaluate(()=>Object.values(PS_CATALOG.recipes).filter(r=>r.ingredients.some(i=>i.name==='リラックスカカオ')).length);
   assert.equal(await cacao.locator('[data-ingredient-recipe]').count(),expectedCount);
   await page.selectOption('#ingredientSupplyLevel','30');assert(await cacao.evaluate(el=>el.open));
-  const related=cacao.locator('.psg-ingredient-details details').first();await related.locator('summary').click();
+  const related=cacao.locator('.psg-ingredient-details details').filter({has:page.locator('[data-ingredient-recipe]')}).first();await related.locator('summary').click();
   const button=related.locator('[data-ingredient-recipe]').first(),recipeId=await button.getAttribute('data-ingredient-recipe');await button.click();
   assert(await page.locator('#recipePage').isVisible());assert(await page.locator(`[data-recipe-id="${recipeId}"]`).evaluate(el=>el.open));
   await page.locator('#recipePage [data-back]').click();assert(await page.locator('#ingredientPage').isVisible());

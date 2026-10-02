@@ -1,0 +1,43 @@
+[
+  {
+    "sourceId": "R9-zero-report",
+    "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/112",
+    "kind": "first_person_anonymous_observation",
+    "reportedAt": "2025-06-20",
+    "checkedAt": "2026-10-02",
+    "summary": "げんき約7の状態でナイトメアを受け、負にならず0になったとの本人報告。観測時期は5月更新前かもしれないとの記述。性格・精密な内部値・試行数・画像は不明。"
+  },
+  {
+    "sourceId": "R9-double-report81",
+    "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/81",
+    "kind": "first_person_anonymous_observation",
+    "reportedAt": "2025-05-16",
+    "checkedAt": "2026-10-02",
+    "summary": "2回同時発動で演出は1回、ヒーラーのげんきが24減ったとの本人報告。"
+  },
+  {
+    "sourceId": "R9-double-report94",
+    "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/94",
+    "kind": "first_person_anonymous_observation",
+    "reportedAt": "2025-05-17",
+    "checkedAt": "2026-10-02",
+    "summary": "2回発動と24減少を別コメントでも報告。集計の独立性や補正条件は不明。"
+  },
+  {
+    "sourceId": "R9-official-darkrai",
+    "url": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/",
+    "kind": "official",
+    "publishedAt": "2025-04-15",
+    "checkedAt": "2026-10-02",
+    "summary": "ナイトメアはエナジー獲得と引き換えに、あく以外のチーム個体のげんきを減らす。12・性格補正・0下限は本文には記載されていない。"
+  },
+  {
+    "sourceId": "R9-play-order-report",
+    "url": "https://note.com/shibe266/n/n8f62a4263f37",
+    "kind": "first_person_play_report",
+    "author": "shibe",
+    "publishedAt": "2025-07-22",
+    "checkedAt": "2026-10-02",
+    "summary": "本人がGo Plus+同期前のスキル発動を含む運用を報告。発動→睡眠リサーチによる回復→ヒーラー回復という順序を説明。現行の全環境を検証した記録ではない。"
+  }
+]

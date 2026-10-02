@@ -1,0 +1,26 @@
+[
+  {
+    "questionId": "ENI-nightmare_energy_charge_m-01",
+    "status": "partial_historical_boundary_observation",
+    "answer": {
+      "observedNearSevenToZero": true,
+      "observedDoubleActivationLoss": 24,
+      "currentExactLowerBound": null,
+      "natureRecoveryModifierAppliesToNegativeEffect": null,
+      "internalFractionalEnergyBelowZero": null,
+      "suggestedScenario": {
+        "lossPerActivation": 12,
+        "floor": 0,
+        "status": "explicit_assumption_supported_by_historical_reports_not_official_confirmation"
+      }
+    },
+    "sourceIds": [
+      "R9-zero-report",
+      "R9-double-report81",
+      "R9-double-report94",
+      "R9-official-darkrai"
+    ],
+    "fullyResolved": false,
+    "reason": "下限0の計算案に本人報告を紐付ける。古い条件不明の記録なので、内部小数値や性格別の現行挙動は確定しない。"
+  }
+]

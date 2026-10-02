@@ -1,0 +1,38 @@
+{
+  "status": "proposed_scenario_contract_not_application_patch",
+  "skillId": "nightmare_energy_charge_m",
+  "scenarioAssumptions": {
+    "lossEach": 12,
+    "energyFloor": 0,
+    "natureMultiplierForLoss": 1,
+    "natureMultiplierConfirmed": false,
+    "defaultAdoption": "ビブロ側の採否判断。未確認事項を公式仕様へ格上げしない。"
+  },
+  "conditionalFormula": {
+    "nonDark": "e_after=max(0,e_before-12)",
+    "dark": "e_after=e_before",
+    "actualLoss": "e_before-e_after=min(e_before,12), e_before>=0",
+    "doubleNoInterveningRecovery": "e_after=max(0,e_before-24)；同じ対象に2回適用、途中回復なしの仮定。"
+  },
+  "eventOrder": [
+    "ナイトメア、食事、ヒーラー、睡眠による回復を実際の順序で処理する。",
+    "睡眠回復を朝の固定時刻に置かず、計算前提として時刻と順序を明示する。",
+    "同時発動の演出を1発動へまとめない。効果適用回数を使う。"
+  ],
+  "dailyAccounting": [
+    "カビゴンの直接獲得エナジーと、各個体のげんき減少を別に保存する。",
+    "げんき12をエナジー12として直接差し引かない。単位が異なる。",
+    "間接的なきのみ・食材・スキル収集への影響はげんき推移から計算する。換算規則が未確認なら純増エナジーは未算出にする。",
+    "回復時刻と発動時刻が不明なら、1日合計のげんき減少だけで厳密な収集差を出さない。"
+  ],
+  "illustrativeOrderExample": {
+    "status": "mathematical_example_not_game_meal_value",
+    "startEnergy": 7,
+    "hypotheticalRecovery": 10,
+    "assumedNightmareLoss": 12,
+    "recoveryThenNightmareFinal": 5,
+    "nightmareThenRecoveryFinal": 10,
+    "note": "回復10は架空の説明用数値。料理やスキルの実効果として使わない。"
+  },
+  "baselineCompatibility": "交代前回収で通常スキルキャンセルを考慮しない方針を維持。この資料はげんき変化の順序を扱う補足。"
+}

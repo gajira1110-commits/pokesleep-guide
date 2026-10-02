@@ -9,6 +9,7 @@
   if(row)for(const provider of row.top)body.append(providerText(provider));
   else{const note=document.createElement('p');note.className='note';note.textContent='日産量の担当候補は未対応です。';body.append(note)}
   const providerNote=document.createElement('p');providerNote.className='note';providerNote.textContent='それぞれ別個体・別構成の推定量。Lv30／60の比較条件は「前提を見る」で確認できます。';body.append(providerNote);
+  const all=document.createElement('details'),allTitle=document.createElement('summary');allTitle.textContent='図鑑の担当候補（姿違いを含む）';all.append(allTitle,providerGroup({name}));body.append(all);
   const recipesHeading=document.createElement('h3');recipesHeading.textContent='この食材を使う料理';body.append(recipesHeading);
   const related=recipes.filter(r=>r.ingredients.some(i=>i.name===name));
   for(const category of ['カレー・シチュー','サラダ','デザート・ドリンク']){
