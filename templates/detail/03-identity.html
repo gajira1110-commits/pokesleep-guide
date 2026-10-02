@@ -36,7 +36,7 @@
      <span class="psg-detail-trait psg-detail-berry"><span class="psg-detail-berry-visual" title="${m.berry||'きのみ'}">${m.berryImage?window.PS_DEV_ASSETS.image(m.berryImage,'berry',m.berry,'full',m.berry):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'}</span><b>${berryQty==null?"未確認":`×${berryQty}`}</b></span>
      <span class="psg-detail-trait">${window.PS_SLEEP_ICON(m.sleepType)} ${m.sleepType}</span>
      <span class="psg-detail-trait psg-detail-specialty" title="得意：${m.specialty}" aria-label="得意：${m.specialty}">${window.PS_SPECIALTY_IMAGES?.[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]?`<img class="psg-specialty-icon" src="${window.PS_SPECIALTY_IMAGES[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]}" alt="">`:m.specialty}</span>
-     <span class="psg-detail-trait psg-detail-friend" title="フレンドポイント（資料確認）" aria-label="フレンドポイント ${m.friendPoints??'未確定'}"><small>フレンド<br>ポイント</small><b>${m.friendPoints??'未確定'}</b></span>
+     <span class="psg-detail-trait psg-detail-friend" title="フレンドポイント（資料確認）" aria-label="フレンドポイント ${m.friendPoints??'未確定'}">${window.PS_UI_ART.icon('items','ポケサブレ')}<b>${m.friendPoints??'未確定'}</b></span>
    </div>`;
 
    // Keep artwork square and place the compact trait row beneath it.
