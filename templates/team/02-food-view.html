@@ -16,10 +16,11 @@ function renderTeamFood(){
   if(confirmed.size){
    const list=document.createElement('div');list.className='psg-team-food-list';
    for(const [name,providers] of confirmed){
-    const chip=document.createElement('div');chip.className='psg-team-food-item';chip.append(teamFoodIcon(name));
-    const words=document.createElement('span');const title=document.createElement('strong');title.textContent=name;
+    const chip=document.createElement('details');chip.className='psg-team-food-item';
+    const heading=document.createElement('summary');heading.append(teamFoodIcon(name));
+    const title=document.createElement('strong');title.textContent=name;heading.append(title);
     const detail=document.createElement('small');detail.textContent=providers.map(x=>`${x.label}（Lv.${x.unlock} ×${x.qty}）`).join('、');
-    words.append(title,detail);chip.append(words);list.append(chip);
+    chip.append(heading,detail);list.append(chip);
    }ingredients.append(list);
   }else{const empty=document.createElement('p');empty.className='note';empty.textContent='確認できた食材はありません。';ingredients.append(empty)}
   if(unconfirmed.length){const note=document.createElement('p');note.className='note';note.textContent=`未確認：${unconfirmed.join('、')}`;ingredients.append(note)}

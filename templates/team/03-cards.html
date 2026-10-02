@@ -67,7 +67,13 @@ function renderTeam(){
  });
  const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
  const summary=document.getElementById('teamSummary');
- summary.textContent=state.box.length?`${selected.length} / 5匹を登録中${selected.length?`・得意：${[...new Set(selected.map(x=>x.specialty))].join('、')}`:''}${teamSpeeds.bonusCount?`・おてつだいボーナス ${teamSpeeds.bonusCount}匹（計${Math.round(teamSpeeds.bonus*100)}%短縮、個体ごと上限35%）`:''}`:'ボックスに個体を登録すると、ここでチームを組めます。';
+ summary.textContent=`おて部 合計 ${Math.round(teamSpeeds.bonus*100)}%`;
+ const composition=document.getElementById('teamComposition');
+ composition.innerHTML=['きのみ','食材','スキル','オール'].map(s=>{
+  const count=selected.filter(x=>speciesFor(x)?.specialty===s).length;
+  return count?`<span aria-label="${s}得意 ${count}匹">${specIcon(s)}<b>×${count}</b></span>`:'';
+ }).join('');
+ hydrateSpecialtyIcons(composition);
  renderTeamFood();
  renderTeamDay();
  renderTeamFaceDock();

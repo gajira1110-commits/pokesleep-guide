@@ -2732,6 +2732,2855 @@
       ],
       "dexEntryPolicy": "independent",
       "sleepStyleGroupId": "0194_paldea"
+    },
+    {
+      "speciesId": "0150_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0150_ミュウツー",
+      "no": 150,
+      "formId": "default",
+      "name": "ミュウツー",
+      "type": "エスパー",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "マゴのみ",
+      "berryQty": 1,
+      "help": 2300,
+      "carry": 24,
+      "foodRate": 16.0,
+      "skillRate": 2.9,
+      "rateStatus": "推定",
+      "mainSkillName": "サイコブレイク(きのみゾーン)",
+      "mainSkillId": "psystrike_berry_zone",
+      "proposedMainSkillId": "psystrike_berry_zone",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 3
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 30,
+      "expType": 1080,
+      "canTransfer": true,
+      "transferCandy": 25,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ミュウツー",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "かたひざたて寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ちょくりつふゆう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "サイコブレイク寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 9,
+      "blockers": [
+        "new_skill_schema",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%83%A5%E3%82%A6%E3%83%84%E3%83%BC",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0150_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0151_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0151_ミュウ",
+      "no": 151,
+      "formId": "default",
+      "name": "ミュウ",
+      "type": "エスパー",
+      "sleepType": "すやすや",
+      "specialty": "オール",
+      "berry": "マゴのみ",
+      "berryQty": 2,
+      "help": 2900,
+      "carry": 26,
+      "foodRate": 20.0,
+      "skillRate": null,
+      "rateStatus": "推定",
+      "mainSkillName": "オールマイティー",
+      "mainSkillId": "almighty",
+      "proposedMainSkillId": "almighty",
+      "individualSkillSelectionRequired": true,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "large_leek",
+          "name": "ふといながねぎ",
+          "quantities": {
+            "1": 2,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fiery_herb",
+          "name": "げきからハーブ",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 5
+          }
+        },
+        {
+          "candidate": "D",
+          "ingredientId": "bean_meat",
+          "name": "マメミート",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "E",
+          "ingredientId": "pure_oil",
+          "name": "ピュアなオイル",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "F",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "G",
+          "ingredientId": "shiny_avocado",
+          "name": "つやつやアボカド",
+          "quantities": {
+            "1": 2,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "H",
+          "ingredientId": "tasty_tail",
+          "name": "おいしいシッポ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 2
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 2
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "qty": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 4
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 4
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 5
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "qty": 6
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 5
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 7
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "qty": 6
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 7
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "qty": 4
+            },
+            {
+              "ingredientId": "tasty_tail",
+              "name": "おいしいシッポ",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "requires_individual_unlock_state",
+      "friendPoints": 25,
+      "expType": 1320,
+      "canTransfer": false,
+      "transferCandy": null,
+      "transferCandyStatus": "対象外（博士に送れない）",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ミュウ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "ふわふわ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "じゆうじざい寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "あわベッド寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "supplemental_style_definitions_only",
+      "sleepStyleSupplementSource": {
+        "url": "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+        "checkedAt": "2026-10-02",
+        "status": "攻略Wiki掲載値・ゲーム内照合未実施"
+      },
+      "appearanceRowCount": 0,
+      "blockers": [
+        "new_skill_schema",
+        "individual_unlock_state",
+        "appearance_data_missing_in_supplied_source",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%83%A5%E3%82%A6",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0151_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。",
+      "mythicalSettings": {
+        "speciesId": "0151_default",
+        "name": "ミュウ",
+        "initialNature": "きまぐれ",
+        "ingredientSlots": [
+          {
+            "slotIndex": 1,
+            "activeAtLevel": 1,
+            "requiresPriorSlotUnlocked": false,
+            "initialUnlocked": true,
+            "initialIngredientId": "fancy_egg",
+            "candidates": [
+              {
+                "ingredientId": "large_leek",
+                "name": "ふといながねぎ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "fancy_egg",
+                "name": "とくせんエッグ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "pure_oil",
+                "name": "ピュアなオイル",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "shiny_avocado",
+                "name": "つやつやアボカド",
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "slotIndex": 2,
+            "activeAtLevel": 30,
+            "requiresPriorSlotUnlocked": true,
+            "initialUnlocked": true,
+            "initialIngredientId": "fiery_herb",
+            "candidates": [
+              {
+                "ingredientId": "large_leek",
+                "name": "ふといながねぎ",
+                "quantity": 3
+              },
+              {
+                "ingredientId": "fancy_egg",
+                "name": "とくせんエッグ",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "pure_oil",
+                "name": "ピュアなオイル",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 5
+              },
+              {
+                "ingredientId": "shiny_avocado",
+                "name": "つやつやアボカド",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "slotIndex": 3,
+            "activeAtLevel": 60,
+            "requiresPriorSlotUnlocked": true,
+            "initialUnlocked": false,
+            "initialIngredientId": null,
+            "candidates": [
+              {
+                "ingredientId": "large_leek",
+                "name": "ふといながねぎ",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "fancy_egg",
+                "name": "とくせんエッグ",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 5
+              },
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 7
+              },
+              {
+                "ingredientId": "pure_oil",
+                "name": "ピュアなオイル",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 7
+              },
+              {
+                "ingredientId": "shiny_avocado",
+                "name": "つやつやアボカド",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "tasty_tail",
+                "name": "おいしいシッポ",
+                "quantity": 2
+              }
+            ]
+          }
+        ],
+        "ingredientSource": "mew",
+        "subskillSlots": [
+          {
+            "activeAtLevel": 10,
+            "initialUnlocked": true,
+            "initialSubskillName": "スキルレベルアップM",
+            "requiresPriorSlotUnlocked": false
+          },
+          {
+            "activeAtLevel": 25,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 50,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 75,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 100,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          }
+        ],
+        "mainSkill": {
+          "wrapper": "オールマイティー",
+          "initialEffect": "ゆびをふる",
+          "selectableEffects": [
+            "ゆびをふる",
+            "エナジーチャージS(ランダム)",
+            "エナジーチャージM",
+            "ゆめのかけらゲットS(ランダム)",
+            "食材ゲットS",
+            "げんきエールS",
+            "げんきチャージS",
+            "げんきオールS",
+            "料理チャンスS",
+            "料理パワーアップS",
+            "おてつだいサポートS",
+            "きのみバースト"
+          ],
+          "seedCanChange": true,
+          "individualSkillSelectionRequired": true,
+          "knownInitialLearnedEffects": [
+            "ゆびをふる"
+          ],
+          "selectedSkillRateEstimates": {
+            "ゆびをふる": 0.04,
+            "エナジーチャージS(ランダム)": 0.064,
+            "エナジーチャージM": 0.04,
+            "ゆめのかけらゲットS(ランダム)": 0.04,
+            "食材ゲットS": 0.04,
+            "げんきエールS": 0.0439,
+            "げんきチャージS": 0.064,
+            "げんきオールS": 0.0337,
+            "料理チャンスS": 0.04,
+            "料理パワーアップS": 0.04,
+            "おてつだいサポートS": 0.04,
+            "きのみバースト": 0.0284
+          },
+          "ratesStatus": "community_estimate_not_official",
+          "seedSkillDrawProbabilities": null
+        },
+        "stateFieldsProposal": {
+          "ingredients": "unlocked flag + observed selected ingredient for each slot",
+          "subskills": "unlocked flag + observed subskill for each slot",
+          "mainSkill": "Mew selectedEffect + learnedEffect list + skillLevel; Darkrai fixed nightmare"
+        },
+        "activationCondition": "枠解放済み AND 個体レベル>=activeAtLevel。解放済みでもLv未到達なら収集対象へ足さない。",
+        "seed": {
+          "perUse": 1,
+          "playerChooses": "変更・解放する枠",
+          "ingredientResult": "random; no exact player choice",
+          "subskillResult": "random",
+          "subskillUniformStatement": "公式不具合告知へのWiki参照あり。候補除外・再抽選条件まで確認できていない。",
+          "ingredientUniformProbability": null,
+          "levelRequiredToUseSeed": null,
+          "rerollExcludesCurrentResult": "secondary_documented_not_game_verified",
+          "mayRejectChangeForCandy": 40,
+          "natureChange": false,
+          "speciesBound": true,
+          "sources": [
+            "seed",
+            "seed_verification",
+            "seed_mew_secondary"
+          ]
+        },
+        "sources": [
+          "official_mew",
+          "mew",
+          "almighty"
+        ]
+      }
+    },
+    {
+      "speciesId": "0311_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0311_プラスル",
+      "no": 311,
+      "formId": "default",
+      "name": "プラスル",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "ウブのみ",
+      "berryQty": 1,
+      "help": 2400,
+      "carry": 16,
+      "foodRate": 10.3,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "プラス(食材ゲットS)",
+      "mainSkillId": "plus_ingredient_magnet_s",
+      "proposedMainSkillId": "plus_ingredient_magnet_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "coffee",
+          "name": "めざましコーヒー",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "large_leek",
+          "name": "ふといながねぎ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 6
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "coffee",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "coffee",
+              "qty": 2
+            },
+            {
+              "ingredientId": "large_leek",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "coffee",
+              "qty": 4
+            },
+            {
+              "ingredientId": "large_leek",
+              "qty": 3
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 6
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 10,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 8,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "プラスル",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "おだやか寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ボンボンふり寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 15,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%97%E3%83%A9%E3%82%B9%E3%83%AB",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0311_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0312_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0312_マイナン",
+      "no": 312,
+      "formId": "default",
+      "name": "マイナン",
+      "type": "でんき",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "ウブのみ",
+      "berryQty": 1,
+      "help": 2400,
+      "carry": 16,
+      "foodRate": 17.4,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "マイナス(料理パワーアップS)",
+      "mainSkillId": "minus_cooking_power_up_s",
+      "proposedMainSkillId": "minus_cooking_power_up_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "honey",
+          "name": "あまいミツ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "honey",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "honey",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "honey",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 10,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 8,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "マイナン",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "おだやか寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ボンボンふり寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 15,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%A4%E3%83%8A%E3%83%B3",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0312_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0380_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0380_ラティアス",
+      "no": 380,
+      "formId": "default",
+      "name": "ラティアス",
+      "type": "ドラゴン",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "ヤチェのみ",
+      "berryQty": 1,
+      "help": 2800,
+      "carry": 19,
+      "foodRate": 11.4,
+      "skillRate": 4.9,
+      "rateStatus": "推定",
+      "mainSkillName": "いやしのはどう(げんきエールS)",
+      "mainSkillId": "healing_pulse_energy_cheer_s",
+      "proposedMainSkillId": "healing_pulse_energy_cheer_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "tomato",
+          "name": "あんみんトマト",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "plump_pumpkin",
+          "name": "ずっしりカボチャ",
+          "quantities": {
+            "1": null,
+            "30": 1,
+            "60": 2
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "tasty_mushroom",
+          "name": "あじわいキノコ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 2
+            },
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 4
+            },
+            {
+              "ingredientId": "plump_pumpkin",
+              "qty": 2
+            },
+            {
+              "ingredientId": "tasty_mushroom",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 30,
+      "expType": 1080,
+      "canTransfer": true,
+      "transferCandy": 25,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ラティアス",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うかびはばたき寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ゆうがにひこう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "むげんのひかり寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 12,
+      "blockers": [
+        "new_skill_schema",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%83%86%E3%82%A3%E3%82%A2%E3%82%B9",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0380_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0381_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0381_ラティオス",
+      "no": 381,
+      "formId": "default",
+      "name": "ラティオス",
+      "type": "ドラゴン",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "ヤチェのみ",
+      "berryQty": 1,
+      "help": 2800,
+      "carry": 19,
+      "foodRate": 19.8,
+      "skillRate": 3.0,
+      "rateStatus": "推定",
+      "mainSkillName": "りゅうせいぐん(きのみバースト)",
+      "mainSkillId": "draco_meteor_berry_burst",
+      "proposedMainSkillId": "draco_meteor_berry_burst",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "tomato",
+          "name": "あんみんトマト",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_egg",
+          "name": "とくせんエッグ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "tomato",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "qty": 3
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 30,
+      "expType": 1080,
+      "canTransfer": true,
+      "transferCandy": 25,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ラティオス",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "うかびはばたき寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ゆうがにひこう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "むげんのオーラ寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 12,
+      "blockers": [
+        "new_skill_schema",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%83%86%E3%82%A3%E3%82%AA%E3%82%B9",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0381_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0425_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0425_フワンテ",
+      "no": 425,
+      "formId": "default",
+      "name": "フワンテ",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 4800,
+      "carry": 9,
+      "foodRate": 13.7,
+      "skillRate": 7.1,
+      "rateStatus": "推定",
+      "mainSkillName": "たくわえる(エナジーチャージS)",
+      "mainSkillId": "stockpile_energy_charge_s",
+      "proposedMainSkillId": "stockpile_energy_charge_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "pure_oil",
+          "name": "ピュアなオイル",
+          "quantities": {
+            "1": null,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 2
+            },
+            {
+              "ingredientId": "pure_oil",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 4
+            },
+            {
+              "ingredientId": "pure_oil",
+              "qty": 4
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "proposedTargetSpeciesId": "0426_default",
+        "条件": {
+          "最低レベル": 21,
+          "アメ個数": 40
+        },
+        "状態": "資料確認",
+        "sourceNotes": [
+          "フワンテ",
+          "↓ Lv.21＋フワンテのアメx40",
+          "フワライド"
+        ]
+      },
+      "sleepStyleReferenceKey": "フワンテ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "かいてん寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ふゆう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "あやし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 8,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%83%AF%E3%83%B3%E3%83%86",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0426_default",
+          "conditionsSource": {
+            "最低レベル": 21,
+            "アメ個数": 40
+          },
+          "status": "資料確認",
+          "transitionEnabled": true
+        }
+      ],
+      "sleepStyleGroupId": "0425_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0426_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0426_フワライド",
+      "no": 426,
+      "formId": "default",
+      "name": "フワライド",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 2500,
+      "carry": 22,
+      "foodRate": 12.8,
+      "skillRate": 6.3,
+      "rateStatus": "推定",
+      "mainSkillName": "たくわえる(エナジーチャージS)",
+      "mainSkillId": "stockpile_energy_charge_s",
+      "proposedMainSkillId": "stockpile_energy_charge_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "pure_oil",
+          "name": "ピュアなオイル",
+          "quantities": {
+            "1": null,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 2
+            },
+            {
+              "ingredientId": "pure_oil",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 4
+            },
+            {
+              "ingredientId": "pure_oil",
+              "qty": 4
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 12,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 7,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認",
+        "sourceNotes": [
+          "フワンテ",
+          "↓ Lv.21＋フワンテのアメx40",
+          "フワライド"
+        ]
+      },
+      "sleepStyleReferenceKey": "フワライド",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "だいかいてん寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ふゆう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "あやし寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 6,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%83%AF%E3%83%A9%E3%82%A4%E3%83%89",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0426_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0488_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0488_クレセリア",
+      "no": 488,
+      "formId": "default",
+      "name": "クレセリア",
+      "type": "エスパー",
+      "sleepType": "すやすや",
+      "specialty": "スキル",
+      "berry": "マゴのみ",
+      "berryQty": 1,
+      "help": 2300,
+      "carry": 22,
+      "foodRate": 23.9,
+      "skillRate": 4.1,
+      "rateStatus": "推定",
+      "mainSkillName": "みかづきのいのり(げんきオールS)",
+      "mainSkillId": "lunar_blessing_energy_for_everyone_s",
+      "proposedMainSkillId": "lunar_blessing_energy_for_everyone_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "warming_ginger",
+          "name": "あったかジンジャー",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "soothing_cacao",
+          "name": "リラックスカカオ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "tomato",
+          "name": "あんみんトマト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 2
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "warming_ginger",
+              "qty": 4
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 3
+            },
+            {
+              "ingredientId": "tomato",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 30,
+      "expType": 1080,
+      "canTransfer": true,
+      "transferCandy": 25,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "クレセリア",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "つっぷし寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "こっくりふゆう寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "みかづきのいのり寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 12,
+      "blockers": [
+        "new_skill_schema",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AC%E3%82%BB%E3%83%AA%E3%82%A2",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0488_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0491_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0491_ダークライ",
+      "no": 491,
+      "formId": "default",
+      "name": "ダークライ",
+      "type": "あく",
+      "sleepType": "うとうと",
+      "specialty": "オール",
+      "berry": "ウイのみ",
+      "berryQty": 2,
+      "help": 2900,
+      "carry": 28,
+      "foodRate": 19.2,
+      "skillRate": 2.3,
+      "rateStatus": "推定",
+      "mainSkillName": "ナイトメア(エナジーチャージM)",
+      "mainSkillId": "nightmare_energy_charge_m",
+      "proposedMainSkillId": "nightmare_energy_charge_m",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "bean_meat",
+          "name": "マメミート",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "fiery_herb",
+          "name": "げきからハーブ",
+          "quantities": {
+            "1": 2,
+            "30": 3,
+            "60": 5
+          }
+        },
+        {
+          "candidate": "D",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "E",
+          "ingredientId": "honey",
+          "name": "あまいミツ",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "F",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": 2,
+            "30": 4,
+            "60": 6
+          }
+        },
+        {
+          "candidate": "G",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": 2,
+            "30": 3,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "H",
+          "ingredientId": "coffee",
+          "name": "めざましコーヒー",
+          "quantities": {
+            "1": 2,
+            "30": 3,
+            "60": 4
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "qty": 2
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "qty": 2
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "qty": 5
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 3
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "qty": 4
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "qty": 3
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "qty": 3
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "qty": 6
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "qty": 7
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "qty": 5
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "qty": 6
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "qty": 6
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "qty": 6
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "qty": 4
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "requires_individual_unlock_state",
+      "friendPoints": 25,
+      "expType": 1320,
+      "canTransfer": false,
+      "transferCandy": null,
+      "transferCandyStatus": "対象外（博士に送れない）",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ダークライ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "ふゆううでぐみ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ふゆうかまえ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ダークホール寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "supplemental_style_definitions_only",
+      "sleepStyleSupplementSource": {
+        "url": "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+        "checkedAt": "2026-10-02",
+        "status": "攻略Wiki掲載値・ゲーム内照合未実施"
+      },
+      "appearanceRowCount": 0,
+      "blockers": [
+        "new_skill_schema",
+        "individual_unlock_state",
+        "appearance_data_missing_in_supplied_source",
+        "team_restriction_rule"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%A4",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0491_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。",
+      "mythicalSettings": {
+        "speciesId": "0491_default",
+        "name": "ダークライ",
+        "initialNature": "てれや",
+        "ingredientSlots": [
+          {
+            "slotIndex": 1,
+            "activeAtLevel": 1,
+            "requiresPriorSlotUnlocked": false,
+            "initialUnlocked": true,
+            "initialIngredientId": "bean_meat",
+            "candidates": [
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "fancy_apple",
+                "name": "とくせんリンゴ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "moomoo_milk",
+                "name": "モーモーミルク",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "honey",
+                "name": "あまいミツ",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "greengrass_corn",
+                "name": "ワカクサコーン",
+                "quantity": 2
+              },
+              {
+                "ingredientId": "coffee",
+                "name": "めざましコーヒー",
+                "quantity": 2
+              }
+            ]
+          },
+          {
+            "slotIndex": 2,
+            "activeAtLevel": 30,
+            "requiresPriorSlotUnlocked": true,
+            "initialUnlocked": false,
+            "initialIngredientId": null,
+            "candidates": [
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "fancy_apple",
+                "name": "とくせんリンゴ",
+                "quantity": 5
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 3
+              },
+              {
+                "ingredientId": "moomoo_milk",
+                "name": "モーモーミルク",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "honey",
+                "name": "あまいミツ",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "greengrass_corn",
+                "name": "ワカクサコーン",
+                "quantity": 3
+              },
+              {
+                "ingredientId": "coffee",
+                "name": "めざましコーヒー",
+                "quantity": 3
+              }
+            ]
+          },
+          {
+            "slotIndex": 3,
+            "activeAtLevel": 60,
+            "requiresPriorSlotUnlocked": true,
+            "initialUnlocked": false,
+            "initialIngredientId": null,
+            "candidates": [
+              {
+                "ingredientId": "bean_meat",
+                "name": "マメミート",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "fancy_apple",
+                "name": "とくせんリンゴ",
+                "quantity": 7
+              },
+              {
+                "ingredientId": "fiery_herb",
+                "name": "げきからハーブ",
+                "quantity": 5
+              },
+              {
+                "ingredientId": "moomoo_milk",
+                "name": "モーモーミルク",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "honey",
+                "name": "あまいミツ",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "greengrass_soybeans",
+                "name": "ワカクサ大豆",
+                "quantity": 6
+              },
+              {
+                "ingredientId": "greengrass_corn",
+                "name": "ワカクサコーン",
+                "quantity": 4
+              },
+              {
+                "ingredientId": "coffee",
+                "name": "めざましコーヒー",
+                "quantity": 4
+              }
+            ]
+          }
+        ],
+        "ingredientSource": "darkrai",
+        "subskillSlots": [
+          {
+            "activeAtLevel": 10,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": false
+          },
+          {
+            "activeAtLevel": 25,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 50,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 75,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          },
+          {
+            "activeAtLevel": 100,
+            "initialUnlocked": false,
+            "initialSubskillName": null,
+            "requiresPriorSlotUnlocked": true
+          }
+        ],
+        "mainSkill": {
+          "wrapper": null,
+          "initialEffect": "ナイトメア(エナジーチャージM)",
+          "selectableEffects": [],
+          "seedCanChange": false,
+          "individualSkillSelectionRequired": false,
+          "knownInitialLearnedEffects": null,
+          "selectedSkillRateEstimates": null,
+          "ratesStatus": "community_estimate_not_official",
+          "seedSkillDrawProbabilities": null
+        },
+        "stateFieldsProposal": {
+          "ingredients": "unlocked flag + observed selected ingredient for each slot",
+          "subskills": "unlocked flag + observed subskill for each slot",
+          "mainSkill": "Mew selectedEffect + learnedEffect list + skillLevel; Darkrai fixed nightmare"
+        },
+        "activationCondition": "枠解放済み AND 個体レベル>=activeAtLevel。解放済みでもLv未到達なら収集対象へ足さない。",
+        "seed": {
+          "perUse": 1,
+          "playerChooses": "変更・解放する枠",
+          "ingredientResult": "random; no exact player choice",
+          "subskillResult": "random",
+          "subskillUniformStatement": "公式不具合告知へのWiki参照あり。候補除外・再抽選条件まで確認できていない。",
+          "ingredientUniformProbability": null,
+          "levelRequiredToUseSeed": null,
+          "rerollExcludesCurrentResult": "secondary_documented_not_game_verified",
+          "mayRejectChangeForCandy": 40,
+          "natureChange": false,
+          "speciesBound": true,
+          "sources": [
+            "seed",
+            "seed_verification",
+            "seed_darkrai_secondary"
+          ]
+        },
+        "sources": [
+          "official_darkrai",
+          "darkrai",
+          "doctor_seed"
+        ]
+      }
+    },
+    {
+      "speciesId": "0777_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0777_トゲデマル",
+      "no": 777,
+      "formId": "default",
+      "name": "トゲデマル",
+      "type": "はがね",
+      "sleepType": "ぐっすり",
+      "specialty": "スキル",
+      "berry": "ベリブのみ",
+      "berryQty": 1,
+      "help": 2700,
+      "carry": 18,
+      "foodRate": 16.9,
+      "skillRate": 5.5,
+      "rateStatus": "推定",
+      "mainSkillName": "ほっぺすりすり(げんきエールS)",
+      "mainSkillId": "nuzzle_energy_cheer_s",
+      "proposedMainSkillId": "nuzzle_energy_cheer_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "shiny_avocado",
+          "name": "つやつやアボカド",
+          "quantities": {
+            "1": null,
+            "30": 1,
+            "60": 2
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "soothing_cacao",
+          "name": "リラックスカカオ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 2
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "qty": 2
+            },
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 16,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 8,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "トゲデマル",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "ころころ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "しっぽゆらゆら寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "とげさかだち寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 15,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%88%E3%82%B2%E3%83%87%E3%83%9E%E3%83%AB",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0777_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0778_default",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0778_ミミッキュ",
+      "no": 778,
+      "formId": "default",
+      "name": "ミミッキュ",
+      "type": "ゴースト",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "ブリーのみ",
+      "berryQty": 1,
+      "help": 2500,
+      "carry": 19,
+      "foodRate": 15.3,
+      "skillRate": 3.5,
+      "rateStatus": "推定",
+      "mainSkillName": "ばけのかわ(きのみバースト)",
+      "mainSkillId": "disguise_berry_burst",
+      "proposedMainSkillId": "disguise_berry_burst",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "coffee",
+          "name": "めざましコーヒー",
+          "quantities": {
+            "1": null,
+            "30": 1,
+            "60": 2
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "tasty_mushroom",
+          "name": "あじわいキノコ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            },
+            {
+              "ingredientId": "coffee",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "coffee",
+              "qty": 2
+            },
+            {
+              "ingredientId": "tasty_mushroom",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 16,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 8,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "proposedTargetSpeciesId": null,
+        "条件": null,
+        "状態": "資料確認"
+      },
+      "sleepStyleReferenceKey": "ミミッキュ",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまりたい寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ばればれ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "まねっこ寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%83%9F%E3%83%83%E3%82%AD%E3%83%A5",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "sleepStyleGroupId": "0778_default",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0849_amped",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0849_ストリンダー(ハイ)",
+      "no": 849,
+      "formId": "amped",
+      "name": "ストリンダー(ハイ)",
+      "type": "どく",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "カゴのみ",
+      "berryQty": 1,
+      "help": 3100,
+      "carry": 23,
+      "foodRate": 23.9,
+      "skillRate": 6.4,
+      "rateStatus": "推定",
+      "mainSkillName": "プラス(食材ゲットS)",
+      "mainSkillId": "plus_ingredient_magnet_s",
+      "proposedMainSkillId": "plus_ingredient_magnet_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "large_leek",
+          "name": "ふといながねぎ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "large_leek",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ストリンダー(ハイなすがた)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "すわり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "きめポーズ寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ゆめでギター寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%83%80%E3%83%BC%28%E3%83%8F%E3%82%A4%E3%81%AA%E3%81%99%E3%81%8C%E3%81%9F%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "dexEntryPolicy": "independent",
+      "sleepStyleGroupId": "0849_amped",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+    },
+    {
+      "speciesId": "0849_low_key",
+      "identityStatus": "dex_reference_added",
+      "sourceRecordId": "0849_ストリンダー(ロー)",
+      "no": 849,
+      "formId": "low_key",
+      "name": "ストリンダー(ロー)",
+      "type": "どく",
+      "sleepType": "うとうと",
+      "specialty": "スキル",
+      "berry": "カゴのみ",
+      "berryQty": 1,
+      "help": 3100,
+      "carry": 23,
+      "foodRate": 23.9,
+      "skillRate": 6.4,
+      "rateStatus": "推定",
+      "mainSkillName": "マイナス(料理パワーアップS)",
+      "mainSkillId": "minus_cooking_power_up_s",
+      "proposedMainSkillId": "minus_cooking_power_up_s",
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "moomoo_milk",
+          "name": "モーモーミルク",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "fancy_apple",
+          "name": "とくせんリンゴ",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "large_leek",
+          "name": "ふといながねぎ",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 2
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 2
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "moomoo_milk",
+              "qty": 4
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "qty": 4
+            },
+            {
+              "ingredientId": "large_leek",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "ストリンダー(ローなすがた)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "すわり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "ゆめでベース寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "ぐうたら寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration",
+        "new_skill_schema"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%83%80%E3%83%BC%28%E3%83%AD%E3%83%BC%E3%81%AA%E3%81%99%E3%81%8C%E3%81%9F%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "new_definition_required",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "dexEntryPolicy": "independent",
+      "sleepStyleGroupId": "0849_low_key",
+      "boxEligible": false,
+      "calculationStatus": "not_implemented",
+      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
     }
   ],
   "detailFormGroups": [
@@ -3149,11 +5998,425 @@
           "stars": 3
         }
       ]
+    },
+    "0150_default": {
+      "sourceReferenceKey": "ミュウツー",
+      "speciesIds": [
+        "0150_default"
+      ],
+      "styles": [
+        {
+          "id": "0150_default_01",
+          "sourceStyleId": "1",
+          "name": "かたひざたて寝",
+          "stars": 1
+        },
+        {
+          "id": "0150_default_02",
+          "sourceStyleId": "2",
+          "name": "ちょくりつふゆう寝",
+          "stars": 2
+        },
+        {
+          "id": "0150_default_03",
+          "sourceStyleId": "3",
+          "name": "サイコブレイク寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0151_default": {
+      "sourceReferenceKey": "ミュウ",
+      "speciesIds": [
+        "0151_default"
+      ],
+      "styles": [
+        {
+          "id": "0151_default_01",
+          "sourceStyleId": "1",
+          "name": "ふわふわ寝",
+          "stars": 1
+        },
+        {
+          "id": "0151_default_02",
+          "sourceStyleId": "2",
+          "name": "じゆうじざい寝",
+          "stars": 2
+        },
+        {
+          "id": "0151_default_03",
+          "sourceStyleId": "3",
+          "name": "あわベッド寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0311_default": {
+      "sourceReferenceKey": "プラスル",
+      "speciesIds": [
+        "0311_default"
+      ],
+      "styles": [
+        {
+          "id": "0311_default_01",
+          "sourceStyleId": "1",
+          "name": "おだやか寝",
+          "stars": 1
+        },
+        {
+          "id": "0311_default_02",
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "id": "0311_default_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0311_default_03",
+          "sourceStyleId": "3",
+          "name": "ボンボンふり寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0312_default": {
+      "sourceReferenceKey": "マイナン",
+      "speciesIds": [
+        "0312_default"
+      ],
+      "styles": [
+        {
+          "id": "0312_default_01",
+          "sourceStyleId": "1",
+          "name": "おだやか寝",
+          "stars": 1
+        },
+        {
+          "id": "0312_default_02",
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "id": "0312_default_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0312_default_03",
+          "sourceStyleId": "3",
+          "name": "ボンボンふり寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0380_default": {
+      "sourceReferenceKey": "ラティアス",
+      "speciesIds": [
+        "0380_default"
+      ],
+      "styles": [
+        {
+          "id": "0380_default_01",
+          "sourceStyleId": "1",
+          "name": "うかびはばたき寝",
+          "stars": 1
+        },
+        {
+          "id": "0380_default_02",
+          "sourceStyleId": "2",
+          "name": "ゆうがにひこう寝",
+          "stars": 2
+        },
+        {
+          "id": "0380_default_03",
+          "sourceStyleId": "3",
+          "name": "むげんのひかり寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0381_default": {
+      "sourceReferenceKey": "ラティオス",
+      "speciesIds": [
+        "0381_default"
+      ],
+      "styles": [
+        {
+          "id": "0381_default_01",
+          "sourceStyleId": "1",
+          "name": "うかびはばたき寝",
+          "stars": 1
+        },
+        {
+          "id": "0381_default_02",
+          "sourceStyleId": "2",
+          "name": "ゆうがにひこう寝",
+          "stars": 2
+        },
+        {
+          "id": "0381_default_03",
+          "sourceStyleId": "3",
+          "name": "むげんのオーラ寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0425_default": {
+      "sourceReferenceKey": "フワンテ",
+      "speciesIds": [
+        "0425_default"
+      ],
+      "styles": [
+        {
+          "id": "0425_default_01",
+          "sourceStyleId": "1",
+          "name": "かいてん寝",
+          "stars": 1
+        },
+        {
+          "id": "0425_default_02",
+          "sourceStyleId": "2",
+          "name": "ふゆう寝",
+          "stars": 2
+        },
+        {
+          "id": "0425_default_03",
+          "sourceStyleId": "3",
+          "name": "あやし寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0426_default": {
+      "sourceReferenceKey": "フワライド",
+      "speciesIds": [
+        "0426_default"
+      ],
+      "styles": [
+        {
+          "id": "0426_default_01",
+          "sourceStyleId": "1",
+          "name": "だいかいてん寝",
+          "stars": 1
+        },
+        {
+          "id": "0426_default_02",
+          "sourceStyleId": "2",
+          "name": "ふゆう寝",
+          "stars": 2
+        },
+        {
+          "id": "0426_default_03",
+          "sourceStyleId": "3",
+          "name": "あやし寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0488_default": {
+      "sourceReferenceKey": "クレセリア",
+      "speciesIds": [
+        "0488_default"
+      ],
+      "styles": [
+        {
+          "id": "0488_default_01",
+          "sourceStyleId": "1",
+          "name": "つっぷし寝",
+          "stars": 1
+        },
+        {
+          "id": "0488_default_02",
+          "sourceStyleId": "2",
+          "name": "こっくりふゆう寝",
+          "stars": 2
+        },
+        {
+          "id": "0488_default_03",
+          "sourceStyleId": "3",
+          "name": "みかづきのいのり寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0491_default": {
+      "sourceReferenceKey": "ダークライ",
+      "speciesIds": [
+        "0491_default"
+      ],
+      "styles": [
+        {
+          "id": "0491_default_01",
+          "sourceStyleId": "1",
+          "name": "ふゆううでぐみ寝",
+          "stars": 1
+        },
+        {
+          "id": "0491_default_02",
+          "sourceStyleId": "2",
+          "name": "ふゆうかまえ寝",
+          "stars": 2
+        },
+        {
+          "id": "0491_default_03",
+          "sourceStyleId": "3",
+          "name": "ダークホール寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0777_default": {
+      "sourceReferenceKey": "トゲデマル",
+      "speciesIds": [
+        "0777_default"
+      ],
+      "styles": [
+        {
+          "id": "0777_default_01",
+          "sourceStyleId": "1",
+          "name": "ころころ寝",
+          "stars": 1
+        },
+        {
+          "id": "0777_default_02",
+          "sourceStyleId": "2",
+          "name": "しっぽゆらゆら寝",
+          "stars": 2
+        },
+        {
+          "id": "0777_default_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0777_default_03",
+          "sourceStyleId": "3",
+          "name": "とげさかだち寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0778_default": {
+      "sourceReferenceKey": "ミミッキュ",
+      "speciesIds": [
+        "0778_default"
+      ],
+      "styles": [
+        {
+          "id": "0778_default_01",
+          "sourceStyleId": "1",
+          "name": "まるまりたい寝",
+          "stars": 1
+        },
+        {
+          "id": "0778_default_02",
+          "sourceStyleId": "2",
+          "name": "ばればれ寝",
+          "stars": 2
+        },
+        {
+          "id": "0778_default_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0778_default_03",
+          "sourceStyleId": "3",
+          "name": "まねっこ寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0849_amped": {
+      "sourceReferenceKey": "ストリンダー(ハイなすがた)",
+      "speciesIds": [
+        "0849_amped"
+      ],
+      "styles": [
+        {
+          "id": "0849_amped_01",
+          "sourceStyleId": "1",
+          "name": "すわり寝",
+          "stars": 1
+        },
+        {
+          "id": "0849_amped_02",
+          "sourceStyleId": "2",
+          "name": "きめポーズ寝",
+          "stars": 2
+        },
+        {
+          "id": "0849_amped_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0849_amped_03",
+          "sourceStyleId": "3",
+          "name": "ゆめでギター寝",
+          "stars": 3
+        }
+      ]
+    },
+    "0849_low_key": {
+      "sourceReferenceKey": "ストリンダー(ローなすがた)",
+      "speciesIds": [
+        "0849_low_key"
+      ],
+      "styles": [
+        {
+          "id": "0849_low_key_01",
+          "sourceStyleId": "1",
+          "name": "すわり寝",
+          "stars": 1
+        },
+        {
+          "id": "0849_low_key_02",
+          "sourceStyleId": "2",
+          "name": "ゆめでベース寝",
+          "stars": 2
+        },
+        {
+          "id": "0849_low_key_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0849_low_key_03",
+          "sourceStyleId": "3",
+          "name": "ぐうたら寝",
+          "stars": 3
+        }
+      ]
     }
   },
   "independentDexEntries": [
     "0037_alola",
     "0038_alola",
-    "0194_paldea"
+    "0194_paldea",
+    "0150_default",
+    "0151_default",
+    "0311_default",
+    "0312_default",
+    "0380_default",
+    "0381_default",
+    "0425_default",
+    "0426_default",
+    "0488_default",
+    "0491_default",
+    "0777_default",
+    "0778_default",
+    "0849_amped",
+    "0849_low_key"
   ]
 }

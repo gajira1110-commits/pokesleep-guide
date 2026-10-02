@@ -1,0 +1,289 @@
+{
+  "psystrike_berry_zone": {
+    "title": "サイコブレイク(きのみゾーン)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "almighty": {
+    "title": "オールマイティー",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "plus_ingredient_magnet_s": {
+    "title": "プラス(食材ゲットS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット/プラス",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "minus_cooking_power_up_s": {
+    "title": "マイナス(料理パワーアップS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/料理パワーアップ/マイナス",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "healing_pulse_energy_cheer_s": {
+    "title": "いやしのはどう(げんきエールS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/いやしのはどう",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "draco_meteor_berry_burst": {
+    "title": "りゅうせいぐん(きのみバースト)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/りゅうせいぐん",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "stockpile_energy_charge_s": {
+    "title": "たくわえる(エナジーチャージS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ/たくわえる",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "lunar_blessing_energy_for_everyone_s": {
+    "title": "みかづきのいのり(げんきオールS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "nightmare_energy_charge_m": {
+    "title": "ナイトメア(エナジーチャージM)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ/ナイトメア",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "nuzzle_energy_cheer_s": {
+    "title": "ほっぺすりすり(げんきエールS)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "disguise_berry_burst": {
+    "title": "ばけのかわ(きのみバースト)",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/ばけのかわ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_plus_minus": {
+    "title": "プラス／マイナス登場告知",
+    "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_zone": {
+    "title": "ミュウツー登場告知",
+    "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_mew": {
+    "title": "ミュウに関するお知らせ",
+    "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_stockpile": {
+    "title": "フワンテ／フワライド登場告知",
+    "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_disguise": {
+    "title": "ミミッキュ登場告知",
+    "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_nuzzle": {
+    "title": "トゲデマル登場告知",
+    "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_bugs": {
+    "title": "不具合修正（4/27ほっぺすりすり）",
+    "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_latias": {
+    "title": "ラティアス登場告知",
+    "url": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_latios": {
+    "title": "ラティオス登場告知",
+    "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_cresselia": {
+    "title": "クレセリア登場告知",
+    "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_darkrai": {
+    "title": "ダークライに関するお知らせ",
+    "url": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_v330": {
+    "title": "Ver.3.3.0（発生確率変動とLv.7調整）",
+    "url": "https://www.pokemonsleep.net/news/333730373236393633383034383937323831/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_berry_event": {
+    "title": "きのみウィークvol.2（複合効果の適用範囲）",
+    "url": "https://www.pokemonsleep.net/news/333933313532393833353335313930303138/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "official_latios_event": {
+    "title": "ラティオスとこころのしずく",
+    "url": "https://www.pokemonsleep.net/news/343031343632313536373438333930343032/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "mew": {
+    "title": "ミュウ",
+    "url": "https://wikiwiki.jp/poke_sleep/ミュウ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "darkrai": {
+    "title": "ダークライ",
+    "url": "https://wikiwiki.jp/poke_sleep/ダークライ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "seed": {
+    "title": "どうぐ/ひらめきのたね",
+    "url": "https://wikiwiki.jp/poke_sleep/どうぐ/ひらめきのたね",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "seed_verification": {
+    "title": "検証/ひらめきのタネ",
+    "url": "https://wikiwiki.jp/poke_sleep/検証/ひらめきのタネ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "stockpile_verification": {
+    "title": "検証/はきだす確率",
+    "url": "https://wikiwiki.jp/poke_sleep/検証/はきだす確率",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "disguise_verification": {
+    "title": "検証/ばけのかわ(きのみバースト)の大成功",
+    "url": "https://wikiwiki.jp/poke_sleep/検証/ばけのかわ(きのみバースト)の大成功",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "nature": {
+    "title": "せいかく",
+    "url": "https://wikiwiki.jp/poke_sleep/せいかく",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "energy_charge": {
+    "title": "メインスキル/エナジーチャージ",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "ingredient_magnet": {
+    "title": "メインスキル/食材ゲット",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "cooking_power": {
+    "title": "メインスキル/料理パワーアップ",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/料理パワーアップ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "energy_cheer": {
+    "title": "メインスキル/げんきエール",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "berry_burst": {
+    "title": "メインスキル/きのみバースト",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "berries": {
+    "title": "きのみ",
+    "url": "https://wikiwiki.jp/poke_sleep/きのみ",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "doctor_seed": {
+    "title": "ネロリ博士/イベント",
+    "url": "https://wikiwiki.jp/poke_sleep/ネロリ博士/イベント",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "seed_darkrai_secondary": {
+    "title": "ダークライの解放・変更",
+    "url": "https://pokemongo-raku.com/post117053",
+    "kind": "secondary_guide",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  },
+  "seed_mew_secondary": {
+    "title": "ミュウの解放・変更",
+    "url": "https://pokemongo-raku.com/post156063",
+    "kind": "secondary_guide",
+    "checkedAt": "2026-10-02",
+    "inGameVerifiedByUs": false
+  }
+}

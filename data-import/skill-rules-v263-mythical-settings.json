@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "species": [
+    {
+      "speciesId": "0151_default",
+      "name": "ミュウ",
+      "initialNature": "きまぐれ",
+      "ingredientSlots": [
+        {
+          "slotIndex": 1,
+          "activeAtLevel": 1,
+          "requiresPriorSlotUnlocked": false,
+          "initialUnlocked": true,
+          "initialIngredientId": "fancy_egg",
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "slotIndex": 2,
+          "activeAtLevel": 30,
+          "requiresPriorSlotUnlocked": true,
+          "initialUnlocked": true,
+          "initialIngredientId": "fiery_herb",
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "quantity": 3
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 5
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "quantity": 3
+            }
+          ]
+        },
+        {
+          "slotIndex": 3,
+          "activeAtLevel": 60,
+          "requiresPriorSlotUnlocked": true,
+          "initialUnlocked": false,
+          "initialIngredientId": null,
+          "candidates": [
+            {
+              "ingredientId": "large_leek",
+              "name": "ふといながねぎ",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "fancy_egg",
+              "name": "とくせんエッグ",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 5
+            },
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 7
+            },
+            {
+              "ingredientId": "pure_oil",
+              "name": "ピュアなオイル",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 7
+            },
+            {
+              "ingredientId": "shiny_avocado",
+              "name": "つやつやアボカド",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "tasty_tail",
+              "name": "おいしいシッポ",
+              "quantity": 2
+            }
+          ]
+        }
+      ],
+      "ingredientSource": "mew",
+      "subskillSlots": [
+        {
+          "activeAtLevel": 10,
+          "initialUnlocked": true,
+          "initialSubskillName": "スキルレベルアップM",
+          "requiresPriorSlotUnlocked": false
+        },
+        {
+          "activeAtLevel": 25,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 50,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 75,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 100,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        }
+      ],
+      "mainSkill": {
+        "wrapper": "オールマイティー",
+        "initialEffect": "ゆびをふる",
+        "selectableEffects": [
+          "ゆびをふる",
+          "エナジーチャージS(ランダム)",
+          "エナジーチャージM",
+          "ゆめのかけらゲットS(ランダム)",
+          "食材ゲットS",
+          "げんきエールS",
+          "げんきチャージS",
+          "げんきオールS",
+          "料理チャンスS",
+          "料理パワーアップS",
+          "おてつだいサポートS",
+          "きのみバースト"
+        ],
+        "seedCanChange": true,
+        "individualSkillSelectionRequired": true,
+        "knownInitialLearnedEffects": [
+          "ゆびをふる"
+        ],
+        "selectedSkillRateEstimates": {
+          "ゆびをふる": 0.04,
+          "エナジーチャージS(ランダム)": 0.064,
+          "エナジーチャージM": 0.04,
+          "ゆめのかけらゲットS(ランダム)": 0.04,
+          "食材ゲットS": 0.04,
+          "げんきエールS": 0.0439,
+          "げんきチャージS": 0.064,
+          "げんきオールS": 0.0337,
+          "料理チャンスS": 0.04,
+          "料理パワーアップS": 0.04,
+          "おてつだいサポートS": 0.04,
+          "きのみバースト": 0.0284
+        },
+        "ratesStatus": "community_estimate_not_official",
+        "seedSkillDrawProbabilities": null
+      },
+      "stateFieldsProposal": {
+        "ingredients": "unlocked flag + observed selected ingredient for each slot",
+        "subskills": "unlocked flag + observed subskill for each slot",
+        "mainSkill": "Mew selectedEffect + learnedEffect list + skillLevel; Darkrai fixed nightmare"
+      },
+      "activationCondition": "枠解放済み AND 個体レベル>=activeAtLevel。解放済みでもLv未到達なら収集対象へ足さない。",
+      "seed": {
+        "perUse": 1,
+        "playerChooses": "変更・解放する枠",
+        "ingredientResult": "random; no exact player choice",
+        "subskillResult": "random",
+        "subskillUniformStatement": "公式不具合告知へのWiki参照あり。候補除外・再抽選条件まで確認できていない。",
+        "ingredientUniformProbability": null,
+        "levelRequiredToUseSeed": null,
+        "rerollExcludesCurrentResult": "secondary_documented_not_game_verified",
+        "mayRejectChangeForCandy": 40,
+        "natureChange": false,
+        "speciesBound": true,
+        "sources": [
+          "seed",
+          "seed_verification",
+          "seed_mew_secondary"
+        ]
+      },
+      "sources": [
+        "official_mew",
+        "mew",
+        "almighty"
+      ]
+    },
+    {
+      "speciesId": "0491_default",
+      "name": "ダークライ",
+      "initialNature": "てれや",
+      "ingredientSlots": [
+        {
+          "slotIndex": 1,
+          "activeAtLevel": 1,
+          "requiresPriorSlotUnlocked": false,
+          "initialUnlocked": true,
+          "initialIngredientId": "bean_meat",
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "quantity": 2
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "quantity": 2
+            }
+          ]
+        },
+        {
+          "slotIndex": 2,
+          "activeAtLevel": 30,
+          "requiresPriorSlotUnlocked": true,
+          "initialUnlocked": false,
+          "initialIngredientId": null,
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "quantity": 5
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 3
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "quantity": 3
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "quantity": 3
+            }
+          ]
+        },
+        {
+          "slotIndex": 3,
+          "activeAtLevel": 60,
+          "requiresPriorSlotUnlocked": true,
+          "initialUnlocked": false,
+          "initialIngredientId": null,
+          "candidates": [
+            {
+              "ingredientId": "bean_meat",
+              "name": "マメミート",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "fancy_apple",
+              "name": "とくせんリンゴ",
+              "quantity": 7
+            },
+            {
+              "ingredientId": "fiery_herb",
+              "name": "げきからハーブ",
+              "quantity": 5
+            },
+            {
+              "ingredientId": "moomoo_milk",
+              "name": "モーモーミルク",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "honey",
+              "name": "あまいミツ",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "greengrass_soybeans",
+              "name": "ワカクサ大豆",
+              "quantity": 6
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "name": "ワカクサコーン",
+              "quantity": 4
+            },
+            {
+              "ingredientId": "coffee",
+              "name": "めざましコーヒー",
+              "quantity": 4
+            }
+          ]
+        }
+      ],
+      "ingredientSource": "darkrai",
+      "subskillSlots": [
+        {
+          "activeAtLevel": 10,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": false
+        },
+        {
+          "activeAtLevel": 25,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 50,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 75,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        },
+        {
+          "activeAtLevel": 100,
+          "initialUnlocked": false,
+          "initialSubskillName": null,
+          "requiresPriorSlotUnlocked": true
+        }
+      ],
+      "mainSkill": {
+        "wrapper": null,
+        "initialEffect": "ナイトメア(エナジーチャージM)",
+        "selectableEffects": [],
+        "seedCanChange": false,
+        "individualSkillSelectionRequired": false,
+        "knownInitialLearnedEffects": null,
+        "selectedSkillRateEstimates": null,
+        "ratesStatus": "community_estimate_not_official",
+        "seedSkillDrawProbabilities": null
+      },
+      "stateFieldsProposal": {
+        "ingredients": "unlocked flag + observed selected ingredient for each slot",
+        "subskills": "unlocked flag + observed subskill for each slot",
+        "mainSkill": "Mew selectedEffect + learnedEffect list + skillLevel; Darkrai fixed nightmare"
+      },
+      "activationCondition": "枠解放済み AND 個体レベル>=activeAtLevel。解放済みでもLv未到達なら収集対象へ足さない。",
+      "seed": {
+        "perUse": 1,
+        "playerChooses": "変更・解放する枠",
+        "ingredientResult": "random; no exact player choice",
+        "subskillResult": "random",
+        "subskillUniformStatement": "公式不具合告知へのWiki参照あり。候補除外・再抽選条件まで確認できていない。",
+        "ingredientUniformProbability": null,
+        "levelRequiredToUseSeed": null,
+        "rerollExcludesCurrentResult": "secondary_documented_not_game_verified",
+        "mayRejectChangeForCandy": 40,
+        "natureChange": false,
+        "speciesBound": true,
+        "sources": [
+          "seed",
+          "seed_verification",
+          "seed_darkrai_secondary"
+        ]
+      },
+      "sources": [
+        "official_darkrai",
+        "darkrai",
+        "doctor_seed"
+      ]
+    }
+  ],
+  "levelAndUnlockAreSeparate": true
+}

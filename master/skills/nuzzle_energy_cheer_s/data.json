@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "げんき回復 9.0（画面表示 9）／メインスキル発動ボーナス抽選 2回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋9.0／対象のスキルを2回抽選",
       "referenceValues": [
         "9.0",
         "9",
@@ -22,10 +22,15 @@
         "9.0",
         "9",
         "2"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 9.0,
+        "displayRecovery": 9,
+        "bonusDrawCount": 2
+      }
     },
     "2": {
-      "description": "げんき回復 12.0（画面表示 12）／メインスキル発動ボーナス抽選 3回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋12.0／対象のスキルを3回抽選",
       "referenceValues": [
         "12.0",
         "12",
@@ -37,10 +42,15 @@
         "12.0",
         "12",
         "3"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 12.0,
+        "displayRecovery": 12,
+        "bonusDrawCount": 3
+      }
     },
     "3": {
-      "description": "げんき回復 16.0（画面表示 16）／メインスキル発動ボーナス抽選 4回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋16.0／対象のスキルを4回抽選",
       "referenceValues": [
         "16.0",
         "16",
@@ -52,10 +62,15 @@
         "16.0",
         "16",
         "4"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 16.0,
+        "displayRecovery": 16,
+        "bonusDrawCount": 4
+      }
     },
     "4": {
-      "description": "げんき回復 20.0（画面表示 20）／メインスキル発動ボーナス抽選 5回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋20.0／対象のスキルを5回抽選",
       "referenceValues": [
         "20.0",
         "20",
@@ -67,10 +82,15 @@
         "20.0",
         "20",
         "5"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 20.0,
+        "displayRecovery": 20,
+        "bonusDrawCount": 5
+      }
     },
     "5": {
-      "description": "げんき回復 27.0（画面表示 27）／メインスキル発動ボーナス抽選 6回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋27.0／対象のスキルを6回抽選",
       "referenceValues": [
         "27.0",
         "27",
@@ -82,10 +102,15 @@
         "27.0",
         "27",
         "6"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 27.0,
+        "displayRecovery": 27,
+        "bonusDrawCount": 6
+      }
     },
     "6": {
-      "description": "げんき回復 35.0（画面表示 35）／メインスキル発動ボーナス抽選 7回（対象・確率は確認待ち）",
+      "description": "1匹のげんき＋35.0／対象のスキルを7回抽選",
       "referenceValues": [
         "35.0",
         "35",
@@ -97,10 +122,15 @@
         "35.0",
         "35",
         "7"
-      ]
+      ],
+      "namedValues": {
+        "recovery": 35.0,
+        "displayRecovery": 35,
+        "bonusDrawCount": 7
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "1匹を回復し、その個体のスキルを追加抽選。通常ストックと別の最大1枠。抽選確率の補正範囲は未確認。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0777_default",
@@ -184,5 +214,118 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/nuzzle_energy_cheer_s.webp",
+  "effectRules": {
+    "skillId": "nuzzle_energy_cheer_s",
+    "name": "ほっぺすりすり(げんきエールS)",
+    "affectedSpeciesIds": [
+      "0777_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "nuzzle_energy_cheer_s",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "target": {
+        "value": "自身を含むチーム1匹。抽選の重みは未確認。",
+        "status": "community_documented",
+        "sources": [
+          "nuzzle_energy_cheer_s"
+        ]
+      },
+      "bonusState": {
+        "value": {
+          "scope": "box_individual_bonus_flag",
+          "capacity": 1,
+          "separateFromOrdinaryStock": true,
+          "reset": [
+            "sleep_research",
+            "field_move",
+            "any_team_member_change"
+          ],
+          "consumedBy": "one_bonus_skill_activation"
+        },
+        "status": "community_documented",
+        "sources": [
+          "nuzzle_energy_cheer_s",
+          "official_nuzzle"
+        ]
+      },
+      "bonusProbability": {
+        "value": {
+          "targetSkillProbability": "対象個体のおてつだい1回分の確率",
+          "drawCountByLevel": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "formulaUnderIndependentTrials": "1-(1-pTarget)^drawCount",
+          "formulaStatus": "model_inference",
+          "defaultProbability": null,
+          "oldFormulaExponentEqualsLevel": "outdated_against_current_table"
+        },
+        "status": "community_documented",
+        "sources": [
+          "nuzzle_energy_cheer_s",
+          "official_bugs"
+        ]
+      }
+    },
+    "unknowns": [
+      "対象個体の性格・サブスキル・イベント・当日の発生回数制御を抽選pへどこまで反映するか、天井抽選との関係は未確認。",
+      "ボーナス既所持対象を抽選から除くか、付与だけ失敗するか、回復はどう扱うか未確認。",
+      "通常ストックとボーナスの発動順・同時発動・睡眠データのマニュアル登録時の消失は未確認。"
+    ],
+    "columns": [
+      "recovery",
+      "displayRecovery",
+      "bonusDrawCount"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "recovery": 9.0,
+        "displayRecovery": 9,
+        "bonusDrawCount": 2
+      },
+      {
+        "level": 2,
+        "recovery": 12.0,
+        "displayRecovery": 12,
+        "bonusDrawCount": 3
+      },
+      {
+        "level": 3,
+        "recovery": 16.0,
+        "displayRecovery": 16,
+        "bonusDrawCount": 4
+      },
+      {
+        "level": 4,
+        "recovery": 20.0,
+        "displayRecovery": 20,
+        "bonusDrawCount": 5
+      },
+      {
+        "level": 5,
+        "recovery": 27.0,
+        "displayRecovery": 27,
+        "bonusDrawCount": 6
+      },
+      {
+        "level": 6,
+        "recovery": 35.0,
+        "displayRecovery": 35,
+        "bonusDrawCount": 7
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "エナジー 1408／きのみゾーン 0.6（単位・適用条件は確認待ち）",
+      "description": "エナジー 1,408／マゴのみゾーン＋0.6%",
       "referenceValues": [
         "1408",
         "0.6"
@@ -20,10 +20,14 @@
         "1",
         "1408",
         "0.6"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 1408,
+        "zoneIncreasePercentagePoints": 0.6
+      }
     },
     "2": {
-      "description": "エナジー 2002／きのみゾーン 0.8（単位・適用条件は確認待ち）",
+      "description": "エナジー 2,002／マゴのみゾーン＋0.8%",
       "referenceValues": [
         "2002",
         "0.8"
@@ -33,10 +37,14 @@
         "2",
         "2002",
         "0.8"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 2002,
+        "zoneIncreasePercentagePoints": 0.8
+      }
     },
     "3": {
-      "description": "エナジー 2762／きのみゾーン 1.0（単位・適用条件は確認待ち）",
+      "description": "エナジー 2,762／マゴのみゾーン＋1.0%",
       "referenceValues": [
         "2762",
         "1.0"
@@ -46,10 +54,14 @@
         "3",
         "2762",
         "1.0"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 2762,
+        "zoneIncreasePercentagePoints": 1.0
+      }
     },
     "4": {
-      "description": "エナジー 3813／きのみゾーン 1.2（単位・適用条件は確認待ち）",
+      "description": "エナジー 3,813／マゴのみゾーン＋1.2%",
       "referenceValues": [
         "3813",
         "1.2"
@@ -59,10 +71,14 @@
         "4",
         "3813",
         "1.2"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 3813,
+        "zoneIncreasePercentagePoints": 1.2
+      }
     },
     "5": {
-      "description": "エナジー 5264／きのみゾーン 1.6（単位・適用条件は確認待ち）",
+      "description": "エナジー 5,264／マゴのみゾーン＋1.6%",
       "referenceValues": [
         "5264",
         "1.6"
@@ -72,10 +88,14 @@
         "5",
         "5264",
         "1.6"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 5264,
+        "zoneIncreasePercentagePoints": 1.6
+      }
     },
     "6": {
-      "description": "エナジー 7274／きのみゾーン 2.0（単位・適用条件は確認待ち）",
+      "description": "エナジー 7,274／マゴのみゾーン＋2.0%",
       "referenceValues": [
         "7274",
         "2.0"
@@ -85,10 +105,14 @@
         "6",
         "7274",
         "2.0"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 7274,
+        "zoneIncreasePercentagePoints": 2.0
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "ゾーンは累積24%まで。フィールド移動でリセットし、発動者を外しても残ります。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0150_default",
@@ -164,5 +188,101 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/psystrike_berry_zone.webp",
+  "effectRules": {
+    "skillId": "psystrike_berry_zone",
+    "name": "サイコブレイク(きのみゾーン)",
+    "affectedSpeciesIds": [
+      "0150_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "psystrike_berry_zone",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "target": {
+        "value": "直接エナジーはカビゴン。ゾーンはマゴのみのエナジー。",
+        "status": "official",
+        "sources": [
+          "official_zone"
+        ]
+      },
+      "state": {
+        "value": {
+          "scope": "research_field",
+          "unit": "percentage_points",
+          "stack": "additive",
+          "cap": 24,
+          "reset": [
+            "field_move"
+          ],
+          "persistsAfterCasterRemoved": true
+        },
+        "status": "community_documented",
+        "sources": [
+          "psystrike_berry_zone",
+          "official_zone"
+        ]
+      },
+      "berryBoxAtActivation": {
+        "value": "発動時に箱内の全きのみを即消費。今回増えたゾーンの効果はその即消費分に適用しない。",
+        "status": "community_documented",
+        "sources": [
+          "psystrike_berry_zone"
+        ]
+      },
+      "capBehavior": {
+        "value": "上限でも直接エナジー効果は得られる。",
+        "status": "community_documented",
+        "sources": [
+          "psystrike_berry_zone"
+        ]
+      }
+    },
+    "unknowns": [
+      "即消費きのみに既存ゾーンまで不適用か、今回の増加分だけ不適用かは要ゲーム内照合。",
+      "スキル由来のマゴのみとの端数処理・EX補正順、コピー時のゾーン種別は未確認。"
+    ],
+    "columns": [
+      "directEnergy",
+      "zoneIncreasePercentagePoints"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "directEnergy": 1408,
+        "zoneIncreasePercentagePoints": 0.6
+      },
+      {
+        "level": 2,
+        "directEnergy": 2002,
+        "zoneIncreasePercentagePoints": 0.8
+      },
+      {
+        "level": 3,
+        "directEnergy": 2762,
+        "zoneIncreasePercentagePoints": 1.0
+      },
+      {
+        "level": 4,
+        "directEnergy": 3813,
+        "zoneIncreasePercentagePoints": 1.2
+      },
+      {
+        "level": 5,
+        "directEnergy": 5264,
+        "zoneIncreasePercentagePoints": 1.6
+      },
+      {
+        "level": 6,
+        "directEnergy": 7274,
+        "zoneIncreasePercentagePoints": 2.0
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

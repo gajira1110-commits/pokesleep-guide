@@ -7,8 +7,8 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   await page.evaluate(()=>PS_AUTO_ASSETS.ready);
   const before=await page.evaluate(()=>JSON.stringify({...localStorage}));
   assert.equal(await page.evaluate(()=>Object.keys(PS_CATALOG.pokemon).length),216);
-  assert.equal(await page.evaluate(()=>PS_FORMS.records.size),18);
-  assert.equal(await page.evaluate(()=>PS_FORMS.dexEntries.length),5);
+  assert.equal(await page.evaluate(()=>PS_FORMS.records.size),32);
+  assert.equal(await page.evaluate(()=>PS_FORMS.dexEntries.length),19);
   assert.equal(await page.evaluate(()=>PS_CATALOG.pokemon[25].help),2700);
   assert.equal(await page.evaluate(()=>PS_FORMS.resolve('0025_unknown')),null);
   for(const [no,count,kind] of [[25,5,'衣装'],[133,3,'衣装'],[363,2,'衣装'],[710,4,'サイズ'],[711,4,'サイズ']]){

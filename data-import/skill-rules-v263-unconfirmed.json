@@ -1,0 +1,122 @@
+{
+  "policy": "unconfirmed stays null; never assume zero",
+  "skills": [
+    {
+      "skillId": "psystrike_berry_zone",
+      "items": [
+        "即消費きのみに既存ゾーンまで不適用か、今回の増加分だけ不適用かは要ゲーム内照合。",
+        "スキル由来のマゴのみとの端数処理・EX補正順、コピー時のゾーン種別は未確認。"
+      ],
+      "sourceIds": [
+        "psystrike_berry_zone"
+      ]
+    },
+    {
+      "skillId": "almighty",
+      "items": [
+        "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+        "セット先が上限の低いスキルの場合の高Lv効果参照方法は未確認。"
+      ],
+      "sourceIds": [
+        "almighty"
+      ]
+    },
+    {
+      "skillId": "plus_ingredient_magnet_s",
+      "items": [
+        "ランダム食材数5/7/等を3種類へ配分する端数処理・抽選重み・バッグ残量不足時の各成分処理は未確認。",
+        "ゆびをふる等による別食材の追加数の一般式は未確認。コーヒー／ミルク列を任意食材へ流用しない。"
+      ],
+      "sourceIds": [
+        "plus_ingredient_magnet_s"
+      ]
+    },
+    {
+      "skillId": "minus_cooking_power_up_s",
+      "items": [
+        "容量+200上限でマイナス全体が発動不能か、回復部分のみ発動できるかは未確認。親スキルの発動不能を自動継承しない。",
+        "回復対象の抽選重み、自身が対象になるかの直接確認は未実施。げんきエールの低元気優先を自動継承しない。"
+      ],
+      "sourceIds": [
+        "minus_cooking_power_up_s"
+      ]
+    },
+    {
+      "skillId": "healing_pulse_energy_cheer_s",
+      "items": [
+        "2匹の抽選重み、自身の対象可否、追加おてつだい対象、即時おてつだいの所持上限とスキル抽選の有無は未確認。",
+        "過去イベント未参加者の現在の追加効果解放手段・自動解放可否は未確認。"
+      ],
+      "sourceIds": [
+        "healing_pulse_energy_cheer_s"
+      ]
+    },
+    {
+      "skillId": "draco_meteor_berry_burst",
+      "items": [
+        "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+        "コピー時、端数・EX補正順は未確認。",
+        "追加効果の現在の解放手段は未確認。"
+      ],
+      "sourceIds": [
+        "draco_meteor_berry_burst"
+      ]
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "items": [
+        "25%は公式確定値ではない。性格・サブスキルによる分岐確率変化は未確認。スキル発生確率の補正を分岐抽選へ二重適用しない。",
+        "別個体の交代だけで残留個体のたくわえ数がリセットされるとは確認できない。",
+        "睡眠・週跨ぎ・同一フィールドへの移動、進化時の状態処理は未確認。"
+      ],
+      "sourceIds": [
+        "stockpile_energy_charge_s"
+      ]
+    },
+    {
+      "skillId": "lunar_blessing_energy_for_everyone_s",
+      "items": [
+        "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+        "コピー時、端数・EX補正順は未確認。"
+      ],
+      "sourceIds": [
+        "lunar_blessing_energy_for_everyone_s"
+      ]
+    },
+    {
+      "skillId": "nightmare_energy_charge_m",
+      "items": [
+        "負のげんき効果に性格の回復補正が作用するか、0未満の処理を個別には未確認。計算の推奨仮定は-12固定・0下限で明示する。"
+      ],
+      "sourceIds": [
+        "nightmare_energy_charge_m"
+      ]
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "items": [
+        "対象個体の性格・サブスキル・イベント・当日の発生回数制御を抽選pへどこまで反映するか、天井抽選との関係は未確認。",
+        "ボーナス既所持対象を抽選から除くか、付与だけ失敗するか、回復はどう扱うか未確認。",
+        "通常ストックとボーナスの発動順・同時発動・睡眠データのマニュアル登録時の消失は未確認。"
+      ],
+      "sourceIds": [
+        "nuzzle_energy_cheer_s"
+      ]
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "items": [
+        "正確な大成功確率・性格等による変更は未確認。約20%を確定値にしない。",
+        "交代・フィールド移動・週跨ぎで再大成功可能になるとは確認されていない。"
+      ],
+      "sourceIds": [
+        "disguise_berry_burst"
+      ]
+    }
+  ],
+  "mythical": [
+    "食材とメインスキルの抽選重み、重複候補除外の完全な規則は未確認。",
+    "レベル到達前にたねで解放可能かは未確認。枠解放と効果有効レベルを分離しておく。",
+    "ミュウ／ダークライの現在のゲーム内個体状態はユーザー入力が必要。初期状態を既存Boxへ上書きしない。"
+  ]
+}

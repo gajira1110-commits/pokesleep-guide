@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "回復量 3。種類ボーナス1〜5の順：自分 5／7／9／12／14個、チーム欄 1／1／1／1／2個、合計 9／11／13／16／22個。",
+      "description": "全員のげんき＋3／きのみ：自分 5／7／9／12／14個／他の各匹 1／1／1／1／2個",
       "referenceValues": [
         "3",
         "5",
@@ -47,10 +47,34 @@
         "13",
         "16",
         "22"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 3,
+        "selfBerriesByDistinctCount": {
+          "1": 5,
+          "2": 7,
+          "3": 9,
+          "4": 12,
+          "5": 14
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 2
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 9,
+          "2": 11,
+          "3": 13,
+          "4": 16,
+          "5": 22
+        }
+      }
     },
     "2": {
-      "description": "回復量 4。種類ボーナス1〜5の順：自分 9／12／15／16／19個、チーム欄 1／1／1／2／3個、合計 13／16／19／24／31個。",
+      "description": "全員のげんき＋4／きのみ：自分 9／12／15／16／19個／他の各匹 1／1／1／2／3個",
       "referenceValues": [
         "4",
         "9",
@@ -87,10 +111,34 @@
         "19",
         "24",
         "31"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 4,
+        "selfBerriesByDistinctCount": {
+          "1": 9,
+          "2": 12,
+          "3": 15,
+          "4": 16,
+          "5": 19
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 2,
+          "5": 3
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 13,
+          "2": 16,
+          "3": 19,
+          "4": 24,
+          "5": 31
+        }
+      }
     },
     "3": {
-      "description": "回復量 5。種類ボーナス1〜5の順：自分 13／17／18／20／24個、チーム欄 1／1／2／3／4個、合計 17／21／26／32／40個。",
+      "description": "全員のげんき＋5／きのみ：自分 13／17／18／20／24個／他の各匹 1／1／2／3／4個",
       "referenceValues": [
         "5",
         "13",
@@ -127,10 +175,34 @@
         "26",
         "32",
         "40"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 5,
+        "selfBerriesByDistinctCount": {
+          "1": 13,
+          "2": 17,
+          "3": 18,
+          "4": 20,
+          "5": 24
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 2,
+          "4": 3,
+          "5": 4
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 17,
+          "2": 21,
+          "3": 26,
+          "4": 32,
+          "5": 40
+        }
+      }
     },
     "4": {
-      "description": "回復量 7。種類ボーナス1〜5の順：自分 17／19／25／28／29個、チーム欄 1／2／2／3／5個、合計 21／27／33／40／49個。",
+      "description": "全員のげんき＋7／きのみ：自分 17／19／25／28／29個／他の各匹 1／2／2／3／5個",
       "referenceValues": [
         "7",
         "17",
@@ -167,10 +239,34 @@
         "33",
         "40",
         "49"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 7,
+        "selfBerriesByDistinctCount": {
+          "1": 17,
+          "2": 19,
+          "3": 25,
+          "4": 28,
+          "5": 29
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 2,
+          "4": 3,
+          "5": 5
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 21,
+          "2": 27,
+          "3": 33,
+          "4": 40,
+          "5": 49
+        }
+      }
     },
     "5": {
-      "description": "回復量 9。種類ボーナス1〜5の順：自分 21／24／27／28／30個、チーム欄 1／2／3／5／7個、合計 25／32／39／48／58個。",
+      "description": "全員のげんき＋9／きのみ：自分 21／24／27／28／30個／他の各匹 1／2／3／5／7個",
       "referenceValues": [
         "9",
         "21",
@@ -207,10 +303,34 @@
         "39",
         "48",
         "58"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 9,
+        "selfBerriesByDistinctCount": {
+          "1": 21,
+          "2": 24,
+          "3": 27,
+          "4": 28,
+          "5": 30
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 5,
+          "5": 7
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 25,
+          "2": 32,
+          "3": 39,
+          "4": 48,
+          "5": 58
+        }
+      }
     },
     "6": {
-      "description": "回復量 11。種類ボーナス1〜5の順：自分 25／29／30／31／32個、チーム欄 1／2／4／6／9個、合計 29／37／46／55／68個。",
+      "description": "全員のげんき＋11／きのみ：自分 25／29／30／31／32個／他の各匹 1／2／4／6／9個",
       "referenceValues": [
         "11",
         "25",
@@ -247,10 +367,34 @@
         "46",
         "55",
         "68"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTeamMember": 11,
+        "selfBerriesByDistinctCount": {
+          "1": 25,
+          "2": 29,
+          "3": 30,
+          "4": 31,
+          "5": 32
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 4,
+          "4": 6,
+          "5": 9
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 29,
+          "2": 37,
+          "3": 46,
+          "4": 55,
+          "5": 68
+        }
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "異なるエスパー種数に応じた1〜5種類の値。種類ボーナスは回復量を増やしません。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0488_default",
@@ -468,5 +612,215 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp",
+  "effectRules": {
+    "skillId": "lunar_blessing_energy_for_everyone_s",
+    "name": "みかづきのいのり(げんきオールS)",
+    "affectedSpeciesIds": [
+      "0488_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "lunar_blessing_energy_for_everyone_s",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "diversityBonus": {
+        "value": {
+          "type": "エスパー",
+          "count": "different_species_in_team_including_caster",
+          "range": [
+            1,
+            5
+          ],
+          "notNumberOfInstances": true
+        },
+        "status": "community_documented",
+        "sources": [
+          "official_cresselia",
+          "lunar_blessing_energy_for_everyone_s"
+        ]
+      },
+      "berries": {
+        "value": "自分列は発動者分、チーム列は他の各1匹分、合計列は5匹編成の参考値。各個体のレベルときのみでエナジー化する。きのみとくい／きのみの数Sで個数を再倍化しない。",
+        "status": "community_documented",
+        "sources": [
+          "lunar_blessing_energy_for_everyone_s"
+        ]
+      },
+      "recovery": {
+        "value": "チーム全員。種類ボーナスはきのみ数だけに作用し、回復量を増やさない。",
+        "status": "community_documented",
+        "sources": [
+          "lunar_blessing_energy_for_everyone_s"
+        ]
+      }
+    },
+    "unknowns": [
+      "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+      "コピー時、端数・EX補正順は未確認。"
+    ],
+    "columns": [
+      "recoveryPerTeamMember",
+      "selfBerriesByDistinctCount1to5",
+      "berriesPerOtherMemberByDistinctCount1to5",
+      "totalForFiveMemberTeamByDistinctCount1to5"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "recoveryPerTeamMember": 3,
+        "selfBerriesByDistinctCount": {
+          "1": 5,
+          "2": 7,
+          "3": 9,
+          "4": 12,
+          "5": 14
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 2
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 9,
+          "2": 11,
+          "3": 13,
+          "4": 16,
+          "5": 22
+        }
+      },
+      {
+        "level": 2,
+        "recoveryPerTeamMember": 4,
+        "selfBerriesByDistinctCount": {
+          "1": 9,
+          "2": 12,
+          "3": 15,
+          "4": 16,
+          "5": 19
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 2,
+          "5": 3
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 13,
+          "2": 16,
+          "3": 19,
+          "4": 24,
+          "5": 31
+        }
+      },
+      {
+        "level": 3,
+        "recoveryPerTeamMember": 5,
+        "selfBerriesByDistinctCount": {
+          "1": 13,
+          "2": 17,
+          "3": 18,
+          "4": 20,
+          "5": 24
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 1,
+          "3": 2,
+          "4": 3,
+          "5": 4
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 17,
+          "2": 21,
+          "3": 26,
+          "4": 32,
+          "5": 40
+        }
+      },
+      {
+        "level": 4,
+        "recoveryPerTeamMember": 7,
+        "selfBerriesByDistinctCount": {
+          "1": 17,
+          "2": 19,
+          "3": 25,
+          "4": 28,
+          "5": 29
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 2,
+          "4": 3,
+          "5": 5
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 21,
+          "2": 27,
+          "3": 33,
+          "4": 40,
+          "5": 49
+        }
+      },
+      {
+        "level": 5,
+        "recoveryPerTeamMember": 9,
+        "selfBerriesByDistinctCount": {
+          "1": 21,
+          "2": 24,
+          "3": 27,
+          "4": 28,
+          "5": 30
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 3,
+          "4": 5,
+          "5": 7
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 25,
+          "2": 32,
+          "3": 39,
+          "4": 48,
+          "5": 58
+        }
+      },
+      {
+        "level": 6,
+        "recoveryPerTeamMember": 11,
+        "selfBerriesByDistinctCount": {
+          "1": 25,
+          "2": 29,
+          "3": 30,
+          "4": 31,
+          "5": 32
+        },
+        "berriesPerOtherMemberByDistinctCount": {
+          "1": 1,
+          "2": 2,
+          "3": 4,
+          "4": 6,
+          "5": 9
+        },
+        "totalForFiveMemberTeamByDistinctCount": {
+          "1": 29,
+          "2": 37,
+          "3": 46,
+          "4": 55,
+          "5": 68
+        }
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

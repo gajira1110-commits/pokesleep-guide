@@ -19,7 +19,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   await page.evaluate(()=>document.getElementById('boxEditForm').requestSubmit());
   assert.equal(await page.evaluate(()=>PS.state.box.find(x=>x.id==='unspecified').speciesId),'0710_jumbo');
   await page.evaluate(()=>PS.go('box'));
-  const ids=await page.evaluate(()=>[...PS_FORMS.records.keys()]);
+  const ids=await page.evaluate(()=>[...PS_FORMS.records.values()].filter(p=>p.boxEligible!==false).map(p=>p.speciesId));
   for(const id of ids){
    await page.locator('#addBtn').click();await page.locator('#boxSpecies').selectOption(id);await page.locator('#boxConfirmAdd').click();
    const item=await page.evaluate(()=>PS.state.box.at(-1));assert.equal(item.speciesId,id);

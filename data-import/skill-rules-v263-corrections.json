@@ -1,0 +1,38 @@
+[
+  {
+    "path": "0491_default.individualSkillSelectionRequired",
+    "old": true,
+    "new": false,
+    "reason": "ダークライのひらめき対象は食材・サブスキル。ミュウと同じ選択スキルを要求しない。"
+  },
+  {
+    "path": "0151_default.skillRate",
+    "old": 4.0,
+    "new": null,
+    "reason": "セットスキル別の推定確率を使う。一律4%は中確率群の参考値に限る。"
+  },
+  {
+    "path": "nuzzle_probability_exponent",
+    "old": "skillLevel",
+    "new": "drawCount from table = skillLevel+1 (current levels1..6)",
+    "reason": "Wikiの数式本文は旧記載。2026/4/27後の2..7回表と更新記録を優先するモデル候補。公式は正確な式を公表していない。"
+  },
+  {
+    "path": "stockpile_effect_table",
+    "old": "Ver.2.12.2以前の8..10回値",
+    "new": "前回引き渡し表は現行値と一致（変更不要）",
+    "reason": "調査中に差異を見たのはWiki折りたたみ内の旧表。今回値の更新はしない。"
+  },
+  {
+    "path": "psystrike_level1",
+    "old": "Wiki考察内1048",
+    "new": 1408,
+    "reason": "前回表と現行効果表は1408。考察内の1048と競合しているためゲーム内照合推奨。"
+  },
+  {
+    "path": "mythical_ingredient_quantities",
+    "old": "攻略記事の別数量",
+    "new": "前回提供表・現行Wiki数量を保持",
+    "reason": "第三者記事の数量と一部競合。別値へ自動上書きしない。ゲーム内照合未実施。"
+  }
+]
