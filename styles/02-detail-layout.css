@@ -431,3 +431,11 @@
 #home .psg-team-card{border:0;border-radius:0;background:transparent;padding:0;box-shadow:none}
 
 .psg-day-energy-amount{display:block;font-size:18px;line-height:1.4}.psg-day-energy-breakdown{display:block;font-size:12px;font-weight:400;margin-top:3px}
+
+/* Dex encounters: one group per sleep style, canonical field order inside. */
+.psg-sleep-field-power{display:block;font-weight:400;font-size:.85em;margin-top:3px}
+.psg-style-field-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:4px 6px;padding:8px 0;border-top:1px solid #e9eeeb;font-size:.9em}
+.psg-style-field-name{min-width:0}
+.psg-style-field-rank{display:inline-flex;align-items:center;gap:3px}
+.psg-style-field-energy{font-size:.95em}
+.psg-style-field-condition{grid-column:1/-1;margin:0}
