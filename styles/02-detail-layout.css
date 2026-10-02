@@ -404,3 +404,5 @@
 }
 
 #home .psg-team-card{border:0;border-radius:0;background:transparent;padding:0;box-shadow:none}
+
+.psg-day-energy-amount{display:block;font-size:18px;line-height:1.4}.psg-day-energy-breakdown{display:block;font-size:12px;font-weight:400;margin-top:3px}
