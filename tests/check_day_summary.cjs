@@ -10,11 +10,15 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   assert.equal(await page.locator('.psg-day-row').first().isVisible(),false);
   const before=await page.locator('#teamDayEstimate').textContent();assert.match(before,/食材合計/);
   assert.equal(await page.locator('#teamDayEstimate').evaluate(el=>el.lastElementChild.tagName),'DETAILS');
+  const foodGrid=page.locator('.psg-day-food-summary');
+  assert.equal(await foodGrid.evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),3);
+  assert.equal(await foodGrid.locator('.psg-day-food-tile').first().evaluate(el=>getComputedStyle(el).borderTopWidth),'0px');
+  assert.equal(await foodGrid.evaluate(el=>el.scrollWidth>el.clientWidth),false);
   await details.locator('summary').click();assert.equal(await page.locator('.psg-day-row').count(),5);assert.equal(await page.locator('.psg-day-row').first().isVisible(),true);
   assert.equal(await page.locator('#teamDayEstimate').textContent(),before);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
   await details.locator('summary').click();
-  if(width===390){await page.locator('.psg-day-card').evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-140));await page.screenshot({path:'/tmp/psg251-day.png'})}
+  if(width===390){await foodGrid.evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-400));await page.screenshot({path:'/tmp/psg253-day.png'})}
   console.log(width+'px: team totals first, collapsed five-member details, unchanged totals, no overflow');await page.close();
  }
 }finally{await b.close()}})().catch(e=>{console.error(e.stack);process.exitCode=1});
