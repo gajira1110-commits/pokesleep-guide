@@ -4,8 +4,8 @@
 
 ## 反映状況
 
-- 公開済みの基準：v254、PR #68、マージSHA `8abb4d0eb0f8f9d000f7dce6ee930e84d4e44310`。
-- この変更：v255。日産の食材合計カードを白背景、アイコン＋個数のみの4列へ。食材名は読み上げ用aria-labelに保持。日産ブロック外枠なしと個別詳細は維持。計算変更なし。
+- 公開済みの基準：v255、PR #69、マージSHA `7595b81de61beef5cdbd3f40dccbfb53048209dd`。
+- この変更：v256。全員の起床時げんき＋入力欄を同じ行へ圧縮。フィールド要約をＦＢ＋%表記へ、好物見出しを省略しきのみを2段目中央に配置。設定・計算は維持。
 - リポジトリ： https://github.com/psguide-dev/pokesleep-guide
 - 実機確認： https://psguide-dev.github.io/pokesleep-guide/review.html （ヘッダーの版番号を確認）
 

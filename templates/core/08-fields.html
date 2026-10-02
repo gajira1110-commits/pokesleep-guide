@@ -88,9 +88,12 @@ function renderFieldControls(){
  document.getElementById('fieldWeekLabel').textContent=`今週：${currentFieldWeek()}開始（端末の現地時間・月曜4時切替）・${field?.favoriteMode==='fixed'?'通常は固定3種':'毎週ランダム'}`;
  document.getElementById('fieldFavoriteReset').hidden=fieldProfile.weekly[fieldProfile.selectedFieldId]?.weekKey!==currentFieldWeek();
  const fieldName=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.name||'フィールド未設定';
- const summary=document.getElementById('teamFieldSummary');summary.replaceChildren(document.createTextNode(`${fieldName}・エリア＋${areaBonusInput.value}％・好物 `));
- for(const berry of berries.filter(Boolean)){const icon=berryIcon(berry);if(icon)summary.append(icon);else summary.append(document.createTextNode(berry+' '))}
- if(!berries.filter(Boolean).length)summary.append(document.createTextNode('未設定'));
+ const summary=document.getElementById('teamFieldSummary');
+ const heading=document.createElement('span');heading.textContent=`${fieldName}・ＦＢ＋${areaBonusInput.value}%`;
+ const berryRow=document.createElement('span');berryRow.className='psg-day-field-berries';
+ for(const berry of berries.filter(Boolean)){const icon=berryIcon(berry);if(icon)berryRow.append(icon);else berryRow.append(document.createTextNode(berry+' '))}
+ if(!berries.filter(Boolean).length)berryRow.textContent='未設定';
+ summary.replaceChildren(heading,berryRow);
  renderFieldEncounters(field);
 }
 function renderFieldEncounters(field){
