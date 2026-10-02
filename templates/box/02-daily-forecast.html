@@ -8,7 +8,7 @@ function renderBoxDayFood(estimate){
  const {result,member,inTeam}=estimate,host=document.getElementById('boxDayFood');
  const scope=inTeam?'チーム条件':'単体条件';
  const conditions=`${scope}・回収${result.interval}時間・起床時げんき${result.startingEnergy}・いいキャンプ${result.goodCamp?'ON':'OFF'}・食事${result.threeMeals?'3回':'なし'}`;
- if(!member||member.missing){host.innerHTML=`<p class="psg-box-pending">１日の獲得予想：${boxEsc(member?.reasons?.join('・')||'個体情報')}を設定してください</p>`;return}
+ if(!member||member.missing){host.innerHTML=`<p class="psg-box-pending">１日の獲得予想：${boxEsc(member?.reasons?.join('・')||'個体情報')}（計算保留）</p>`;return}
  const amounts=[...member.foods].map(([name,qty])=>{
   const src=window.PS_CATALOG.ingredientVisual(name)?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
   return `<span class="psg-box-day-food-item" title="${boxEsc(name)}" aria-label="${boxEsc(name)} 約${qty.toFixed(1)}個">${src?`<img src="${src}" alt="">`:boxEsc(name)}<b>約${qty.toFixed(1)}</b></span>`;

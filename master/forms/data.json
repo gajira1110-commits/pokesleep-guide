@@ -134,7 +134,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
-      "sleepStyleGroupId": "0025_captain"
+      "sleepStyleGroupId": "0025_captain",
+      "boxEligible": true
     },
     {
       "speciesId": "0025_halloween_23",
@@ -273,7 +274,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
-      "sleepStyleGroupId": "0025_halloween"
+      "sleepStyleGroupId": "0025_halloween",
+      "boxEligible": true
     },
     {
       "speciesId": "0025_halloween_24",
@@ -412,7 +414,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
-      "sleepStyleGroupId": "0025_halloween"
+      "sleepStyleGroupId": "0025_halloween",
+      "boxEligible": true
     },
     {
       "speciesId": "0025_holiday",
@@ -551,7 +554,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
-      "sleepStyleGroupId": "0025_holiday"
+      "sleepStyleGroupId": "0025_holiday",
+      "boxEligible": true
     },
     {
       "speciesId": "0133_halloween",
@@ -690,7 +694,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0133_costumes",
-      "sleepStyleGroupId": "0133_halloween"
+      "sleepStyleGroupId": "0133_halloween",
+      "boxEligible": true
     },
     {
       "speciesId": "0133_holiday",
@@ -829,7 +834,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0133_costumes",
-      "sleepStyleGroupId": "0133_holiday"
+      "sleepStyleGroupId": "0133_holiday",
+      "boxEligible": true
     },
     {
       "speciesId": "0363_holiday",
@@ -968,7 +974,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0363_costumes",
-      "sleepStyleGroupId": "0363_holiday"
+      "sleepStyleGroupId": "0363_holiday",
+      "boxEligible": true
     },
     {
       "speciesId": "0710_large",
@@ -1140,7 +1147,8 @@
         }
       ],
       "detailGroupId": "0710_sizes",
-      "sleepStyleGroupId": "0710_sizes"
+      "sleepStyleGroupId": "0710_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0710_small",
@@ -1312,7 +1320,8 @@
         }
       ],
       "detailGroupId": "0710_sizes",
-      "sleepStyleGroupId": "0710_sizes"
+      "sleepStyleGroupId": "0710_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0710_medium",
@@ -1484,7 +1493,8 @@
         }
       ],
       "detailGroupId": "0710_sizes",
-      "sleepStyleGroupId": "0710_sizes"
+      "sleepStyleGroupId": "0710_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0710_jumbo",
@@ -1656,7 +1666,8 @@
         }
       ],
       "detailGroupId": "0710_sizes",
-      "sleepStyleGroupId": "0710_sizes"
+      "sleepStyleGroupId": "0710_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0711_large",
@@ -1805,7 +1816,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0711_sizes",
-      "sleepStyleGroupId": "0711_sizes"
+      "sleepStyleGroupId": "0711_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0711_small",
@@ -1954,7 +1966,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0711_sizes",
-      "sleepStyleGroupId": "0711_sizes"
+      "sleepStyleGroupId": "0711_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0711_medium",
@@ -2103,7 +2116,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0711_sizes",
-      "sleepStyleGroupId": "0711_sizes"
+      "sleepStyleGroupId": "0711_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0711_jumbo",
@@ -2252,7 +2266,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "detailGroupId": "0711_sizes",
-      "sleepStyleGroupId": "0711_sizes"
+      "sleepStyleGroupId": "0711_sizes",
+      "boxEligible": true
     },
     {
       "speciesId": "0037_alola",
@@ -2418,7 +2433,8 @@
         }
       ],
       "dexEntryPolicy": "independent",
-      "sleepStyleGroupId": "0037_alola"
+      "sleepStyleGroupId": "0037_alola",
+      "boxEligible": true
     },
     {
       "speciesId": "0038_alola",
@@ -2567,7 +2583,8 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "dexEntryPolicy": "independent",
-      "sleepStyleGroupId": "0038_alola"
+      "sleepStyleGroupId": "0038_alola",
+      "boxEligible": true
     },
     {
       "speciesId": "0194_paldea",
@@ -2731,7 +2748,8 @@
         }
       ],
       "dexEntryPolicy": "independent",
-      "sleepStyleGroupId": "0194_paldea"
+      "sleepStyleGroupId": "0194_paldea",
+      "boxEligible": true
     },
     {
       "speciesId": "0150_default",
@@ -2874,9 +2892,16 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0150_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/"
+      }
     },
     {
       "speciesId": "0151_default",
@@ -3161,9 +3186,9 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0151_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。",
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
       "mythicalSettings": {
         "speciesId": "0151_default",
         "name": "ミュウ",
@@ -3328,16 +3353,20 @@
             "requiresPriorSlotUnlocked": true
           },
           {
-            "activeAtLevel": 75,
+            "activeAtLevel": 70,
             "initialUnlocked": false,
             "initialSubskillName": null,
-            "requiresPriorSlotUnlocked": true
+            "requiresPriorSlotUnlocked": true,
+            "sourceActiveAtLevel": 75,
+            "activeLevelSource": "data-import/PSG_subskill_roll_rules.json（Ver.3.6.0）"
           },
           {
-            "activeAtLevel": 100,
+            "activeAtLevel": 80,
             "initialUnlocked": false,
             "initialSubskillName": null,
-            "requiresPriorSlotUnlocked": true
+            "requiresPriorSlotUnlocked": true,
+            "sourceActiveAtLevel": 100,
+            "activeLevelSource": "data-import/PSG_subskill_roll_rules.json（Ver.3.6.0）"
           }
         ],
         "mainSkill": {
@@ -3408,6 +3437,13 @@
           "mew",
           "almighty"
         ]
+      },
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/"
       }
     },
     {
@@ -3555,9 +3591,10 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0311_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0312_default",
@@ -3704,9 +3741,10 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0312_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0380_default",
@@ -3849,9 +3887,17 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0380_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/"
+      },
+      "specialTeamPair": "latias_latios"
     },
     {
       "speciesId": "0381_default",
@@ -3994,9 +4040,17 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0381_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/"
+      },
+      "specialTeamPair": "latias_latios"
     },
     {
       "speciesId": "0425_default",
@@ -4156,9 +4210,10 @@
         }
       ],
       "sleepStyleGroupId": "0425_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0426_default",
@@ -4305,9 +4360,10 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0426_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0488_default",
@@ -4450,9 +4506,16 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0488_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/"
+      }
     },
     {
       "speciesId": "0491_default",
@@ -4747,9 +4810,9 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0491_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。",
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
       "mythicalSettings": {
         "speciesId": "0491_default",
         "name": "ダークライ",
@@ -4924,16 +4987,20 @@
             "requiresPriorSlotUnlocked": true
           },
           {
-            "activeAtLevel": 75,
+            "activeAtLevel": 70,
             "initialUnlocked": false,
             "initialSubskillName": null,
-            "requiresPriorSlotUnlocked": true
+            "requiresPriorSlotUnlocked": true,
+            "sourceActiveAtLevel": 75,
+            "activeLevelSource": "data-import/PSG_subskill_roll_rules.json（Ver.3.6.0）"
           },
           {
-            "activeAtLevel": 100,
+            "activeAtLevel": 80,
             "initialUnlocked": false,
             "initialSubskillName": null,
-            "requiresPriorSlotUnlocked": true
+            "requiresPriorSlotUnlocked": true,
+            "sourceActiveAtLevel": 100,
+            "activeLevelSource": "data-import/PSG_subskill_roll_rules.json（Ver.3.6.0）"
           }
         ],
         "mainSkill": {
@@ -4976,6 +5043,13 @@
           "darkrai",
           "doctor_seed"
         ]
+      },
+      "dailyCalculationStatus": "pending_special_skill",
+      "specialTeamLimited": true,
+      "specialTeamRuleSource": {
+        "status": "official_confirmed",
+        "checkedAt": "2026-10-02",
+        "url": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/"
       }
     },
     {
@@ -5123,9 +5197,10 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0777_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0778_default",
@@ -5272,9 +5347,10 @@
       "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
       "evolutionTransitions": [],
       "sleepStyleGroupId": "0778_default",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0849_amped",
@@ -5425,9 +5501,10 @@
       "evolutionTransitions": [],
       "dexEntryPolicy": "independent",
       "sleepStyleGroupId": "0849_amped",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     },
     {
       "speciesId": "0849_low_key",
@@ -5578,9 +5655,10 @@
       "evolutionTransitions": [],
       "dexEntryPolicy": "independent",
       "sleepStyleGroupId": "0849_low_key",
-      "boxEligible": false,
-      "calculationStatus": "not_implemented",
-      "dataNote": "特殊スキル・個体設定の計算対応待ち。図鑑の参考データとして登録。"
+      "boxEligible": true,
+      "calculationStatus": "individual_record_supported_daily_pending",
+      "dataNote": "Box登録・個体設定に対応。特殊スキルを含む日産は未対応。",
+      "dailyCalculationStatus": "pending_special_skill"
     }
   ],
   "detailFormGroups": [
@@ -6418,5 +6496,44 @@
     "0778_default",
     "0849_amped",
     "0849_low_key"
-  ]
+  ],
+  "registrationCoverage": {
+    "sourceRecordCount": 248,
+    "normalCount": 216,
+    "separateCount": 32,
+    "boxSupportedCount": 248,
+    "addedBoxSpeciesIds": [
+      "0150_default",
+      "0151_default",
+      "0311_default",
+      "0312_default",
+      "0380_default",
+      "0381_default",
+      "0425_default",
+      "0426_default",
+      "0488_default",
+      "0491_default",
+      "0777_default",
+      "0778_default",
+      "0849_amped",
+      "0849_low_key"
+    ],
+    "dailyPendingSpeciesIds": [
+      "0150_default",
+      "0151_default",
+      "0311_default",
+      "0312_default",
+      "0380_default",
+      "0381_default",
+      "0425_default",
+      "0426_default",
+      "0488_default",
+      "0491_default",
+      "0777_default",
+      "0778_default",
+      "0849_amped",
+      "0849_low_key"
+    ],
+    "definition": "受領248レコード。衣装・サイズ・姿を含み、全国図鑑番号の重複は別管理。Sleep全実装種の外部網羅確認とは区別。"
+  }
 }

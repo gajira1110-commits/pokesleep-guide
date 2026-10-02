@@ -1,0 +1,58 @@
+{
+  "version": "v268",
+  "sourceRecordCount": 248,
+  "normal": 216,
+  "separate": 32,
+  "boxRegistrationSupported": 248,
+  "addedBoxSpeciesIds": [
+    "0150_default",
+    "0151_default",
+    "0311_default",
+    "0312_default",
+    "0380_default",
+    "0381_default",
+    "0425_default",
+    "0426_default",
+    "0488_default",
+    "0491_default",
+    "0777_default",
+    "0778_default",
+    "0849_amped",
+    "0849_low_key"
+  ],
+  "individualStateSchema": {
+    "ingredientUnlocked": "Lv1/30/60: true/false/null",
+    "subskillUnlocked": "5 slots: true/false/null; level10/25/50/70/80",
+    "selectedEffect": "Mew observed effect; blank unknown",
+    "learnedEffects": "Mew observed learned list; selected effect included"
+  },
+  "activation": "unlocked true AND level reached; no inference from level or initial species state",
+  "backupVersion": 5,
+  "compatibleBackupVersions": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sourceUpdates": "ミュウLv31/サブスキルLv50の単一観測は原本保存。一般ルールへ拡張しない。r2は19状態遷移/5回答・全manifest SHA256一致、runtimePatch:false。",
+  "calculationLimit": "特殊スキル14レコードを含むチームの日産・個体評価は保留。種族基本能力・食材候補・進化・寝顔は既存資料を維持。",
+  "specialTeamRules": {
+    "sources": {
+      "150": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+      "151": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+      "380": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/",
+      "381": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+      "488": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+      "491": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/"
+    },
+    "status": "official_confirmed",
+    "maxSpecialWithoutException": 1,
+    "allowedPair": [
+      380,
+      381
+    ]
+  },
+  "sourceMasterSha256": "7fcf3a44dc6527b616c25f1b8426fc49697d8093ea05bac78344fe016dec3627",
+  "sourceMaster": "PSG_daily_supply_sensitivity_20261001/inputs/PSG_pokemon_master_248.json"
+}

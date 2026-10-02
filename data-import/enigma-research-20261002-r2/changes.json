@@ -1,0 +1,22 @@
+{
+  "newOfficialConfirmedRules": 0,
+  "newFirstPersonEvidenceReports": 1,
+  "newCommunityHistoryClues": 1,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26,
+  "queueCounting": "未確認箇条書きを分割・減算せず、5質問IDへ補足。",
+  "baseline": "PSG_skill_rules_20261002.zipと第1便を参照。最新main採用状態はビブロが確認。",
+  "changes": [
+    {
+      "id": "ENI-stockpile_energy_charge_s-02",
+      "before": "他個体交代時の保持を未確認として管理",
+      "after": "2024年の本人観測報告を追加。現行版・独立検証は未確認。"
+    },
+    {
+      "id": "ENI-nuzzle_energy_cheer_s-01",
+      "before": "2〜7の表とSLv指数式の不一致",
+      "after": "4/27に+1とのWiki履歴説明を追記。確率式の独立性は未確認。"
+    }
+  ],
+  "applicationPatch": null
+}

@@ -1,11 +1,14 @@
+function specialTeamCompatible(species,existing){
+ return !existing.length||existing.length===1&&species?.specialTeamPair&&species.specialTeamPair===existing[0]?.specialTeamPair&&Number(species.no)!==Number(existing[0].no);
+}
 function normalizeTeam(raw,box){
- const byId=new Map(box.map(x=>[x.id,x])),seen=new Set();let hasSpecial=false;
+ const byId=new Map(box.map(x=>[x.id,x])),seen=new Set(),specialSpecies=[];
  return Array.from({length:5},(_,i)=>{
   const id=Array.isArray(raw)?raw[i]:null;
   if(typeof id!=='string'||!byId.has(id)||seen.has(id))return null;
-  const special=speciesFor(byId.get(id))?.specialTeamLimited===true;
-  if(special&&hasSpecial)return null;
-  if(special)hasSpecial=true;
+  const species=speciesFor(byId.get(id)),special=species?.specialTeamLimited===true;
+  if(special&&!specialTeamCompatible(species,specialSpecies))return null;
+  if(special)specialSpecies.push(species);
   seen.add(id);return id;
  });
 }
@@ -38,6 +41,10 @@ function teamFoodContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
   const label=`${position+1}匹目 ${individual.name} Lv.${individual.level}`;
   if(!species?.ingredientSlots?.length){unconfirmed.push(`${label}：食材データ未確認`);return}
   species.ingredientSlots.filter(slot=>slot.unlock<=individual.level).forEach(slot=>{
+   if(species.mythicalSettings&&individual.mythicalState?.ingredientUnlocked?.[slot.unlock]!==true){
+    if(individual.mythicalState?.ingredientUnlocked?.[slot.unlock]!==false)unconfirmed.push(`${label}：Lv.${slot.unlock}の食材枠解放未確認`);
+    return;
+   }
    const candidates=slot.candidates||[];
    const chosen=individual.ingredients?.[slot.unlock];
    const candidate=candidates.length===1?candidates[0]:candidates.find(item=>item.name===chosen);

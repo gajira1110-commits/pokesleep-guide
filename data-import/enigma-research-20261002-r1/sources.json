@@ -1,0 +1,53 @@
+[
+  {
+    "sourceId": "R1-official-mew",
+    "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+    "title": "ミュウに関するお知らせ",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "evidence": "メインスキル変更時のレベル保持と、設定先による発生確率の差を再確認。設定先上限での効果量は明記を確認できず。"
+  },
+  {
+    "sourceId": "R1-mew-level31-report",
+    "url": "https://note.com/shima_pks/n/na99660604c35",
+    "title": "ポケスリ日記18_ミュウツーイベント1",
+    "kind": "first_person_gameplay_report",
+    "publishedAt": "2026-09-15",
+    "checkedAt": "2026-10-02",
+    "evidence": "本人がLv.50枠の解放を報告。添付結果画面にLv.31ミュウとスキル確率アップSの抽選結果が見える。画面単体には対象枠番号と採用後状態は見えない。"
+  },
+  {
+    "sourceId": "R1-mew-level31-image",
+    "url": "https://assets.st-note.com/img/1789441256-x8JougIWbVvldZ0PMasBt6Kq.jpg?width=1200",
+    "kind": "game_screenshot_in_first_person_report",
+    "checkedAt": "2026-10-02",
+    "localPath": "originals/mew_level50_unlock_observation.jpg",
+    "sha256": "abfdf1581259320b38016f4477880d863e415ef432b22ae89d729907c531dc4a",
+    "visualInspected": true,
+    "evidence": "Lv.31ミュウ、ひらめきのたね(ミュウ)、スキル確率アップSの結果を確認。Lv.50枠という対応は本文による。"
+  },
+  {
+    "sourceId": "R1-official-bugs",
+    "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "evidence": "現行ページにはたねのサブスキル等確率の記述を確認できず。ゆびをふる・コピーのLv.7と対象上限Lv.6の不具合修正はあるが、ミュウの直接セットへ自動適用しない。"
+  },
+  {
+    "sourceId": "R1-almighty-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "adoption": "参考のみ",
+    "evidence": "上限問題の一次証拠としては使用しない。"
+  },
+  {
+    "sourceId": "R1-uniform-history-lead",
+    "url": "https://www.fireyoshida.com/entry/2025/05/16/204208",
+    "kind": "secondary_report_of_historical_official_notice",
+    "publishedAt": "2025-05-16",
+    "checkedAt": "2026-10-02",
+    "adoption": "一次原本を確認するための手掛かりのみ",
+    "evidence": "当時の公式告知としてサブスキル等確率の説明訂正を転載。現行公式ページで当該文は確認できないため公式直接確認済みへ格上げしない。"
+  }
+]

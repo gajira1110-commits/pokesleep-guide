@@ -36,6 +36,7 @@ function individualEvaluationRole(item,p){
 }
 function renderIndividualEvaluation(item,p){
  if(!p)return '<p class="psg-box-muted">姿が未確認のため評価できません。衣装・サイズを確認してください。</p>';
+ if(p.dailyCalculationStatus==='pending_special_skill')return '<p class="psg-box-muted">個体情報は保存できます。特殊スキルを含む個体評価は未対応です。</p>';
  const e=individualEvaluation(item,p),labels={berry:'きのみ',food:'食材おてつだい',skill:'スキル発動機会'},roles={きのみ:'berry',食材:'food',スキル:'skill'};
  const chosen=individualEvaluationRole(item,p);
  const heading=chosen.role?`<p class="psg-evaluation-role">${chosen.explicit?'選択した役割':'得意から表示'}：<b>${boxEsc(chosen.explicit?item.role:p.specialty)}</b></p>`:'<p>役割未設定：各役割を表示</p>';

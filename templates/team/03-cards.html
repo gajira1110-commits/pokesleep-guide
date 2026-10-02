@@ -18,7 +18,8 @@ function teamFace(individual){
 function subskillCardBadges(individual){
  return `<span class="psg-subskill-card-grid" aria-label="サブスキル">${SUBSKILL_LEVELS.map((unlock,i)=>{
   const name=individual?.subskills?.[i],src=window.PS_IMAGE_FILES.subskills?.[name];
-  return `<span class="psg-box-mini-badge ${name?'':'is-unknown'} ${individual?.level<unlock?'is-locked':''}" title="Lv.${unlock}：${boxEsc(name||'未確認')}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}">${src?`<img src="${src}" alt="">`:`<span>${name?'・':'?'}</span>`}</span>`;
+  const locked=individual?.level<unlock||speciesFor(individual)?.mythicalSettings&&individual?.mythicalState?.subskillUnlocked?.[i]!==true;
+  return `<span class="psg-box-mini-badge ${name?'':'is-unknown'} ${locked?'is-locked':''}" title="Lv.${unlock}：${boxEsc(name||'未確認')}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}">${src?`<img src="${src}" alt="">`:`<span>${name?'・':'?'}</span>`}</span>`;
  }).join('')}</span>`;
 }
 function renderTeam(){

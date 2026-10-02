@@ -26,6 +26,13 @@ document.getElementById('boxEditForm').onsubmit=e=>{
  const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[target.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
  const ribbonHours=Number(data.get('ribbonHours'));
  const changed={...item,no:Number(target.no),speciesId:speciesKey(target),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
+ if(target.mythicalSettings){
+  const tri=value=>value==='yes'?true:value==='no'?false:null;
+  const effects=target.mythicalSettings.mainSkill.selectableEffects||[],selected=String(data.get('mythicalSelectedEffect')||'');
+  changed.mythicalState=normalizeMythicalState({ingredientUnlocked:Object.fromEntries([1,30,60].map(n=>[n,tri(data.get(`ingredient-unlocked-${n}`))])),subskillUnlocked:SUBSKILL_LEVELS.map((_,i)=>tri(data.get(`subskill-unlocked-${i}`))),selectedEffect:selected,learnedEffects:effects.filter((name,i)=>data.get(`mythical-learned-${i}`)==='on'||name===selected)},target);
+  for(const [i,unlock] of [1,30,60].entries())if(changed.mythicalState.ingredientUnlocked[unlock]===true&&!ingredients[unlock]){document.getElementById('boxEditMessage').textContent=`Lv.${unlock}の解放済み食材を選んでください。`;return}
+  for(let i=0;i<5;i++)if(changed.mythicalState.subskillUnlocked[i]===true&&!changed.subskills[i]){document.getElementById('boxEditMessage').textContent=`Lv.${SUBSKILL_LEVELS[i]}の解放済みサブスキルを選んでください。`;return}
+ }
  const filled=changed.subskills.filter(Boolean);
  if(new Set(filled).size!==filled.length){document.getElementById('boxEditMessage').textContent='同じサブスキルを重複して設定できません';return}
  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel();document.getElementById('boxEditMessage').textContent='保存しました'}

@@ -1,0 +1,99 @@
+[
+  {
+    "questionId": "ENI-stockpile_energy_charge_s-02",
+    "status": "reported_observation_historical",
+    "checkedAt": "2026-10-02",
+    "factOrInference": "first_person_report",
+    "answer": {
+      "otherMemberSwapResetsResidentCount": false,
+      "scope": "報告された2024年の編成・交代条件"
+    },
+    "sourceIds": [
+      "R2-stockpile-first-person"
+    ],
+    "newEvidence": true,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false,
+    "proposedAdoption": "全メンバーを一律に0へ戻す処理の根拠にしない。現行再確認待ちの観測として追加。",
+    "affectedPaths": [
+      "data-import/skill-rules-v263-skill-rules.json"
+    ],
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-stockpile_energy_charge_s-03",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "sleep": null,
+      "weekRollover": null,
+      "sameFieldMove": null,
+      "evolution": null
+    },
+    "sourceIds": [
+      "R2-official-stockpile",
+      "R2-official-field-ticket"
+    ],
+    "reason": "カビゴンのエナジーリセットから個体のたくわえ回数リセットを導かない。週初めの利用提案だけでは前後状態の実測証拠にしない。",
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-nuzzle_energy_cheer_s-01",
+    "status": "partial_context_only",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "communityTableDrawCounts": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "communityAdjustmentDate": "2026-04-27",
+      "adjustmentClaim": "抽選回数+1",
+      "probabilityFormula": null,
+      "modifierScope": null,
+      "independentDraws": null,
+      "pityInteraction": null
+    },
+    "sourceIds": [
+      "R2-nuzzle-wiki"
+    ],
+    "newEvidence": "表と旧式のずれに対する履歴説明を新しく確認。ただし一次資料ではない。",
+    "proposedAdoption": "現行2〜7の既存表を再提出して新ルールと数えない。本文SLv指数をそのまま計算へ採用しない。+1履歴と独立抽選式の確定は分ける。",
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-nuzzle_energy_cheer_s-03",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "manualSleepEntryRemovesBonus": null,
+      "normalStockVsBonusOrder": null,
+      "simultaneousActivation": null
+    },
+    "sourceIds": [
+      "R2-official-nuzzle"
+    ],
+    "reason": "公式の睡眠リサーチはマニュアル登録と同義とは決め付けない。",
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-disguise_berry_burst-02",
+    "status": "official_constraint_reconfirmed",
+    "checkedAt": "2026-10-02",
+    "factOrInference": "inference_from_official_constraint",
+    "answer": {
+      "allowAnotherSuccessBeforeResearchOrManualEntry": false,
+      "swapSpecificExperiment": null,
+      "fieldMoveSpecificExperiment": null,
+      "weekSpecificExperiment": null
+    },
+    "sourceIds": [
+      "R2-official-disguise"
+    ],
+    "proposedAdoption": "通常モデルでは睡眠リサーチ／マニュアル登録以外のイベントを大成功解禁イベントに追加しない。これは公式の制限からの実装提案で、個々のイベントを実測済みという意味ではない。",
+    "fullyResolved": false
+  }
+]

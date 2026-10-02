@@ -1,0 +1,45 @@
+[
+  {
+    "sourceId": "R2-official-stockpile",
+    "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "個体ごとのたくわえ回数。はきだす後と、その個体がチームを抜ける場合にリセット。既知ルールの再確認。"
+  },
+  {
+    "sourceId": "R2-stockpile-first-person",
+    "url": "https://note.com/yuuun222/n/nd4ae956659f8",
+    "kind": "first_person_gameplay_report",
+    "publishedAt": "2024-10-22",
+    "checkedAt": "2026-10-02",
+    "summary": "本人が1週間編成した結果として、他のメンバーの交代ではたくわえ回数が保持されたと記載。現行版の直接検証ではない。"
+  },
+  {
+    "sourceId": "R2-official-nuzzle",
+    "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "ボーナスは通常ストックとは別の追加1回、既所持なら追加不可。睡眠リサーチとフィールド移動で消失。既知ルールの再確認。"
+  },
+  {
+    "sourceId": "R2-nuzzle-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "summary": "Lv1〜6の抽選回数2〜7の表、4/27に1回増えたとの記述、指数がSLvの式が同じページに併存。更新理由の手掛かり。独立性や補正範囲の一次確認には使わない。"
+  },
+  {
+    "sourceId": "R2-official-disguise",
+    "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "一度大成功した後は睡眠リサーチまたはマニュアル登録まで再大成功しない。既知ルールの再確認。"
+  },
+  {
+    "sourceId": "R2-official-field-ticket",
+    "url": "https://app-psl.pokemon-support.com/hc/ja/articles/20334303852441",
+    "kind": "official_support",
+    "checkedAt": "2026-10-02",
+    "summary": "カビゴンエナジーと評価ミッション進捗のリセット。スキル個体状態のリセット可否は記載を確認できない。"
+  }
+]

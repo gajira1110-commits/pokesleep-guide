@@ -37,6 +37,12 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
  const periods=[];for(let h=0;h<16;h+=interval)periods.push(Math.min(interval,16-h));
  periods.push(8); // No collection during sleep; collect at wake-up.
  const items=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
+ if(items.some(item=>speciesFor(item,catalog)?.dailyCalculationStatus==='pending_special_skill'))return {
+  pendingReason:'特殊スキルを含むチームの日産計算は未対応です。個体情報は保存できます。',
+  members:items.map(item=>({id:item.id,name:item.name,missing:true,reasons:['特殊スキルを含むチームの日産計算は未対応']})),
+  foods:new Map(),randomIngredients:null,dreamShards:null,berryEnergy:null,skillEnergy:null,skillEnergyBase:null,
+  periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor
+ };
  const members=items.map(item=>{
   const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id);
   const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
@@ -44,6 +50,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
    return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);
   });
   const reasons=[];
+  if(species?.dailyCalculationStatus==='pending_special_skill')reasons.push('特殊スキルを含む日産計算は未対応');
   if(!stats?.speed)reasons.push('おてつだい時間');
   if(!stats?.carry)reasons.push('最大所持数');
   if(!Number.isFinite(stats?.food))reasons.push('食材確率');
