@@ -12,44 +12,5 @@ const BOX_STORAGE_KEY='psg.box.instances.v1';
 const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
 const TEAM_STORAGE_KEY='psg.team.primary.v1';
 const FIELD_STORAGE_KEY='psg.field.profile.v1';
-const speciesKey=p=>p.speciesId||`${String(p.no).padStart(4,'0')}_default`;
-const boxCatalog=()=>[...Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible),...[...(window.PS_FORMS?.records.values()||[])].filter(p=>p.boxEligible!==false)].sort((a,b)=>a.no-b.no||Number(!!a.speciesId)-Number(!!b.speciesId)||speciesKey(a).localeCompare(speciesKey(b)));
-function normalizeMythicalState(raw,p){
- if(!p?.mythicalSettings||!raw||typeof raw!=='object'||Array.isArray(raw))return null;
- const tri=value=>value===true?true:value===false?false:null;
- const effects=p.mythicalSettings.mainSkill.selectableEffects||[];
- return {ingredientUnlocked:Object.fromEntries([1,30,60].map(n=>[n,tri(raw.ingredientUnlocked?.[n])])),
-  subskillUnlocked:Array.from({length:5},(_,i)=>tri(raw.subskillUnlocked?.[i])),
-  selectedEffect:effects.includes(raw.selectedEffect)?raw.selectedEffect:'',
-  learnedEffects:[...new Set((Array.isArray(raw.learnedEffects)?raw.learnedEffects:[]).filter(x=>effects.includes(x)))]};
-}
-function normalizeBox(raw){
-  if(!Array.isArray(raw))return [];
-  const known=new Set(boxCatalog().map(p=>Number(p.no)));
-  const seen=new Set();
-  return raw.filter(x=>{
-    if(!x||typeof x.id!=='string'||! /^[a-zA-Z0-9-]{1,100}$/.test(x.id)||seen.has(x.id)||!known.has(Number(x.no))||!Number.isInteger(x.level)||x.level<1||x.level>100)return false;
-    seen.add(x.id);return true;
-  })
-   .map(x=>({id:x.id,no:Number(x.no),...(x.speciesId?{speciesId:String(x.speciesId).slice(0,80)}:{}),level:Math.min(70,x.level),name:speciesFor(x)?.name||`${window.PS_FORMS?.dexEntries.find(p=>p.no===Number(x.no))?.name||'ポケモン'}（姿未確認）`,
-    specialty:speciesFor(x)?.specialty||'未確認',
-    ingredients:x.ingredients&&typeof x.ingredients==='object'?x.ingredients:{},
-    subskills:Array.isArray(x.subskills)?x.subskills.slice(0,5).map(s=>String(s||'').slice(0,80)):[],
-    nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
-    ...(normalizeMythicalState(x.mythicalState,speciesFor(x))?{mythicalState:normalizeMythicalState(x.mythicalState,speciesFor(x))}:{}),
-    skillLevel:Number.isInteger(x.skillLevel)?Math.max(1,Math.min(window.PS_CATALOG?.skills?.[speciesFor(x)?.mainSkillId]?.maxLevel||7,x.skillLevel)):1,
-    role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true,ribbonHours:[0,200,500,1000,2000].includes(x.ribbonHours)?x.ribbonHours:0}));
-}
-function readBox(){
- try{return normalizeBox(JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]'))}
- catch{return []}
-}
-function commitBox(next){
- try{
-  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(backupBoxFields)));
-  state.box=next;
-  renderBox();
-  return true;
- }catch{alert('保存できませんでした。ブラウザーの保存設定を確認してください。');return false}
-}
-state.box=readBox();
+const speciesKey=p=>window.PS_SPECIES_CATALOG.key(p);
+const boxCatalog=()=>window.PS_SPECIES_CATALOG.box();

@@ -2,7 +2,7 @@
   const section=document.createElement('section');section.className='psg-recipe-provider-group';
   const heading=document.createElement('strong');heading.append(icon(item.name),document.createTextNode(item.name));section.append(heading);
   // Use only species whose own verified slots contain the ingredient; evolution does not imply the same slot.
-  const providers=[...Object.values(catalog.pokemon||{}),...[...(window.PS_FORMS?.records.values()||[])]].filter(p=>p.dexVisible).flatMap(p=>{
+  const providers=window.PS_SPECIES_CATALOG.all(catalog).filter(p=>p.dexVisible).flatMap(p=>{
    const slots=p.ingredientSlots?.filter(s=>s.candidates.some(c=>c.name===item.name))||[];
    return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
   });
@@ -14,7 +14,7 @@
   });
   const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
   for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
-    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.dataset.speciesId=species.speciesId||`${String(species.no).padStart(4,'0')}_default`;button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
+    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.dataset.speciesId=window.PS_SPECIES_CATALOG.key(species);button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
     const art=document.createElement('span');art.className='psg-recipe-provider-art';
     if(species.speciesId){const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';art.append(missing)}
     else if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
