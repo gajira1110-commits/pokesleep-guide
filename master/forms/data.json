@@ -1130,8 +1130,13 @@
             "アメ個数": 80,
             "最低レベル条件": "なし"
           },
-          "status": "推定",
-          "transitionEnabled": false
+          "status": "ユーザー確認",
+          "transitionEnabled": true,
+          "confirmation": {
+            "date": "2026-10-02",
+            "statement": "進化後も同サイズを引き継ぐ",
+            "source": "ユーザー"
+          }
         }
       ],
       "detailGroupId": "0710_sizes",
@@ -1297,8 +1302,13 @@
             "アメ個数": 80,
             "最低レベル条件": "なし"
           },
-          "status": "推定",
-          "transitionEnabled": false
+          "status": "ユーザー確認",
+          "transitionEnabled": true,
+          "confirmation": {
+            "date": "2026-10-02",
+            "statement": "進化後も同サイズを引き継ぐ",
+            "source": "ユーザー"
+          }
         }
       ],
       "detailGroupId": "0710_sizes",
@@ -1464,8 +1474,13 @@
             "アメ個数": 80,
             "最低レベル条件": "なし"
           },
-          "status": "推定",
-          "transitionEnabled": false
+          "status": "ユーザー確認",
+          "transitionEnabled": true,
+          "confirmation": {
+            "date": "2026-10-02",
+            "statement": "進化後も同サイズを引き継ぐ",
+            "source": "ユーザー"
+          }
         }
       ],
       "detailGroupId": "0710_sizes",
@@ -1631,8 +1646,13 @@
             "アメ個数": 80,
             "最低レベル条件": "なし"
           },
-          "status": "推定",
-          "transitionEnabled": false
+          "status": "ユーザー確認",
+          "transitionEnabled": true,
+          "confirmation": {
+            "date": "2026-10-02",
+            "statement": "進化後も同サイズを引き継ぐ",
+            "source": "ユーザー"
+          }
         }
       ],
       "detailGroupId": "0710_sizes",
