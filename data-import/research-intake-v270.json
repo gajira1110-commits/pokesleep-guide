@@ -1,0 +1,244 @@
+{
+  "version": 270,
+  "enigmaBatch": 7,
+  "manifestVerified": true,
+  "bibloThroughBatch": 6,
+  "fullyResolved": 0,
+  "probabilityConstantsChanged": false,
+  "reissuedComparisons": [
+    {
+      "file": "proposed-data-import/enigma-research-20261002-r1/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r1/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-r1/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r1/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-r1/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r1/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-r1/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r1/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/observations.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/observations.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/state-rules.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/state-rules.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/arithmetic-checks.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/arithmetic-checks.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/validation.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/validation.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v4/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r4/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/observations.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/observations.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/validation.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/validation.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v3/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r3/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/state-transitions.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/state-transitions.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/validation.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/validation.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v2/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r2/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/observations.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/observations.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/validation.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/validation.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v6/daily-expectation-model.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r6/daily-expectation-model.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/observations.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/observations.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/sources.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/sources.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/changes.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/changes.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/verification-plan.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/verification-plan.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/validation.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/validation.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/identity-policy.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/identity-policy.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/answers.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/answers.json"
+      ]
+    },
+    {
+      "file": "proposed-data-import/enigma-research-20261002-v5/hypothesis-comparison.json",
+      "existingIdenticalFiles": [
+        "data-import/enigma-research-20261002-r5/hypothesis-comparison.json"
+      ]
+    }
+  ]
+}

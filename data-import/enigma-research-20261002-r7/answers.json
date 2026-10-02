@@ -1,0 +1,28 @@
+[
+  {
+    "questionId": "ENI-stockpile_energy_charge_s-01",
+    "status": "partial_primary_analysis_and_observation",
+    "answer": {
+      "exactSpitProbability": null,
+      "suggestedScenarioProbability": 0.25,
+      "defaultEnableSuggestedProbability": false,
+      "reported95PercentConfidenceInterval": [
+        0.2434,
+        0.2682
+      ],
+      "reportedIntervalIndependentlyRecalculated": false,
+      "analysisSampleSize": null,
+      "equalProbabilityAcrossCountsProven": false,
+      "natureEffectOnBranchProbability": null,
+      "subskillEffectOnBranchProbability": null
+    },
+    "sourceIds": [
+      "R7-analysis-report",
+      "R7-study-method",
+      "R7-individual-observation"
+    ],
+    "fullyResolved": false,
+    "reason": "25%の検証根拠を追加。検定の非有意は同一性の証明ではなく、性格・FBなど補正範囲も未確認。",
+    "checkedAt": "2026-10-02"
+  }
+]

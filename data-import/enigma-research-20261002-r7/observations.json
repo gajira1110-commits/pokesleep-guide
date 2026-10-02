@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reported-likelihood-analysis",
+    "sourceIds": [
+      "R7-analysis-report"
+    ],
+    "reportedConfidenceLevel": 0.95,
+    "reportedInterval": [
+      0.2434,
+      0.2682
+    ],
+    "method": "maximum_likelihood_author_report",
+    "rawDatasetRead": false,
+    "sampleSize": null,
+    "testStatistic": null,
+    "degreesOfFreedom": null,
+    "pValue": null,
+    "limitations": [
+      "作者の分析結果を記録したもので再計算ではない。",
+      "確率が一定であることや試行独立性を証明しない。",
+      "2024年中間報告の件数を2026年分析の件数にしない。"
+    ]
+  },
+  {
+    "id": "individual-counts",
+    "sourceIds": [
+      "R7-individual-observation"
+    ],
+    "totalActivations": 166,
+    "stockpileCount": 122,
+    "spitCount": 44,
+    "rawObservedSpitFraction": 0.26506024096385544,
+    "forcedSpitsExcluded": null,
+    "branchProbabilityEstimate": null,
+    "poolWithCommunityData": false,
+    "reason": "強制分岐の内訳と既存データとの重複が不明。"
+  }
+]

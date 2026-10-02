@@ -1,0 +1,18 @@
+{
+  "newAnswerRecords": 6,
+  "manifests": [
+    {
+      "version": "v6",
+      "manifestMembers": 8,
+      "allHashesMatched": true
+    },
+    {
+      "version": "v5",
+      "manifestMembers": 10,
+      "allHashesMatched": true
+    }
+  ],
+  "fixedNModelEnumerationPassed": "n=0..8,p=0/.18/.2/.5/1",
+  "unresolvedCount": 26,
+  "fullyResolved": 0
+}

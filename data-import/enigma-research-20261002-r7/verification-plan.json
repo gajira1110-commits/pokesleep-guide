@@ -1,0 +1,15 @@
+{
+  "nextEvidenceRequired": [
+    "公開シートの実データを取得し、固定した版と件数を保存する。",
+    "上限での強制はきだすを除いた通常抽選の成功数・失敗数を再集計する。",
+    "未完成サイクル・記録期間・個体識別欠落・バージョン差を確認する。",
+    "性格・サブスキル等の層別データが不足する場合は補正の影響を未確認のまま残す。"
+  ],
+  "rawSheetUrl": "https://docs.google.com/spreadsheets/d/1Mgc6elrVfxi10-rqhHwFnp3eGsIRkC-yEHL9nQs4SC8/edit",
+  "rawSheetAccessResult": "web retrieval unavailable; raw rows not obtained",
+  "modelReview": [
+    "初期たくわえ回数の入力方針をビブロと確認。",
+    "終端の未獲得状態と当日獲得エナジーを区別。",
+    "25%シナリオを公式確率の表示にしない。"
+  ]
+}

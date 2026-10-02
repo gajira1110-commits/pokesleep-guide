@@ -1,0 +1,42 @@
+{
+  "status": "proposed_mathematical_model_not_application_patch",
+  "skillId": "stockpile_energy_charge_s",
+  "inputs": {
+    "startingStoredCount": "既知の整数、または状態分布。未指定なら結果未確定。0回開始は明示したシナリオのみ。",
+    "activationCount": "固定n、または発動回数Nの分布。平均値だけでの置換は避ける。",
+    "spitProbability": "p_s。未確認はnull。25%一律は任意の参考シナリオ。",
+    "energyByStoredCount": "R(s)。採用済みの効果量と補正ルールを参照。丸めは別途確認。"
+  },
+  "conditionalCap": {
+    "value": 10,
+    "provenance": "既存skill-rules.jsonのcommunity_documentedルールを仮定",
+    "officialConfirmedInThisBatch": false,
+    "nextActivationAtCap": "必ずはきだすという既存コミュニティ記載を仮定"
+  },
+  "recurrence": {
+    "definition": "D_t(s): t発動後の状態確率、C_t: 累積の獲得エナジー期待値。q_s=p_s (s<K)、q_K=1。",
+    "initialization": "D_0=指定の初期状態分布、C_0=0",
+    "spit": "D_(t+1)(0) += D_t(s)*q_s",
+    "stockpile": "D_(t+1)(s+1) += D_t(s)*(1-q_s), s<K",
+    "reward": "C_(t+1)=C_t+sum_s D_t(s)*q_s*R(s)",
+    "randomActivationCount": "E[C_N]=sum_n P(N=n)*C_n；状態とNが依存する場合は条件付きで計算。"
+  },
+  "stateEvents": [
+    "本人が編成を離れるイベントは状態を0へ。得られていないエナジーを加算しない。",
+    "はきだす後は0へ。個体ごとに保持。",
+    "睡眠・週・フィールド移動・進化による追加リセットはこの資料では確定しない。"
+  ],
+  "accounting": [
+    "1日内に発生したはきだす報酬のみ獲得エナジーに加算。",
+    "終端のたくわえ回数分布は別表示し、未獲得分をその日の獲得値へ混ぜない。",
+    "前日からの状態によって同じ発動回数でも結果が変わる。",
+    "通常の未回収スキルキャンセルを省くユーザー方針と、本人離脱によるたくわえリセットは別条件。"
+  ],
+  "longRunComparison": "1回あたり長期平均をn倍する方法は、初期状態と終端の持ち越しを扱わないため1日分の厳密な代替にならない。",
+  "estimationCaveat": {
+    "completedCycleOrdinal": "T=はきだすまでの発動回数、1〜K+1。",
+    "assumedDistribution": "P(T=t)=p*(1-p)^(t-1), t<=K; P(T=K+1)=(1-p)^K",
+    "conditionalMLE": "U/(U+S), U=強制到達前に終了したサイクル数、S=sum(T_i-1)。上限での強制はきだすを通常抽選の成功へ数えない。",
+    "limits": "共通p、独立性、完成サイクルの標本選択が適切という仮定下。未完成サイクルや記録漏れ、観測期間による選択を別途処理する。報告CIの再計算結果ではない。"
+  }
+}

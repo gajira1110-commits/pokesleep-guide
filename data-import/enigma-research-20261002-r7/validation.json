@@ -1,0 +1,146 @@
+{
+  "jsonParse": "passed",
+  "independentEnumerationVsRecurrence": [
+    {
+      "startingCount": 0,
+      "activationCount": 0,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 1,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 2,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 3,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 4,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 5,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 6,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 7,
+      "passed": true
+    },
+    {
+      "startingCount": 0,
+      "activationCount": 8,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 0,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 1,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 2,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 3,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 4,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 5,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 6,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 7,
+      "passed": true
+    },
+    {
+      "startingCount": 5,
+      "activationCount": 8,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 0,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 1,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 2,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 3,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 4,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 5,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 6,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 7,
+      "passed": true
+    },
+    {
+      "startingCount": 10,
+      "activationCount": 8,
+      "passed": true
+    }
+  ],
+  "caseCount": 27,
+  "exactRationalArithmetic": true,
+  "syntheticProbability": 0.25,
+  "syntheticReward": "R(s)=(s+1)^2。架空の検証用単位で、ゲームの効果量ではない。",
+  "gameRulesValidatedByTheseChecks": false,
+  "realProbabilityRecalculated": false
+}
