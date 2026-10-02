@@ -20,7 +20,7 @@
   list.replaceChildren();
   if(!matches.length){const empty=document.createElement('p');empty.className='note';empty.textContent='該当するスキルはありません。';list.append(empty);return}
   matches.forEach(skill=>{
-   const species=[...Object.values(catalog.pokemon||{}),...[...(window.PS_FORMS?.records.values()||[])]].filter(p=>p.dexVisible&&p.mainSkillId===skill.id);
+   const species=window.PS_SPECIES_CATALOG.all(catalog).filter(p=>p.dexVisible&&p.mainSkillId===skill.id);
    const item=document.createElement('details');item.className='psg-skill-entry';
    const summary=document.createElement('summary');
    const title=document.createElement('strong');title.textContent=skill.name;

@@ -11,6 +11,7 @@ MASTER = ROOT / 'master'
 TEMPLATE = ROOT / 'PSG_source_template.html'
 TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '01-shell-head.html',
+    '01-species-catalog.html',
     '02-home.html',
     '03-box.html',
     '04-dex.html',
@@ -24,6 +25,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     '11-navigation.html',
     '12-swap-engine.html',
     '12-core-controller.html',
+    'core/01-box-storage.html',
     'core/02-team.html',
     'team/02-food-view.html',
     'team/03-cards.html',
@@ -383,7 +385,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v272') == 2
+    assert source.count('Review v273') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
