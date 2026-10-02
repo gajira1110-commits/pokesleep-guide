@@ -1,0 +1,131 @@
+{
+  "baseCommit": "c664734dbd1e989c8242f230fbc06a803147fad9",
+  "applicationVersion": 274,
+  "checkedAt": "2026-10-02",
+  "receivedPackages": [
+    "PSG_Biblo_data_organized_v272_20261002.zip",
+    "PSG_Biblo_research_through_v10_20261002.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v10.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v11.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v12.zip"
+  ],
+  "originalManifestChecks": [
+    {
+      "round": 10,
+      "verifiedFiles": 10,
+      "alreadyStoredFiles": 0
+    },
+    {
+      "round": 11,
+      "verifiedFiles": 101,
+      "alreadyStoredFiles": 75
+    },
+    {
+      "round": 12,
+      "verifiedFiles": 10,
+      "alreadyStoredFiles": 0
+    }
+  ],
+  "storageScope": "Only new top-level JSON/README retained. Original manifest describes the complete received ZIP, not this reduced repository folder. Evidence images and prior reports remain in the received packages; no image or historical-report duplication.",
+  "researchStatus": {
+    "questionCount": 26,
+    "answerEntries": 32,
+    "coveredQuestions": 26,
+    "fullyResolved": 0,
+    "newConfirmedDailyRules": 0
+  },
+  "runtimeStatus": {
+    "receivedSpeciesRecords": 248,
+    "referenceOnlySkills": 11,
+    "pendingDailySpecies": [
+      {
+        "speciesId": "0150_default",
+        "mainSkillId": "psystrike_berry_zone"
+      },
+      {
+        "speciesId": "0151_default",
+        "mainSkillId": "almighty"
+      },
+      {
+        "speciesId": "0311_default",
+        "mainSkillId": "plus_ingredient_magnet_s"
+      },
+      {
+        "speciesId": "0312_default",
+        "mainSkillId": "minus_cooking_power_up_s"
+      },
+      {
+        "speciesId": "0380_default",
+        "mainSkillId": "healing_pulse_energy_cheer_s"
+      },
+      {
+        "speciesId": "0381_default",
+        "mainSkillId": "draco_meteor_berry_burst"
+      },
+      {
+        "speciesId": "0425_default",
+        "mainSkillId": "stockpile_energy_charge_s"
+      },
+      {
+        "speciesId": "0426_default",
+        "mainSkillId": "stockpile_energy_charge_s"
+      },
+      {
+        "speciesId": "0488_default",
+        "mainSkillId": "lunar_blessing_energy_for_everyone_s"
+      },
+      {
+        "speciesId": "0491_default",
+        "mainSkillId": "nightmare_energy_charge_m"
+      },
+      {
+        "speciesId": "0777_default",
+        "mainSkillId": "nuzzle_energy_cheer_s"
+      },
+      {
+        "speciesId": "0778_default",
+        "mainSkillId": "disguise_berry_burst"
+      },
+      {
+        "speciesId": "0849_amped",
+        "mainSkillId": "plus_ingredient_magnet_s"
+      },
+      {
+        "speciesId": "0849_low_key",
+        "mainSkillId": "minus_cooking_power_up_s"
+      }
+    ],
+    "pendingSeparateEncounterRecords": 32,
+    "mewSkillRate": null
+  },
+  "corrections": [
+    {
+      "target": "Biblo organized-v272 README",
+      "issue": "README claims v10 confirmed on main, but its own reconciliation shows v10 0/11 matched. Local pre-intake SHA256 check also found no v10 content.",
+      "resolution": "Record v10 as newly retained in this intake; do not backdate to v272 or confuse raw storage with runtime adoption."
+    },
+    {
+      "target": "Enigma r10 box-state-guidance",
+      "issue": "Historical proposal lists subskill active levels 75/100. Current form master uses 70/80 with sourceActiveAtLevel retained separately.",
+      "resolution": "Raw historical proposal retained unchanged; do not overwrite current master or infer unlock status from level."
+    }
+  ],
+  "requestedBibloNextOutput": {
+    "purpose": "Prioritize independently implementable daily components; full question resolution is not required for all bounded components.",
+    "requiredFields": [
+      "entityId",
+      "component",
+      "confirmedInputs",
+      "sourceIds",
+      "observedAt",
+      "versionScope",
+      "blockingDailyUnknowns",
+      "nonBlockingUnknowns",
+      "requiredIndividualState",
+      "affectedSpeciesIds",
+      "expectedOutput",
+      "candidateValidationCases"
+    ],
+    "rule": "Unknown probability is null. No parent-skill substitution, implicit unlocked state, assumed uniform draws, or partial-team total labelled complete."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "fc48c7f52c3a6ed244286c16215b6876a55757f68f32b15799a4f5fb3c71f59e",
+      "size": 1095
+    },
+    {
+      "path": "answers.json",
+      "sha256": "c6dff9c222b16a3b8c325ce33fd3d41c242e419525743a3d47d81b284e07161e",
+      "size": 2162
+    },
+    {
+      "path": "calculation-guidance.json",
+      "sha256": "93baf3c03e2b46badbf37b92c2b8d9a28541d05e525affe21b75528a9a9f8e64",
+      "size": 1666
+    },
+    {
+      "path": "coverage-update.json",
+      "sha256": "880482334446e4776ce3da9f1ff80a3e4bb0d880c849cdab51f176e846a32b4a",
+      "size": 482
+    },
+    {
+      "path": "evidence/unlock_notice_1.png",
+      "sha256": "f8cfd10c9677f9c89336bab7b27d57023d41ceca310ff9ea1931389851e05fd1",
+      "size": 289276
+    },
+    {
+      "path": "evidence/unlock_notice_2.png",
+      "sha256": "cfe981ebd1ecb5ac4fd9f6f6d6fcfdc0fcbb210dfd82ec086c1651be362feb40",
+      "size": 99444
+    },
+    {
+      "path": "evidence/unlock_notice_3.png",
+      "sha256": "7621128ff53aa8b28056de19d2cf623aa985b8ee96174da85de023c65ce52982",
+      "size": 77834
+    },
+    {
+      "path": "sources.json",
+      "sha256": "d6a96a866561020b54a45165a900b98cf9287249195b05f608c3dfd52d179756",
+      "size": 5863
+    },
+    {
+      "path": "validation.json",
+      "sha256": "a3ed0f8319ca8b2102f73462698ca12f48f1c58aa4dbb63349e70e1495fa9f9a",
+      "size": 259
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "20d2a901d91497dc211bc01432d4dbe0616ae9acf9bc46a4c8a4e15b1dd93c4c",
+      "size": 655
+    }
+  ]
+}

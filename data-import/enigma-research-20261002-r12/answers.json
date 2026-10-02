@@ -1,0 +1,62 @@
+[
+  {
+    "questionId": "ENI-almighty-01",
+    "status": "partial_first_person_target_evidence_and_primary_study_review",
+    "answer": {
+      "mewSelfCandyTargetReported": true,
+      "exactExtraCandyProbability": null,
+      "targetSelectionWeights": null,
+      "leaderWeightMultiplier": null,
+      "branchAndTargetIndependence": null,
+      "selectedSkillChangesCandyProbability": null,
+      "copyOrMetronomeNestedCandyHandling": null
+    },
+    "sourceIds": [
+      "R12-official-mew",
+      "R12-kenpon-report",
+      "R12-almighty-study",
+      "R12-almighty-raw-sheet"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "自身対象の本人観測を別記。30%・35%・対象1/5を既定値にしない。週のアメ合計から分岐率・対象重みを推定しない。"
+  },
+  {
+    "questionId": "ENI-draco_meteor_berry_burst-03",
+    "status": "partial_historical_unlock_sequence_evidence",
+    "answer": {
+      "historicalRank13ThenFollowingResearchUnlockReported": true,
+      "currentUnlockRouteForNonParticipants": null,
+      "currentAutomaticUnlock": null,
+      "perAccountOrPerIndividualUnlockScope": null
+    },
+    "sourceIds": [
+      "R12-official-latios",
+      "R12-official-event",
+      "R12-official-bugs",
+      "R12-tomo-rank13",
+      "R12-tomo-unlock",
+      "R12-unlock-image-1",
+      "R12-unlock-image-2",
+      "R12-unlock-image-3",
+      "R12-kinmint-unlock"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "過去の解放順序を観測として記録。現在の全個体を自動で解放済みにしない。"
+  },
+  {
+    "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+    "status": "partial_shared_historical_unlock_evidence",
+    "answer": {
+      "historicalSharedLatiasLatiosUnlockReported": true,
+      "currentUnlockRouteForNonParticipants": null,
+      "currentAutomaticUnlock": null
+    },
+    "sourceIds": [
+      "R12-tomo-unlock",
+      "R12-unlock-image-2",
+      "R12-kinmint-unlock"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "ラティアスも同じイベント観測の対象として追記。現行の解放条件までは確定しない。"
+  }
+]

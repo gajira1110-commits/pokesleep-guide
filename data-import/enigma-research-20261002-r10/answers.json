@@ -1,0 +1,39 @@
+[
+  {
+    "questionId": "ENI-mythical-individual-01",
+    "status": "partial_historical_candidate_and_reroll_evidence",
+    "answer": {
+      "darkraiFirstSubskillCandidatesObserved": 17,
+      "candidateScope": "2025/5/17掲載のLv10枠解放時の候補画面",
+      "candidateDrawProbabilities": null,
+      "completeDuplicateExclusionRules": null,
+      "currentIngredientDrawWeights": null,
+      "mewMainSkillDrawWeights": null,
+      "rerollRejectionRetainsOldSubskillReported": true,
+      "rerollRejectionCandyReported": 40
+    },
+    "sourceIds": [
+      "R10-candidate-image",
+      "R10-sharkfin-report",
+      "R10-reroll-retain-report"
+    ],
+    "fullyResolved": false,
+    "reason": "候補と再抽選取り消しの本人証拠を追加。重みや除外の完全な規則は未確認。"
+  },
+  {
+    "questionId": "ENI-mythical-individual-02",
+    "status": "unlock_and_display_evidence_without_level_requirement_resolution",
+    "answer": {
+      "darkraiCanUnlockBeforeRequiredLevel": null,
+      "priorSlotUnlockRequirementReported": true,
+      "emptyDisplayProvesLocked": false
+    },
+    "sourceIds": [
+      "R10-anonymous-order-report",
+      "R10-kamome-report",
+      "R10-blank-image"
+    ],
+    "fullyResolved": false,
+    "reason": "鍵の見た目と空欄だけでは、たねの使用条件を確定できない。表示不具合の本人報告を加え、解放状態と内容確認を分離する。"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "ddc280e542aa7eb8dcae95cde765c2f652e4fcb3a93ca2e0822c9eb3c3ddf7de"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "6787e54704563d7539a464975122e5a2b9516bf8c035728376ef03c1eb29aee5"
+    },
+    {
+      "path": "box-state-guidance.json",
+      "sha256": "e26b0e67712a60170f1a2ffb81106e48d00c95e8f11d785e414c7137eef20a16"
+    },
+    {
+      "path": "candidate-evidence.json",
+      "sha256": "6000482db3d3a0050216e4511430ca7544ddcbfc64b0e8991b2252b635962852"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "61ff573d8788e49f35ec8486bc1b641ca597dc4e9174397e262e69a23b645637"
+    },
+    {
+      "path": "evidence/darkrai_result.jpg",
+      "sha256": "a38ba5d74de621dab72895c627cf911e02ff143a44745a2dc85f9909f9a6501c"
+    },
+    {
+      "path": "evidence/subskill_candidates.png",
+      "sha256": "181284629c30481cffdd8ae2f1033e8a5269f62d28b6360cd0e45835b8da666b"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "a3e3b5ee184d920150196fefba2a9374d3b853cdd32f7cd7bdadfec60096fd4e"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "a65b43e4817d682c077d3f4d8916e26a008fb04dfca7921ff85390f80c273a51"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "f004527fc10fed42b9ba9694478e0984e5c44f2e2caa0711029dc021738782f6"
+    }
+  ]
+}

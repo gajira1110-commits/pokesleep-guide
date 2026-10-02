@@ -1,0 +1,52 @@
+[
+  {
+    "sourceId": "R10-sharkfin-report",
+    "url": "https://note.com/sharkfin/n/n018793feae7b",
+    "kind": "first_person_seed_use_report",
+    "publishedAt": "2025-05-17",
+    "checkedAt": "2026-10-02",
+    "summary": "本人がLv10のサブスキル枠へたねを使用した報告。掲載の候補画像を目視確認。"
+  },
+  {
+    "sourceId": "R10-candidate-image",
+    "url": "https://assets.st-note.com/img/1747447506-o6LmcJ5Sbs1MgeRYy3CaHTwK.png?width=1200",
+    "kind": "first_person_game_screenshot",
+    "parentSourceId": "R10-sharkfin-report",
+    "localEvidence": "evidence/subskill_candidates.png",
+    "visuallyInspected": true,
+    "summary": "サブスキルの一覧という画面で17種を確認。抽選確率や現行の全枠共通候補をこの画像だけでは確定しない。"
+  },
+  {
+    "sourceId": "R10-kamome-report",
+    "url": "https://note.com/k4momew/n/nd614267f717a",
+    "kind": "first_person_seed_use_and_display_issue_report",
+    "publishedAt": "2025-05-16",
+    "checkedAt": "2026-10-02",
+    "summary": "サブスキル解放結果はリサーチEXPボーナスと本人報告。解放後も表示が空欄になり、キャッシュ削除で改善したと報告。"
+  },
+  {
+    "sourceId": "R10-blank-image",
+    "url": "https://assets.st-note.com/img/1747372548-EtcZ98uABmdJKsWM6UVeY54l.jpg?width=1200",
+    "kind": "first_person_game_screenshot",
+    "parentSourceId": "R10-kamome-report",
+    "localEvidence": "evidence/darkrai_result.jpg",
+    "visuallyInspected": true,
+    "summary": "Lv25、Lv30/60食材は鍵と空欄。サブスキル最初2枠は空欄、Lv50/75/100は鍵と空欄。解放結果自体を画像から読み取ることはできない。"
+  },
+  {
+    "sourceId": "R10-anonymous-order-report",
+    "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/60",
+    "kind": "first_person_anonymous_report_with_image_links",
+    "reportedAt": "2025-05-16",
+    "checkedAt": "2026-10-02",
+    "summary": "前の枠を解放してから次の枠を解放するとの本人報告。リンク先画像は取得・目視確認できなかったため、候補や数量の検証には使用しない。"
+  },
+  {
+    "sourceId": "R10-reroll-retain-report",
+    "url": "https://note.com/shibe266/n/n8f62a4263f37",
+    "kind": "first_person_seed_use_report",
+    "publishedAt": "2025-07-22",
+    "checkedAt": "2026-10-02",
+    "summary": "食材確率アップMを再抽選してリサーチEXPボーナスとなり、変更を取り消して元のスキルを保持、アメ40個へ変換した本人報告。"
+  }
+]

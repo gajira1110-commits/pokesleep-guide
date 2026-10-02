@@ -1,0 +1,107 @@
+[
+  {
+    "sourceId": "R12-official-mew",
+    "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+    "kind": "official",
+    "summary": "セット効果に加えてチーム1匹のアメを獲得。対象重み、追加個数の分岐率、入れ子効果は記載を確認できず。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-kenpon-report",
+    "url": "https://note.com/kenpon_pokesleep/n/nc497c7106540",
+    "kind": "first_person_gameplay_report",
+    "publishedAt": "2026-09-12",
+    "summary": "本人がミュウ自身のアメも対象に含まれると報告。週合計100個、ミュウ14個だがチーム変更あり。発動ログ・追加個数別回数・チーム別滞在時間がなく、14/100を対象確率にしない。30%という説明は伝聞で本人測定値ではない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-almighty-study",
+    "url": "https://wikiwiki.jp/poke_sleep/検証/オールマイティーの飴入手確率",
+    "kind": "primary_community_study_design_and_authored_interim_analysis",
+    "summary": "検証ページ執筆者の中間報告を確認。100件超、30〜35%候補、リーダー20%仮定と矛盾しないという記述。生データ未確認なのでNや信頼区間を再計算せず、均一性やスキル差なしを確定しない。149回70回は統計説明の仮例で実測として採用しない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-almighty-raw-sheet",
+    "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhWZHZVxftWAx-hRq8JYzKo6jvUA9Cbl2Qv-mNc8f2Mlw2mdOutUPC6poTo2LH9uhEjuj5mJ9QLmcL/pubhtml",
+    "kind": "linked_raw_data_not_read",
+    "accessResult": "web open Internal Error",
+    "adoption": "数値検証に不使用",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-official-latios",
+    "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+    "kind": "official",
+    "summary": "ラティアス編成時に自分のきのみ増加と説明。現時点の個別アカウントの解放状態や未参加者向け解放条件はこの説明だけでは判定できない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-official-event",
+    "url": "https://www.pokemonsleep.net/news/343031343632313536373438333930343032/",
+    "kind": "official_historical_event_notice",
+    "summary": "2026/6/8〜6/22のイベントと絆の力を示唆。ランク報酬受け取り期限6/24 3:59。現在の未参加者向け解放手段は記載確認できず。期限はイベント報酬の期限であり恒久的な解放不能の証明ではない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-official-bugs",
+    "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+    "kind": "official_historical_bug_notice",
+    "summary": "ランク13達成後の次の睡眠リサーチでメインスキルのたね報酬が得られない不具合と修正。これはスキル追加効果の現行解放条件を直接定義する告知ではない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-tomo-rank13",
+    "url": "https://note.com/tomo_choro42/n/n6b0a0790f6e9",
+    "kind": "first_person_event_report",
+    "publishedAt": "2026-06-16",
+    "summary": "ランク13達成を本人報告。次のリサーチを予告。後日の記事と同一人の時系列であり独立例として数えない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-tomo-unlock",
+    "url": "https://note.com/tomo_choro42/n/n7a6211fdf655",
+    "kind": "first_person_event_report_with_game_screenshots",
+    "publishedAt": "2026-06-17",
+    "summary": "ランク13後のリサーチとネロリ博士の連絡、ロックされていたメインスキル効果の解放を本人報告。掲載の連絡3枚を目視確認。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-kinmint-unlock",
+    "url": "https://note.com/kinmint/n/n8693cb890f89",
+    "kind": "first_person_event_report",
+    "publishedAt": "2026-06-22",
+    "summary": "ランク13達成、翌日のリサーチへの準備、その後の解放という本文の順序を確認。全ユーザー・全個体への一般則を証明しない。画像内容は今回目視確認していない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R12-unlock-image-1",
+    "url": "https://assets.st-note.com/img/1781691630-14YZ6Sylw7XjH0pCeLvDQdtW.png?width=1200",
+    "kind": "game_screenshot_in_first_person_report",
+    "parentSourceId": "R12-tomo-unlock",
+    "localEvidence": "evidence/unlock_notice_1.png",
+    "visuallyInspected": true,
+    "sha256": "f8cfd10c9677f9c89336bab7b27d57023d41ceca310ff9ea1931389851e05fd1",
+    "summary": "こころのしずくの輝き回復に言及する画面"
+  },
+  {
+    "sourceId": "R12-unlock-image-2",
+    "url": "https://assets.st-note.com/img/1781691630-HoX1yNTpGVqzDPW864aFfYA2.png?width=1200",
+    "kind": "game_screenshot_in_first_person_report",
+    "parentSourceId": "R12-tomo-unlock",
+    "localEvidence": "evidence/unlock_notice_2.png",
+    "visuallyInspected": true,
+    "sha256": "cfe981ebd1ecb5ac4fd9f6f6d6fcfdc0fcbb210dfd82ec086c1651be362feb40",
+    "summary": "ラティアスとラティオスの力の解放に言及する画面"
+  },
+  {
+    "sourceId": "R12-unlock-image-3",
+    "url": "https://assets.st-note.com/img/1781691630-VJ4W2Qxn9Ok5S6cAyfsG0jDK.png?width=1200",
+    "kind": "game_screenshot_in_first_person_report",
+    "parentSourceId": "R12-tomo-unlock",
+    "localEvidence": "evidence/unlock_notice_3.png",
+    "visuallyInspected": true,
+    "sha256": "7621128ff53aa8b28056de19d2cf623aa985b8ee96174da85de023c65ce52982",
+    "summary": "両方のおてつだい能力の確認を促す画面"
+  }
+]

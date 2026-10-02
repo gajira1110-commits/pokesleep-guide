@@ -1,0 +1,509 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "5e7553b5c292dc740b3b1817581482675691ace3d6390be201c9227c24ffe2a7",
+      "size": 6267
+    },
+    {
+      "path": "adoption-guidance.json",
+      "sha256": "3a74b6d7f46a13cedcd11ac076336018b6058d5f5a104b475181429e24b36db5",
+      "size": 3661
+    },
+    {
+      "path": "evidence-ledger.json",
+      "sha256": "6b153f67d25b169c4bd374604530e6cb2b8327a8e4dc5a24d2d7aa8332cf7357",
+      "size": 29167
+    },
+    {
+      "path": "question-index.json",
+      "sha256": "254891f0dd024cbef2b3db6af309e203297f4c39a368e74522549898911f6a7a",
+      "size": 18025
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/README.txt",
+      "sha256": "52b0ff26ca9da41e7ed021c1b7c60a87be47e06419489a5dd5b8a5e740ee2e56",
+      "size": 1474
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/answers.json",
+      "sha256": "3932c8c9fb36309cdb845e3e07677d96fbad9fdab0a12e0365382e132f1031c3",
+      "size": 2660
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/changes.json",
+      "sha256": "761c25950e6e8db19e1768d3e8e40cd8491fc74c216562a1452d4df53334421a",
+      "size": 531
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/coordination-corrections.txt",
+      "sha256": "11499e6d3868fe66a58bc98b417656d6193f4ede2f6233c8b006ce713c14ffff",
+      "size": 908
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/manifest.json",
+      "sha256": "b90f1d092d2b2788b71b82d44fbdbf48266838480fd9f88717e69473e4e04b79",
+      "size": 1556
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/originals/mew_level50_unlock_observation.jpg",
+      "sha256": "abfdf1581259320b38016f4477880d863e415ef432b22ae89d729907c531dc4a",
+      "size": 75226
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json",
+      "sha256": "fd393e7fae59d00faf4abd914a510e9c3708b0bd78b15a9b15b20cd5d3ff99c3",
+      "size": 17436
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json",
+      "sha256": "38b349b81318572ceb9d42ab484914c1aeb64eae1c965ef96e2e6738d5811a5f",
+      "size": 2742
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/user-input-followup.json",
+      "sha256": "50a328d44524117b3a13cdfdf1715abad841e2c087aeea00145052381897f26d",
+      "size": 759
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/validation.json",
+      "sha256": "400494463d4c8aee2f5d17be217882e942047dfffb7fc2a14eced67ff20852cd",
+      "size": 181
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/verification-plan.json",
+      "sha256": "47b63c7c6e0272961ed6741e6b8f3bb0b39bf299367b75dc6b815c5bf2c70292",
+      "size": 1314
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/README.txt",
+      "sha256": "ddc280e542aa7eb8dcae95cde765c2f652e4fcb3a93ca2e0822c9eb3c3ddf7de",
+      "size": 1032
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/answers.json",
+      "sha256": "6787e54704563d7539a464975122e5a2b9516bf8c035728376ef03c1eb29aee5",
+      "size": 1447
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/box-state-guidance.json",
+      "sha256": "e26b0e67712a60170f1a2ffb81106e48d00c95e8f11d785e414c7137eef20a16",
+      "size": 1790
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/candidate-evidence.json",
+      "sha256": "6000482db3d3a0050216e4511430ca7544ddcbfc64b0e8991b2252b635962852",
+      "size": 2764
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/changes.json",
+      "sha256": "61ff573d8788e49f35ec8486bc1b641ca597dc4e9174397e262e69a23b645637",
+      "size": 307
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/evidence/darkrai_result.jpg",
+      "sha256": "a38ba5d74de621dab72895c627cf911e02ff143a44745a2dc85f9909f9a6501c",
+      "size": 147635
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/evidence/subskill_candidates.png",
+      "sha256": "181284629c30481cffdd8ae2f1033e8a5269f62d28b6360cd0e45835b8da666b",
+      "size": 309203
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/manifest.json",
+      "sha256": "d3fb94817f362c31567245a9627aee95b1698c8141439d76736ac56413542b3e",
+      "size": 1348
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json",
+      "sha256": "a3e3b5ee184d920150196fefba2a9374d3b853cdd32f7cd7bdadfec60096fd4e",
+      "size": 2587
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/validation.json",
+      "sha256": "a65b43e4817d682c077d3f4d8916e26a008fb04dfca7921ff85390f80c273a51",
+      "size": 254
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/verification-plan.json",
+      "sha256": "f004527fc10fed42b9ba9694478e0984e5c44f2e2caa0711029dc021738782f6",
+      "size": 619
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/README.txt",
+      "sha256": "c7e780f017da31e1ced7bd5b9a17e7440d8d4068594a421e87b3edf4f9012605",
+      "size": 1477
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json",
+      "sha256": "052deeb93398a1f94ac26bb0217f933562b69ba29852ca1445c2f08f5cfef5de",
+      "size": 3408
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/changes.json",
+      "sha256": "2bc182d5172bbbf51dc8833b232149f8ceb20da357abb0198f323eb99473dcf2",
+      "size": 874
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/manifest.json",
+      "sha256": "d6c6b3aeb70a3b0f0c4222dd9cb7ee0e3018ad2813c854303ad843ebcfc6709f",
+      "size": 923
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json",
+      "sha256": "0e82993ab004daa7ebdd1fb0fb5a69a9d094d4cc649c90a618f6703d370188bd",
+      "size": 2279
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/state-transitions.json",
+      "sha256": "2cd9a9d1f89b061cac8ce8e47fd854324b3abaf4ba262ebc99cee6bf2b2a25fd",
+      "size": 5202
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/validation.json",
+      "sha256": "f09abecd62591b0834a54eb8e8ddef95560099312c05a081b6cbf01c8da11624",
+      "size": 148
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/verification-plan.json",
+      "sha256": "908cb9ed1bc1fa150dacef6d316bf425c8da3f8c925afef602de9d85af317d6d",
+      "size": 1082
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/README.txt",
+      "sha256": "ae7e92e5cba252740c7a0c95eebbeedbb98b5bc470f4be7b11821b24e0282201",
+      "size": 1088
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json",
+      "sha256": "1dd79d56d82d2a0c0d47009752d0be1f03c0ed7f3c09271ac8254dcc25b37e25",
+      "size": 3656
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/changes.json",
+      "sha256": "d97157150242b294872a42d8957abc160679332d03ef1bd179a7a8974eebf6fd",
+      "size": 518
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/manifest.json",
+      "sha256": "bb77acd0aeaeb94a8b19de28f18068236763eb941962048c7787c55c9b157977",
+      "size": 918
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/observations.json",
+      "sha256": "c55c3ad92864481174be497175fb0199c58e6ada954241a37eabdfadf06a8183",
+      "size": 1647
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json",
+      "sha256": "62830a19da627bd1e73451f7ca014aa51838010929abb763d26eb8f14bcb488f",
+      "size": 2119
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/validation.json",
+      "sha256": "c695bceee3dc00327b44542fd90b82da90fc8dd5a57e0713d0157bed02e41322",
+      "size": 348
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/verification-plan.json",
+      "sha256": "a61fa32caf0ff605dcc73355170945a22ae466a2c95850d371a17a61792357f9",
+      "size": 1027
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/README.txt",
+      "sha256": "9cc5a7718c7f5007ae4cf3b820a8f9234d4a2d08fa4fa0e1cab9fe8aca9bb5d9",
+      "size": 1293
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/answers.json",
+      "sha256": "e8c33c58173cbb8a067d122daff0b9a133d71c7e4127bbc179d1559025f7280d",
+      "size": 1336
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/arithmetic-checks.json",
+      "sha256": "ae8e16dc1759da182d2e5eb7b29646e4a0fb251c525b53cf06e2f426e1c47c97",
+      "size": 970
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/changes.json",
+      "sha256": "2afbb54feedda2ccc9f4ba8806c31e81877b5588442c6c7dc50e1d18e915d113",
+      "size": 711
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/manifest.json",
+      "sha256": "ccba10cea3ac659ce233e0ee803c301e39adfd263d8a4b83eac78d5bf86636f1",
+      "size": 1184
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/observations.json",
+      "sha256": "2ccf8be1969504ec7e4ebf4cbb98a5acb4da71767bb706cde1fef3281b1abed3",
+      "size": 1371
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json",
+      "sha256": "0599daddb8f0d89b0542c416d67ca35acb96a2ccab0429b3e4218ea7d598aa09",
+      "size": 2172
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/state-rules.json",
+      "sha256": "e181f301829d2952de7b97b753265b4ccab0bb2230054d556fc107dd8330dfa9",
+      "size": 735
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/validation.json",
+      "sha256": "d250871186744497f941494b81bc1cdc7f7a25c1018f258df88c53ab1ee01a18",
+      "size": 372
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/verification-plan.json",
+      "sha256": "619af4dd74045b4081925bfa3c737b80bdda4b4c0af578c4e82c4ea3a307f973",
+      "size": 1036
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/README.txt",
+      "sha256": "c5221df33564928b1b4e0517e587617986cacc712c85be60a22a4d41ae613cdb",
+      "size": 1384
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/answers.json",
+      "sha256": "0cbb3d124109368dc42330165fdb5501fed0024558f53bf866d0abb30595f58c",
+      "size": 2426
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/changes.json",
+      "sha256": "9f9d891f5db4fa2c04c47938e873d6ebaf811cbcb0927d6477c5e26fa8eccdd5",
+      "size": 404
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/evidence/mimic_metronome_lunar.png",
+      "sha256": "ace87c7ec6382d484af38e635cfbff0f90955e3ecc4048e4ca24f40f85643534",
+      "size": 649098
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/hypothesis-comparison.json",
+      "sha256": "acb721b5826544ee35d5edf126dbdf958215afc9924051f238c81641fa579fb4",
+      "size": 1020
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/identity-policy.json",
+      "sha256": "25b9322ef6646a4ac26ec117e853a0758825fe675d46c1cc1d9268a29ee043fd",
+      "size": 1187
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/manifest.json",
+      "sha256": "48dfbf8e93a8ab4bb10cfa95e636e7f8b53fb08ef3797401e007151f1c8a3a8e",
+      "size": 1340
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/observations.json",
+      "sha256": "e935b366cc2ed04fc0a8f548b60ee82cc987498d91b61a57450d1b7093c37023",
+      "size": 1228
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json",
+      "sha256": "9258a15c7c16793062e4eb7e82bde68161874cfd087e2fe64b79c1792c2577b2",
+      "size": 2537
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/validation.json",
+      "sha256": "89738c3dd90db193bd3bcbbb581604abc2dfd4c50455d2b6a39daa4bc8030bac",
+      "size": 347
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/verification-plan.json",
+      "sha256": "8e7a3a83546b38164cf4ee585cf15f940695f05418309d5859b1ecb02d6e946a",
+      "size": 1078
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/README.txt",
+      "sha256": "a72bd8a2e5edb95f275abcf9d3e6066d1a978feeeaebc18fd231428bacd0102e",
+      "size": 1255
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/answers.json",
+      "sha256": "1c383c4a98c026d535cb69565db758b1e42dc572248d75c78a9b9cfc2df8dab1",
+      "size": 1305
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/changes.json",
+      "sha256": "99526af1b56472d764153036bbea4d6edb9468fd037de208267fff52addae3a2",
+      "size": 428
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/daily-expectation-model.json",
+      "sha256": "580c67355c37b770dcb31201a9fc667deef14480bf69a277ac715e39031cab9e",
+      "size": 3139
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/manifest.json",
+      "sha256": "87ec28b60a2379a3fd5b061c3b4d3a27cf0e3051f1273b9c34b4a83dd2918569",
+      "size": 1060
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/observations.json",
+      "sha256": "5988951509194006c50220cc92a9333cc4f992dde402ce4a555793e27c6e2b3c",
+      "size": 2547
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json",
+      "sha256": "7c14262cfe943ff297f758f3316ab681a3371c1dd8eb3648b8f8f95056e959b4",
+      "size": 1634
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/validation.json",
+      "sha256": "2ecd86e558ada32efb961968a0664b43b1e07b9a501566535371a4642dcd6dba",
+      "size": 436
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/verification-plan.json",
+      "sha256": "769746c52fefc7699945eae35000091378e848b5c26c3d5469129dd65523ecc0",
+      "size": 572
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/README.txt",
+      "sha256": "19ce4c8db2c76298c45eaa0149cfa71247c03051ffd5a7d6815b2f4bdb47ad62",
+      "size": 1053
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/answers.json",
+      "sha256": "eea22bfc50d72f6dcf8cd323bcdc7c04909c14f6319bcad623c399e338e3caa0",
+      "size": 919
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/changes.json",
+      "sha256": "4c78eb6f4b4d9c042eda2b37ec14c513d0b554c1ef9d517739d40b93f5ac845c",
+      "size": 331
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/daily-expectation-model.json",
+      "sha256": "edab5ea532734a2d44eb28bdbedaa0dce392e7389de9c4a388d28cf48a13baf9",
+      "size": 2882
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/manifest.json",
+      "sha256": "6396b62d294e45d161c3a54af366a107b109a1af6869632088a94402e9449662",
+      "size": 1060
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/observations.json",
+      "sha256": "d5301c30dbfe48d3c245f8e04abb4d86ae99d099ddf13c5e762487d2db145b56",
+      "size": 1063
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json",
+      "sha256": "4bc40c38660e7969161a76d7983dd32a13b36b5155e3dcd2587ebf98041651d2",
+      "size": 1680
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/validation.json",
+      "sha256": "ab3014676298393528f014cf30dacd1105fd6a34d4282fa7031d81247193d863",
+      "size": 2735
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/verification-plan.json",
+      "sha256": "78461abfa7585faaa9d9e978611cbbed62542b1d82b1ca8212e63a68c5f34cc2",
+      "size": 877
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/README.txt",
+      "sha256": "ce201ee77b82b4b1105ad7343c565a5ea5f8856ab2ccaef2c89ae4348aa6314c",
+      "size": 1098
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/answers.json",
+      "sha256": "95d87000281eea30e718bba469883c2a45f5bfea2580ce43372d23400f1d7ad7",
+      "size": 2152
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/calculation-guidance.json",
+      "sha256": "7af515980adbcc9c5816c987eda8920be0bc15dfef503ae6441c0c72c9569180",
+      "size": 2430
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/changes.json",
+      "sha256": "606abde8e86b3fddf730ed0d5cf826df9b14798a6426d4be11eef46e1c27aa80",
+      "size": 389
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/manifest.json",
+      "sha256": "cbc241f0ab7be31513fb70fc68e3452d7834bd0e1742777dbb2d7ecb43d0ec16",
+      "size": 1057
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/observations.json",
+      "sha256": "3f124e1d67d06f65729ea75270cb6ee693cfb70abc37fcd7d73c40e65dadb780",
+      "size": 1858
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json",
+      "sha256": "20525bcbf9b5fa590732071ea3675f43186a9956d84a2d280c09cc21afed5535",
+      "size": 2333
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/validation.json",
+      "sha256": "948062b845b3488624a65bb45314c5794305fd6eacc2973e1f40e8c5d53f2648",
+      "size": 334
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/verification-plan.json",
+      "sha256": "f60f9e673e844fac76b090930ef38811245c7e97206d7756e7b5aa4806216f08",
+      "size": 2184
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/README.txt",
+      "sha256": "b4300b5587ad56cda3ff16f1a823b4787e2b75a116a2d1bd012d2fd20aa86216",
+      "size": 933
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/answers.json",
+      "sha256": "ae047cb3d2645eb400632675d1151f62cea64f5f2ed8e8864ef6d46d5c1f98f1",
+      "size": 896
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/calculation-guidance.json",
+      "sha256": "6e7f29a5112c6a825cdf896948b301fdf83303872ee3dbff241bc0d2360b431d",
+      "size": 2061
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/changes.json",
+      "sha256": "e6efb22530b9e4f65000629e2808e43074a5303ca2064b93a1d621d1a46981da",
+      "size": 366
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/manifest.json",
+      "sha256": "ffd9349a0549fb12e84609e0f6063231c6561e38dd7d38c81cacbd6c07867e38",
+      "size": 1057
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/observations.json",
+      "sha256": "eed7c4600d5bb76f2bd5dce5c8a58b3f2eeeb1ed5721156035e85b33b054b843",
+      "size": 820
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json",
+      "sha256": "23251867117a75cabd28db13cf6948118491212840e0b6b391d59d43794de385",
+      "size": 2014
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/validation.json",
+      "sha256": "1da44335b19356d7b22a9c9b6f86ec1c24cc0ba2e15a63aaff67bf523481ea26",
+      "size": 783
+    },
+    {
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/verification-plan.json",
+      "sha256": "60eac65ed028c7959c75c0a7e443310439b4b96c0de365dbeaf6889ae410ecbb",
+      "size": 1392
+    },
+    {
+      "path": "source-index.json",
+      "sha256": "a5c449f7a457b75479e49197d513b803eeb99f4531bf7a729e5b1b4fe1293b5c",
+      "size": 31306
+    },
+    {
+      "path": "validation.json",
+      "sha256": "f32d269f75c266da0a00ef555d55cbc682afad36d46ae2ebf5d9db3a6602646e",
+      "size": 19343
+    }
+  ]
+}
