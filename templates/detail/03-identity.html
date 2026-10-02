@@ -49,7 +49,7 @@
    const art=document.getElementById("detailArt");
    if(art){
      art.replaceChildren();
-     if(m.detailPreviewOnly){
+     if(m.detailPreviewOnly&&!m.image){
        const missing=document.createElement('span');missing.className='psg-form-no-image';missing.textContent='No image';art.append(missing);
        const badge=document.createElement('span');badge.className='v51-type-badge';badge.title='タイプ：'+m.type;badge.innerHTML=window.PS_TYPE_ART?.(m.type)||iconForType(m.type);art.append(badge);
        return;

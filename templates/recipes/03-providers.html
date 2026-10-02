@@ -16,10 +16,10 @@
   for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
     const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.dataset.speciesId=window.PS_SPECIES_CATALOG.key(species);button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
     const art=document.createElement('span');art.className='psg-recipe-provider-art';
-    if(species.speciesId){const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';art.append(missing)}
-    else if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
+    if(species.speciesId&&!species.faceImage){const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';art.append(missing)}
+    else if(!species.speciesId&&window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
     else{
-      const img=document.createElement('img');img.src=window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
+      const img=document.createElement('img');img.src=species.faceImage||window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
       const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';missing.hidden=true;
       img.onerror=()=>{img.hidden=true;missing.hidden=false};art.append(img,missing);
     }

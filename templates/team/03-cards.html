@@ -7,10 +7,10 @@ function saveTeamSelection(next){
 function teamFace(individual){
  const art=document.createElement('span');art.className='psg-team-face';
  if(!individual){art.textContent='＋';return art}
- if(speciesFor(individual)?.detailPreviewOnly||!speciesFor(individual)){art.textContent='No image';return art}
- if(window.PS_FACE_ART?.usesSheet(individual.no)){art.append(window.PS_FACE_ART.element(individual.no,''));return art}
+ if((speciesFor(individual)?.detailPreviewOnly&&!speciesFor(individual)?.faceImage)||!speciesFor(individual)){art.textContent='No image';return art}
+ if(!speciesFor(individual)?.speciesId&&window.PS_FACE_ART?.usesSheet(individual.no)){art.append(window.PS_FACE_ART.element(individual.no,''));return art}
  const species=speciesFor(individual);
- const src=window.PS_IMAGE_FILES.pokemonFaces?.[individual.no]||species?.faceImage||species?.image;
+ const src=species?.faceImage||species?.image;
  if(!src){art.textContent='No image';return art}
  const img=document.createElement('img');img.src=src;img.alt='';img.onerror=()=>{img.remove();art.textContent='No image'};
  art.append(img);return art;
