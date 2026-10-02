@@ -1,0 +1,65 @@
+{
+  "status": "mathematical_model_under_explicit_assumptions_not_confirmed_game_probability",
+  "scope": "1個体・大成功可能から開始・リセットを挟まない区間",
+  "assumptions": [
+    "区間内の通常発動回数nが固定。",
+    "大成功可能な各発動の分岐確率pが一定で独立というモデル仮定。",
+    "最初の大成功後は再リセットまで大成功なし。",
+    "1回の通常発動で得るきのみエナジーBが一定。大成功はその3倍という既存コミュニティ仕様を仮定。"
+  ],
+  "formula": {
+    "successProbability": "1-(1-p)^n",
+    "expectedGreatSuccessCount": "1-(1-p)^n",
+    "expectedTotalEnergy": "B*(n+2*(1-(1-p)^n))",
+    "initiallyIneligible": "B*n",
+    "multipleResetCycles": "各区間の期待値を合算。実際の睡眠リサーチ／マニュアル登録と個体の適格状態で区切る。午前0時だけで区切らない。",
+    "randomActivationCount": "固定Bの場合 B*(E[N]+2*(1-E[(1-p)^N]))。Nの平均値を固定nへ置換するのは近似であり一般には等しくない。"
+  },
+  "varyingTeamEnergy": "Bが編成・レベル等で変わるときは固定B式を使わず、時系列の各発動で加算する。",
+  "exactGameP": null,
+  "examplesWithHypotheticalP20Percent": [
+    {
+      "fixedActivationsInOneEligibleCycle": 0,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.0,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 0.0,
+      "incorrectUncappedComparison": 0.0
+    },
+    {
+      "fixedActivationsInOneEligibleCycle": 1,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.19999999999999996,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 1.4,
+      "incorrectUncappedComparison": 1.4
+    },
+    {
+      "fixedActivationsInOneEligibleCycle": 2,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.3599999999999999,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 2.7199999999999998,
+      "incorrectUncappedComparison": 2.8
+    },
+    {
+      "fixedActivationsInOneEligibleCycle": 3,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.4879999999999999,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 3.976,
+      "incorrectUncappedComparison": 4.199999999999999
+    },
+    {
+      "fixedActivationsInOneEligibleCycle": 5,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.6723199999999999,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 6.34464,
+      "incorrectUncappedComparison": 7.0
+    },
+    {
+      "fixedActivationsInOneEligibleCycle": 10,
+      "assumedEligibleBranchProbability": 0.2,
+      "probabilityOfAtLeastOneSuccess": 0.8926258175999999,
+      "expectedTotalEnergyInUnitsOfOneNormalActivation": 11.7852516352,
+      "incorrectUncappedComparison": 14.0
+    }
+  ],
+  "notAFormulaFor": "つきのひかりへ大成功後ロックを自動適用しない。個体を複数編成した場合にロックを全体共通にしない。"
+}

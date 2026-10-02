@@ -1,0 +1,11 @@
+{
+  "allQuestionIdsMatchExistingQueue": true,
+  "allSourceReferencesResolve": true,
+  "arithmeticChecksPassed": true,
+  "observationsSeparatedFromAuthorInference": true,
+  "copyWikiNotPromotedToPrimary": true,
+  "burstCalculationNotCountedAsObservedActivation": true,
+  "unknownsRetainedAsNull": true,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26
+}

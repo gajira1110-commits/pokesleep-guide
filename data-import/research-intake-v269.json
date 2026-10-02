@@ -1,0 +1,34 @@
+{
+  "version": 269,
+  "packages": [
+    {
+      "version": 3,
+      "manifestVerified": true,
+      "runtimeProbabilityAdopted": false,
+      "imageEvidenceArchived": null
+    },
+    {
+      "version": 4,
+      "manifestVerified": true,
+      "runtimeProbabilityAdopted": false,
+      "imageEvidenceArchived": null
+    },
+    {
+      "version": 5,
+      "manifestVerified": true,
+      "runtimeProbabilityAdopted": false,
+      "imageEvidenceArchived": false
+    },
+    {
+      "version": 6,
+      "manifestVerified": true,
+      "runtimeProbabilityAdopted": false,
+      "imageEvidenceArchived": null
+    }
+  ],
+  "notes": 9,
+  "skills": 7,
+  "probabilitiesPromotedToConstants": false,
+  "pokemonCount": 248,
+  "formEncountersRemainPending": 32
+}

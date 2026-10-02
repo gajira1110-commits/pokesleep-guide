@@ -1,0 +1,26 @@
+{
+  "observationId": "R5-mimic-metronome-combined-effect",
+  "classification": "our_inference_from_screenshot_and_secondary_table",
+  "tableSourceId": "R5-lunar-wiki",
+  "conditionalOn": [
+    "出た効果がみかづきのいのりLv5であること",
+    "表示された5匹が発動時の全チームであること",
+    "Wiki表が該当版にも一致すること"
+  ],
+  "cases": [
+    {
+      "reference": "バリヤードのエスパー",
+      "distinctSpeciesCountInVisibleTeam": 1,
+      "candidateTotalForFiveMembers": 25,
+      "matchesObserved32": false
+    },
+    {
+      "reference": "コピー先トゲキッスのひこう",
+      "distinctSpeciesCountInVisibleTeam": 2,
+      "candidateTotalForFiveMembers": 32,
+      "matchesObserved32": true
+    }
+  ],
+  "conclusion": "この単一の入れ子経路ではコピー先タイプ参照の仮説が32個と整合する。直接コピーの発動者タイプ参照を否定・置換する根拠にはしない。",
+  "confirmedReferenceType": null
+}

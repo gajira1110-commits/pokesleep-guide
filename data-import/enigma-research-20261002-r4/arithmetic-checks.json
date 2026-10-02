@@ -1,0 +1,22 @@
+[
+  {
+    "checkId": "R4-no-final-display-multiplication",
+    "kind": "arithmetic_check_of_reported_values",
+    "reportedBefore": 500,
+    "zoneMultiplier": 1.016,
+    "simpleProduct": 508.0,
+    "reportedAfter": 507,
+    "conclusion": "表示済みエナジー500に最後に1.016を掛けるだけでは、この報告の507を再現できない。一般的な丸め順はこれだけで決まらない。"
+  },
+  {
+    "checkId": "R4-author-formula-cross-check",
+    "kind": "arithmetic_check_of_author_candidate",
+    "candidate": "ceil(ceil(baseBerryEnergy*(1+zonePercent/100))*1.85*2.4)",
+    "authorBaseBerryEnergy": 112,
+    "computedAtZone0": 498,
+    "reportedAtZone0": 500,
+    "computedAtZone1_6": 507,
+    "reportedAtZone1_6": 507,
+    "conclusion": "著者の基礎値112による式は1.6%時507を再現するが、0%時は498で報告500と不一致。基礎値・測定時FB・EX補正・丸め順を照合するまで確定採用しない。"
+  }
+]

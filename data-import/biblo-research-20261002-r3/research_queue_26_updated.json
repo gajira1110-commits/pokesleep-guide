@@ -1,0 +1,727 @@
+{
+  "baseCommit": "88643d6112e2eae385a143aea13a9683e76cb82b",
+  "count": 26,
+  "items": [
+    {
+      "questionId": "ENI-psystrike_berry_zone-01",
+      "entityId": "psystrike_berry_zone",
+      "question": "即消費きのみに既存ゾーンまで不適用か、今回の増加分だけ不適用かは要ゲーム内照合。",
+      "sourceIds": [
+        "psystrike_berry_zone"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "psystrike_berry_zone",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-psystrike_berry_zone-02",
+      "entityId": "psystrike_berry_zone",
+      "question": "スキル由来のマゴのみとの端数処理・EX補正順、コピー時のゾーン種別は未確認。",
+      "sourceIds": [
+        "psystrike_berry_zone"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "psystrike_berry_zone",
+        "missingFieldIndex": 1
+      }
+    },
+    {
+      "questionId": "ENI-almighty-01",
+      "entityId": "almighty",
+      "question": "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+      "sourceIds": [
+        "almighty"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "almighty",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-almighty-02",
+      "entityId": "almighty",
+      "question": "セット先が上限の低いスキルの場合の高Lv効果参照方法は未確認。",
+      "sourceIds": [
+        "almighty"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "almighty",
+        "missingFieldIndex": 1
+      }
+    },
+    {
+      "questionId": "ENI-plus_ingredient_magnet_s-01",
+      "entityId": "plus_ingredient_magnet_s",
+      "question": "ランダム食材数5/7/等を3種類へ配分する端数処理・抽選重み・バッグ残量不足時の各成分処理は未確認。",
+      "sourceIds": [
+        "plus_ingredient_magnet_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "plus_ingredient_magnet_s",
+        "missingFieldIndex": 0
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-plus_ingredient_magnet_s-01",
+          "status": "unconfirmed",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "randomIngredientDistribution": null,
+            "rounding": null,
+            "bagOverflow": null
+          },
+          "sourceIds": [
+            "R3-official-plus-minus"
+          ],
+          "reason": "公式はランダム取得まで。均等N/3・端数配分・バッグ超過の具体的処理を裏付ける新一次資料なし。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-plus_ingredient_magnet_s-02",
+      "entityId": "plus_ingredient_magnet_s",
+      "question": "ゆびをふる等による別食材の追加数の一般式は未確認。コーヒー／ミルク列を任意食材へ流用しない。",
+      "sourceIds": [
+        "plus_ingredient_magnet_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "plus_ingredient_magnet_s",
+        "missingFieldIndex": 1
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-plus_ingredient_magnet_s-02",
+          "status": "unconfirmed",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "extraQuantityGeneralFormula": null,
+            "metronomeArbitraryIngredientQuantity": null
+          },
+          "sourceIds": [
+            "R3-official-plus-minus"
+          ],
+          "reason": "発動者1枠目という既知の公式ルールから任意食材の数量式までは導けない。既存数量表の再提出は新規確定と数えない。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-minus_cooking_power_up_s-01",
+      "entityId": "minus_cooking_power_up_s",
+      "question": "容量+200上限でマイナス全体が発動不能か、回復部分のみ発動できるかは未確認。親スキルの発動不能を自動継承しない。",
+      "sourceIds": [
+        "minus_cooking_power_up_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "minus_cooking_power_up_s",
+        "missingFieldIndex": 0
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-minus_cooking_power_up_s-01",
+          "status": "unconfirmed_search_lead",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "canActivateAtPotBonusCap": null,
+            "healingOccursAtPotBonusCap": null,
+            "pendingStockAtCap": null
+          },
+          "sourceIds": [
+            "R3-minus-cap-search-lead",
+            "R3-official-plus-minus"
+          ],
+          "reason": "投稿本文が取得できず、検索抜粋のみ。親スキルの上限挙動からも継承を決め付けない。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-minus_cooking_power_up_s-02",
+      "entityId": "minus_cooking_power_up_s",
+      "question": "回復対象の抽選重み、自身が対象になるかの直接確認は未実施。げんきエールの低元気優先を自動継承しない。",
+      "sourceIds": [
+        "minus_cooking_power_up_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "minus_cooking_power_up_s",
+        "missingFieldIndex": 1
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-minus_cooking_power_up_s-02",
+          "status": "partial_first_person_evidence",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "observationIds": [
+              "R3-minus-main",
+              "R3-minus-sub"
+            ],
+            "targetWeights": null,
+            "selfTargetPossible": null
+          },
+          "sourceIds": [
+            "R3-minus-first-person",
+            "R3-official-plus-minus"
+          ],
+          "reason": "条件の異なる2記録を合算して共通確率を作らない。最低げんき優先の式と自己対象は未確認。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+      "entityId": "healing_pulse_energy_cheer_s",
+      "question": "2匹の抽選重み、自身の対象可否、追加おてつだい対象、即時おてつだいの所持上限とスキル抽選の有無は未確認。",
+      "sourceIds": [
+        "healing_pulse_energy_cheer_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "healing_pulse_energy_cheer_s",
+        "missingFieldIndex": 0
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+          "status": "partial_first_person_evidence",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "observationIds": [
+              "R3-healing-lowest-energy"
+            ],
+            "targetWeights": null,
+            "selfTargetPossible": null,
+            "instantHelpCapacityRule": null,
+            "instantHelpRollsMainSkill": null
+          },
+          "sourceIds": [
+            "R3-healing-first-person",
+            "R3-official-healing"
+          ],
+          "reason": "対象選択の本人検証を追加。即時おてつだいでスキルが発生しないとの記事記述は専用検証がなく、確定値に昇格しない。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+      "entityId": "healing_pulse_energy_cheer_s",
+      "question": "過去イベント未参加者の現在の追加効果解放手段・自動解放可否は未確認。",
+      "sourceIds": [
+        "healing_pulse_energy_cheer_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "healing_pulse_energy_cheer_s",
+        "missingFieldIndex": 1
+      },
+      "evidenceHistory": [
+        {
+          "version": "v3",
+          "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+          "status": "unconfirmed",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "currentLatePlayerUnlockConditions": null
+          },
+          "sourceIds": [
+            "R3-official-healing"
+          ],
+          "reason": "登場告知はイベント後の現行解放条件の証拠にしない。今回の対象選択観測とも別問題。",
+          "fullyResolved": false,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-01",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+      "sourceIds": [
+        "draco_meteor_berry_burst"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "draco_meteor_berry_burst",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-02",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "コピー時、端数・EX補正順は未確認。",
+      "sourceIds": [
+        "draco_meteor_berry_burst"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "draco_meteor_berry_burst",
+        "missingFieldIndex": 1
+      }
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-03",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "追加効果の現在の解放手段は未確認。",
+      "sourceIds": [
+        "draco_meteor_berry_burst"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "draco_meteor_berry_burst",
+        "missingFieldIndex": 2
+      }
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-01",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "25%は公式確定値ではない。性格・サブスキルによる分岐確率変化は未確認。スキル発生確率の補正を分岐抽選へ二重適用しない。",
+      "sourceIds": [
+        "stockpile_energy_charge_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "stockpile_energy_charge_s",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-02",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "別個体の交代だけで残留個体のたくわえ数がリセットされるとは確認できない。",
+      "sourceIds": [
+        "stockpile_energy_charge_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "stockpile_energy_charge_s",
+        "missingFieldIndex": 1
+      },
+      "evidenceHistory": [
+        {
+          "version": "v2",
+          "questionId": "ENI-stockpile_energy_charge_s-02",
+          "status": "reported_observation_historical",
+          "checkedAt": "2026-10-02",
+          "factOrInference": "first_person_report",
+          "answer": {
+            "otherMemberSwapResetsResidentCount": false,
+            "scope": "報告された2024年の編成・交代条件"
+          },
+          "sourceIds": [
+            "R2-stockpile-first-person"
+          ],
+          "newEvidence": true,
+          "inGameTestedByUs": false,
+          "currentVersionIndependentlyVerified": false,
+          "proposedAdoption": "全メンバーを一律に0へ戻す処理の根拠にしない。現行再確認待ちの観測として追加。",
+          "affectedPaths": [
+            "data-import/skill-rules-v263-skill-rules.json"
+          ],
+          "fullyResolved": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-03",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "睡眠・週跨ぎ・同一フィールドへの移動、進化時の状態処理は未確認。",
+      "sourceIds": [
+        "stockpile_energy_charge_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "stockpile_energy_charge_s",
+        "missingFieldIndex": 2
+      },
+      "evidenceHistory": [
+        {
+          "version": "v2",
+          "questionId": "ENI-stockpile_energy_charge_s-03",
+          "status": "unconfirmed",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "sleep": null,
+            "weekRollover": null,
+            "sameFieldMove": null,
+            "evolution": null
+          },
+          "sourceIds": [
+            "R2-official-stockpile",
+            "R2-official-field-ticket"
+          ],
+          "reason": "カビゴンのエナジーリセットから個体のたくわえ回数リセットを導かない。週初めの利用提案だけでは前後状態の実測証拠にしない。",
+          "fullyResolved": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-01",
+      "entityId": "lunar_blessing_energy_for_everyone_s",
+      "question": "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+      "sourceIds": [
+        "lunar_blessing_energy_for_everyone_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "lunar_blessing_energy_for_everyone_s",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-02",
+      "entityId": "lunar_blessing_energy_for_everyone_s",
+      "question": "コピー時、端数・EX補正順は未確認。",
+      "sourceIds": [
+        "lunar_blessing_energy_for_everyone_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "lunar_blessing_energy_for_everyone_s",
+        "missingFieldIndex": 1
+      }
+    },
+    {
+      "questionId": "ENI-nightmare_energy_charge_m-01",
+      "entityId": "nightmare_energy_charge_m",
+      "question": "負のげんき効果に性格の回復補正が作用するか、0未満の処理を個別には未確認。計算の推奨仮定は-12固定・0下限で明示する。",
+      "sourceIds": [
+        "nightmare_energy_charge_m"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "nightmare_energy_charge_m",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-01",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "対象個体の性格・サブスキル・イベント・当日の発生回数制御を抽選pへどこまで反映するか、天井抽選との関係は未確認。",
+      "sourceIds": [
+        "nuzzle_energy_cheer_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "nuzzle_energy_cheer_s",
+        "missingFieldIndex": 0
+      },
+      "evidenceHistory": [
+        {
+          "version": "v2",
+          "questionId": "ENI-nuzzle_energy_cheer_s-01",
+          "status": "partial_context_only",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "communityTableDrawCounts": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "communityAdjustmentDate": "2026-04-27",
+            "adjustmentClaim": "抽選回数+1",
+            "probabilityFormula": null,
+            "modifierScope": null,
+            "independentDraws": null,
+            "pityInteraction": null
+          },
+          "sourceIds": [
+            "R2-nuzzle-wiki"
+          ],
+          "newEvidence": "表と旧式のずれに対する履歴説明を新しく確認。ただし一次資料ではない。",
+          "proposedAdoption": "現行2〜7の既存表を再提出して新ルールと数えない。本文SLv指数をそのまま計算へ採用しない。+1履歴と独立抽選式の確定は分ける。",
+          "fullyResolved": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-02",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "ボーナス既所持対象を抽選から除くか、付与だけ失敗するか、回復はどう扱うか未確認。",
+      "sourceIds": [
+        "nuzzle_energy_cheer_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "nuzzle_energy_cheer_s",
+        "missingFieldIndex": 1
+      }
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-03",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "通常ストックとボーナスの発動順・同時発動・睡眠データのマニュアル登録時の消失は未確認。",
+      "sourceIds": [
+        "nuzzle_energy_cheer_s"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "nuzzle_energy_cheer_s",
+        "missingFieldIndex": 2
+      },
+      "evidenceHistory": [
+        {
+          "version": "v2",
+          "questionId": "ENI-nuzzle_energy_cheer_s-03",
+          "status": "unconfirmed",
+          "checkedAt": "2026-10-02",
+          "answer": {
+            "manualSleepEntryRemovesBonus": null,
+            "normalStockVsBonusOrder": null,
+            "simultaneousActivation": null
+          },
+          "sourceIds": [
+            "R2-official-nuzzle"
+          ],
+          "reason": "公式の睡眠リサーチはマニュアル登録と同義とは決め付けない。",
+          "fullyResolved": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-disguise_berry_burst-01",
+      "entityId": "disguise_berry_burst",
+      "question": "正確な大成功確率・性格等による変更は未確認。約20%を確定値にしない。",
+      "sourceIds": [
+        "disguise_berry_burst"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "disguise_berry_burst",
+        "missingFieldIndex": 0
+      }
+    },
+    {
+      "questionId": "ENI-disguise_berry_burst-02",
+      "entityId": "disguise_berry_burst",
+      "question": "交代・フィールド移動・週跨ぎで再大成功可能になるとは確認されていない。",
+      "sourceIds": [
+        "disguise_berry_burst"
+      ],
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "公式説明・現行出典を再確認し、未記載の挙動はゲーム内検証条件を作る。未確認のまま既定値へ採用しない。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": {
+        "entityId": "disguise_berry_burst",
+        "missingFieldIndex": 1
+      },
+      "evidenceHistory": [
+        {
+          "version": "v2",
+          "questionId": "ENI-disguise_berry_burst-02",
+          "status": "official_constraint_reconfirmed",
+          "checkedAt": "2026-10-02",
+          "factOrInference": "inference_from_official_constraint",
+          "answer": {
+            "allowAnotherSuccessBeforeResearchOrManualEntry": false,
+            "swapSpecificExperiment": null,
+            "fieldMoveSpecificExperiment": null,
+            "weekSpecificExperiment": null
+          },
+          "sourceIds": [
+            "R2-official-disguise"
+          ],
+          "proposedAdoption": "通常モデルでは睡眠リサーチ／マニュアル登録以外のイベントを大成功解禁イベントに追加しない。これは公式の制限からの実装提案で、個々のイベントを実測済みという意味ではない。",
+          "fullyResolved": false
+        }
+      ]
+    },
+    {
+      "questionId": "ENI-mythical-individual-01",
+      "entityId": "mythical_individual_settings",
+      "question": "食材とメインスキルの抽選重み、重複候補除外の完全な規則は未確認。",
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "B",
+      "answer": null,
+      "nextStep": "ひらめきのたね・枠解放条件を公式説明と現行出典で照合する。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": null
+    },
+    {
+      "questionId": "ENI-mythical-individual-02",
+      "entityId": "mythical_individual_settings",
+      "question": "レベル到達前にたねで解放可能かは未確認。枠解放と効果有効レベルを分離しておく。",
+      "evidenceStatus": "unconfirmed",
+      "researchOwner": "エニグマ",
+      "reconciliationOwner": "ビブロ",
+      "researchPriority": "A",
+      "answer": null,
+      "nextStep": "ひらめきのたね・枠解放条件を公式説明と現行出典で照合する。",
+      "workflowStatus": "調査待ち",
+      "pendingLink": null
+    }
+  ]
+}

@@ -141,3 +141,6 @@ CSSはstyles、HTMLはtemplates、データはmasterを編集し、PSG_build_mas
 GitHubへの送信は編集元のみ。review.html・PSG_source_template.html・PSG_styles.cssの大きな生成物を毎回送らず、main更新時のbuild-review.ymlで生成してPagesへ公開する。リポジトリ内の生成済みファイルは公開成果物と版が異なる場合がある。
 
 引継ぎ更新時はこの文書の完了・次の順序・保留を直接更新する。旧版ごとのToDoを新規に積み上げない。削除記録はdata-import/cleanup-v238.json。資料の原本は採用データと分離して保持する。
+
+## v269 追加便の整理
+エニグマ第3〜6便とビブロ処理済み第3便を取得。全便manifestのSHA256を検証し、JSON/READMEをdata-importへ保持。7スキル9件の出典付き参考観測・未確認事項を発動条件欄へ追加。数値表・抽選率・日産式・個体保存は変更しない。第5便の原画像は受領資料として検証済みだがリポジトリへ転載しない。32姿の出現表は能力資料にないため生成しない。第6便の仮定付き期待値式は研究資料に保持し、確定日産へ採用しない。

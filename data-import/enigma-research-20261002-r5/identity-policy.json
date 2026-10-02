@@ -1,0 +1,39 @@
+{
+  "status": "proposed_data_separation_not_game_rule",
+  "boxSpeciesId": "姿・衣装・年式・サイズを識別する既存IDを維持する。",
+  "instanceId": "同じspeciesIdの別個体を識別する。",
+  "skillBonusIdentity": "スキルと適用版ごとの種類ボーナス判定。根拠がないフォームの対応はnull。",
+  "unknownDoesNotMean": "0種類・必ず別種類・必ず同種類のいずれとも同義にしない。",
+  "countEvidence": [
+    {
+      "status": "official_reconfirmed",
+      "skill": "lunar_blessing_energy_for_everyone_s",
+      "team": [
+        "クレセリア",
+        "ムンナ",
+        "ムシャーナ",
+        "エーフィ",
+        "サーナイト"
+      ],
+      "expectedDistinctCount": 5,
+      "sourceIds": [
+        "R5-official-cresselia"
+      ]
+    },
+    {
+      "status": "official_reconfirmed",
+      "skill": "lunar_blessing_energy_for_everyone_s",
+      "team": [
+        "クレセリア",
+        "ムンナ",
+        "エーフィ",
+        "エーフィ",
+        "サーナイト"
+      ],
+      "expectedDistinctCount": 4,
+      "sourceIds": [
+        "R5-official-cresselia"
+      ]
+    }
+  ]
+}

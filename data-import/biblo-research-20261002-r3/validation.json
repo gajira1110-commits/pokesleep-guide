@@ -1,0 +1,16 @@
+{
+  "manifests": [
+    {
+      "version": "v3",
+      "members": 7
+    },
+    {
+      "version": "v2",
+      "members": 7
+    }
+  ],
+  "answerRecords": 11,
+  "researchItems": 26,
+  "fullyResolved": 0,
+  "observationArithmeticPassed": true
+}

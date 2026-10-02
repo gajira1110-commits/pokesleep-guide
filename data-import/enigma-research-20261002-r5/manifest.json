@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "c5221df33564928b1b4e0517e587617986cacc712c85be60a22a4d41ae613cdb"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "0cbb3d124109368dc42330165fdb5501fed0024558f53bf866d0abb30595f58c"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "9f9d891f5db4fa2c04c47938e873d6ebaf811cbcb0927d6477c5e26fa8eccdd5"
+    },
+    {
+      "path": "evidence/mimic_metronome_lunar.png",
+      "sha256": "ace87c7ec6382d484af38e635cfbff0f90955e3ecc4048e4ca24f40f85643534"
+    },
+    {
+      "path": "hypothesis-comparison.json",
+      "sha256": "acb721b5826544ee35d5edf126dbdf958215afc9924051f238c81641fa579fb4"
+    },
+    {
+      "path": "identity-policy.json",
+      "sha256": "25b9322ef6646a4ac26ec117e853a0758825fe675d46c1cc1d9268a29ee043fd"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "e935b366cc2ed04fc0a8f548b60ee82cc987498d91b61a57450d1b7093c37023"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "9258a15c7c16793062e4eb7e82bde68161874cfd087e2fe64b79c1792c2577b2"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "89738c3dd90db193bd3bcbbb581604abc2dfd4c50455d2b6a39daa4bc8030bac"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "8e7a3a83546b38164cf4ee585cf15f940695f05418309d5859b1ecb02d6e946a"
+    }
+  ]
+}

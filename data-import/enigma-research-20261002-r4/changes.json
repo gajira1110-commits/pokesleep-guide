@@ -1,0 +1,16 @@
+{
+  "supplements": [
+    "PSG_Enigma_to_Biblo_research_20261002_v1.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v2.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v3.zip"
+  ],
+  "newOfficialConfirmedRules": 0,
+  "newFirstPersonEvidenceReports": 1,
+  "normalBerryObservationRows": 3,
+  "newCommunityCopyEligibilityLead": 1,
+  "authorFormulaAdopted": false,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26,
+  "applicationPatch": null,
+  "adoptionGuidance": "出典付き観測として追記。表示値を最後に掛ける式・著者の式・コピー可否を確定ルールとして自動採用しない。既存mainの計算変更はフライデー、採用照合はビブロ。"
+}

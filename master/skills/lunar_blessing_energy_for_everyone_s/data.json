@@ -879,6 +879,44 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "コピー経路の参考観測",
+      "text": "2025年のバリヤードがトゲキッスをものまねした画面で、Lv.5・チーム回復9・きのみ32の表示が報告された。効果名は画面にないため、みかづきのいのりへの到達は推定。クレセリアの直接コピーや現行版の確定仕様とは区別する。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-4",
+      "sources": [
+        {
+          "sourceId": "R5-taiga-nested-copy",
+          "url": "https://note.com/taiga_hachiware/n/n97c3534efd83",
+          "kind": "first_person_gameplay_report_with_screenshot",
+          "publishedAt": "2025-04-16",
+          "reportedPlayWeek": "2025-04-07/2025-04-13",
+          "checkedAt": "2026-10-02",
+          "summary": "バリヤードがトゲキッスをものまねした画面。Lv5、チーム回復9・きのみ32の表示を原画像で確認。みかづきのいのりという名称は画像に表示されておらず、効果からの推定と分ける。",
+          "id": "R5-taiga-nested-copy",
+          "title": "参考資料：コピー経路の参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "姿違いの種類判定",
+      "text": "衣装・年式・リージョン・サイズの種類ボーナス判定は未確認。Boxの姿IDをそのまま種類数として数えない。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-6",
+      "sources": [
+        {
+          "sourceId": "R5-official-cresselia",
+          "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "summary": "ムンナとムシャーナを別種類、同じエーフィ2匹を1種類と数える公式例。衣装・年式・サイズの一般規則は記載なし。既知ルール再確認。",
+          "id": "R5-official-cresselia",
+          "title": "参考資料：姿違いの種類判定",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }

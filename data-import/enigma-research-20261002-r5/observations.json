@@ -1,0 +1,34 @@
+[
+  {
+    "observationId": "R5-mimic-metronome-combined-effect",
+    "sourceIds": [
+      "R5-taiga-nested-copy",
+      "R5-taiga-image"
+    ],
+    "observed": {
+      "casterSpecies": "バリヤード",
+      "displayedSkill": "ものまね(スキルコピー)",
+      "displayedSkillLevel": 5,
+      "copiedPokemon": "トゲキッス",
+      "displayedTeamRecovery": 9,
+      "displayedBerryTotal": 32,
+      "visiblePokemon": [
+        "バリヤード",
+        "カメックス",
+        "カイリュー",
+        "プクリン",
+        "トゲキッス"
+      ]
+    },
+    "notDirectlyObserved": {
+      "resultingSkillName": null,
+      "directCresseliaCopyReferenceType": null,
+      "generalNestedReferenceType": null,
+      "berryEnergyRounding": null
+    },
+    "inference": "トゲキッスのゆびをふるをコピーし、回復ときのみを併せ持つ効果を出した可能性。画像はみかづきのいのりの名称自体を表示していない。",
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false,
+    "doNotGeneralizeTo": "クレセリアを直接コピーした場合のタイプ参照、全コピー経路の仕様、現在の独立確認済みルール"
+  }
+]

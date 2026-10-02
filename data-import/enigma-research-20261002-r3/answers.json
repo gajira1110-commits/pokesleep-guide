@@ -1,0 +1,111 @@
+[
+  {
+    "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+    "status": "partial_first_person_evidence",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "observationIds": [
+        "R3-healing-lowest-energy"
+      ],
+      "targetWeights": null,
+      "selfTargetPossible": null,
+      "instantHelpCapacityRule": null,
+      "instantHelpRollsMainSkill": null
+    },
+    "sourceIds": [
+      "R3-healing-first-person",
+      "R3-official-healing"
+    ],
+    "reason": "対象選択の本人検証を追加。即時おてつだいでスキルが発生しないとの記事記述は専用検証がなく、確定値に昇格しない。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  },
+  {
+    "questionId": "ENI-minus_cooking_power_up_s-02",
+    "status": "partial_first_person_evidence",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "observationIds": [
+        "R3-minus-main",
+        "R3-minus-sub"
+      ],
+      "targetWeights": null,
+      "selfTargetPossible": null
+    },
+    "sourceIds": [
+      "R3-minus-first-person",
+      "R3-official-plus-minus"
+    ],
+    "reason": "条件の異なる2記録を合算して共通確率を作らない。最低げんき優先の式と自己対象は未確認。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  },
+  {
+    "questionId": "ENI-minus_cooking_power_up_s-01",
+    "status": "unconfirmed_search_lead",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "canActivateAtPotBonusCap": null,
+      "healingOccursAtPotBonusCap": null,
+      "pendingStockAtCap": null
+    },
+    "sourceIds": [
+      "R3-minus-cap-search-lead",
+      "R3-official-plus-minus"
+    ],
+    "reason": "投稿本文が取得できず、検索抜粋のみ。親スキルの上限挙動からも継承を決め付けない。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  },
+  {
+    "questionId": "ENI-plus_ingredient_magnet_s-01",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "randomIngredientDistribution": null,
+      "rounding": null,
+      "bagOverflow": null
+    },
+    "sourceIds": [
+      "R3-official-plus-minus"
+    ],
+    "reason": "公式はランダム取得まで。均等N/3・端数配分・バッグ超過の具体的処理を裏付ける新一次資料なし。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  },
+  {
+    "questionId": "ENI-plus_ingredient_magnet_s-02",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "extraQuantityGeneralFormula": null,
+      "metronomeArbitraryIngredientQuantity": null
+    },
+    "sourceIds": [
+      "R3-official-plus-minus"
+    ],
+    "reason": "発動者1枠目という既知の公式ルールから任意食材の数量式までは導けない。既存数量表の再提出は新規確定と数えない。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  },
+  {
+    "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "currentLatePlayerUnlockConditions": null
+    },
+    "sourceIds": [
+      "R3-official-healing"
+    ],
+    "reason": "登場告知はイベント後の現行解放条件の証拠にしない。今回の対象選択観測とも別問題。",
+    "fullyResolved": false,
+    "inGameTestedByUs": false,
+    "currentVersionIndependentlyVerified": false
+  }
+]

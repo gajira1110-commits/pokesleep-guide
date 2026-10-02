@@ -1,0 +1,42 @@
+[
+  {
+    "sourceId": "R3-healing-first-person",
+    "url": "https://pokesuri.ogagawa.com/latias_hyouka/",
+    "kind": "first_person_experiment_report",
+    "publishedAt": "2026-04-09",
+    "updatedAt": "2026-06-09",
+    "checkedAt": "2026-10-02",
+    "summary": "げんきが極端に少ない1匹を用意した本人検証。73回中61回が対象。追加おてつだいのスキル抽選なしという別記述には検証手順が示されていない。"
+  },
+  {
+    "sourceId": "R3-minus-first-person",
+    "url": "https://note.com/honeysuckle216/n/n23381bd793a0",
+    "kind": "first_person_gameplay_report",
+    "publishedAt": "2025-08-12",
+    "checkedAt": "2026-10-02",
+    "summary": "2アカウント・1週間・マイナンSLv4。最低げんきへの回復は9/30と13/24。ヒーラー有無で条件が異なり、同率時の判定方法は不明。"
+  },
+  {
+    "sourceId": "R3-minus-cap-search-lead",
+    "url": "https://x.com/Ellenard_20/status/1956955019808506188",
+    "kind": "search_snippet_only",
+    "checkedAt": "2026-10-02",
+    "fullTextRetrieved": false,
+    "retrievalFailure": "403 Forbidden",
+    "summary": "検索結果に鍋拡張200でマイナンとストリンダー(ロー)のスキル自体が発動しないという投稿の手掛かり。本文・検証条件を未確認。確定根拠に使わない。"
+  },
+  {
+    "sourceId": "R3-official-plus-minus",
+    "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "追加効果の編成条件とプラスの追加食材が発動者の1枠目であることを再確認。配分端数・上限時発動・回復対象重みは記載なし。"
+  },
+  {
+    "sourceId": "R3-official-healing",
+    "url": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "ランダム2匹回復と即時おてつだい、ラティオス編成時の回数追加を再確認。対象重み・所持上限・スキル抽選は記載なし。"
+  }
+]

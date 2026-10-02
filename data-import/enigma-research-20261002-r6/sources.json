@@ -1,0 +1,35 @@
+[
+  {
+    "sourceId": "R6-disguise-first-person",
+    "url": "https://pokesuri.ogagawa.com/bakenokawa_kenshou/",
+    "kind": "first_person_experiment_report",
+    "publishedAt": "2024-10-30",
+    "updatedAt": "2025-07-01",
+    "checkedAt": "2026-10-02",
+    "summary": "大成功できる状態の100発動を個人で収集。18成功・82不成功。大成功後の発動を分母から除く。分割睡眠とBoxに戻した後の睡眠による復活を本人観測として報告。"
+  },
+  {
+    "sourceId": "R6-official-disguise",
+    "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "大成功後、睡眠リサーチまたはマニュアル登録まで再大成功しない。既知ルールの再確認。"
+  },
+  {
+    "sourceId": "R6-moonlight-first-person",
+    "url": "https://pokesuri.ogagawa.com/tukinohikari_kenshou/",
+    "kind": "first_person_experiment_report",
+    "publishedAt": "2024-11-20",
+    "updatedAt": "2024-12-24",
+    "collectionCompletedAt": "2024-12-22",
+    "checkedAt": "2026-10-02",
+    "summary": "本人が100発動を収集し、大成功51・不成功49と報告。個体補正別や対象選択の内訳は取得できない。"
+  },
+  {
+    "sourceId": "R6-official-moonlight",
+    "url": "https://www.pokemonsleep.net/news/313933383736363033303032393435353337/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "ブラッキーの自己回復は以前と同じ。大成功時にチーム1匹をランダム追加回復。正式な分岐確率は未記載。"
+  }
+]

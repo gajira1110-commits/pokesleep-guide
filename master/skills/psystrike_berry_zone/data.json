@@ -357,6 +357,26 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "通常きのみの参考観測",
+      "text": "ワカクサ本島EXで通常マゴのみの表示エナジーを記録した報告を受領。全時点の条件と原画像は未照合で、端数処理式・スキル生成きのみへの適用は未確認。週替わりの報告もフィールド移動と切り分けられていない。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-3",
+      "sources": [
+        {
+          "sourceId": "R4-normal-berry-first-person",
+          "url": "https://note.com/ready_gibbon6262/n/n633299e2c6a8",
+          "kind": "first_person_gameplay_report_with_author_inference",
+          "publishedAt": "2026-09-16",
+          "reportedAdditionDate": "2026-09-22",
+          "checkedAt": "2026-10-02",
+          "summary": "通常きのみの表示エナジーを発動前後で記録。週替わりのリセット後にも元値を実測したと追記。端数処理式は著者推論。原画像は今回照合していない。",
+          "id": "R4-normal-berry-first-person",
+          "title": "参考資料：通常きのみの参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }

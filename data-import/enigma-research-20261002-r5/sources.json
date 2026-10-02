@@ -1,0 +1,47 @@
+[
+  {
+    "sourceId": "R5-official-cresselia",
+    "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "ムンナとムシャーナを別種類、同じエーフィ2匹を1種類と数える公式例。衣装・年式・サイズの一般規則は記載なし。既知ルール再確認。"
+  },
+  {
+    "sourceId": "R5-official-latios",
+    "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "異なるドラゴン種類数で増加。ラティアスで自分のきのみ追加。姿違い・コピーの詳細は記載なし。"
+  },
+  {
+    "sourceId": "R5-lunar-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "summary": "コピー時に発動者のタイプを参照すると記載。メタモンはノーマル。一次検証未取得。表Lv5の種類数1は自分21・他1、種類数2は自分24・他2。仮説比較に限定して使用。"
+  },
+  {
+    "sourceId": "R5-copy-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/スキルコピー/ものまね",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "summary": "りゅうせいぐんはコピー対象外との記載。成功時のきのみ処理を仮定する前に可否を一次確認する。"
+  },
+  {
+    "sourceId": "R5-taiga-nested-copy",
+    "url": "https://note.com/taiga_hachiware/n/n97c3534efd83",
+    "kind": "first_person_gameplay_report_with_screenshot",
+    "publishedAt": "2025-04-16",
+    "reportedPlayWeek": "2025-04-07/2025-04-13",
+    "checkedAt": "2026-10-02",
+    "summary": "バリヤードがトゲキッスをものまねした画面。Lv5、チーム回復9・きのみ32の表示を原画像で確認。みかづきのいのりという名称は画像に表示されておらず、効果からの推定と分ける。"
+  },
+  {
+    "sourceId": "R5-taiga-image",
+    "url": "https://assets.st-note.com/img/1744766180-xT0YfNhjgrVb2HDsSym9PGXF.png?width=1200",
+    "kind": "original_gameplay_screenshot_linked_by_author",
+    "checkedAt": "2026-10-02",
+    "localEvidencePath": "evidence/mimic_metronome_lunar.png",
+    "summary": "ものまね(スキルコピー)Lv5、トゲキッスのものまね、チームげんき9回復、きのみ32個の文字を確認。"
+  }
+]

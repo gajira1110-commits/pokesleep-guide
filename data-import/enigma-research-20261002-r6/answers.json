@@ -1,0 +1,39 @@
+[
+  {
+    "questionId": "ENI-disguise_berry_burst-01",
+    "status": "partial_historical_first_person_evidence",
+    "answer": {
+      "eligibleSampleCount": 100,
+      "greatSuccessCount": 18,
+      "observedFraction": 0.18,
+      "exactProbability": null,
+      "natureEffectOnBranchProbability": null,
+      "subskillEffectOnBranchProbability": null
+    },
+    "sourceIds": [
+      "R6-disguise-first-person"
+    ],
+    "reason": "成功後の抽選不可状態を除いた条件付き観測。18%を一般定数にしない。既存311件へ重複確認なしで合算しない。",
+    "fullyResolved": false,
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "questionId": "ENI-disguise_berry_burst-02",
+    "status": "partial_sleep_cycle_observation",
+    "answer": {
+      "reportedRestorationAfterSplitSleepCycle": true,
+      "reportedRestorationAfterSleepCycleWhileBoxed": true,
+      "sleepStartAloneResets": null,
+      "swapAloneResets": null,
+      "fieldMoveAloneResets": null,
+      "weekOnlyResets": null
+    },
+    "sourceIds": [
+      "R6-disguise-first-person",
+      "R6-official-disguise"
+    ],
+    "reason": "睡眠を含む観測として追加。交代単独で復活・睡眠開始だけで復活とは読まない。",
+    "fullyResolved": false,
+    "checkedAt": "2026-10-02"
+  }
+]

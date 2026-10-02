@@ -1,0 +1,10 @@
+[
+  {
+    "questionId": "ENI-disguise_berry_burst-01",
+    "procedure": "大成功可能状態の発動だけを分母として、個体ID・性格・サブスキル・SLv・イベント・大成功の有無を記録。成功後発動は別行で抽選不可と記録し、分岐確率の分母へ混ぜない。"
+  },
+  {
+    "questionId": "ENI-disguise_berry_burst-02",
+    "procedure": "大成功後の編成中／Box待機を分け、睡眠開始・終了・リサーチ完了・マニュアル登録の境界を記録。交代だけの対照条件も置く。"
+  }
+]

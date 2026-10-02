@@ -1,0 +1,72 @@
+[
+  {
+    "questionId": "ENI-draco_meteor_berry_burst-01",
+    "status": "unconfirmed_forms",
+    "answer": {
+      "costumeIdentityRule": null,
+      "costumeYearIdentityRule": null,
+      "regionalIdentityRule": null,
+      "sizeIdentityRule": null
+    },
+    "sourceIds": [
+      "R5-official-cresselia",
+      "R5-official-latios"
+    ],
+    "fullyResolved": false,
+    "reason": "Box用speciesIdや図鑑番号から種類ボーナスの同一性を自動決定しない。おてつだいブーストの衣装説明を別スキルへ無条件継承しない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "questionId": "ENI-lunar_blessing_energy_for_everyone_s-01",
+    "status": "unconfirmed_forms",
+    "answer": {
+      "costumeIdentityRule": null,
+      "costumeYearIdentityRule": null,
+      "regionalIdentityRule": null,
+      "sizeIdentityRule": null
+    },
+    "sourceIds": [
+      "R5-official-cresselia",
+      "R5-official-latios"
+    ],
+    "fullyResolved": false,
+    "reason": "Box用speciesIdや図鑑番号から種類ボーナスの同一性を自動決定しない。おてつだいブーストの衣装説明を別スキルへ無条件継承しない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "questionId": "ENI-lunar_blessing_energy_for_everyone_s-02",
+    "status": "partial_historical_screenshot_evidence",
+    "answer": {
+      "nestedCopyObservationId": "R5-mimic-metronome-combined-effect",
+      "directCopyReferenceType": null,
+      "nestedReferenceType": null,
+      "berryEnergyRounding": null,
+      "exModifierOrder": null
+    },
+    "sourceIds": [
+      "R5-taiga-nested-copy",
+      "R5-taiga-image",
+      "R5-lunar-wiki"
+    ],
+    "fullyResolved": false,
+    "reason": "2025年のものまね→ゆびをふる経路の画面証拠。直接クレセリアコピーの検証と混同しない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "questionId": "ENI-draco_meteor_berry_burst-02",
+    "status": "unconfirmed_copy_eligibility_lead",
+    "answer": {
+      "copyEligible": null,
+      "copiedBerryType": null,
+      "berryEnergyRounding": null,
+      "exModifierOrder": null
+    },
+    "sourceIds": [
+      "R5-copy-wiki",
+      "R5-official-latios"
+    ],
+    "fullyResolved": false,
+    "reason": "Wikiはコピー対象外と記載。成功時計算を仮定する前に抽選候補／失敗効果を一次資料で確認する。",
+    "checkedAt": "2026-10-02"
+  }
+]

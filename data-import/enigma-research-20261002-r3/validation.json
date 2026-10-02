@@ -1,0 +1,11 @@
+{
+  "uniqueAnswerIds": 6,
+  "allQuestionIdsMatchExistingQueue": true,
+  "allSourceReferencesResolve": true,
+  "conditionalDenominatorChecked": true,
+  "differentMinusConditionsKeptSeparate": true,
+  "unknownsRetainedAsNull": true,
+  "searchSnippetNotPromotedToConfirmed": true,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26
+}
