@@ -40,6 +40,7 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'team/05-swap-assist.html',
     '19-box-detail-controller.html',
     'box/02-daily-forecast.html',
+    'box/06-growth.html',
     'box/03-view.html',
     'box/04-editor.html',
     'box/05-actions.html',
@@ -142,6 +143,22 @@ def catalog_and_images():
     catalog = {**data,'pokemon':{},'sleepStyles':{},'recipes':{},'skills':{},'ingredientAssets':{},'berries':{},'fields':{},
                'natures':natures,'subskills':subskills['records']}
     catalog['cooking'] = json.loads((MASTER / 'cooking/data.json').read_text())
+    catalog['growth'] = json.loads((MASTER / 'growth/data.json').read_text())
+    growth = catalog['growth']
+    assert growth['levelCap'] == 70 and len(growth['rows']) == 69
+    assert growth['subskillUnlockLevels'] == [10, 25, 50, 70, 80]
+    previous = {key: 0 for key in growth['expTypeMultipliers']}
+    for level, row in enumerate(growth['rows'], 1):
+        assert row['current_level'] == level and row['target_level'] == level + 1
+        assert row['dream_shards_per_candy_at_current_level'] > 0
+        assert set(row['candy_exp']) == {'neutral', 'up', 'down'}
+        assert all(value > 0 for value in row['candy_exp'].values())
+        for key, multiplier in growth['expTypeMultipliers'].items():
+            values = row['exp_types'][key]
+            cumulative = int(row['base_cumulative_exp_at_target'] * multiplier + 0.5)
+            assert values['cumulative_exp_at_target'] == cumulative
+            assert values['exp_to_next'] == cumulative - previous[key] > 0
+            previous[key] = cumulative
     catalog['friendship'] = json.loads((MASTER / 'friendship/data.json').read_text())
     assert len(catalog['friendship']['medals']['ポケモン']) == 248
     assert len(catalog['friendship']['normalSpeciesMapping']) == len(kinds['pokemon'])
@@ -363,7 +380,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v266') == 2
+    assert source.count('Review v267') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

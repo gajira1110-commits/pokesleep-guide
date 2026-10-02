@@ -147,6 +147,8 @@
 #boxDetail .psg-box-explanation summary{cursor:pointer;color:#456458}
 #boxDetail .psg-box-lead{font-size:17px;line-height:1.4}
 #boxDetail .psg-milestone{padding:5px 8px;margin-top:4px;border-radius:8px;font-size:13px}
+#boxDetail .psg-milestone p{margin:3px 0;line-height:1.5}
+#boxDetail .psg-milestone small{display:block;color:#718078;line-height:1.5}
 #boxEvaluation>p{font-size:13px}
 #boxDetail #boxGrowth .psg-box-muted{font-size:12px}
 

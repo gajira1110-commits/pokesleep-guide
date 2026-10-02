@@ -55,7 +55,7 @@ function syncLevel(){
  document.getElementById('boxNature').innerHTML=`<div class="psg-box-nature-row"><div class="psg-box-lead">${boxEsc(item.nature||'未確認')}${item.mint?mintIcon:''}</div><div class="psg-box-nature-effects">${natureEffects}</div></div>${calc.unknown.length?'<p class="psg-box-muted">未対応：'+boxEsc(calc.unknown.join('・'))+'。</p>':''}`;
  document.getElementById('boxEvaluation').innerHTML=renderIndividualEvaluation(item,p);
  const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
- document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b></div>`).join('')+'<p class="psg-box-muted">必要アメ・ゆめのかけら：未確認</p>':'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
+ document.getElementById('boxGrowth').innerHTML=renderBoxGrowth(item,p,milestones);
  const parent=p?.evolution;
  if(parent&&!Array.isArray(parent))document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">進化先：${boxEsc(parent.to||'未確認')}　${parent.level?'Lv.'+parent.level:''}${parent.candy?'・アメ'+parent.candy+'個':''}</p>`);
  fillBoxEditor(item,p);

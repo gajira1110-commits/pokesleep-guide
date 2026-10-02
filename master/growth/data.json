@@ -1,0 +1,2308 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_estimate",
+  "sourceFile": "data-import/PSG_mechanics_20261001.json",
+  "sourceSha256": "a74c873ac0bbddbdf4e20e70250d4186d771cdf3a4a929aaeae6a0cf99312cad",
+  "receivedAt": "2026-10-02",
+  "levelCap": 70,
+  "rows": [
+    {
+      "current_level": 1,
+      "target_level": 2,
+      "base_exp_to_next": 54,
+      "base_cumulative_exp_at_target": 54,
+      "dream_shards_per_candy_at_current_level": 14,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 54,
+          "exp_to_next": 54
+        },
+        "900": {
+          "cumulative_exp_at_target": 81,
+          "exp_to_next": 81
+        },
+        "1080": {
+          "cumulative_exp_at_target": 97,
+          "exp_to_next": 97
+        },
+        "1320": {
+          "cumulative_exp_at_target": 119,
+          "exp_to_next": 119
+        }
+      }
+    },
+    {
+      "current_level": 2,
+      "target_level": 3,
+      "base_exp_to_next": 71,
+      "base_cumulative_exp_at_target": 125,
+      "dream_shards_per_candy_at_current_level": 18,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 125,
+          "exp_to_next": 71
+        },
+        "900": {
+          "cumulative_exp_at_target": 188,
+          "exp_to_next": 107
+        },
+        "1080": {
+          "cumulative_exp_at_target": 225,
+          "exp_to_next": 128
+        },
+        "1320": {
+          "cumulative_exp_at_target": 275,
+          "exp_to_next": 156
+        }
+      }
+    },
+    {
+      "current_level": 3,
+      "target_level": 4,
+      "base_exp_to_next": 108,
+      "base_cumulative_exp_at_target": 233,
+      "dream_shards_per_candy_at_current_level": 22,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 233,
+          "exp_to_next": 108
+        },
+        "900": {
+          "cumulative_exp_at_target": 350,
+          "exp_to_next": 162
+        },
+        "1080": {
+          "cumulative_exp_at_target": 419,
+          "exp_to_next": 194
+        },
+        "1320": {
+          "cumulative_exp_at_target": 513,
+          "exp_to_next": 238
+        }
+      }
+    },
+    {
+      "current_level": 4,
+      "target_level": 5,
+      "base_exp_to_next": 128,
+      "base_cumulative_exp_at_target": 361,
+      "dream_shards_per_candy_at_current_level": 27,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 361,
+          "exp_to_next": 128
+        },
+        "900": {
+          "cumulative_exp_at_target": 542,
+          "exp_to_next": 192
+        },
+        "1080": {
+          "cumulative_exp_at_target": 650,
+          "exp_to_next": 231
+        },
+        "1320": {
+          "cumulative_exp_at_target": 794,
+          "exp_to_next": 281
+        }
+      }
+    },
+    {
+      "current_level": 5,
+      "target_level": 6,
+      "base_exp_to_next": 164,
+      "base_cumulative_exp_at_target": 525,
+      "dream_shards_per_candy_at_current_level": 30,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 525,
+          "exp_to_next": 164
+        },
+        "900": {
+          "cumulative_exp_at_target": 788,
+          "exp_to_next": 246
+        },
+        "1080": {
+          "cumulative_exp_at_target": 945,
+          "exp_to_next": 295
+        },
+        "1320": {
+          "cumulative_exp_at_target": 1155,
+          "exp_to_next": 361
+        }
+      }
+    },
+    {
+      "current_level": 6,
+      "target_level": 7,
+      "base_exp_to_next": 202,
+      "base_cumulative_exp_at_target": 727,
+      "dream_shards_per_candy_at_current_level": 34,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 727,
+          "exp_to_next": 202
+        },
+        "900": {
+          "cumulative_exp_at_target": 1091,
+          "exp_to_next": 303
+        },
+        "1080": {
+          "cumulative_exp_at_target": 1309,
+          "exp_to_next": 364
+        },
+        "1320": {
+          "cumulative_exp_at_target": 1599,
+          "exp_to_next": 444
+        }
+      }
+    },
+    {
+      "current_level": 7,
+      "target_level": 8,
+      "base_exp_to_next": 244,
+      "base_cumulative_exp_at_target": 971,
+      "dream_shards_per_candy_at_current_level": 39,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 971,
+          "exp_to_next": 244
+        },
+        "900": {
+          "cumulative_exp_at_target": 1457,
+          "exp_to_next": 366
+        },
+        "1080": {
+          "cumulative_exp_at_target": 1748,
+          "exp_to_next": 439
+        },
+        "1320": {
+          "cumulative_exp_at_target": 2136,
+          "exp_to_next": 537
+        }
+      }
+    },
+    {
+      "current_level": 8,
+      "target_level": 9,
+      "base_exp_to_next": 274,
+      "base_cumulative_exp_at_target": 1245,
+      "dream_shards_per_candy_at_current_level": 44,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 1245,
+          "exp_to_next": 274
+        },
+        "900": {
+          "cumulative_exp_at_target": 1868,
+          "exp_to_next": 411
+        },
+        "1080": {
+          "cumulative_exp_at_target": 2241,
+          "exp_to_next": 493
+        },
+        "1320": {
+          "cumulative_exp_at_target": 2739,
+          "exp_to_next": 603
+        }
+      }
+    },
+    {
+      "current_level": 9,
+      "target_level": 10,
+      "base_exp_to_next": 315,
+      "base_cumulative_exp_at_target": 1560,
+      "dream_shards_per_candy_at_current_level": 48,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 1560,
+          "exp_to_next": 315
+        },
+        "900": {
+          "cumulative_exp_at_target": 2340,
+          "exp_to_next": 472
+        },
+        "1080": {
+          "cumulative_exp_at_target": 2808,
+          "exp_to_next": 567
+        },
+        "1320": {
+          "cumulative_exp_at_target": 3432,
+          "exp_to_next": 693
+        }
+      }
+    },
+    {
+      "current_level": 10,
+      "target_level": 11,
+      "base_exp_to_next": 345,
+      "base_cumulative_exp_at_target": 1905,
+      "dream_shards_per_candy_at_current_level": 50,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 1905,
+          "exp_to_next": 345
+        },
+        "900": {
+          "cumulative_exp_at_target": 2858,
+          "exp_to_next": 518
+        },
+        "1080": {
+          "cumulative_exp_at_target": 3429,
+          "exp_to_next": 621
+        },
+        "1320": {
+          "cumulative_exp_at_target": 4191,
+          "exp_to_next": 759
+        }
+      }
+    },
+    {
+      "current_level": 11,
+      "target_level": 12,
+      "base_exp_to_next": 376,
+      "base_cumulative_exp_at_target": 2281,
+      "dream_shards_per_candy_at_current_level": 52,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 2281,
+          "exp_to_next": 376
+        },
+        "900": {
+          "cumulative_exp_at_target": 3422,
+          "exp_to_next": 564
+        },
+        "1080": {
+          "cumulative_exp_at_target": 4106,
+          "exp_to_next": 677
+        },
+        "1320": {
+          "cumulative_exp_at_target": 5018,
+          "exp_to_next": 827
+        }
+      }
+    },
+    {
+      "current_level": 12,
+      "target_level": 13,
+      "base_exp_to_next": 407,
+      "base_cumulative_exp_at_target": 2688,
+      "dream_shards_per_candy_at_current_level": 53,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 2688,
+          "exp_to_next": 407
+        },
+        "900": {
+          "cumulative_exp_at_target": 4032,
+          "exp_to_next": 610
+        },
+        "1080": {
+          "cumulative_exp_at_target": 4838,
+          "exp_to_next": 732
+        },
+        "1320": {
+          "cumulative_exp_at_target": 5914,
+          "exp_to_next": 896
+        }
+      }
+    },
+    {
+      "current_level": 13,
+      "target_level": 14,
+      "base_exp_to_next": 419,
+      "base_cumulative_exp_at_target": 3107,
+      "dream_shards_per_candy_at_current_level": 56,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 3107,
+          "exp_to_next": 419
+        },
+        "900": {
+          "cumulative_exp_at_target": 4661,
+          "exp_to_next": 629
+        },
+        "1080": {
+          "cumulative_exp_at_target": 5593,
+          "exp_to_next": 755
+        },
+        "1320": {
+          "cumulative_exp_at_target": 6835,
+          "exp_to_next": 921
+        }
+      }
+    },
+    {
+      "current_level": 14,
+      "target_level": 15,
+      "base_exp_to_next": 429,
+      "base_cumulative_exp_at_target": 3536,
+      "dream_shards_per_candy_at_current_level": 59,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 3536,
+          "exp_to_next": 429
+        },
+        "900": {
+          "cumulative_exp_at_target": 5304,
+          "exp_to_next": 643
+        },
+        "1080": {
+          "cumulative_exp_at_target": 6365,
+          "exp_to_next": 772
+        },
+        "1320": {
+          "cumulative_exp_at_target": 7779,
+          "exp_to_next": 944
+        }
+      }
+    },
+    {
+      "current_level": 15,
+      "target_level": 16,
+      "base_exp_to_next": 440,
+      "base_cumulative_exp_at_target": 3976,
+      "dream_shards_per_candy_at_current_level": 62,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 3976,
+          "exp_to_next": 440
+        },
+        "900": {
+          "cumulative_exp_at_target": 5964,
+          "exp_to_next": 660
+        },
+        "1080": {
+          "cumulative_exp_at_target": 7157,
+          "exp_to_next": 792
+        },
+        "1320": {
+          "cumulative_exp_at_target": 8747,
+          "exp_to_next": 968
+        }
+      }
+    },
+    {
+      "current_level": 16,
+      "target_level": 17,
+      "base_exp_to_next": 454,
+      "base_cumulative_exp_at_target": 4430,
+      "dream_shards_per_candy_at_current_level": 66,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 4430,
+          "exp_to_next": 454
+        },
+        "900": {
+          "cumulative_exp_at_target": 6645,
+          "exp_to_next": 681
+        },
+        "1080": {
+          "cumulative_exp_at_target": 7974,
+          "exp_to_next": 817
+        },
+        "1320": {
+          "cumulative_exp_at_target": 9746,
+          "exp_to_next": 999
+        }
+      }
+    },
+    {
+      "current_level": 17,
+      "target_level": 18,
+      "base_exp_to_next": 469,
+      "base_cumulative_exp_at_target": 4899,
+      "dream_shards_per_candy_at_current_level": 68,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 4899,
+          "exp_to_next": 469
+        },
+        "900": {
+          "cumulative_exp_at_target": 7349,
+          "exp_to_next": 704
+        },
+        "1080": {
+          "cumulative_exp_at_target": 8818,
+          "exp_to_next": 844
+        },
+        "1320": {
+          "cumulative_exp_at_target": 10778,
+          "exp_to_next": 1032
+        }
+      }
+    },
+    {
+      "current_level": 18,
+      "target_level": 19,
+      "base_exp_to_next": 483,
+      "base_cumulative_exp_at_target": 5382,
+      "dream_shards_per_candy_at_current_level": 71,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 5382,
+          "exp_to_next": 483
+        },
+        "900": {
+          "cumulative_exp_at_target": 8073,
+          "exp_to_next": 724
+        },
+        "1080": {
+          "cumulative_exp_at_target": 9688,
+          "exp_to_next": 870
+        },
+        "1320": {
+          "cumulative_exp_at_target": 11840,
+          "exp_to_next": 1062
+        }
+      }
+    },
+    {
+      "current_level": 19,
+      "target_level": 20,
+      "base_exp_to_next": 497,
+      "base_cumulative_exp_at_target": 5879,
+      "dream_shards_per_candy_at_current_level": 74,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 5879,
+          "exp_to_next": 497
+        },
+        "900": {
+          "cumulative_exp_at_target": 8819,
+          "exp_to_next": 746
+        },
+        "1080": {
+          "cumulative_exp_at_target": 10582,
+          "exp_to_next": 894
+        },
+        "1320": {
+          "cumulative_exp_at_target": 12934,
+          "exp_to_next": 1094
+        }
+      }
+    },
+    {
+      "current_level": 20,
+      "target_level": 21,
+      "base_exp_to_next": 515,
+      "base_cumulative_exp_at_target": 6394,
+      "dream_shards_per_candy_at_current_level": 78,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 6394,
+          "exp_to_next": 515
+        },
+        "900": {
+          "cumulative_exp_at_target": 9591,
+          "exp_to_next": 772
+        },
+        "1080": {
+          "cumulative_exp_at_target": 11509,
+          "exp_to_next": 927
+        },
+        "1320": {
+          "cumulative_exp_at_target": 14067,
+          "exp_to_next": 1133
+        }
+      }
+    },
+    {
+      "current_level": 21,
+      "target_level": 22,
+      "base_exp_to_next": 537,
+      "base_cumulative_exp_at_target": 6931,
+      "dream_shards_per_candy_at_current_level": 81,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 6931,
+          "exp_to_next": 537
+        },
+        "900": {
+          "cumulative_exp_at_target": 10397,
+          "exp_to_next": 806
+        },
+        "1080": {
+          "cumulative_exp_at_target": 12476,
+          "exp_to_next": 967
+        },
+        "1320": {
+          "cumulative_exp_at_target": 15248,
+          "exp_to_next": 1181
+        }
+      }
+    },
+    {
+      "current_level": 22,
+      "target_level": 23,
+      "base_exp_to_next": 558,
+      "base_cumulative_exp_at_target": 7489,
+      "dream_shards_per_candy_at_current_level": 85,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 7489,
+          "exp_to_next": 558
+        },
+        "900": {
+          "cumulative_exp_at_target": 11234,
+          "exp_to_next": 837
+        },
+        "1080": {
+          "cumulative_exp_at_target": 13480,
+          "exp_to_next": 1004
+        },
+        "1320": {
+          "cumulative_exp_at_target": 16476,
+          "exp_to_next": 1228
+        }
+      }
+    },
+    {
+      "current_level": 23,
+      "target_level": 24,
+      "base_exp_to_next": 579,
+      "base_cumulative_exp_at_target": 8068,
+      "dream_shards_per_candy_at_current_level": 88,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 8068,
+          "exp_to_next": 579
+        },
+        "900": {
+          "cumulative_exp_at_target": 12102,
+          "exp_to_next": 868
+        },
+        "1080": {
+          "cumulative_exp_at_target": 14522,
+          "exp_to_next": 1042
+        },
+        "1320": {
+          "cumulative_exp_at_target": 17750,
+          "exp_to_next": 1274
+        }
+      }
+    },
+    {
+      "current_level": 24,
+      "target_level": 25,
+      "base_exp_to_next": 600,
+      "base_cumulative_exp_at_target": 8668,
+      "dream_shards_per_candy_at_current_level": 92,
+      "candy_exp": {
+        "neutral": 40,
+        "up": 47,
+        "down": 33
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 8668,
+          "exp_to_next": 600
+        },
+        "900": {
+          "cumulative_exp_at_target": 13002,
+          "exp_to_next": 900
+        },
+        "1080": {
+          "cumulative_exp_at_target": 15602,
+          "exp_to_next": 1080
+        },
+        "1320": {
+          "cumulative_exp_at_target": 19070,
+          "exp_to_next": 1320
+        }
+      }
+    },
+    {
+      "current_level": 25,
+      "target_level": 26,
+      "base_exp_to_next": 622,
+      "base_cumulative_exp_at_target": 9290,
+      "dream_shards_per_candy_at_current_level": 95,
+      "candy_exp": {
+        "neutral": 35,
+        "up": 41,
+        "down": 29
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 9290,
+          "exp_to_next": 622
+        },
+        "900": {
+          "cumulative_exp_at_target": 13935,
+          "exp_to_next": 933
+        },
+        "1080": {
+          "cumulative_exp_at_target": 16722,
+          "exp_to_next": 1120
+        },
+        "1320": {
+          "cumulative_exp_at_target": 20438,
+          "exp_to_next": 1368
+        }
+      }
+    },
+    {
+      "current_level": 26,
+      "target_level": 27,
+      "base_exp_to_next": 643,
+      "base_cumulative_exp_at_target": 9933,
+      "dream_shards_per_candy_at_current_level": 100,
+      "candy_exp": {
+        "neutral": 35,
+        "up": 41,
+        "down": 29
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 9933,
+          "exp_to_next": 643
+        },
+        "900": {
+          "cumulative_exp_at_target": 14900,
+          "exp_to_next": 965
+        },
+        "1080": {
+          "cumulative_exp_at_target": 17879,
+          "exp_to_next": 1157
+        },
+        "1320": {
+          "cumulative_exp_at_target": 21853,
+          "exp_to_next": 1415
+        }
+      }
+    },
+    {
+      "current_level": 27,
+      "target_level": 28,
+      "base_exp_to_next": 665,
+      "base_cumulative_exp_at_target": 10598,
+      "dream_shards_per_candy_at_current_level": 105,
+      "candy_exp": {
+        "neutral": 35,
+        "up": 41,
+        "down": 29
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 10598,
+          "exp_to_next": 665
+        },
+        "900": {
+          "cumulative_exp_at_target": 15897,
+          "exp_to_next": 997
+        },
+        "1080": {
+          "cumulative_exp_at_target": 19076,
+          "exp_to_next": 1197
+        },
+        "1320": {
+          "cumulative_exp_at_target": 23316,
+          "exp_to_next": 1463
+        }
+      }
+    },
+    {
+      "current_level": 28,
+      "target_level": 29,
+      "base_exp_to_next": 686,
+      "base_cumulative_exp_at_target": 11284,
+      "dream_shards_per_candy_at_current_level": 111,
+      "candy_exp": {
+        "neutral": 35,
+        "up": 41,
+        "down": 29
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 11284,
+          "exp_to_next": 686
+        },
+        "900": {
+          "cumulative_exp_at_target": 16926,
+          "exp_to_next": 1029
+        },
+        "1080": {
+          "cumulative_exp_at_target": 20311,
+          "exp_to_next": 1235
+        },
+        "1320": {
+          "cumulative_exp_at_target": 24825,
+          "exp_to_next": 1509
+        }
+      }
+    },
+    {
+      "current_level": 29,
+      "target_level": 30,
+      "base_exp_to_next": 708,
+      "base_cumulative_exp_at_target": 11992,
+      "dream_shards_per_candy_at_current_level": 117,
+      "candy_exp": {
+        "neutral": 35,
+        "up": 41,
+        "down": 29
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 11992,
+          "exp_to_next": 708
+        },
+        "900": {
+          "cumulative_exp_at_target": 17988,
+          "exp_to_next": 1062
+        },
+        "1080": {
+          "cumulative_exp_at_target": 21586,
+          "exp_to_next": 1275
+        },
+        "1320": {
+          "cumulative_exp_at_target": 26382,
+          "exp_to_next": 1557
+        }
+      }
+    },
+    {
+      "current_level": 30,
+      "target_level": 31,
+      "base_exp_to_next": 729,
+      "base_cumulative_exp_at_target": 12721,
+      "dream_shards_per_candy_at_current_level": 122,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 12721,
+          "exp_to_next": 729
+        },
+        "900": {
+          "cumulative_exp_at_target": 19082,
+          "exp_to_next": 1094
+        },
+        "1080": {
+          "cumulative_exp_at_target": 22898,
+          "exp_to_next": 1312
+        },
+        "1320": {
+          "cumulative_exp_at_target": 27986,
+          "exp_to_next": 1604
+        }
+      }
+    },
+    {
+      "current_level": 31,
+      "target_level": 32,
+      "base_exp_to_next": 748,
+      "base_cumulative_exp_at_target": 13469,
+      "dream_shards_per_candy_at_current_level": 126,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 13469,
+          "exp_to_next": 748
+        },
+        "900": {
+          "cumulative_exp_at_target": 20204,
+          "exp_to_next": 1122
+        },
+        "1080": {
+          "cumulative_exp_at_target": 24244,
+          "exp_to_next": 1346
+        },
+        "1320": {
+          "cumulative_exp_at_target": 29632,
+          "exp_to_next": 1646
+        }
+      }
+    },
+    {
+      "current_level": 32,
+      "target_level": 33,
+      "base_exp_to_next": 766,
+      "base_cumulative_exp_at_target": 14235,
+      "dream_shards_per_candy_at_current_level": 130,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 14235,
+          "exp_to_next": 766
+        },
+        "900": {
+          "cumulative_exp_at_target": 21353,
+          "exp_to_next": 1149
+        },
+        "1080": {
+          "cumulative_exp_at_target": 25623,
+          "exp_to_next": 1379
+        },
+        "1320": {
+          "cumulative_exp_at_target": 31317,
+          "exp_to_next": 1685
+        }
+      }
+    },
+    {
+      "current_level": 33,
+      "target_level": 34,
+      "base_exp_to_next": 785,
+      "base_cumulative_exp_at_target": 15020,
+      "dream_shards_per_candy_at_current_level": 136,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 15020,
+          "exp_to_next": 785
+        },
+        "900": {
+          "cumulative_exp_at_target": 22530,
+          "exp_to_next": 1177
+        },
+        "1080": {
+          "cumulative_exp_at_target": 27036,
+          "exp_to_next": 1413
+        },
+        "1320": {
+          "cumulative_exp_at_target": 33044,
+          "exp_to_next": 1727
+        }
+      }
+    },
+    {
+      "current_level": 34,
+      "target_level": 35,
+      "base_exp_to_next": 803,
+      "base_cumulative_exp_at_target": 15823,
+      "dream_shards_per_candy_at_current_level": 143,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 15823,
+          "exp_to_next": 803
+        },
+        "900": {
+          "cumulative_exp_at_target": 23735,
+          "exp_to_next": 1205
+        },
+        "1080": {
+          "cumulative_exp_at_target": 28481,
+          "exp_to_next": 1445
+        },
+        "1320": {
+          "cumulative_exp_at_target": 34811,
+          "exp_to_next": 1767
+        }
+      }
+    },
+    {
+      "current_level": 35,
+      "target_level": 36,
+      "base_exp_to_next": 821,
+      "base_cumulative_exp_at_target": 16644,
+      "dream_shards_per_candy_at_current_level": 151,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 16644,
+          "exp_to_next": 821
+        },
+        "900": {
+          "cumulative_exp_at_target": 24966,
+          "exp_to_next": 1231
+        },
+        "1080": {
+          "cumulative_exp_at_target": 29959,
+          "exp_to_next": 1478
+        },
+        "1320": {
+          "cumulative_exp_at_target": 36617,
+          "exp_to_next": 1806
+        }
+      }
+    },
+    {
+      "current_level": 36,
+      "target_level": 37,
+      "base_exp_to_next": 839,
+      "base_cumulative_exp_at_target": 17483,
+      "dream_shards_per_candy_at_current_level": 160,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 17483,
+          "exp_to_next": 839
+        },
+        "900": {
+          "cumulative_exp_at_target": 26225,
+          "exp_to_next": 1259
+        },
+        "1080": {
+          "cumulative_exp_at_target": 31469,
+          "exp_to_next": 1510
+        },
+        "1320": {
+          "cumulative_exp_at_target": 38463,
+          "exp_to_next": 1846
+        }
+      }
+    },
+    {
+      "current_level": 37,
+      "target_level": 38,
+      "base_exp_to_next": 857,
+      "base_cumulative_exp_at_target": 18340,
+      "dream_shards_per_candy_at_current_level": 167,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 18340,
+          "exp_to_next": 857
+        },
+        "900": {
+          "cumulative_exp_at_target": 27510,
+          "exp_to_next": 1285
+        },
+        "1080": {
+          "cumulative_exp_at_target": 33012,
+          "exp_to_next": 1543
+        },
+        "1320": {
+          "cumulative_exp_at_target": 40348,
+          "exp_to_next": 1885
+        }
+      }
+    },
+    {
+      "current_level": 38,
+      "target_level": 39,
+      "base_exp_to_next": 875,
+      "base_cumulative_exp_at_target": 19215,
+      "dream_shards_per_candy_at_current_level": 174,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 19215,
+          "exp_to_next": 875
+        },
+        "900": {
+          "cumulative_exp_at_target": 28823,
+          "exp_to_next": 1313
+        },
+        "1080": {
+          "cumulative_exp_at_target": 34587,
+          "exp_to_next": 1575
+        },
+        "1320": {
+          "cumulative_exp_at_target": 42273,
+          "exp_to_next": 1925
+        }
+      }
+    },
+    {
+      "current_level": 39,
+      "target_level": 40,
+      "base_exp_to_next": 893,
+      "base_cumulative_exp_at_target": 20108,
+      "dream_shards_per_candy_at_current_level": 184,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 20108,
+          "exp_to_next": 893
+        },
+        "900": {
+          "cumulative_exp_at_target": 30162,
+          "exp_to_next": 1339
+        },
+        "1080": {
+          "cumulative_exp_at_target": 36194,
+          "exp_to_next": 1607
+        },
+        "1320": {
+          "cumulative_exp_at_target": 44238,
+          "exp_to_next": 1965
+        }
+      }
+    },
+    {
+      "current_level": 40,
+      "target_level": 41,
+      "base_exp_to_next": 910,
+      "base_cumulative_exp_at_target": 21018,
+      "dream_shards_per_candy_at_current_level": 192,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 21018,
+          "exp_to_next": 910
+        },
+        "900": {
+          "cumulative_exp_at_target": 31527,
+          "exp_to_next": 1365
+        },
+        "1080": {
+          "cumulative_exp_at_target": 37832,
+          "exp_to_next": 1638
+        },
+        "1320": {
+          "cumulative_exp_at_target": 46240,
+          "exp_to_next": 2002
+        }
+      }
+    },
+    {
+      "current_level": 41,
+      "target_level": 42,
+      "base_exp_to_next": 928,
+      "base_cumulative_exp_at_target": 21946,
+      "dream_shards_per_candy_at_current_level": 201,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 21946,
+          "exp_to_next": 928
+        },
+        "900": {
+          "cumulative_exp_at_target": 32919,
+          "exp_to_next": 1392
+        },
+        "1080": {
+          "cumulative_exp_at_target": 39503,
+          "exp_to_next": 1671
+        },
+        "1320": {
+          "cumulative_exp_at_target": 48281,
+          "exp_to_next": 2041
+        }
+      }
+    },
+    {
+      "current_level": 42,
+      "target_level": 43,
+      "base_exp_to_next": 945,
+      "base_cumulative_exp_at_target": 22891,
+      "dream_shards_per_candy_at_current_level": 211,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 22891,
+          "exp_to_next": 945
+        },
+        "900": {
+          "cumulative_exp_at_target": 34337,
+          "exp_to_next": 1418
+        },
+        "1080": {
+          "cumulative_exp_at_target": 41204,
+          "exp_to_next": 1701
+        },
+        "1320": {
+          "cumulative_exp_at_target": 50360,
+          "exp_to_next": 2079
+        }
+      }
+    },
+    {
+      "current_level": 43,
+      "target_level": 44,
+      "base_exp_to_next": 963,
+      "base_cumulative_exp_at_target": 23854,
+      "dream_shards_per_candy_at_current_level": 221,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 23854,
+          "exp_to_next": 963
+        },
+        "900": {
+          "cumulative_exp_at_target": 35781,
+          "exp_to_next": 1444
+        },
+        "1080": {
+          "cumulative_exp_at_target": 42937,
+          "exp_to_next": 1733
+        },
+        "1320": {
+          "cumulative_exp_at_target": 52479,
+          "exp_to_next": 2119
+        }
+      }
+    },
+    {
+      "current_level": 44,
+      "target_level": 45,
+      "base_exp_to_next": 980,
+      "base_cumulative_exp_at_target": 24834,
+      "dream_shards_per_candy_at_current_level": 227,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 24834,
+          "exp_to_next": 980
+        },
+        "900": {
+          "cumulative_exp_at_target": 37251,
+          "exp_to_next": 1470
+        },
+        "1080": {
+          "cumulative_exp_at_target": 44701,
+          "exp_to_next": 1764
+        },
+        "1320": {
+          "cumulative_exp_at_target": 54635,
+          "exp_to_next": 2156
+        }
+      }
+    },
+    {
+      "current_level": 45,
+      "target_level": 46,
+      "base_exp_to_next": 997,
+      "base_cumulative_exp_at_target": 25831,
+      "dream_shards_per_candy_at_current_level": 236,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 25831,
+          "exp_to_next": 997
+        },
+        "900": {
+          "cumulative_exp_at_target": 38747,
+          "exp_to_next": 1496
+        },
+        "1080": {
+          "cumulative_exp_at_target": 46496,
+          "exp_to_next": 1795
+        },
+        "1320": {
+          "cumulative_exp_at_target": 56828,
+          "exp_to_next": 2193
+        }
+      }
+    },
+    {
+      "current_level": 46,
+      "target_level": 47,
+      "base_exp_to_next": 1015,
+      "base_cumulative_exp_at_target": 26846,
+      "dream_shards_per_candy_at_current_level": 250,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 26846,
+          "exp_to_next": 1015
+        },
+        "900": {
+          "cumulative_exp_at_target": 40269,
+          "exp_to_next": 1522
+        },
+        "1080": {
+          "cumulative_exp_at_target": 48323,
+          "exp_to_next": 1827
+        },
+        "1320": {
+          "cumulative_exp_at_target": 59061,
+          "exp_to_next": 2233
+        }
+      }
+    },
+    {
+      "current_level": 47,
+      "target_level": 48,
+      "base_exp_to_next": 1032,
+      "base_cumulative_exp_at_target": 27878,
+      "dream_shards_per_candy_at_current_level": 264,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 27878,
+          "exp_to_next": 1032
+        },
+        "900": {
+          "cumulative_exp_at_target": 41817,
+          "exp_to_next": 1548
+        },
+        "1080": {
+          "cumulative_exp_at_target": 50180,
+          "exp_to_next": 1857
+        },
+        "1320": {
+          "cumulative_exp_at_target": 61332,
+          "exp_to_next": 2271
+        }
+      }
+    },
+    {
+      "current_level": 48,
+      "target_level": 49,
+      "base_exp_to_next": 1049,
+      "base_cumulative_exp_at_target": 28927,
+      "dream_shards_per_candy_at_current_level": 279,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 28927,
+          "exp_to_next": 1049
+        },
+        "900": {
+          "cumulative_exp_at_target": 43391,
+          "exp_to_next": 1574
+        },
+        "1080": {
+          "cumulative_exp_at_target": 52069,
+          "exp_to_next": 1889
+        },
+        "1320": {
+          "cumulative_exp_at_target": 63639,
+          "exp_to_next": 2307
+        }
+      }
+    },
+    {
+      "current_level": 49,
+      "target_level": 50,
+      "base_exp_to_next": 1066,
+      "base_cumulative_exp_at_target": 29993,
+      "dream_shards_per_candy_at_current_level": 295,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 29993,
+          "exp_to_next": 1066
+        },
+        "900": {
+          "cumulative_exp_at_target": 44990,
+          "exp_to_next": 1599
+        },
+        "1080": {
+          "cumulative_exp_at_target": 53987,
+          "exp_to_next": 1918
+        },
+        "1320": {
+          "cumulative_exp_at_target": 65985,
+          "exp_to_next": 2346
+        }
+      }
+    },
+    {
+      "current_level": 50,
+      "target_level": 51,
+      "base_exp_to_next": 1362,
+      "base_cumulative_exp_at_target": 31355,
+      "dream_shards_per_candy_at_current_level": 309,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 31355,
+          "exp_to_next": 1362
+        },
+        "900": {
+          "cumulative_exp_at_target": 47033,
+          "exp_to_next": 2043
+        },
+        "1080": {
+          "cumulative_exp_at_target": 56439,
+          "exp_to_next": 2452
+        },
+        "1320": {
+          "cumulative_exp_at_target": 68981,
+          "exp_to_next": 2996
+        }
+      }
+    },
+    {
+      "current_level": 51,
+      "target_level": 52,
+      "base_exp_to_next": 1562,
+      "base_cumulative_exp_at_target": 32917,
+      "dream_shards_per_candy_at_current_level": 323,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 32917,
+          "exp_to_next": 1562
+        },
+        "900": {
+          "cumulative_exp_at_target": 49376,
+          "exp_to_next": 2343
+        },
+        "1080": {
+          "cumulative_exp_at_target": 59251,
+          "exp_to_next": 2812
+        },
+        "1320": {
+          "cumulative_exp_at_target": 72417,
+          "exp_to_next": 3436
+        }
+      }
+    },
+    {
+      "current_level": 52,
+      "target_level": 53,
+      "base_exp_to_next": 1747,
+      "base_cumulative_exp_at_target": 34664,
+      "dream_shards_per_candy_at_current_level": 338,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 34664,
+          "exp_to_next": 1747
+        },
+        "900": {
+          "cumulative_exp_at_target": 51996,
+          "exp_to_next": 2620
+        },
+        "1080": {
+          "cumulative_exp_at_target": 62395,
+          "exp_to_next": 3144
+        },
+        "1320": {
+          "cumulative_exp_at_target": 76261,
+          "exp_to_next": 3844
+        }
+      }
+    },
+    {
+      "current_level": 53,
+      "target_level": 54,
+      "base_exp_to_next": 1946,
+      "base_cumulative_exp_at_target": 36610,
+      "dream_shards_per_candy_at_current_level": 356,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 36610,
+          "exp_to_next": 1946
+        },
+        "900": {
+          "cumulative_exp_at_target": 54915,
+          "exp_to_next": 2919
+        },
+        "1080": {
+          "cumulative_exp_at_target": 65898,
+          "exp_to_next": 3503
+        },
+        "1320": {
+          "cumulative_exp_at_target": 80542,
+          "exp_to_next": 4281
+        }
+      }
+    },
+    {
+      "current_level": 54,
+      "target_level": 55,
+      "base_exp_to_next": 2195,
+      "base_cumulative_exp_at_target": 38805,
+      "dream_shards_per_candy_at_current_level": 372,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 38805,
+          "exp_to_next": 2195
+        },
+        "900": {
+          "cumulative_exp_at_target": 58208,
+          "exp_to_next": 3293
+        },
+        "1080": {
+          "cumulative_exp_at_target": 69849,
+          "exp_to_next": 3951
+        },
+        "1320": {
+          "cumulative_exp_at_target": 85371,
+          "exp_to_next": 4829
+        }
+      }
+    },
+    {
+      "current_level": 55,
+      "target_level": 56,
+      "base_exp_to_next": 2279,
+      "base_cumulative_exp_at_target": 41084,
+      "dream_shards_per_candy_at_current_level": 391,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 41084,
+          "exp_to_next": 2279
+        },
+        "900": {
+          "cumulative_exp_at_target": 61626,
+          "exp_to_next": 3418
+        },
+        "1080": {
+          "cumulative_exp_at_target": 73951,
+          "exp_to_next": 4102
+        },
+        "1320": {
+          "cumulative_exp_at_target": 90385,
+          "exp_to_next": 5014
+        }
+      }
+    },
+    {
+      "current_level": 56,
+      "target_level": 57,
+      "base_exp_to_next": 2404,
+      "base_cumulative_exp_at_target": 43488,
+      "dream_shards_per_candy_at_current_level": 437,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 43488,
+          "exp_to_next": 2404
+        },
+        "900": {
+          "cumulative_exp_at_target": 65232,
+          "exp_to_next": 3606
+        },
+        "1080": {
+          "cumulative_exp_at_target": 78278,
+          "exp_to_next": 4327
+        },
+        "1320": {
+          "cumulative_exp_at_target": 95674,
+          "exp_to_next": 5289
+        }
+      }
+    },
+    {
+      "current_level": 57,
+      "target_level": 58,
+      "base_exp_to_next": 2533,
+      "base_cumulative_exp_at_target": 46021,
+      "dream_shards_per_candy_at_current_level": 486,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 46021,
+          "exp_to_next": 2533
+        },
+        "900": {
+          "cumulative_exp_at_target": 69032,
+          "exp_to_next": 3800
+        },
+        "1080": {
+          "cumulative_exp_at_target": 82838,
+          "exp_to_next": 4560
+        },
+        "1320": {
+          "cumulative_exp_at_target": 101246,
+          "exp_to_next": 5572
+        }
+      }
+    },
+    {
+      "current_level": 58,
+      "target_level": 59,
+      "base_exp_to_next": 2666,
+      "base_cumulative_exp_at_target": 48687,
+      "dream_shards_per_candy_at_current_level": 538,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 48687,
+          "exp_to_next": 2666
+        },
+        "900": {
+          "cumulative_exp_at_target": 73031,
+          "exp_to_next": 3999
+        },
+        "1080": {
+          "cumulative_exp_at_target": 87637,
+          "exp_to_next": 4799
+        },
+        "1320": {
+          "cumulative_exp_at_target": 107111,
+          "exp_to_next": 5865
+        }
+      }
+    },
+    {
+      "current_level": 59,
+      "target_level": 60,
+      "base_exp_to_next": 2806,
+      "base_cumulative_exp_at_target": 51493,
+      "dream_shards_per_candy_at_current_level": 593,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 51493,
+          "exp_to_next": 2806
+        },
+        "900": {
+          "cumulative_exp_at_target": 77240,
+          "exp_to_next": 4209
+        },
+        "1080": {
+          "cumulative_exp_at_target": 92687,
+          "exp_to_next": 5050
+        },
+        "1320": {
+          "cumulative_exp_at_target": 113285,
+          "exp_to_next": 6174
+        }
+      }
+    },
+    {
+      "current_level": 60,
+      "target_level": 61,
+      "base_exp_to_next": 2865,
+      "base_cumulative_exp_at_target": 54358,
+      "dream_shards_per_candy_at_current_level": 651,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 54358,
+          "exp_to_next": 2865
+        },
+        "900": {
+          "cumulative_exp_at_target": 81537,
+          "exp_to_next": 4297
+        },
+        "1080": {
+          "cumulative_exp_at_target": 97844,
+          "exp_to_next": 5157
+        },
+        "1320": {
+          "cumulative_exp_at_target": 119588,
+          "exp_to_next": 6303
+        }
+      }
+    },
+    {
+      "current_level": 61,
+      "target_level": 62,
+      "base_exp_to_next": 2922,
+      "base_cumulative_exp_at_target": 57280,
+      "dream_shards_per_candy_at_current_level": 698,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 57280,
+          "exp_to_next": 2922
+        },
+        "900": {
+          "cumulative_exp_at_target": 85920,
+          "exp_to_next": 4383
+        },
+        "1080": {
+          "cumulative_exp_at_target": 103104,
+          "exp_to_next": 5260
+        },
+        "1320": {
+          "cumulative_exp_at_target": 126016,
+          "exp_to_next": 6428
+        }
+      }
+    },
+    {
+      "current_level": 62,
+      "target_level": 63,
+      "base_exp_to_next": 2977,
+      "base_cumulative_exp_at_target": 60257,
+      "dream_shards_per_candy_at_current_level": 750,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 60257,
+          "exp_to_next": 2977
+        },
+        "900": {
+          "cumulative_exp_at_target": 90386,
+          "exp_to_next": 4466
+        },
+        "1080": {
+          "cumulative_exp_at_target": 108463,
+          "exp_to_next": 5359
+        },
+        "1320": {
+          "cumulative_exp_at_target": 132565,
+          "exp_to_next": 6549
+        }
+      }
+    },
+    {
+      "current_level": 63,
+      "target_level": 64,
+      "base_exp_to_next": 3029,
+      "base_cumulative_exp_at_target": 63286,
+      "dream_shards_per_candy_at_current_level": 804,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 63286,
+          "exp_to_next": 3029
+        },
+        "900": {
+          "cumulative_exp_at_target": 94929,
+          "exp_to_next": 4543
+        },
+        "1080": {
+          "cumulative_exp_at_target": 113915,
+          "exp_to_next": 5452
+        },
+        "1320": {
+          "cumulative_exp_at_target": 139229,
+          "exp_to_next": 6664
+        }
+      }
+    },
+    {
+      "current_level": 64,
+      "target_level": 65,
+      "base_exp_to_next": 3077,
+      "base_cumulative_exp_at_target": 66363,
+      "dream_shards_per_candy_at_current_level": 866,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 66363,
+          "exp_to_next": 3077
+        },
+        "900": {
+          "cumulative_exp_at_target": 99545,
+          "exp_to_next": 4616
+        },
+        "1080": {
+          "cumulative_exp_at_target": 119453,
+          "exp_to_next": 5538
+        },
+        "1320": {
+          "cumulative_exp_at_target": 145999,
+          "exp_to_next": 6770
+        }
+      }
+    },
+    {
+      "current_level": 65,
+      "target_level": 66,
+      "base_exp_to_next": 3095,
+      "base_cumulative_exp_at_target": 69458,
+      "dream_shards_per_candy_at_current_level": 932,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 69458,
+          "exp_to_next": 3095
+        },
+        "900": {
+          "cumulative_exp_at_target": 104187,
+          "exp_to_next": 4642
+        },
+        "1080": {
+          "cumulative_exp_at_target": 125024,
+          "exp_to_next": 5571
+        },
+        "1320": {
+          "cumulative_exp_at_target": 152808,
+          "exp_to_next": 6809
+        }
+      }
+    },
+    {
+      "current_level": 66,
+      "target_level": 67,
+      "base_exp_to_next": 3116,
+      "base_cumulative_exp_at_target": 72574,
+      "dream_shards_per_candy_at_current_level": 1004,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 72574,
+          "exp_to_next": 3116
+        },
+        "900": {
+          "cumulative_exp_at_target": 108861,
+          "exp_to_next": 4674
+        },
+        "1080": {
+          "cumulative_exp_at_target": 130633,
+          "exp_to_next": 5609
+        },
+        "1320": {
+          "cumulative_exp_at_target": 159663,
+          "exp_to_next": 6855
+        }
+      }
+    },
+    {
+      "current_level": 67,
+      "target_level": 68,
+      "base_exp_to_next": 3144,
+      "base_cumulative_exp_at_target": 75718,
+      "dream_shards_per_candy_at_current_level": 1084,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 75718,
+          "exp_to_next": 3144
+        },
+        "900": {
+          "cumulative_exp_at_target": 113577,
+          "exp_to_next": 4716
+        },
+        "1080": {
+          "cumulative_exp_at_target": 136292,
+          "exp_to_next": 5659
+        },
+        "1320": {
+          "cumulative_exp_at_target": 166580,
+          "exp_to_next": 6917
+        }
+      }
+    },
+    {
+      "current_level": 68,
+      "target_level": 69,
+      "base_exp_to_next": 3189,
+      "base_cumulative_exp_at_target": 78907,
+      "dream_shards_per_candy_at_current_level": 1173,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 78907,
+          "exp_to_next": 3189
+        },
+        "900": {
+          "cumulative_exp_at_target": 118361,
+          "exp_to_next": 4784
+        },
+        "1080": {
+          "cumulative_exp_at_target": 142033,
+          "exp_to_next": 5741
+        },
+        "1320": {
+          "cumulative_exp_at_target": 173595,
+          "exp_to_next": 7015
+        }
+      }
+    },
+    {
+      "current_level": 69,
+      "target_level": 70,
+      "base_exp_to_next": 3255,
+      "base_cumulative_exp_at_target": 82162,
+      "dream_shards_per_candy_at_current_level": 1272,
+      "candy_exp": {
+        "neutral": 25,
+        "up": 30,
+        "down": 21
+      },
+      "exp_types": {
+        "600": {
+          "cumulative_exp_at_target": 82162,
+          "exp_to_next": 3255
+        },
+        "900": {
+          "cumulative_exp_at_target": 123243,
+          "exp_to_next": 4882
+        },
+        "1080": {
+          "cumulative_exp_at_target": 147892,
+          "exp_to_next": 5859
+        },
+        "1320": {
+          "cumulative_exp_at_target": 180756,
+          "exp_to_next": 7161
+        }
+      }
+    }
+  ],
+  "expTypeMultipliers": {
+    "600": 1,
+    "900": 1.5,
+    "1080": 1.8,
+    "1320": 2.2
+  },
+  "sourceTableConflicts": [
+    {
+      "target_level": 5,
+      "exp_type": 1320,
+      "source_table_value": 282,
+      "cumulative_rounding_value": 281,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 13,
+      "exp_type": 1320,
+      "source_table_value": 895,
+      "cumulative_rounding_value": 896,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 14,
+      "exp_type": 1320,
+      "source_table_value": 922,
+      "cumulative_rounding_value": 921,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 19,
+      "exp_type": 1320,
+      "source_table_value": 1063,
+      "cumulative_rounding_value": 1062,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 20,
+      "exp_type": 1320,
+      "source_table_value": 1093,
+      "cumulative_rounding_value": 1094,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 30,
+      "exp_type": 1320,
+      "source_table_value": 1558,
+      "cumulative_rounding_value": 1557,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 42,
+      "exp_type": 1320,
+      "source_table_value": 2042,
+      "cumulative_rounding_value": 2041,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 48,
+      "exp_type": 1320,
+      "source_table_value": 2270,
+      "cumulative_rounding_value": 2271,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 49,
+      "exp_type": 1320,
+      "source_table_value": 2308,
+      "cumulative_rounding_value": 2307,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 50,
+      "exp_type": 1320,
+      "source_table_value": 2345,
+      "cumulative_rounding_value": 2346,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 51,
+      "exp_type": 900,
+      "source_table_value": 2042,
+      "cumulative_rounding_value": 2043,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 51,
+      "exp_type": 1080,
+      "source_table_value": 2451,
+      "cumulative_rounding_value": 2452,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 52,
+      "exp_type": 900,
+      "source_table_value": 2344,
+      "cumulative_rounding_value": 2343,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 52,
+      "exp_type": 1080,
+      "source_table_value": 2813,
+      "cumulative_rounding_value": 2812,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 53,
+      "exp_type": 1080,
+      "source_table_value": 3145,
+      "cumulative_rounding_value": 3144,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 53,
+      "exp_type": 1320,
+      "source_table_value": 3843,
+      "cumulative_rounding_value": 3844,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 54,
+      "exp_type": 1080,
+      "source_table_value": 3501,
+      "cumulative_rounding_value": 3503,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 55,
+      "exp_type": 1080,
+      "source_table_value": 3952,
+      "cumulative_rounding_value": 3951,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 56,
+      "exp_type": 900,
+      "source_table_value": 3419,
+      "cumulative_rounding_value": 3418,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 58,
+      "exp_type": 1080,
+      "source_table_value": 4559,
+      "cumulative_rounding_value": 4560,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 58,
+      "exp_type": 1320,
+      "source_table_value": 5573,
+      "cumulative_rounding_value": 5572,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 60,
+      "exp_type": 1080,
+      "source_table_value": 5051,
+      "cumulative_rounding_value": 5050,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 60,
+      "exp_type": 1320,
+      "source_table_value": 6173,
+      "cumulative_rounding_value": 6174,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 61,
+      "exp_type": 900,
+      "source_table_value": 4298,
+      "cumulative_rounding_value": 4297,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 64,
+      "exp_type": 900,
+      "source_table_value": 4544,
+      "cumulative_rounding_value": 4543,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 65,
+      "exp_type": 1080,
+      "source_table_value": 5539,
+      "cumulative_rounding_value": 5538,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 65,
+      "exp_type": 1320,
+      "source_table_value": 6769,
+      "cumulative_rounding_value": 6770,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    },
+    {
+      "target_level": 68,
+      "exp_type": 1320,
+      "source_table_value": 6971,
+      "cumulative_rounding_value": 6917,
+      "status": "要確認：本文の累計四捨五入規則を採用した導出値"
+    }
+  ],
+  "sources": {
+    "level": "https://wikiwiki.jp/poke_sleep/育成/レベル",
+    "exp_type": "https://wikiwiki.jp/poke_sleep/育成/経験値タイプ"
+  },
+  "assumptions": {
+    "currentLevelProgressExp": 0,
+    "candyMode": "normal",
+    "expRemainder": "carry_forward",
+    "dreamShardCost": "level_at_candy_use",
+    "mintExpRule": null,
+    "researchRankLevelCap": null
+  },
+  "excludedSourceFields": {
+    "candy_boost": "丸め順未確認。通常アメのみ。",
+    "sleep_exp_formula": "丸め未確認。睡眠EXP・睡眠EXPボーナスは不採用。"
+  },
+  "displayNote": "現LvのEXP0から、通常アメのみで到達する目安。攻略資料・累計丸め導出値を使用し、表の不一致と実機未照合を保持。",
+  "subskillUnlockLevels": [
+    10,
+    25,
+    50,
+    70,
+    80
+  ]
+}
