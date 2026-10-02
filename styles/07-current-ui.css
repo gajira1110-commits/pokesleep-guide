@@ -285,3 +285,5 @@
 #v12Ability .psg-skill-copy .v35-effect-copy{font-size:13px!important}
 #dexDetail .psg-dex-costume{flex:none;width:75px;min-height:28px;padding:2px;font:inherit;font-size:11px;color:#52645b;background:#fff;border:1px solid #dce4df;border-radius:7px;opacity:1}
 #dexDetail .psg-form-no-image{font-size:14px;color:#718078;align-self:center}
+.psg-skill-level>span{min-width:0;overflow-wrap:anywhere;line-height:1.6}
+.psg-skill-entry summary strong{min-width:0;overflow-wrap:anywhere}
