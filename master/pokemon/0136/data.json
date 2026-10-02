@@ -1,0 +1,100 @@
+{
+  "no": 136,
+  "name": "ブースター",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ヒメリのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 19,
+  "foodRate": 18.5,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0136_01",
+      "name": "しっぽをふる寝",
+      "stars": 1
+    },
+    {
+      "id": "0136_02",
+      "name": "こうばこずわり寝",
+      "stars": 2
+    },
+    {
+      "id": "0136_03",
+      "name": "しっぽくるまり寝",
+      "stars": 3
+    },
+    {
+      "id": "0136_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/flareon",
+    "https://wikiwiki.jp/poke_sleep/ブースター",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%96%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC"
+  ],
+  "verifiedAt": "2026-09-30",
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0136_ブースター",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%96%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

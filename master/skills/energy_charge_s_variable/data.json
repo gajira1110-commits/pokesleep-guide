@@ -1,0 +1,41 @@
+{
+  "id": "energy_charge_s_variable",
+  "name": "エナジーチャージS（ランダム）",
+  "maxLevel": 7,
+  "tags": [
+    "エナジー",
+    "ランダム"
+  ],
+  "effectType": "variable_energy",
+  "levels": {
+    "1": {
+      "min": 200,
+      "max": 800
+    },
+    "2": {
+      "min": 285,
+      "max": 1138
+    },
+    "3": {
+      "min": 393,
+      "max": 1570
+    },
+    "4": {
+      "min": 542,
+      "max": 2166
+    },
+    "5": {
+      "min": 748,
+      "max": 2992
+    },
+    "6": {
+      "min": 1033,
+      "max": 4132
+    },
+    "7": {
+      "min": 1606,
+      "max": 6424
+    }
+  },
+  "iconAsset": "assets/skill-icons/energy_charge_s_variable.webp"
+}

@@ -1,0 +1,96 @@
+{
+  "no": 55,
+  "name": "ゴルダック",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 3400,
+  "carry": 19,
+  "foodRate": 16.2,
+  "skillRate": 12.5,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 6
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0055_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0055_02",
+      "name": "おしりかき寝",
+      "stars": 2
+    },
+    {
+      "id": "0055_03",
+      "name": "およぎ寝",
+      "stars": 3
+    },
+    {
+      "id": "0055_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0055_ゴルダック",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AB%E3%83%80%E3%83%83%E3%82%AF",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AB%E3%83%80%E3%83%83%E3%82%AF"
+  ]
+}

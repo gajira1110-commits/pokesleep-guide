@@ -1,0 +1,102 @@
+{
+  "no": 214,
+  "name": "ヘラクロス",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 2300,
+  "carry": 20,
+  "foodRate": 15.8,
+  "skillRate": 4.7,
+  "rateStatus": "推定",
+  "mainSkillId": "bulk_up_cooking_assist_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0214_01",
+      "name": "ツノふり寝",
+      "stars": 1
+    },
+    {
+      "id": "0214_02",
+      "name": "ぼうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0214_03",
+      "name": "ミツなめ寝",
+      "stars": 3
+    },
+    {
+      "id": "0214_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sleepStyleCount": 4,
+  "evolution": null,
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/heracross",
+    "https://wikiwiki.jp/poke_sleep/ヘラクロス",
+    "https://www.pokemonsleep.net/news/333730373236393633383034383937323831/",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%A9%E3%82%AF%E3%83%AD%E3%82%B9"
+  ],
+  "verifiedAt": "2026-09-30",
+  "friendPoints": 16,
+  "expType": 600,
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0214_ヘラクロス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%A9%E3%82%AF%E3%83%AD%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

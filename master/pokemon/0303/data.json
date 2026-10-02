@@ -1,0 +1,101 @@
+{
+  "no": 303,
+  "name": "クチート",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "ベリブのみ",
+  "berryQty": 1,
+  "help": 3200,
+  "carry": 17,
+  "foodRate": 20.4,
+  "skillRate": 3.8,
+  "rateStatus": "推定",
+  "mainSkillId": "hyper_cutter_ingredient_select_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 7
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 6
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0303_01",
+      "name": "つっぷし寝",
+      "stars": 1
+    },
+    {
+      "id": "0303_02",
+      "name": "おおあごふり寝",
+      "stars": 2
+    },
+    {
+      "id": "0303_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0303_03",
+      "name": "おおあごだき寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%81%E3%83%BC%E3%83%88",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 16,
+  "expType": 600,
+  "evolutionNotes": [
+    "なし"
+  ],
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0303_クチート",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%81%E3%83%BC%E3%83%88",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

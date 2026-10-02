@@ -1,0 +1,95 @@
+{
+  "no": 12,
+  "name": "バタフリー",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ラムのみ",
+  "help": 2500,
+  "carry": 31,
+  "foodRate": 19.7,
+  "skillRate": 1.4,
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "qty": 1,
+          "ingredientId": "honey"
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "qty": 2,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 2,
+          "ingredientId": "tomato"
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "qty": 4,
+          "ingredientId": "honey"
+        },
+        {
+          "qty": 3,
+          "ingredientId": "tomato"
+        },
+        {
+          "qty": 4,
+          "ingredientId": "greengrass_soybeans"
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0012_01",
+      "name": "すわりふゆう寝",
+      "stars": 1
+    },
+    {
+      "id": "0012_02",
+      "name": "ふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0012_03",
+      "name": "りんぷんだし寝",
+      "stars": 3
+    },
+    {
+      "id": "0012_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "berryQty": 2,
+  "rateStatus": "推定",
+  "friendPoints": 15,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0012_バタフリー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%BF%E3%83%95%E3%83%AA%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%BF%E3%83%95%E3%83%AA%E3%83%BC"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "no": 289,
+  "name": "ケッキング",
+  "type": "ノーマル",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "キーのみ",
+  "berryQty": 2,
+  "help": 3600,
+  "carry": 26,
+  "foodRate": 33.9,
+  "skillRate": 6.7,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0289_01",
+      "name": "だいのじ寝",
+      "stars": 1
+    },
+    {
+      "id": "0289_02",
+      "name": "ぐうたら寝",
+      "stars": 2
+    },
+    {
+      "id": "0289_03",
+      "name": "つまみぐい寝",
+      "stars": 3
+    },
+    {
+      "id": "0289_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B1%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 22,
+  "expType": 600,
+  "evolutionNotes": [
+    "ナマケロ",
+    "↓　Lv.14＋ナマケロのアメ×40",
+    "ヤルキモノ",
+    "↓　Lv.27＋ナマケロのアメ×80",
+    "ケッキング"
+  ],
+  "transferCandy": 11,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0289_ケッキング",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B1%E3%83%83%E3%82%AD%E3%83%B3%E3%82%B0",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "no": 157,
+  "name": "バクフーン",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "ヒメリのみ",
+  "berryQty": 2,
+  "help": 2400,
+  "carry": 33,
+  "foodRate": 20.8,
+  "skillRate": 3.9,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 3
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0157_01",
+      "name": "うでまくら寝",
+      "stars": 1
+    },
+    {
+      "id": "0157_02",
+      "name": "けづくろい寝",
+      "stars": 2
+    },
+    {
+      "id": "0157_03",
+      "name": "ほのおふきあげ寝",
+      "stars": 3
+    },
+    {
+      "id": "0157_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%AF%E3%83%95%E3%83%BC%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヒノアラシ",
+    "↓　Lv.11＋ヒノアラシのアメ×40",
+    "マグマラシ",
+    "↓　Lv.27＋ヒノアラシのアメ×80",
+    "バクフーン"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0157_バクフーン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%82%AF%E3%83%95%E3%83%BC%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

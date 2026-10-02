@@ -1,0 +1,90 @@
+{
+  "no": 51,
+  "name": "ダグトリオ",
+  "type": "じめん",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "フィラのみ",
+  "berryQty": 1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "help": 2650,
+  "carry": 21,
+  "foodRate": 19.0,
+  "skillRate": 2.0,
+  "sleepStyles": [
+    {
+      "id": "0051_01",
+      "name": "ちちゅう寝",
+      "stars": 1
+    },
+    {
+      "id": "0051_02",
+      "name": "ちじょう寝",
+      "stars": 2
+    },
+    {
+      "id": "0051_03",
+      "name": "みつごなかよし寝",
+      "stars": 3
+    }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0051_ダグトリオ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA"
+  ]
+}

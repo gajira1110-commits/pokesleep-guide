@@ -1,0 +1,115 @@
+{
+  "no": 304,
+  "name": "ココドラ",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "ベリブのみ",
+  "berryQty": 1,
+  "help": 5700,
+  "carry": 10,
+  "foodRate": 27.3,
+  "skillRate": 4.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 7
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 7
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0304_01",
+      "name": "かおかき寝",
+      "stars": 1
+    },
+    {
+      "id": "0304_02",
+      "name": "ストレッチ寝",
+      "stars": 2
+    },
+    {
+      "id": "0304_03",
+      "name": "てつたべ寝",
+      "stars": 3
+    },
+    {
+      "id": "0304_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%B3%E3%83%89%E3%83%A9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ココドラ",
+    "↓ Lv.24＋ココドラのアメ40",
+    "コドラ",
+    "↓ Lv.32＋ココドラのアメ80",
+    "ボスゴドラ"
+  ],
+  "evolution": [
+    {
+      "toNo": 305,
+      "to": "コドラ",
+      "conditions": [
+        "Lv.24＋ココドラのアメ40"
+      ],
+      "level": 24
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0304_ココドラ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%B3%E3%83%89%E3%83%A9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

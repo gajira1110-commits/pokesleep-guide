@@ -1,0 +1,2336 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>PokéSleep Guide — Review v237</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script id="psg-specialty-image-data">/* PSG_BUILD_SPECIALTY_IMAGES */</script>
+<script id="psg-image-files">
+/* 画像を後から入れる場所。画像ファイルはHTMLと同じ公開先の assets/ に置く。
+   例: pokemon: { 1: 'assets/pokemon/001.png' }
+   未登録は空のままにする。権利を確認できたファイルだけ指定する。
+   pokemonFaces は顔画像。詳細用の pokemon が未登録なら顔画像を共用する。
+   skills / recipes / sleepStyles / fields は今後の各画面を作る際の予約欄。 */
+window.PS_IMAGE_FILES = {
+  pokemon: {},       // 図鑑No. -> 詳細・進化・図鑑カード共通
+  pokemonFaces: {},  // 図鑑No. -> 図鑑・ボックス共用の顔画像（任意）
+  ingredients: {},   // 正式な食材名 -> 図鑑と詳細の食材アイコン
+  berries: {},       // きのみ名 -> 詳細上部のきのみアイコン
+  types: {},         // タイプ名 -> フィルターなどのタイプアイコン
+  skills: {},        // スキルID -> 詳細のスキル固有アイコン
+  recipes: {},       // レシピID -> 対応料理（表示実装時に接続）
+  sleepTypes: {},    // 睡眠タイプ名 -> 共通バッジ
+  sleepStyles: {},   // 寝顔ID -> 写真ファイル（寝顔名・★はPS_CATALOGに置く）
+  fields: {},        // フィールドID -> フィールドタブ（表示実装時に接続）
+  items: {},        // アイテム名 -> 進化条件・ミント
+  ranks: {},        // ランク名 -> フィールドの条件表示
+  ribbons: {},      // 睡眠時間 -> おやすみリボン
+  subskills: {}      // サブスキル名 -> 小型バッジ
+};
+</script>
+<script id="psg-image-filename-preview">
+/* 'public': plain English placeholder. 'development': preview the intended filename.
+   Keep public mode when promoting a reviewed version to the official release. */
+window.PS_IMAGE_PREVIEW_MODE = 'public';
+window.PS_DEV_ASSETS = {
+  ingredientIds:{'あまいミツ':'honey','あんみんトマト':'tomato','ほっこりポテト':'potato','マメミート':'bean_meat','あったかジンジャー':'warming_ginger','げきからハーブ':'fiery_herb','ワカクサ大豆':'greengrass_soybeans','とくせんリンゴ':'fancy_apple','リラックスカカオ':'soothing_cacao','モーモーミルク':'moomoo_milk','ワカクサコーン':'greengrass_corn','ピュアなオイル':'pure_oil','とくせんエッグ':'fancy_egg','あじわいキノコ':'tasty_mushroom','つやつやアボカド':'shiny_avocado','ずっしりカボチャ':'plump_pumpkin','めざましコーヒー':'coffee'},
+  berryIds:{'ドリのみ':'dori','ヒメリのみ':'himeri','ラムのみ':'ramu'},
+  path(kind,id,role='full'){
+    if(kind==='pokemon')return `assets/pokemon/${String(id).padStart(4,'0')}_default_${role}.webp`;
+    const group=kind==='ingredient'?'ingredients':kind==='berry'?'berries':'skills';
+    const key=kind==='ingredient'?this.ingredientIds[id]:kind==='berry'?this.berryIds[id]:id;
+    return key?`assets/${group}/${key}.webp`:null;
+  },
+  preview(path,small=false){
+    const development=window.PS_IMAGE_PREVIEW_MODE==='development';
+    const filename=path.split('/').pop();
+    const split=filename.lastIndexOf('_');
+    const lines=development?(small?[filename]:split>0?[filename.slice(0,split+1),filename.slice(split+1)]:[filename]):['No image'];
+    const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+    const text=lines.map((line,i)=>`<text x="100" y="${small?111:lines.length===1?108:90+i*29}" text-anchor="middle" font-size="${small?Math.max(12,Math.min(21,160/line.length*2)):line.length>17?13:17}" font-weight="700" fill="#374e49">${esc(line)}</text>`).join('');
+    const heading=development?`<text x="100" y="${small?63:57}" text-anchor="middle" font-size="${small?26:21}" fill="#729288">画像待ち</text>`:'';
+    const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect x="3" y="3" width="194" height="194" rx="20" fill="#f8faf8" stroke="#adbbb3" stroke-width="3" stroke-dasharray="6 5"/>${heading}${text}</svg>`;
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  },
+  title(path){return window.PS_IMAGE_PREVIEW_MODE==='development'?path||'':''},
+  image(src,kind,id,role='full',alt=''){
+    if(kind==='pokemon'&&role==='face'&&window.PS_FACE_ART?.usesSheet(id))return window.PS_FACE_ART.html(id,alt);
+    const path=this.path(kind,id,role);
+    if(!src&&!path)return '';
+    const url=src||this.preview(path,kind!=='pokemon');
+    return `<img class="${src?'':'psg-asset-preview'}" src="${url}" alt="${alt}" title="${this.title(path)}"${src&&path?` data-preview-path="${path}"`:''}>`;
+  }
+};
+document.addEventListener('error',event=>{
+  const img=event.target;
+  if(img instanceof HTMLImageElement&&img.dataset.previewPath){
+    img.src=window.PS_DEV_ASSETS.preview(img.dataset.previewPath);
+    img.classList.add('psg-asset-preview');
+    delete img.dataset.previewPath;
+  }
+},true);
+</script>
+<script id="psg-face-sheet">
+/* PSG_BUILD_FACE_SCRIPT */
+</script>
+<script id="psg-catalog">
+/* One generated catalog supplies the Dex list and detail renderer. */
+/* PSG_BUILD_CATALOG */
+for(const [no,styles] of Object.entries(window.PS_CATALOG.sleepStyles)){
+  window.PS_CATALOG.sleepStyles[no]=styles.map(([name,stars,explicitId],index)=>{
+    const id=explicitId||`${String(no).padStart(4,'0')}_${String(index+1).padStart(2,'0')}`;
+    return {id,stars,name,image:window.PS_IMAGE_FILES.sleepStyles[id]||`assets/sleep/${id}.webp`};
+  });
+}
+window.PS_SLEEP_ICON=name=>{
+ const src=window.PS_IMAGE_FILES.sleepTypes[name];
+ return src?`<img class="psg-sleep-type-icon" src="${src}" alt="" aria-hidden="true">`:'';
+};
+/* Render-only preview rows are derived from the verified slot candidates.
+   The complete candidate sets remain in ingredientSlots for future screens. */
+for(const pokemon of Object.values(window.PS_CATALOG.pokemon)){
+  const assets=window.PS_IMAGE_FILES;
+  pokemon.image=assets.pokemon[pokemon.no]||pokemon.image||assets.pokemonFaces[pokemon.no]||null;
+  pokemon.faceImage=assets.pokemonFaces[pokemon.no]||pokemon.image;
+  pokemon.berryImage=assets.berries[pokemon.berry]||pokemon.berryImage||null;
+  if(!pokemon.ingredientSlots)continue;
+  const rows=new Map();
+  pokemon.ingredientSlots.forEach((slot,levelIndex)=>{
+    for(const candidate of slot.candidates){
+      if(!rows.has(candidate.name))rows.set(candidate.name,[null,null,null]);
+      rows.get(candidate.name)[levelIndex]=candidate.qty;
+    }
+  });
+  pokemon.ingredients=[...rows].map(([name,qty],i)=>({slot:["A","B","C"][i],name,qty}));
+}
+for(const [name,image] of Object.entries(window.PS_IMAGE_FILES.ingredients)){
+  window.PS_CATALOG.ingredientAssets[name]={...window.PS_CATALOG.ingredientAssets[name],image};
+}
+for(const [id,image] of Object.entries(window.PS_IMAGE_FILES.skills)){
+  if(window.PS_CATALOG.skills[id])window.PS_CATALOG.skills[id].image=image;
+}
+window.PS_CATALOG.recipesByIngredient={};
+for(const recipe of Object.values(window.PS_CATALOG.recipes)){
+  recipe.image=window.PS_IMAGE_FILES.recipes[recipe.id]||null;
+  for(const ingredient of recipe.ingredients){
+    (window.PS_CATALOG.recipesByIngredient[ingredient.name]??=[]).push({id:recipe.id,name:recipe.name,image:recipe.image,category:recipe.category,amount:ingredient.qty});
+  }
+}
+window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name]||null;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="psg-v56-consolidated-styles">/* PSG_BUILD_STYLES */</style>
+<script>
+window.PS_TYPE_THEME={
+   "ノーマル":["#f5f3ea","#9b9686"],"ほのお":["#fff0e8","#ef7b52"],
+   "みず":["#e9f4ff","#5c9fdb"],"でんき":["#fff8d9","#d7ae35"],
+   "くさ":["#e8f7ec","#55a66b"],"こおり":["#e7f7fa","#62b9c4"],
+   "かくとう":["#f7e9e6","#b66a5d"],"どく":["#f3e9f8","#9568ad"],
+   "じめん":["#f5eee1","#b28b56"],"ひこう":["#edf1fb","#849bc8"],
+   "エスパー":["#f9eaf1","#c76f96"],"むし":["#f1f5df","#91a44e"],
+   "いわ":["#f1ede2","#9f8c5b"],"ゴースト":["#eeeafa","#756da9"],
+   "ドラゴン":["#eceafb","#7067bd"],"あく":["#ecebea","#69635f"],
+   "はがね":["#eef2f4","#82939c"],"フェアリー":["#faeaf2","#c77c9f"]
+ };
+</script>
+<script>
+window.PS_UI_ART={
+ escape:value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),
+ icon(kind,key){const src=window.PS_IMAGE_FILES?.[kind]?.[key];return src?`<img class="psg-ui-icon psg-ui-${kind}" src="${this.escape(src)}" alt="" aria-hidden="true" loading="lazy" decoding="async">`:''},
+ rank(element,tier){const src=window.PS_IMAGE_FILES?.ranks?.[tier];if(!src)return;const img=document.createElement('img');img.src=src;img.alt='';img.className='psg-ui-icon psg-ui-ranks';img.loading='lazy';img.decoding='async';element.prepend(img)}
+};
+</script>
+</head>
+<body>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v237</small></header>
+<main>
+<section id="home" class="screen active"><div class="psg-home-heading"><h2>ホーム</h2><div class="psg-home-settings"><label class="psg-home-field" for="homeFieldSelect"><span>フィールド</span><select id="homeFieldSelect" aria-label="今週のフィールド"></select></label><label class="psg-home-field" for="homeMealSelect"><span>今週の料理</span><select id="homeMealSelect" aria-label="今週の料理"><option value="">未選択</option><option value="カレー・シチュー">カレー・シチュー</option><option value="サラダ">サラダ</option><option value="デザート・ドリンク">デザート・ドリンク</option></select></label></div></div><div id="teamFaceDock" class="psg-team-face-dock" hidden aria-label="現在のチームの顔画像"></div><div class="card psg-team-card"><div class="section-title">現在のチーム</div>
+<div class="psg-team-toolbar"><p class="note">ボックスの個体から5匹まで選べます。</p><button type="button" id="teamReorder" aria-pressed="false">並び替え</button></div><p id="teamHint" class="psg-team-hint" hidden></p><div id="teamSlots"></div><p id="teamSummary" class="note" role="status"></p></div>
+<div class="card psg-day-card"><div class="psg-day-header"><div class="section-title">1日の獲得予想</div><label class="psg-day-setting" for="teamCollectionInterval">回収間隔 <select id="teamCollectionInterval" aria-label="起きている間の回収間隔"><option value="1">1時間</option><option value="2">2時間</option><option value="4" selected>4時間</option><option value="8">8時間</option></select></label></div><div class="psg-day-toggles"><button type="button" id="teamGoodCamp" class="psg-day-camp" aria-pressed="false">いいキャンプ：OFF</button><button type="button" id="teamMeals" class="psg-day-camp" aria-pressed="true">食事3回：ON</button></div><fieldset class="psg-day-energy"><legend>チーム全員の起床時げんき</legend><label class="psg-day-setting">げんき <input id="teamInitialEnergy" type="number" min="0" max="150" step="1" value="100" style="width:5em">（0～150）</label><div class="psg-day-energy-options"><button type="button" data-energy="80" aria-pressed="false">80</button><button type="button" data-energy="100" aria-pressed="true">100</button><button type="button" data-energy="120" aria-pressed="false">120</button><button type="button" data-energy="150" aria-pressed="false">150</button></div></fieldset><button type="button" class="psg-day-field-link" id="teamFieldLink"><span id="teamFieldSummary">フィールドを設定</span><b aria-hidden="true">›</b></button><p id="teamDayConditions" class="note"></p><p id="teamDaySaveStatus" class="note" role="status"></p><div id="teamDayEstimate" aria-live="polite"></div><details class="psg-day-method"><summary>計算条件</summary><p>起床後16時間・睡眠8時間。げんきは10分ごとに1減少し、睡眠中は回収しません。睡眠回復は翌朝に適用。食事ONでは起床直後・6時間後・12時間後に3回食べる仮定。食事前のげんきに応じて各匹が1～9回復し、最大150。食材を消費できるかは判定しません。解放済みの食材枠は等確率、所持数の満杯は期待値で判定します。いいキャンプONではおてつだい速度と所持上限を各1.2倍。鍋容量1.5倍とリサーチの効果は日産表示の対象外です。選択中の通常フィールドで指定した好物きのみはエナジー2倍、エリアボーナスはきのみと固定エナジースキルに適用します。EXフィールドやイベント固有の補正は対象外です。メインスキルは満杯前のおてつだいと回収時のストック上限から期待回数を計算。げんきオールSは回収時にチームへ期待回復量を適用し、次の時間帯からおてつだい速度へ反映。発動率の推定値と近似計算を使用し、天井や発動タイミング・10分タイマーのリセットは再現しません。おてつだいサポートはチーム内へ均等配分。ブーストは同タイプの異なる種数で追加回数を決め、チーム全員へ適用します。追加分は通常所持上限を超えて獲得し、追加分からスキルは発動しません。回収時に発動・追加分も回収する仮定で、各回の追加所持は期待値999個まで。翌朝の回収時に使う分も集計します。ランダム食材は種類未指定で別集計。料理の必要数判定には使用しません。</p></details></div>
+<div class="card psg-team-food-card"><div class="section-title">チームが拾う食材</div><div id="teamIngredientList"></div></div>
+<div class="card psg-team-recipe-card"><div class="section-title">料理の食材チェック</div><p class="note">確認できた食材の種類だけを照合します。必要数・鍋容量は未判定です。</p><div id="teamRecipeList"></div></div></section>
+<section id="box" class="screen"><div class="psg-list-sticky"><div class="toolbar"><h2 style="flex:1">ボックス</h2><input id="boxSearch" style="max-width:150px" placeholder="名前検索" aria-label="ポケモンの名前検索"><button class="btn primary" id="addBtn" aria-expanded="false" aria-controls="boxAddPanel">＋追加</button></div>
+<div class="compact-filter" id="boxCompactFilters">
+ <div class="box-filter-row">
+  <div class="filter-select" data-menu="box-type"><button class="filter-main">タイプ <span>▼</span></button><div class="filter-panel" id="boxTypeFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
+  <div class="filter-select" data-menu="box-ing"><button class="filter-main">食材 <span>▼</span></button><div class="filter-panel" id="boxIngredientFilters"><button class="filter-option" disabled>データ投入後に生成</button></div></div>
+ </div>
+ <div class="box-filter-row">
+  <div class="filter-select" data-menu="box-spec"><button class="filter-main">得意 <span>▼</span></button><div class="filter-panel" id="boxSpecialtyFilters"><button class="filter-option" data-spec="きのみ"><img class="psg-specialty-icon" data-specialty-icon="berry" alt="">きのみ</button><button class="filter-option" data-spec="食材"><img class="psg-specialty-icon" data-specialty-icon="ingredient" alt="">食材</button><button class="filter-option" data-spec="スキル"><img class="psg-specialty-icon" data-specialty-icon="skill" alt="">スキル</button><button class="filter-option" data-spec="オール"><img class="psg-specialty-icon" data-specialty-icon="all" alt="">オール</button></div></div>
+  <div class="filter-select" data-menu="box-tag"><button class="filter-main">タグ <span>▼</span></button><div class="filter-panel" id="boxTagFilters">
+   <button class="filter-option" data-tag="favorite">★ お気に入り</button>
+   <button class="filter-option" data-tag="training">🌱 育成</button>
+   <button class="filter-option" data-tag="special">✨ 特別</button>
+   <button class="filter-option" data-tag="shiny">🌈 色違い</button>
+   <div class="tag-note">お気に入り・育成＝ユーザー設定<br>特別＝種族属性／色違い＝個体固有属性</div>
+  </div></div>
+ </div>
+</div><div id="boxSelectedFilters" class="psg-selected-filters" aria-label="選択中の絞り込み条件" hidden></div></div>
+<div id="boxAddPanel" class="card" hidden style="margin-bottom:12px"><label for="boxSpecies">図鑑から選ぶ</label><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px"><select id="boxSpecies" class="btn" style="flex:1;min-width:160px"></select><button class="btn primary" id="boxConfirmAdd">Boxに登録</button><button class="btn" id="boxCancelAdd">キャンセル</button></div></div>
+<div id="boxUndoPanel" class="card" hidden style="margin-bottom:12px">削除しました。 <button class="btn" id="boxUndoRemove">元に戻す</button></div>
+<div id="boxTeamMode" class="psg-box-team-mode" hidden><strong id="boxTeamModeTitle">チームの枠を選択中</strong><span>個体カードをタップして登録</span><button type="button" id="boxTeamRemove">この枠から外す</button><button type="button" id="boxTeamCancel">キャンセル</button></div>
+<div id="boxGrid" class="grid"></div><div id="boxEmpty" class="card empty">Boxは空です。「＋追加」から登録できます。</div></section>
+<section id="dex" class="screen">
+<div class="psg-list-sticky">
+<div class="toolbar psg-dex-toolbar"><div class="psg-dex-title"><h2>ポケモン図鑑</h2><span class="note" id="dexCount" aria-live="polite">0 / 0</span></div><input id="dexSearch" placeholder="名前検索"></div>
+<div class="compact-filter" id="dexCompactFilters">
+ <div class="dex-filter-controls">
+  <div class="filter-select" data-menu="dex-type"><button class="filter-main" aria-expanded="false">タイプ <span>▼</span></button><div class="filter-panel" id="typeFilters" aria-label="タイプで絞り込み"></div></div>
+  <div class="filter-select" data-menu="dex-ing"><button class="filter-main" aria-expanded="false">食材 <span>▼</span></button><div class="filter-panel" id="ingredientFilters" aria-label="食材で絞り込み"></div></div>
+ </div>
+ <div class="spec-row" id="specialtyFilters">
+  <button class="filter-main" data-spec="きのみ"><img class="psg-specialty-icon" data-specialty-icon="berry" alt="">きのみ</button>
+  <button class="filter-main" data-spec="食材"><img class="psg-specialty-icon" data-specialty-icon="ingredient" alt="">食材</button>
+  <button class="filter-main" data-spec="スキル"><img class="psg-specialty-icon" data-specialty-icon="skill" alt="">スキル</button>
+  <button class="filter-main" data-spec="オール"><img class="psg-specialty-icon" data-specialty-icon="all" alt="">オール</button>
+ </div>
+</div>
+<div id="dexSelectedFilters" class="psg-selected-filters" aria-label="選択中の絞り込み条件" hidden></div>
+</div>
+<div id="dexGrid" class="grid"></div><div id="dexEmpty" class="card empty">図鑑データは次段階で再調査して投入します。<br>未確認値は推測で埋めません。</div>
+</section>
+<section id="info" class="screen"><h2>情報</h2>
+<div class="psg-info-links">
+ <button type="button" class="card psg-info-link" data-info-page="recipePage"><strong>🍳 料理</strong><span>食材からレシピを探す</span><b aria-hidden="true">›</b></button>
+ <button type="button" class="card psg-info-link" data-info-page="skillPage"><strong>✨ スキル</strong><span>効果とレベルを見る</span><b aria-hidden="true">›</b></button>
+ <button type="button" class="card psg-info-link" data-info-page="fieldPage"><strong>🗺️ フィールド</strong><span>フィールド情報を見る</span><b aria-hidden="true">›</b></button>
+</div>
+<div class="card"><div class="section-title">記録のバックアップ</div><p>ボックス・寝顔・チーム・フィールド設定を１つのファイルに保存できます。</p>
+ <button class="btn primary" type="button" id="backupExport">バックアップを書き出す</button>
+ <label for="backupFile" style="display:block;margin-top:16px">バックアップを取り込む</label>
+ <input id="backupFile" type="file" accept=".json,application/json" style="max-width:100%">
+ <div id="backupPreview" class="note" role="status" style="margin-top:8px">ファイルを選ぶと内容を確認できます。</div>
+ <button class="btn" type="button" id="backupImport" hidden>この記録を復元する</button>
+</div></section>
+<section id="skillPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>スキル</h2></div>
+<div class="card psg-skill-index"><div class="section-title">✨ スキル一覧</div>
+ <label for="skillSearch">スキル名・分類で検索</label><input id="skillSearch" type="search" placeholder="例：食材" autocomplete="off">
+ <div id="skillIndexCount" class="note" role="status"></div><div id="skillIndexList"></div>
+</div></section>
+<section id="recipePage" class="screen"><div class="psg-recipe-sticky"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>料理</h2></div>
+ <div class="psg-recipe-categories" role="group" aria-label="料理の部門">
+  <button type="button" class="active" data-recipe-category="カレー・シチュー" aria-pressed="true">カレー・シチュー</button>
+  <button type="button" data-recipe-category="サラダ" aria-pressed="false">サラダ</button>
+  <button type="button" data-recipe-category="デザート・ドリンク" aria-pressed="false">デザート・ドリンク</button>
+ </div>
+ <div class="psg-recipe-filter-bar"><div class="filter-select psg-recipe-select" data-menu="recipe-ing"><button type="button" class="filter-main" id="recipeIngredientButton" aria-expanded="false">食材 <span>▼</span></button><div class="filter-panel" id="recipeIngredientOptions" aria-label="食材で絞り込み"></div></div><label class="psg-recipe-sort-label" for="recipeSort">並び順<select id="recipeSort"><option value="energy-desc">Lv.70エナジーが多い順</option><option value="energy-asc">Lv.70エナジーが少ない順</option><option value="name">名前順</option></select></label></div>
+ </div><div id="recipeCount" class="note psg-recipe-count" role="status"></div><div id="recipeList"></div>
+</section>
+<section id="fieldPage" class="screen"><div class="psg-subpage-head"><button class="btn" data-back>‹ 戻る</button><h2>フィールド</h2></div>
+ <div id="fieldGallery" class="psg-field-gallery" aria-label="フィールド一覧"></div>
+ <div class="card psg-field-settings"><div class="section-title">今週のフィールド</div><label for="fieldSelect">フィールド</label><select id="fieldSelect"></select><label for="fieldAreaBonus">このフィールドのエリアボーナス</label><div class="psg-field-percent"><input id="fieldAreaBonus" type="number" inputmode="numeric" min="0" max="200" step="5" value="0"><span>％</span></div><div class="psg-field-week" id="fieldWeekLabel"></div><fieldset class="psg-day-field"><legend>今週の好物きのみ</legend><div class="psg-day-berries"><label>① <select class="psg-favorite-berry"><option value="">指定なし</option></select></label><label>② <select class="psg-favorite-berry"><option value="">指定なし</option></select></label><label>③ <select class="psg-favorite-berry"><option value="">指定なし</option></select></label></div><button type="button" class="btn psg-field-reset" id="fieldFavoriteReset">通常設定に戻す</button></fieldset><p class="note">エリアボーナスはフィールドごとに保存します。固定フィールドは通常の好物3種を表示します。ワカクサ本島は毎週指定してください。イベントで変わった場合はその週だけ変更できます。EXフィールドの補正は未対応です。</p></div><div class="card psg-field-encounters"><div class="section-title">出現する寝顔・最低ランク</div><p class="note">収録済みのポケモンのみ表示。未掲載は出現しないという意味ではありません。最低ランクに達しても必要ねむけパワーなどの条件があります。</p><label class="psg-field-rank-label" for="fieldRankFilter">カビゴンのランク <select id="fieldRankFilter"><option value="">すべて表示</option></select></label><div id="fieldRankEnergy" class="note"></div><details class="psg-field-rank-details"><summary>全ランクの必要エナジーを見る</summary><div id="fieldRankThresholdList"></div></details><div id="fieldEncounterCount" class="note"></div><div id="fieldEncounterList"></div></div>
+</section>
+<section id="dexDetail" class="screen">
+<div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2 style="margin:0;flex:1">ポケモン詳細</h2></div>
+<div class="detail-nav"><button id="prevPokemon">‹ 前</button><strong id="detailNoName">—</strong><button id="nextPokemon">後 ›</button></div>
+<div id="dexHero" class="hero type-normal">
+ <div class="hero-top"><div class="hero-art" id="detailArt">◌</div><div class="hero-info"><h2 id="detailName">—</h2><div class="white-row" id="detailTraits">タイプ / 睡眠タイプ / 得意</div></div></div>
+ <div class="stats" style="margin-top:10px">
+  <div class="stat"><small>きのみ</small><b id="detailBerry">未確認</b></div>
+  <div class="stat"><small>おてつだい時間</small><b id="detailHelp">未確認</b></div>
+  <div class="stat"><small>食材確率</small><b id="detailFoodRate">未確認</b></div>
+  <div class="stat"><small>スキル確率</small><b id="detailSkillRate">未確認</b></div>
+ </div>
+</div>
+<div class="detail-tabs"><button class="on" data-pane="ability">能力</button><button data-pane="sleep">寝顔</button><button data-pane="field">フィールド</button></div>
+<div id="pane-ability" class="detail-pane on">
+ <div class="card ability-card">
+  <div class="ability-title">🥕 食材 <span class="rate-badge" id="foodRateBadge">食材確率 未確認</span></div>
+  <div class="food-table-head"><span></span><span>Lv.1</span><span>Lv.30</span><span>Lv.60</span><span>料理</span></div>
+  <div id="detailFoods"><span class="unknown" style="display:block;padding:12px">未確認</span></div>
+ </div>
+ <div class="card ability-card">
+  <div class="ability-title">✨ スキル <span class="rate-badge" id="skillRateBadge">スキル確率 未確認</span></div>
+  <div class="skill-box">
+   <div class="skill-top"><div class="v26-skill-left"><div class="skill-icon">✦</div><div class="skill-name" id="detailSkill">未確認</div><span class="skill-rate-inline" id="skillRateInline">未確認</span></div><div class="v12-lv" id="v12SkillLv"></div></div>
+   <div class="v33-skill-effect-row"><p class="skill-desc" id="detailSkillEffect">効果データはマスターデータ投入後に表示します。</p></div><div class="v47-skill-toggle-row"><button class="skill-detail-toggle" id="skillDetailToggle">詳細を見る ▼</button></div>
+   <div class="skill-levels" id="skillLevels"><div class="skill-level-row"><b>Lv.1</b><span>効果データ未確認</span></div></div>
+  </div>
+ </div>
+ <div class="card" id="evolutionCard"><div class="section-title">進化</div><div id="detailEvolution" class="unknown">未確認</div></div>
+</div>
+<div id="pane-sleep" class="detail-pane"><div class="card"><div class="section-title">寝顔</div><div class="pills"><span class="pill">★1</span><span class="pill">★2</span><span class="pill">★3</span><span class="pill">★4</span></div><p class="unknown">寝顔データ投入後に表示します。</p></div></div>
+<div id="pane-field" class="detail-pane"><div class="card"><div class="section-title">フィールド</div><p class="unknown">フィールドデータ投入後に表示します。</p></div></div>
+</section>
+<section id="boxDetail" class="screen">
+ <div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2><small id="boxHeaderNo"></small><span id="boxTitle">個体詳細</span><span class="psg-box-flags"><button class="btn" type="button" id="boxFavorite" aria-pressed="false" aria-label="お気に入り" title="お気に入り">☆</button><button class="btn" type="button" id="boxTraining" aria-pressed="false" aria-label="育成対象" title="育成対象">🌱</button></span></h2><button class="btn" type="button" id="boxHeaderEdit" aria-controls="boxEditor">個体値設定</button></div>
+ <div class="psg-box-hero card">
+  <div class="psg-box-identity"><div class="psg-v106-media"><div id="boxArtwork" class="psg-box-artwork" aria-label="ポケモンの画像"></div></div>
+   <div class="psg-box-facts"><div id="boxTraits" class="psg-box-traits"></div><div id="boxStats" class="psg-box-stats"></div></div></div>
+  <div class="psg-box-level"><div class="psg-box-level-controls"><button class="btn" id="minus" aria-label="レベルを１下げる">−</button><b id="lv">Lv.1</b><button class="btn" id="plus" aria-label="レベルを１上げる">＋</button></div><input id="lvRange" type="range" min="1" max="70" value="1" aria-label="レベルを選択"></div>
+ </div>
+ <section class="psg-box-section card"><div class="psg-box-food-heading"><h3>食材</h3><div id="boxIngredientRows"></div></div><div id="boxDayFood" class="psg-box-day-food" aria-live="polite"></div></section>
+ <section class="psg-box-section card"><h3>サブスキル</h3><div id="boxSubskillRows"></div></section>
+ <section class="psg-box-section card"><h3>メインスキル</h3><div id="boxMainSkill"></div></section>
+ <section class="psg-box-section card"><h3>性格と補正</h3><div id="boxNature"></div></section>
+ <section class="psg-box-section card"><h3>個体の評価</h3><div id="boxEvaluation"></div></section>
+ <section class="psg-box-section card"><h3>育成・進化</h3><div id="boxGrowth"></div></section>
+ <details class="psg-box-editor card" id="boxEditor"><summary>⚙️ 個体を編集</summary>
+   <form id="boxEditForm"><label>進化（現在の姿）<select name="evolution" id="boxEditEvolution"></select></label><p class="psg-box-muted psg-editor-note">個体情報を引き継ぎます。スキルLvはゲーム内の現在値を設定してください。</p>
+    <label>おやすみリボン<span id="boxRibbonPreview" class="psg-ribbon-preview"></span><select name="ribbonHours"><option value="0">なし</option><option value="200">200時間</option><option value="500">500時間</option><option value="1000">1000時間</option><option value="2000">2000時間</option></select></label><p class="psg-box-muted psg-editor-note">リボンの設定は保存できます。所持数・おてつだい時間への補正は未反映です。</p>
+    <label class="psg-editor-check"><input name="favorite" type="checkbox">お気に入り</label><label class="psg-editor-check"><input name="training" type="checkbox">育成対象</label>
+    <label>性格<select name="nature" id="boxEditNature"></select></label>
+    <label class="psg-editor-check"><input name="mint" type="checkbox"><span id="boxMintIcon"></span>まっしろミント適用済み</label>
+    <label>スキルLv<input name="skillLevel" type="number" min="1" max="7" inputmode="numeric"></label>
+    <label>役割<select name="role"><option value="">未設定</option><option value="きのみ">きのみ</option><option value="食材">食材</option><option value="スキル">スキル</option></select></label>
+    <div id="boxEditIngredients"></div><div id="boxEditSubskills"></div>
+    <button type="submit" class="btn primary">個体データを保存</button><p id="boxEditMessage" role="status"></p>
+   </form>
+ </details>
+ <div class="card"><details><summary><b>… サブメニュー</b></summary><div class="pills" style="margin-top:10px"><button class="btn" type="button" id="boxEditShortcut">⚙️ 個体値設定</button><button class="btn" type="button" id="boxRemoveBtn">削除</button></div></details></div>
+</section>
+</main>
+<nav><button class="active" data-tab="home">⌂<br>ホーム</button><button data-tab="box">▣<br>ボックス</button><button data-tab="dex">▦<br>図鑑</button><button data-tab="info">ⓘ<br>情報</button></nav>
+
+<!-- PSG v57 JS cleanup
+  - CSS consolidated in original cascade order (visual behavior preserved)
+  - Active controllers intentionally retained until post-cleanup device verification
+  - Dex public entry point: window.openDexCard(no)
+  - Detail renderer: window.openPokemonDetail(no, opts)
+-->
+<script id="stable-v2-controller">
+(()=>{'use strict';
+const state={screen:'home',history:[],box:[],selected:null,selectedDex:null,
+filters:{types:new Set(),ingredients:new Set(),specs:new Set()},
+boxFilters:{types:new Set(),ingredients:new Set(),specs:new Set(),tags:new Set()}};
+/* One source of truth. No Pokémon values are carried over from the unstable builds. */
+const master={
+ pokemon:[], ingredients:[],
+ rules:{version:'stable-v3',verifiedAt:null}
+};
+const BOX_STORAGE_KEY='psg.box.instances.v1';
+const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
+const TEAM_STORAGE_KEY='psg.team.primary.v1';
+const FIELD_STORAGE_KEY='psg.field.profile.v1';
+const boxCatalog=()=>Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible);
+function normalizeBox(raw){
+  if(!Array.isArray(raw))return [];
+  const known=new Map(boxCatalog().map(p=>[Number(p.no),p]));
+  const seen=new Set();
+  return raw.filter(x=>{
+    if(!x||typeof x.id!=='string'||! /^[a-zA-Z0-9-]{1,100}$/.test(x.id)||seen.has(x.id)||!known.has(Number(x.no))||!Number.isInteger(x.level)||x.level<1||x.level>100)return false;
+    seen.add(x.id);return true;
+  })
+   .map(x=>({id:x.id,no:Number(x.no),level:Math.min(70,x.level),name:known.get(Number(x.no)).name,
+    specialty:known.get(Number(x.no)).specialty,
+    ingredients:x.ingredients&&typeof x.ingredients==='object'?x.ingredients:{},
+    subskills:Array.isArray(x.subskills)?x.subskills.slice(0,5).map(s=>String(s||'').slice(0,80)):[],
+    nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
+    skillLevel:Number.isInteger(x.skillLevel)?Math.max(1,Math.min(7,x.skillLevel)):1,
+    role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true,ribbonHours:[0,200,500,1000,2000].includes(x.ribbonHours)?x.ribbonHours:0}));
+}
+function readBox(){
+ try{return normalizeBox(JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]'))}
+ catch{return []}
+}
+function commitBox(next){
+ try{
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>
+   ({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours}))));
+  state.box=next;
+  renderBox();
+  return true;
+ }catch{alert('保存できませんでした。ブラウザーの保存設定を確認してください。');return false}
+}
+state.box=readBox();
+function normalizeTeam(raw,box){
+ const byId=new Map(box.map(x=>[x.id,x])),seen=new Set();let hasSpecial=false;
+ return Array.from({length:5},(_,i)=>{
+  const id=Array.isArray(raw)?raw[i]:null;
+  if(typeof id!=='string'||!byId.has(id)||seen.has(id))return null;
+  const special=window.PS_CATALOG?.pokemon?.[byId.get(id).no]?.specialTeamLimited===true;
+  if(special&&hasSpecial)return null;
+  if(special)hasSpecial=true;
+  seen.add(id);return id;
+ });
+}
+function readTeam(){
+ try{return normalizeTeam(JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'[]'),state.box)}catch{return [null,null,null,null,null]}
+}
+let team=readTeam();
+// Team composition for skill-specific rules. IDs are individual records;
+// species/type/skill grouping is computed only when an effect asks for it.
+function teamContext(){
+ const members=team.map((id,slot)=>{
+  const individual=state.box.find(x=>x.id===id);
+  const species=individual&&window.PS_CATALOG?.pokemon[individual.no];
+  return species?{slot,instanceId:individual.id,speciesNo:Number(species.no),type:species.type,mainSkillId:species.mainSkillId}:null;
+ }).filter(Boolean);
+ const speciesCounts={},skillCounts={},speciesByType={};
+ members.forEach(member=>{
+  speciesCounts[member.speciesNo]=(speciesCounts[member.speciesNo]||0)+1;
+  if(member.mainSkillId)skillCounts[member.mainSkillId]=(skillCounts[member.mainSkillId]||0)+1;
+  (speciesByType[member.type]??=new Set()).add(member.speciesNo);
+ });
+ return {members,speciesCounts,skillCounts,distinctSpeciesByType:Object.fromEntries(Object.entries(speciesByType).map(([type,ids])=>[type,ids.size]))};
+}
+function teamFoodContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
+ const confirmed=new Map(),unconfirmed=[];
+ ids.forEach((id,position)=>{
+  const individual=box.find(x=>x.id===id);
+  if(!individual)return;
+  const species=catalog?.pokemon?.[individual.no];
+  const label=`${position+1}匹目 ${individual.name} Lv.${individual.level}`;
+  if(!species?.ingredientSlots?.length){unconfirmed.push(`${label}：食材データ未確認`);return}
+  species.ingredientSlots.filter(slot=>slot.unlock<=individual.level).forEach(slot=>{
+   const candidates=slot.candidates||[];
+   const chosen=individual.ingredients?.[slot.unlock];
+   const candidate=candidates.length===1?candidates[0]:candidates.find(item=>item.name===chosen);
+   if(!candidate){unconfirmed.push(`${label}：Lv.${slot.unlock}の食材未確認`);return}
+   const providers=confirmed.get(candidate.name)||[];
+   providers.push({id:individual.id,label,unlock:slot.unlock,qty:candidate.qty});
+   confirmed.set(candidate.name,providers);
+  });
+ });
+ return {confirmed,unconfirmed};
+}
+function teamFoodIcon(name){
+ const img=document.createElement('img');
+ const visual=window.PS_CATALOG?.ingredientVisual?.(name);
+ const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+ if(src){img.src=src;img.alt='';return img}
+ const fallback=document.createElement('span');fallback.textContent=visual?.fallback||'◌';return fallback;
+}
+function renderTeamFood(){
+ const ingredients=document.getElementById('teamIngredientList'),recipes=document.getElementById('teamRecipeList');
+ if(!ingredients||!recipes)return;
+ ingredients.replaceChildren();recipes.replaceChildren();
+ const {confirmed,unconfirmed}=teamFoodContext();
+ if(!team.some(Boolean)){
+  const empty=document.createElement('p');empty.className='note';empty.textContent='チームを選ぶと、拾える食材を表示します。';ingredients.append(empty);
+ }else{
+  if(confirmed.size){
+   const list=document.createElement('div');list.className='psg-team-food-list';
+   for(const [name,providers] of confirmed){
+    const chip=document.createElement('div');chip.className='psg-team-food-item';chip.append(teamFoodIcon(name));
+    const words=document.createElement('span');const title=document.createElement('strong');title.textContent=name;
+    const detail=document.createElement('small');detail.textContent=providers.map(x=>`${x.label}（Lv.${x.unlock} ×${x.qty}）`).join('、');
+    words.append(title,detail);chip.append(words);list.append(chip);
+   }ingredients.append(list);
+  }else{const empty=document.createElement('p');empty.className='note';empty.textContent='確認できた食材はありません。';ingredients.append(empty)}
+  if(unconfirmed.length){const note=document.createElement('p');note.className='note';note.textContent=`未確認：${unconfirmed.join('、')}`;ingredients.append(note)}
+ }
+ const catalogRecipes=Object.values(window.PS_CATALOG?.recipes||{});
+ const selectedCategory=activeMealCategory();
+ if(!selectedCategory){const hint=document.createElement('p');hint.className='note';hint.textContent='今週の料理を選ぶと、そのカテゴリの食材チェックを表示します。';recipes.append(hint);return}
+ for(const category of [selectedCategory]){
+  const categoryRecipes=catalogRecipes.filter(r=>r.category===category).sort((a,b)=>(b.energy?.max?.value||0)-(a.energy?.max?.value||0));
+  if(!categoryRecipes.length)continue;
+  const group=document.createElement('details');group.className='psg-team-recipe-group';group.dataset.category=category;
+  group.open=true;
+  const heading=document.createElement('summary');heading.className='psg-team-recipe-group-title';
+  const title=document.createElement('strong');title.textContent=category;
+  const count=document.createElement('small');
+  const covered=categoryRecipes.filter(r=>r.ingredients.every(item=>confirmed.has(item.name))).length;
+  count.textContent=team.some(Boolean)?`食材の種類 ${covered}/${categoryRecipes.length}品`:`${categoryRecipes.length}品`;
+  heading.append(title,count);group.append(heading);
+  const list=document.createElement('div');list.className='psg-team-recipe-items';
+  for(const recipe of categoryRecipes){
+   const missing=recipe.ingredients.filter(item=>!confirmed.has(item.name));
+   const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;
+   const name=document.createElement('strong');name.textContent=recipe.name;
+   const meta=document.createElement('span');meta.className='psg-team-recipe-meta';const verified=recipe.energy?.max,shown=verified||[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];meta.textContent=shown?`${shown.status==='推定'?'推定 ':verified?'':'確認値 '}Lv.${shown.level} ${shown.value.toLocaleString()} エナジー`:'エナジー未確認';
+   const status=document.createElement('span');status.className=`psg-team-recipe-status ${missing.length?'is-unconfirmed':'is-covered'}`;
+   status.textContent=!team.some(Boolean)?'チーム未設定':missing.length?`未確認：${missing.map(item=>item.name).join('・')}`:'食材の種類が揃う';
+   row.append(name,meta,status);
+   row.setAttribute('aria-label',`${recipe.name}、${status.textContent}、料理の詳細へ`);
+   row.onclick=()=>window.PS_OPEN_RECIPE?.(recipe.id);
+   list.append(row);
+  }
+  group.append(list);recipes.append(group);
+ }
+}
+let teamBoxSlot=null;
+let teamReorderMode=false,teamReorderFrom=null;
+function saveTeamSelection(next){
+ try{team=normalizeTeam(next,state.box);localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify(team));teamReorderFrom=null;renderTeam()}
+ catch{document.getElementById('teamSummary').textContent='チームを保存できませんでした。端末の設定を確認してください。'}
+}
+function teamFace(individual){
+ const art=document.createElement('span');art.className='psg-team-face';
+ if(!individual){art.textContent='＋';return art}
+ if(window.PS_FACE_ART?.usesSheet(individual.no)){art.append(window.PS_FACE_ART.element(individual.no,''));return art}
+ const species=window.PS_CATALOG?.pokemon[individual.no];
+ const src=window.PS_IMAGE_FILES.pokemonFaces?.[individual.no]||species?.faceImage||species?.image;
+ if(!src){art.textContent='No image';return art}
+ const img=document.createElement('img');img.src=src;img.alt='';img.onerror=()=>{img.remove();art.textContent='No image'};
+ art.append(img);return art;
+}
+function subskillCardBadges(individual){
+ return `<span class="psg-subskill-card-grid" aria-label="サブスキル">${SUBSKILL_LEVELS.map((unlock,i)=>{
+  const name=individual?.subskills?.[i],src=window.PS_IMAGE_FILES.subskills?.[name];
+  return `<span class="psg-box-mini-badge ${name?'':'is-unknown'} ${individual?.level<unlock?'is-locked':''}" title="Lv.${unlock}：${boxEsc(name||'未確認')}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}">${src?`<img src="${src}" alt="">`:`<span>${name?'・':'?'}</span>`}</span>`;
+ }).join('')}</span>`;
+}
+function renderTeam(){
+ const panel=document.getElementById('teamSlots');panel.replaceChildren();
+ team=normalizeTeam(team,state.box);
+ const reorder=document.getElementById('teamReorder'),hint=document.getElementById('teamHint');
+ reorder.disabled=team.filter(Boolean).length<2;
+ if(reorder.disabled)teamReorderMode=false;
+ reorder.textContent=teamReorderMode?'並び替えを終了':'並び替え';
+ reorder.setAttribute('aria-pressed',String(teamReorderMode));
+ hint.hidden=!teamReorderMode;
+ hint.textContent=teamReorderFrom===null?'移動する個体を選び、移動先の枠をタップしてください。':`${teamReorderFrom+1}匹目を選択中。移動先の枠をタップしてください。`;
+ const teamSpeeds=teamSpeedContext();
+ team.forEach((id,index)=>{
+  const individual=state.box.find(x=>x.id===id);
+  const row=document.createElement('div');row.className='psg-team-row';
+  if(teamReorderMode)row.classList.add('is-reordering');
+  if(teamReorderFrom===index)row.classList.add('is-reorder-source');
+  const choose=document.createElement('button');choose.type='button';choose.className='psg-team-choose';
+  if(individual)choose.classList.add(`type-${typeClass(window.PS_CATALOG?.pokemon?.[individual.no]?.type)}`);
+  choose.setAttribute('aria-label',`${index+1}匹目：${individual?individual.name:'未設定'}。${teamReorderMode?'並び替える枠を選ぶ':'Boxで個体を選ぶ'}`);
+  const name=document.createElement('strong');name.className='psg-team-card-name';name.textContent=individual?.name||'個体を選ぶ';choose.append(name);
+  const artwork=document.createElement('span');artwork.className='psg-team-card-art';artwork.append(teamFace(individual));
+  if(individual){const level=document.createElement('span');level.className='psg-team-card-level';level.textContent=`Lv.${individual.level}`;artwork.append(level)}
+  choose.append(artwork);
+  const identity=document.createElement('span');identity.className='psg-team-identity';
+  if(!individual){const detail=document.createElement('small');detail.textContent='未設定';identity.append(detail)}
+  if(individual){
+   const speed=document.createElement('small');speed.className='psg-team-speed';
+   const corrected=teamSpeeds.members.get(individual.id);
+   speed.textContent=corrected?.speed==null?'チームのおてつだい時間：未確認':`チーム：${corrected.speed.toLocaleString()}秒${corrected.speed!==corrected.soloSpeed&&corrected.soloSpeed!=null?`（単体 ${corrected.soloSpeed.toLocaleString()}秒）`:''}`;
+   identity.append(speed);
+  }
+  choose.append(identity);
+  if(individual)choose.insertAdjacentHTML('beforeend',subskillCardBadges(individual));
+  const arrow=document.createElement('span');arrow.className='psg-team-choose-arrow';arrow.textContent=teamReorderMode?(teamReorderFrom===index?'選択中':'移動先'):'Boxで選ぶ';choose.append(arrow);
+  choose.onclick=()=>{
+   if(teamReorderMode){
+    if(teamReorderFrom===null){if(!id)return;teamReorderFrom=index;renderTeam();return}
+    if(teamReorderFrom===index){teamReorderFrom=null;renderTeam();return}
+    const next=[...team];[next[index],next[teamReorderFrom]]=[next[teamReorderFrom],next[index]];saveTeamSelection(next);return;
+   }
+   teamBoxSlot=index;renderBoxTeamMode();renderBox();go('box');
+  };
+  row.append(choose);panel.append(row);
+ });
+ const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
+ const summary=document.getElementById('teamSummary');
+ summary.textContent=state.box.length?`${selected.length} / 5匹を登録中${selected.length?`・得意：${[...new Set(selected.map(x=>x.specialty))].join('、')}`:''}${teamSpeeds.bonusCount?`・おてつだいボーナス ${teamSpeeds.bonusCount}匹（計${Math.round(teamSpeeds.bonus*100)}%短縮、個体ごと上限35%）`:''}`:'ボックスに個体を登録すると、ここでチームを組めます。';
+ renderTeamFood();
+ renderTeamDay();
+ renderTeamFaceDock();
+}
+function renderTeamFaceDock(){
+ const dock=document.getElementById('teamFaceDock');dock.replaceChildren();
+ team.forEach((id,index)=>{
+  const individual=state.box.find(item=>item.id===id);
+  const cell=document.createElement('button');cell.type='button';cell.className='psg-team-face-dock-cell';
+  cell.setAttribute('aria-label',`${index+1}匹目：${individual?.name||'未設定'}。チームへ戻る`);
+  cell.append(teamFace(individual));cell.onclick=()=>document.querySelector('#home .psg-team-card').scrollIntoView({behavior:'smooth',block:'start'});
+  dock.append(cell);
+ });
+ updateTeamFaceDock();
+}
+function updateTeamFaceDock(){
+ const dock=document.getElementById('teamFaceDock');
+ const teamCard=document.querySelector('#home .psg-team-card');
+ dock.hidden=!document.getElementById('home').classList.contains('active')||teamCard.getBoundingClientRect().bottom>document.querySelector('.psg-app-header').getBoundingClientRect().bottom+8;
+}
+window.addEventListener('scroll',updateTeamFaceDock,{passive:true});
+window.addEventListener('resize',updateTeamFaceDock,{passive:true});
+document.getElementById('teamReorder').onclick=()=>{teamReorderMode=!teamReorderMode;teamReorderFrom=null;renderTeam()};
+const backupBoxFields=({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours});
+const knownSleepIds=new Set(Object.values(window.PS_CATALOG?.sleepStyles||{}).flat().map(s=>s.id));
+function normalizeSleepFound(raw){
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))return {};
+ return Object.fromEntries(Object.entries(raw).filter(([id,found])=>knownSleepIds.has(id)&&found===true));
+}
+function readSleepBackup(){
+ try{return normalizeSleepFound(JSON.parse(localStorage.getItem(SLEEP_STORAGE_KEY)||'{}'))}
+ catch{return {}}
+}
+const knownFieldIds=new Set(Object.keys(window.PS_CATALOG?.fields||{}));
+const knownBerryNames=new Set(window.PS_CATALOG?.berryNames||Object.keys(window.PS_CATALOG?.berries||{}));
+// Use the device's local week, beginning Monday at 04:00.
+function currentFieldWeek(now=new Date()){
+ const date=new Date(now.getTime()-4*60*60*1000);
+ date.setDate(date.getDate()-((date.getDay()+6)%7));
+ return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+}
+function normalizeFieldProfile(raw){
+ const selectedFieldId=knownFieldIds.has(raw?.selectedFieldId)?raw.selectedFieldId:(knownFieldIds.has('greengrass')?'greengrass':[...knownFieldIds][0]||'');
+ const areaBonuses={};
+ for(const [id,value] of Object.entries(raw?.areaBonuses||{})){
+  if(knownFieldIds.has(id)&&Number.isFinite(Number(value)))areaBonuses[id]=Math.max(0,Math.min(200,Number(value)));
+ }
+ const weekly={};
+ for(const [id,entry] of Object.entries(raw?.weekly||{})){
+  if(knownFieldIds.has(id)&&typeof entry?.weekKey==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(entry.weekKey)&&Array.isArray(entry.berries)){
+   weekly[id]={weekKey:entry.weekKey,berries:entry.berries.slice(0,3).map(name=>knownBerryNames.has(name)?name:'')};
+  }
+ }
+ const categories=['カレー・シチュー','サラダ','デザート・ドリンク'];
+ const meal=raw?.meal&&typeof raw.meal.weekKey==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(raw.meal.weekKey)&&categories.includes(raw.meal.category)?{weekKey:raw.meal.weekKey,category:raw.meal.category}:null;
+ return {selectedFieldId,areaBonuses,weekly,meal};
+}
+function readFieldProfile(){
+ try{return normalizeFieldProfile(JSON.parse(localStorage.getItem(FIELD_STORAGE_KEY)||'{}'))}
+ catch{return normalizeFieldProfile({})}
+}
+let fieldProfile=readFieldProfile();
+function saveFieldProfile(){
+ try{localStorage.setItem(FIELD_STORAGE_KEY,JSON.stringify(fieldProfile));renderFieldControls();renderTeamDay();renderTeamFood();return true}
+ catch{fieldProfile=readFieldProfile();renderFieldControls();renderTeamFood();alert('フィールド設定を保存できませんでした。');return false}
+}
+const backupFile=document.getElementById('backupFile');
+const backupPreview=document.getElementById('backupPreview');
+const backupImport=document.getElementById('backupImport');
+let pendingBackup=null;
+document.getElementById('backupExport').onclick=()=>{
+ try{
+  const payload={format:'psg-user-data',version:3,exportedAt:new Date().toISOString(),box:state.box.map(backupBoxFields),sleepFound:readSleepBackup(),team:normalizeTeam(team,state.box),fields:normalizeFieldProfile(fieldProfile)};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));
+  const link=document.createElement('a');link.href=url;link.download=`PSG_backup_${new Date().toISOString().slice(0,10)}.json`;
+  document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+  backupPreview.textContent=`ボックス ${payload.box.length}件・寝顔 ${Object.keys(payload.sleepFound).length}件を書き出しました。`;
+ }catch{backupPreview.textContent='書き出せませんでした。端末の設定を確認してください。'}
+};
+backupFile.onchange=async()=>{
+ pendingBackup=null;backupImport.hidden=true;
+ const file=backupFile.files?.[0];if(!file){backupPreview.textContent='ファイルを選ぶと内容を確認できます。';return}
+ if(file.size>5*1024*1024){backupPreview.textContent='ファイルが大きすぎます（上限5MB）。';return}
+ try{
+  const parsed=JSON.parse(await file.text());
+  if(parsed?.format!=='psg-user-data'||![1,2,3].includes(parsed.version)||!Array.isArray(parsed.box)||!parsed.sleepFound||typeof parsed.sleepFound!=='object'||Array.isArray(parsed.sleepFound)||parsed.version>=2&&!Array.isArray(parsed.team)||parsed.version===3&&(!parsed.fields||typeof parsed.fields!=='object'||Array.isArray(parsed.fields)))throw Error('形式');
+  const box=normalizeBox(parsed.box),sleepFound=normalizeSleepFound(parsed.sleepFound);
+  const importedTeam=normalizeTeam(parsed.team,box);
+  if(parsed.box.length>0&&box.length===0)throw Error('ポケモンのデータが一致しません');
+  const skipped=parsed.box.length-box.length+Object.keys(parsed.sleepFound).length-Object.keys(sleepFound).length;
+  pendingBackup={box,sleepFound,team:importedTeam,fields:parsed.version===3?normalizeFieldProfile(parsed.fields):null};
+  backupPreview.textContent=`ボックス ${box.length}件・チーム ${importedTeam.filter(Boolean).length}匹・寝顔 ${Object.keys(sleepFound).length}件を確認しました。${skipped?`未対応の記録 ${skipped}件を除外します。`:''}復元すると現在の記録を置き換えます。`;
+  backupImport.hidden=false;
+ }catch{backupPreview.textContent='読み込めませんでした。PokéSleep GuideのバックアップJSONを選んでください。'}
+};
+backupImport.onclick=()=>{
+ if(!pendingBackup)return;
+ if(!confirm(`現在のボックス ${state.box.length}件・寝顔 ${Object.keys(readSleepBackup()).length}件を、選択したバックアップに置き換えます。復元しますか？`))return;
+ const oldBox=localStorage.getItem(BOX_STORAGE_KEY),oldSleep=localStorage.getItem(SLEEP_STORAGE_KEY),oldTeam=localStorage.getItem(TEAM_STORAGE_KEY),oldFields=localStorage.getItem(FIELD_STORAGE_KEY);
+ try{
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(pendingBackup.box.map(backupBoxFields)));
+  localStorage.setItem(SLEEP_STORAGE_KEY,JSON.stringify(pendingBackup.sleepFound));
+  localStorage.setItem(TEAM_STORAGE_KEY,JSON.stringify(pendingBackup.team));
+  if(pendingBackup.fields)localStorage.setItem(FIELD_STORAGE_KEY,JSON.stringify(pendingBackup.fields));
+  fieldProfile=readFieldProfile();renderFieldControls();
+  state.box=readBox();team=readTeam();renderBox();renderTeam();
+  window.PSG_REFRESH_SLEEP_FOUND?.();
+  backupPreview.textContent=`復元しました。ボックス ${state.box.length}件・寝顔 ${Object.keys(pendingBackup.sleepFound).length}件。`;
+  pendingBackup=null;backupImport.hidden=true;backupFile.value='';
+ }catch{
+  try{
+   if(oldBox===null)localStorage.removeItem(BOX_STORAGE_KEY);else localStorage.setItem(BOX_STORAGE_KEY,oldBox);
+   if(oldSleep===null)localStorage.removeItem(SLEEP_STORAGE_KEY);else localStorage.setItem(SLEEP_STORAGE_KEY,oldSleep);
+   if(oldTeam===null)localStorage.removeItem(TEAM_STORAGE_KEY);else localStorage.setItem(TEAM_STORAGE_KEY,oldTeam);
+   if(oldFields===null)localStorage.removeItem(FIELD_STORAGE_KEY);else localStorage.setItem(FIELD_STORAGE_KEY,oldFields);
+  }catch{}
+  fieldProfile=readFieldProfile();renderFieldControls();state.box=readBox();backupPreview.textContent='復元できませんでした。端末の保存設定を確認してください。';
+ }
+};
+/* Individual records may later contain:
+ favorite:boolean, training:boolean,
+ shiny:'confirmed'|'not_shiny'|'unknown'.
+ Shiny is not exposed as a freely editable tag. */
+const screens=[...document.querySelectorAll('.screen')],tabs=[...document.querySelectorAll('nav button')];
+
+function go(id,push=true){
+ if(push&&state.screen!==id)state.history.push(state.screen);
+ state.screen=id;
+ if(id==='fieldPage')renderFieldControls();
+ screens.forEach(s=>s.classList.toggle('active',s.id===id));
+ const activeTab=['recipePage','skillPage','fieldPage'].includes(id)?'info':id;
+ tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));
+ window.scrollTo(0,0);
+ requestAnimationFrame(updateTeamFaceDock);
+}
+tabs.forEach(b=>b.onclick=()=>{state.history=[];go(b.dataset.tab,false)});
+document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>go(state.history.pop()||'home',false));
+document.querySelectorAll('[data-info-page]').forEach(b=>b.onclick=()=>go(b.dataset.infoPage));
+
+const typeClass=t=>({'くさ':'grass','ほのお':'fire','みず':'water','でんき':'electric','むし':'bug','ノーマル':'normal','どく':'poison','じめん':'ground','ひこう':'flying','ゴースト':'ghost','エスパー':'psychic','こおり':'ice','はがね':'steel','かくとう':'fighting','いわ':'rock','あく':'dark','ドラゴン':'dragon','フェアリー':'fairy'}[t]||'normal');
+const typeSymbol=t=>({'くさ':'草','ほのお':'炎','むし':'虫','みず':'水','でんき':'電','どく':'毒','ノーマル':'普'}[t]||t);
+// Small original SVG previews; actual ingredient WebP files take priority when added.
+const filterIconShapes={
+ 'くさ':`<path d="M15 46C18 24 35 13 51 13c0 22-11 39-32 38" fill="#78bf87" stroke="#35845a" stroke-width="3"/><path d="M17 51c7-11 15-18 29-29" fill="none" stroke="#35845a" stroke-width="3"/><path d="M30 37l-3-11m8 6 12-1" stroke="#4e9d67" stroke-width="2"/>`,
+ 'ほのお':`<path d="M32 8c3 12 12 16 8 26 6-4 6-9 7-11 12 21 0 36-15 36C16 59 9 45 17 32c1 6 5 7 7 8-4-13 2-25 8-32z" fill="#f47546" stroke="#cb4939" stroke-width="2"/><path d="M32 31c2 9 7 12 4 20-3 6-12 4-12-4 0-6 5-12 8-16z" fill="#ffd47c"/>`,
+ 'むし':`<path d="M24 23 18 11m22 12 6-12M19 34l-10-3m10 12-10 6m36-15 10-3m-10 12 10 6" stroke="#5f8158" stroke-width="3" stroke-linecap="round"/><ellipse cx="32" cy="36" rx="15" ry="20" fill="#9acb78" stroke="#4d8751" stroke-width="3"/><path d="M17 31h30M32 31v24" stroke="#4d8751" stroke-width="2"/><circle cx="26" cy="25" r="2" fill="#233d38"/><circle cx="38" cy="25" r="2" fill="#233d38"/>`,
+ 'あまいミツ':`<path d="M16 23h32l-3 30H19z" fill="#e6a53a" stroke="#965e32" stroke-width="3"/><path d="M14 19q18-7 36 0v7H14z" fill="#ffd980" stroke="#965e32" stroke-width="3"/><path d="M25 25v12q3 5 6 0V26m6 0v8q3 4 6 0v-9" fill="#ffeb9e" stroke="#c6872c" stroke-width="2"/>`,
+ 'とくせんリンゴ':`<path d="M32 19c-5-8-14-6-18 0-9 15 1 36 13 36 4 0 6-2 10 0 12 0 23-21 14-36-4-6-13-8-19 0z" fill="#e95f50" stroke="#ac453a" stroke-width="3"/><path d="M32 20c0-7 3-11 9-13" fill="none" stroke="#755332" stroke-width="3"/><path d="M34 15c6-9 13-8 18-7-3 8-10 12-18 10z" fill="#79ac67" stroke="#4e8255" stroke-width="2"/>`,
+ 'あんみんトマト':`<circle cx="32" cy="36" r="21" fill="#ee6651" stroke="#ac403d" stroke-width="3"/><path d="M32 20c-6-11-3-14 0-13 4 5 2 10 0 13z" fill="#6c9f60"/><path d="m32 21-8-5 2 9-8 4 10-1 4 6 4-6 10 1-8-4 2-9z" fill="#77ac66" stroke="#4d7e50" stroke-width="2"/><circle cx="23" cy="39" r="3" fill="#fa9b7e"/>`,
+ 'ほっこりポテト':`<path d="M16 32C15 18 25 13 37 17c13 1 20 11 15 25-6 15-25 15-36 4-5-5-4-10 0-14z" fill="#d5aa68" stroke="#8c693f" stroke-width="3"/><circle cx="26" cy="28" r="2" fill="#a47b48"/><circle cx="41" cy="36" r="2" fill="#a47b48"/><circle cx="29" cy="45" r="2" fill="#a47b48"/>`,
+ 'マメミート':`<path d="M13 33c0-13 14-22 29-18 12 4 16 19 8 30-8 12-24 10-34 1-5-4-6-9-3-13z" fill="#d77b78" stroke="#8f4c4d" stroke-width="3"/><path d="M19 36c5-5 12-5 17-1 6 3 11 1 16-3" fill="none" stroke="#f6c3ad" stroke-width="4" stroke-linecap="round"/><circle cx="26" cy="24" r="3" fill="#f7d9c6"/>`,
+ 'あったかジンジャー':`<path d="M22 43 15 32l9-6 7 7 6-16 12 4-5 15 11 6-6 11-15-7-7 10-11-5z" fill="#e7bb7c" stroke="#ac774d" stroke-width="3" stroke-linejoin="round"/><path d="m24 28 9 10m7-5 7 8" stroke="#f5d9ab" stroke-width="3"/>`,
+ 'げきからハーブ':`<path d="M31 53c-4-14-3-28 6-42" fill="none" stroke="#628b55" stroke-width="4"/><path d="M31 29c-12-16-20-8-18 1 1 7 12 10 18 6m3-13c2-17 15-17 19-11 4 7-7 15-19 17m-2 15c9-12 18-9 20-3 1 6-10 11-20 10" fill="#83b56a" stroke="#448354" stroke-width="2"/>`,
+ 'ワカクサ大豆':`<path d="M11 39c2-14 19-19 41-11 3 22-18 29-39 19z" fill="#8bc676" stroke="#4e8d59" stroke-width="3"/><circle cx="24" cy="37" r="5" fill="#d2e5a2"/><circle cx="36" cy="39" r="5" fill="#d2e5a2"/><circle cx="46" cy="37" r="4" fill="#d2e5a2"/>`,
+ 'リラックスカカオ':`<path d="M32 11c-13 1-21 10-20 24 1 12 10 20 20 20s19-8 20-20C53 21 45 12 32 11z" fill="#a36f4d" stroke="#704b37" stroke-width="3"/><path d="M32 15v36m0-36c-8 8-10 20-8 31m8-31c8 8 10 20 8 31" fill="none" stroke="#d2a47a" stroke-width="3"/>`,
+ 'モーモーミルク':`<path d="M24 8h16v8l5 6v33H19V22l5-6z" fill="#f9fcfb" stroke="#6691ad" stroke-width="3"/><path d="M19 25h26v29H19z" fill="#eef6fa"/><path d="M24 8h16v8H24z" fill="#82b7d4"/><path d="M19 36c8-6 18 6 26 0v9c-8 6-18-6-26 0z" fill="#8ac2dd"/>`,
+ 'ワカクサコーン':`<path d="M17 41c2 11 9 16 15 17 6-1 13-6 15-17l-15 5z" fill="#63a76a" stroke="#4a8758" stroke-width="2"/><path d="M22 14q10-8 20 0v31q-10 9-20 0z" fill="#eec75e" stroke="#ac803a" stroke-width="3"/><path d="M22 24h20M22 34h20M28 16v30m8-30v30" stroke="#fff0a4" stroke-width="2"/>`,
+ 'ピュアなオイル':`<path d="M27 7h10v7H27z" fill="#c3b592" stroke="#817755" stroke-width="2"/><path d="M23 16h18l4 9v28H19V25z" fill="#f5d874" stroke="#a58037" stroke-width="3"/><path d="M22 30h20v20H22z" fill="#f7e5a2"/><path d="M27 7h10v7H27z" fill="#dfebe7"/>`,
+ 'とくせんエッグ':`<path d="M32 11c-10 0-19 19-19 29 0 11 8 18 19 18s19-7 19-18c0-10-9-29-19-29z" fill="#f6e8c5" stroke="#b8a782" stroke-width="3"/><path d="M19 42c2 7 7 10 13 10" fill="none" stroke="#fff7e4" stroke-width="3" stroke-linecap="round"/>`,
+ 'あじわいキノコ':`<path d="M29 34h8l3 20H26z" fill="#f0e2ca" stroke="#976c57" stroke-width="3"/><path d="M11 32c1-14 11-22 21-22s20 8 21 22c-11 7-31 7-42 0z" fill="#af725f" stroke="#754c42" stroke-width="3"/><circle cx="24" cy="24" r="4" fill="#f7e2d1"/><circle cx="42" cy="29" r="3" fill="#f7e2d1"/>`,
+ 'つやつやアボカド':`<path d="M33 10c8-1 19 10 19 25 0 14-9 23-20 23S12 49 12 35c0-14 11-26 21-25z" fill="#7cb56a" stroke="#477c52" stroke-width="3"/><path d="M33 17c7 0 13 9 13 19 0 10-6 16-14 16s-14-6-14-16c0-10 7-19 15-19z" fill="#e9df8e"/><circle cx="32" cy="39" r="9" fill="#a56d4b"/>`,
+ 'ずっしりカボチャ':`<path d="M32 19v-9h7" fill="none" stroke="#56865b" stroke-width="4" stroke-linecap="round"/><path d="M32 20C16 13 9 24 11 39c2 13 13 19 21 16 8 3 19-3 21-16 2-15-5-26-21-19z" fill="#e39b57" stroke="#a56540" stroke-width="3"/><path d="M32 20c-11 8-11 26 0 35m0-35c11 8 11 26 0 35" fill="none" stroke="#efb475" stroke-width="3"/>`
+ ,'めざましコーヒー':`<ellipse cx="23" cy="28" rx="10" ry="15" transform="rotate(-25 23 28)" fill="#8d6043" stroke="#61432f" stroke-width="3"/><path d="M20 16q10 12 6 25" fill="none" stroke="#cf9a68" stroke-width="3"/><ellipse cx="42" cy="40" rx="10" ry="15" transform="rotate(30 42 40)" fill="#9f704b" stroke="#61432f" stroke-width="3"/><path d="M47 28q-11 11-10 23" fill="none" stroke="#dfb17c" stroke-width="3"/>`
+ ,'おいしいシッポ':`<path d="M16 48c0-13 9-31 27-36 5-1 9 4 7 9-4 10-13 16-23 21-3 2-4 6-4 11z" fill="#eaa897" stroke="#a86666" stroke-width="3"/><path d="M21 43c8-13 18-20 28-23" fill="none" stroke="#f8d1b8" stroke-width="3"/>`
+ ,'ふといながねぎ':`<path d="M28 55c0-17 1-27 3-38l8 1c-2 15-2 27-3 37z" fill="#f1f2d5" stroke="#8a9e70" stroke-width="2"/><path d="M30 25C19 20 14 13 12 6c13 2 20 10 23 19M35 24c4-11 11-16 20-18-2 10-8 18-19 24" fill="#71b979" stroke="#43895d" stroke-width="2"/>`
+};
+const filterIconData=name=>filterIconShapes[name]?`data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#faf8ee"/>${filterIconShapes[name]}</svg>`)}`:null;
+window.PS_INGREDIENT_FALLBACK_ICON=filterIconData;
+const typeFilterArt=t=>window.PS_TYPE_IMAGES?.[t]?`<img class="psg-type-icon" src="${window.PS_TYPE_IMAGES[t]}" alt="">`:filterIconData(t)?`<img src="${filterIconData(t)}" alt="">`:`<span class="filter-pictogram" aria-hidden="true">${typeSymbol(t)}</span>`;
+window.PS_TYPE_ART=typeFilterArt;
+const ingredientFilterArt=name=>{
+ const visual=ingredientVisual(name);
+ if(visual?.image)return window.PS_DEV_ASSETS.image(visual.image,'ingredient',name,'full','');
+ return filterIconData(name)?`<img src="${filterIconData(name)}" alt="">`:'';
+};
+const filterCaption=name=>`<span class="filter-caption">${name}</span>`;
+const specialtyIconPaths={'きのみ':'berry_pixel.png','食材':'ingredient_pixel.png','スキル':'skill_pixel.png','オール':'all_pixel.png'};
+const hydrateSpecialtyIcons=root=>root.querySelectorAll('[data-specialty-icon]').forEach(img=>{img.src=window.PS_SPECIALTY_IMAGES[img.dataset.specialtyIcon]||''});
+const specIcon=s=>specialtyIconPaths[s]?`<img class="psg-specialty-icon" data-specialty-icon="${specialtyIconPaths[s].replace('_pixel.png','')}" alt="${s}">`:'◌';
+const ingredientVisual=name=>window.PS_CATALOG?.ingredientVisual(name);
+const ingIcon=ingredient=>{const name=ingredient?.name,visual=ingredientVisual(name);return !name?'◌':visual?.image?window.PS_DEV_ASSETS.image(visual.image,'ingredient',name,'full',name):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'};
+const searchKey=text=>String(text||'').normalize('NFKC').replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).toLowerCase();
+function matchesDexFilters(p,q,filters){
+ return (!q||searchKey(p.name).includes(q))
+   &&(!filters.types.size||filters.types.has(p.type))
+   &&(!filters.ingredients.size||p.ingredients?.some(x=>filters.ingredients.has(x.name)))
+   &&(!filters.specs.size||filters.specs.has(p.specialty));
+}
+function discoveryLabel(p){
+ const styles=window.PS_CATALOG.sleepStyles?.[p.no]||[],saved=readSleepBackup();
+ return styles.length?`${styles.filter(style=>saved[style.id]===true).length}/${styles.length}`:'—/—';
+}
+
+function renderFilters(){
+ const types=[...new Set(master.pokemon.map(p=>p.type).filter(Boolean))];
+ const ingredients=[...new Set(master.pokemon.flatMap(p=>(p.ingredients||[]).map(x=>x.name)).filter(Boolean))];
+  typeFilters.innerHTML=types.length?types.map(t=>`<button class="filter-option type-${typeClass(t)}${state.filters.types.has(t)?' on':''}" data-type="${t}" aria-label="${t}">${typeFilterArt(t)}${filterCaption(t)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  ingredientFilters.innerHTML=ingredients.length?ingredients.map(name=>`<button class="filter-option${state.filters.ingredients.has(name)?' on':''}" data-ingredient="${name}" aria-label="${name}" title="${name}">${ingredientFilterArt(name)}${filterCaption(name)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  const boxTypes=document.getElementById('boxTypeFilters');
+  const boxIngredients=document.getElementById('boxIngredientFilters');
+  boxTypes.innerHTML=types.length?types.map(t=>`<button class="filter-option type-${typeClass(t)}${state.boxFilters.types.has(t)?' on':''}" data-type="${t}" aria-label="${t}">${typeFilterArt(t)}${filterCaption(t)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  boxIngredients.innerHTML=ingredients.length?ingredients.map(name=>`<button class="filter-option${state.boxFilters.ingredients.has(name)?' on':''}" data-ingredient="${name}" aria-label="${name}" title="${name}">${ingredientFilterArt(name)}${filterCaption(name)}</button>`).join(''):'<button class="filter-option" disabled>データ投入後に生成</button>';
+  typeFilters.querySelectorAll('[data-type]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.filters.types.has(b.dataset.type)?state.filters.types.delete(b.dataset.type):state.filters.types.add(b.dataset.type);renderDex()});
+  ingredientFilters.querySelectorAll('[data-ingredient]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.filters.ingredients.has(b.dataset.ingredient)?state.filters.ingredients.delete(b.dataset.ingredient):state.filters.ingredients.add(b.dataset.ingredient);renderDex()});
+  boxTypes.querySelectorAll('[data-type]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.boxFilters.types.has(b.dataset.type)?state.boxFilters.types.delete(b.dataset.type):state.boxFilters.types.add(b.dataset.type);renderBox()});
+  boxIngredients.querySelectorAll('[data-ingredient]').forEach(b=>b.onclick=e=>{e.stopPropagation();b.classList.toggle('on');state.boxFilters.ingredients.has(b.dataset.ingredient)?state.boxFilters.ingredients.delete(b.dataset.ingredient):state.boxFilters.ingredients.add(b.dataset.ingredient);renderBox()});
+ specialtyFilters.querySelectorAll('[data-spec]').forEach(b=>b.onclick=()=>{b.classList.toggle('active');state.filters.specs.has(b.dataset.spec)?state.filters.specs.delete(b.dataset.spec):state.filters.specs.add(b.dataset.spec);renderDex()});
+}
+function setupMenus(){
+ document.querySelectorAll('.filter-select>.filter-main').forEach(btn=>btn.onclick=e=>{
+   e.stopPropagation();const host=btn.parentElement,was=host.classList.contains('open');
+   document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open'));
+   if(!was)host.classList.add('open');
+ });
+ document.querySelectorAll('.filter-panel').forEach(p=>p.onclick=e=>e.stopPropagation());
+ document.addEventListener('click',()=>document.querySelectorAll('.filter-select.open').forEach(x=>x.classList.remove('open')));
+ document.querySelectorAll('#boxSpecialtyFilters [data-spec]').forEach(b=>b.onclick=()=>{const v=b.dataset.spec;b.classList.toggle('on');state.boxFilters.specs.has(v)?state.boxFilters.specs.delete(v):state.boxFilters.specs.add(v);renderBox()});
+ document.querySelectorAll('#boxTagFilters [data-tag]').forEach(b=>b.onclick=()=>{b.classList.toggle('on');const v=b.dataset.tag;state.boxFilters.tags.has(v)?state.boxFilters.tags.delete(v):state.boxFilters.tags.add(v);renderBox()});
+}
+function renderSelectedFilters(kind){
+ const filters=kind==='box'?state.boxFilters:state.filters;
+ const node=document.getElementById(kind+'SelectedFilters');if(!node)return;
+ node.replaceChildren();
+ const labels={types:'タイプ',ingredients:'食材',specs:'得意',tags:'タグ'};
+ const tags={favorite:'★ お気に入り',training:'🌱 育成',special:'✨ 特別',shiny:'🌈 色違い'};
+ const fields={types:'type',ingredients:'ingredient',specs:'spec',tags:'tag'};
+ for(const [key,values] of Object.entries(filters)){
+  const menu=document.querySelector(`[data-menu="${kind}-${{types:'type',ingredients:'ing',specs:'spec',tags:'tag'}[key]}"]>.filter-main`);
+  menu?.classList.toggle('active',values.size>0);
+  for(const option of document.querySelectorAll(`#${kind}CompactFilters [data-${fields[key]}]`)){
+   const active=values.has(option.dataset[fields[key]]);option.classList.toggle(option.classList.contains('filter-option')?'on':'active',active);option.setAttribute('aria-pressed',String(active));
+  }
+  for(const value of values){const chip=document.createElement('button');chip.type='button';chip.textContent=`${labels[key]}：${key==='tags'?tags[value]:value} ×`;chip.setAttribute('aria-label',`${labels[key]} ${key==='tags'?tags[value]:value}の条件を解除`);chip.onclick=()=>{values.delete(value);kind==='box'?renderBox():renderDex()};node.append(chip)}
+ }
+ node.hidden=!node.childElementCount;
+ if(!node.hidden){const clear=document.createElement('button');clear.type='button';clear.className='psg-filter-clear';clear.textContent='全解除';clear.onclick=()=>{Object.values(filters).forEach(values=>values.clear());kind==='box'?renderBox():renderDex()};node.append(clear)}
+}
+function renderDex(){
+ renderSelectedFilters('dex');
+ const q=searchKey(dexSearch.value.trim());
+ const all=master.pokemon;
+ const a=all.filter(p=>matchesDexFilters(p,q,state.filters));
+ document.querySelector('[data-menu="dex-type"]>.filter-main')?.classList.toggle('active',state.filters.types.size>0);
+ document.querySelector('[data-menu="dex-ing"]>.filter-main')?.classList.toggle('active',state.filters.ingredients.size>0);
+ dexCount.textContent=`${a.length} / ${all.length}`;
+ dexGrid.innerHTML=a.map(p=>`<article class="poke dex-card type-${typeClass(p.type)}" data-no="${p.no}" role="button" tabindex="0" aria-label="No.${String(p.no).padStart(3,'0')} ${p.name}の詳細を見る">
+   <div class="dex-heading"><div class="dex-identity"><div class="dex-number-row"><span class="dex-no">No.${String(p.no).padStart(3,'0')}</span><span class="dex-discovery" aria-label="寝顔登録数 ${discoveryLabel(p)}">${discoveryLabel(p)}</span></div><span class="dex-name">${p.name}</span></div></div>
+   <div class="dex-art">${window.PS_DEV_ASSETS.image(p.faceImage||p.image,'pokemon',p.no,'face',p.name)}</div><div class="dex-bottom"><span title="得意: ${p.specialty||'未確認'}">${specIcon(p.specialty)}</span>${[0,1,2].map(i=>`<span title="食材${['A','B','C'][i]}: ${p.ingredients?.[i]?.name||'未確認'}">${ingIcon(p.ingredients?.[i])}</span>`).join('')}</div>
+  </article>`).join('');
+ hydrateSpecialtyIcons(dexGrid);
+ dexEmpty.style.display=a.length?'none':'block';
+ dexGrid.querySelectorAll('[data-no]').forEach(c=>{
+   c.onclick=()=>{if(Date.now()<(window.PS?.ignoreCardClicksUntil||0))return;window.openDexCard?.(+c.dataset.no)};
+   c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click()}};
+ });
+}
+function val(v,suffix=''){return v===null||v===undefined?'未確認':`${v}${suffix}`}
+// v57 cleanup: legacy openDex renderer removed; Dex cards use window.openDexCard -> window.openPokemonDetail.
+document.querySelectorAll('.detail-tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.detail-tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.detail-pane').forEach(x=>x.classList.toggle('on',x.id==='pane-'+b.dataset.pane))});
+
+function renderBox(){
+ renderSelectedFilters('box');
+ const q=searchKey(boxSearch.value.trim()),a=state.box.filter(x=>{
+ const text=!q||searchKey(x.name).includes(q);
+  const species=window.PS_CATALOG?.pokemon[x.no];
+  const type=!state.boxFilters.types.size||state.boxFilters.types.has(species?.type);
+  const ingredient=!state.boxFilters.ingredients.size||species?.ingredients?.some(item=>state.boxFilters.ingredients.has(item.name));
+ const spec=!state.boxFilters.specs.size||state.boxFilters.specs.has(x.specialty);
+ const tags=!state.boxFilters.tags.size||[...state.boxFilters.tags].every(t=>
+   t==='favorite'?!!x.favorite:t==='training'?!!x.training:t==='special'?species?.specialTeamLimited===true:t==='shiny'?x.shiny==='confirmed':true);
+  return text&&type&&ingredient&&spec&&tags;
+ });
+  document.querySelector('[data-menu="box-type"]>.filter-main')?.classList.toggle('active',state.boxFilters.types.size>0);
+  document.querySelector('[data-menu="box-ing"]>.filter-main')?.classList.toggle('active',state.boxFilters.ingredients.size>0);
+ boxGrid.innerHTML=a.map(x=>{
+  const species=window.PS_CATALOG?.pokemon[x.no];
+  const foods=[1,30,60].map((unlock,i)=>{
+   const slot=species?.ingredientSlots?.find(s=>s.unlock===unlock);
+   const chosen=x.ingredients?.[unlock]||((slot?.candidates?.length===1)?slot.candidates[0].name:'');
+   const visual=chosen&&ingredientVisual(chosen);
+   const icon=chosen?ingIcon({name:chosen}):'';
+   return `<span class="psg-box-mini-badge ${chosen?'':'is-unknown'}" title="${['A','B','C'][i]} Lv.${unlock}：${boxEsc(chosen||'未確認')}" aria-label="${['A','B','C'][i]} ${boxEsc(chosen||'未確認')}"><em>${['A','B','C'][i]}</em>${icon||'<span>?</span>'}</span>`;
+  }).join('');
+  return `<button type="button" class="poke psg-box-card type-${typeClass(species?.type)}" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b></span><span class="psg-box-card-art">${window.PS_DEV_ASSETS.image(species?.faceImage,'pokemon',x.no,'face',x.name)||'<small>No image</small>'}<span class="psg-box-card-level">Lv.${x.level}</span></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span>${subskillCardBadges(x)}</button>`;
+ }).join('');
+ boxEmpty.textContent=state.box.length?'条件に合う個体がありません。':'Boxは空です。「＋追加」から登録できます。';
+ boxEmpty.style.display=a.length?'none':'block';
+ boxGrid.querySelectorAll('.poke').forEach(c=>c.onclick=()=>{
+  if(Date.now()<(window.PS?.ignoreCardClicksUntil||0))return;
+  if(teamBoxSlot!==null){
+   const index=teamBoxSlot,id=c.dataset.id,usedAt=team.indexOf(id),next=[...team];
+   const selected=state.box.find(x=>x.id===id);
+   const selectingSpecial=window.PS_CATALOG?.pokemon?.[selected?.no]?.specialTeamLimited===true;
+   const occupiedSpecial=team.some((memberId,slot)=>slot!==index&&memberId!==id&&window.PS_CATALOG?.pokemon?.[state.box.find(x=>x.id===memberId)?.no]?.specialTeamLimited===true);
+   if(selectingSpecial&&occupiedSpecial){alert('特別なポケモンはチームに1匹だけ編成できます。先に現在の特別なポケモンを外してください。');return}
+   if(usedAt!==-1&&usedAt!==index)next[usedAt]=next[index];
+   next[index]=id;saveTeamSelection(next);teamBoxSlot=null;renderBoxTeamMode();go('home');return;
+  }
+  openBox(c.dataset.id);
+ });
+ renderTeam();
+}
+function renderBoxTeamMode(){
+ const bar=document.getElementById('boxTeamMode');bar.hidden=teamBoxSlot===null;
+ if(teamBoxSlot!==null){document.getElementById('boxTeamModeTitle').textContent=`チームの${teamBoxSlot+1}匹目を選択中`;document.getElementById('boxTeamRemove').disabled=!team[teamBoxSlot]}
+}
+document.getElementById('boxTeamCancel').onclick=()=>{teamBoxSlot=null;renderBoxTeamMode();go('home')};
+document.getElementById('boxTeamRemove').onclick=()=>{if(teamBoxSlot===null)return;const next=[...team];next[teamBoxSlot]=null;saveTeamSelection(next);teamBoxSlot=null;renderBoxTeamMode();go('home')};
+const MAX_POKEMON_LEVEL=70; // Confirmed in official Ver.3.6.0 notice, 2026-06-25.
+const SUBSKILL_LEVELS=[10,25,50,70,80];
+// Individual corrections are deliberately separate from daily yield (energy, collection and camp are not fixed here).
+const NATURE_ROWS=window.PS_CATALOG.natures.rows;
+const NATURE_AXES=window.PS_CATALOG.natures.axes;
+const NATURE_EFFECTS=Object.fromEntries(NATURE_ROWS.flatMap((row,up)=>row.map((name,down)=>[name,up===down?{}:{up:NATURE_AXES[up],down:NATURE_AXES[down]}])));
+const SUBSKILLS=Object.fromEntries(window.PS_CATALOG.subskills.map(skill=>[skill.name,skill]));
+const SUBSKILL_NAMES=window.PS_CATALOG.subskills.map(skill=>skill.name);
+function individualCorrections(item,p,teamSpeedReduction=0){
+ const effect=item.mint?{}:NATURE_EFFECTS[item.nature]||{};
+ const active=SUBSKILL_LEVELS.filter(n=>n<=item.level).map((_,i)=>item.subskills?.[i]).filter(Boolean);
+ const sum=kind=>active.reduce((total,name)=>total+(SUBSKILLS[name]?.effect===kind?SUBSKILLS[name].value||0:0),0);
+ const natureFactor=axis=>effect.up===axis?window.PS_CATALOG.natures.factors[axis].up:effect.down===axis?window.PS_CATALOG.natures.factors[axis].down:1;
+ const soloSpeedReduction=Math.min(.35,sum('speedReduction'));
+ const speedReduction=Math.min(.35,sum('speedReduction')+teamSpeedReduction);
+ const speedBase=Number.isFinite(p?.help)?p.help*(1-(item.level-1)*.002)*natureFactor('speed'):null;
+ const soloSpeed=speedBase==null?null:Math.floor(speedBase*(1-soloSpeedReduction));
+ const speed=speedBase==null?null:Math.floor(speedBase*(1-speedReduction));
+ const foodFactor=natureFactor('food')*(1+sum('foodRateBonus'));
+ const skillFactor=natureFactor('skill')*(1+sum('skillRateBonus'));
+ const carry=Number.isFinite(p?.carry)?p.carry+sum('carryBonus'):null;
+ const food=Number.isFinite(p?.foodRate)?Math.min(100,p.foodRate*foodFactor):null;
+ const skill=Number.isFinite(p?.skillRate)?Math.min(100,p.skillRate*skillFactor):null;
+ const unknown=[...active.filter(name=>!SUBSKILL_NAMES.includes(name)),...(!item.mint&&item.nature&&!NATURE_EFFECTS[item.nature]?[item.nature]:[])];
+ return {speed,soloSpeed,carry,food,skill,foodFactor,skillFactor,active,unknown,
+   nature:effect,berryQty:Number.isFinite(p?.berryQty)?p.berryQty+sum('berryQtyBonus'):null,
+   teamBonus:sum('teamSpeedReduction')>0,energyFactor:natureFactor('energy'),expFactor:natureFactor('exp')};
+}
+function teamSpeedContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
+ const selected=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
+ const contribution=item=>SUBSKILL_LEVELS.reduce((sum,unlock,i)=>sum+(unlock<=item.level&&SUBSKILLS[item.subskills?.[i]]?.effect==='teamSpeedReduction'?SUBSKILLS[item.subskills[i]].value:0),0);
+ const bonus=selected.reduce((sum,item)=>sum+contribution(item),0);
+ const members=new Map(selected.map(item=>[item.id,individualCorrections(item,catalog?.pokemon?.[item.no],bonus)]));
+ return {bonus,bonusCount:selected.filter(item=>contribution(item)>0).length,members};
+}
+const INDIVIDUAL_IDEALS=new Map();
+function individualOpportunities(item,p){
+ const active=SUBSKILL_LEVELS.filter(n=>n<=item.level).map((_,i)=>item.subskills?.[i]);
+ const bonus=active.reduce((s,n)=>s+(SUBSKILLS[n]?.effect==='teamSpeedReduction'?SUBSKILLS[n].value:0),0);
+ const c=individualCorrections(item,p,bonus),h=Number.isFinite(c.speed)&&c.speed>0?3600/c.speed:null;
+ return {berry:h!=null&&Number.isFinite(c.food)&&Number.isFinite(c.berryQty)?h*(1-c.food/100)*c.berryQty:null,food:h!=null&&Number.isFinite(c.food)?h*c.food/100:null,skill:h!=null&&Number.isFinite(c.skill)?h*c.skill/100:null};
+}
+function individualIdeal(p,level){
+ const key=JSON.stringify([p.no,level,p.help,p.foodRate,p.skillRate,p.berryQty]);
+ if(INDIVIDUAL_IDEALS.has(key))return INDIVIDUAL_IDEALS.get(key);
+ const names=SUBSKILL_NAMES.filter(n=>['berryQtyBonus','teamSpeedReduction','speedReduction','foodRateBonus','skillRateBonus'].includes(SUBSKILLS[n].effect));
+ const count=SUBSKILL_LEVELS.filter(n=>n<=level).length,best={berry:null,food:null,skill:null};
+ function visit(start,skills){
+  if(skills.length===count){for(const nature of Object.keys(NATURE_EFFECTS)){const rates=individualOpportunities({level,nature,subskills:skills},p);for(const role of Object.keys(best))if(rates[role]!=null&&(!best[role]||rates[role]>best[role].rate))best[role]={rate:rates[role],nature,subskills:[...skills]};}return;}
+  for(let i=start;i<names.length;i++)visit(i+1,[...skills,names[i]]);
+ }
+ visit(0,[]);INDIVIDUAL_IDEALS.set(key,best);return best;
+}
+function individualEvaluation(item,p){
+ const reasons=[],count=SUBSKILL_LEVELS.filter(n=>n<=item.level).length,active=(item.subskills||[]).slice(0,count);
+ if(!item.mint&&!Object.hasOwn(NATURE_EFFECTS,item.nature))reasons.push('性格を設定してください');
+ for(let i=0;i<count;i++)if(!SUBSKILLS[active[i]])reasons.push(`Lv.${SUBSKILL_LEVELS[i]}のサブスキルを設定してください`);
+ if(new Set(active.filter(Boolean)).size!==active.filter(Boolean).length)reasons.push('サブスキルの重複を修正してください');
+ if(!Number.isInteger(item.level)||item.level<1||item.level>MAX_POKEMON_LEVEL)reasons.push('対応範囲内のレベルを設定してください');
+ if(reasons.length)return {reasons,rows:[]};
+ const rates=individualOpportunities(item,p),neutral=individualOpportunities({level:item.level,mint:true,subskills:[]},p),ideal=individualIdeal(p,item.level);
+ return {reasons,rows:Object.keys(rates).map(role=>({role,ideal:ideal[role],ratio:ideal[role]?.rate>0&&rates[role]!=null?rates[role]/ideal[role].rate:null,neutral:neutral[role]>0&&rates[role]!=null?rates[role]/neutral[role]:null}))};
+}
+function individualGrowthEvaluation(item,p){
+ const level=SUBSKILL_LEVELS.find(n=>n>item.level&&n<=MAX_POKEMON_LEVEL);
+ return level?{level,...individualEvaluation({...item,level},p)}:null;
+}
+function individualEvaluationRole(item,p){
+ const roles={きのみ:'berry',食材:'food',スキル:'skill'};
+ return {role:roles[item.role]||roles[p.specialty]||null,explicit:!!roles[item.role]};
+}
+function renderIndividualEvaluation(item,p){
+ const e=individualEvaluation(item,p),labels={berry:'きのみ',food:'食材おてつだい',skill:'スキル発動機会'},roles={きのみ:'berry',食材:'food',スキル:'skill'};
+ const chosen=individualEvaluationRole(item,p);
+ const heading=chosen.role?`<p class="psg-evaluation-role">${chosen.explicit?'選択した役割':'得意から表示'}：<b>${boxEsc(chosen.explicit?item.role:p.specialty)}</b></p>`:'<p>役割未設定：各役割を表示</p>';
+ const rowHtml=r=>{
+  if(r.ratio==null)return `<p>${labels[r.role]}：基礎データ不足のため未判定</p>`;
+  const pct=Math.min(100,r.ratio*100);
+  return `<div class="psg-individual-row${chosen.role===r.role?' is-primary':''}" data-role="${r.role}"><strong>${labels[r.role]}${roles[p.specialty]===r.role?'（得意）':''}</strong><p>理想比 <b>${pct.toFixed(1)}%</b> ／ 差 ${(100-pct).toFixed(1)}pt</p><p class="psg-box-muted">無補正比 ${r.neutral==null?'—':`×${r.neutral.toFixed(2)}`}</p><details><summary>比較した理想構成</summary><p>${boxEsc(r.ideal.nature)} ／ ${r.ideal.subskills.length?r.ideal.subskills.map(boxEsc).join('・'):'解放サブスキルなし'}</p></details></div>`;
+ };
+ const primary=e.rows.find(r=>r.role===chosen.role),others=e.rows.filter(r=>r.role!==chosen.role);
+ const body=e.reasons.length?`<p>評価待ち</p><ul>${e.reasons.map(x=>`<li>${boxEsc(x)}</li>`).join('')}</ul>`:primary?rowHtml(primary)+`<details class="psg-evaluation-other"><summary>ほかの役割も見る</summary>${others.map(rowHtml).join('')}</details>`:e.rows.map(rowHtml).join('');
+ const growth=individualGrowthEvaluation(item,p);
+ const future=growth?`<details class="psg-box-explanation"><summary>次のサブスキル解放 Lv.${growth.level} の評価</summary><p class="psg-box-muted">設定済みの性格・サブスキルで、同じ種族のLv.${growth.level}の理想と比較します。進化は含みません。</p>${growth.reasons.length?`<p>評価待ち：${growth.reasons.map(boxEsc).join('／')}</p>`:growth.rows.filter(r=>!chosen.role||r.role===chosen.role).map(r=>`<p>${labels[r.role]}：${r.ratio==null?'未判定':`理想比 ${(Math.min(1,r.ratio)*100).toFixed(1)}%`}</p>`).join('')}</details>`:'';
+ return `<p>Lv.${boxEsc(item.level)}・同じ種族での補正評価</p>${heading}${body}${future}<details class="psg-box-explanation"><summary>評価の条件と計算式</summary><p class="psg-box-muted">同じげんき・所持数が満杯になる前で比較。性格25種と解放済み枠のサブスキル組合せから、各役割を最大にする構成を別々に求めます。きのみ＝おてつだい回数×（1−食材確率）×個数、食材＝おてつだい回数×食材確率、スキル＝おてつだい回数×スキル確率。自分のおてつだいボーナスは1回反映します。</p><p class="psg-box-muted">確率は推定値。食材の種類・個数、所持数、回収間隔、スキルLv・効果・ストック、回復、他メンバーへの支援、リボンはこの比較に含みません。日産量や総合順位ではありません。未解放のサブスキルは評価対象外です。</p></details>`;
+}
+const DAY_SETTINGS_KEY='psg-day-settings-v1';
+function normalizeDaySettings(value){
+ const input=value&&typeof value==='object'?value:{};
+ const energy=Number(input.initialEnergy);
+ return {collectionHours:[1,2,4,8].includes(Number(input.collectionHours))?Number(input.collectionHours):4,
+ initialEnergy:input.initialEnergy!==null&&input.initialEnergy!==''&&Number.isFinite(energy)?Math.max(0,Math.min(150,Math.round(energy))):100,
+ goodCamp:input.goodCamp===true,meals:input.meals!==false};
+}
+function readDaySettings(){try{return normalizeDaySettings(JSON.parse(localStorage.getItem(DAY_SETTINGS_KEY)||'{}'))}catch{return normalizeDaySettings({})}}
+const daySettings=readDaySettings();
+let teamInitialEnergy=daySettings.initialEnergy;
+let teamGoodCamp=daySettings.goodCamp;
+let teamMeals=daySettings.meals;
+function syncDayControls(){
+ document.getElementById('teamCollectionInterval').value=String(daySettings.collectionHours);
+ document.getElementById('teamInitialEnergy').value=String(teamInitialEnergy);
+ for(const [id,label,active] of [['teamGoodCamp','いいキャンプ',teamGoodCamp],['teamMeals','食事3回',teamMeals]]){
+  const button=document.getElementById(id);button.setAttribute('aria-pressed',String(active));button.textContent=`${label}：${active?'ON':'OFF'}`;
+ }
+ document.querySelectorAll('.psg-day-energy-options button').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.energy)===teamInitialEnergy)));
+}
+function saveDaySettings(){
+ const next=normalizeDaySettings({collectionHours:document.getElementById('teamCollectionInterval').value,initialEnergy:teamInitialEnergy,goodCamp:teamGoodCamp,meals:teamMeals});
+ Object.assign(daySettings,next);syncDayControls();
+ try{localStorage.setItem(DAY_SETTINGS_KEY,JSON.stringify(next));document.getElementById('teamDaySaveStatus').textContent='条件をこの端末に保存しました。'}
+ catch{document.getElementById('teamDaySaveStatus').textContent='条件を保存できませんでした。今回の表示には反映しています。'}
+ renderTeamDay();
+}
+syncDayControls();
+const berryChoices=[...document.querySelectorAll('.psg-favorite-berry')];
+for(const select of berryChoices){
+ for(const name of [...knownBerryNames].sort((a,b)=>a.localeCompare(b,'ja'))){
+  select.add(new Option(name,name));
+ }
+ select.onchange=()=>{
+  fieldProfile.weekly[fieldProfile.selectedFieldId]={weekKey:currentFieldWeek(),berries:berryChoices.map(choice=>choice.value)};
+  saveFieldProfile();
+ };
+}
+const fieldSelect=document.getElementById('fieldSelect');
+const homeFieldSelect=document.getElementById('homeFieldSelect');
+const homeMealSelect=document.getElementById('homeMealSelect');
+function activeMealCategory(){return fieldProfile.meal?.weekKey===currentFieldWeek()?fieldProfile.meal.category:''}
+homeMealSelect.onchange=()=>{fieldProfile.meal=homeMealSelect.value?{weekKey:currentFieldWeek(),category:homeMealSelect.value}:null;saveFieldProfile()};
+const fieldOrder=['greengrass','cyan','taupe','snowdrop','lapis','old_gold','amber'];
+for(const id of fieldOrder){
+ const field=window.PS_CATALOG?.fields?.[id];
+ if(field){fieldSelect.add(new Option(field.name,id));homeFieldSelect.add(new Option(field.name,id))}
+}
+const areaBonusInput=document.getElementById('fieldAreaBonus');
+function activeFieldBerries(){
+ const entry=fieldProfile.weekly[fieldProfile.selectedFieldId];
+ return entry?.weekKey===currentFieldWeek()?entry.berries:(window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.favoriteBerries||[]);
+}
+function berryIcon(name){
+ const src=window.PS_IMAGE_FILES?.berries?.[name];if(!src)return null;
+ const image=document.createElement('img');image.className='psg-master-berry-icon';image.src=src;image.alt=name;image.title=name;image.width=28;image.height=28;return image;
+}
+function renderFieldGallery(){
+ const host=document.getElementById('fieldGallery');host.replaceChildren();
+ for(const id of fieldOrder){
+  const field=window.PS_CATALOG.fields[id];if(!field)continue;
+  const button=document.createElement('button');button.type='button';button.className='psg-field-choice';button.dataset.fieldId=id;
+  button.setAttribute('aria-pressed',String(id===fieldProfile.selectedFieldId));
+  const image=window.PS_IMAGE_FILES.fields[id];
+  if(image){const img=document.createElement('img');img.src=image;img.alt='';img.width=76;img.height=86;button.append(img)}
+  const label=document.createElement('div'),name=document.createElement('strong');name.textContent=field.name;label.append(name);
+  const favorites=document.createElement('div');favorites.className='psg-field-berry-icons';
+  for(const berry of field.favoriteBerries||[]){const icon=berryIcon(berry);if(icon)favorites.append(icon)}
+  if(favorites.childElementCount)label.append(favorites);button.append(label);
+  button.onclick=()=>{fieldSelect.value=id;fieldSelect.dispatchEvent(new Event('change'))};host.append(button);
+ }
+ for(const [id,name] of [['greengrass_ex','ワカクサ本島 EX'],['cyan_ex','シアンの砂浜 EX']]){
+  const row=document.createElement('div');row.className='psg-field-choice';
+  const image=document.createElement('img');image.src=`assets/fields/${id}/image.webp`;image.alt='';image.width=76;image.height=86;row.append(image);
+  const label=document.createElement('div'),title=document.createElement('strong'),note=document.createElement('small');title.textContent=name;note.textContent='日産計算は未対応';note.className='note';note.style.display='block';label.append(title,note);row.append(label);const ranks=document.createElement('details');const summary=document.createElement('summary');summary.textContent='ランク・必要エナジー';ranks.append(summary);for(const rank of window.PS_CATALOG.fields[id]?.rankThresholds||[]){const line=document.createElement('p');line.className='note';line.textContent=`${rank.tier}${rank.level}：${rank.energy.toLocaleString()}`;window.PS_UI_ART.rank(line,rank.tier);ranks.append(line)}row.append(ranks);host.append(row);
+ }
+}
+function renderFieldControls(){
+ renderFieldGallery();
+ fieldSelect.value=fieldProfile.selectedFieldId;
+ homeFieldSelect.value=fieldProfile.selectedFieldId;
+ homeMealSelect.value=activeMealCategory();
+ areaBonusInput.value=String(fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ const berries=activeFieldBerries();
+ berryChoices.forEach((choice,index)=>{choice.value=berries[index]||''});
+ const field=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId];
+ document.getElementById('fieldWeekLabel').textContent=`今週：${currentFieldWeek()}開始（端末の現地時間・月曜4時切替）・${field?.favoriteMode==='fixed'?'通常は固定3種':'毎週ランダム'}`;
+ document.getElementById('fieldFavoriteReset').hidden=fieldProfile.weekly[fieldProfile.selectedFieldId]?.weekKey!==currentFieldWeek();
+ const fieldName=window.PS_CATALOG?.fields?.[fieldProfile.selectedFieldId]?.name||'フィールド未設定';
+ const summary=document.getElementById('teamFieldSummary');summary.replaceChildren(document.createTextNode(`${fieldName}・エリア＋${areaBonusInput.value}％・好物 `));
+ for(const berry of berries.filter(Boolean)){const icon=berryIcon(berry);if(icon)summary.append(icon);else summary.append(document.createTextNode(berry+' '))}
+ if(!berries.filter(Boolean).length)summary.append(document.createTextNode('未設定'));
+ renderFieldEncounters(field);
+}
+function renderFieldEncounters(field){
+ const host=document.getElementById('fieldEncounterList');if(!host)return;
+ host.replaceChildren();
+ const encounters=field?.encounters||[];
+ const rankFilter=document.getElementById('fieldRankFilter');
+ const rankOrder={ノーマル:0,スーパー:1,ハイパー:2,マスター:3};
+ const rankValue=rank=>rankOrder[rank.tier]*100+rank.level;
+ const oldValue=rankFilter.value;
+ const rankOptions=(field?.rankThresholds||[]).map(rank=>[`${rank.tier}:${rank.level}`,rank]);
+ rankFilter.replaceChildren(new Option('すべて表示',''));
+ for(const [value,rank] of rankOptions)rankFilter.add(new Option(`${rank.tier}${rank.level}まで`,value));
+ rankFilter.value=oldValue;
+ if(!rankFilter.value)rankFilter.value='';
+ rankFilter.onchange=()=>renderFieldEncounters(field);
+ const selected=rankOptions.find(([value])=>value===rankFilter.value)?.[1];
+ document.getElementById('fieldRankEnergy').textContent=selected?`${selected.tier}${selected.level}に必要なカビゴンエナジー：${selected.energy.toLocaleString()}`:'ランクを選ぶと必要なカビゴンエナジーを表示します。';
+ if(selected)window.PS_UI_ART.rank(document.getElementById('fieldRankEnergy'),selected.tier);
+ const rankList=document.getElementById('fieldRankThresholdList');rankList.replaceChildren();
+ for(const [,rank] of rankOptions){const line=document.createElement('div');line.className='psg-field-encounter-row';const label=document.createElement('span');label.textContent=`${rank.tier}${rank.level}`;const energy=document.createElement('strong');energy.textContent=rank.energy.toLocaleString();window.PS_UI_ART.rank(label,rank.tier);line.append(label,energy);rankList.append(line)}
+ if(!encounters.length){document.getElementById('fieldEncounterCount').textContent='';const p=document.createElement('p');p.className='note';p.textContent='このフィールドの出現データは未投入です。';host.append(p);return}
+ const visible=selected?encounters.filter(item=>rankValue(item.rank)<=rankValue(selected)):encounters;
+ document.getElementById('fieldEncounterCount').textContent=`${visible.length} / ${encounters.length} 件の収録済み寝顔`;
+ const grouped=new Map();
+ for(const item of visible){
+  const no=String(Number(item.sleepStyleId.split('_')[0]));
+  const pokemon=window.PS_CATALOG.pokemon?.[no];
+  const style=window.PS_CATALOG.sleepStyles?.[no]?.find(row=>row.id===item.sleepStyleId);
+  if(!pokemon||!style)continue;
+  if(!grouped.has(no))grouped.set(no,{pokemon,rows:[]});
+  grouped.get(no).rows.push({item,style});
+ }
+ for(const {pokemon,rows} of [...grouped.values()].sort((a,b)=>a.pokemon.no-b.pokemon.no)){
+  const section=document.createElement('section');section.className='psg-field-species';
+  const title=document.createElement('button');title.type='button';title.className='psg-field-species-name';
+  title.textContent=`No.${String(pokemon.no).padStart(3,'0')} ${pokemon.name} ›`;
+  title.onclick=()=>window.openPokemonDetail?.(pokemon.no);
+  section.append(title);
+  for(const {item,style} of rows.sort((a,b)=>a.style.stars-b.style.stars)){
+   const row=document.createElement('div');row.className='psg-field-encounter-row';
+   const name=document.createElement('span');name.textContent=`★${style.stars} ${style.name}`;
+   const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+   window.PS_UI_ART.rank(rank,item.rank.tier);
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;name.append(condition);
+   row.append(name,rank);section.append(row);
+  }
+  host.append(section);
+ }
+ if(!visible.length){const p=document.createElement('p');p.className='note';p.textContent='このランクまでに収録済みの寝顔はありません。';host.append(p)}
+}
+function selectField(id){fieldProfile.selectedFieldId=id;document.getElementById('fieldRankFilter').value='';saveFieldProfile()}
+fieldSelect.onchange=()=>selectField(fieldSelect.value);
+homeFieldSelect.onchange=()=>selectField(homeFieldSelect.value);
+document.getElementById('fieldFavoriteReset').onclick=()=>{delete fieldProfile.weekly[fieldProfile.selectedFieldId];saveFieldProfile()};
+areaBonusInput.onchange=()=>{
+ fieldProfile.areaBonuses[fieldProfile.selectedFieldId]=Math.max(0,Math.min(200,Number(areaBonusInput.value)||0));
+ saveFieldProfile();
+};
+document.getElementById('teamFieldLink').onclick=()=>{renderFieldControls();go('fieldPage')};
+renderFieldControls();
+function renderTeamDay(){
+ const host=document.getElementById('teamDayEstimate');if(!host)return;
+ const interval=document.getElementById('teamCollectionInterval').value;
+ renderFieldControls();
+ const result=dailyBaseline(team,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,activeFieldBerries(),fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ document.getElementById('teamDayConditions').textContent=`適用条件：起床時げんき${result.startingEnergy}・回収${result.interval}時間ごと・キャンプ${result.goodCamp?'ON':'OFF'}・食事3回${result.threeMeals?'ON':'OFF'}（起床後16時間・睡眠8時間）`;
+ host.replaceChildren();
+ if(!result.members.length){const p=document.createElement('p');p.className='note';p.textContent='チームを選ぶと獲得予想を表示します。';host.append(p);return}
+ const foodTiles=foods=>{
+  const tiles=document.createElement('div');tiles.className='psg-day-food-list';
+  for(const [name,qty] of foods){
+   const tile=document.createElement('span');tile.className='psg-day-food-tile';tile.setAttribute('aria-label',`${name} 約${qty.toFixed(1)}個`);
+   tile.append(teamFoodIcon(name));
+   const copy=document.createElement('span');const title=document.createElement('small');title.textContent=name;
+   const amount=document.createElement('strong');amount.textContent=`約${qty.toFixed(1)}個`;
+   copy.append(title,amount);tile.append(copy);tiles.append(tile);
+  }
+  return tiles;
+ };
+ const list=document.createElement('div');list.className='psg-day-list';
+ for(const member of result.members){
+  const row=document.createElement('div');row.className='psg-day-row';
+  const label=document.createElement('strong');label.textContent=member.name;row.append(label);
+  const detail=document.createElement('span');
+  if(member.skillCalculationNote){const note=document.createElement('p');note.className='note';note.textContent=member.name+'：'+member.skillCalculationNote;host.append(note)}
+  const skillText=member.skillName?` ／ ${member.skillName} 約${member.skillTriggers.toFixed(1)}回${member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount)?`（ランダム食材 約${(member.skillTriggers*member.skillAmount).toFixed(1)}個）`:['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?`（エナジー期待値 約${Math.round(member.skillTriggers*member.skillEnergy*result.areaFactor).toLocaleString()}）`:member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（チーム各匹＋${member.skillRecovery}）`:member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（自分のげんき＋${member.skillRecovery}）`:member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery)?`（1匹のげんき＋${member.skillRecovery}・対象は仮配分）`:member.boost&&Number.isFinite(member.skillHelps)?`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`:member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps)?`（即時おてつだい約${(member.skillTriggers*member.skillHelps).toFixed(1)}回・均等配分して日産に反映）`:''}`:'';
+  detail.textContent=member.missing?`未確認：${member.reasons.join('・')}`:`きのみ 約${member.berries.toFixed(1)}個（満杯後 約${member.overflow.toFixed(1)}個・エナジー 約${Math.round(member.berryEnergy).toLocaleString()}${result.favorites.has(member.berryName)?'・好物':''}）${skillText}`;
+  const berry=berryIcon(member.berryName);if(berry)detail.prepend(berry);row.append(detail);if(!member.missing&&member.foods.size)row.append(foodTiles(member.foods));list.append(row);
+ }
+ host.append(list);
+ if(result.dreamShards>0){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`ゆめのかけら期待値：約${Math.round(result.dreamShards).toLocaleString()}個（スキル分・エナジーとは別集計${result.members.some(m=>m.skillEffectType==='variable_dream_shards')?'・ランダムは範囲平均の近似':''}）`;host.append(total)}
+ if(result.randomIngredients>0){const extra=document.createElement('p');extra.className='psg-day-total';extra.textContent=`ランダム食材 合計 約${result.randomIngredients.toFixed(1)}個（種類未指定・上の食材合計とは別集計）`;host.append(extra)}
+ if(result.foods.size){const total=document.createElement('div');total.className='psg-day-total';const label=document.createElement('strong');label.textContent='食材合計';total.append(label,foodTiles(result.foods));host.append(total)}
+ if(result.members.some(member=>!member.missing)){const total=document.createElement('p');total.className='psg-day-total';total.textContent=`きのみ＋スキルのエナジー期待値：約${Math.round(result.berryEnergy+result.skillEnergy).toLocaleString()}（きのみ 約${Math.round(result.berryEnergy).toLocaleString()}・スキル 約${Math.round(result.skillEnergy).toLocaleString()}／好物・エリア補正込み）`;host.append(total)}
+}
+document.getElementById('teamCollectionInterval').onchange=saveDaySettings;
+document.getElementById('teamGoodCamp').onclick=()=>{teamGoodCamp=!teamGoodCamp;saveDaySettings()};
+document.getElementById('teamMeals').onclick=()=>{teamMeals=!teamMeals;saveDaySettings()};
+document.getElementById('teamInitialEnergy').onchange=event=>{
+ const input=event.currentTarget;
+ if(input.value.trim()===''||!Number.isFinite(Number(input.value))){input.value=String(teamInitialEnergy);return}
+ teamInitialEnergy=Math.max(0,Math.min(150,Math.round(Number(input.value))));saveDaySettings();
+};
+document.querySelectorAll('.psg-day-energy-options button').forEach(button=>button.onclick=()=>{
+ teamInitialEnergy=Number(button.dataset.energy);saveDaySettings();
+});
+// Shared daily estimate, assembled inside the core controller closure.
+// Bounded estimate: ten-minute energy bands and expected inventory occupancy.
+// Ingredients across unlocked slots are assumed equally likely; skill events are separate.
+function expectedStoredSkills(regularHelps,rate,stockLimit){
+ const probability=Math.max(0,Math.min(1,Number(rate)/100));
+ if(!Number.isFinite(regularHelps)||regularHelps<=0||!probability)return 0;
+ if(probability===1)return Math.min(stockLimit,regularHelps);
+ // Fractional expected helps: Poisson approximation to Bernoulli trials.
+ const lambda=-regularHelps*Math.log1p(-probability),none=Math.exp(-lambda);
+ return stockLimit===2?2-(2+lambda)*none:1-none;
+}
+function berryEnergyAtLevel(base,level){
+ if(!Number.isFinite(base)||!Number.isFinite(level))return null;
+ return Math.round(Math.max(base+level-1,base*Math.pow(1.025,level-1)));
+}
+function mealRecoveryAtEnergy(energy){
+ return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
+}
+function helperBoostContext(effectType,effect,items,catalog){
+ const types={helper_boost_fire:['ほのお','bonusByUniqueFire'],helper_boost_water:['みず','bonusByUniqueWater'],helper_boost_electric:['でんき','bonusByUniqueElectric']};
+ const config=types[effectType];if(!config)return null;
+ const [type,key]=config;
+ const unique=new Set(items.filter(item=>catalog?.pokemon?.[item.no]?.type===type).map(item=>item.no)).size;
+ const bonus=effect?.[key]?.[Math.min(5,unique)];
+ return {type,unique,helps:Number.isFinite(effect?.helps)&&Number.isFinite(bonus)?effect.helps+bonus:null};
+}
+function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true,favoriteBerries=[],areaBonus=0){
+ const interval=[1,2,4,8].includes(Number(collectionHours))?Number(collectionHours):4;
+ const startingEnergy=Math.max(0,Math.min(150,Math.round(Number(initialEnergy)||0)));
+ const favorites=new Set(favoriteBerries.filter(name=>Object.hasOwn(catalog?.berries||{},name)));
+ const areaFactor=1+Math.max(0,Math.min(200,Number(areaBonus)||0))/100;
+ const energyIntervalFactor=e=>e>=81?.45:e>=61?.52:e>=41?.58:e>=1?.66:1;
+ const speedContext=teamSpeedContext(ids,box,catalog);
+ const periods=[];for(let h=0;h<16;h+=interval)periods.push(Math.min(interval,16-h));
+ periods.push(8); // No collection during sleep; collect at wake-up.
+ const items=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
+ const members=items.map(item=>{
+  const species=catalog?.pokemon?.[item.no],stats=speedContext.members.get(item.id);
+  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
+   const chosen=item.ingredients?.[slot.unlock];
+   return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);
+  });
+  const reasons=[];
+  if(!stats?.speed)reasons.push('おてつだい時間');
+  if(!stats?.carry)reasons.push('最大所持数');
+  if(!Number.isFinite(stats?.food))reasons.push('食材確率');
+  if(!Number.isFinite(stats?.berryQty))reasons.push('きのみ数');
+  if(!Number.isFinite(catalog?.berries?.[species?.berry]))reasons.push('きのみエナジー');
+  if(!slots.length)reasons.push('食材候補');
+  else slots.forEach((slot,index)=>{if(!slot)reasons.push(`Lv.${species.ingredientSlots.filter(s=>s.unlock<=item.level)[index].unlock}の食材選択`)});
+  if(reasons.length)return {id:item.id,name:item.name,missing:true,reasons};
+  const chance=Math.max(0,Math.min(1,stats.food/100));
+  const averageFood=slots.reduce((sum,slot)=>sum+slot.qty,0)/slots.length;
+  const averageSize=chance*averageFood+(1-chance)*stats.berryQty;
+  if(averageSize<=0)return {id:item.id,name:item.name,missing:true};
+  const skill=catalog?.skills?.[species.mainSkillId];
+  const skillLevel=Math.max(1,Math.min(skill?.maxLevel||7,item.skillLevel||1));
+  const skillEffect=skill?.levels?.[skillLevel];
+  const boost=helperBoostContext(skill?.effectType,skillEffect,items,catalog);
+  const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
+  return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
+   berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
+   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,skillExtraHelps:0,randomIngredients:0,
+   skillCalculationNote:skill?.calculationNote||null,skillName:skill?.name||null,skillEffectType:skill?.effectType,
+   skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
+    (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillShards:skillEffect?.shards ?? (skill?.effectType==='variable_dream_shards'&&Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillRecovery:skillEffect?.recovery,skillHelps:boost?boost.helps:skillEffect?.helps,boost,missing:false};
+ });
+ const valid=members.filter(m=>!m.missing);
+ let elapsedTicks=0;
+ periods.forEach((hours,periodIndex)=>{
+  let teamRecovery=0,allyRecovery=0,bonusHelps=0;
+  for(const member of valid){
+   let helps=0;
+   for(let tick=0;tick<hours*6;tick++){
+    if(threeMeals&&[0,36,72].includes(elapsedTicks+tick))member.energy=Math.min(150,member.energy+mealRecoveryAtEnergy(member.energy));
+    helps+=600*(goodCamp?1.2:1)/(member.stats.speed*energyIntervalFactor(member.energy));
+    member.energy=Math.max(0,member.energy-1);
+   }
+   const regular=Math.min(helps,member.stats.carry*(goodCamp?1.2:1)/member.averageSize);
+   const extra=Math.max(0,helps-regular);
+   const triggers=Number.isFinite(member.stats.skill)&&member.skillName?expectedStoredSkills(regular,member.stats.skill,member.stockLimit):0;
+   member.skillTriggers+=triggers;
+   if(member.boost&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps;
+   if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps/items.length;
+   if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))member.randomIngredients+=triggers*member.skillAmount;
+   if(member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery))teamRecovery+=triggers*member.skillRecovery;
+   if(periodIndex<periods.length-1&&member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    member.energy=Math.min(150,member.energy+triggers*member.skillRecovery*member.stats.energyFactor);
+   if(member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    allyRecovery+=triggers*member.skillRecovery;
+   for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+regular*member.chance*slot.qty/member.slots.length);
+   member.berries+=regular*(1-member.chance)*member.stats.berryQty+extra*member.stats.berryQty;
+   member.overflow+=extra*member.stats.berryQty;
+  }
+  // Immediate helps bypass normal carry and never produce further skill rolls.
+  // Use skills and collect their products at every collection boundary.
+  for(const member of valid){
+   const immediate=Math.min(bonusHelps,999/member.averageSize);
+   member.skillExtraHelps+=immediate;
+   for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+immediate*member.chance*slot.qty/member.slots.length);
+   member.berries+=immediate*(1-member.chance)*member.stats.berryQty;
+  }
+  // The sleep period ends at the next wake-up; its stored skills do not change today's production.
+  if(periodIndex<periods.length-1&&(teamRecovery>0||allyRecovery>0)){
+   // Random ally target is approximated as an equal share; actual targeting favors low energy.
+   for(const member of valid)member.energy=Math.min(150,member.energy+(teamRecovery+allyRecovery/valid.length)*member.stats.energyFactor);
+  }
+  elapsedTicks+=hours*6;
+ });
+ for(const member of valid){
+  member.berryEnergyBase=member.berries*berryEnergyAtLevel(member.berryBase,member.level);
+  member.berryEnergy=member.berryEnergyBase*(favorites.has(member.berryName)?2:1)*areaFactor;
+ }
+ const foods=new Map();
+ valid.forEach(member=>member.foods.forEach((qty,name)=>foods.set(name,(foods.get(name)||0)+qty)));
+ const berryEnergy=valid.reduce((sum,member)=>sum+member.berryEnergy,0);
+ const skillEnergyBase=valid.reduce((sum,member)=>sum+(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy)?member.skillTriggers*member.skillEnergy:0),0);
+ const skillEnergy=skillEnergyBase*areaFactor;
+ const dreamShards=valid.reduce((sum,member)=>sum+(Number.isFinite(member.skillShards)?member.skillTriggers*member.skillShards:0),0);
+ const randomIngredients=valid.reduce((sum,member)=>sum+member.randomIngredients,0);
+ return {members,foods,randomIngredients,dreamShards,berryEnergy,skillEnergy,skillEnergyBase,periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor};
+}
+// Box detail fragment: assembled inside the core controller closure.
+const boxEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const selectedSpecies=()=>window.PS_CATALOG?.pokemon?.[state.selected?.no]||null;
+function openBox(id){state.selected=state.box.find(x=>x.id===id);if(!state.selected)return;boxTitle.textContent=state.selected.name;syncLevel();go('boxDetail')}
+function boxDailyEstimate(item){
+ const inTeam=team.includes(item.id),ids=inTeam?team:[item.id];
+ const interval=Number(document.getElementById('teamCollectionInterval').value);
+ const result=dailyBaseline(ids,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,activeFieldBerries(),fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
+ return {result,member:result.members.find(m=>m.id===item.id),inTeam};
+}
+function renderBoxDayFood(estimate){
+ const {result,member,inTeam}=estimate,host=document.getElementById('boxDayFood');
+ const scope=inTeam?'チーム条件':'単体条件';
+ const conditions=`${scope}・回収${result.interval}時間・起床時げんき${result.startingEnergy}・いいキャンプ${result.goodCamp?'ON':'OFF'}・食事${result.threeMeals?'3回':'なし'}`;
+ if(!member||member.missing){host.innerHTML=`<p class="psg-box-pending">１日の獲得予想：${boxEsc(member?.reasons?.join('・')||'個体情報')}を設定してください</p>`;return}
+ const amounts=[...member.foods].map(([name,qty])=>{
+  const src=window.PS_CATALOG.ingredientVisual(name)?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  return `<span class="psg-box-day-food-item" title="${boxEsc(name)}" aria-label="${boxEsc(name)} 約${qty.toFixed(1)}個">${src?`<img src="${src}" alt="">`:boxEsc(name)}<b>約${qty.toFixed(1)}</b></span>`;
+ }).join('');
+ host.innerHTML=`<div class="psg-box-day-food-line"><small>１日予想</small>${amounts}</div><details class="psg-box-explanation"><summary>推定・${scope}</summary><p>${conditions}</p><p>ホームの設定を使用。16時間活動・8時間睡眠。食材枠は等確率、満杯は期待値で判定。サポート・ブーストの追加おてつだいは含みます。ランダム食材は種類未指定の別表示。リボン補正は含みません。性格未入力は無補正として仮計算します。</p>${inTeam&&result.members.some(m=>m.missing)?'<p>未設定のチーム個体は計算対象外です。</p>':''}</details>`;
+}
+function boxDailySkillText(estimate){
+ const {result,member}=estimate;
+ if(!member||member.missing||!Number.isFinite(member.stats?.skill)||!member.skillName)return '１日の発動予想：条件・発動率未確認';
+ const n=member.skillTriggers;let amount='';
+ if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))amount=`・ランダム食材 約${(n*member.skillAmount).toFixed(1)}個（種類未指定・別集計）`;
+ else if(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))amount=`・エナジー 約${Math.round(n*member.skillEnergy*result.areaFactor).toLocaleString()}（エリア補正込み）`;
+ else if(['team_energy_recovery','self_energy_recovery','ally_energy_recovery'].includes(member.skillEffectType)&&Number.isFinite(member.skillRecovery))amount='（回復による速度変化は予想に反映）';
+ else if(member.boost&&Number.isFinite(member.skillHelps))amount=`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`;
+ else if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))amount=`（1匹に${member.skillHelps}回／発動・対象は均等配分して日産に反映）`;
+ else if(!Number.isFinite(member.skillShards))amount='（効果の日産加算は未対応）';
+ if(Number.isFinite(member.skillShards))amount+=`・ゆめのかけら 約${Math.round(n*member.skillShards).toLocaleString()}個${member.skillEffectType==='variable_dream_shards'?'（範囲平均の近似）':''}`;
+ return `１日 約${n.toFixed(1)}回${amount}`;
+}
+function syncLevel(){
+ const item=state.selected;if(!item)return;
+ const p=selectedSpecies();
+ const calc=individualCorrections(item,p);
+ lv.textContent='Lv.'+item.level;lvRange.value=item.level;
+ boxTitle.textContent=item.name;
+ document.getElementById('boxHeaderNo').textContent=`No.${String(item.no).padStart(3,'0')}`;
+ document.getElementById('boxFavorite').setAttribute('aria-pressed',String(!!item.favorite));
+ document.getElementById('boxFavorite').textContent=item.favorite?'★':'☆';
+ document.getElementById('boxTraining').setAttribute('aria-pressed',String(!!item.training));
+ document.getElementById('boxTraining').textContent='🌱';
+ const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
+ document.getElementById('boxTraits').innerHTML=`<span class="psg-box-trait psg-box-trait-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-box-trait">${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-box-trait psg-v106-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span>`;
+ hydrateSpecialtyIcons(document.getElementById('boxTraits'));
+ const artwork=document.getElementById('boxArtwork');
+ const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
+ hero.style.setProperty('--box-type-bg',theme[0]);hero.style.setProperty('--box-type-accent',theme[1]);
+ const badges=p?`<div class="psg-box-art-badges"><span class="psg-box-art-badge" title="タイプ：${boxEsc(p.type)}" aria-label="タイプ：${boxEsc(p.type)}">${typeFilterArt(p.type)}</span></div>`:'';
+ artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image||p?.faceImage,'pokemon',p?.no,p?.image===p?.faceImage?'face':'full',item.name)||'No image')+badges;
+ hydrateSpecialtyIcons(artwork);
+ const naturePending=(!item.nature&&!item.mint)||calc.unknown.length;
+ const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);
+ const rateNote=(factor,kind)=>{const next=factor===1?nextRateUnlock(kind):null;return next?`推定・Lv.${next}で補正`:`推定・×${factor.toFixed(2)}`};
+ const fields=[['おてつだい時間',calc.speed,'秒','Lv・個体補正',naturePending],['最大所持数',calc.carry,'','補正反映',false],['食材確率',calc.food,'%',rateNote(calc.foodFactor,'foodRateBonus'),naturePending],['スキル発動確率',calc.skill,'%',rateNote(calc.skillFactor,'skillRateBonus'),naturePending]];
+ document.getElementById('boxStats').innerHTML=fields.map(([title,value,unit,note,pending])=>`<div class="psg-box-stat"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`).join('');
+ const slots=p?.ingredientSlots||[];
+ const ingredientRows=[1,30,60].map((unlock,index)=>{
+  const slot=slots.find(s=>s.unlock===unlock);
+  const name=item.ingredients?.[unlock]||((slot?.candidates?.length===1)?slot.candidates[0].name:'');
+  const choice=slot?.candidates?.find(x=>x.name===name);
+  const image=name&&window.PS_CATALOG.ingredientVisual(name)?.image;
+  const iconSource=image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  const icon=iconSource?`<img src="${iconSource}" alt="${boxEsc(name)}">`:'';
+  return `<div class="psg-v106-ingredient ${item.level<unlock?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''}${item.level<unlock?' 未解放':''}"><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">${unlock===1?'初期':'Lv.'+unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong></div>`;
+ });
+ document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
+ const daily=boxDailyEstimate(item);renderBoxDayFood(daily);
+ document.getElementById('boxSubskillRows').innerHTML=SUBSKILL_LEVELS.map((unlock,index)=>{
+  const name=item.subskills?.[index]||'',badge=window.PS_IMAGE_FILES.subskills?.[name];
+  const locked=unlock>MAX_POKEMON_LEVEL||item.level<unlock;
+  return `<div class="psg-box-subskill ${locked?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'未確認')}${locked?' 未解放':''}"><div class="psg-subskill-top"><b>Lv.${unlock}</b>${badge?`<img class="psg-subskill-badge" src="${badge}" alt="">`:'<span class="psg-subskill-unknown" aria-hidden="true">◌</span>'}</div><strong>${boxEsc(name||'未確認')}</strong></div>`;
+ }).join('');
+ const skill=window.PS_CATALOG?.skills?.[p?.mainSkillId];
+ const skillLv=Math.min(Math.max(1,item.skillLevel||1),skill?.maxLevel||7);
+ const currentEffect=skill?.levels?.[skillLv];
+ const effect=skill?.displayNote&&currentEffect?.description?`１回の効果量：${boxEsc(currentEffect.description)}`:skill?.effectType==='random_ingredients'&&currentEffect?.amount!=null?`１回の効果量：ランダムな食材 ${currentEffect.amount}個`:skill?.effectType==='fixed_energy'&&currentEffect?.energy!=null?`１回の効果量：カビゴンのエナジーを ${currentEffect.energy.toLocaleString()} 増やす`:skill?.effectType==='variable_energy'&&currentEffect?.min!=null&&currentEffect?.max!=null?`１回の効果量：カビゴンのエナジーを ${currentEffect.min.toLocaleString()}～${currentEffect.max.toLocaleString()} 増やす`:skill?.effectType==='team_energy_recovery'&&currentEffect?.recovery!=null?`１回の効果量：チーム各匹のげんき＋${currentEffect.recovery}`:currentEffect?.description?`１回の効果量：${boxEsc(currentEffect.description)}`:'効果量 未確認';
+ const skillArt=skill?.image?window.PS_DEV_ASSETS.image(skill.image,'skill',skill.id,'full',skill.name):'';
+ const isBoost=skill?.effectType?.startsWith('helper_boost_')&&currentEffect?.helps!=null;
+ const summary=isBoost?`チーム全員が各${currentEffect.helps}回分おてつだい＋タイプ種類数ボーナス`:effect;
+ document.getElementById('boxMainSkill').innerHTML=`<div class="psg-box-lead">${skillArt?`<span class="psg-box-skill-art">${skillArt}</span>`:''}${boxEsc(skill?.name||'未確認')}　Lv.${skillLv}</div><p class="psg-box-effect">${summary}</p><p class="psg-box-pending" id="boxDaySkill">${boxDailySkillText(daily)}</p><details class="psg-box-explanation"><summary>効果・計算の詳細</summary>${skill?.calculationNote?`<p class="psg-box-muted">${boxEsc(skill.calculationNote)}</p>`:''}${isBoost?`<p>${effect}</p>`:''}<p class="psg-box-muted">発動回数は満杯前のおてつだいとストック上限から推定。天井・実際の発動タイミング・リボン補正は未対応。発動率は推定値を使用。</p></details>`;
+ const mintIcon=`<span class="psg-mint-mark" title="まっしろミント適用済み" aria-label="まっしろミント適用済み">${window.PS_UI_ART.icon('items','まっしろミント')}</span>`;
+ const labels={speed:'おてつだい速度',energy:'げんき回復',food:'食材確率',skill:'スキル確率',exp:'EXP'};
+ const natureText=item.mint?'ミント適用：性格補正なし':!item.nature?'性格未入力（無補正として仮計算）':!NATURE_EFFECTS[item.nature]?'性格名未対応（無補正として仮計算）':calc.nature.up?`${labels[calc.nature.up]}↑ / ${labels[calc.nature.down]}↓`:'性格補正なし';
+ const natureEffects=!item.mint&&calc.nature.up?`<span class="psg-nature-up">${boxEsc(labels[calc.nature.up])} ↑</span><span class="psg-nature-down">${boxEsc(labels[calc.nature.down])} ↓</span>`:`<span class="psg-box-muted">${boxEsc(natureText)}</span>`;
+ document.getElementById('boxNature').innerHTML=`<div class="psg-box-nature-row"><div class="psg-box-lead">${boxEsc(item.nature||'未確認')}${item.mint?mintIcon:''}</div><div class="psg-box-nature-effects">${natureEffects}</div></div>${calc.unknown.length?'<p class="psg-box-muted">未対応：'+boxEsc(calc.unknown.join('・'))+'。</p>':''}`;
+ document.getElementById('boxEvaluation').innerHTML=renderIndividualEvaluation(item,p);
+ const milestones=[...new Set([...slots.map(s=>s.unlock).filter(n=>n>1),...SUBSKILL_LEVELS.filter(n=>n<=MAX_POKEMON_LEVEL)])].filter(n=>n>item.level&&n<=MAX_POKEMON_LEVEL).sort((a,b)=>a-b).slice(0,2);
+ document.getElementById('boxGrowth').innerHTML=milestones.length?milestones.map(n=>`<div class="psg-milestone"><b>Lv.${n}　${slots.some(s=>s.unlock===n)?'食材解放':'Sスキル解放'}</b></div>`).join('')+'<p class="psg-box-muted">必要アメ・ゆめのかけら：未確認</p>':'<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
+ document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">${window.PS_UI_ART.icon('ribbons',item.ribbonHours)}おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}${item.ribbonHours?'（計算補正は未反映）':''}</p>`);
+ const parent=p?.evolution;
+ if(parent&&!Array.isArray(parent))document.getElementById('boxGrowth').insertAdjacentHTML('beforeend',`<p class="psg-box-muted">進化先：${boxEsc(parent.to||'未確認')}　${parent.level?'Lv.'+parent.level:''}${parent.candy?'・アメ'+parent.candy+'個':''}</p>`);
+ fillBoxEditor(item,p);
+}
+// Form setting stays within a connected, registered evolution family. It never spends game resources.
+function evolutionFamily(no){
+ const pokemon=boxCatalog(),family=new Set([Number(no)]);
+ const targets=p=>[...(Array.isArray(p.evolution)?p.evolution:[p.evolution])].filter(Boolean).map(e=>Number(e.toNo));
+ let changed=true;
+ while(changed){changed=false;for(const p of pokemon)for(const target of targets(p)){
+  if(!pokemon.some(x=>Number(x.no)===target))continue;
+  if(family.has(Number(p.no))||family.has(target))for(const n of [Number(p.no),target])if(!family.has(n)){family.add(n);changed=true}
+ }}
+ return pokemon.filter(p=>family.has(Number(p.no))).sort((a,b)=>Number(a.no)-Number(b.no));
+}
+function fillBoxEditor(item,p){
+ const form=document.getElementById('boxEditForm');
+ form.elements.evolution.innerHTML=evolutionFamily(item.no).map(x=>`<option value="${x.no}">${boxEsc(x.name)}</option>`).join('');
+ form.elements.evolution.value=String(item.no);
+ form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+ form.elements.ribbonHours.value=String(item.ribbonHours||0);
+ const ribbonPreview=document.getElementById('boxRibbonPreview');
+ const updateRibbonPreview=()=>{ribbonPreview.innerHTML=window.PS_UI_ART.icon('ribbons',form.elements.ribbonHours.value)};
+ updateRibbonPreview();form.elements.ribbonHours.onchange=updateRibbonPreview;
+ document.getElementById('boxMintIcon').innerHTML=window.PS_UI_ART.icon('items','まっしろミント');
+ form.elements.favorite.checked=!!item.favorite;form.elements.training.checked=!!item.training;
+ const natureOptions=['',...NATURE_ROWS.flat()];
+ if(item.nature&&!natureOptions.includes(item.nature))natureOptions.push(item.nature);
+ form.elements.nature.innerHTML=natureOptions.map(name=>`<option value="${boxEsc(name)}">${boxEsc(name||'未確認')}${name&&!NATURE_EFFECTS[name]?'（未対応）':''}</option>`).join('');
+ form.elements.nature.value=item.nature||'';
+ form.elements.mint.checked=!!item.mint;
+ form.elements.skillLevel.value=item.skillLevel||1;
+ form.elements.role.querySelector('[data-legacy]')?.remove();
+ if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
+ form.elements.role.value=item.role||'';
+ const slots=p?.ingredientSlots||[];
+ document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
+  const candidates=slots.find(s=>s.unlock===unlock)?.candidates||[];
+  const chosen=item.ingredients?.[unlock]||((candidates.length===1)?candidates[0].name:'');
+  return `<label>Lv.${unlock} 食材<select name="ingredient-${unlock}"><option value="">未確認</option>${candidates.map(c=>`<option value="${boxEsc(c.name)}" ${c.name===chosen?'selected':''}>${boxEsc(c.name)} ×${c.qty}</option>`).join('')}</select></label>`;
+ }).join('');
+ document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
+}
+function updateLevel(level){
+ if(!state.selected||!Number.isInteger(level)||level<1||level>MAX_POKEMON_LEVEL)return;
+ const changed={...state.selected,level};
+ if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
+}
+minus.onclick=()=>updateLevel(Math.max(1,(state.selected?.level||1)-1));
+plus.onclick=()=>updateLevel(Math.min(MAX_POKEMON_LEVEL,(state.selected?.level||1)+1));
+lvRange.oninput=()=>updateLevel(+lvRange.value);
+function showBoxEditor(){const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})}
+ document.getElementById('boxEditShortcut').onclick=showBoxEditor;document.getElementById('boxHeaderEdit').onclick=showBoxEditor;
+ for(const [id,field] of [['boxFavorite','favorite'],['boxTraining','training']])document.getElementById(id).onclick=()=>{
+  if(!state.selected)return;const changed={...state.selected,[field]:!state.selected[field]};
+  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
+ };
+document.getElementById('boxEditForm').onsubmit=e=>{
+ e.preventDefault();const item=state.selected,p=selectedSpecies();if(!item||!p)return;
+ const form=e.currentTarget;const data=new FormData(form),ingredients={};
+ for(const unlock of [1,30,60]){
+  const value=String(data.get(`ingredient-${unlock}`)||'');
+  if(p.ingredientSlots?.find(s=>s.unlock===unlock)?.candidates?.some(c=>c.name===value))ingredients[unlock]=value;
+ }
+ const target=evolutionFamily(item.no).find(x=>Number(x.no)===Number(data.get('evolution')))||p;
+ for(const [unlock,name] of Object.entries(ingredients))if(!target.ingredientSlots?.find(s=>s.unlock===Number(unlock))?.candidates?.some(c=>c.name===name)){document.getElementById('boxEditMessage').textContent='進化先の食材候補と一致しません。食材を確認してください。';return}
+ const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[target.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
+ const ribbonHours=Number(data.get('ribbonHours'));
+ const changed={...item,no:Number(target.no),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
+ const filled=changed.subskills.filter(Boolean);
+ if(new Set(filled).size!==filled.length){document.getElementById('boxEditMessage').textContent='同じサブスキルを重複して設定できません';return}
+ if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel();document.getElementById('boxEditMessage').textContent='保存しました'}
+};
+boxSearch.oninput=renderBox;dexSearch.oninput=renderDex;
+function closeBoxAdd(){boxAddPanel.hidden=true;addBtn.setAttribute('aria-expanded','false')}
+addBtn.onclick=()=>{
+ const opening=boxAddPanel.hidden;
+ if(opening)boxSpecies.innerHTML=boxCatalog().map(p=>`<option value="${p.no}">No.${String(p.no).padStart(3,'0')} ${p.name}</option>`).join('');
+ boxAddPanel.hidden=!opening;addBtn.setAttribute('aria-expanded',String(opening));
+};
+boxCancelAdd.onclick=closeBoxAdd;
+boxConfirmAdd.onclick=()=>{
+ const p=boxCatalog().find(x=>Number(x.no)===Number(boxSpecies.value));if(!p)return;
+ const id=globalThis.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}`;
+ if(commitBox([...state.box,{id,no:Number(p.no),name:p.name,specialty:p.specialty,level:1}])){
+  boxUndoPanel.hidden=true;closeBoxAdd();boxSearch.value='';renderBox();
+ }
+};
+let lastRemoval=null;
+boxRemoveBtn.onclick=()=>{
+ const selected=state.selected;if(!selected||!confirm(`${selected.name} Lv.${selected.level}をBoxから削除しますか？`))return;
+ const index=state.box.findIndex(x=>x.id===selected.id);if(index<0)return;
+ if(commitBox(state.box.filter(x=>x.id!==selected.id))){lastRemoval={selected,index};state.selected=null;boxUndoPanel.hidden=false;go('box',false)}
+};
+boxUndoRemove.onclick=()=>{
+ if(!lastRemoval)return;
+ const next=[...state.box];next.splice(lastRemoval.index,0,lastRemoval.selected);
+ if(commitBox(next)){lastRemoval=null;boxUndoPanel.hidden=true}
+};
+hydrateSpecialtyIcons(document);renderFilters();setupMenus();renderDex();renderBox();
+window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel,teamContext};
+})();
+</script>
+<script id="psg-dex-catalog-adapter">
+(()=>{
+/* Dex cards share the same records and Pokédex order as the detail renderer. */
+if(window.PS?.master&&window.PS_CATALOG){
+ window.PS.master.pokemon.splice(0,window.PS.master.pokemon.length,
+  ...Object.values(window.PS_CATALOG.pokemon).filter(p=>p.dexVisible).sort((a,b)=>Number(a.no)-Number(b.no))
+ );
+ // The catalog arrives after the controller initializes; generate its filters now.
+ window.PS.renderFilters?.();
+ window.PS.renderDex?.();
+}
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+<script id="stable-v12-controller">
+(()=>{
+ const V=window.PS_CATALOG;if(!V)return;
+ const detailEsc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+ let currentNo=1,currentTab="ability";
+ const byNo=n=>V.pokemon[Number(n)]||null;
+ const neighborOf=(no,direction)=>{
+   const knownNos=Object.values(V.pokemon)
+     .filter(p=>p&&Number.isInteger(Number(p.no))&&p.name)
+     .map(p=>Number(p.no)).sort((a,b)=>a-b);
+   const index=knownNos.indexOf(Number(no));
+   return index<0?null:byNo(knownNos[index+direction]);
+ };
+ const skillOf=m=>m?V.skills[m.mainSkillId]:null;
+
+ const TYPE_THEME=window.PS_TYPE_THEME;
+ const TYPE_ICONS={
+   "くさ":"🌿","ほのお":"🔥","みず":"💧","でんき":"⚡","こおり":"❄️",
+   "かくとう":"🥊","どく":"☠️","じめん":"⛰️","ひこう":"🪽","エスパー":"🔮",
+   "むし":"🐛","いわ":"🪨","ゴースト":"👻","ドラゴン":"🐉","あく":"🌑",
+   "はがね":"⚙️","フェアリー":"✨","ノーマル":"◯"
+ };
+ const iconForType=type=>TYPE_ICONS[type]||"◯";
+ function setTheme(type){
+   const [bg,accent]=TYPE_THEME[type]||["#f3f6f4","#718078"];
+   const d=document.getElementById("dexDetail");
+   d.style.setProperty("--type-bg",bg);d.style.setProperty("--type-accent",accent);
+ }
+ function show(id){
+   document.querySelectorAll(".screen").forEach(x=>x.classList.toggle("active",x.id===id));
+   if(window.PS?.state)window.PS.state.screen=id;
+   window.scrollTo(0,0);
+ }
+ // v30: app-local detail history. Keeps evolution jumps reversible without relying on browser history.
+ const detailHistory=[],detailForward=[];
+ let detailOrigin="dex";
+ const info=document.querySelector("#dexDetail .hero-info");
+ const stats=document.querySelector("#dexDetail .hero > .stats")||document.querySelector("#dexDetail .hero-info .stats");
+ if(info&&stats&&stats.parentElement!==info) info.appendChild(stats);
+
+ // Remove legacy duplicated identity/traits and legacy tab strip.
+ ["detailTraits","detailName"].forEach(id=>document.getElementById(id)?.remove());
+ document.querySelectorAll("#dexDetail .detail-tabs").forEach(x=>x.remove());
+
+ // Resolve the hero before it is referenced below.
+ // v54 referenced `hero` before this const declaration, which throws a ReferenceError
+ // and aborts the whole detail controller before openDexCard is registered.
+ const hero=document.querySelector("#dexDetail .hero");
+ let tabs=document.getElementById("v12Tabs");
+ if(!tabs){
+   tabs=document.createElement("div");tabs.id="v12Tabs";tabs.className="v12-tabs";
+   tabs.innerHTML='<button data-v12tab="ability">基本能力</button><button data-v12tab="sleep">寝顔図鑑 <span class="psg-sleep-tab-count"></span></button><button data-v12tab="field">フィールド</button>';
+   hero?.appendChild(tabs);
+ }
+ // Everything after hero becomes the switchable area. Existing ability sections are grouped.
+ let ability=document.getElementById("v12Ability");
+ if(!ability){
+   ability=document.createElement("div");ability.id="v12Ability";ability.className="v12-panel";
+   const movable=[];
+   let node=hero?.nextElementSibling;
+   while(node){
+     const next=node.nextElementSibling;
+     if(!node.matches("nav,.bottom-nav")) movable.push(node);
+     node=next;
+   }
+   movable.forEach(n=>ability.appendChild(n));
+   hero?.after(ability);
+ }
+ 
+ // Remove legacy headings/table header that are replaced by the current renderers.
+ // This fixes the visible duplicate UI without deleting the CSS/layout that v17 relies on.
+ ability.querySelectorAll(".ability-card").forEach(card=>{
+   const title=card.querySelector(":scope > .ability-title");
+   const legacyFoodHead=card.querySelector(":scope > .food-table-head");
+   if(title) title.remove();
+   if(legacyFoodHead) legacyFoodHead.remove();
+ });
+
+ let sleep=document.getElementById("v12Sleep");
+ if(!sleep){sleep=document.createElement("div");sleep.id="v12Sleep";sleep.className="v12-panel";ability.after(sleep)}
+ let field=document.getElementById("v12Field");
+ if(!field){field=document.createElement("div");field.id="v12Field";field.className="v12-panel";field.innerHTML='<div class="v12-placeholder">フィールドデータをここに表示します</div>';sleep.after(field)}
+ // Pin identity and tab navigation together, while keeping the tabs outside the type-colored card.
+ let sticky=document.getElementById('psgDexSticky');
+ if(!sticky){
+   sticky=document.createElement('div');sticky.id='psgDexSticky';sticky.className='psg-dex-sticky';
+   hero.before(sticky);sticky.append(hero,tabs);
+ }
+
+ // Discoveries are stored by permanent sleep-style ID, never by position or name.
+ const SLEEP_FOUND_KEY='psg-sleep-discoveries-v1';
+ function readSleepFound(){
+   try{
+     const saved=JSON.parse(localStorage.getItem(SLEEP_FOUND_KEY)||'{}');
+     return saved&&typeof saved==='object'&&!Array.isArray(saved)?saved:{};
+   }catch{return {}}
+ }
+ let sleepFound=readSleepFound();
+ function renderSleepStyles(m){
+   sleep.replaceChildren();
+   const styles=(V.sleepStyles?.[m.no]||[]).filter(x=>x&&x.id&&Number.isInteger(Number(x.stars))&&Number(x.stars)>=1&&Number(x.stars)<=5)
+     .slice().sort((a,b)=>Number(a.stars)-Number(b.stars)||Number(a.order||0)-Number(b.order||0)||String(a.id).localeCompare(String(b.id)));
+   const registered=styles.filter(x=>sleepFound[x.id]).length;
+   const sleepTab=tabs.querySelector('[data-v12tab="sleep"]');
+   sleepTab.querySelector('.psg-sleep-tab-count').textContent=`${registered}/${styles.length}`;
+   sleepTab.setAttribute('aria-label',`寝顔図鑑、${styles.length}種類中${registered}種類登録済み`);
+   if(!styles.length){
+     const empty=document.createElement('p');empty.className='psg-sleep-empty';
+     empty.textContent='寝顔データ未登録。確認できた寝顔をマスターデータに追加すると、ここに★順で表示します。';
+     sleep.appendChild(empty);return;
+   }
+   const grid=document.createElement('div');grid.className='psg-sleep-grid';
+   styles.forEach(style=>{
+     const card=document.createElement('article');card.className='psg-sleep-card';
+     const photo=document.createElement('div');photo.className='psg-sleep-photo';
+     const fallback=document.createElement('span');fallback.className='psg-sleep-no-image';fallback.textContent='No image';
+     if(style.image){
+       const img=document.createElement('img');img.src=style.image;img.alt=style.name||'寝顔';img.loading='lazy';
+       img.onerror=()=>{img.remove();photo.appendChild(fallback)};
+       photo.appendChild(img);
+     }else photo.appendChild(fallback);
+     const toggle=document.createElement('button');toggle.type='button';toggle.className='psg-sleep-toggle';
+     toggle.setAttribute('aria-pressed',sleepFound[style.id]?'true':'false');
+     toggle.setAttribute('aria-label',`${m.name} ${style.name||'寝顔'} ${sleepFound[style.id]?'登録済み。タップして未登録にする':'未登録。タップして登録する'}`);
+     toggle.textContent=sleepFound[style.id]?'✓':'○';
+     toggle.onclick=()=>{
+       const updated={...sleepFound};
+       if(updated[style.id])delete updated[style.id];else updated[style.id]=true;
+       try{localStorage.setItem(SLEEP_FOUND_KEY,JSON.stringify(updated));sleepFound=updated;renderSleepStyles(m);window.PS?.renderDex?.()}
+       catch{toggle.setAttribute('aria-label','保存できませんでした。端末の保存設定を確認してください')}
+     };
+     photo.appendChild(toggle);card.appendChild(photo);
+     const caption=document.createElement('div');caption.className='psg-sleep-caption';
+     const stars=document.createElement('strong');stars.className='psg-sleep-stars';stars.textContent=`★${style.stars}`;
+     const name=document.createElement('span');name.textContent=style.name||'名称未確認';
+     caption.append(stars,name);card.appendChild(caption);grid.appendChild(card);
+   });
+   sleep.appendChild(grid);
+ }
+ function renderPokemonFields(m){
+   field.replaceChildren();
+   const title=document.createElement('h3');title.textContent='フィールド別の寝顔・最低ランク';field.append(title);
+   const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
+   let found=false;
+   for(const entry of Object.values(V.fields||{}).sort((a,b)=>(a.mode==='expert')-(b.mode==='expert'))){
+     const rows=(entry.encounters||[]).filter(row=>Number(row.sleepStyleId.split('_')[0])===m.no);
+     if(!rows.length)continue;
+     found=true;
+     const section=document.createElement('section');section.className='psg-field-species';
+     const heading=document.createElement('h4');heading.textContent=entry.name;section.append(heading);
+     for(const item of rows){
+       const style=V.sleepStyles?.[m.no]?.find(row=>row.id===item.sleepStyleId);
+       if(!style)continue;
+       const line=document.createElement('div');line.className='psg-field-encounter-row';
+       const label=document.createElement('span');label.textContent=`★${style.stars} ${style.name}`;
+       const rank=document.createElement('strong');rank.textContent=`${item.rank.tier}${item.rank.level}から${Number.isFinite(item.unlockEnergy)?`・エナジー${item.unlockEnergy.toLocaleString()}`:''}`;
+       window.PS_UI_ART.rank(rank,item.rank.tier);
+       const condition=document.createElement('small');condition.className='note';condition.style.display='block';condition.textContent=`必要ねむけパワー：${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}${item.eventOnly?'・イベント条件あり':''}`;label.append(condition);
+       line.append(label,rank);section.append(line);
+     }
+     field.append(section);
+   }
+   if(!found){const empty=document.createElement('p');empty.className='v12-placeholder';empty.textContent='フィールド出現データ未投入';field.append(empty)}
+ }
+ window.PSG_REFRESH_SLEEP_FOUND=()=>{
+   sleepFound=readSleepFound();
+   const pokemon=byNo(currentNo);
+   if(pokemon)renderSleepStyles(pokemon);
+ };
+
+ function switchTab(tab){
+   currentTab=tab;
+   [["ability",ability],["sleep",sleep],["field",field]].forEach(([k,p])=>p.classList.toggle("active",k===tab));
+   tabs.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.v12tab===tab));
+ }
+ tabs.onclick=e=>{const b=e.target.closest("[data-v12tab]");if(b)switchTab(b.dataset.v12tab)};
+
+ function header(m){
+   let h=document.getElementById("v12Header");
+   if(!h){h=document.createElement("div");h.id="v12Header";info.prepend(h)}
+   const prev=neighborOf(m.no,-1),next=neighborOf(m.no,1);
+   const berryQty=m.berryQtyOverride??m.berryQty;
+
+   // v51: 1-2 + previous/next move into the sticky detail header.
+   const head=document.querySelector("#dexDetail .detail-head");
+   if(head){
+     const title=head.querySelector("h2");
+     if(title) title.innerHTML=`<span class="v51-head-no">No.${String(m.no).padStart(3,"0")}</span><span class="v51-head-name">${m.name}</span>`;
+     head.querySelector(".v51-head-nav")?.remove();
+     const nav=document.createElement("div");
+     nav.className="v51-head-nav";
+     nav.innerHTML=`<button id="v12Prev" aria-label="前のポケモン" ${prev?"":"disabled"}>‹</button><button id="v12Next" aria-label="次のポケモン" ${next?"":"disabled"}>›</button>`;
+     head.appendChild(nav);
+   }
+
+   // v51: right side line 1 = former 1-3 (3 columns). Identity/type no longer consumes this area.
+   h.innerHTML=`<div class="v19-traits">
+     <span class="v44-berry-trait"><span class="v44-berry-visual" title="${m.berry||'きのみ'}">${m.berryImage?window.PS_DEV_ASSETS.image(m.berryImage,'berry',m.berry,'full',m.berry):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'}</span><b>${berryQty==null?"未確認":`×${berryQty}`}</b></span>
+     <span class="v44-sleep-trait">${window.PS_SLEEP_ICON(m.sleepType)} ${m.sleepType}</span>
+     <span class="v44-specialty-trait" title="得意：${m.specialty}" aria-label="得意：${m.specialty}">${window.PS_SPECIALTY_IMAGES?.[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]?`<img class="psg-specialty-icon" src="${window.PS_SPECIALTY_IMAGES[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]}" alt="">`:m.specialty}</span>
+   </div>`;
+
+   // Keep artwork square and place the compact trait row beneath it.
+   const heroTop=document.querySelector('#dexDetail .hero-top');
+   let media=heroTop?.querySelector('.psg-v106-media');
+   if(heroTop&&!media){media=document.createElement('div');media.className='psg-v106-media';heroTop.prepend(media);media.appendChild(document.getElementById('detailArt'))}
+   const heroInfo=heroTop?.querySelector('.hero-info');
+   if(heroInfo)heroInfo.insertBefore(h,heroInfo.querySelector('.stats'));
+   // Type belongs to the artwork, at its lower-right corner.
+   const art=document.getElementById("detailArt");
+   if(art){
+     art.replaceChildren();
+     const preview=window.PS_DEV_ASSETS;
+     const img=document.createElement('img');
+     const role=m.image&&m.image===window.PS_IMAGE_FILES.pokemonFaces?.[m.no]?'face':'full';
+     const expected=preview.path('pokemon',m.no,role);
+     img.src=m.image||preview.preview(expected);
+     img.alt=m.name;
+     img.classList.toggle('psg-asset-preview',!m.image);
+     img.title=preview.title(expected);
+     if(m.image)img.dataset.previewPath=expected;
+     art.appendChild(img);
+     const badge=document.createElement("span");
+     badge.className="v51-type-badge";
+     badge.title="タイプ："+m.type;badge.setAttribute("aria-label",badge.title);
+     badge.innerHTML=window.PS_TYPE_ART?.(m.type)||iconForType(m.type);
+     art.appendChild(badge);
+   }
+ }
+ function renderStats(m){
+   stats.innerHTML=`<div class="stat"><small><span class="v45-stat-icon">⏱</span><span class="v45-stat-text">おてつだい時間</span></small><b>${m.help?.toLocaleString()||"—"}秒</b></div>
+   <div class="stat"><small><span class="v45-stat-icon">🎒</span><span class="v45-stat-text">最大所持数</span></small><b>${m.carry??"未確認"}</b></div>
+   <div class="stat"><small><span class="v45-stat-icon">🥕</span><span class="v45-stat-text">食材確率</span></small><b>${m.foodRate??"—"}%</b></div>
+   <div class="stat"><small><span class="v45-stat-icon">✨</span><span class="v45-stat-text">スキル発動確率</span></small><b>${m.skillRate??"—"}%</b></div>`;
+ }
+ function renderFood(m){
+   const host=document.getElementById('detailFoods');
+   document.getElementById('foodRateBadge')?.style.setProperty('display','none');
+   if(!host)return;
+   const rows=(m.ingredients||[]).map((x,i)=>{
+     const image=V.ingredientVisual(x.name)?.image;
+     const iconSource=image||window.PS_INGREDIENT_FALLBACK_ICON?.(x.name);
+     const visual=iconSource?`<img src="${iconSource}" alt="${x.name}">`:`<span class="psg-food-fallback">${x.name||'未確認'}</span>`;
+     const quantities=(x.qty||[]).map(n=>`<div class="psg-food-level"><strong>${n==null?'—':n+'個'}</strong></div>`).join('');
+     const knownRecipes=V.recipesByIngredient?.[x.name]||[];
+     const tiles=knownRecipes.map(recipe=>`<div class="psg-food-recipe-tile" data-meal-category="${recipe.category||''}" title="${recipe.name||'料理'}" aria-label="${recipe.name||'料理'}${recipe.amount!=null?' '+recipe.amount+'個':''}">${recipe.image?`<img src="${recipe.image}" alt="">`:'<span class="psg-food-recipe-missing" aria-hidden="true">🍽</span>'}${recipe.amount!=null?`<small>${recipe.amount}</small>`:''}</div>`).join('');
+     const recipes=knownRecipes.length?`<div class="psg-food-recipes"><div class="psg-food-recipe-strip">${tiles}</div></div>`:'<div class="psg-food-recipes is-pending"><span class="psg-food-pending">データ未確認</span></div>';
+     return `<div class="psg-food-row" data-slot="${x.slot||['A','B','C'][i]}"><div class="psg-food-id"><b>${x.slot||['A','B','C'][i]}</b>${visual}</div><div class="psg-food-levels">${quantities}</div>${recipes}</div>`;
+   }).join('');
+   host.innerHTML=`<div class="psg-food-head"><div class="psg-food-rate"><span>食材</span><strong>${m.foodRate!=null?m.foodRate+'%':'未確認'}</strong></div><div class="psg-food-head-levels"><span></span><span>Lv.30</span><span>Lv.60</span></div><b>対応料理</b></div>${rows?`<div class="psg-food-stack">${rows}</div>`:'<p class="unknown">食材データ未確認</p>'}`;
+ }
+ function skillVariables(s,x,lv){
+  const value=(v,kind,unit='')=>`<span class="skill-var effect-${kind}">${detailEsc(typeof v==='number'?v.toLocaleString():v)}${unit}</span>`;
+  const type=s.effectType;
+  if(type==='conditional_ingredient_select')return value(x.amount,'food','個')+(x.shardsSmall!=null?' ／ '+value(x.shardsSmall+'／'+x.shardsLarge,'shards','個'):' ／ 追加 '+value(x.bonusAmount,'food','個'));
+
+  if(x.bonusCandy!=null)return value(x.amount,'food','個')+' ／ 追加 '+value(x.bonusCandy,'skill','個');
+  if(type==='random_main_skill')return `抽選スキル ${value('Lv.'+lv,'skill')}<small>（対象スキルの上限まで）</small>`;
+  if(type==='team_skill_copy')return 'ランダムな1種類';
+  if(type==='variable_energy'||type==='variable_dream_shards')return value(x.min+'～'+x.max,type==='variable_energy'?'energy':'shards',type==='variable_energy'?'':'個');
+  if(type==='fixed_dream_shards_energy')return value(x.shards,'shards','個')+' ／ '+value(x.energy,'energy');
+  if(type==='moonlight_energy_recovery')return '自分 '+value(x.selfRecovery,'energy-recovery')+' ／ 追加 '+value(x.bonusRecovery,'energy-recovery');
+  if(type==='berry_burst')return '自分 '+value(x.selfBerries,'berry','個')+' ／ 各 '+value(x.teamBerriesEach,'berry','個');
+  if(type==='cooking_assist')return value(x.amount,'food','個')+' ／ '+value(x.chanceBonus,'skill','%');
+  if(type.startsWith('helper_boost_')){const bonuses=Object.entries(x).find(([k])=>k.startsWith('bonusByUnique'))?.[1];return '基本 '+value(x.helps,'help','回')+(bonuses?' ／ 追加 '+value(bonuses.slice(3).join('／'),'help','回'):'');}
+  if(x.amount!=null)return value(x.amount,'food','個');
+  if(x.energy!=null)return value(x.energy,'energy');
+  if(x.recovery!=null)return value(x.recovery,'energy-recovery');
+  if(x.shards!=null)return value(x.shards,'shards','個');
+  if(x.helps!=null)return value(x.helps,'help','回');
+  if(x.capacity!=null)return value(x.capacity,'zone','個');
+  if(x.chancePercent!=null)return value(x.chancePercent,'skill','%');
+  return '効果未確認';
+ }
+ function renderSkill(m){
+   const s=skillOf(m);if(!s)return;
+   const skillIcon=document.querySelector('#v12Ability .skill-icon');
+   if(skillIcon){
+     skillIcon.replaceChildren();
+     const path=window.PS_DEV_ASSETS.path('skill',s.id);
+     skillIcon.classList.toggle('has-image',!!s.image);
+     if(s.image){const img=document.createElement('img');img.src=s.image;img.alt=s.name;img.title=window.PS_DEV_ASSETS.title(path);if(path)img.dataset.previewPath=path;skillIcon.appendChild(img)}
+   }
+   const badge=document.getElementById("skillRateBadge");
+   if(badge)badge.style.display="none";
+   const name=document.getElementById("detailSkill");
+   if(name)name.textContent=s.name;
+   const rate=document.getElementById("skillRateInline");
+   if(rate)rate.innerHTML=`発動確率 <strong>${m.skillRate!=null?m.skillRate+"%":"未確認"}</strong>`;
+   const lv1=s.levels?.[1];
+   const effect=document.getElementById("detailSkillEffect");
+   if(effect){
+     const effectCopy=s.displayNote&&lv1?.description?detailEsc(lv1.description):s.effectType==='random_ingredients'&&lv1?.amount!=null?`ランダムな食材を <strong class="skill-var effect-food">${lv1.amount}個</strong> ゲットする。`:s.effectType==='fixed_energy'&&lv1?.energy!=null?`カビゴンのエナジーを <strong class="skill-var effect-energy">${lv1.energy.toLocaleString()}</strong> 増やす。`:s.effectType==='variable_energy'&&lv1?.min!=null&&lv1?.max!=null?`カビゴンのエナジーを <strong class="skill-var effect-energy">${lv1.min.toLocaleString()}～${lv1.max.toLocaleString()}</strong> 増やす。`:s.effectType==='team_energy_recovery'&&lv1?.recovery!=null?`チーム全員のげんきを <strong class="skill-var effect-energy-recovery">${lv1.recovery}</strong> 回復する。`:lv1?.description?detailEsc(lv1.description):'効果未確認';
+     effect.innerHTML=`<b class="v35-effect-level">Lv.1</b><span class="v35-effect-copy">${effectCopy}</span>`;
+     effect.classList.add("skill-desc");
+   }
+   // Dex is reference-only: no skill-level adjustment control here.
+   const ctl=document.getElementById("v12SkillLv");
+   if(ctl)ctl.remove();
+   const levels=document.getElementById("skillLevels");
+   if(levels){
+     const detail=Object.entries(s.levels||{}).filter(([lv])=>Number(lv)>1).sort((a,b)=>Number(a[0])-Number(b[0]));
+     const compact=detail.length<=6&&detail.every(([lv,x])=>skillVariables(s,x,lv).replace(/<[^>]*>/g,'').length<=10);
+     const layoutClass=compact&&detail.length===6?'v43-compact-3':detail.length<=6?'v43-compact-2':'v43-detail-long';
+     const note=s.displayNote|| (s.effectType==='random_main_skill'?'選ばれたメインスキルは、ゆびをふると同じレベルで発動します（対象スキルの上限まで）。':s.effectType.startsWith('helper_boost_')?'追加回数は同じタイプの異なるポケモンが3／4／5種類いる場合。':s.effectType==='fixed_dream_shards_energy'?'ゆめのかけら ／ エナジー':s.effectType==='cooking_assist'?'食材数 ／ 大成功確率':s.effectType==='moonlight_energy_recovery'?'追加は大成功時にチーム内の1匹へ。':'');
+     levels.innerHTML=(note?`<p class="psg-skill-variable-note">${detailEsc(note)}</p>`:'')+`<div class="v32-skill-grid ${layoutClass}">${detail.map(([lv,x])=>`<div class="v32-skill-cell"><b>Lv.${lv}</b><strong class="psg-skill-values">${skillVariables(s,x,lv)}</strong></div>`).join('')}</div>`;
+
+   }
+ }
+ function evolutionEntries(m){
+   if(!m?.evolution)return [];
+   return Array.isArray(m.evolution)?m.evolution:[m.evolution];
+ }
+ function evolutionConditions(e){
+   if(Array.isArray(e.conditions)&&e.conditions.length)return e.conditions;
+   const out=[];
+   if(e.level!=null)out.push(`Lv.${e.level}`);
+   if(e.candy!=null)out.push(`アメ${e.candy}個`);
+   if(e.item)out.push(e.item);
+   if(e.extra)out.push(e.extra);
+   return out.length?out:["条件未確認"];
+ }
+ function evolutionConditionMarkup(value){
+   let text=detailEsc(value);
+   for(const name of Object.keys(window.PS_IMAGE_FILES.items||{}))if(String(value).includes(name))text=text.replace(name,window.PS_UI_ART.icon('items',name)+name);
+   return text;
+ }
+ function parentsOf(no){
+   return Object.values(V.pokemon).filter(p=>evolutionEntries(p).some(e=>Number(e.toNo)===Number(no)));
+ }
+ function rootOf(m){
+   let cur=m,seen=new Set();
+   while(cur&&!seen.has(cur.no)){
+     seen.add(cur.no);const ps=parentsOf(cur.no);if(!ps.length)break;cur=ps[0];
+   }
+   return cur||m;
+ }
+ function descendantsOf(root){
+   const out=[],seen=new Set();
+   const walk=p=>{if(!p||seen.has(p.no))return;seen.add(p.no);out.push(p);evolutionEntries(p).forEach(e=>walk(byNo(e.toNo)))};
+   walk(root);return out;
+ }
+ function evoNode(p,currentNo,cls="",condition=null,incoming=false){
+   if(!p)return "";
+   const face=window.PS_IMAGE_FILES.pokemonFaces?.[p.no]||(p.faceImage&&p.faceImage!==p.image?p.faceImage:null);
+   const image=window.PS_DEV_ASSETS.image(face,'pokemon',p.no,'face',p.name);
+   const isCurrent=Number(p.no)===Number(currentNo);
+   const conditions=condition?`<span class="v106-evo-conditions">${evolutionConditions(condition).map((x,i)=>`<span>${evolutionConditionMarkup(x)}${i===0&&!incoming?'<span class="v111-evo-next" aria-hidden="true">›</span>':''}</span>`).join("")}</span>`:"";
+   return `<button class="v31-evo-node ${isCurrent?"is-current":""} ${cls}" data-evo-no="${p.no}"><span class="v31-evo-name">${p.name}</span><span class="v111-evo-body"><span class="v31-evo-image">${image}<span class="v31-evo-type">${window.PS_TYPE_ART?.(p.type)||iconForType(p.type)}</span></span>${conditions}</span></button>`;
+ }
+ function nestedEvolutionTree(root,currentNo){
+   const leafCount=(p,seen=new Set())=>{
+     if(!p||seen.has(p.no))return 0;
+     const next=new Set(seen).add(p.no),edges=evolutionEntries(p).filter(e=>byNo(e.toNo));
+     return edges.length?edges.reduce((n,e)=>n+leafCount(byNo(e.toNo),next),0):1;
+   };
+   let columns=1;const cells=[];
+   const walk=(p,depth,row,incoming=null,seen=new Set())=>{
+     if(!p||seen.has(p.no))return;
+     const next=new Set(seen).add(p.no),span=Math.max(1,leafCount(p,seen));columns=Math.max(columns,depth+1);
+     cells.push(`<div class="psg-evo-tree-cell" data-depth="${depth}" style="grid-column:${depth+1};grid-row:${row} / span ${span}">${evoNode(p,currentNo,'psg-evo-tree-node',incoming,true)}</div>`);
+     let childRow=row;
+     for(const edge of evolutionEntries(p)){
+       const child=byNo(edge.toNo);if(!child||next.has(child.no))continue;
+       walk(child,depth+1,childRow,edge,next);childRow+=Math.max(1,leafCount(child,next));
+     }
+   };
+   walk(root,0,1);return `<div class="psg-evolution-tree" style="--evo-columns:${columns}">${cells.join('')}</div>`;
+ }
+ function renderEvolution(m){
+   const el=document.getElementById("detailEvolution"),card=document.getElementById("evolutionCard");
+   if(!el||!card)return;
+   const root=rootOf(m),family=descendantsOf(root),rootBranches=evolutionEntries(root);
+   if(family.length<=1){
+     card.style.display=m.evolutionStatus==="未確認"?"":"none";
+     el.textContent=m.evolutionStatus==="未確認"?"進化条件未確認":"";
+     return;
+   }
+   card.style.display="";
+   // Eevee's eight destinations need the full width for readable requirements.
+   if(Number(root.no)===133&&rootBranches.length>1){
+     const commonCandy=rootBranches.every(e=>e.candy===rootBranches[0].candy)?rootBranches[0].candy:null;
+     const cells=rootBranches.map(e=>{
+       const conditions=[];
+       if(commonCandy==null&&e.candy!=null)conditions.push(`アメ${e.candy}個`);
+       if(e.level!=null)conditions.push(`Lv.${e.level}`);
+       if(e.item)conditions.push(e.item);
+       if(e.extra){
+         conditions.push(detailEsc(e.extra.replace('一緒に睡眠','睡眠').split('・')[0]));
+         if(e.extra.includes('06:00〜18:00'))conditions.push('昼 06:00〜18:00');
+         else if(e.extra.includes('18:00〜06:00'))conditions.push('夜 18:00〜06:00');
+       }
+       return evoNode(byNo(e.toNo),m.no,'psg-eevee-destination',{conditions},true);
+     }).join('');
+     el.innerHTML=`<div class="psg-eevee-family"><div class="psg-eevee-origin">${evoNode(root,m.no,'psg-eevee-root')}<div class="psg-eevee-common">進化先を選ぶ${commonCandy!=null?`<strong>共通：アメ${commonCandy}個</strong>`:''}</div></div><div class="psg-eevee-grid">${cells}</div></div>`;
+   }else if(rootBranches.length===1&&family.some(p=>evolutionEntries(p).length>1)){
+     el.innerHTML=nestedEvolutionTree(root,m.no);
+   }else if(rootBranches.length>1){
+     const cells=rootBranches.map(e=>{const p=byNo(e.toNo);return `<div class="v31-branch-cell">${evoNode(p,m.no)}<div class="v31-evo-cond">${evolutionConditions(e).map(x=>`<span>${evolutionConditionMarkup(x)}</span>`).join("")}</div></div>`}).join("");
+     el.innerHTML=`<div class="v31-branch-layout"><div class="v31-branch-root">${evoNode(root,m.no,"is-root")}</div><div class="v31-big-arrow">›</div><div class="v31-branch-grid ${rootBranches.length===2?'is-two':''}">${cells}</div></div>`;
+   }else{
+     // Normal line: render the full known evolution family, not Pokédex-number adjacency.
+     const chain=[];let cur=root,guard=0;
+     while(cur&&guard++<12){chain.push(cur);const es=evolutionEntries(cur);if(es.length!==1)break;cur=byNo(es[0].toNo)}
+     let html='<div class="v31-evo-line">';
+     chain.forEach((p,i)=>{
+       const edge=i<chain.length-1?evolutionEntries(p)[0]:null;
+       html+=evoNode(p,m.no,"",edge);
+       // The source card carries the arrow and outgoing requirement.
+     });
+     html+='</div>';el.innerHTML=html;
+   }
+   el.querySelectorAll("[data-evo-no]").forEach(btn=>btn.onclick=()=>{const no=Number(btn.dataset.evoNo);if(no&&no!==currentNo)openPokemonDetail(no,{pushHistory:true})});
+ }
+ function openPokemonDetail(no,opts={}){
+   const m=byNo(no);if(!m)return;
+   if(['skillPage','recipePage'].includes(window.PS?.state?.screen))detailOrigin=window.PS.state.screen;
+   if(opts.pushHistory&&currentNo&&currentNo!==m.no){detailHistory.push(currentNo);detailForward.length=0}
+   currentNo=m.no;setTheme(m.type);show("dexDetail");
+   header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);renderSleepStyles(m);renderPokemonFields(m);switchTab(currentTab||"ability");
+ }
+ window.openPokemonDetail=openPokemonDetail;
+
+ // v57: one explicit entry point for every Dex card.
+ // renderDex calls this directly, so there is no capture/bubble race with the legacy handler.
+ window.openDexCard=function(no){
+   no=Number(no);if(!Number.isFinite(no))return;
+   currentTab="ability";detailHistory.length=0;detailForward.length=0;detailOrigin="dex";currentNo=null;
+   if(byNo(no)){openPokemonDetail(no);return;}
+ };
+
+ // Line-1 previous/next navigation also participates in the same reversible detail history.
+ document.addEventListener("click",e=>{
+   const b=e.target.closest?.("#v12Prev,#v12Next");
+   if(!b||b.disabled)return;
+   const current=byNo(currentNo);if(!current)return;
+   const target=neighborOf(current.no,b.id==="v12Prev"?-1:1);
+   if(!target)return;
+   e.preventDefault();e.stopImmediatePropagation();openPokemonDetail(target.no,{pushHistory:true});
+ },true);
+
+ const back=document.querySelector("#dexDetail [data-back]");
+ function leaveDetail(){
+   show(detailOrigin||"dex");currentNo=null;
+   detailHistory.length=0;detailForward.length=0;
+   return true;
+ }
+ function backDetail(){
+   const previous=detailHistory.pop();
+   if(previous){detailForward.push(currentNo);openPokemonDetail(previous);return true}
+   return leaveDetail();
+ }
+ function forwardDetail(){
+   const next=detailForward.pop();
+   if(!next)return false;
+   if(currentNo)detailHistory.push(currentNo);
+   openPokemonDetail(next);return true;
+ }
+ // The visible button exits to the originating list. Inner-screen swipes navigate detail history.
+ if(back)back.addEventListener("click",e=>{e.preventDefault();e.stopImmediatePropagation();leaveDetail()},true);
+ window.PS_DETAIL_NAV={back:backDetail,forward:forwardDetail};
+
+ const toggle=document.getElementById("skillDetailToggle"),levels=document.getElementById("skillLevels");
+ if(toggle&&levels)toggle.onclick=()=>{const o=levels.classList.toggle("open");toggle.textContent=o?"詳細を閉じる ▲":"詳細を見る ▼"};
+
+ switchTab("ability");
+})();
+</script>
+<script id="psg-auto-image-paths">
+/* Only verified species and registered asset IDs are queried. Missing files leave the existing UI alone. */
+(()=>{'use strict';
+const catalog=window.PS_CATALOG;
+const assets=window.PS_DEV_ASSETS;
+const explicit=window.PS_IMAGE_FILES;
+const lookup=new Map();
+function exists(path){
+  if(!path)return Promise.resolve(false);
+  if(lookup.has(path))return lookup.get(path);
+  const task=new Promise(resolve=>{
+    const image=new Image();
+    image.onload=()=>resolve(image.naturalWidth>0);
+    image.onerror=()=>resolve(false);
+    image.src=path;
+  });
+  lookup.set(path,task);
+  return task;
+}
+const jobs=[];
+function tryPath(path,apply){jobs.push(exists(path).then(ok=>{if(ok){apply(path);return true}return false}))}
+window.PS_TYPE_IMAGES={...window.PS_IMAGE_FILES.types};
+// Center the visible pixels, rather than the uneven transparent sheet margins.
+// Original files stay intact; all type-icon consumers share these display images.
+function centeredTypeImage(source){
+ return new Promise(resolve=>{
+  const image=new Image();image.onerror=()=>resolve(null);
+  image.onload=()=>{
+   try{
+    const scan=document.createElement('canvas');scan.width=image.naturalWidth;scan.height=image.naturalHeight;
+    const ctx=scan.getContext('2d');ctx.drawImage(image,0,0);
+    const pixels=ctx.getImageData(0,0,scan.width,scan.height).data;
+    let left=scan.width,top=scan.height,right=-1,bottom=-1,bestSize=0;
+    // Ignore disconnected fragments from neighboring cells in the source sheet.
+    const seen=new Uint8Array(scan.width*scan.height);
+    for(let start=0;start<seen.length;start++){
+     if(seen[start]||pixels[start*4+3]<=8)continue;
+     const stack=[start];seen[start]=1;let size=0,l=scan.width,t=scan.height,r=-1,b=-1;
+     while(stack.length){
+      const i=stack.pop(),x=i%scan.width,y=Math.floor(i/scan.width);size++;
+      l=Math.min(l,x);t=Math.min(t,y);r=Math.max(r,x);b=Math.max(b,y);
+      for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+       const nx=x+dx,ny=y+dy;if(nx<0||ny<0||nx>=scan.width||ny>=scan.height)continue;
+       const n=ny*scan.width+nx;if(!seen[n]&&pixels[n*4+3]>8){seen[n]=1;stack.push(n)}
+      }
+     }
+     if(size>bestSize){bestSize=size;left=l;top=t;right=r;bottom=b}
+    }
+    if(right<left){resolve(null);return}
+    const width=right-left+1,height=bottom-top+1,scale=112/Math.max(width,height);
+    const target=document.createElement('canvas');target.width=128;target.height=128;
+    const draw=target.getContext('2d');draw.imageSmoothingEnabled=true;draw.imageSmoothingQuality="high";
+    // Smooth master badges need only high-quality scaling, without extra blur.
+    const w=Math.round(width*scale),h=Math.round(height*scale);
+    draw.drawImage(image,left,top,width,height,Math.floor((128-w)/2),Math.floor((128-h)/2),w,h);
+    resolve(target.toDataURL('image/png'));
+   }catch{resolve(null)}
+  };image.src=source;
+ });
+}
+async function alignTypeImages(){
+ const aligned=await Promise.all(Object.entries(window.PS_TYPE_IMAGES).map(async([name,source])=>{
+  const centered=await centeredTypeImage(source);if(centered)window.PS_TYPE_IMAGES[name]=centered;return Boolean(centered);
+ }));return aligned.some(Boolean);
+}
+// All 18 type badges come directly from their common master files.
+jobs.push(alignTypeImages());
+for(const pokemon of Object.values(catalog.pokemon)){
+  if(!explicit.pokemon[pokemon.no]&&!pokemon.image){
+    tryPath(assets.path('pokemon',pokemon.no,'full'),path=>{pokemon.image=path;if(!explicit.pokemonFaces[pokemon.no]&&!pokemon.faceImage)pokemon.faceImage=path});
+  }
+  if(!explicit.pokemonFaces[pokemon.no]){
+    tryPath(assets.path('pokemon',pokemon.no,'face'),path=>{pokemon.faceImage=path});
+  }
+  if(pokemon.berry&&!explicit.berries[pokemon.berry]&&!pokemon.berryImage){
+    tryPath(assets.path('berry',pokemon.berry),path=>{pokemon.berryImage=path});
+  }
+  for(const slot of pokemon.ingredientSlots||[])for(const candidate of slot.candidates||[]){
+    const name=candidate.name,visual=catalog.ingredientAssets[name];
+    if(!name||explicit.ingredients[name]||visual?.image)continue;
+    tryPath(assets.path('ingredient',name),path=>{
+      const current=catalog.ingredientAssets[name]||{};
+      catalog.ingredientAssets[name]={...current,image:path};
+    });
+  }
+  const skill=catalog.skills[pokemon.mainSkillId];
+  if(skill&&!explicit.skills[skill.id]&&!skill.image){
+    tryPath(assets.path('skill',skill.id),path=>{skill.image=path});
+  }
+}
+window.PS_AUTO_ASSETS={ready:Promise.all(jobs).then(found=>{
+  if(found.some(Boolean)){
+    window.PS?.renderFilters();window.PS?.renderDex();window.PS?.renderBox();
+    if(document.getElementById('boxDetail')?.classList.contains('active'))window.PS?.refreshBoxDetail?.();
+    if(document.getElementById('dexDetail')?.classList.contains('active')){
+      const label=document.querySelector('#dexDetail .v51-head-no')?.textContent||'';
+      const no=Number(label.match(/No\.?\s*(\d+)/i)?.[1]);
+      if(no)window.openPokemonDetail?.(no);
+    }
+  }
+  return {found:found.filter(Boolean).length,checked:lookup.size};
+})};
+})();
+</script>
+<script id="psg-swipe-navigation">
+(()=>{
+  const screens=["home","box","dex","info"];
+  const minDistance=64,boxMinDistance=48,edgeWidth=56;
+  let start=null;
+  const interactive="button,a,input,select,textarea,[contenteditable='true']";
+  function insideHorizontalScroller(target,screen){
+    for(let node=target;node&&node!==screen.parentElement;node=node.parentElement){
+      if(node.scrollWidth>node.clientWidth+2&&/(auto|scroll)/.test(getComputedStyle(node).overflowX))return true;
+    }
+    return false;
+  }
+  document.addEventListener("touchstart",event=>{
+    start=null;
+    if(event.touches.length!==1)return;
+    // Box cards are buttons that fill most of the screen; allow a sideways drag
+    // from their surface, while the tap still opens the individual as usual.
+    const boxCard=event.target.closest?.('#boxGrid .poke');
+    if(event.target.closest?.(interactive)&&!boxCard)return;
+    // Dex cards are tappable, but a gesture starting on their surface can switch screens.
+    if(event.target.closest?.("[role='button']")&&!event.target.closest?.("#dexGrid .dex-card"))return;
+    if(event.target.closest?.("#detailEvolution,#detailFoods .v24-recipes"))return;
+    const screen=document.querySelector("main > .screen.active");
+    if(!screen||(!screens.includes(screen.id)&&screen.id!=="dexDetail"))return;
+    if(insideHorizontalScroller(event.target,screen))return;
+    const touch=event.touches[0],width=window.innerWidth;
+    const edge=touch.clientX<=edgeWidth?"left":touch.clientX>=width-edgeWidth?"right":null;
+    // Browser edge gestures belong to the browser; detail history starts inside the page.
+    if(screen.id==="dexDetail"&&edge)return;
+    start={x:touch.clientX,y:touch.clientY,screen:screen.id};
+  },{passive:true});
+  document.addEventListener("touchend",event=>{
+    if(!start||event.changedTouches.length!==1)return;
+    const gesture=start;start=null;
+    if(!document.getElementById(gesture.screen)?.classList.contains("active"))return;
+    const touch=event.changedTouches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
+    if(Math.abs(dx)<(gesture.screen==='box'?boxMinDistance:minDistance)||Math.abs(dx)<Math.abs(dy)*1.35)return;
+    if(gesture.screen==="dexDetail"){
+      if(dx>0)window.PS_DETAIL_NAV?.back();
+      if(dx<0)window.PS_DETAIL_NAV?.forward();
+      return;
+    }
+    const index=screens.indexOf(gesture.screen),next=screens[index+(dx<0?1:-1)];
+    if(!next||!window.PS?.go)return;
+    if((gesture.screen==="dex"||gesture.screen==="box")&&window.PS)window.PS.ignoreCardClicksUntil=Date.now()+400;
+    window.PS.state.history.length=0;
+    window.PS.go(next,false);
+  },{passive:true});
+  document.addEventListener("touchcancel",()=>{start=null},{passive:true});
+})();
+</script>
+
+
+
+
+
+
+
+<script id="psg-skill-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const input=document.getElementById('skillSearch'),list=document.getElementById('skillIndexList'),count=document.getElementById('skillIndexCount');
+ if(!catalog||!input||!list)return;
+ const effects=(skill,level)=>{
+  const value=skill.levels?.[level];
+  if(skill.displayNote&&value?.description)return value.description;
+  if(skill.effectType==='random_ingredients'&&Number.isFinite(value?.amount))return `ランダムな食材を${value.amount}個ゲットする`;
+  if(skill.effectType==='team_energy_recovery'&&Number.isFinite(value?.recovery))return `チーム全員のげんきを${value.recovery}回復する`;
+  if(skill.effectType==='fixed_energy'&&Number.isFinite(value?.energy))return `カビゴンのエナジーを${value.energy.toLocaleString()}増やす`;
+  if(skill.effectType==='variable_energy'&&Number.isFinite(value?.min)&&Number.isFinite(value?.max))return `カビゴンのエナジーを${value.min.toLocaleString()}～${value.max.toLocaleString()}増やす`;
+  return typeof value?.description==='string'&&value.description.trim()?value.description:'効果データ未確認';
+ };
+ function render(){
+  const query=input.value.trim().toLocaleLowerCase('ja');
+  const all=Object.values(catalog.skills||{});
+  const matches=all.filter(s=>[s.name,...(s.tags||[])].some(value=>String(value).toLocaleLowerCase('ja').includes(query)));
+  count.textContent=`${matches.length} / ${all.length} スキル`;
+  list.replaceChildren();
+  if(!matches.length){const empty=document.createElement('p');empty.className='note';empty.textContent='該当するスキルはありません。';list.append(empty);return}
+  matches.forEach(skill=>{
+   const species=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible&&p.mainSkillId===skill.id);
+   const item=document.createElement('details');item.className='psg-skill-entry';
+   const summary=document.createElement('summary');
+   const title=document.createElement('strong');title.textContent=skill.name;
+   const tags=document.createElement('span');tags.className='psg-skill-tags';tags.textContent=(skill.tags||[]).join(' · ');
+   const iconSrc=window.PS_IMAGE_FILES?.skills?.[skill.id];if(iconSrc){const icon=document.createElement('img');icon.src=iconSrc;icon.alt='';icon.width=36;icon.height=36;icon.style.objectFit='contain';summary.append(icon)}
+   summary.append(title,tags);item.append(summary);
+   const rows=document.createElement('div');rows.className='psg-skill-levels';
+   for(let level=1;level<=Math.min(10,Number(skill.maxLevel)||0);level++){
+    const row=document.createElement('div');row.className='psg-skill-level';
+    const label=document.createElement('b');label.textContent=`Lv.${level}`;
+    const description=document.createElement('span');description.textContent=effects(skill,level);
+    row.append(label,description);rows.append(row);
+   }
+   item.append(rows);
+   if(skill.displayNote){const note=document.createElement('p');note.className='note';note.textContent=skill.displayNote;item.append(note)}
+   const heading=document.createElement('div');heading.className='psg-skill-species-label';heading.textContent='このスキルを持つポケモン';item.append(heading);
+   const links=document.createElement('div');links.className='psg-skill-species';
+   if(!species.length){const empty=document.createElement('span');empty.textContent='現在の図鑑に登録なし';links.append(empty)}
+   species.forEach(p=>{
+    const button=document.createElement('button');button.type='button';button.className='btn';button.textContent=`No.${String(p.no).padStart(3,'0')} ${p.name}`;
+    button.onclick=()=>window.openPokemonDetail?.(p.no,{pushHistory:false});links.append(button);
+   });item.append(links);list.append(item);
+  });
+ }
+ input.addEventListener('input',render);render();
+})();
+</script>
+<script id="psg-recipe-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const list=document.getElementById('recipeList'),count=document.getElementById('recipeCount');
+ const ingredientOptions=document.getElementById('recipeIngredientOptions'),ingredientButton=document.getElementById('recipeIngredientButton');
+ const sort=document.getElementById('recipeSort');
+ if(!catalog||!list||!ingredientOptions||!ingredientButton||!sort)return;
+ const recipes=Object.values(catalog.recipes||{});
+ const categoryButtons=[...document.querySelectorAll('[data-recipe-category]')];
+ let selectedCategory='カレー・シチュー',selectedIngredient='';
+ function icon(name){
+  const visual=catalog.ingredientVisual?.(name);
+  const src=visual?.image||window.PS_INGREDIENT_FALLBACK_ICON?.(name);
+  if(src){const img=document.createElement('img');img.src=src;img.alt='';return img}
+  const text=document.createElement('span');text.textContent=visual?.fallback||'◌';return text;
+ }
+ function ingredientChoices(){
+  ingredientOptions.replaceChildren();
+  const names=[...new Set(recipes.filter(r=>r.category===selectedCategory).flatMap(r=>r.ingredients.map(i=>i.name)))].sort((a,b)=>a.localeCompare(b,'ja'));
+  for(const name of names){
+   const option=document.createElement('button');option.type='button';option.className='filter-option psg-recipe-filter-option';
+   option.setAttribute('aria-label',name);option.setAttribute('aria-pressed',String(name===selectedIngredient));option.title=name;
+   option.append(icon(name));const caption=document.createElement('span');caption.textContent=name;option.append(caption);
+   option.onclick=e=>{e.stopPropagation();selectedIngredient=selectedIngredient===name?'':name;ingredientButton.classList.toggle('active',!!selectedIngredient);ingredientButton.firstChild.textContent=selectedIngredient||'食材';ingredientOptions.parentElement.classList.remove('open');ingredientButton.setAttribute('aria-expanded','false');ingredientChoices();render()};
+   ingredientOptions.append(option);
+  }
+ }
+ function providerGroup(item){
+  const section=document.createElement('section');section.className='psg-recipe-provider-group';
+  const heading=document.createElement('strong');heading.append(icon(item.name),document.createTextNode(item.name));section.append(heading);
+  // Use only species whose own verified slots contain the ingredient; evolution does not imply the same slot.
+  const providers=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible).flatMap(p=>{
+   const slots=p.ingredientSlots?.filter(s=>s.candidates.some(c=>c.name===item.name))||[];
+   return slots.length?[{species:p,unlock:Math.min(...slots.map(s=>s.unlock))}]:[];
+  });
+  if(!providers.length){const empty=document.createElement('span');empty.className='note';empty.textContent='図鑑データ未確認';section.append(empty);return section}
+  const terminal=providers.filter(({species})=>{
+   const edges=Array.isArray(species.evolution)?species.evolution:species.evolution?[species.evolution]:[];
+   return !edges.some(edge=>edge.toNo);
+  });
+  const wrap=document.createElement('div');wrap.className='psg-recipe-providers';
+  for(const {species,unlock} of terminal.sort((a,b)=>a.species.no-b.species.no)){
+    const button=document.createElement('button');button.type='button';button.className='psg-recipe-provider';button.setAttribute('aria-label',`${species.name}${unlock>1?` Lv.${unlock}から`:''} 図鑑へ`);
+    const art=document.createElement('span');art.className='psg-recipe-provider-art';
+    if(window.PS_FACE_ART?.usesSheet(species.no))art.append(window.PS_FACE_ART.element(species.no,''));
+    else{
+      const img=document.createElement('img');img.src=window.PS_IMAGE_FILES.pokemonFaces?.[species.no]||window.PS_DEV_ASSETS.path('pokemon',species.no,'face');img.alt='';
+      const missing=document.createElement('span');missing.className='psg-recipe-provider-missing';missing.textContent='No image';missing.hidden=true;
+      img.onerror=()=>{img.hidden=true;missing.hidden=false};art.append(img,missing);
+    }
+    if(unlock>1){const level=document.createElement('small');level.textContent=`Lv.${unlock}`;art.append(level)}
+    button.title=species.name;button.append(art);
+    button.onclick=()=>window.openPokemonDetail?.(species.no);wrap.append(button);
+  }
+  section.append(wrap);return section;
+ }
+ function render(){
+  const categoryRecipes=recipes.filter(r=>r.category===selectedCategory);
+  const filtered=categoryRecipes.filter(r=>!selectedIngredient||r.ingredients.some(i=>i.name===selectedIngredient));
+  filtered.sort((a,b)=>{
+   if(sort.value==='name')return a.name.localeCompare(b.name,'ja');
+   const av=a.energy?.max?.value,bv=b.energy?.max?.value;
+   if(!Number.isFinite(av)||!Number.isFinite(bv))return Number.isFinite(av)?-1:Number.isFinite(bv)?1:a.name.localeCompare(b.name,'ja');
+   return sort.value==='energy-asc'?av-bv:bv-av;
+  });
+  count.textContent=`${filtered.length} / ${categoryRecipes.length} 件の確認済みレシピ`;
+  list.replaceChildren();
+  if(!filtered.length){const empty=document.createElement('p');empty.className='note';empty.textContent=categoryRecipes.length?'該当する料理はありません。':'この部門のレシピはまだ確認・登録していません。';list.append(empty);return}
+  for(const recipe of filtered){
+   const card=document.createElement('details');card.className='psg-recipe-entry';card.dataset.recipeId=recipe.id;card.dataset.mealCategory=recipe.category;
+   const summary=document.createElement('summary');summary.className='psg-recipe-heading';
+   const artWrap=document.createElement('span');artWrap.className='psg-recipe-art-wrap';
+   if(recipe.image){const art=document.createElement('img');art.src=recipe.image;art.alt='';art.width=64;art.height=64;art.className='psg-recipe-art';art.loading='lazy';art.decoding='async';artWrap.append(art)}else artWrap.textContent='No image';
+   const copy=document.createElement('span');copy.className='psg-recipe-copy';
+   const title=document.createElement('strong');title.className='psg-recipe-title';title.textContent=recipe.name;
+   const energy=document.createElement('div');energy.className='psg-recipe-energy';
+   const max=document.createElement('strong');max.className='psg-recipe-energy-max';
+   const verified=recipe.energy?.max;
+   const observed=[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];
+   const shown=verified||observed;
+   max.innerHTML=Number.isFinite(shown?.value)?`<small>${shown.status==='推定'?'推定 ':verified?'':'確認値 '}Lv.${shown.level}</small> ${shown.value.toLocaleString()} <span>エナジー</span>`:'エナジー未確認';
+   const min=document.createElement('small');min.className='psg-recipe-energy-min';min.textContent=Number.isFinite(recipe.energy?.min?.value)?`（Lv.${recipe.energy.min.level} ${recipe.energy.min.value.toLocaleString()} エナジー）`:'（Lv.1・Lv.70 未確認）';
+   energy.append(max);
+   const ingredientRow=document.createElement('div');ingredientRow.className='psg-recipe-ingredients';
+   for(const item of recipe.ingredients){const chip=document.createElement('span');chip.className='psg-recipe-chip';chip.title=item.name;chip.setAttribute('aria-label',`${item.name} ${item.qty}個`);chip.append(icon(item.name));const qty=document.createElement('b');qty.textContent=`×${item.qty}`;chip.append(qty);ingredientRow.append(chip)}
+   const pot=document.createElement('span');pot.className='psg-recipe-pot';pot.textContent=`鍋 ${recipe.ingredients.reduce((n,i)=>n+i.qty,0)}個`;energy.append(pot);
+   const chevron=document.createElement('span');chevron.className='psg-recipe-chevron';chevron.textContent='詳細 ▼';
+   copy.append(title,energy,ingredientRow,chevron);summary.append(artWrap,copy);card.append(summary);
+   const detail=document.createElement('div');detail.className='psg-recipe-expanded';
+   let populated=false;
+   const populateDetail=()=>{
+    if(populated)return;populated=true;
+    detail.append(min);
+    const energyNote=document.createElement('p');energyNote.className='note';energyNote.textContent=[recipe.energy?.note,recipe.energy?.conditions].filter(Boolean).join('。');detail.append(energyNote);
+    const heading=document.createElement('h3');heading.textContent='食材を拾うポケモン（最終進化）';detail.append(heading);
+    recipe.ingredients.forEach(item=>detail.append(providerGroup(item)));
+    const notice=document.createElement('p');notice.className='note';notice.textContent='候補は図鑑で確認できた種族のみ。チームでの獲得・調理判定はチーム画面で確認します。';detail.append(notice);
+   };
+   card.append(detail);card.addEventListener('toggle',()=>{
+    chevron.textContent=card.open?'閉じる ▲':'詳細 ▼';
+    if(card.open){populateDetail();list.querySelectorAll('.psg-recipe-entry').forEach(other=>{if(other!==card)other.open=false})}
+   });
+   list.append(card);
+  }
+ }
+ sort.addEventListener('change',render);
+ categoryButtons.forEach(button=>button.addEventListener('click',()=>{
+  selectedCategory=button.dataset.recipeCategory;
+  categoryButtons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  selectedIngredient='';ingredientButton.firstChild.textContent='食材';ingredientButton.classList.remove('active');ingredientOptions.parentElement.classList.remove('open');ingredientChoices();render();
+ }));
+ window.PS_OPEN_RECIPE=id=>{
+  const recipe=catalog.recipes?.[id];if(!recipe)return;
+  categoryButtons.find(button=>button.dataset.recipeCategory===recipe.category)?.click();
+  window.PS?.go('recipePage');
+  const entry=[...list.querySelectorAll('.psg-recipe-entry')].find(card=>card.dataset.recipeId===id);
+  if(entry)entry.open=true;
+ };
+ // Navigation reuses the current list; providers are built only when details open.
+ ingredientChoices();
+ render();
+})();
+</script>
+</body></html>

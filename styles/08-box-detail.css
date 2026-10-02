@@ -1,0 +1,164 @@
+/* Box detail styles, in their original cascade order. */
+/* v95: dedicated layouts for the rebuilt Box screen and Dex food rows. */
+/* Box identity remains visible while reading its long sections. */
+#boxDetail .detail-head{
+  position:sticky;top:56px;z-index:69;display:flex;align-items:center;
+  gap:8px;min-height:48px;margin:0 -12px 10px;padding:5px 12px;
+  background:rgba(255,255,255,.97);border-bottom:1px solid #e1e8e4;
+  backdrop-filter:blur(12px);
+}
+#boxDetail .detail-head>[data-back]{flex:0 0 auto;padding:7px 9px;white-space:nowrap;font-size:13px}
+#boxDetail #boxTitle{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:17px;margin:0;font-weight:950}
+#boxDetail #boxHeaderEdit{flex:0 0 auto;font-size:11px;font-weight:900;color:#111;white-space:nowrap}
+@media(max-width:620px){
+ #boxDetail .detail-head{top:calc(38px + env(safe-area-inset-top));min-height:44px}
+ #boxDetail .detail-head>[data-back]{font-size:12px}
+ #boxDetail #boxTitle{font-size:16px}}
+#boxDetail .detail-head h2{display:flex;align-items:baseline;justify-content:center;gap:5px;flex:1;min-width:0}
+#boxDetail #boxHeaderNo{font-size:10px;font-weight:900;white-space:nowrap;color:#111}
+#boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
+#boxDetail #boxIdentity:empty{display:none}
+#boxDetail .psg-box-art-badges{position:absolute;right:7px;bottom:7px;display:flex;align-items:center;gap:4px;z-index:2}
+#boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:0;background:transparent;border:0;box-shadow:none}
+#boxDetail .psg-box-art-badge img{width:30px;height:30px;object-fit:contain;image-rendering:auto}
+#boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
+#boxDetail .psg-box-hero{border-color:color-mix(in srgb,var(--box-type-accent,#55a66b) 22%,#dfe8e2)}
+#boxDetail .psg-box-identity{display:grid;}
+#boxDetail .psg-box-artwork{border:0;position:relative;overflow:hidden;display:grid;place-items:center}
+#boxDetail .psg-box-artwork img{max-width:100%;max-height:100%;object-fit:contain}
+#boxDetail .psg-box-facts{min-width:0;display:flex;flex-direction:column;}
+#boxDetail #boxIdentity{font-weight:900;font-size:14px}
+#boxDetail .psg-box-stats{display:grid;}
+#boxDetail .psg-box-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;background:#fff;text-align:center}
+#boxDetail .psg-box-stat small{font-weight:900;color:#111}
+#boxDetail .psg-box-stat strong{overflow-wrap:anywhere}
+#boxDetail .psg-box-stat em{font-style:normal;color:#111;font-weight:800}
+#boxDetail .psg-box-level{background:#fff;}
+#boxDetail .psg-box-level label{font-weight:900}
+#boxDetail #boxLevelInput{text-align:center;border:1px solid #dfe8e4;border-radius:8px;}
+#boxDetail .psg-box-section h3{color:#111}
+#boxDetail .psg-box-section{background:#f3f7ff}
+#boxDetail .psg-box-skill-art img{width:36px;height:36px;object-fit:contain;vertical-align:middle}
+#boxDetail .psg-box-lead{font-weight:950;}
+#boxDetail .psg-box-skill-art{width:42px;height:42px;object-fit:contain;vertical-align:middle;margin-right:8px}
+#boxDetail .psg-box-muted{color:#111;font-size:13px;line-height:1.5}
+#boxDetail .psg-mint-mark{display:inline-flex;border:1px solid #8ab99e;border-radius:50%;background:#fff;color:#56966e;width:25px;height:25px;align-items:center;justify-content:center;margin-left:7px;vertical-align:middle}
+#boxDetail .psg-milestone{background:#fff;}
+#boxDetail .psg-box-editor summary{font-weight:900;cursor:pointer}
+#boxDetail #boxEditForm{display:grid;gap:10px;margin-top:12px}
+#boxDetail #boxEditForm label{display:grid;gap:3px;font-weight:800;font-size:13px}
+#boxDetail #boxEditForm input,#boxDetail #boxEditForm select{min-width:0;width:100%;border:1px solid #cbdad3;background:#fff;border-radius:8px;padding:9px;font-size:16px}
+#boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
+#boxDetail #boxEditForm .psg-editor-check input{width:auto}
+#boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
+@media(max-width:390px){#boxDetail .psg-box-artwork{min-height:190px}}
+/* Box Block 1 shares the Dex geometry: square artwork, facts to the right,
+   and a full-width action row where the Dex shows tabs. */
+#boxDetail .psg-box-hero{padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
+#boxDetail .psg-box-identity{grid-template-columns:minmax(108px,37%) minmax(0,1fr);gap:6px;align-items:start}
+#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:transparent;border-radius:0}
+#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+#boxDetail .psg-box-facts{justify-content:space-between;gap:4px;align-self:stretch}
+#boxDetail .psg-box-traits{display:grid;grid-template-columns:31fr 38fr 31fr;gap:3px;min-width:0}
+#boxDetail .psg-box-trait{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:31px;padding:3px 2px;border-radius:9px;background:#fff;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;color:#111}
+#boxDetail .psg-box-trait-berry img{width:25px;height:25px;object-fit:contain;flex:none}
+#boxDetail .psg-box-trait-berry b{font-size:11px}
+#boxDetail .psg-box-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;flex:1;background:transparent;border:0}
+#boxDetail .psg-box-stat{min-height:48px;padding:3px 2px;border-radius:12px;gap:2px}
+#boxDetail .psg-box-stat small{font-size:clamp(7px,2.1vw,10px);line-height:1.12;letter-spacing:-.03em}
+#boxDetail .psg-box-stat strong{font-size:clamp(11px,3vw,18px);line-height:1.1}
+#boxDetail .psg-box-stat em{font-size:10px;line-height:1}
+#boxDetail .psg-box-level{border-radius:10px}
+#boxDetail .psg-box-level label{grid-column:1;font-size:12px;white-space:nowrap;color:#111}
+#boxDetail .psg-box-level-controls .btn{padding:0 4px}
+#boxDetail #lv{font-size:13px}
+#boxDetail #boxLevelInput{width:43px;padding:4px;font-size:13px}
+@media(max-width:390px){
+ #boxDetail .psg-box-identity{grid-template-columns:minmax(104px,37%) minmax(0,1fr)}
+ #boxDetail .psg-box-trait{font-size:9px}
+ #boxDetail .psg-box-stat{min-height:45px}
+ #boxDetail .psg-box-stat small{font-size:8px}
+ #boxDetail .psg-box-stat strong{font-size:12px}}
+#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:7px}
+#boxDetail .psg-box-food-heading h3{margin:0;font-size:18px}
+#boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+#boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:3px;row-gap:0;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
+#boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
+#boxDetail .psg-v106-unlock{text-align:center;font-size:11px;line-height:1.2;white-space:nowrap}
+#boxDetail .psg-v106-ingredient-image{grid-row:1 / 3;display:grid;place-items:center;width:28px;height:28px}
+#boxDetail .psg-v106-ingredient-image img{width:28px;height:28px;object-fit:contain}
+#boxDetail .psg-v106-ingredient strong{grid-column:2;text-align:center;font-size:13px;line-height:1.1;white-space:nowrap}
+#boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
+#boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
+#boxDetail .psg-box-level-controls{grid-column:1;display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0}
+#boxDetail .psg-box-level-controls .btn{min-width:35px;min-height:38px}
+#boxDetail #lv{min-width:34px;text-align:center;white-space:nowrap}
+#boxDetail #lvRange{grid-column:2;min-width:0;width:100%;min-height:40px;margin:0;touch-action:pan-x}
+@media(max-width:620px){
+  #boxDetail .psg-box-stat{min-height:46px;padding:2px}
+  #boxDetail .psg-box-stats{grid-template-rows:repeat(2,minmax(46px,1fr))}
+  #boxDetail .psg-box-section{padding:10px;margin-bottom:7px}
+  #boxDetail .psg-box-section h3{margin-bottom:8px}
+  #boxDetail .psg-v106-ingredient{min-height:34px;column-gap:2px;padding:2px 1px}
+  #boxDetail .psg-box-facts{gap:3px!important}
+  #boxDetail .psg-box-facts .psg-box-trait-berry>img{width:25px!important;height:25px!important}
+  #boxDetail .psg-box-stats{flex:0 0 auto!important}
+  #boxDetail .psg-box-identity{grid-template-columns:minmax(102px,34%) minmax(0,1fr);align-items:start}
+  #boxDetail .psg-box-facts{justify-content:flex-start}
+  #boxDetail .psg-v106-media .psg-box-trait-berry>img{width:25px;height:25px}
+  #boxDetail .psg-v106-media .psg-box-traits{align-items:start}}
+/* Duplicate rates are omitted only while the complete identity panel is sticky. */
+@media(max-width:620px) and (orientation:portrait){
+  #boxDetail>.psg-box-hero{box-shadow:0 2px 5px rgba(20,40,30,.10)!important}
+  #boxDetail #boxEditor{scroll-margin-top:310px}}
+
+/* v111: align all section frames to the pinned identity card. */
+@media(max-width:620px){
+  #boxDetail>.psg-box-hero,#boxDetail>.psg-box-section,#boxDetail>.psg-box-editor,#boxDetail>.card{box-sizing:border-box;width:100%;margin-inline:0}
+  #boxDetail>.psg-box-section{margin-bottom:6px}}
+
+/* Compact individual controls and three-column subskill tiles. */
+#boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
+#boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
+#boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
+#boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+#boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:9px;padding:3px}
+#boxDetail .psg-subskill-top{display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;line-height:1.2}
+#boxDetail .psg-subskill-badge{width:24px;height:24px;object-fit:contain}
+#boxDetail .psg-subskill-unknown{display:grid;place-items:center;width:24px;height:24px;color:#81908a}
+#boxDetail .psg-box-subskill>strong{text-align:center;overflow-wrap:anywhere;font-size:11px;line-height:1.2}
+#boxDetail .psg-box-subskill.is-locked{opacity:.48}
+#boxDetail .psg-editor-note{margin:0;font-weight:400}
+#boxDetail #boxEditor{scroll-margin-top:110px}
+@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
+
+#boxDetail .psg-box-nature-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px;align-items:center}
+#boxDetail .psg-box-nature-row .psg-box-lead{margin:0}
+#boxDetail .psg-box-nature-effects{display:grid;gap:2px;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+#boxDetail .psg-nature-up{color:#b04436}
+#boxDetail .psg-nature-down{color:#346baa}
+/* Compact lower detail sections. */
+#boxDetail .psg-box-section{padding:9px 10px;margin-bottom:7px}
+#boxDetail .psg-box-section h3{font-size:18px;margin:0 0 6px}
+#boxDetail .psg-box-section p{margin:5px 0;line-height:1.45}
+#boxDetail .psg-box-pending{font-size:12px;color:#66736d;margin:6px 0 0}
+#boxDetail .psg-box-effect{font-size:13px;line-height:1.45}
+#boxDetail .psg-box-explanation{font-size:12px;margin-top:5px}
+#boxDetail .psg-box-explanation summary{cursor:pointer;color:#456458}
+#boxDetail .psg-box-lead{font-size:17px;line-height:1.4}
+#boxDetail .psg-milestone{padding:5px 8px;margin-top:4px;border-radius:8px;font-size:13px}
+#boxEvaluation>p{font-size:13px}
+#boxDetail #boxGrowth .psg-box-muted{font-size:12px}
+
+#boxDetail .psg-box-day-food{margin-top:6px}
+#boxDetail .psg-box-day-food-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px}
+#boxDetail .psg-box-day-food-line>small{font-weight:800;color:#52685d}
+#boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
+#boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
+#boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}
+
+.psg-individual-row{padding:12px 0;border-top:1px solid #dde5e0;overflow-wrap:anywhere}
+.psg-individual-row p{margin:6px 0}
+.psg-individual-row details{font-size:13px}
+
+.psg-evaluation-role{margin:8px 0}.psg-individual-row.is-primary{background:#fff;border:1px solid #d9e5df;border-radius:12px;padding:12px}.psg-evaluation-other{margin:12px 0}

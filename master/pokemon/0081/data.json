@@ -1,0 +1,95 @@
+{
+  "no": 81,
+  "name": "コイル",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "ベリブのみ",
+  "berryQty": 1,
+  "help": 5800,
+  "carry": 8,
+  "foodRate": 18.2,
+  "skillRate": 6.4,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0081_01",
+      "name": "かたむきふゆう寝",
+      "stars": 1
+    },
+    {
+      "id": "0081_02",
+      "name": "でんじふゆう寝",
+      "stars": 2
+    },
+    {
+      "id": "0081_03",
+      "name": "さかさふゆう寝",
+      "stars": 3
+    }
+  ],
+  "evolution": {
+    "toNo": 82,
+    "to": "レアコイル",
+    "level": 23,
+    "candy": 40
+  },
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/magnemite",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%A4%E3%83%AB"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 3,
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0081_コイル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%82%A4%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

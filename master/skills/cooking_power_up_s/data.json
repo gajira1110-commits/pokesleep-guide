@@ -1,0 +1,41 @@
+{
+  "id": "cooking_power_up_s",
+  "name": "料理パワーアップS",
+  "maxLevel": 7,
+  "tags": [
+    "料理",
+    "なべ容量"
+  ],
+  "effectType": "cooking_pot_capacity",
+  "levels": {
+    "1": {
+      "capacity": 7,
+      "description": "次回の料理でなべの容量を7個増やす"
+    },
+    "2": {
+      "capacity": 10,
+      "description": "次回の料理でなべの容量を10個増やす"
+    },
+    "3": {
+      "capacity": 12,
+      "description": "次回の料理でなべの容量を12個増やす"
+    },
+    "4": {
+      "capacity": 17,
+      "description": "次回の料理でなべの容量を17個増やす"
+    },
+    "5": {
+      "capacity": 22,
+      "description": "次回の料理でなべの容量を22個増やす"
+    },
+    "6": {
+      "capacity": 27,
+      "description": "次回の料理でなべの容量を27個増やす"
+    },
+    "7": {
+      "capacity": 31,
+      "description": "次回の料理でなべの容量を31個増やす"
+    }
+  },
+  "iconAsset": "assets/skill-icons/cooking_power_up_s.webp"
+}

@@ -1,0 +1,116 @@
+{
+  "no": 372,
+  "name": "コモルー",
+  "type": "ドラゴン",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ヤチェのみ",
+  "berryQty": 2,
+  "help": 3800,
+  "carry": 19,
+  "foodRate": 20.6,
+  "skillRate": 2.7,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0372_01",
+      "name": "そらとびたい寝",
+      "stars": 1
+    },
+    {
+      "id": "0372_02",
+      "name": "のび寝",
+      "stars": 2
+    },
+    {
+      "id": "0372_03",
+      "name": "ゆめではしり寝",
+      "stars": 3
+    },
+    {
+      "id": "0372_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%A2%E3%83%AB%E3%83%BC",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 900,
+  "evolutionNotes": [
+    "タツベイ",
+    "↓ Lv.23＋タツベイのアメx40",
+    "コモルー",
+    "↓ Lv.38＋タツベイのアメx100",
+    "ボーマンダ"
+  ],
+  "evolution": [
+    {
+      "toNo": 373,
+      "to": "ボーマンダ",
+      "conditions": [
+        "Lv.38＋タツベイのアメx100"
+      ],
+      "level": 38,
+      "candy": 100
+    }
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0372_コモルー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%A2%E3%83%AB%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

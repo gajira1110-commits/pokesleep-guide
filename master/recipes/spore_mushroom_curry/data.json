@@ -1,0 +1,64 @@
+{
+  "id": "spore_mushroom_curry",
+  "name": "キノコのほうしカレー",
+  "category": "カレー・シチュー",
+  "ingredients": [
+    {
+      "ingredientId": "tasty_mushroom",
+      "qty": 14
+    },
+    {
+      "ingredientId": "potato",
+      "qty": 9
+    }
+  ],
+  "energy": {
+    "observed": [
+      {
+        "level": 29,
+        "value": 6576,
+        "source": "user-screenshot/IMG_1515.png"
+      }
+    ],
+    "min": {
+      "level": 1,
+      "value": 4162,
+      "status": "資料確認",
+      "source": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "checkedAt": "2026-10-01"
+    },
+    "max": {
+      "level": 70,
+      "value": 14899,
+      "status": "推定",
+      "source": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "checkedAt": "2026-10-01"
+    },
+    "note": "Lv70は資料掲載の計算参考値。ゲーム内全件実測未確認。端数処理の確定値として扱わない",
+    "conditions": "レシピ本体のみ。追加食材・フィールド・大成功・イベント補正を含みません。"
+  },
+  "sources": [
+    {
+      "type": "user_screenshot",
+      "file": "IMG_1515.png",
+      "date": "2026-09-30",
+      "verifiedFields": [
+        "name",
+        "ingredients",
+        "energy.observed"
+      ]
+    },
+    {
+      "type": "research",
+      "file": "PSG_recipe_energy_Lv1_Lv70_20261001(1).zip",
+      "url": "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+      "date": "2026-10-01",
+      "verifiedFields": [
+        "energy.min"
+      ],
+      "estimatedFields": [
+        "energy.max"
+      ]
+    }
+  ]
+}

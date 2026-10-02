@@ -1,0 +1,114 @@
+{
+  "no": 742,
+  "name": "アブリー",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "モモンのみ",
+  "berryQty": 1,
+  "help": 4500,
+  "carry": 9,
+  "foodRate": 19.9,
+  "skillRate": 1.9,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_draw_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 5
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 7
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 6
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0742_01",
+      "name": "ぱたぱた寝",
+      "stars": 1
+    },
+    {
+      "id": "0742_02",
+      "name": "はなさがし寝",
+      "stars": 2
+    },
+    {
+      "id": "0742_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0742_03",
+      "name": "みつあつめ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%BC",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "アブリー",
+    "↓ Lv.19＋アブリーのアメx40",
+    "アブリボン"
+  ],
+  "evolution": [
+    {
+      "toNo": 743,
+      "to": "アブリボン",
+      "conditions": [
+        "Lv.19＋アブリーのアメx40"
+      ],
+      "level": 19,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0742_アブリー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "no": 911,
+  "name": "ラウドボーン",
+  "type": "ゴースト",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ブリーのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 29,
+  "foodRate": 26.8,
+  "skillRate": 6.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 7
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 6
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0911_01",
+      "name": "はんきゅう寝",
+      "stars": 1
+    },
+    {
+      "id": "0911_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0911_03",
+      "name": "なかよし寝",
+      "stars": 3
+    },
+    {
+      "id": "0911_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%A6%E3%83%89%E3%83%9C%E3%83%BC%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ホゲータ",
+    "↓ Lv.12＋ホゲータのアメx40",
+    "アチゲータ",
+    "↓ Lv.27＋ホゲータのアメx80",
+    "ラウドボーン"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0911_ラウドボーン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%A6%E3%83%89%E3%83%9C%E3%83%BC%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

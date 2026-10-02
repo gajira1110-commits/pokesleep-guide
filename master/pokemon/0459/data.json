@@ -1,0 +1,114 @@
+{
+  "no": 459,
+  "name": "ユキカブリ",
+  "type": "こおり",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "チーゴのみ",
+  "berryQty": 1,
+  "help": 5600,
+  "carry": 10,
+  "foodRate": 25.1,
+  "skillRate": 4.4,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0459_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0459_02",
+      "name": "ぼうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0459_03",
+      "name": "きのみ寝",
+      "stars": 3
+    },
+    {
+      "id": "0459_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%82%AB%E3%83%96%E3%83%AA",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ユキカブリ",
+    "↓　Lv.30＋ユキカブリのアメ×40",
+    "ユキノオー"
+  ],
+  "evolution": [
+    {
+      "toNo": 460,
+      "to": "ユキノオー",
+      "conditions": [
+        "Lv.30＋ユキカブリのアメ×40"
+      ],
+      "level": 30,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0459_ユキカブリ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%82%AB%E3%83%96%E3%83%AA",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

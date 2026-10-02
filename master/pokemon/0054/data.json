@@ -1,0 +1,101 @@
+{
+  "no": 54,
+  "name": "コダック",
+  "type": "みず",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 5400,
+  "carry": 8,
+  "foodRate": 13.6,
+  "skillRate": 12.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 6
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 55,
+    "to": "ゴルダック",
+    "level": 25,
+    "candy": 40
+  },
+  "sleepStyles": [
+    {
+      "id": "0054_01",
+      "name": "ずつう寝",
+      "stars": 1
+    },
+    {
+      "id": "0054_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0054_03",
+      "name": "やだやだ寝",
+      "stars": 3
+    },
+    {
+      "id": "0054_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0054_コダック",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%80%E3%83%83%E3%82%AF",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%80%E3%83%83%E3%82%AF"
+  ]
+}

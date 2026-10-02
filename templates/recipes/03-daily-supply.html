@@ -1,0 +1,52 @@
+ const supply=catalog.dailySupply,supplyLevel=document.getElementById('recipeSupplyLevel'),supplyMeals=document.getElementById('recipeSupplyMeals');
+ const supplyNumber=value=>Number.isFinite(value)?value.toLocaleString('ja-JP',{minimumFractionDigits:2,maximumFractionDigits:2}):'未対応';
+ function supplyBurden(recipe){
+  const data=supply.burdens[supplyLevel.value]?.[recipe.id],scale=Number(supplyMeals.value)/3;
+  return {dedicated:Number.isFinite(data?.dedicated)?data.dedicated*scale:null,relaxed:Number.isFinite(data?.relaxed)?data.relaxed*scale:null,bottleneck:data?.bottleneck};
+ }
+ function supplySummary(recipe){
+  const line=document.createElement('span');line.className='psg-recipe-burden';
+  line.textContent=`専任収集負担 ${supplyNumber(supplyBurden(recipe).dedicated)}匹・日（${supplyMeals.value}食・推定）`;
+  return line;
+ }
+ const configurationText=provider=>`${provider.config}：${provider.slots.map(s=>`Lv${s.level} ${s.name}×${s.qty}`).join(' / ')}`;
+ function providerText(provider){
+  const line=document.createElement('p');line.className='note';
+  if(provider.no!==null&&catalog.pokemon[provider.no]){
+   const link=document.createElement('button');link.type='button';link.className='psg-supply-provider';link.textContent=provider.name;
+   link.addEventListener('click',()=>window.openPokemonDetail?.(provider.no));line.append(link);
+  }else line.append(document.createTextNode(`${provider.name}（図鑑未収録）`));
+  line.append(document.createTextNode(` ${supplyNumber(provider.daily)}個/日・${configurationText(provider)}`));return line;
+ }
+ function supplyDetail(recipe){
+  const section=document.createElement('div');section.className='psg-supply-detail';
+  const h=document.createElement('h3');h.textContent=`共通条件の収集目安（担当Lv${supplyLevel.value}・${supplyMeals.value}食）`;section.append(h);
+  const data=supplyBurden(recipe);
+  const note=document.createElement('p');note.className='note';note.textContent=`専任負担 ${supplyNumber(data.dedicated)}匹・日。共有の理論下限 ${supplyNumber(data.relaxed)}匹・日（分数配分を許す参考値）。必要枠数・交代時間ではありません。`;section.append(note);
+  for(const item of recipe.ingredients){
+   const row=supply.tiers[supplyLevel.value]?.[item.name],count=item.qty*Number(supplyMeals.value),block=document.createElement('div');block.className='psg-supply-food';
+   const title=document.createElement('strong');title.textContent=`${item.name} ${count}個 → ${row?supplyNumber(count/row.daily):'未対応'}匹・日`;block.append(title);
+   if(row){const tier=document.createElement('p');tier.className='note';tier.textContent=`日産ティア ${row.tier}（暫定）・最良担当 ${supplyNumber(row.daily)}個/日`;block.append(tier,providerText(row.top[0]))}
+   section.append(block);
+  }
+  const warning=document.createElement('p');warning.className='note';warning.textContent='通常食材の期待量・在庫なし。最良担当は食材ごとに別個体・別構成です。1日合計で足りても食事時点にそろう保証はありません。';section.append(warning);
+  const link=document.createElement('button');link.type='button';link.className='btn';link.textContent='日産量の前提を見る';link.addEventListener('click',()=>openSupplyReference());section.append(link);
+  return section;
+ }
+ for(const control of [supplyLevel,supplyMeals])control.addEventListener('change',()=>preserveRecipeDetails(()=>{}));
+ const referenceContent=document.getElementById('dailySupplyReferenceContent');
+ const supplyNote=text=>{const p=document.createElement('p');p.className='note';p.textContent=text;referenceContent.append(p)};
+ function openSupplyReference(){window.PS?.go('info');const details=document.getElementById('dailySupplyReference');details.open=true;details.scrollIntoView({block:'start'})}
+ supplyNote('共通条件の独自モデルによる推定。ポケモンLv30／60、無補正の性格・サブスキル・リボンなし、起床げんき100、睡眠8時間半。日中3時間ごと＋就寝直前と起床時に回収（例8:00起床・23:30就寝）。');
+ supplyNote('料理・スキル回復なし。スキル由来の食材も含めません。キャンプ・イベント・EXなし。種族の初期所持数による満杯・超過分破棄を反映、バッグ容量の制限・元の在庫は含みません。解放食材枠の均等抽選は推定です。ホームの日産予想と条件が異なります。');
+ supplyNote('日産ティアは最良担当の期待個数を基準にした独自の暫定閾値：S≥60、A≥45、B≥30、C≥15、D<15個/日。候補なしは未対応。担当の選択肢の多さを示す入手ティアとは別指標です。');
+ supplyNote('専任収集負担＝食材ごとの必要数÷最良担当日産量を合計。1匹・日は、この条件で1匹を1日編成する収集力の単位です。共有の理論下限は、実在する食材構成の供給ベクトルを線形計画で配分した参考値。分数・同種複数・別構成を許すため、実際の必要枠数・Box交代時間・5匹で作れるかの判定には使いません。');
+ supplyNote('調査候補には現行図鑑未収録の種族を含みます。期間限定・衣装、個体状態未指定のミュウ・ダークライは除外。比較Lvを超える進化条件の種族は育成経由の候補から除外。低Lvの進化後直接捕獲や厳選負担は評価しません。上位3系統は別々の選択肢であり、1匹の量として合算しません。');
+ supplyNote('周期位相・待機キュー・げんき0〜1付近等は未確定を含む近似です。1日合計の見込みであり、朝昼晩の食事時点にそろう保証はありません。食事の間隔は同じ長さではありません。');
+ const ingredientLink=document.createElement('button');ingredientLink.type='button';ingredientLink.className='btn';ingredientLink.textContent='食材の一覧を見る';ingredientLink.addEventListener('click',()=>window.PS?.go('ingredientPage'));referenceContent.append(ingredientLink);
+ const sensitivity=document.createElement('details');sensitivity.className='psg-cooking-reference';const caption=document.createElement('summary');caption.textContent='回収・料理回復を変えた場合の参考比較';sensitivity.append(caption);
+ const explanation=document.createElement('p');explanation.className='note';explanation.textContent='以下は基準（回収3時間・料理回復なし）から日産ティアが変わる食材数。料理回復ありは何らかの料理を3食食べる条件で、目標料理を3食作れる保証ではありません。基準は変更していません。';sensitivity.append(explanation);
+ for(const row of supply.sensitivitySummary['集計']){const p=document.createElement('p');p.className='note';const match=/collect(\d)h_meals(\d)/.exec(row['シナリオ']);p.textContent=`回収${match[1]}時間・料理回復${match[2]==='1'?'あり':'なし'}・Lv${row['Lv']}：ティア変化 ${row['ティア変化食材数']}/19食材`;sensitivity.append(p)}
+ referenceContent.append(sensitivity);
+ supplyNote(`資料確認日 ${supply.conditions['確認日']}。独自計算の検算であり、ゲーム内実測ではありません。`);
+ for(const url of supply.conditions['出典']){const p=document.createElement('p');p.className='note';const a=document.createElement('a');a.href=url;a.textContent=url;a.target='_blank';a.rel='noopener';p.append(a);referenceContent.append(p)}

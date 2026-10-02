@@ -1,0 +1,21 @@
+<script id="psg-auto-image-paths">
+/* Only verified species and registered asset IDs are queried. Missing files leave the existing UI alone. */
+(()=>{'use strict';
+const catalog=window.PS_CATALOG;
+const assets=window.PS_DEV_ASSETS;
+const explicit=window.PS_IMAGE_FILES;
+const lookup=new Map();
+function exists(path){
+  if(!path)return Promise.resolve(false);
+  if(lookup.has(path))return lookup.get(path);
+  const task=new Promise(resolve=>{
+    const image=new Image();
+    image.onload=()=>resolve(image.naturalWidth>0);
+    image.onerror=()=>resolve(false);
+    image.src=path;
+  });
+  lookup.set(path,task);
+  return task;
+}
+const jobs=[];
+function tryPath(path,apply){jobs.push(exists(path).then(ok=>{if(ok){apply(path);return true}return false}))}

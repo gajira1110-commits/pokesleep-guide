@@ -1,0 +1,95 @@
+{
+  "no": 71,
+  "name": "ウツボット",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 2800,
+  "carry": 27,
+  "foodRate": 23.3,
+  "skillRate": 3.9,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0071_01",
+      "name": "ばふばふ寝",
+      "stars": 1
+    },
+    {
+      "id": "0071_02",
+      "name": "つるささえ寝",
+      "stars": 2
+    },
+    {
+      "id": "0071_03",
+      "name": "ひっくりかえり寝",
+      "stars": 3
+    },
+    {
+      "id": "0071_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0071_ウツボット",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%9C%E3%83%83%E3%83%88",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%9C%E3%83%83%E3%83%88"
+  ]
+}

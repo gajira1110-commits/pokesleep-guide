@@ -1,0 +1,101 @@
+{
+  "no": 442,
+  "name": "ミカルゲ",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 3500,
+  "carry": 27,
+  "foodRate": 19.8,
+  "skillRate": 3.6,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 5
+        },
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 7
+        },
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 6
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0442_01",
+      "name": "かなめいし寝",
+      "stars": 1
+    },
+    {
+      "id": "0442_02",
+      "name": "こっくり寝",
+      "stars": 2
+    },
+    {
+      "id": "0442_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0442_03",
+      "name": "じめんぺったり寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 16,
+  "expType": 600,
+  "evolutionNotes": [
+    "なし"
+  ],
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0442_ミカルゲ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

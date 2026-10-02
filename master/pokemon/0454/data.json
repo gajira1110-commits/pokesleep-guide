@@ -1,0 +1,99 @@
+{
+  "no": 454,
+  "name": "ドクロッグ",
+  "type": "どく",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "カゴのみ",
+  "berryQty": 1,
+  "help": 3400,
+  "carry": 19,
+  "foodRate": 22.9,
+  "skillRate": 4.3,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 7
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0454_01",
+      "name": "ぐうたら寝",
+      "stars": 1
+    },
+    {
+      "id": "0454_02",
+      "name": "のどぷくぷく寝",
+      "stars": 2
+    },
+    {
+      "id": "0454_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0454_03",
+      "name": "どくぶくろまくら寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AF%E3%83%AD%E3%83%83%E3%82%B0",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "グレッグル",
+    "↓　Lv.28＋グレッグルのアメ×40",
+    "ドクロッグ"
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0454_ドクロッグ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AF%E3%83%AD%E3%83%83%E3%82%B0",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

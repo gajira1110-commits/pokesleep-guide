@@ -1,0 +1,103 @@
+{
+  "no": 743,
+  "name": "アブリボン",
+  "type": "フェアリー",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "モモンのみ",
+  "berryQty": 1,
+  "help": 2300,
+  "carry": 24,
+  "foodRate": 19.4,
+  "skillRate": 2.5,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_draw_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 5
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 7
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 6
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0743_01",
+      "name": "ぱたぱた寝",
+      "stars": 1
+    },
+    {
+      "id": "0743_02",
+      "name": "ゆらゆら寝",
+      "stars": 2
+    },
+    {
+      "id": "0743_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0743_03",
+      "name": "かふんだんご寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%9C%E3%83%B3",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "アブリー",
+    "↓ Lv.19＋アブリーのアメx40",
+    "アブリボン"
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0743_アブリボン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%9C%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

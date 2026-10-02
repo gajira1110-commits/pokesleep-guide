@@ -1,0 +1,101 @@
+{
+  "no": 701,
+  "name": "ルチャブル",
+  "type": "ひこう",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "シーヤのみ",
+  "berryQty": 1,
+  "help": 2400,
+  "carry": 21,
+  "foodRate": 19.2,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_draw_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0701_01",
+      "name": "くるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0701_02",
+      "name": "こぶしうちつけ寝",
+      "stars": 2
+    },
+    {
+      "id": "0701_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0701_03",
+      "name": "きめポーズ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%AB%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 16,
+  "expType": 600,
+  "evolutionNotes": [
+    "なし"
+  ],
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0701_ルチャブル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AB%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

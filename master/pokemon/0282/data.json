@@ -1,0 +1,101 @@
+{
+  "no": 282,
+  "name": "サーナイト",
+  "type": "エスパー",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "マゴのみ",
+  "berryQty": 1,
+  "help": 2400,
+  "carry": 28,
+  "foodRate": 14.4,
+  "skillRate": 4.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0282_01",
+      "name": "すそゆらし寝",
+      "stars": 1
+    },
+    {
+      "id": "0282_02",
+      "name": "はずかしい寝",
+      "stars": 2
+    },
+    {
+      "id": "0282_03",
+      "name": "すそひろがり寝",
+      "stars": 3
+    },
+    {
+      "id": "0282_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/サーナイト",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%BC%E3%83%8A%E3%82%A4%E3%83%88"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4,
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0282_サーナイト",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%BC%E3%83%8A%E3%82%A4%E3%83%88",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

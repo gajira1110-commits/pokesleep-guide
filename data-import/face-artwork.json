@@ -1,0 +1,1617 @@
+{
+  "source": "PSG_pokemon_faces_circle_black(1).zip",
+  "mappingSource": "PSG_pokemon_faces_circle_black(1).zip",
+  "adopted": [
+    {
+      "name": "フシギダネ",
+      "no": 1,
+      "sourceFile": "IMG_1372/01_フシギダネ_顔.webp",
+      "path": "master/pokemon/0001/face.webp"
+    },
+    {
+      "name": "フシギソウ",
+      "no": 2,
+      "sourceFile": "IMG_1372/02_フシギソウ_顔.webp",
+      "path": "master/pokemon/0002/face.webp"
+    },
+    {
+      "name": "フシギバナ",
+      "no": 3,
+      "sourceFile": "IMG_1372/03_フシギバナ_顔.webp",
+      "path": "master/pokemon/0003/face.webp"
+    },
+    {
+      "name": "ヒトカゲ",
+      "no": 4,
+      "sourceFile": "IMG_1372/04_ヒトカゲ_顔.webp",
+      "path": "master/pokemon/0004/face.webp"
+    },
+    {
+      "name": "リザード",
+      "no": 5,
+      "sourceFile": "IMG_1372/05_リザード_顔.webp",
+      "path": "master/pokemon/0005/face.webp"
+    },
+    {
+      "name": "リザードン",
+      "no": 6,
+      "sourceFile": "IMG_1372/06_リザードン_顔.webp",
+      "path": "master/pokemon/0006/face.webp"
+    },
+    {
+      "name": "ゼニガメ",
+      "no": 7,
+      "sourceFile": "IMG_1372/07_ゼニガメ_顔.webp",
+      "path": "master/pokemon/0007/face.webp"
+    },
+    {
+      "name": "カメール",
+      "no": 8,
+      "sourceFile": "IMG_1372/08_カメール_顔.webp",
+      "path": "master/pokemon/0008/face.webp"
+    },
+    {
+      "name": "カメックス",
+      "no": 9,
+      "sourceFile": "IMG_1372/09_カメックス_顔.webp",
+      "path": "master/pokemon/0009/face.webp"
+    },
+    {
+      "name": "キャタピー",
+      "no": 10,
+      "sourceFile": "IMG_1372/10_キャタピー_顔.webp",
+      "path": "master/pokemon/0010/face.webp"
+    },
+    {
+      "name": "トランセル",
+      "no": 11,
+      "sourceFile": "IMG_1372/11_トランセル_顔.webp",
+      "path": "master/pokemon/0011/face.webp"
+    },
+    {
+      "name": "バタフリー",
+      "no": 12,
+      "sourceFile": "IMG_1372/12_バタフリー_顔.webp",
+      "path": "master/pokemon/0012/face.webp"
+    },
+    {
+      "name": "コラッタ",
+      "no": 19,
+      "sourceFile": "IMG_1372/13_コラッタ_顔.webp",
+      "path": "master/pokemon/0019/face.webp"
+    },
+    {
+      "name": "ラッタ",
+      "no": 20,
+      "sourceFile": "IMG_1372/14_ラッタ_顔.webp",
+      "path": "master/pokemon/0020/face.webp"
+    },
+    {
+      "name": "アーボ",
+      "no": 23,
+      "sourceFile": "IMG_1372/15_アーボ_顔.webp",
+      "path": "master/pokemon/0023/face.webp"
+    },
+    {
+      "name": "アーボック",
+      "no": 24,
+      "sourceFile": "IMG_1372/16_アーボック_顔.webp",
+      "path": "master/pokemon/0024/face.webp"
+    },
+    {
+      "name": "ピカチュウ",
+      "no": 25,
+      "sourceFile": "IMG_1372/17_ピカチュウ_顔.webp",
+      "path": "master/pokemon/0025/face.webp"
+    },
+    {
+      "name": "ライチュウ",
+      "no": 26,
+      "sourceFile": "IMG_1372/22_ライチュウ_顔.webp",
+      "path": "master/pokemon/0026/face.webp"
+    },
+    {
+      "name": "サンド",
+      "no": 27,
+      "sourceFile": "IMG_1372/23_サンド_顔.webp",
+      "path": "master/pokemon/0027/face.webp"
+    },
+    {
+      "name": "サンドパン",
+      "no": 28,
+      "sourceFile": "IMG_1372/24_サンドパン_顔.webp",
+      "path": "master/pokemon/0028/face.webp"
+    },
+    {
+      "name": "ピッピ",
+      "no": 35,
+      "sourceFile": "IMG_1372/25_ピッピ_顔.webp",
+      "path": "master/pokemon/0035/face.webp"
+    },
+    {
+      "name": "ピクシー",
+      "no": 36,
+      "sourceFile": "IMG_1372/26_ピクシー_顔.webp",
+      "path": "master/pokemon/0036/face.webp"
+    },
+    {
+      "name": "ロコン",
+      "no": 37,
+      "sourceFile": "IMG_1372/27_ロコン_顔.webp",
+      "path": "master/pokemon/0037/face.webp"
+    },
+    {
+      "name": "キュウコン",
+      "no": 38,
+      "sourceFile": "IMG_1372/29_キュウコン_顔.webp",
+      "path": "master/pokemon/0038/face.webp"
+    },
+    {
+      "name": "プリン",
+      "no": 39,
+      "sourceFile": "IMG_1373/IMG_1373_01-01.webp",
+      "path": "master/pokemon/0039/face.webp"
+    },
+    {
+      "name": "プクリン",
+      "no": 40,
+      "sourceFile": "IMG_1373/IMG_1373_01-02.webp",
+      "path": "master/pokemon/0040/face.webp"
+    },
+    {
+      "name": "ディグダ",
+      "no": 50,
+      "sourceFile": "IMG_1373/IMG_1373_01-03.webp",
+      "path": "master/pokemon/0050/face.webp"
+    },
+    {
+      "name": "ダグトリオ",
+      "no": 51,
+      "sourceFile": "IMG_1373/IMG_1373_01-04.webp",
+      "path": "master/pokemon/0051/face.webp"
+    },
+    {
+      "name": "ニャース",
+      "no": 52,
+      "sourceFile": "IMG_1373/IMG_1373_01-05.webp",
+      "path": "master/pokemon/0052/face.webp"
+    },
+    {
+      "name": "ペルシアン",
+      "no": 53,
+      "sourceFile": "IMG_1373/IMG_1373_02-01.webp",
+      "path": "master/pokemon/0053/face.webp"
+    },
+    {
+      "name": "コダック",
+      "no": 54,
+      "sourceFile": "IMG_1373/IMG_1373_02-02.webp",
+      "path": "master/pokemon/0054/face.webp"
+    },
+    {
+      "name": "ゴルダック",
+      "no": 55,
+      "sourceFile": "IMG_1373/IMG_1373_02-03.webp",
+      "path": "master/pokemon/0055/face.webp"
+    },
+    {
+      "name": "マンキー",
+      "no": 56,
+      "sourceFile": "IMG_1373/IMG_1373_02-04.webp",
+      "path": "master/pokemon/0056/face.webp"
+    },
+    {
+      "name": "オコリザル",
+      "no": 57,
+      "sourceFile": "IMG_1373/IMG_1373_02-05.webp",
+      "path": "master/pokemon/0057/face.webp"
+    },
+    {
+      "name": "ガーディ",
+      "no": 58,
+      "sourceFile": "IMG_1373/IMG_1373_03-01.webp",
+      "path": "master/pokemon/0058/face.webp"
+    },
+    {
+      "name": "ウインディ",
+      "no": 59,
+      "sourceFile": "IMG_1373/IMG_1373_03-02.webp",
+      "path": "master/pokemon/0059/face.webp"
+    },
+    {
+      "name": "マダツボミ",
+      "no": 69,
+      "sourceFile": "IMG_1373/IMG_1373_03-03.webp",
+      "path": "master/pokemon/0069/face.webp"
+    },
+    {
+      "name": "ウツドン",
+      "no": 70,
+      "sourceFile": "IMG_1373/IMG_1373_03-04.webp",
+      "path": "master/pokemon/0070/face.webp"
+    },
+    {
+      "name": "ウツボット",
+      "no": 71,
+      "sourceFile": "IMG_1373/IMG_1373_03-05.webp",
+      "path": "master/pokemon/0071/face.webp"
+    },
+    {
+      "name": "イシツブテ",
+      "no": 74,
+      "sourceFile": "IMG_1373/IMG_1373_04-01.webp",
+      "path": "master/pokemon/0074/face.webp"
+    },
+    {
+      "name": "ゴローン",
+      "no": 75,
+      "sourceFile": "IMG_1373/IMG_1373_04-02.webp",
+      "path": "master/pokemon/0075/face.webp"
+    },
+    {
+      "name": "ゴローニャ",
+      "no": 76,
+      "sourceFile": "IMG_1373/IMG_1373_04-03.webp",
+      "path": "master/pokemon/0076/face.webp"
+    },
+    {
+      "name": "ヤドン",
+      "no": 79,
+      "sourceFile": "IMG_1373/IMG_1373_04-04.webp",
+      "path": "master/pokemon/0079/face.webp"
+    },
+    {
+      "name": "ヤドラン",
+      "no": 80,
+      "sourceFile": "IMG_1373/IMG_1373_04-05.webp",
+      "path": "master/pokemon/0080/face.webp"
+    },
+    {
+      "name": "コイル",
+      "no": 81,
+      "sourceFile": "IMG_1373/IMG_1373_05-01.webp",
+      "path": "master/pokemon/0081/face.webp"
+    },
+    {
+      "name": "レアコイル",
+      "no": 82,
+      "sourceFile": "IMG_1373/IMG_1373_05-02.webp",
+      "path": "master/pokemon/0082/face.webp"
+    },
+    {
+      "name": "カモネギ",
+      "no": 83,
+      "sourceFile": "IMG_1373/IMG_1373_05-03.webp",
+      "path": "master/pokemon/0083/face.webp"
+    },
+    {
+      "name": "ドードー",
+      "no": 84,
+      "sourceFile": "IMG_1373/IMG_1373_05-04.webp",
+      "path": "master/pokemon/0084/face.webp"
+    },
+    {
+      "name": "ドードリオ",
+      "no": 85,
+      "sourceFile": "IMG_1373/IMG_1373_05-05.webp",
+      "path": "master/pokemon/0085/face.webp"
+    },
+    {
+      "name": "ゴース",
+      "no": 92,
+      "sourceFile": "IMG_1373/IMG_1373_06-01.webp",
+      "path": "master/pokemon/0092/face.webp"
+    },
+    {
+      "name": "ゴースト",
+      "no": 93,
+      "sourceFile": "IMG_1373/IMG_1373_06-02.webp",
+      "path": "master/pokemon/0093/face.webp"
+    },
+    {
+      "name": "ゲンガー",
+      "no": 94,
+      "sourceFile": "IMG_1373/IMG_1373_06-03.webp",
+      "path": "master/pokemon/0094/face.webp"
+    },
+    {
+      "name": "イワーク",
+      "no": 95,
+      "sourceFile": "IMG_1373/IMG_1373_06-04.webp",
+      "path": "master/pokemon/0095/face.webp"
+    },
+    {
+      "name": "カラカラ",
+      "no": 104,
+      "sourceFile": "IMG_1373/IMG_1373_06-05.webp",
+      "path": "master/pokemon/0104/face.webp"
+    },
+    {
+      "name": "ガラガラ",
+      "no": 105,
+      "sourceFile": "IMG_1374/IMG_1374_01-01.webp",
+      "path": "master/pokemon/0105/face.webp"
+    },
+    {
+      "name": "ラッキー",
+      "no": 113,
+      "sourceFile": "IMG_1374/IMG_1374_01-02.webp",
+      "path": "master/pokemon/0113/face.webp"
+    },
+    {
+      "name": "ガルーラ",
+      "no": 115,
+      "sourceFile": "IMG_1374/IMG_1374_01-03.webp",
+      "path": "master/pokemon/0115/face.webp"
+    },
+    {
+      "name": "バリヤード",
+      "no": 122,
+      "sourceFile": "IMG_1374/IMG_1374_01-04.webp",
+      "path": "master/pokemon/0122/face.webp"
+    },
+    {
+      "name": "カイロス",
+      "no": 127,
+      "sourceFile": "IMG_1374/IMG_1374_01-05.webp",
+      "path": "master/pokemon/0127/face.webp"
+    },
+    {
+      "name": "メタモン",
+      "no": 132,
+      "sourceFile": "IMG_1374/IMG_1374_02-01.webp",
+      "path": "master/pokemon/0132/face.webp"
+    },
+    {
+      "name": "イーブイ",
+      "no": 133,
+      "sourceFile": "IMG_1374/IMG_1374_02-02.webp",
+      "path": "master/pokemon/0133/face.webp"
+    },
+    {
+      "name": "シャワーズ",
+      "no": 134,
+      "sourceFile": "IMG_1374/IMG_1374_02-05.webp",
+      "path": "master/pokemon/0134/face.webp"
+    },
+    {
+      "name": "サンダース",
+      "no": 135,
+      "sourceFile": "IMG_1374/IMG_1374_03-01.webp",
+      "path": "master/pokemon/0135/face.webp"
+    },
+    {
+      "name": "ブースター",
+      "no": 136,
+      "sourceFile": "IMG_1374/IMG_1374_03-02.webp",
+      "path": "master/pokemon/0136/face.webp"
+    },
+    {
+      "name": "ミニリュウ",
+      "no": 147,
+      "sourceFile": "IMG_1374/IMG_1374_03-03.webp",
+      "path": "master/pokemon/0147/face.webp"
+    },
+    {
+      "name": "ハクリュー",
+      "no": 148,
+      "sourceFile": "IMG_1374/IMG_1374_03-04.webp",
+      "path": "master/pokemon/0148/face.webp"
+    },
+    {
+      "name": "カイリュー",
+      "no": 149,
+      "sourceFile": "IMG_1374/IMG_1374_03-05.webp",
+      "path": "master/pokemon/0149/face.webp"
+    },
+    {
+      "name": "チコリータ",
+      "no": 152,
+      "sourceFile": "IMG_1374/IMG_1374_04-03.webp",
+      "path": "master/pokemon/0152/face.webp"
+    },
+    {
+      "name": "ベイリーフ",
+      "no": 153,
+      "sourceFile": "IMG_1374/IMG_1374_04-04.webp",
+      "path": "master/pokemon/0153/face.webp"
+    },
+    {
+      "name": "メガニウム",
+      "no": 154,
+      "sourceFile": "IMG_1374/IMG_1374_04-05.webp",
+      "path": "master/pokemon/0154/face.webp"
+    },
+    {
+      "name": "ヒノアラシ",
+      "no": 155,
+      "sourceFile": "IMG_1374/IMG_1374_05-01.webp",
+      "path": "master/pokemon/0155/face.webp"
+    },
+    {
+      "name": "マグマラシ",
+      "no": 156,
+      "sourceFile": "IMG_1374/IMG_1374_05-02.webp",
+      "path": "master/pokemon/0156/face.webp"
+    },
+    {
+      "name": "バクフーン",
+      "no": 157,
+      "sourceFile": "IMG_1374/IMG_1374_05-03.webp",
+      "path": "master/pokemon/0157/face.webp"
+    },
+    {
+      "name": "ワニノコ",
+      "no": 158,
+      "sourceFile": "IMG_1374/IMG_1374_05-04.webp",
+      "path": "master/pokemon/0158/face.webp"
+    },
+    {
+      "name": "アリゲイツ",
+      "no": 159,
+      "sourceFile": "IMG_1374/IMG_1374_05-05.webp",
+      "path": "master/pokemon/0159/face.webp"
+    },
+    {
+      "name": "オーダイル",
+      "no": 160,
+      "sourceFile": "IMG_1374/IMG_1374_06-01.webp",
+      "path": "master/pokemon/0160/face.webp"
+    },
+    {
+      "name": "ピチュー",
+      "no": 172,
+      "sourceFile": "IMG_1374/IMG_1374_06-02.webp",
+      "path": "master/pokemon/0172/face.webp"
+    },
+    {
+      "name": "ピィ",
+      "no": 173,
+      "sourceFile": "IMG_1374/IMG_1374_06-03.webp",
+      "path": "master/pokemon/0173/face.webp"
+    },
+    {
+      "name": "ププリン",
+      "no": 174,
+      "sourceFile": "IMG_1374/IMG_1374_06-04.webp",
+      "path": "master/pokemon/0174/face.webp"
+    },
+    {
+      "name": "トゲピー",
+      "no": 175,
+      "sourceFile": "IMG_1374/IMG_1374_06-05.webp",
+      "path": "master/pokemon/0175/face.webp"
+    },
+    {
+      "name": "ネイティ",
+      "no": 177,
+      "sourceFile": "IMG_1377/IMG_1377_01-02.webp",
+      "path": "master/pokemon/0177/face.webp"
+    },
+    {
+      "name": "ネイティオ",
+      "no": 178,
+      "sourceFile": "IMG_1377/IMG_1377_01-03.webp",
+      "path": "master/pokemon/0178/face.webp"
+    },
+    {
+      "name": "メリープ",
+      "no": 179,
+      "sourceFile": "IMG_1377/IMG_1377_01-04.webp",
+      "path": "master/pokemon/0179/face.webp"
+    },
+    {
+      "name": "モココ",
+      "no": 180,
+      "sourceFile": "IMG_1377/IMG_1377_01-05.webp",
+      "path": "master/pokemon/0180/face.webp"
+    },
+    {
+      "name": "デンリュウ",
+      "no": 181,
+      "sourceFile": "IMG_1377/IMG_1377_02-01.webp",
+      "path": "master/pokemon/0181/face.webp"
+    },
+    {
+      "name": "ウソッキー",
+      "no": 185,
+      "sourceFile": "IMG_1377/IMG_1377_02-02.webp",
+      "path": "master/pokemon/0185/face.webp"
+    },
+    {
+      "name": "ウパー",
+      "no": 194,
+      "sourceFile": "IMG_1377/IMG_1377_02-03.webp",
+      "path": "master/pokemon/0194/face.webp"
+    },
+    {
+      "name": "ヌオー",
+      "no": 195,
+      "sourceFile": "IMG_1377/IMG_1377_02-05.webp",
+      "path": "master/pokemon/0195/face.webp"
+    },
+    {
+      "name": "エーフィ",
+      "no": 196,
+      "sourceFile": "IMG_1377/IMG_1377_03-01.webp",
+      "path": "master/pokemon/0196/face.webp"
+    },
+    {
+      "name": "ブラッキー",
+      "no": 197,
+      "sourceFile": "IMG_1377/IMG_1377_03-02.webp",
+      "path": "master/pokemon/0197/face.webp"
+    },
+    {
+      "name": "ヤミカラス",
+      "no": 198,
+      "sourceFile": "IMG_1377/IMG_1377_03-03.webp",
+      "path": "master/pokemon/0198/face.webp"
+    },
+    {
+      "name": "ヤドキング",
+      "no": 199,
+      "sourceFile": "IMG_1377/IMG_1377_03-04.webp",
+      "path": "master/pokemon/0199/face.webp"
+    },
+    {
+      "name": "ソーナンス",
+      "no": 202,
+      "sourceFile": "IMG_1377/IMG_1377_03-05.webp",
+      "path": "master/pokemon/0202/face.webp"
+    },
+    {
+      "name": "ハガネール",
+      "no": 208,
+      "sourceFile": "IMG_1377/IMG_1377_04-01.webp",
+      "path": "master/pokemon/0208/face.webp"
+    },
+    {
+      "name": "ツボツボ",
+      "no": 213,
+      "sourceFile": "IMG_1377/IMG_1377_04-02.webp",
+      "path": "master/pokemon/0213/face.webp"
+    },
+    {
+      "name": "ヘラクロス",
+      "no": 214,
+      "sourceFile": "IMG_1377/IMG_1377_04-03.webp",
+      "path": "master/pokemon/0214/face.webp"
+    },
+    {
+      "name": "ニューラ",
+      "no": 215,
+      "sourceFile": "IMG_1377/IMG_1377_04-04.webp",
+      "path": "master/pokemon/0215/face.webp"
+    },
+    {
+      "name": "デリバード",
+      "no": 225,
+      "sourceFile": "IMG_1377/IMG_1377_04-05.webp",
+      "path": "master/pokemon/0225/face.webp"
+    },
+    {
+      "name": "デルビル",
+      "no": 228,
+      "sourceFile": "IMG_1377/IMG_1377_05-01.webp",
+      "path": "master/pokemon/0228/face.webp"
+    },
+    {
+      "name": "ハピナス",
+      "no": 242,
+      "sourceFile": "IMG_1377/IMG_1377_05-03.webp",
+      "path": "master/pokemon/0242/face.webp"
+    },
+    {
+      "name": "ライコウ",
+      "no": 243,
+      "sourceFile": "IMG_1377/IMG_1377_05-04.webp",
+      "path": "master/pokemon/0243/face.webp"
+    },
+    {
+      "name": "エンテイ",
+      "no": 244,
+      "sourceFile": "IMG_1377/IMG_1377_05-05.webp",
+      "path": "master/pokemon/0244/face.webp"
+    },
+    {
+      "name": "スイクン",
+      "no": 245,
+      "sourceFile": "IMG_1377/IMG_1377_06-01.webp",
+      "path": "master/pokemon/0245/face.webp"
+    },
+    {
+      "name": "ヨーギラス",
+      "no": 246,
+      "sourceFile": "IMG_1377/IMG_1377_06-02.webp",
+      "path": "master/pokemon/0246/face.webp"
+    },
+    {
+      "name": "サナギラス",
+      "no": 247,
+      "sourceFile": "IMG_1377/IMG_1377_06-03.webp",
+      "path": "master/pokemon/0247/face.webp"
+    },
+    {
+      "name": "バンギラス",
+      "no": 248,
+      "sourceFile": "IMG_1377/IMG_1377_06-04.webp",
+      "path": "master/pokemon/0248/face.webp"
+    },
+    {
+      "name": "キモリ",
+      "no": 252,
+      "sourceFile": "IMG_1377/IMG_1377_06-05.webp",
+      "path": "master/pokemon/0252/face.webp"
+    },
+    {
+      "name": "ジュプトル",
+      "no": 253,
+      "sourceFile": "IMG_1378/IMG_1378_01-01.webp",
+      "path": "master/pokemon/0253/face.webp"
+    },
+    {
+      "name": "ジュカイン",
+      "no": 254,
+      "sourceFile": "IMG_1378/IMG_1378_01-02.webp",
+      "path": "master/pokemon/0254/face.webp"
+    },
+    {
+      "name": "アチャモ",
+      "no": 255,
+      "sourceFile": "IMG_1378/IMG_1378_01-03.webp",
+      "path": "master/pokemon/0255/face.webp"
+    },
+    {
+      "name": "ワカシャモ",
+      "no": 256,
+      "sourceFile": "IMG_1378/IMG_1378_01-04.webp",
+      "path": "master/pokemon/0256/face.webp"
+    },
+    {
+      "name": "バシャーモ",
+      "no": 257,
+      "sourceFile": "IMG_1378/IMG_1378_01-05.webp",
+      "path": "master/pokemon/0257/face.webp"
+    },
+    {
+      "name": "ミズゴロウ",
+      "no": 258,
+      "sourceFile": "IMG_1378/IMG_1378_02-01.webp",
+      "path": "master/pokemon/0258/face.webp"
+    },
+    {
+      "name": "ヌマクロー",
+      "no": 259,
+      "sourceFile": "IMG_1378/IMG_1378_02-02.webp",
+      "path": "master/pokemon/0259/face.webp"
+    },
+    {
+      "name": "ラグラージ",
+      "no": 260,
+      "sourceFile": "IMG_1378/IMG_1378_02-03.webp",
+      "path": "master/pokemon/0260/face.webp"
+    },
+    {
+      "name": "ラルトス",
+      "no": 280,
+      "sourceFile": "IMG_1378/IMG_1378_02-04.webp",
+      "path": "master/pokemon/0280/face.webp"
+    },
+    {
+      "name": "キルリア",
+      "no": 281,
+      "sourceFile": "IMG_1378/IMG_1378_02-05.webp",
+      "path": "master/pokemon/0281/face.webp"
+    },
+    {
+      "name": "サーナイト",
+      "no": 282,
+      "sourceFile": "IMG_1378/IMG_1378_03-01.webp",
+      "path": "master/pokemon/0282/face.webp"
+    },
+    {
+      "name": "ナマケロ",
+      "no": 287,
+      "sourceFile": "IMG_1378/IMG_1378_03-02.webp",
+      "path": "master/pokemon/0287/face.webp"
+    },
+    {
+      "name": "ヤルキモノ",
+      "no": 288,
+      "sourceFile": "IMG_1378/IMG_1378_03-03.webp",
+      "path": "master/pokemon/0288/face.webp"
+    },
+    {
+      "name": "ケッキング",
+      "no": 289,
+      "sourceFile": "IMG_1378/IMG_1378_03-04.webp",
+      "path": "master/pokemon/0289/face.webp"
+    },
+    {
+      "name": "ヤミラミ",
+      "no": 302,
+      "sourceFile": "IMG_1378/IMG_1378_03-05.webp",
+      "path": "master/pokemon/0302/face.webp"
+    },
+    {
+      "name": "クチート",
+      "no": 303,
+      "sourceFile": "IMG_1378/IMG_1378_04-01.webp",
+      "path": "master/pokemon/0303/face.webp"
+    },
+    {
+      "name": "ココドラ",
+      "no": 304,
+      "sourceFile": "IMG_1378/IMG_1378_04-02.webp",
+      "path": "master/pokemon/0304/face.webp"
+    },
+    {
+      "name": "コドラ",
+      "no": 305,
+      "sourceFile": "IMG_1378/IMG_1378_04-03.webp",
+      "path": "master/pokemon/0305/face.webp"
+    },
+    {
+      "name": "ボスゴドラ",
+      "no": 306,
+      "sourceFile": "IMG_1378/IMG_1378_04-04.webp",
+      "path": "master/pokemon/0306/face.webp"
+    },
+    {
+      "name": "ゴクリン",
+      "no": 316,
+      "sourceFile": "IMG_1378/IMG_1378_05-02.webp",
+      "path": "master/pokemon/0316/face.webp"
+    },
+    {
+      "name": "マルノーム",
+      "no": 317,
+      "sourceFile": "IMG_1378/IMG_1378_05-03.webp",
+      "path": "master/pokemon/0317/face.webp"
+    },
+    {
+      "name": "ナックラー",
+      "no": 328,
+      "sourceFile": "IMG_1378/IMG_1378_05-04.webp",
+      "path": "master/pokemon/0328/face.webp"
+    },
+    {
+      "name": "ビブラーバ",
+      "no": 329,
+      "sourceFile": "IMG_1378/IMG_1378_05-05.webp",
+      "path": "master/pokemon/0329/face.webp"
+    },
+    {
+      "name": "フライゴン",
+      "no": 330,
+      "sourceFile": "IMG_1378/IMG_1378_06-01.webp",
+      "path": "master/pokemon/0330/face.webp"
+    },
+    {
+      "name": "チルット",
+      "no": 333,
+      "sourceFile": "IMG_1378/IMG_1378_06-02.webp",
+      "path": "master/pokemon/0333/face.webp"
+    },
+    {
+      "name": "チルタリス",
+      "no": 334,
+      "sourceFile": "IMG_1378/IMG_1378_06-03.webp",
+      "path": "master/pokemon/0334/face.webp"
+    },
+    {
+      "name": "カゲボウズ",
+      "no": 353,
+      "sourceFile": "IMG_1378/IMG_1378_06-04.webp",
+      "path": "master/pokemon/0353/face.webp"
+    },
+    {
+      "name": "ジュペッタ",
+      "no": 354,
+      "sourceFile": "IMG_1378/IMG_1378_06-05.webp",
+      "path": "master/pokemon/0354/face.webp"
+    },
+    {
+      "name": "アブソル",
+      "no": 359,
+      "sourceFile": "IMG_1379/IMG_1379_01-01.webp",
+      "path": "master/pokemon/0359/face.webp"
+    },
+    {
+      "name": "ソーナノ",
+      "no": 360,
+      "sourceFile": "IMG_1379/IMG_1379_01-02.webp",
+      "path": "master/pokemon/0360/face.webp"
+    },
+    {
+      "name": "タマザラシ",
+      "no": 363,
+      "sourceFile": "IMG_1379/IMG_1379_01-03.webp",
+      "path": "master/pokemon/0363/face.webp"
+    },
+    {
+      "name": "トドグラー",
+      "no": 364,
+      "sourceFile": "IMG_1379/IMG_1379_01-05.webp",
+      "path": "master/pokemon/0364/face.webp"
+    },
+    {
+      "name": "トドゼルガ",
+      "no": 365,
+      "sourceFile": "IMG_1379/IMG_1379_02-01.webp",
+      "path": "master/pokemon/0365/face.webp"
+    },
+    {
+      "name": "タツベイ",
+      "no": 371,
+      "sourceFile": "IMG_1379/IMG_1379_02-02.webp",
+      "path": "master/pokemon/0371/face.webp"
+    },
+    {
+      "name": "コモルー",
+      "no": 372,
+      "sourceFile": "IMG_1379/IMG_1379_02-03.webp",
+      "path": "master/pokemon/0372/face.webp"
+    },
+    {
+      "name": "ボーマンダ",
+      "no": 373,
+      "sourceFile": "IMG_1379/IMG_1379_02-04.webp",
+      "path": "master/pokemon/0373/face.webp"
+    },
+    {
+      "name": "ナエトル",
+      "no": 387,
+      "sourceFile": "IMG_1379/IMG_1379_03-02.webp",
+      "path": "master/pokemon/0387/face.webp"
+    },
+    {
+      "name": "ハヤシガメ",
+      "no": 388,
+      "sourceFile": "IMG_1379/IMG_1379_03-03.webp",
+      "path": "master/pokemon/0388/face.webp"
+    },
+    {
+      "name": "ドダイトス",
+      "no": 389,
+      "sourceFile": "IMG_1379/IMG_1379_03-04.webp",
+      "path": "master/pokemon/0389/face.webp"
+    },
+    {
+      "name": "ヒコザル",
+      "no": 390,
+      "sourceFile": "IMG_1379/IMG_1379_03-05.webp",
+      "path": "master/pokemon/0390/face.webp"
+    },
+    {
+      "name": "モウカザル",
+      "no": 391,
+      "sourceFile": "IMG_1379/IMG_1379_04-01.webp",
+      "path": "master/pokemon/0391/face.webp"
+    },
+    {
+      "name": "ポッチャマ",
+      "no": 393,
+      "sourceFile": "IMG_1379/IMG_1379_04-03.webp",
+      "path": "master/pokemon/0393/face.webp"
+    },
+    {
+      "name": "ポッタイシ",
+      "no": 394,
+      "sourceFile": "IMG_1379/IMG_1379_04-04.webp",
+      "path": "master/pokemon/0394/face.webp"
+    },
+    {
+      "name": "エンペルト",
+      "no": 395,
+      "sourceFile": "IMG_1379/IMG_1379_04-05.webp",
+      "path": "master/pokemon/0395/face.webp"
+    },
+    {
+      "name": "コリンク",
+      "no": 403,
+      "sourceFile": "IMG_1379/IMG_1379_05-01.webp",
+      "path": "master/pokemon/0403/face.webp"
+    },
+    {
+      "name": "ルクシオ",
+      "no": 404,
+      "sourceFile": "IMG_1379/IMG_1379_05-02.webp",
+      "path": "master/pokemon/0404/face.webp"
+    },
+    {
+      "name": "レントラー",
+      "no": 405,
+      "sourceFile": "IMG_1379/IMG_1379_05-03.webp",
+      "path": "master/pokemon/0405/face.webp"
+    },
+    {
+      "name": "ドンカラス",
+      "no": 430,
+      "sourceFile": "IMG_1379/IMG_1379_06-01.webp",
+      "path": "master/pokemon/0430/face.webp"
+    },
+    {
+      "name": "ウソハチ",
+      "no": 438,
+      "sourceFile": "IMG_1379/IMG_1379_06-02.webp",
+      "path": "master/pokemon/0438/face.webp"
+    },
+    {
+      "name": "マネネ",
+      "no": 439,
+      "sourceFile": "IMG_1379/IMG_1379_06-03.webp",
+      "path": "master/pokemon/0439/face.webp"
+    },
+    {
+      "name": "ピンプク",
+      "no": 440,
+      "sourceFile": "IMG_1379/IMG_1379_06-04.webp",
+      "path": "master/pokemon/0440/face.webp"
+    },
+    {
+      "name": "ミカルゲ",
+      "no": 442,
+      "sourceFile": "IMG_1379/IMG_1379_06-05.webp",
+      "path": "master/pokemon/0442/face.webp"
+    },
+    {
+      "name": "リオル",
+      "no": 447,
+      "sourceFile": "IMG_1380/IMG_1380_01-01.webp",
+      "path": "master/pokemon/0447/face.webp"
+    },
+    {
+      "name": "グレッグル",
+      "no": 453,
+      "sourceFile": "IMG_1380/IMG_1380_01-03.webp",
+      "path": "master/pokemon/0453/face.webp"
+    },
+    {
+      "name": "ドクロッグ",
+      "no": 454,
+      "sourceFile": "IMG_1380/IMG_1380_01-04.webp",
+      "path": "master/pokemon/0454/face.webp"
+    },
+    {
+      "name": "ユキカブリ",
+      "no": 459,
+      "sourceFile": "IMG_1380/IMG_1380_01-05.webp",
+      "path": "master/pokemon/0459/face.webp"
+    },
+    {
+      "name": "ユキノオー",
+      "no": 460,
+      "sourceFile": "IMG_1380/IMG_1380_02-01.webp",
+      "path": "master/pokemon/0460/face.webp"
+    },
+    {
+      "name": "マニューラ",
+      "no": 461,
+      "sourceFile": "IMG_1380/IMG_1380_02-02.webp",
+      "path": "master/pokemon/0461/face.webp"
+    },
+    {
+      "name": "ジバコイル",
+      "no": 462,
+      "sourceFile": "IMG_1380/IMG_1380_02-03.webp",
+      "path": "master/pokemon/0462/face.webp"
+    },
+    {
+      "name": "リーフィア",
+      "no": 470,
+      "sourceFile": "IMG_1380/IMG_1380_02-05.webp",
+      "path": "master/pokemon/0470/face.webp"
+    },
+    {
+      "name": "グレイシア",
+      "no": 471,
+      "sourceFile": "IMG_1380/IMG_1380_03-01.webp",
+      "path": "master/pokemon/0471/face.webp"
+    },
+    {
+      "name": "エルレイド",
+      "no": 475,
+      "sourceFile": "IMG_1380/IMG_1380_03-02.webp",
+      "path": "master/pokemon/0475/face.webp"
+    },
+    {
+      "name": "ムンナ",
+      "no": 517,
+      "sourceFile": "IMG_1380/IMG_1380_03-05.webp",
+      "path": "master/pokemon/0517/face.webp"
+    },
+    {
+      "name": "ムシャーナ",
+      "no": 518,
+      "sourceFile": "IMG_1380/IMG_1380_04-01.webp",
+      "path": "master/pokemon/0518/face.webp"
+    },
+    {
+      "name": "イシズマイ",
+      "no": 557,
+      "sourceFile": "IMG_1380/IMG_1380_04-02.webp",
+      "path": "master/pokemon/0557/face.webp"
+    },
+    {
+      "name": "イワパレス",
+      "no": 558,
+      "sourceFile": "IMG_1380/IMG_1380_04-03.webp",
+      "path": "master/pokemon/0558/face.webp"
+    },
+    {
+      "name": "ワシボン",
+      "no": 627,
+      "sourceFile": "IMG_1380/IMG_1380_04-04.webp",
+      "path": "master/pokemon/0627/face.webp"
+    },
+    {
+      "name": "ウォーグル",
+      "no": 628,
+      "sourceFile": "IMG_1380/IMG_1380_04-05.webp",
+      "path": "master/pokemon/0628/face.webp"
+    },
+    {
+      "name": "チゴラス",
+      "no": 696,
+      "sourceFile": "IMG_1380/IMG_1380_05-01.webp",
+      "path": "master/pokemon/0696/face.webp"
+    },
+    {
+      "name": "ガチゴラス",
+      "no": 697,
+      "sourceFile": "IMG_1380/IMG_1380_05-02.webp",
+      "path": "master/pokemon/0697/face.webp"
+    },
+    {
+      "name": "ニンフィア",
+      "no": 700,
+      "sourceFile": "IMG_1380/IMG_1380_05-03.webp",
+      "path": "master/pokemon/0700/face.webp"
+    },
+    {
+      "name": "ルチャブル",
+      "no": 701,
+      "sourceFile": "IMG_1380/IMG_1380_05-04.webp",
+      "path": "master/pokemon/0701/face.webp"
+    },
+    {
+      "name": "デデンネ",
+      "no": 702,
+      "sourceFile": "IMG_1380/IMG_1380_05-05.webp",
+      "path": "master/pokemon/0702/face.webp"
+    },
+    {
+      "name": "オンバット",
+      "no": 714,
+      "sourceFile": "IMG_1380/IMG_1380_06-03.webp",
+      "path": "master/pokemon/0714/face.webp"
+    },
+    {
+      "name": "オンバーン",
+      "no": 715,
+      "sourceFile": "IMG_1380/IMG_1380_06-04.webp",
+      "path": "master/pokemon/0715/face.webp"
+    },
+    {
+      "name": "アゴジムシ",
+      "no": 736,
+      "sourceFile": "IMG_1380/IMG_1380_06-05.webp",
+      "path": "master/pokemon/0736/face.webp"
+    },
+    {
+      "name": "デンヂムシ",
+      "no": 737,
+      "sourceFile": "IMG_1381/IMG_1381_01-01.webp",
+      "path": "master/pokemon/0737/face.webp"
+    },
+    {
+      "name": "クワガノン",
+      "no": 738,
+      "sourceFile": "IMG_1381/IMG_1381_01-02.webp",
+      "path": "master/pokemon/0738/face.webp"
+    },
+    {
+      "name": "アブリー",
+      "no": 742,
+      "sourceFile": "IMG_1381/IMG_1381_01-03.webp",
+      "path": "master/pokemon/0742/face.webp"
+    },
+    {
+      "name": "アブリボン",
+      "no": 743,
+      "sourceFile": "IMG_1381/IMG_1381_01-04.webp",
+      "path": "master/pokemon/0743/face.webp"
+    },
+    {
+      "name": "ヌイコグマ",
+      "no": 759,
+      "sourceFile": "IMG_1381/IMG_1381_01-05.webp",
+      "path": "master/pokemon/0759/face.webp"
+    },
+    {
+      "name": "キテルグマ",
+      "no": 760,
+      "sourceFile": "IMG_1381/IMG_1381_02-01.webp",
+      "path": "master/pokemon/0760/face.webp"
+    },
+    {
+      "name": "キュワワー",
+      "no": 764,
+      "sourceFile": "IMG_1381/IMG_1381_02-02.webp",
+      "path": "master/pokemon/0764/face.webp"
+    },
+    {
+      "name": "ジジーロン",
+      "no": 780,
+      "sourceFile": "IMG_1381/IMG_1381_02-05.webp",
+      "path": "master/pokemon/0780/face.webp"
+    },
+    {
+      "name": "ウッウ",
+      "no": 845,
+      "sourceFile": "IMG_1381/IMG_1381_03-01.webp",
+      "path": "master/pokemon/0845/face.webp"
+    },
+    {
+      "name": "エレズン",
+      "no": 848,
+      "sourceFile": "IMG_1381/IMG_1381_03-02.webp",
+      "path": "master/pokemon/0848/face.webp"
+    },
+    {
+      "name": "ニャオハ",
+      "no": 906,
+      "sourceFile": "IMG_1381/IMG_1381_03-05.webp",
+      "path": "master/pokemon/0906/face.webp"
+    },
+    {
+      "name": "ニャローテ",
+      "no": 907,
+      "sourceFile": "IMG_1381/IMG_1381_04-01.webp",
+      "path": "master/pokemon/0907/face.webp"
+    },
+    {
+      "name": "マスカーニャ",
+      "no": 908,
+      "sourceFile": "IMG_1381/IMG_1381_04-02.webp",
+      "path": "master/pokemon/0908/face.webp"
+    },
+    {
+      "name": "ホゲータ",
+      "no": 909,
+      "sourceFile": "IMG_1381/IMG_1381_04-03.webp",
+      "path": "master/pokemon/0909/face.webp"
+    },
+    {
+      "name": "アチゲータ",
+      "no": 910,
+      "sourceFile": "IMG_1381/IMG_1381_04-04.webp",
+      "path": "master/pokemon/0910/face.webp"
+    },
+    {
+      "name": "ラウドボーン",
+      "no": 911,
+      "sourceFile": "IMG_1381/IMG_1381_04-05.webp",
+      "path": "master/pokemon/0911/face.webp"
+    },
+    {
+      "name": "クワッス",
+      "no": 912,
+      "sourceFile": "IMG_1381/IMG_1381_05-01.webp",
+      "path": "master/pokemon/0912/face.webp"
+    },
+    {
+      "name": "ウェルカモ",
+      "no": 913,
+      "sourceFile": "IMG_1381/IMG_1381_05-02.webp",
+      "path": "master/pokemon/0913/face.webp"
+    },
+    {
+      "name": "ウェーニバル",
+      "no": 914,
+      "sourceFile": "IMG_1381/IMG_1381_05-03.webp",
+      "path": "master/pokemon/0914/face.webp"
+    },
+    {
+      "name": "パモ",
+      "no": 921,
+      "sourceFile": "IMG_1381/IMG_1381_05-04.webp",
+      "path": "master/pokemon/0921/face.webp"
+    },
+    {
+      "name": "パモット",
+      "no": 922,
+      "sourceFile": "IMG_1381/IMG_1381_05-05.webp",
+      "path": "master/pokemon/0922/face.webp"
+    },
+    {
+      "name": "パーモット",
+      "no": 923,
+      "sourceFile": "IMG_1381/IMG_1381_06-01.webp",
+      "path": "master/pokemon/0923/face.webp"
+    },
+    {
+      "name": "カヌチャン",
+      "no": 957,
+      "sourceFile": "IMG_1381/IMG_1381_06-02.webp",
+      "path": "master/pokemon/0957/face.webp"
+    },
+    {
+      "name": "ナカヌチャン",
+      "no": 958,
+      "sourceFile": "IMG_1381/IMG_1381_06-03.webp",
+      "path": "master/pokemon/0958/face.webp"
+    },
+    {
+      "name": "デカヌチャン",
+      "no": 959,
+      "sourceFile": "IMG_1381/IMG_1381_06-04.webp",
+      "path": "master/pokemon/0959/face.webp"
+    },
+    {
+      "name": "アルクジラ",
+      "no": 974,
+      "sourceFile": "IMG_1381/IMG_1381_06-05.webp",
+      "path": "master/pokemon/0974/face.webp"
+    },
+    {
+      "name": "ハルクジラ",
+      "no": 975,
+      "sourceFile": "IMG_1382/IMG_1382_06-01.webp",
+      "path": "master/pokemon/0975/face.webp"
+    },
+    {
+      "name": "ドオー",
+      "no": 980,
+      "sourceFile": "IMG_1382/IMG_1382_06-02.webp",
+      "path": "master/pokemon/0980/face.webp"
+    }
+  ],
+  "pending": [
+    {
+      "相対パス": "IMG_1372/18_ピカチュウ_ハロウィン橙_顔.webp",
+      "ファイル名": "18_ピカチュウ_ハロウィン橙_顔.webp",
+      "ポケモン名": "ピカチュウ",
+      "姿違い": "ハロウィン橙帽子",
+      "元画像": "IMG_1372.jpeg",
+      "行": "4",
+      "列": "3",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1372/19_ピカチュウ_ハロウィン紫_顔.webp",
+      "ファイル名": "19_ピカチュウ_ハロウィン紫_顔.webp",
+      "ポケモン名": "ピカチュウ",
+      "姿違い": "ハロウィン紫帽子",
+      "元画像": "IMG_1372.jpeg",
+      "行": "4",
+      "列": "4",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1372/20_ピカチュウ_クリスマス_顔.webp",
+      "ファイル名": "20_ピカチュウ_クリスマス_顔.webp",
+      "ポケモン名": "ピカチュウ",
+      "姿違い": "クリスマス",
+      "元画像": "IMG_1372.jpeg",
+      "行": "4",
+      "列": "5",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1372/21_ピカチュウ_船長_顔.webp",
+      "ファイル名": "21_ピカチュウ_船長_顔.webp",
+      "ポケモン名": "ピカチュウ",
+      "姿違い": "船長",
+      "元画像": "IMG_1372.jpeg",
+      "行": "5",
+      "列": "1",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1372/28_ロコン_アローラ_顔.webp",
+      "ファイル名": "28_ロコン_アローラ_顔.webp",
+      "ポケモン名": "ロコン",
+      "姿違い": "アローラのすがた",
+      "元画像": "IMG_1372.jpeg",
+      "行": "6",
+      "列": "3",
+      "登録108種対象": "対象",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1372/30_キュウコン_アローラ_顔.webp",
+      "ファイル名": "30_キュウコン_アローラ_顔.webp",
+      "ポケモン名": "キュウコン",
+      "姿違い": "アローラのすがた",
+      "元画像": "IMG_1372.jpeg",
+      "行": "6",
+      "列": "5",
+      "登録108種対象": "対象",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1374/IMG_1374_02-03.webp",
+      "ファイル名": "IMG_1374_02-03.webp",
+      "ポケモン名": "イーブイ",
+      "姿違い": "ハロウィン橙帽子",
+      "元画像": "IMG_1374.jpeg",
+      "行": "2",
+      "列": "3",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1374/IMG_1374_02-04.webp",
+      "ファイル名": "IMG_1374_02-04.webp",
+      "ポケモン名": "イーブイ",
+      "姿違い": "クリスマス",
+      "元画像": "IMG_1374.jpeg",
+      "行": "2",
+      "列": "4",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1374/IMG_1374_04-01.webp",
+      "ファイル名": "IMG_1374_04-01.webp",
+      "ポケモン名": "ミュウツー",
+      "姿違い": "通常",
+      "元画像": "IMG_1374.jpeg",
+      "行": "4",
+      "列": "1",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1374/IMG_1374_04-02.webp",
+      "ファイル名": "IMG_1374_04-02.webp",
+      "ポケモン名": "ミュウ",
+      "姿違い": "通常",
+      "元画像": "IMG_1374.jpeg",
+      "行": "4",
+      "列": "2",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1377/IMG_1377_02-04.webp",
+      "ファイル名": "IMG_1377_02-04.webp",
+      "ポケモン名": "ウパー",
+      "姿違い": "パルデアのすがた",
+      "元画像": "IMG_1377.jpeg",
+      "行": "2",
+      "列": "4",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1378/IMG_1378_04-05.webp",
+      "ファイル名": "IMG_1378_04-05.webp",
+      "ポケモン名": "プラスル",
+      "姿違い": "通常",
+      "元画像": "IMG_1378.jpeg",
+      "行": "4",
+      "列": "5",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1378/IMG_1378_05-01.webp",
+      "ファイル名": "IMG_1378_05-01.webp",
+      "ポケモン名": "マイナン",
+      "姿違い": "通常",
+      "元画像": "IMG_1378.jpeg",
+      "行": "5",
+      "列": "1",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1379/IMG_1379_01-04.webp",
+      "ファイル名": "IMG_1379_01-04.webp",
+      "ポケモン名": "タマザラシ",
+      "姿違い": "クリスマス装飾",
+      "元画像": "IMG_1379.jpeg",
+      "行": "1",
+      "列": "4",
+      "登録108種対象": "対象",
+      "識別注記": "装飾は画像上の識別名（正式名称未照合）",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1379/IMG_1379_02-05.webp",
+      "ファイル名": "IMG_1379_02-05.webp",
+      "ポケモン名": "ラティアス",
+      "姿違い": "通常",
+      "元画像": "IMG_1379.jpeg",
+      "行": "2",
+      "列": "5",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1379/IMG_1379_03-01.webp",
+      "ファイル名": "IMG_1379_03-01.webp",
+      "ポケモン名": "ラティオス",
+      "姿違い": "通常",
+      "元画像": "IMG_1379.jpeg",
+      "行": "3",
+      "列": "1",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1379/IMG_1379_05-04.webp",
+      "ファイル名": "IMG_1379_05-04.webp",
+      "ポケモン名": "フワンテ",
+      "姿違い": "通常",
+      "元画像": "IMG_1379.jpeg",
+      "行": "5",
+      "列": "4",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1380/IMG_1380_03-03.webp",
+      "ファイル名": "IMG_1380_03-03.webp",
+      "ポケモン名": "クレセリア",
+      "姿違い": "通常",
+      "元画像": "IMG_1380.jpeg",
+      "行": "3",
+      "列": "3",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1380/IMG_1380_03-04.webp",
+      "ファイル名": "IMG_1380_03-04.webp",
+      "ポケモン名": "ダークライ",
+      "姿違い": "通常",
+      "元画像": "IMG_1380.jpeg",
+      "行": "3",
+      "列": "4",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1380/IMG_1380_06-01.webp",
+      "ファイル名": "IMG_1380_06-01.webp",
+      "ポケモン名": "バケッチャ",
+      "姿違い": "通常",
+      "元画像": "IMG_1380.jpeg",
+      "行": "6",
+      "列": "1",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1380/IMG_1380_06-02.webp",
+      "ファイル名": "IMG_1380_06-02.webp",
+      "ポケモン名": "パンプジン",
+      "姿違い": "通常",
+      "元画像": "IMG_1380.jpeg",
+      "行": "6",
+      "列": "2",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "1"
+    },
+    {
+      "相対パス": "IMG_1381/IMG_1381_02-03.webp",
+      "ファイル名": "IMG_1381_02-03.webp",
+      "ポケモン名": "トゲデマル",
+      "姿違い": "通常",
+      "元画像": "IMG_1381.png",
+      "行": "2",
+      "列": "3",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "2"
+    },
+    {
+      "相対パス": "IMG_1381/IMG_1381_02-04.webp",
+      "ファイル名": "IMG_1381_02-04.webp",
+      "ポケモン名": "ミミッキュ",
+      "姿違い": "通常",
+      "元画像": "IMG_1381.png",
+      "行": "2",
+      "列": "4",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "2"
+    },
+    {
+      "相対パス": "IMG_1381/IMG_1381_03-03.webp",
+      "ファイル名": "IMG_1381_03-03.webp",
+      "ポケモン名": "ストリンダー",
+      "姿違い": "ハイなすがた",
+      "元画像": "IMG_1381.png",
+      "行": "3",
+      "列": "3",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "2"
+    },
+    {
+      "相対パス": "IMG_1381/IMG_1381_03-04.webp",
+      "ファイル名": "IMG_1381_03-04.webp",
+      "ポケモン名": "ストリンダー",
+      "姿違い": "ローなすがた",
+      "元画像": "IMG_1381.png",
+      "行": "3",
+      "列": "4",
+      "登録108種対象": "対象外",
+      "識別注記": "画像を目視識別",
+      "同じポケモン・姿の画像数": "2"
+    }
+  ],
+  "missingCurrent": [
+    "ゴウカザル",
+    "トゲキッス",
+    "トゲチック",
+    "ヘルガー",
+    "ルカリオ"
+  ],
+  "detailFallback": "full.webpを優先し、未登録時はface.webpを共用。姿違いは別IDの対応完了後に適用。",
+  "missingArtwork": [
+    {
+      "name": "ゴウカザル",
+      "status": "保留",
+      "reason": "画像の素体が未作成",
+      "resumeWhen": "素材受領後"
+    },
+    {
+      "name": "トゲキッス",
+      "status": "保留",
+      "reason": "画像の素体が未作成",
+      "resumeWhen": "素材受領後"
+    },
+    {
+      "name": "トゲチック",
+      "status": "保留",
+      "reason": "画像の素体が未作成",
+      "resumeWhen": "素材受領後"
+    },
+    {
+      "name": "ヘルガー",
+      "status": "保留",
+      "reason": "画像の素体が未作成",
+      "resumeWhen": "素材受領後"
+    },
+    {
+      "name": "ルカリオ",
+      "status": "保留",
+      "reason": "画像の素体が未作成",
+      "resumeWhen": "素材受領後"
+    }
+  ],
+  "duplicatePolicy": "同じポケモン・同じ姿は1枚のみ保持。姿違いは別画像として保持。",
+  "removedDuplicateCount": 25,
+  "appearance": "円形・黒縁2px。円の外は透明、内側背景は白。184×184px、ロスレスWebP。"
+}

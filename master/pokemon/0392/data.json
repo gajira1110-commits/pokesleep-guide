@@ -1,0 +1,105 @@
+{
+  "no": 392,
+  "name": "ゴウカザル",
+  "type": "かくとう",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "クラボのみ",
+  "berryQty": 1,
+  "help": 2400,
+  "carry": 28,
+  "foodRate": 10.6,
+  "skillRate": 3.3,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_burst",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0392_01",
+      "name": "かたひざたて寝",
+      "stars": 1
+    },
+    {
+      "id": "0392_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0392_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0392_03",
+      "name": "ほのおふきあげ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%82%A6%E3%82%AB%E3%82%B6%E3%83%AB",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヒコザル",
+    "↓ Lv.11＋ヒコザルのアメx40",
+    "モウカザル",
+    "↓ Lv.27＋ヒコザルのアメx80",
+    "ゴウカザル"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0392_ゴウカザル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%82%A6%E3%82%AB%E3%82%B6%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,50 @@
+<script id="psg-skill-index-controller">
+(()=>{'use strict';
+ const catalog=window.PS_CATALOG;
+ const input=document.getElementById('skillSearch'),list=document.getElementById('skillIndexList'),count=document.getElementById('skillIndexCount');
+ if(!catalog||!input||!list)return;
+ const effects=(skill,level)=>{
+  const value=skill.levels?.[level];
+  if(skill.displayNote&&value?.description)return value.description;
+  if(skill.effectType==='random_ingredients'&&Number.isFinite(value?.amount))return `ランダムな食材を${value.amount}個ゲットする`;
+  if(skill.effectType==='team_energy_recovery'&&Number.isFinite(value?.recovery))return `チーム全員のげんきを${value.recovery}回復する`;
+  if(skill.effectType==='fixed_energy'&&Number.isFinite(value?.energy))return `カビゴンのエナジーを${value.energy.toLocaleString()}増やす`;
+  if(skill.effectType==='variable_energy'&&Number.isFinite(value?.min)&&Number.isFinite(value?.max))return `カビゴンのエナジーを${value.min.toLocaleString()}～${value.max.toLocaleString()}増やす`;
+  return typeof value?.description==='string'&&value.description.trim()?value.description:'効果データ未確認';
+ };
+ function render(){
+  const query=input.value.trim().toLocaleLowerCase('ja');
+  const all=Object.values(catalog.skills||{});
+  const matches=all.filter(s=>[s.name,...(s.tags||[])].some(value=>String(value).toLocaleLowerCase('ja').includes(query)));
+  count.textContent=`${matches.length} / ${all.length} スキル`;
+  list.replaceChildren();
+  if(!matches.length){const empty=document.createElement('p');empty.className='note';empty.textContent='該当するスキルはありません。';list.append(empty);return}
+  matches.forEach(skill=>{
+   const species=Object.values(catalog.pokemon||{}).filter(p=>p.dexVisible&&p.mainSkillId===skill.id);
+   const item=document.createElement('details');item.className='psg-skill-entry';
+   const summary=document.createElement('summary');
+   const title=document.createElement('strong');title.textContent=skill.name;
+   const tags=document.createElement('span');tags.className='psg-skill-tags';tags.textContent=(skill.tags||[]).join(' · ');
+   const iconSrc=window.PS_IMAGE_FILES?.skills?.[skill.id];if(iconSrc){const icon=document.createElement('img');icon.src=iconSrc;icon.alt='';icon.width=36;icon.height=36;icon.style.objectFit='contain';summary.append(icon)}
+   summary.append(title,tags);item.append(summary);
+   const rows=document.createElement('div');rows.className='psg-skill-levels';
+   for(let level=1;level<=Math.min(10,Number(skill.maxLevel)||0);level++){
+    const row=document.createElement('div');row.className='psg-skill-level';
+    const label=document.createElement('b');label.textContent=`Lv.${level}`;
+    const description=document.createElement('span');description.textContent=effects(skill,level);
+    row.append(label,description);rows.append(row);
+   }
+   item.append(rows);
+   if(skill.displayNote){const note=document.createElement('p');note.className='note';note.textContent=skill.displayNote;item.append(note)}
+   const heading=document.createElement('div');heading.className='psg-skill-species-label';heading.textContent='このスキルを持つポケモン';item.append(heading);
+   const links=document.createElement('div');links.className='psg-skill-species';
+   if(!species.length){const empty=document.createElement('span');empty.textContent='現在の図鑑に登録なし';links.append(empty)}
+   species.forEach(p=>{
+    const button=document.createElement('button');button.type='button';button.className='btn';button.textContent=`No.${String(p.no).padStart(3,'0')} ${p.name}`;
+    button.onclick=()=>window.openPokemonDetail?.(p.no,{pushHistory:false});links.append(button);
+   });item.append(links);list.append(item);
+  });
+ }
+ input.addEventListener('input',render);render();
+})();
+</script>

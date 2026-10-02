@@ -1,0 +1,95 @@
+{
+  "no": 6,
+  "name": "リザードン",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "ヒメリのみ",
+  "help": 2400,
+  "carry": 29,
+  "foodRate": 22.4,
+  "skillRate": 1.6,
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "qty": 2,
+          "ingredientId": "bean_meat"
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "qty": 5,
+          "ingredientId": "bean_meat"
+        },
+        {
+          "qty": 4,
+          "ingredientId": "warming_ginger"
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "qty": 7,
+          "ingredientId": "bean_meat"
+        },
+        {
+          "qty": 7,
+          "ingredientId": "warming_ginger"
+        },
+        {
+          "qty": 6,
+          "ingredientId": "fiery_herb"
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0006_01",
+      "name": "はらばい寝",
+      "stars": 1
+    },
+    {
+      "id": "0006_02",
+      "name": "うでぐみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0006_03",
+      "name": "おなかだし寝",
+      "stars": 3
+    },
+    {
+      "id": "0006_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "berryQty": 1,
+  "rateStatus": "推定",
+  "friendPoints": 20,
+  "expType": 600,
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0006_リザードン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3"
+  ]
+}

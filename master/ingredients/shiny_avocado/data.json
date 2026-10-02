@@ -1,0 +1,9 @@
+{
+  "id": "shiny_avocado",
+  "name": "つやつやアボカド",
+  "fallback": "🥑",
+  "baseEnergy": 162,
+  "baseEnergyStatus": "資料確認",
+  "baseEnergySource": "https://wikiwiki.jp/poke_sleep/食材/食材の一覧",
+  "baseEnergyCheckedAt": "2026-10-01"
+}

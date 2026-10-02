@@ -1,0 +1,105 @@
+{
+  "no": 373,
+  "name": "ボーマンダ",
+  "type": "ドラゴン",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ヤチェのみ",
+  "berryQty": 2,
+  "help": 2800,
+  "carry": 32,
+  "foodRate": 21.7,
+  "skillRate": 3.4,
+  "rateStatus": "推定",
+  "mainSkillId": "cooking_power_up_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0373_01",
+      "name": "はばたき寝",
+      "stars": 1
+    },
+    {
+      "id": "0373_02",
+      "name": "おおあくび寝",
+      "stars": 2
+    },
+    {
+      "id": "0373_03",
+      "name": "かえんほうしゃ寝",
+      "stars": 3
+    },
+    {
+      "id": "0373_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%80",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 25,
+  "expType": 900,
+  "evolutionNotes": [
+    "タツベイ",
+    "↓ Lv.23＋タツベイのアメx40",
+    "コモルー",
+    "↓ Lv.38＋タツベイのアメx100",
+    "ボーマンダ"
+  ],
+  "transferCandy": 12,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0373_ボーマンダ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%80",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "no": 557,
+  "name": "イシズマイ",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 4300,
+  "carry": 8,
+  "foodRate": 17.5,
+  "skillRate": 5.4,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_draw_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 2
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "shiny_avocado",
+          "qty": 4
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0557_01",
+      "name": "からにこもる寝",
+      "stars": 1
+    },
+    {
+      "id": "0557_02",
+      "name": "こもらない寝",
+      "stars": 2
+    },
+    {
+      "id": "0557_03",
+      "name": "からだいじ寝",
+      "stars": 3
+    },
+    {
+      "id": "0557_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%82%B7%E3%82%BA%E3%83%9E%E3%82%A4",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "イシズマイ",
+    "↓ Lv.26＋イシズマイのアメx40",
+    "イワパレス"
+  ],
+  "evolution": [
+    {
+      "toNo": 558,
+      "to": "イワパレス",
+      "conditions": [
+        "Lv.26＋イシズマイのアメx40"
+      ],
+      "level": 26,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0557_イシズマイ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%82%B7%E3%82%BA%E3%83%9E%E3%82%A4",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

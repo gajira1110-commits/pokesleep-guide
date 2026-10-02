@@ -1,0 +1,114 @@
+{
+  "no": 333,
+  "name": "チルット",
+  "type": "ひこう",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "シーヤのみ",
+  "berryQty": 2,
+  "help": 4200,
+  "carry": 12,
+  "foodRate": 17.7,
+  "skillRate": 3.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0333_01",
+      "name": "はねやすめ寝",
+      "stars": 1
+    },
+    {
+      "id": "0333_02",
+      "name": "ぱたぱた寝",
+      "stars": 2
+    },
+    {
+      "id": "0333_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0333_03",
+      "name": "わたぐも寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%81%E3%83%AB%E3%83%83%E3%83%88",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "チルット",
+    "↓　Lv.26＋チルットのアメ×40",
+    "チルタリス"
+  ],
+  "evolution": [
+    {
+      "toNo": 334,
+      "to": "チルタリス",
+      "conditions": [
+        "Lv.26＋チルットのアメ×40"
+      ],
+      "level": 26,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0333_チルット",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%81%E3%83%AB%E3%83%83%E3%83%88",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

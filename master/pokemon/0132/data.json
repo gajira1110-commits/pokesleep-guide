@@ -1,0 +1,141 @@
+{
+  "no": 132,
+  "name": "メタモン",
+  "type": "ノーマル",
+  "sleepType": "すやすや",
+  "specialty": "食材",
+  "berry": "キーのみ",
+  "berryQty": 1,
+  "help": 3500,
+  "carry": 17,
+  "foodRate": 20.1,
+  "skillRate": 3.6,
+  "rateStatus": "推定",
+  "mainSkillId": "transform_skill_copy",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 7
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_tail",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0132_01",
+      "name": "いしにへんしん寝",
+      "stars": 1
+    },
+    {
+      "id": "0132_02",
+      "name": "そのまま寝",
+      "stars": 2
+    },
+    {
+      "id": "0132_03",
+      "name": "ピカチュウ寝",
+      "stars": 3
+    },
+    {
+      "id": "0132_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_05",
+      "name": "フシギダネ寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_06",
+      "name": "ヒトカゲ寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_07",
+      "name": "ゼニガメ寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_09",
+      "name": "ゲンガー寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_10",
+      "name": "カイリュー寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_11",
+      "name": "ヨーギラス寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_12",
+      "name": "グレイシア寝",
+      "stars": 4
+    },
+    {
+      "id": "0132_13",
+      "name": "ミュウ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/ditto",
+    "https://wikiwiki.jp/poke_sleep/メタモン",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://www.pokemonsleep.net/news/323133343231303831373832393130393737/",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A1%E3%82%BF%E3%83%A2%E3%83%B3"
+  ],
+  "verifiedAt": "2026-10-01",
+  "friendPoints": 16,
+  "expType": 600,
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0132_メタモン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A1%E3%82%BF%E3%83%A2%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

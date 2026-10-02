@@ -1,0 +1,116 @@
+{
+  "no": 394,
+  "name": "ポッタイシ",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "オレンのみ",
+  "berryQty": 2,
+  "help": 3700,
+  "carry": 20,
+  "foodRate": 16.3,
+  "skillRate": 3.5,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0394_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0394_02",
+      "name": "バランスだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0394_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0394_03",
+      "name": "えらそう寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9D%E3%83%83%E3%82%BF%E3%82%A4%E3%82%B7",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ポッチャマ",
+    "↓ Lv.12＋ポッチャマのアメx40",
+    "ポッタイシ",
+    "↓ Lv.27＋ポッチャマのアメx80",
+    "エンペルト"
+  ],
+  "evolution": [
+    {
+      "toNo": 395,
+      "to": "エンペルト",
+      "conditions": [
+        "Lv.27＋ポッチャマのアメx80"
+      ],
+      "level": 27,
+      "candy": 80
+    }
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0394_ポッタイシ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9D%E3%83%83%E3%82%BF%E3%82%A4%E3%82%B7",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,66 @@
+ function switchTab(tab){
+   currentTab=tab;
+   [["ability",ability],["sleep",sleep],["field",field]].forEach(([k,p])=>p.classList.toggle("active",k===tab));
+   tabs.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.v12tab===tab));
+ }
+ tabs.onclick=e=>{const b=e.target.closest("[data-v12tab]");if(b)switchTab(b.dataset.v12tab)};
+
+ function header(m){
+   let h=document.getElementById("v12Header");
+   if(!h){h=document.createElement("div");h.id="v12Header";info.prepend(h)}
+   const prev=neighborOf(m.no,-1),next=neighborOf(m.no,1);
+   const berryQty=m.berryQtyOverride??m.berryQty;
+
+   // v51: 1-2 + previous/next move into the sticky detail header.
+   const head=document.querySelector("#dexDetail .detail-head");
+   if(head){
+     const title=head.querySelector("h2");
+     if(title) title.innerHTML=`<span class="v51-head-no">No.${String(m.no).padStart(3,"0")}</span><span class="v51-head-name">${m.name}</span>`;
+     head.querySelector(".v51-head-nav")?.remove();
+     const nav=document.createElement("div");
+     nav.className="v51-head-nav";
+     nav.innerHTML=`<button id="v12Prev" aria-label="前のポケモン" ${prev?"":"disabled"}>‹</button><button id="v12Next" aria-label="次のポケモン" ${next?"":"disabled"}>›</button>`;
+     head.appendChild(nav);
+   }
+
+   // v51: right side line 1 = former 1-3 (3 columns). Identity/type no longer consumes this area.
+   h.innerHTML=`<div class="psg-detail-traits">
+     <span class="psg-detail-trait psg-detail-berry"><span class="psg-detail-berry-visual" title="${m.berry||'きのみ'}">${m.berryImage?window.PS_DEV_ASSETS.image(m.berryImage,'berry',m.berry,'full',m.berry):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'}</span><b>${berryQty==null?"未確認":`×${berryQty}`}</b></span>
+     <span class="psg-detail-trait">${window.PS_SLEEP_ICON(m.sleepType)} ${m.sleepType}</span>
+     <span class="psg-detail-trait psg-detail-specialty" title="得意：${m.specialty}" aria-label="得意：${m.specialty}">${window.PS_SPECIALTY_IMAGES?.[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]?`<img class="psg-specialty-icon" src="${window.PS_SPECIALTY_IMAGES[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]}" alt="">`:m.specialty}</span>
+     <span class="psg-detail-trait psg-detail-friend" title="フレンドポイント（資料確認）" aria-label="フレンドポイント ${m.friendPoints??'未確定'}"><small>フレンド<br>ポイント</small><b>${m.friendPoints??'未確定'}</b></span>
+   </div>`;
+
+   // Keep artwork square and place the compact trait row beneath it.
+   const heroTop=document.querySelector('#dexDetail .hero-top');
+   let media=heroTop?.querySelector('.psg-v106-media');
+   if(heroTop&&!media){media=document.createElement('div');media.className='psg-v106-media';heroTop.prepend(media);media.appendChild(document.getElementById('detailArt'))}
+   const heroInfo=heroTop?.querySelector('.hero-info');
+   if(heroInfo){heroInfo.classList.add('psg-detail-facts');stats.className='psg-detail-stats';heroInfo.insertBefore(h,stats)}
+   // Type belongs to the artwork, at its lower-right corner.
+   const art=document.getElementById("detailArt");
+   if(art){
+     art.replaceChildren();
+     const preview=window.PS_DEV_ASSETS;
+     const img=document.createElement('img');
+     const role=m.image&&m.image===window.PS_IMAGE_FILES.pokemonFaces?.[m.no]?'face':'full';
+     const expected=preview.path('pokemon',m.no,role);
+     img.src=m.image||preview.preview(expected);
+     img.alt=m.name;
+     img.classList.toggle('psg-asset-preview',!m.image);
+     img.title=preview.title(expected);
+     if(m.image)img.dataset.previewPath=expected;
+     art.appendChild(img);
+     const badge=document.createElement("span");
+     badge.className="v51-type-badge";
+     badge.title="タイプ："+m.type;badge.setAttribute("aria-label",badge.title);
+     badge.innerHTML=window.PS_TYPE_ART?.(m.type)||iconForType(m.type);
+     art.appendChild(badge);
+   }
+ }
+ function renderStats(m){
+   stats.innerHTML=`<div class="psg-detail-stat"><small><span class="v45-stat-icon">⏱</span><span class="v45-stat-text">おてつだい時間</span></small><b>${m.help?.toLocaleString()||"—"}秒</b></div>
+   <div class="psg-detail-stat"><small><span class="v45-stat-icon">🎒</span><span class="v45-stat-text">最大所持数</span></small><b>${m.carry??"未確認"}</b></div>
+   <div class="psg-detail-stat"><small><span class="v45-stat-icon">🥕</span><span class="v45-stat-text">食材確率</span></small><b>${m.foodRate??"—"}%</b></div>
+   <div class="psg-detail-stat"><small><span class="v45-stat-icon">✨</span><span class="v45-stat-text">スキル発動確率</span></small><b>${m.skillRate??"—"}%</b></div>`;
+ }

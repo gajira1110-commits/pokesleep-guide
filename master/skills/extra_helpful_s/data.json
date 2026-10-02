@@ -1,0 +1,41 @@
+{
+  "id": "extra_helpful_s",
+  "name": "おてつだいサポートS",
+  "maxLevel": 7,
+  "tags": [
+    "おてつだい",
+    "サポート"
+  ],
+  "effectType": "extra_help",
+  "levels": {
+    "1": {
+      "helps": 6,
+      "description": "チームのポケモン1匹のおてつだい6回分がすぐに完了する"
+    },
+    "2": {
+      "helps": 7,
+      "description": "チームのポケモン1匹のおてつだい7回分がすぐに完了する"
+    },
+    "3": {
+      "helps": 8,
+      "description": "チームのポケモン1匹のおてつだい8回分がすぐに完了する"
+    },
+    "4": {
+      "helps": 9,
+      "description": "チームのポケモン1匹のおてつだい9回分がすぐに完了する"
+    },
+    "5": {
+      "helps": 10,
+      "description": "チームのポケモン1匹のおてつだい10回分がすぐに完了する"
+    },
+    "6": {
+      "helps": 11,
+      "description": "チームのポケモン1匹のおてつだい11回分がすぐに完了する"
+    },
+    "7": {
+      "helps": 12,
+      "description": "チームのポケモン1匹のおてつだい12回分がすぐに完了する"
+    }
+  },
+  "iconAsset": "assets/skill-icons/extra_helpful_s.webp"
+}

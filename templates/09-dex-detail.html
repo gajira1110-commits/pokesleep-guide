@@ -1,0 +1,32 @@
+<section id="dexDetail" class="screen">
+<div class="detail-head"><button class="btn" data-back>‹ 戻る</button><h2 style="margin:0;flex:1">ポケモン詳細</h2></div>
+<div class="detail-nav"><button id="prevPokemon">‹ 前</button><strong id="detailNoName">—</strong><button id="nextPokemon">後 ›</button></div>
+<div id="dexHero" class="hero type-normal">
+ <div class="hero-top"><div class="hero-art" id="detailArt">◌</div><div class="hero-info"><h2 id="detailName">—</h2><div class="white-row" id="detailTraits">タイプ / 睡眠タイプ / 得意</div></div></div>
+ <div class="stats">
+  <div class="stat"><small>きのみ</small><b id="detailBerry">未確認</b></div>
+  <div class="stat"><small>おてつだい時間</small><b id="detailHelp">未確認</b></div>
+  <div class="stat"><small>食材確率</small><b id="detailFoodRate">未確認</b></div>
+  <div class="stat"><small>スキル確率</small><b id="detailSkillRate">未確認</b></div>
+ </div>
+</div>
+<div class="detail-tabs"><button class="on" data-pane="ability">能力</button><button data-pane="sleep">寝顔</button><button data-pane="field">フィールド</button></div>
+<div id="pane-ability" class="detail-pane on">
+ <div class="card ability-card">
+  <div class="ability-title">🥕 食材 <span class="rate-badge" id="foodRateBadge">食材確率 未確認</span></div>
+  <div class="food-table-head"><span></span><span>Lv.1</span><span>Lv.30</span><span>Lv.60</span><span>料理</span></div>
+  <div id="detailFoods"><span class="unknown" style="display:block;padding:12px">未確認</span></div>
+ </div>
+ <div class="card ability-card">
+  <div class="ability-title">✨ スキル <span class="rate-badge" id="skillRateBadge">スキル確率 未確認</span></div>
+  <div class="skill-box">
+   <div class="skill-top"><div class="v26-skill-left"><div class="skill-icon">✦</div><div class="skill-name" id="detailSkill">未確認</div><span class="skill-rate-inline" id="skillRateInline">未確認</span></div><div class="v12-lv" id="v12SkillLv"></div></div>
+   <div class="v33-skill-effect-row"><p class="skill-desc" id="detailSkillEffect">効果データはマスターデータ投入後に表示します。</p></div><div class="v47-skill-toggle-row"><button class="skill-detail-toggle" id="skillDetailToggle">詳細を見る ▼</button></div>
+   <div class="skill-levels" id="skillLevels"><div class="skill-level-row"><b>Lv.1</b><span>効果データ未確認</span></div></div>
+  </div>
+ </div>
+ <div class="card" id="evolutionCard"><div class="section-title">進化</div><div id="detailEvolution" class="unknown">未確認</div></div>
+</div>
+<div id="pane-sleep" class="detail-pane"><div class="card"><div class="section-title">寝顔</div><div class="pills"><span class="pill">★1</span><span class="pill">★2</span><span class="pill">★3</span><span class="pill">★4</span></div><p class="unknown">寝顔データ投入後に表示します。</p></div></div>
+<div id="pane-field" class="detail-pane"><div class="card"><div class="section-title">フィールド</div><p class="unknown">フィールドデータ投入後に表示します。</p></div></div>
+</section>

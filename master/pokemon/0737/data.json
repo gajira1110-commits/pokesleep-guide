@@ -1,0 +1,114 @@
+{
+  "no": 737,
+  "name": "デンヂムシ",
+  "type": "むし",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ラムのみ",
+  "berryQty": 1,
+  "help": 3300,
+  "carry": 20,
+  "foodRate": 15.4,
+  "skillRate": 2.8,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 7
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 11
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0737_01",
+      "name": "ストレッチ寝",
+      "stars": 1
+    },
+    {
+      "id": "0737_02",
+      "name": "そりかえり寝",
+      "stars": 2
+    },
+    {
+      "id": "0737_03",
+      "name": "うまり寝",
+      "stars": 3
+    },
+    {
+      "id": "0737_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%87%E3%83%B3%E3%83%82%E3%83%A0%E3%82%B7",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "アゴジムシ",
+    "↓ Lv.15＋アゴジムシのアメ40",
+    "デンヂムシ",
+    "↓ かみなりのいし＋アゴジムシのアメ80",
+    "クワガノン"
+  ],
+  "evolution": [
+    {
+      "toNo": 738,
+      "to": "クワガノン",
+      "conditions": [
+        "かみなりのいし＋アゴジムシのアメ80"
+      ]
+    }
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0737_デンヂムシ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%87%E3%83%B3%E3%83%82%E3%83%A0%E3%82%B7",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

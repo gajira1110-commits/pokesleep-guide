@@ -1,0 +1,51 @@
+function normalizeTeam(raw,box){
+ const byId=new Map(box.map(x=>[x.id,x])),seen=new Set();let hasSpecial=false;
+ return Array.from({length:5},(_,i)=>{
+  const id=Array.isArray(raw)?raw[i]:null;
+  if(typeof id!=='string'||!byId.has(id)||seen.has(id))return null;
+  const special=window.PS_CATALOG?.pokemon?.[byId.get(id).no]?.specialTeamLimited===true;
+  if(special&&hasSpecial)return null;
+  if(special)hasSpecial=true;
+  seen.add(id);return id;
+ });
+}
+function readTeam(){
+ try{return normalizeTeam(JSON.parse(localStorage.getItem(TEAM_STORAGE_KEY)||'[]'),state.box)}catch{return [null,null,null,null,null]}
+}
+let team=readTeam();
+// Team composition for skill-specific rules. IDs are individual records;
+// species/type/skill grouping is computed only when an effect asks for it.
+function teamContext(){
+ const members=team.map((id,slot)=>{
+  const individual=state.box.find(x=>x.id===id);
+  const species=individual&&window.PS_CATALOG?.pokemon[individual.no];
+  return species?{slot,instanceId:individual.id,speciesNo:Number(species.no),type:species.type,mainSkillId:species.mainSkillId}:null;
+ }).filter(Boolean);
+ const speciesCounts={},skillCounts={},speciesByType={};
+ members.forEach(member=>{
+  speciesCounts[member.speciesNo]=(speciesCounts[member.speciesNo]||0)+1;
+  if(member.mainSkillId)skillCounts[member.mainSkillId]=(skillCounts[member.mainSkillId]||0)+1;
+  (speciesByType[member.type]??=new Set()).add(member.speciesNo);
+ });
+ return {members,speciesCounts,skillCounts,distinctSpeciesByType:Object.fromEntries(Object.entries(speciesByType).map(([type,ids])=>[type,ids.size]))};
+}
+function teamFoodContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
+ const confirmed=new Map(),unconfirmed=[];
+ ids.forEach((id,position)=>{
+  const individual=box.find(x=>x.id===id);
+  if(!individual)return;
+  const species=catalog?.pokemon?.[individual.no];
+  const label=`${position+1}匹目 ${individual.name} Lv.${individual.level}`;
+  if(!species?.ingredientSlots?.length){unconfirmed.push(`${label}：食材データ未確認`);return}
+  species.ingredientSlots.filter(slot=>slot.unlock<=individual.level).forEach(slot=>{
+   const candidates=slot.candidates||[];
+   const chosen=individual.ingredients?.[slot.unlock];
+   const candidate=candidates.length===1?candidates[0]:candidates.find(item=>item.name===chosen);
+   if(!candidate){unconfirmed.push(`${label}：Lv.${slot.unlock}の食材未確認`);return}
+   const providers=confirmed.get(candidate.name)||[];
+   providers.push({id:individual.id,label,unlock:slot.unlock,qty:candidate.qty});
+   confirmed.set(candidate.name,providers);
+  });
+ });
+ return {confirmed,unconfirmed};
+}

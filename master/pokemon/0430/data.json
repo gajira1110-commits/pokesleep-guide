@@ -1,0 +1,103 @@
+{
+  "no": 430,
+  "name": "ドンカラス",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 3200,
+  "carry": 23,
+  "foodRate": 14.3,
+  "skillRate": 6.7,
+  "rateStatus": "推定",
+  "mainSkillId": "super_luck_ingredient_select_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "coffee",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 6
+        },
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0430_01",
+      "name": "はづくろい寝",
+      "stars": 1
+    },
+    {
+      "id": "0430_02",
+      "name": "はねやすめ寝",
+      "stars": 2
+    },
+    {
+      "id": "0430_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0430_03",
+      "name": "ほうせきまもり寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%83%B3%E3%82%AB%E3%83%A9%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ヤミカラス",
+    "↓　やみのいし＋ヤミカラスのアメx80",
+    "ドンカラス"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0430_ドンカラス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%83%B3%E3%82%AB%E3%83%A9%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

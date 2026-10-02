@@ -1,0 +1,100 @@
+{
+  "no": 302,
+  "name": "ヤミラミ",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "スキル",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 3600,
+  "carry": 16,
+  "foodRate": 18.8,
+  "skillRate": 6.8,
+  "rateStatus": "推定",
+  "mainSkillId": "dream_shard_magnet_s_variable",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 3
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0302_01",
+      "name": "だいのじ寝",
+      "stars": 1
+    },
+    {
+      "id": "0302_02",
+      "name": "がくがく寝",
+      "stars": 2
+    },
+    {
+      "id": "0302_03",
+      "name": "ほうせきたべ寝",
+      "stars": 3
+    },
+    {
+      "id": "0302_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wiki.pokesleep.com/ja/pokemon/sableye",
+    "https://wikiwiki.jp/poke_sleep/ヤミラミ",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A4%E3%83%9F%E3%83%A9%E3%83%9F"
+  ],
+  "verifiedAt": "2026-10-01",
+  "friendPoints": 16,
+  "expType": 600,
+  "transferCandy": 8,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0302_ヤミラミ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A4%E3%83%9F%E3%83%A9%E3%83%9F",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

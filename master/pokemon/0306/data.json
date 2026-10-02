@@ -1,0 +1,105 @@
+{
+  "no": 306,
+  "name": "ボスゴドラ",
+  "type": "はがね",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "ベリブのみ",
+  "berryQty": 1,
+  "help": 3000,
+  "carry": 28,
+  "foodRate": 28.5,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 7
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 7
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0306_01",
+      "name": "おなかさすり寝",
+      "stars": 1
+    },
+    {
+      "id": "0306_02",
+      "name": "におうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0306_03",
+      "name": "てつたべ寝",
+      "stars": 3
+    },
+    {
+      "id": "0306_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%82%B9%E3%82%B4%E3%83%89%E3%83%A9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "ココドラ",
+    "↓ Lv.24＋ココドラのアメ40",
+    "コドラ",
+    "↓ Lv.32＋ココドラのアメ80",
+    "ボスゴドラ"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0306_ボスゴドラ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%82%B9%E3%82%B4%E3%83%89%E3%83%A9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

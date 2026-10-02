@@ -1,0 +1,116 @@
+{
+  "no": 921,
+  "name": "パモ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 4600,
+  "carry": 9,
+  "foodRate": 11.1,
+  "skillRate": 3.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_for_everyone_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 4
+        },
+        {
+          "ingredientId": "moomoo_milk",
+          "qty": 6
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0921_01",
+      "name": "にくきゅうこすり寝",
+      "stars": 1
+    },
+    {
+      "id": "0921_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0921_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0921_03",
+      "name": "ほっぺすりすり寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%A2",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "パモ",
+    "↓  Lv.14＋パモのアメx40",
+    "パモット",
+    "↓  チームに入れて睡眠150時間((パモの時点で稼いだ睡眠時間も問題なく計上される))＋パモのアメx80",
+    "パーモット"
+  ],
+  "evolution": [
+    {
+      "toNo": 922,
+      "to": "パモット",
+      "conditions": [
+        "Lv.14＋パモのアメx40"
+      ],
+      "level": 14,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0921_パモ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%A2",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

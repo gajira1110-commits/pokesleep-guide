@@ -1,0 +1,101 @@
+{
+  "no": 229,
+  "name": "ヘルガー",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "きのみ",
+  "berry": "ウイのみ",
+  "berryQty": 2,
+  "help": 3300,
+  "carry": 21,
+  "foodRate": 20.3,
+  "skillRate": 4.0,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "evolution": null,
+  "sleepStyles": [
+    {
+      "id": "0229_01",
+      "name": "しっぽゆらゆら寝",
+      "stars": 1
+    },
+    {
+      "id": "0229_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0229_03",
+      "name": "ほのおはき寝",
+      "stars": 3
+    },
+    {
+      "id": "0229_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/ヘルガー",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧",
+    "https://wikiwiki.jp/poke_sleep/寝顔図鑑/寝顔の一覧",
+    "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%AB%E3%82%AC%E3%83%BC"
+  ],
+  "verifiedAt": "2026-09-30",
+  "sleepStyleCount": 4,
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0229_ヘルガー",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%98%E3%83%AB%E3%82%AC%E3%83%BC",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

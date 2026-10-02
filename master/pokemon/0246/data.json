@@ -1,0 +1,116 @@
+{
+  "no": 246,
+  "name": "ヨーギラス",
+  "type": "いわ",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "オボンのみ",
+  "berryQty": 1,
+  "help": 4800,
+  "carry": 9,
+  "foodRate": 23.8,
+  "skillRate": 4.1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 7
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 8
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0246_01",
+      "name": "のび寝",
+      "stars": 1
+    },
+    {
+      "id": "0246_02",
+      "name": "かおごしごし寝",
+      "stars": 2
+    },
+    {
+      "id": "0246_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0246_03",
+      "name": "つちたべ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A8%E3%83%BC%E3%82%AE%E3%83%A9%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 900,
+  "evolutionNotes": [
+    "ヨーギラス",
+    "↓　Lv.23＋ヨーギラスのアメ×40",
+    "サナギラス",
+    "↓　Lv.41＋ヨーギラスのアメ×100",
+    "バンギラス"
+  ],
+  "evolution": [
+    {
+      "toNo": 247,
+      "to": "サナギラス",
+      "conditions": [
+        "Lv.23＋ヨーギラスのアメ×40"
+      ],
+      "level": 23,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0246_ヨーギラス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A8%E3%83%BC%E3%82%AE%E3%83%A9%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

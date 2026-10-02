@@ -1,0 +1,110 @@
+{
+  "no": 453,
+  "name": "グレッグル",
+  "type": "どく",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "カゴのみ",
+  "berryQty": 1,
+  "help": 5600,
+  "carry": 10,
+  "foodRate": 22.8,
+  "skillRate": 4.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "pure_oil",
+          "qty": 7
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0453_01",
+      "name": "ぐうたら寝",
+      "stars": 1
+    },
+    {
+      "id": "0453_02",
+      "name": "ほっぺぷくぷく寝",
+      "stars": 2
+    },
+    {
+      "id": "0453_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0453_03",
+      "name": "せすじのばし寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%B0%E3%83%AC%E3%83%83%E3%82%B0%E3%83%AB",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "グレッグル",
+    "↓　Lv.28＋グレッグルのアメ×40",
+    "ドクロッグ"
+  ],
+  "evolution": [
+    {
+      "toNo": 454,
+      "to": "ドクロッグ",
+      "conditions": [
+        "Lv.28＋グレッグルのアメ×40"
+      ],
+      "level": 28,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0453_グレッグル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%B0%E3%83%AC%E3%83%83%E3%82%B0%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

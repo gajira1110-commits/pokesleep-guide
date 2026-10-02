@@ -1,0 +1,41 @@
+{
+  "id": "ingredient_draw_s",
+  "name": "食材セレクトS",
+  "maxLevel": 7,
+  "tags": [
+    "食材",
+    "指定候補"
+  ],
+  "effectType": "select_ingredients",
+  "levels": {
+    "1": {
+      "amount": 5,
+      "description": "特定の食材からランダムで1種類を5個ゲットする"
+    },
+    "2": {
+      "amount": 6,
+      "description": "特定の食材からランダムで1種類を6個ゲットする"
+    },
+    "3": {
+      "amount": 8,
+      "description": "特定の食材からランダムで1種類を8個ゲットする"
+    },
+    "4": {
+      "amount": 11,
+      "description": "特定の食材からランダムで1種類を11個ゲットする"
+    },
+    "5": {
+      "amount": 13,
+      "description": "特定の食材からランダムで1種類を13個ゲットする"
+    },
+    "6": {
+      "amount": 16,
+      "description": "特定の食材からランダムで1種類を16個ゲットする"
+    },
+    "7": {
+      "amount": 18,
+      "description": "特定の食材からランダムで1種類を18個ゲットする"
+    }
+  },
+  "iconAsset": "assets/skill-icons/ingredient_draw_s.webp"
+}

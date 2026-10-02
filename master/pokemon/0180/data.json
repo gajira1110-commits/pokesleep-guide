@@ -1,0 +1,97 @@
+{
+  "no": 180,
+  "name": "モココ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 3300,
+  "carry": 16,
+  "foodRate": 12.7,
+  "skillRate": 4.6,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0180_01",
+      "name": "ぺったり寝",
+      "stars": 1
+    },
+    {
+      "id": "0180_02",
+      "name": "もこもこ寝",
+      "stars": 2
+    },
+    {
+      "id": "0180_03",
+      "name": "しっぽひかり寝",
+      "stars": 3
+    },
+    {
+      "id": "0180_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 181,
+    "to": "デンリュウ",
+    "level": 23,
+    "candy": 80
+  },
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0180_モココ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A2%E3%82%B3%E3%82%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A2%E3%82%B3%E3%82%B3"
+  ]
+}

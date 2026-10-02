@@ -1,0 +1,3831 @@
+{
+  "conditions": {
+    "版": "daily_supply_v1",
+    "確認日": "2026-10-01",
+    "モデルの位置付け": "通常おてつだいの収集量を共通条件で比べる独自基準。現実のチーム日産予測・保証ではない。",
+    "ポケモンLv": [
+      30,
+      60
+    ],
+    "性格": "無補正",
+    "サブスキル": "補正なし",
+    "リボン": 0,
+    "キャンプ": false,
+    "イベント": false,
+    "EX": false,
+    "睡眠時間": 8.5,
+    "時間例": "起床8:00→就寝23:30→翌8:00",
+    "起床げんき": 100,
+    "げんき消費": "10分ごとに1、下限0。睡眠中も減少。",
+    "速度時間倍率": {
+      "81以上": 0.45,
+      "61〜80": 0.52,
+      "41〜60": 0.58,
+      "2〜40": 0.66,
+      "0〜1": 1
+    },
+    "げんき境界注記": "0〜1付近は未確定。小数げんきは扱わず、低速側1倍を採用。",
+    "料理げんき回復": false,
+    "スキル効果": false,
+    "回復除外理由": "料理や回復役に依存せず通常収集能力を比較するため。料理が作れない日も同じ条件。現実の回復あり予測とは区別。",
+    "回収時刻_起床から時間": [
+      0.0,
+      3.0,
+      6.0,
+      9.0,
+      12.0,
+      15.0,
+      15.5,
+      24.0
+    ],
+    "回収頻度": "日中3時間ごと＋就寝直前、夜8.5時間は回収なし。",
+    "バッグ容量": "制限なし（個体の所持数とは別）",
+    "所持数": "現在の種族初期最大所持数。満杯時の通常食材抽選停止と超過分破棄を占有数の確率分布で計算。",
+    "食材構成": "通常A固定、Lv30はA/B、Lv60はA/B/Cの非null候補から全組合せ。ミュウ・ダークライは個体状態未指定で除外。",
+    "解放食材枠抽選": "均等（推定）。捕獲時の構成抽選重みは用いない。",
+    "周期": "0時点で開始、24時間までの周期的おてつだいのみ。日境界の進行中周期・待機キュー・ランダムおてつだいは再現しない。",
+    "進化Lv制限": "育成経由の進化必要Lvが比較Lvを超える種族は保守的に除外。低Lvの進化後直接捕獲をこの基準では仮定しない。捕獲難度自体は未評価。",
+    "対象": "既存資料の常設候補。衣装と期間限定は別属性。進化系統代表は食材ごとに1件。",
+    "ティア": "最良担当の日産期待量で固定閾値を適用。担当の選択肢は別指標。",
+    "料理負担": "全候補の食材ベクトルを使用した線形計画：Σx最小、Σx×日産_i>=3食必要_i、x>=0。",
+    "料理負担の限界": [
+      "分数の匹日・同種複数・構成違いを許す連続緩和。実際の必要チーム枠数ではない。",
+      "仮想時間は日産を比例配分した換算で、実際の交代時間提案ではない。時間帯別のげんき・所持数を再計算していない。",
+      "5匹以内で達成する保証、所持個体で成立する保証、食事時点にそろう保証ではない。",
+      "捕獲難度、育成費用、構成厳選難度、鍋拡張スキルの枠負担、きのみ・スキルエナジーは加えない。",
+      "料理Lv70掲載参考値・端数処理の未確定注記を継承。"
+    ],
+    "出典": [
+      "https://wikiwiki.jp/poke_sleep/げんき",
+      "https://wikiwiki.jp/poke_sleep/おてつだい/おてつだい時間",
+      "https://wikiwiki.jp/poke_sleep/最大所持数",
+      "https://wikiwiki.jp/poke_sleep/食材"
+    ]
+  },
+  "tiers": {
+    "30": {
+      "あじわいキノコ": {
+        "tier": "C",
+        "daily": 27.713854259023215,
+        "top": [
+          {
+            "id": "0442_ミカルゲ_L30_AA",
+            "family": "family_0442_ミカルゲ",
+            "name": "ミカルゲ",
+            "no": 442,
+            "config": "AA",
+            "daily": 27.713854259023215,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2"
+          },
+          {
+            "id": "0195_ヌオー_L30_AA",
+            "family": "family_0194_ウパー",
+            "name": "ヌオー",
+            "no": 195,
+            "config": "AA",
+            "daily": 27.15416004165351,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8C%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0094_ゲンガー_L30_AB",
+            "family": "family_0092_ゴース",
+            "name": "ゲンガー",
+            "no": 94,
+            "config": "AB",
+            "daily": 20.57979921791688,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B2%E3%83%B3%E3%82%AC%E3%83%BC"
+          }
+        ]
+      },
+      "あったかジンジャー": {
+        "tier": "B",
+        "daily": 40.08848383299312,
+        "top": [
+          {
+            "id": "0115_ガルーラ_L30_AA",
+            "family": "family_0115_ガルーラ",
+            "name": "ガルーラ",
+            "no": 115,
+            "config": "AA",
+            "daily": 40.08848383299312,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あったかジンジャー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AC%E3%83%AB%E3%83%BC%E3%83%A9"
+          },
+          {
+            "id": "0247_サナギラス_L30_AA",
+            "family": "family_0246_ヨーギラス",
+            "name": "サナギラス",
+            "no": 247,
+            "config": "AA",
+            "daily": 32.94683666084784,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あったかジンジャー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%8A%E3%82%AE%E3%83%A9%E3%82%B9"
+          },
+          {
+            "id": "0764_キュワワー_L30_AB",
+            "family": "family_0764_キュワワー",
+            "name": "キュワワー",
+            "no": 764,
+            "config": "AB",
+            "daily": 26.40047920689988,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A5%E3%83%AF%E3%83%AF%E3%83%BC"
+          }
+        ]
+      },
+      "あまいミツ": {
+        "tier": "A",
+        "daily": 46.383301846180366,
+        "top": [
+          {
+            "id": "0003_フシギバナ_L30_AA",
+            "family": "family_0001_フシギダネ",
+            "name": "フシギバナ",
+            "no": 3,
+            "config": "AA",
+            "daily": 46.383301846180366,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%83%90%E3%83%8A"
+          },
+          {
+            "id": "0127_カイロス_L30_AA",
+            "family": "family_0127_カイロス",
+            "name": "カイロス",
+            "no": 127,
+            "config": "AA",
+            "daily": 43.59594575972755,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AD%E3%82%B9"
+          },
+          {
+            "id": "0743_アブリボン_L30_AA",
+            "family": "family_0742_アブリー",
+            "name": "アブリボン",
+            "no": 743,
+            "config": "AA",
+            "daily": 40.65220456613741,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%9C%E3%83%B3"
+          }
+        ]
+      },
+      "あんみんトマト": {
+        "tier": "B",
+        "daily": 41.216092366308445,
+        "top": [
+          {
+            "id": "0405_レントラー_L30_AA",
+            "family": "family_0403_コリンク",
+            "name": "レントラー",
+            "no": 405,
+            "config": "AA",
+            "daily": 41.216092366308445,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A9%E3%83%BC"
+          },
+          {
+            "id": "0460_ユキノオー_L30_AA",
+            "family": "family_0459_ユキカブリ",
+            "name": "ユキノオー",
+            "no": 460,
+            "config": "AA",
+            "daily": 40.949244326824555,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%83%8E%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0071_ウツボット_L30_AA",
+            "family": "family_0069_マダツボミ",
+            "name": "ウツボット",
+            "no": 71,
+            "config": "AA",
+            "daily": 40.68074441954545,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%9C%E3%83%83%E3%83%88"
+          }
+        ]
+      },
+      "おいしいシッポ": {
+        "tier": "D",
+        "daily": 3.6445,
+        "top": [
+          {
+            "id": "0080_ヤドラン_L30_AB",
+            "family": "family_0079_ヤドン",
+            "name": "ヤドラン",
+            "no": 80,
+            "config": "AB",
+            "daily": 3.6445,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "おいしいシッポ",
+                "qty": 1
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A4%E3%83%89%E3%83%A9%E3%83%B3"
+          }
+        ]
+      },
+      "げきからハーブ": {
+        "tier": "B",
+        "daily": 35.8757354597863,
+        "top": [
+          {
+            "id": "0094_ゲンガー_L30_AA",
+            "family": "family_0092_ゴース",
+            "name": "ゲンガー",
+            "no": 94,
+            "config": "AA",
+            "daily": 35.8757354597863,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B2%E3%83%B3%E3%82%AC%E3%83%BC"
+          },
+          {
+            "id": "0148_ハクリュー_L30_AA",
+            "family": "family_0147_ミニリュウ",
+            "name": "ハクリュー",
+            "no": 148,
+            "config": "AA",
+            "daily": 33.18218150644719,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%82%AF%E3%83%AA%E3%83%A5%E3%83%BC"
+          },
+          {
+            "id": "0329_ビブラーバ_L30_AB",
+            "family": "family_0328_ナックラー",
+            "name": "ビブラーバ",
+            "no": 329,
+            "config": "AB",
+            "daily": 17.273688165069785,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%93%E3%83%96%E3%83%A9%E3%83%BC%E3%83%90"
+          }
+        ]
+      },
+      "ずっしりカボチャ": {
+        "tier": "C",
+        "daily": 19.875925029522136,
+        "top": [
+          {
+            "id": "0711_パンプジン(ちゅうだま)_L30_AA",
+            "family": "family_0710_バケッチャ(おおだま)",
+            "name": "パンプジン(ちゅうだま)",
+            "no": null,
+            "config": "AA",
+            "daily": 19.875925029522136,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ずっしりカボチャ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ずっしりカボチャ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3"
+          },
+          {
+            "id": "0442_ミカルゲ_L30_AB",
+            "family": "family_0442_ミカルゲ",
+            "name": "ミカルゲ",
+            "no": 442,
+            "config": "AB",
+            "daily": 11.87999998825126,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ずっしりカボチャ",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2"
+          },
+          {
+            "id": "0028_サンドパン_L30_AA",
+            "family": "family_0027_サンド",
+            "name": "サンドパン",
+            "no": 28,
+            "config": "AA",
+            "daily": 8.099999999999882,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ずっしりカボチャ",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "ずっしりカボチャ",
+                "qty": 2
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B5%E3%83%B3%E3%83%89%E3%83%91%E3%83%B3"
+          }
+        ]
+      },
+      "つやつやアボカド": {
+        "tier": "C",
+        "daily": 20.45627109509944,
+        "top": [
+          {
+            "id": "0329_ビブラーバ_L30_AA",
+            "family": "family_0328_ナックラー",
+            "name": "ビブラーバ",
+            "no": 329,
+            "config": "AA",
+            "daily": 20.45627109509944,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%93%E3%83%96%E3%83%A9%E3%83%BC%E3%83%90"
+          },
+          {
+            "id": "0780_ジジーロン_L30_AB",
+            "family": "family_0780_ジジーロン",
+            "name": "ジジーロン",
+            "no": 780,
+            "config": "AB",
+            "daily": 17.639984159614436,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B8%E3%82%B8%E3%83%BC%E3%83%AD%E3%83%B3"
+          },
+          {
+            "id": "0558_イワパレス_L30_AA",
+            "family": "family_0557_イシズマイ",
+            "name": "イワパレス",
+            "no": 558,
+            "config": "AA",
+            "daily": 15.773999999999997,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 2
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%AF%E3%83%91%E3%83%AC%E3%82%B9"
+          }
+        ]
+      },
+      "とくせんエッグ": {
+        "tier": "B",
+        "daily": 37.47870257728013,
+        "top": [
+          {
+            "id": "0242_ハピナス_L30_AA",
+            "family": "family_0113_ラッキー",
+            "name": "ハピナス",
+            "no": 242,
+            "config": "AA",
+            "daily": 37.47870257728013,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんエッグ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%94%E3%83%8A%E3%82%B9"
+          },
+          {
+            "id": "0225_デリバード_L30_AA",
+            "family": "family_0225_デリバード",
+            "name": "デリバード",
+            "no": 225,
+            "config": "AA",
+            "daily": 35.46866988816225,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんエッグ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%87%E3%83%AA%E3%83%90%E3%83%BC%E3%83%89"
+          },
+          {
+            "id": "0460_ユキノオー_L30_AB",
+            "family": "family_0459_ユキカブリ",
+            "name": "ユキノオー",
+            "no": 460,
+            "config": "AB",
+            "daily": 23.480748965987004,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%83%8E%E3%82%AA%E3%83%BC"
+          }
+        ]
+      },
+      "とくせんリンゴ": {
+        "tier": "A",
+        "daily": 48.61172234234801,
+        "top": [
+          {
+            "id": "0911_ラウドボーン_L30_AA",
+            "family": "family_0909_ホゲータ",
+            "name": "ラウドボーン",
+            "no": 911,
+            "config": "AA",
+            "daily": 48.61172234234801,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんリンゴ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%A6%E3%83%89%E3%83%9C%E3%83%BC%E3%83%B3"
+          },
+          {
+            "id": "0359_アブソル_L30_AB",
+            "family": "family_0359_アブソル",
+            "name": "アブソル",
+            "no": 359,
+            "config": "AB",
+            "daily": 31.861529599073126,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 8
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%82%BD%E3%83%AB"
+          },
+          {
+            "id": "0127_カイロス_L30_AB",
+            "family": "family_0127_カイロス",
+            "name": "カイロス",
+            "no": 127,
+            "config": "AB",
+            "daily": 31.05565811293122,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AD%E3%82%B9"
+          }
+        ]
+      },
+      "ふといながねぎ": {
+        "tier": "C",
+        "daily": 25.64493754834713,
+        "top": [
+          {
+            "id": "0083_カモネギ_L30_AA",
+            "family": "family_0083_カモネギ",
+            "name": "カモネギ",
+            "no": 83,
+            "config": "AA",
+            "daily": 25.64493754834713,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ふといながねぎ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A2%E3%83%8D%E3%82%AE"
+          },
+          {
+            "id": "0051_ダグトリオ_L30_AB",
+            "family": "family_0050_ディグダ",
+            "name": "ダグトリオ",
+            "no": 51,
+            "config": "AB",
+            "daily": 15.08482443260496,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA"
+          },
+          {
+            "id": "0914_ウェーニバル_L30_AB",
+            "family": "family_0912_クワッス",
+            "name": "ウェーニバル",
+            "no": 914,
+            "config": "AB",
+            "daily": 12.528,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 2
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB"
+          }
+        ]
+      },
+      "ほっこりポテト": {
+        "tier": "B",
+        "daily": 36.56048040103799,
+        "top": [
+          {
+            "id": "0975_ハルクジラ_L30_AA",
+            "family": "family_0974_アルクジラ",
+            "name": "ハルクジラ",
+            "no": 975,
+            "config": "AA",
+            "daily": 36.56048040103799,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9"
+          },
+          {
+            "id": "0908_マスカーニャ_L30_AA",
+            "family": "family_0906_ニャオハ",
+            "name": "マスカーニャ",
+            "no": 908,
+            "config": "AA",
+            "daily": 35.855746995958654,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%A3"
+          },
+          {
+            "id": "0076_ゴローニャ_L30_AB",
+            "family": "family_0074_イシツブテ",
+            "name": "ゴローニャ",
+            "no": 76,
+            "config": "AB",
+            "daily": 25.188528066714056,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3"
+          }
+        ]
+      },
+      "めざましコーヒー": {
+        "tier": "B",
+        "daily": 33.934115303201196,
+        "top": [
+          {
+            "id": "0738_クワガノン_L30_AA",
+            "family": "family_0736_アゴジムシ",
+            "name": "クワガノン",
+            "no": 738,
+            "config": "AA",
+            "daily": 33.934115303201196,
+            "slots": [
+              {
+                "level": 1,
+                "name": "めざましコーヒー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%82%AC%E3%83%8E%E3%83%B3"
+          },
+          {
+            "id": "0980_ドオー_L30_AB",
+            "family": "family_0194_ウパー(パルデア)",
+            "name": "ドオー",
+            "no": 980,
+            "config": "AB",
+            "daily": 16.638887081274284,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0305_コドラ_L30_AB",
+            "family": "family_0304_ココドラ",
+            "name": "コドラ",
+            "no": 305,
+            "config": "AB",
+            "daily": 13.710508099877408,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%89%E3%83%A9"
+          }
+        ]
+      },
+      "ピュアなオイル": {
+        "tier": "B",
+        "daily": 32.41246258747391,
+        "top": [
+          {
+            "id": "0454_ドクロッグ_L30_AA",
+            "family": "family_0453_グレッグル",
+            "name": "ドクロッグ",
+            "no": 454,
+            "config": "AA",
+            "daily": 32.41246258747391,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ピュアなオイル",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AF%E3%83%AD%E3%83%83%E3%82%B0"
+          },
+          {
+            "id": "0303_クチート_L30_AA",
+            "family": "family_0303_クチート",
+            "name": "クチート",
+            "no": 303,
+            "config": "AA",
+            "daily": 30.348232625097555,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ピュアなオイル",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%81%E3%83%BC%E3%83%88"
+          },
+          {
+            "id": "0845_ウッウ_L30_AA",
+            "family": "family_0845_ウッウ",
+            "name": "ウッウ",
+            "no": 845,
+            "config": "AA",
+            "daily": 29.17748944324566,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ピュアなオイル",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%83%E3%82%A6"
+          }
+        ]
+      },
+      "マメミート": {
+        "tier": "A",
+        "daily": 45.98706429960989,
+        "top": [
+          {
+            "id": "0006_リザードン_L30_AA",
+            "family": "family_0004_ヒトカゲ",
+            "name": "リザードン",
+            "no": 6,
+            "config": "AA",
+            "daily": 45.98706429960989,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3"
+          },
+          {
+            "id": "0760_キテルグマ_L30_AB",
+            "family": "family_0759_ヌイコグマ",
+            "name": "キテルグマ",
+            "no": 760,
+            "config": "AB",
+            "daily": 33.82094536742149,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E"
+          },
+          {
+            "id": "0305_コドラ_L30_AA",
+            "family": "family_0304_ココドラ",
+            "name": "コドラ",
+            "no": 305,
+            "config": "AA",
+            "daily": 31.70383188419561,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B3%E3%83%89%E3%83%A9"
+          }
+        ]
+      },
+      "モーモーミルク": {
+        "tier": "A",
+        "daily": 47.932836162738774,
+        "top": [
+          {
+            "id": "0009_カメックス_L30_AA",
+            "family": "family_0007_ゼニガメ",
+            "name": "カメックス",
+            "no": 9,
+            "config": "AA",
+            "daily": 47.932836162738774,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%83%E3%82%AF%E3%82%B9"
+          },
+          {
+            "id": "0908_マスカーニャ_L30_AB",
+            "family": "family_0906_ニャオハ",
+            "name": "マスカーニャ",
+            "no": 908,
+            "config": "AB",
+            "daily": 30.591215252038253,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%A3"
+          },
+          {
+            "id": "0849_ストリンダー(ハイ)_L30_AA",
+            "family": "family_0848_エレズン",
+            "name": "ストリンダー(ハイ)",
+            "no": null,
+            "config": "AA",
+            "daily": 16.132499999999997,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 2
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%83%80%E3%83%BC%28%E3%83%8F%E3%82%A4%E3%81%AA%E3%81%99%E3%81%8C%E3%81%9F%29"
+          }
+        ]
+      },
+      "リラックスカカオ": {
+        "tier": "C",
+        "daily": 29.58515850360636,
+        "top": [
+          {
+            "id": "0359_アブソル_L30_AA",
+            "family": "family_0359_アブソル",
+            "name": "アブソル",
+            "no": 359,
+            "config": "AA",
+            "daily": 29.58515850360636,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%82%BD%E3%83%AB"
+          },
+          {
+            "id": "0980_ドオー_L30_AA",
+            "family": "family_0194_ウパー(パルデア)",
+            "name": "ドオー",
+            "no": 980,
+            "config": "AA",
+            "daily": 29.095897344528492,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0009_カメックス_L30_AB",
+            "family": "family_0007_ゼニガメ",
+            "name": "カメックス",
+            "no": 9,
+            "config": "AB",
+            "daily": 20.62489300086461,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%83%E3%82%AF%E3%82%B9"
+          }
+        ]
+      },
+      "ワカクサコーン": {
+        "tier": "B",
+        "daily": 39.88737749494637,
+        "top": [
+          {
+            "id": "0760_キテルグマ_L30_AA",
+            "family": "family_0759_ヌイコグマ",
+            "name": "キテルグマ",
+            "no": 760,
+            "config": "AA",
+            "daily": 39.88737749494637,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E"
+          },
+          {
+            "id": "0764_キュワワー_L30_AA",
+            "family": "family_0764_キュワワー",
+            "name": "キュワワー",
+            "no": 764,
+            "config": "AA",
+            "daily": 31.714470653563225,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A5%E3%83%AF%E3%83%AF%E3%83%BC"
+          },
+          {
+            "id": "0148_ハクリュー_L30_AB",
+            "family": "family_0147_ミニリュウ",
+            "name": "ハクリュー",
+            "no": 148,
+            "config": "AB",
+            "daily": 19.2204583060945,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%82%AF%E3%83%AA%E3%83%A5%E3%83%BC"
+          }
+        ]
+      },
+      "ワカクサ大豆": {
+        "tier": "B",
+        "daily": 43.9610762784403,
+        "top": [
+          {
+            "id": "0076_ゴローニャ_L30_AA",
+            "family": "family_0074_イシツブテ",
+            "name": "ゴローニャ",
+            "no": 76,
+            "config": "AA",
+            "daily": 43.9610762784403,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3"
+          },
+          {
+            "id": "0914_ウェーニバル_L30_AA",
+            "family": "family_0912_クワッス",
+            "name": "ウェーニバル",
+            "no": 914,
+            "config": "AA",
+            "daily": 43.76104527303226,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB"
+          },
+          {
+            "id": "0780_ジジーロン_L30_AA",
+            "family": "family_0780_ジジーロン",
+            "name": "ジジーロン",
+            "no": 780,
+            "config": "AA",
+            "daily": 41.05175443044952,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B8%E3%82%B8%E3%83%BC%E3%83%AD%E3%83%B3"
+          }
+        ]
+      }
+    },
+    "60": {
+      "あじわいキノコ": {
+        "tier": "B",
+        "daily": 39.47127812313116,
+        "top": [
+          {
+            "id": "0442_ミカルゲ_L60_AAA",
+            "family": "family_0442_ミカルゲ",
+            "name": "ミカルゲ",
+            "no": 442,
+            "config": "AAA",
+            "daily": 39.47127812313116,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あじわいキノコ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2"
+          },
+          {
+            "id": "0738_クワガノン_L60_ABB",
+            "family": "family_0736_アゴジムシ",
+            "name": "クワガノン",
+            "no": 738,
+            "config": "ABB",
+            "daily": 37.97994024989122,
+            "slots": [
+              {
+                "level": 1,
+                "name": "めざましコーヒー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "あじわいキノコ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%82%AC%E3%83%8E%E3%83%B3"
+          },
+          {
+            "id": "0195_ヌオー_L60_AAA",
+            "family": "family_0194_ウパー",
+            "name": "ヌオー",
+            "no": 195,
+            "config": "AAA",
+            "daily": 37.768771132140415,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あじわいキノコ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あじわいキノコ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8C%E3%82%AA%E3%83%BC"
+          }
+        ]
+      },
+      "あったかジンジャー": {
+        "tier": "S",
+        "daily": 67.44527986016718,
+        "top": [
+          {
+            "id": "0248_バンギラス_L60_AAA",
+            "family": "family_0246_ヨーギラス",
+            "name": "バンギラス",
+            "no": 248,
+            "config": "AAA",
+            "daily": 67.44527986016718,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あったかジンジャー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あったかジンジャー",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%B3%E3%82%AE%E3%83%A9%E3%82%B9"
+          },
+          {
+            "id": "0115_ガルーラ_L60_AAA",
+            "family": "family_0115_ガルーラ",
+            "name": "ガルーラ",
+            "no": 115,
+            "config": "AAA",
+            "daily": 53.484005131502336,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あったかジンジャー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あったかジンジャー",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AC%E3%83%AB%E3%83%BC%E3%83%A9"
+          },
+          {
+            "id": "0006_リザードン_L60_ABB",
+            "family": "family_0004_ヒトカゲ",
+            "name": "リザードン",
+            "no": 6,
+            "config": "ABB",
+            "daily": 50.1772710538977,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あったかジンジャー",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "あったかジンジャー",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3"
+          }
+        ]
+      },
+      "あまいミツ": {
+        "tier": "S",
+        "daily": 64.23390463297858,
+        "top": [
+          {
+            "id": "0003_フシギバナ_L60_AAA",
+            "family": "family_0001_フシギダネ",
+            "name": "フシギバナ",
+            "no": 3,
+            "config": "AAA",
+            "daily": 64.23390463297858,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あまいミツ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%83%90%E3%83%8A"
+          },
+          {
+            "id": "0127_カイロス_L60_AAA",
+            "family": "family_0127_カイロス",
+            "name": "カイロス",
+            "no": 127,
+            "config": "AAA",
+            "daily": 58.425832448921845,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あまいミツ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AD%E3%82%B9"
+          },
+          {
+            "id": "0743_アブリボン_L60_AAA",
+            "family": "family_0742_アブリー",
+            "name": "アブリボン",
+            "no": 743,
+            "config": "AAA",
+            "daily": 54.66162032118039,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あまいミツ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あまいミツ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%9C%E3%83%B3"
+          }
+        ]
+      },
+      "あんみんトマト": {
+        "tier": "A",
+        "daily": 57.647671611819995,
+        "top": [
+          {
+            "id": "0405_レントラー_L60_AAA",
+            "family": "family_0403_コリンク",
+            "name": "レントラー",
+            "no": 405,
+            "config": "AAA",
+            "daily": 57.647671611819995,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あんみんトマト",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A9%E3%83%BC"
+          },
+          {
+            "id": "0460_ユキノオー_L60_AAA",
+            "family": "family_0459_ユキカブリ",
+            "name": "ユキノオー",
+            "no": 460,
+            "config": "AAA",
+            "daily": 56.88856833428236,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あんみんトマト",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%83%8E%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0071_ウツボット_L60_AAA",
+            "family": "family_0069_マダツボミ",
+            "name": "ウツボット",
+            "no": 71,
+            "config": "AAA",
+            "daily": 56.829225513401404,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "あんみんトマト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "あんみんトマト",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%84%E3%83%9C%E3%83%83%E3%83%88"
+          }
+        ]
+      },
+      "おいしいシッポ": {
+        "tier": "D",
+        "daily": 8.58757307759105,
+        "top": [
+          {
+            "id": "0132_メタモン_L60_ABC",
+            "family": "family_0132_メタモン",
+            "name": "メタモン",
+            "no": 132,
+            "config": "ABC",
+            "daily": 8.58757307759105,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ピュアなオイル",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "おいしいシッポ",
+                "qty": 3
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A1%E3%82%BF%E3%83%A2%E3%83%B3"
+          },
+          {
+            "id": "0080_ヤドラン_L60_ABB",
+            "family": "family_0079_ヤドン",
+            "name": "ヤドラン",
+            "no": 80,
+            "config": "ABB",
+            "daily": 7.683000000000001,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "おいしいシッポ",
+                "qty": 1
+              },
+              {
+                "level": 60,
+                "name": "おいしいシッポ",
+                "qty": 2
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A4%E3%83%89%E3%83%A9%E3%83%B3"
+          }
+        ]
+      },
+      "げきからハーブ": {
+        "tier": "S",
+        "daily": 69.14886294223032,
+        "top": [
+          {
+            "id": "0149_カイリュー_L60_AAA",
+            "family": "family_0147_ミニリュウ",
+            "name": "カイリュー",
+            "no": 149,
+            "config": "AAA",
+            "daily": 69.14886294223032,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "げきからハーブ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AA%E3%83%A5%E3%83%BC"
+          },
+          {
+            "id": "0094_ゲンガー_L60_AAA",
+            "family": "family_0092_ゴース",
+            "name": "ゲンガー",
+            "no": 94,
+            "config": "AAA",
+            "daily": 49.49402966967632,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "げきからハーブ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B2%E3%83%B3%E3%82%AC%E3%83%BC"
+          },
+          {
+            "id": "0330_フライゴン_L60_ABB",
+            "family": "family_0328_ナックラー",
+            "name": "フライゴン",
+            "no": 330,
+            "config": "ABB",
+            "daily": 45.935364374063724,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "げきからハーブ",
+                "qty": 6
+              },
+              {
+                "level": 60,
+                "name": "げきからハーブ",
+                "qty": 9
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%83%A9%E3%82%A4%E3%82%B4%E3%83%B3"
+          }
+        ]
+      },
+      "ずっしりカボチャ": {
+        "tier": "C",
+        "daily": 27.63495762380436,
+        "top": [
+          {
+            "id": "0711_パンプジン(おおだま)_L60_AAA",
+            "family": "family_0710_バケッチャ(おおだま)",
+            "name": "パンプジン(おおだま)",
+            "no": null,
+            "config": "AAA",
+            "daily": 27.63495762380436,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ずっしりカボチャ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ずっしりカボチャ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ずっしりカボチャ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%91%E3%83%B3%E3%83%97%E3%82%B8%E3%83%B3"
+          },
+          {
+            "id": "0442_ミカルゲ_L60_ABB",
+            "family": "family_0442_ミカルゲ",
+            "name": "ミカルゲ",
+            "no": 442,
+            "config": "ABB",
+            "daily": 22.69707860195221,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あじわいキノコ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ずっしりカボチャ",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "ずっしりカボチャ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9F%E3%82%AB%E3%83%AB%E3%82%B2"
+          },
+          {
+            "id": "0975_ハルクジラ_L60_AAC",
+            "family": "family_0974_アルクジラ",
+            "name": "ハルクジラ",
+            "no": 975,
+            "config": "AAC",
+            "daily": 15.018949756555552,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ずっしりカボチャ",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9"
+          }
+        ]
+      },
+      "つやつやアボカド": {
+        "tier": "B",
+        "daily": 44.15928580253734,
+        "top": [
+          {
+            "id": "0330_フライゴン_L60_AAA",
+            "family": "family_0328_ナックラー",
+            "name": "フライゴン",
+            "no": 330,
+            "config": "AAA",
+            "daily": 44.15928580253734,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "つやつやアボカド",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%83%A9%E3%82%A4%E3%82%B4%E3%83%B3"
+          },
+          {
+            "id": "0780_ジジーロン_L60_ABB",
+            "family": "family_0780_ジジーロン",
+            "name": "ジジーロン",
+            "no": 780,
+            "config": "ABB",
+            "daily": 29.477064695276905,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "つやつやアボカド",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B8%E3%82%B8%E3%83%BC%E3%83%AD%E3%83%B3"
+          },
+          {
+            "id": "0558_イワパレス_L60_AAA",
+            "family": "family_0557_イシズマイ",
+            "name": "イワパレス",
+            "no": 558,
+            "config": "AAA",
+            "daily": 26.178682155365305,
+            "slots": [
+              {
+                "level": 1,
+                "name": "つやつやアボカド",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "つやつやアボカド",
+                "qty": 2
+              },
+              {
+                "level": 60,
+                "name": "つやつやアボカド",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A4%E3%83%AF%E3%83%91%E3%83%AC%E3%82%B9"
+          }
+        ]
+      },
+      "とくせんエッグ": {
+        "tier": "A",
+        "daily": 52.98685273616017,
+        "top": [
+          {
+            "id": "0242_ハピナス_L60_AAA",
+            "family": "family_0113_ラッキー",
+            "name": "ハピナス",
+            "no": 242,
+            "config": "AAA",
+            "daily": 52.98685273616017,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんエッグ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "とくせんエッグ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%94%E3%83%8A%E3%82%B9"
+          },
+          {
+            "id": "0225_デリバード_L60_AAA",
+            "family": "family_0225_デリバード",
+            "name": "デリバード",
+            "no": 225,
+            "config": "AAA",
+            "daily": 46.89276653121195,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんエッグ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "とくせんエッグ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%87%E3%83%AA%E3%83%90%E3%83%BC%E3%83%89"
+          },
+          {
+            "id": "0460_ユキノオー_L60_ABB",
+            "family": "family_0459_ユキカブリ",
+            "name": "ユキノオー",
+            "no": 460,
+            "config": "ABB",
+            "daily": 44.915528362438835,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんエッグ",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "とくせんエッグ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A6%E3%82%AD%E3%83%8E%E3%82%AA%E3%83%BC"
+          }
+        ]
+      },
+      "とくせんリンゴ": {
+        "tier": "S",
+        "daily": 67.91725058275924,
+        "top": [
+          {
+            "id": "0911_ラウドボーン_L60_AAA",
+            "family": "family_0909_ホゲータ",
+            "name": "ラウドボーン",
+            "no": 911,
+            "config": "AAA",
+            "daily": 67.91725058275924,
+            "slots": [
+              {
+                "level": 1,
+                "name": "とくせんリンゴ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "とくせんリンゴ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%A9%E3%82%A6%E3%83%89%E3%83%9C%E3%83%BC%E3%83%B3"
+          },
+          {
+            "id": "0127_カイロス_L60_ABB",
+            "family": "family_0127_カイロス",
+            "name": "カイロス",
+            "no": 127,
+            "config": "ABB",
+            "daily": 52.79337622727345,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "とくせんリンゴ",
+                "qty": 8
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AD%E3%82%B9"
+          },
+          {
+            "id": "0359_アブソル_L60_ABB",
+            "family": "family_0359_アブソル",
+            "name": "アブソル",
+            "no": 359,
+            "config": "ABB",
+            "daily": 49.034233239428765,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "とくせんリンゴ",
+                "qty": 8
+              },
+              {
+                "level": 60,
+                "name": "とくせんリンゴ",
+                "qty": 12
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%82%BD%E3%83%AB"
+          }
+        ]
+      },
+      "ふといながねぎ": {
+        "tier": "B",
+        "daily": 34.639612261669285,
+        "top": [
+          {
+            "id": "0083_カモネギ_L60_AAA",
+            "family": "family_0083_カモネギ",
+            "name": "カモネギ",
+            "no": 83,
+            "config": "AAA",
+            "daily": 34.639612261669285,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ふといながねぎ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ふといながねぎ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A2%E3%83%8D%E3%82%AE"
+          },
+          {
+            "id": "0914_ウェーニバル_L60_ABB",
+            "family": "family_0912_クワッス",
+            "name": "ウェーニバル",
+            "no": 914,
+            "config": "ABB",
+            "daily": 26.89973787813811,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 2
+              },
+              {
+                "level": 60,
+                "name": "ふといながねぎ",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB"
+          },
+          {
+            "id": "0051_ダグトリオ_L60_ABB",
+            "family": "family_0050_ディグダ",
+            "name": "ダグトリオ",
+            "no": 51,
+            "config": "ABB",
+            "daily": 24.952077424631742,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ふといながねぎ",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "ふといながねぎ",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%80%E3%82%B0%E3%83%88%E3%83%AA%E3%82%AA"
+          }
+        ]
+      },
+      "ほっこりポテト": {
+        "tier": "A",
+        "daily": 51.96101796530816,
+        "top": [
+          {
+            "id": "0975_ハルクジラ_L60_AAA",
+            "family": "family_0974_アルクジラ",
+            "name": "ハルクジラ",
+            "no": 975,
+            "config": "AAA",
+            "daily": 51.96101796530816,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ほっこりポテト",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9"
+          },
+          {
+            "id": "0908_マスカーニャ_L60_AAA",
+            "family": "family_0906_ニャオハ",
+            "name": "マスカーニャ",
+            "no": 908,
+            "config": "AAA",
+            "daily": 50.20957898393639,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ほっこりポテト",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%A3"
+          },
+          {
+            "id": "0076_ゴローニャ_L60_ABB",
+            "family": "family_0074_イシツブテ",
+            "name": "ゴローニャ",
+            "no": 76,
+            "config": "ABB",
+            "daily": 44.16455487744831,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ほっこりポテト",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "ほっこりポテト",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3"
+          }
+        ]
+      },
+      "めざましコーヒー": {
+        "tier": "A",
+        "daily": 48.19675362143016,
+        "top": [
+          {
+            "id": "0738_クワガノン_L60_AAA",
+            "family": "family_0736_アゴジムシ",
+            "name": "クワガノン",
+            "no": 738,
+            "config": "AAA",
+            "daily": 48.19675362143016,
+            "slots": [
+              {
+                "level": 1,
+                "name": "めざましコーヒー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "めざましコーヒー",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%82%AC%E3%83%8E%E3%83%B3"
+          },
+          {
+            "id": "0306_ボスゴドラ_L60_ABB",
+            "family": "family_0304_ココドラ",
+            "name": "ボスゴドラ",
+            "no": 306,
+            "config": "ABB",
+            "daily": 37.93103710743334,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "めざましコーヒー",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%82%B9%E3%82%B4%E3%83%89%E3%83%A9"
+          },
+          {
+            "id": "0980_ドオー_L60_ABB",
+            "family": "family_0194_ウパー(パルデア)",
+            "name": "ドオー",
+            "no": 980,
+            "config": "ABB",
+            "daily": 32.45529544822834,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "めざましコーヒー",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "めざましコーヒー",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AA%E3%83%BC"
+          }
+        ]
+      },
+      "ピュアなオイル": {
+        "tier": "A",
+        "daily": 45.47406564834562,
+        "top": [
+          {
+            "id": "0405_レントラー_L60_ABB",
+            "family": "family_0403_コリンク",
+            "name": "レントラー",
+            "no": 405,
+            "config": "ABB",
+            "daily": 45.47406564834562,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あんみんトマト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "ピュアなオイル",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A9%E3%83%BC"
+          },
+          {
+            "id": "0454_ドクロッグ_L60_AAA",
+            "family": "family_0453_グレッグル",
+            "name": "ドクロッグ",
+            "no": 454,
+            "config": "AAA",
+            "daily": 43.81125388155803,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ピュアなオイル",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ピュアなオイル",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AF%E3%83%AD%E3%83%83%E3%82%B0"
+          },
+          {
+            "id": "0743_アブリボン_L60_ABB",
+            "family": "family_0742_アブリー",
+            "name": "アブリボン",
+            "no": 743,
+            "config": "ABB",
+            "daily": 40.15241954148735,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あまいミツ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ピュアなオイル",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "ピュアなオイル",
+                "qty": 6
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%83%AA%E3%83%9C%E3%83%B3"
+          }
+        ]
+      },
+      "マメミート": {
+        "tier": "S",
+        "daily": 65.07383862411547,
+        "top": [
+          {
+            "id": "0306_ボスゴドラ_L60_AAA",
+            "family": "family_0304_ココドラ",
+            "name": "ボスゴドラ",
+            "no": 306,
+            "config": "AAA",
+            "daily": 65.07383862411547,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "マメミート",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9C%E3%82%B9%E3%82%B4%E3%83%89%E3%83%A9"
+          },
+          {
+            "id": "0006_リザードン_L60_AAA",
+            "family": "family_0004_ヒトカゲ",
+            "name": "リザードン",
+            "no": 6,
+            "config": "AAA",
+            "daily": 63.4547549306818,
+            "slots": [
+              {
+                "level": 1,
+                "name": "マメミート",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "マメミート",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3"
+          },
+          {
+            "id": "0760_キテルグマ_L60_ABB",
+            "family": "family_0759_ヌイコグマ",
+            "name": "キテルグマ",
+            "no": 760,
+            "config": "ABB",
+            "daily": 58.536030523306806,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "マメミート",
+                "qty": 6
+              },
+              {
+                "level": 60,
+                "name": "マメミート",
+                "qty": 10
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E"
+          }
+        ]
+      },
+      "モーモーミルク": {
+        "tier": "S",
+        "daily": 66.21446465071011,
+        "top": [
+          {
+            "id": "0009_カメックス_L60_AAA",
+            "family": "family_0007_ゼニガメ",
+            "name": "カメックス",
+            "no": 9,
+            "config": "AAA",
+            "daily": 66.21446465071011,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "モーモーミルク",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%83%E3%82%AF%E3%82%B9"
+          },
+          {
+            "id": "0908_マスカーニャ_L60_ABB",
+            "family": "family_0906_ニャオハ",
+            "name": "マスカーニャ",
+            "no": 908,
+            "config": "ABB",
+            "daily": 52.01583920584228,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ほっこりポテト",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 6
+              },
+              {
+                "level": 60,
+                "name": "モーモーミルク",
+                "qty": 9
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8B%E3%83%A3"
+          },
+          {
+            "id": "0849_ストリンダー(ハイ)_L60_AAA",
+            "family": "family_0848_エレズン",
+            "name": "ストリンダー(ハイ)",
+            "no": null,
+            "config": "AAA",
+            "daily": 26.750453574914513,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 1
+              },
+              {
+                "level": 30,
+                "name": "モーモーミルク",
+                "qty": 2
+              },
+              {
+                "level": 60,
+                "name": "モーモーミルク",
+                "qty": 4
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%83%80%E3%83%BC%28%E3%83%8F%E3%82%A4%E3%81%AA%E3%81%99%E3%81%8C%E3%81%9F%29"
+          }
+        ]
+      },
+      "リラックスカカオ": {
+        "tier": "B",
+        "daily": 41.2028812960786,
+        "top": [
+          {
+            "id": "0980_ドオー_L60_AAA",
+            "family": "family_0194_ウパー(パルデア)",
+            "name": "ドオー",
+            "no": 980,
+            "config": "AAA",
+            "daily": 41.2028812960786,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "リラックスカカオ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%89%E3%82%AA%E3%83%BC"
+          },
+          {
+            "id": "0359_アブソル_L60_AAA",
+            "family": "family_0359_アブソル",
+            "name": "アブソル",
+            "no": 359,
+            "config": "AAA",
+            "daily": 40.16456856290362,
+            "slots": [
+              {
+                "level": 1,
+                "name": "リラックスカカオ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "リラックスカカオ",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A2%E3%83%96%E3%82%BD%E3%83%AB"
+          },
+          {
+            "id": "0009_カメックス_L60_ABB",
+            "family": "family_0007_ゼニガメ",
+            "name": "カメックス",
+            "no": 9,
+            "config": "ABB",
+            "daily": 39.25522802980951,
+            "slots": [
+              {
+                "level": 1,
+                "name": "モーモーミルク",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "リラックスカカオ",
+                "qty": 3
+              },
+              {
+                "level": 60,
+                "name": "リラックスカカオ",
+                "qty": 5
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%83%A1%E3%83%83%E3%82%AF%E3%82%B9"
+          }
+        ]
+      },
+      "ワカクサコーン": {
+        "tier": "A",
+        "daily": 55.08185717620336,
+        "top": [
+          {
+            "id": "0760_キテルグマ_L60_AAA",
+            "family": "family_0759_ヌイコグマ",
+            "name": "キテルグマ",
+            "no": 760,
+            "config": "AAA",
+            "daily": 55.08185717620336,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ワカクサコーン",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%86%E3%83%AB%E3%82%B0%E3%83%9E"
+          },
+          {
+            "id": "0149_カイリュー_L60_ABB",
+            "family": "family_0147_ミニリュウ",
+            "name": "カイリュー",
+            "no": 149,
+            "config": "ABB",
+            "daily": 54.66982169797605,
+            "slots": [
+              {
+                "level": 1,
+                "name": "げきからハーブ",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 4
+              },
+              {
+                "level": 60,
+                "name": "ワカクサコーン",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AB%E3%82%A4%E3%83%AA%E3%83%A5%E3%83%BC"
+          },
+          {
+            "id": "0764_キュワワー_L60_AAA",
+            "family": "family_0764_キュワワー",
+            "name": "キュワワー",
+            "no": 764,
+            "config": "AAA",
+            "daily": 42.32603074881537,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサコーン",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサコーン",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ワカクサコーン",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A5%E3%83%AF%E3%83%AF%E3%83%BC"
+          }
+        ]
+      },
+      "ワカクサ大豆": {
+        "tier": "S",
+        "daily": 61.664731952270145,
+        "top": [
+          {
+            "id": "0248_バンギラス_L60_ABB",
+            "family": "family_0246_ヨーギラス",
+            "name": "バンギラス",
+            "no": 248,
+            "config": "ABB",
+            "daily": 61.664731952270145,
+            "slots": [
+              {
+                "level": 1,
+                "name": "あったかジンジャー",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ワカクサ大豆",
+                "qty": 8
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%B3%E3%82%AE%E3%83%A9%E3%82%B9"
+          },
+          {
+            "id": "0914_ウェーニバル_L60_AAA",
+            "family": "family_0912_クワッス",
+            "name": "ウェーニバル",
+            "no": 914,
+            "config": "AAA",
+            "daily": 60.948316445468166,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ワカクサ大豆",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A7%E3%83%BC%E3%83%8B%E3%83%90%E3%83%AB"
+          },
+          {
+            "id": "0076_ゴローニャ_L60_AAA",
+            "family": "family_0074_イシツブテ",
+            "name": "ゴローニャ",
+            "no": 76,
+            "config": "AAA",
+            "daily": 60.8420491214034,
+            "slots": [
+              {
+                "level": 1,
+                "name": "ワカクサ大豆",
+                "qty": 2
+              },
+              {
+                "level": 30,
+                "name": "ワカクサ大豆",
+                "qty": 5
+              },
+              {
+                "level": 60,
+                "name": "ワカクサ大豆",
+                "qty": 7
+              }
+            ],
+            "source": "https://wikiwiki.jp/poke_sleep/%E3%82%B4%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3"
+          }
+        ]
+      }
+    }
+  },
+  "burdens": {
+    "30": {
+      "fancy_apple_curry": {
+        "dedicated": 0.43199456814361603,
+        "relaxed": 0.43199456814361603,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "grilled_tail_curry": {
+        "dedicated": 8.675814945446003,
+        "relaxed": 8.675814945446003,
+        "bottleneck": "おいしいシッポ"
+      },
+      "solar_power_tomato_curry": {
+        "dedicated": 1.1459809350126964,
+        "relaxed": 1.1459809350126964,
+        "bottleneck": "あんみんトマト"
+      },
+      "dream_eater_butter_curry": {
+        "dedicated": 4.411513311300112,
+        "relaxed": 4.411513311300112,
+        "bottleneck": "ほっこりポテト"
+      },
+      "spicy_leek_curry": {
+        "dedicated": 3.055070560331563,
+        "relaxed": 3.055070560331563,
+        "bottleneck": "ふといながねぎ"
+      },
+      "spore_mushroom_curry": {
+        "dedicated": 2.253989841632034,
+        "relaxed": 2.253989841632034,
+        "bottleneck": "あじわいキノコ"
+      },
+      "egg_bomb_curry": {
+        "dedicated": 2.4235769299555447,
+        "relaxed": 2.4235769299555447,
+        "bottleneck": "あまいミツ"
+      },
+      "hearty_cheeseburger_curry": {
+        "dedicated": 1.0225864940463159,
+        "relaxed": 1.0225864940463159,
+        "bottleneck": "マメミート"
+      },
+      "hearty_white_stew": {
+        "dedicated": 1.7153187026034882,
+        "relaxed": 1.7153187026034882,
+        "bottleneck": "ほっこりポテト"
+      },
+      "simple_white_stew": {
+        "dedicated": 0.4381130281692914,
+        "relaxed": 0.4381130281692914,
+        "bottleneck": "モーモーミルク"
+      },
+      "bean_burger_curry": {
+        "dedicated": 0.456650154121235,
+        "relaxed": 0.456650154121235,
+        "bottleneck": "マメミート"
+      },
+      "baby_honey_curry": {
+        "dedicated": 0.45274913954253854,
+        "relaxed": 0.45274913954253854,
+        "bottleneck": "あまいミツ"
+      },
+      "ninja_curry": {
+        "dedicated": 4.169965492991284,
+        "relaxed": 4.169965492991285,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "drought_katsu_curry": {
+        "dedicated": 1.1151423167967578,
+        "relaxed": 1.1151423167967578,
+        "bottleneck": "マメミート"
+      },
+      "melty_omelette_curry": {
+        "dedicated": 1.2371772269772,
+        "relaxed": 1.2371772269772,
+        "bottleneck": "とくせんエッグ"
+      },
+      "bulk_up_bean_curry": {
+        "dedicated": 1.8649904226521956,
+        "relaxed": 1.8649904226521956,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "limber_corn_stew": {
+        "dedicated": 2.2101118081218547,
+        "relaxed": 2.2101118081218547,
+        "bottleneck": "ワカクサコーン"
+      },
+      "inferno_corn_keema_curry": {
+        "dedicated": 5.77442930244977,
+        "relaxed": 5.731123987949664,
+        "bottleneck": "げきからハーブ"
+      },
+      "hidden_power_stew": {
+        "dedicated": 7.634694038448223,
+        "relaxed": 7.634694038448223,
+        "bottleneck": "あじわいキノコ"
+      },
+      "dizzy_punch_spicy_curry": {
+        "dedicated": 2.603777381874643,
+        "relaxed": 2.6037773818746435,
+        "bottleneck": "めざましコーヒー"
+      },
+      "sacred_sword_sukiyaki_curry": {
+        "dedicated": 8.29728705470336,
+        "relaxed": 8.29728705470336,
+        "bottleneck": "ふといながねぎ"
+      },
+      "role_play_pumpkaboo_stew": {
+        "dedicated": 6.736367853319633,
+        "relaxed": 6.736367853319633,
+        "bottleneck": "あじわいキノコ"
+      },
+      "verdant_avocado_gratin": {
+        "dedicated": 10.395425061889908,
+        "relaxed": 10.395425061889908,
+        "bottleneck": "つやつやアボカド"
+      },
+      "greengrass_curry_bun": {
+        "dedicated": 5.103421121121212,
+        "relaxed": 5.103421121121212,
+        "bottleneck": "げきからハーブ"
+      },
+      "bouncing_curry_udon": {
+        "dedicated": 9.418664511871139,
+        "relaxed": 9.284944348481982,
+        "bottleneck": "あじわいキノコ"
+      },
+      "slowpoke_tail_pepper_salad": {
+        "dedicated": 10.456156487714738,
+        "relaxed": 10.456156487714738,
+        "bottleneck": "おいしいシッポ"
+      },
+      "spore_mushroom_salad": {
+        "dedicated": 3.162987592021284,
+        "relaxed": 3.148575530044754,
+        "bottleneck": "あじわいキノコ"
+      },
+      "snow_cloak_caesar_salad": {
+        "dedicated": 1.0172901723457604,
+        "relaxed": 1.0172901723457604,
+        "bottleneck": "モーモーミルク"
+      },
+      "gluttony_potato_salad": {
+        "dedicated": 2.6961217592466786,
+        "relaxed": 2.696121759246679,
+        "bottleneck": "ほっこりポテト"
+      },
+      "water_veil_tofu_salad": {
+        "dedicated": 1.678716744719135,
+        "relaxed": 1.678716744719135,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "superpower_extreme_salad": {
+        "dedicated": 1.682523126041091,
+        "relaxed": 1.682523126041091,
+        "bottleneck": "マメミート"
+      },
+      "bean_ham_salad": {
+        "dedicated": 0.5218858904242686,
+        "relaxed": 0.5218858904242686,
+        "bottleneck": "マメミート"
+      },
+      "snoozy_tomato_salad": {
+        "dedicated": 0.5822968317010684,
+        "relaxed": 0.5822968317010684,
+        "bottleneck": "あんみんトマト"
+      },
+      "moomoo_caprese": {
+        "dedicated": 1.6505584829752944,
+        "relaxed": 1.6415509442399627,
+        "bottleneck": "モーモーミルク"
+      },
+      "fury_attack_chocolate_meat_salad": {
+        "dedicated": 2.0067523511961367,
+        "relaxed": 2.0067523511961367,
+        "bottleneck": "リラックスカカオ"
+      },
+      "overheat_salad": {
+        "dedicated": 2.7522150660714977,
+        "relaxed": 2.7522150660714977,
+        "bottleneck": "げきからハーブ"
+      },
+      "choice_apple_salad": {
+        "dedicated": 0.49370807787841836,
+        "relaxed": 0.49370807787841836,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "immunity_leek_salad": {
+        "dedicated": 1.543993821925961,
+        "relaxed": 1.543993821925961,
+        "bottleneck": "ふといながねぎ"
+      },
+      "attract_apple_cheese_salad": {
+        "dedicated": 1.5163114955456671,
+        "relaxed": 1.5163114955456671,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "ninja_salad": {
+        "dedicated": 5.173502192341426,
+        "relaxed": 5.173502192341427,
+        "bottleneck": "ふといながねぎ"
+      },
+      "heat_wave_tofu_salad": {
+        "dedicated": 1.1841537471672547,
+        "relaxed": 1.1841537471672547,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "greengrass_salad": {
+        "dedicated": 5.072375561399129,
+        "relaxed": 5.03274239096367,
+        "bottleneck": "ピュアなオイル"
+      },
+      "calm_mind_fruit_salad": {
+        "dedicated": 3.2333800416901815,
+        "relaxed": 3.233380041690181,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "fury_attack_corn_salad": {
+        "dedicated": 1.417361796897852,
+        "relaxed": 1.417361796897852,
+        "bottleneck": "ピュアなオイル"
+      },
+      "defiant_coffee_salad": {
+        "dedicated": 8.143467333080695,
+        "relaxed": 8.143467333080695,
+        "bottleneck": "めざましコーヒー"
+      },
+      "cross_chop_salad": {
+        "dedicated": 4.134645688306563,
+        "relaxed": 4.107579866743997,
+        "bottleneck": "とくせんエッグ"
+      },
+      "petal_blizzard_mimosa_salad": {
+        "dedicated": 5.588271404840775,
+        "relaxed": 5.588271404840775,
+        "bottleneck": "とくせんエッグ"
+      },
+      "apple_acid_yogurt_salad": {
+        "dedicated": 7.330249133069537,
+        "relaxed": 7.330249133069536,
+        "bottleneck": "とくせんエッグ"
+      },
+      "crunch_avocado_salad": {
+        "dedicated": 4.207089397599272,
+        "relaxed": 3.8979563012160416,
+        "bottleneck": "つやつやアボカド"
+      },
+      "stomping_guacamole_chips": {
+        "dedicated": 9.996601816420329,
+        "relaxed": 9.378335623653866,
+        "bottleneck": "つやつやアボカド"
+      },
+      "boiling_hot_salad": {
+        "dedicated": 9.756939517635526,
+        "relaxed": 9.756939517635526,
+        "bottleneck": "ずっしりカボチャ"
+      },
+      "ripened_sweet_potato": {
+        "dedicated": 1.0514402083008039,
+        "relaxed": 1.0514402083008039,
+        "bottleneck": "ほっこりポテト"
+      },
+      "steadfast_ginger_cookies": {
+        "dedicated": 2.6307046014583837,
+        "relaxed": 2.6307046014583833,
+        "bottleneck": "あまいミツ"
+      },
+      "apple_juice": {
+        "dedicated": 0.49370807787841836,
+        "relaxed": 0.49370807787841836,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "craft_psycho_soda": {
+        "dedicated": 0.5821060365546924,
+        "relaxed": 0.5821060365546924,
+        "bottleneck": "あまいミツ"
+      },
+      "ginger_tea": {
+        "dedicated": 1.1055046991947384,
+        "relaxed": 1.1055046991947384,
+        "bottleneck": "あったかジンジャー"
+      },
+      "jigglypuff_flan": {
+        "dedicated": 3.7372617267992183,
+        "relaxed": 3.737261726799219,
+        "bottleneck": "あまいミツ"
+      },
+      "lovely_kiss_fruit_au_lait": {
+        "dedicated": 2.506103482539501,
+        "relaxed": 2.506103482539501,
+        "bottleneck": "リラックスカカオ"
+      },
+      "wish_apple_pie": {
+        "dedicated": 0.9909124186286511,
+        "relaxed": 0.9909124186286511,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "neroli_detox_tea": {
+        "dedicated": 2.7231236661813094,
+        "relaxed": 2.7231236661813094,
+        "bottleneck": "あじわいキノコ"
+      },
+      "sweet_scent_chocolate_cake": {
+        "dedicated": 1.831436621563318,
+        "relaxed": 1.8314366215633178,
+        "bottleneck": "リラックスカカオ"
+      },
+      "hot_milk": {
+        "dedicated": 0.4381130281692914,
+        "relaxed": 0.4381130281692914,
+        "bottleneck": "モーモーミルク"
+      },
+      "light_soy_cake": {
+        "dedicated": 1.1180589934536542,
+        "relaxed": 1.1180589934536542,
+        "bottleneck": "とくせんエッグ"
+      },
+      "hustle_protein_smoothie": {
+        "dedicated": 1.8348503658947668,
+        "relaxed": 1.8348503658947668,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "slow_and_steady_vegetable_juice": {
+        "dedicated": 1.087078503807318,
+        "relaxed": 1.087078503807318,
+        "bottleneck": "あんみんトマト"
+      },
+      "big_malasada": {
+        "dedicated": 1.7517536267385971,
+        "relaxed": 1.7517536267385971,
+        "bottleneck": "ピュアなオイル"
+      },
+      "huge_power_soy_donuts": {
+        "dedicated": 2.9123742475996255,
+        "relaxed": 2.9123742475996255,
+        "bottleneck": "ピュアなオイル"
+      },
+      "explosion_popcorn": {
+        "dedicated": 2.862087350167901,
+        "relaxed": 2.8620873501679007,
+        "bottleneck": "ピュアなオイル"
+      },
+      "teatime_corn_scones": {
+        "dedicated": 4.648059295627608,
+        "relaxed": 4.648059295627608,
+        "bottleneck": "あったかジンジャー"
+      },
+      "petal_dance_chocolate_tart": {
+        "dedicated": 1.7942727477369096,
+        "relaxed": 1.7942727477369096,
+        "bottleneck": "リラックスカカオ"
+      },
+      "flower_gift_macarons": {
+        "dedicated": 6.261600752257283,
+        "relaxed": 6.261600752257282,
+        "bottleneck": "リラックスカカオ"
+      },
+      "zippy_zap_spiced_cola": {
+        "dedicated": 7.057184360217136,
+        "relaxed": 7.057184360217136,
+        "bottleneck": "ふといながねぎ"
+      },
+      "early_bird_coffee_jelly": {
+        "dedicated": 3.0668731525319473,
+        "relaxed": 3.066873152531947,
+        "bottleneck": "めざましコーヒー"
+      },
+      "mold_breaker_corn_tiramisu": {
+        "dedicated": 3.0417080933109095,
+        "relaxed": 3.0417080933109095,
+        "bottleneck": "めざましコーヒー"
+      },
+      "clodsire_eclairs": {
+        "dedicated": 8.21402723823351,
+        "relaxed": 8.21402723823351,
+        "bottleneck": "リラックスカカオ"
+      },
+      "spooky_face_pancakes": {
+        "dedicated": 8.818482098024916,
+        "relaxed": 8.818482098024916,
+        "bottleneck": "ずっしりカボチャ"
+      },
+      "grass_mixer_smoothie": {
+        "dedicated": 4.680597015854888,
+        "relaxed": 4.680597015854888,
+        "bottleneck": "つやつやアボカド"
+      },
+      "honey_gathering_chocolate_waffles": {
+        "dedicated": 9.284752247071044,
+        "relaxed": 9.284752247071044,
+        "bottleneck": "ピュアなオイル"
+      }
+    },
+    "60": {
+      "fancy_apple_curry": {
+        "dedicated": 0.3091997956308738,
+        "relaxed": 0.3091997956308738,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "grilled_tail_curry": {
+        "dedicated": 3.879352575998391,
+        "relaxed": 3.879352575998391,
+        "bottleneck": "おいしいシッポ"
+      },
+      "solar_power_tomato_curry": {
+        "dedicated": 0.7373259380273696,
+        "relaxed": 0.7373259380273696,
+        "bottleneck": "あんみんトマト"
+      },
+      "dream_eater_butter_curry": {
+        "dedicated": 3.1466430705691177,
+        "relaxed": 3.025479638852884,
+        "bottleneck": "ほっこりポテト"
+      },
+      "spicy_leek_curry": {
+        "dedicated": 2.004367028037584,
+        "relaxed": 2.004367028037584,
+        "bottleneck": "ふといながねぎ"
+      },
+      "spore_mushroom_curry": {
+        "dedicated": 1.5836851641747214,
+        "relaxed": 1.5836851641747214,
+        "bottleneck": "あじわいキノコ"
+      },
+      "egg_bomb_curry": {
+        "dedicated": 1.7302219808741417,
+        "relaxed": 1.7117657115443041,
+        "bottleneck": "あまいミツ"
+      },
+      "hearty_cheeseburger_curry": {
+        "dedicated": 0.7312703742483665,
+        "relaxed": 0.7249978291612318,
+        "bottleneck": "マメミート"
+      },
+      "hearty_white_stew": {
+        "dedicated": 1.2189764559898566,
+        "relaxed": 1.2189764559898566,
+        "bottleneck": "ほっこりポテト"
+      },
+      "simple_white_stew": {
+        "dedicated": 0.3171512464954255,
+        "relaxed": 0.3171512464954255,
+        "bottleneck": "モーモーミルク"
+      },
+      "bean_burger_curry": {
+        "dedicated": 0.3227103309718952,
+        "relaxed": 0.3227103309718952,
+        "bottleneck": "マメミート"
+      },
+      "baby_honey_curry": {
+        "dedicated": 0.32693014880522003,
+        "relaxed": 0.32693014880522003,
+        "bottleneck": "あまいミツ"
+      },
+      "ninja_curry": {
+        "dedicated": 3.001813249317208,
+        "relaxed": 2.95057875162534,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "drought_katsu_curry": {
+        "dedicated": 0.7908731027575491,
+        "relaxed": 0.7908731027575491,
+        "bottleneck": "マメミート"
+      },
+      "melty_omelette_curry": {
+        "dedicated": 0.8784197617356371,
+        "relaxed": 0.8595048110849588,
+        "bottleneck": "とくせんエッグ"
+      },
+      "bulk_up_bean_curry": {
+        "dedicated": 1.2604208734378342,
+        "relaxed": 1.2452489192706717,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "limber_corn_stew": {
+        "dedicated": 1.5868448061680684,
+        "relaxed": 1.5868448061680684,
+        "bottleneck": "ワカクサコーン"
+      },
+      "inferno_corn_keema_curry": {
+        "dedicated": 3.574088840365554,
+        "relaxed": 3.3298188959257993,
+        "bottleneck": "げきからハーブ"
+      },
+      "hidden_power_stew": {
+        "dedicated": 5.407235732264134,
+        "relaxed": 5.137255502337995,
+        "bottleneck": "あじわいキノコ"
+      },
+      "dizzy_punch_spicy_curry": {
+        "dedicated": 1.6756720698560588,
+        "relaxed": 1.6320932896097797,
+        "bottleneck": "めざましコーヒー"
+      },
+      "sacred_sword_sukiyaki_curry": {
+        "dedicated": 5.996905712462146,
+        "relaxed": 5.996905712462146,
+        "bottleneck": "ふといながねぎ"
+      },
+      "role_play_pumpkaboo_stew": {
+        "dedicated": 4.762561588835456,
+        "relaxed": 4.664245812054309,
+        "bottleneck": "あじわいキノコ"
+      },
+      "verdant_avocado_gratin": {
+        "dedicated": 6.617994739153373,
+        "relaxed": 6.617994739153373,
+        "bottleneck": "ピュアなオイル"
+      },
+      "greengrass_curry_bun": {
+        "dedicated": 3.136079727104607,
+        "relaxed": 2.6605566758348536,
+        "bottleneck": "ピュアなオイル"
+      },
+      "bouncing_curry_udon": {
+        "dedicated": 5.967375315694419,
+        "relaxed": 5.8089090231783835,
+        "bottleneck": "あじわいキノコ"
+      },
+      "slowpoke_tail_pepper_salad": {
+        "dedicated": 4.916841699446029,
+        "relaxed": 3.9528244205943395,
+        "bottleneck": "おいしいシッポ"
+      },
+      "spore_mushroom_salad": {
+        "dedicated": 2.236174213515013,
+        "relaxed": 2.1250012327522305,
+        "bottleneck": "あじわいキノコ"
+      },
+      "snow_cloak_caesar_salad": {
+        "dedicated": 0.7296820643979466,
+        "relaxed": 0.7249171348466863,
+        "bottleneck": "モーモーミルク"
+      },
+      "gluttony_potato_salad": {
+        "dedicated": 1.9055973439663019,
+        "relaxed": 1.8955640974593932,
+        "bottleneck": "ほっこりポテト"
+      },
+      "water_veil_tofu_salad": {
+        "dedicated": 1.1981149930502832,
+        "relaxed": 1.1981149930502832,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "superpower_extreme_salad": {
+        "dedicated": 1.1380921628311111,
+        "relaxed": 1.0929870916314874,
+        "bottleneck": "マメミート"
+      },
+      "bean_ham_salad": {
+        "dedicated": 0.36881180682502307,
+        "relaxed": 0.36881180682502307,
+        "bottleneck": "マメミート"
+      },
+      "snoozy_tomato_salad": {
+        "dedicated": 0.4163221051078683,
+        "relaxed": 0.4163221051078683,
+        "bottleneck": "あんみんトマト"
+      },
+      "moomoo_caprese": {
+        "dedicated": 1.1857877741921865,
+        "relaxed": 1.1161307456583334,
+        "bottleneck": "モーモーミルク"
+      },
+      "fury_attack_chocolate_meat_salad": {
+        "dedicated": 1.434259471071953,
+        "relaxed": 1.434259471071953,
+        "bottleneck": "リラックスカカオ"
+      },
+      "overheat_salad": {
+        "dedicated": 1.5986663816725992,
+        "relaxed": 1.5986663816725992,
+        "bottleneck": "げきからハーブ"
+      },
+      "choice_apple_salad": {
+        "dedicated": 0.3533711950067129,
+        "relaxed": 0.3533711950067129,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "immunity_leek_salad": {
+        "dedicated": 1.0884630194396392,
+        "relaxed": 1.0884630194396392,
+        "bottleneck": "ふといながねぎ"
+      },
+      "attract_apple_cheese_salad": {
+        "dedicated": 1.0870226018129385,
+        "relaxed": 1.0870226018129385,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "ninja_salad": {
+        "dedicated": 3.6247852094359896,
+        "relaxed": 3.4730676918188825,
+        "bottleneck": "ふといながねぎ"
+      },
+      "heat_wave_tofu_salad": {
+        "dedicated": 0.7468097178403287,
+        "relaxed": 0.7468097178403287,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "greengrass_salad": {
+        "dedicated": 3.625455410269019,
+        "relaxed": 3.2560953944254547,
+        "bottleneck": "ピュアなオイル"
+      },
+      "calm_mind_fruit_salad": {
+        "dedicated": 2.3284410326571208,
+        "relaxed": 2.3284410326571203,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "fury_attack_corn_salad": {
+        "dedicated": 1.0179529014193154,
+        "relaxed": 0.8836401683852919,
+        "bottleneck": "ピュアなオイル"
+      },
+      "defiant_coffee_salad": {
+        "dedicated": 5.755256980595601,
+        "relaxed": 5.755256980595601,
+        "bottleneck": "めざましコーヒー"
+      },
+      "cross_chop_salad": {
+        "dedicated": 2.9433894746834603,
+        "relaxed": 2.7070786797275153,
+        "bottleneck": "とくせんエッグ"
+      },
+      "petal_blizzard_mimosa_salad": {
+        "dedicated": 3.9562153794313106,
+        "relaxed": 3.9394488122257956,
+        "bottleneck": "とくせんエッグ"
+      },
+      "apple_acid_yogurt_salad": {
+        "dedicated": 5.230880651577715,
+        "relaxed": 5.1583733407501144,
+        "bottleneck": "とくせんエッグ"
+      },
+      "crunch_avocado_salad": {
+        "dedicated": 2.486522176869364,
+        "relaxed": 2.370765550525146,
+        "bottleneck": "つやつやアボカド"
+      },
+      "stomping_guacamole_chips": {
+        "dedicated": 5.635658229808747,
+        "relaxed": 5.2677601917129895,
+        "bottleneck": "つやつやアボカド"
+      },
+      "boiling_hot_salad": {
+        "dedicated": 6.935714960599305,
+        "relaxed": 6.757908092619774,
+        "bottleneck": "ずっしりカボチャ"
+      },
+      "ripened_sweet_potato": {
+        "dedicated": 0.7461569095771601,
+        "relaxed": 0.7461569095771601,
+        "bottleneck": "ほっこりポテト"
+      },
+      "steadfast_ginger_cookies": {
+        "dedicated": 1.7781498216891156,
+        "relaxed": 1.7781498216891156,
+        "bottleneck": "あまいミツ"
+      },
+      "apple_juice": {
+        "dedicated": 0.3533711950067129,
+        "relaxed": 0.3533711950067129,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "craft_psycho_soda": {
+        "dedicated": 0.4203387627495686,
+        "relaxed": 0.4203387627495686,
+        "bottleneck": "あまいミツ"
+      },
+      "ginger_tea": {
+        "dedicated": 0.7095243262129769,
+        "relaxed": 0.7095243262129769,
+        "bottleneck": "あったかジンジャー"
+      },
+      "jigglypuff_flan": {
+        "dedicated": 2.67814061683816,
+        "relaxed": 2.67814061683816,
+        "bottleneck": "あまいミツ"
+      },
+      "lovely_kiss_fruit_au_lait": {
+        "dedicated": 1.8030649665157412,
+        "relaxed": 1.712889883670834,
+        "bottleneck": "リラックスカカオ"
+      },
+      "wish_apple_pie": {
+        "dedicated": 0.711286076221741,
+        "relaxed": 0.711286076221741,
+        "bottleneck": "とくせんリンゴ"
+      },
+      "neroli_detox_tea": {
+        "dedicated": 1.8358982232395957,
+        "relaxed": 1.8358982232395957,
+        "bottleneck": "あじわいキノコ"
+      },
+      "sweet_scent_chocolate_cake": {
+        "dedicated": 1.3199735454700239,
+        "relaxed": 1.2378551440829038,
+        "bottleneck": "リラックスカカオ"
+      },
+      "hot_milk": {
+        "dedicated": 0.3171512464954255,
+        "relaxed": 0.3171512464954255,
+        "bottleneck": "モーモーミルク"
+      },
+      "light_soy_cake": {
+        "dedicated": 0.79349377123229,
+        "relaxed": 0.79349377123229,
+        "bottleneck": "とくせんエッグ"
+      },
+      "hustle_protein_smoothie": {
+        "dedicated": 1.3122361610289612,
+        "relaxed": 1.3122361610289612,
+        "bottleneck": "ワカクサ大豆"
+      },
+      "slow_and_steady_vegetable_juice": {
+        "dedicated": 0.7775621638772257,
+        "relaxed": 0.7775621638772257,
+        "bottleneck": "あんみんトマト"
+      },
+      "big_malasada": {
+        "dedicated": 1.2570937767810118,
+        "relaxed": 1.2496788535781538,
+        "bottleneck": "ピュアなオイル"
+      },
+      "huge_power_soy_donuts": {
+        "dedicated": 2.0797359201308097,
+        "relaxed": 1.9719748137724429,
+        "bottleneck": "ピュアなオイル"
+      },
+      "explosion_popcorn": {
+        "dedicated": 2.0577205280911204,
+        "relaxed": 1.8226732452815793,
+        "bottleneck": "ピュアなオイル"
+      },
+      "teatime_corn_scones": {
+        "dedicated": 3.161163045142839,
+        "relaxed": 3.161163045142839,
+        "bottleneck": "ワカクサコーン"
+      },
+      "petal_dance_chocolate_tart": {
+        "dedicated": 1.2868002554436462,
+        "relaxed": 1.2868002554436462,
+        "bottleneck": "リラックスカカオ"
+      },
+      "flower_gift_macarons": {
+        "dedicated": 4.4827529357712,
+        "relaxed": 4.273969477592064,
+        "bottleneck": "リラックスカカオ"
+      },
+      "zippy_zap_spiced_cola": {
+        "dedicated": 4.914668325794016,
+        "relaxed": 4.914668325794016,
+        "bottleneck": "ふといながねぎ"
+      },
+      "early_bird_coffee_jelly": {
+        "dedicated": 2.1906718763639477,
+        "relaxed": 2.1431313888225523,
+        "bottleneck": "めざましコーヒー"
+      },
+      "mold_breaker_corn_tiramisu": {
+        "dedicated": 2.177617361623307,
+        "relaxed": 2.177617361623307,
+        "bottleneck": "めざましコーヒー"
+      },
+      "clodsire_eclairs": {
+        "dedicated": 5.88367490791807,
+        "relaxed": 5.489580427406036,
+        "bottleneck": "リラックスカカオ"
+      },
+      "spooky_face_pancakes": {
+        "dedicated": 6.3165798745360355,
+        "relaxed": 6.1618371457130685,
+        "bottleneck": "ずっしりカボチャ"
+      },
+      "grass_mixer_smoothie": {
+        "dedicated": 2.6897925671878666,
+        "relaxed": 2.689792567187866,
+        "bottleneck": "つやつやアボカド"
+      },
+      "honey_gathering_chocolate_waffles": {
+        "dedicated": 6.675992721689764,
+        "relaxed": 6.205898156070681,
+        "bottleneck": "ピュアなオイル"
+      }
+    }
+  },
+  "sensitivitySummary": {
+    "集計": [
+      {
+        "シナリオ": "collect1h_meals0",
+        "Lv": 30,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 1,
+        "日産変化pct範囲": [
+          2.220446049250313e-14,
+          0.4438834148844162
+        ]
+      },
+      {
+        "シナリオ": "collect1h_meals0",
+        "Lv": 60,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 1,
+        "日産変化pct範囲": [
+          0.0017879206480886367,
+          3.1527975221734117
+        ]
+      },
+      {
+        "シナリオ": "collect1h_meals1",
+        "Lv": 30,
+        "ティア変化食材数": 2,
+        "最良担当変化食材数": 3,
+        "日産変化pct範囲": [
+          1.7189833565748325,
+          4.958719921625532
+        ]
+      },
+      {
+        "シナリオ": "collect1h_meals1",
+        "Lv": 60,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 2,
+        "日産変化pct範囲": [
+          1.4103024882959447,
+          4.1613159182780635
+        ]
+      },
+      {
+        "シナリオ": "collect3h_meals0",
+        "Lv": 30,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 0,
+        "日産変化pct範囲": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "シナリオ": "collect3h_meals0",
+        "Lv": 60,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 0,
+        "日産変化pct範囲": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "シナリオ": "collect3h_meals1",
+        "Lv": 30,
+        "ティア変化食材数": 2,
+        "最良担当変化食材数": 2,
+        "日産変化pct範囲": [
+          1.5533463701927097,
+          4.958489116114961
+        ]
+      },
+      {
+        "シナリオ": "collect3h_meals1",
+        "Lv": 60,
+        "ティア変化食材数": 0,
+        "最良担当変化食材数": 1,
+        "日産変化pct範囲": [
+          0.8265816453416397,
+          3.786930249714282
+        ]
+      },
+      {
+        "シナリオ": "collect6h_meals0",
+        "Lv": 30,
+        "ティア変化食材数": 3,
+        "最良担当変化食材数": 3,
+        "日産変化pct範囲": [
+          -12.796172369229275,
+          0.0
+        ]
+      },
+      {
+        "シナリオ": "collect6h_meals0",
+        "Lv": 60,
+        "ティア変化食材数": 9,
+        "最良担当変化食材数": 2,
+        "日産変化pct範囲": [
+          -17.64044754884101,
+          -3.5273763486823206
+        ]
+      },
+      {
+        "シナリオ": "collect6h_meals1",
+        "Lv": 30,
+        "ティア変化食材数": 2,
+        "最良担当変化食材数": 2,
+        "日産変化pct範囲": [
+          -11.354644861881248,
+          4.472531487850406
+        ]
+      },
+      {
+        "シナリオ": "collect6h_meals1",
+        "Lv": 60,
+        "ティア変化食材数": 7,
+        "最良担当変化食材数": 3,
+        "日産変化pct範囲": [
+          -17.989828038191334,
+          -0.027818221255559994
+        ]
+      }
+    ],
+    "推奨表示": "ティア単独ではなく個数/日と条件を併記する。v1と料理回復ありのどちらかを正式既定にする判断は未確定。"
+  },
+  "sources": [
+    {
+      "file": "PSG_daily_supply_and_recipe_burden_20261001.zip",
+      "sha256": "b4f79066b380177d62d31148acf1d0dc98daf5a74473881ee847b2b677bb10b5"
+    },
+    {
+      "file": "PSG_daily_supply_sensitivity_20261001.zip",
+      "sha256": "bdbbdb57de765e04b16fc84020e5d5f25992f5b4d9f85661ac9d327e3d9cd5a9"
+    }
+  ]
+}

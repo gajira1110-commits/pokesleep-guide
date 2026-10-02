@@ -1,0 +1,116 @@
+{
+  "no": 393,
+  "name": "ポッチャマ",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "きのみ",
+  "berry": "オレンのみ",
+  "berryQty": 2,
+  "help": 4500,
+  "carry": 11,
+  "foodRate": 15.9,
+  "skillRate": 2.6,
+  "rateStatus": "推定",
+  "mainSkillId": "extra_helpful_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        },
+        {
+          "ingredientId": "honey",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0393_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0393_02",
+      "name": "よたよた寝",
+      "stars": 2
+    },
+    {
+      "id": "0393_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0393_03",
+      "name": "えらそう寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%9D%E3%83%83%E3%83%81%E3%83%A3%E3%83%9E",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "ポッチャマ",
+    "↓ Lv.12＋ポッチャマのアメx40",
+    "ポッタイシ",
+    "↓ Lv.27＋ポッチャマのアメx80",
+    "エンペルト"
+  ],
+  "evolution": [
+    {
+      "toNo": 394,
+      "to": "ポッタイシ",
+      "conditions": [
+        "Lv.12＋ポッチャマのアメx40"
+      ],
+      "level": 12,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0393_ポッチャマ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%9D%E3%83%83%E3%83%81%E3%83%A3%E3%83%9E",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

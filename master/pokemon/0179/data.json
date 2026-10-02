@@ -1,0 +1,97 @@
+{
+  "no": 179,
+  "name": "メリープ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "ウブのみ",
+  "berryQty": 1,
+  "help": 4600,
+  "carry": 9,
+  "foodRate": 12.8,
+  "skillRate": 4.7,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 2
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fiery_herb",
+          "qty": 4
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0179_01",
+      "name": "もこもこ寝",
+      "stars": 1
+    },
+    {
+      "id": "0179_02",
+      "name": "ひづめかき寝",
+      "stars": 2
+    },
+    {
+      "id": "0179_03",
+      "name": "しっぽひかり寝",
+      "stars": 3
+    },
+    {
+      "id": "0179_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 180,
+    "to": "モココ",
+    "level": 11,
+    "candy": 40
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0179_メリープ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%A1%E3%83%AA%E3%83%BC%E3%83%97",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%A1%E3%83%AA%E3%83%BC%E3%83%97"
+  ]
+}

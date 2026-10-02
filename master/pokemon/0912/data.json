@@ -1,0 +1,116 @@
+{
+  "no": 912,
+  "name": "クワッス",
+  "type": "みず",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "オレンのみ",
+  "berryQty": 1,
+  "help": 4800,
+  "carry": 10,
+  "foodRate": 26.1,
+  "skillRate": 2.8,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_m",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 5
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 7
+        },
+        {
+          "ingredientId": "large_leek",
+          "qty": 4
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 6
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0912_01",
+      "name": "すわり寝",
+      "stars": 1
+    },
+    {
+      "id": "0912_02",
+      "name": "かみととのえ寝",
+      "stars": 2
+    },
+    {
+      "id": "0912_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0912_03",
+      "name": "ぼさぼさ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%83%83%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 5,
+  "expType": 600,
+  "evolutionNotes": [
+    "クワッス",
+    "↓ Lv.12＋クワッスのアメx40",
+    "ウェルカモ",
+    "↓ Lv.27＋クワッスのアメx80",
+    "ウェーニバル"
+  ],
+  "evolution": [
+    {
+      "toNo": 913,
+      "to": "ウェルカモ",
+      "conditions": [
+        "Lv.12＋クワッスのアメx40"
+      ],
+      "level": 12,
+      "candy": 40
+    }
+  ],
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0912_クワッス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AF%E3%83%AF%E3%83%83%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

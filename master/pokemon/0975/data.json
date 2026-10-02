@@ -1,0 +1,98 @@
+{
+  "no": 975,
+  "name": "ハルクジラ",
+  "type": "こおり",
+  "sleepType": "ぐっすり",
+  "specialty": "食材",
+  "berry": "チーゴのみ",
+  "berryQty": 1,
+  "help": 2800,
+  "carry": 30,
+  "foodRate": 20.9,
+  "skillRate": 4.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 5
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "potato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 9
+        },
+        {
+          "ingredientId": "plump_pumpkin",
+          "qty": 4
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0975_01",
+      "name": "ゆめですべり寝",
+      "stars": 1
+    },
+    {
+      "id": "0975_02",
+      "name": "どっしり寝",
+      "stars": 2
+    },
+    {
+      "id": "0975_03",
+      "name": "エコロケーション寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 20,
+  "expType": 600,
+  "evolutionNotes": [
+    "アルクジラ",
+    "↓こおりのいし＋アルクジラのアメx80",
+    "ハルクジラ"
+  ],
+  "transferCandy": 10,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0975_ハルクジラ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%8F%E3%83%AB%E3%82%AF%E3%82%B8%E3%83%A9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

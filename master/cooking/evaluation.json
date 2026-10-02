@@ -1,0 +1,350 @@
+{
+  "checkedAt": "2026-10-01",
+  "status": "推定",
+  "conditions": {
+    "レシピLv": 70,
+    "追加食材": 0,
+    "フィールドボーナス": 0,
+    "イベント倍率": 1,
+    "大成功倍率": 1,
+    "ごちゃまぜ料理": "固定の必要食材がないため対象外"
+  },
+  "definitions": {
+    "総エナジー": "既存資料のLv70掲載値",
+    "食材1個あたりエナジー": "Lv70総エナジー / 必要食材合計個数",
+    "エナジー増幅率": "Lv70総エナジー / Σ(各必要食材の個数×食材基本エナジー)",
+    "料理による増加エナジー": "Lv70総エナジー - 必要食材基本エナジー合計"
+  },
+  "notes": [
+    "全指標はLv70掲載参考値を元にした推定。",
+    "掲載Lv70値と四捨五入説明式には38件の差がある。内部値は未確定。",
+    "増幅率は素材本来のエナジーに対する倍率。収集難度や時間効率ではない。",
+    "食材効率は1個あたりの価値。総エナジーの高さとは別の指標。",
+    "Lv70による上昇率は共通。端数で増幅率に微差が出るため、近接順位を大きな性能差と解釈しない。",
+    "食材必要数が鍋に入るか、毎食作れるかは別判定。",
+    "未確定の収集コスト・内部端数を0として補わない。"
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/料理/レシピごとの獲得できるエナジー量",
+    "https://wikiwiki.jp/poke_sleep/食材/食材の一覧",
+    "https://wikiwiki.jp/poke_sleep/料理"
+  ],
+  "rounding": {
+    "explosion_popcorn": {
+      "reference": 21652,
+      "difference": 1
+    },
+    "hearty_cheeseburger_curry": {
+      "reference": 6838,
+      "difference": 1
+    },
+    "boiling_hot_salad": {
+      "reference": 90774,
+      "difference": 0
+    },
+    "choice_apple_salad": {
+      "reference": 3061,
+      "difference": 1
+    },
+    "bean_burger_curry": {
+      "reference": 3064,
+      "difference": 0
+    },
+    "clodsire_eclairs": {
+      "reference": 74768,
+      "difference": 0
+    },
+    "light_soy_cake": {
+      "reference": 6888,
+      "difference": 1
+    },
+    "wish_apple_pie": {
+      "reference": 6258,
+      "difference": 1
+    },
+    "zippy_zap_spiced_cola": {
+      "reference": 62629,
+      "difference": 1
+    },
+    "greengrass_salad": {
+      "reference": 40787,
+      "difference": 1
+    },
+    "bouncing_curry_udon": {
+      "reference": 91430,
+      "difference": 0
+    },
+    "grilled_tail_curry": {
+      "reference": 26789,
+      "difference": 0
+    },
+    "sweet_scent_chocolate_cake": {
+      "reference": 12093,
+      "difference": 0
+    },
+    "flower_gift_macarons": {
+      "reference": 49526,
+      "difference": 1
+    },
+    "spore_mushroom_salad": {
+      "reference": 20975,
+      "difference": 0
+    },
+    "spicy_leek_curry": {
+      "reference": 21122,
+      "difference": 0
+    },
+    "fury_attack_chocolate_meat_salad": {
+      "reference": 13121,
+      "difference": 1
+    },
+    "petal_blizzard_mimosa_salad": {
+      "reference": 42534,
+      "difference": 1
+    },
+    "ripened_sweet_potato": {
+      "reference": 6827,
+      "difference": 0
+    },
+    "melty_omelette_curry": {
+      "reference": 7697,
+      "difference": 0
+    },
+    "fury_attack_corn_salad": {
+      "reference": 9970,
+      "difference": 0
+    },
+    "snoozy_tomato_salad": {
+      "reference": 3741,
+      "difference": 0
+    },
+    "solar_power_tomato_curry": {
+      "reference": 7439,
+      "difference": 0
+    },
+    "water_veil_tofu_salad": {
+      "reference": 11145,
+      "difference": 1
+    },
+    "petal_dance_chocolate_tart": {
+      "reference": 11864,
+      "difference": 0
+    },
+    "heat_wave_tofu_salad": {
+      "reference": 7568,
+      "difference": 0
+    },
+    "hustle_protein_smoothie": {
+      "reference": 11682,
+      "difference": 1
+    },
+    "dizzy_punch_spicy_curry": {
+      "reference": 20413,
+      "difference": 0
+    },
+    "ninja_salad": {
+      "reference": 41739,
+      "difference": 0
+    },
+    "slow_and_steady_vegetable_juice": {
+      "reference": 6888,
+      "difference": 1
+    },
+    "honey_gathering_chocolate_waffles": {
+      "reference": 91233,
+      "difference": 0
+    },
+    "ninja_curry": {
+      "reference": 33813,
+      "difference": 0
+    },
+    "moomoo_caprese": {
+      "reference": 10532,
+      "difference": 0
+    },
+    "teatime_corn_scones": {
+      "reference": 39112,
+      "difference": 1
+    },
+    "verdant_avocado_gratin": {
+      "reference": 88791,
+      "difference": 0
+    },
+    "bean_ham_salad": {
+      "reference": 3501,
+      "difference": 0
+    },
+    "apple_acid_yogurt_salad": {
+      "reference": 69069,
+      "difference": 1
+    },
+    "craft_psycho_soda": {
+      "reference": 3863,
+      "difference": 1
+    },
+    "grass_mixer_smoothie": {
+      "reference": 29231,
+      "difference": 0
+    },
+    "big_malasada": {
+      "reference": 10794,
+      "difference": 1
+    },
+    "cross_chop_salad": {
+      "reference": 31343,
+      "difference": 1
+    },
+    "limber_corn_stew": {
+      "reference": 16719,
+      "difference": 1
+    },
+    "mold_breaker_corn_tiramisu": {
+      "reference": 25508,
+      "difference": 1
+    },
+    "jigglypuff_flan": {
+      "reference": 27187,
+      "difference": 1
+    },
+    "egg_bomb_curry": {
+      "reference": 16192,
+      "difference": 0
+    },
+    "hidden_power_stew": {
+      "reference": 68238,
+      "difference": 0
+    },
+    "attract_apple_cheese_salad": {
+      "reference": 9505,
+      "difference": 1
+    },
+    "spore_mushroom_curry": {
+      "reference": 14900,
+      "difference": 1
+    },
+    "steadfast_ginger_cookies": {
+      "reference": 17617,
+      "difference": 0
+    },
+    "slowpoke_tail_pepper_salad": {
+      "reference": 29245,
+      "difference": 0
+    },
+    "sacred_sword_sukiyaki_curry": {
+      "reference": 73945,
+      "difference": 1
+    },
+    "gluttony_potato_salad": {
+      "reference": 18043,
+      "difference": 0
+    },
+    "lovely_kiss_fruit_au_lait": {
+      "reference": 16948,
+      "difference": 1
+    },
+    "early_bird_coffee_jelly": {
+      "reference": 24319,
+      "difference": 1
+    },
+    "bulk_up_bean_curry": {
+      "reference": 12072,
+      "difference": 1
+    },
+    "dream_eater_butter_curry": {
+      "reference": 32256,
+      "difference": 1
+    },
+    "ginger_tea": {
+      "reference": 6849,
+      "difference": 1
+    },
+    "overheat_salad": {
+      "reference": 18706,
+      "difference": 1
+    },
+    "role_play_pumpkaboo_stew": {
+      "reference": 55923,
+      "difference": 0
+    },
+    "calm_mind_fruit_salad": {
+      "reference": 27477,
+      "difference": 1
+    },
+    "hot_milk": {
+      "reference": 2914,
+      "difference": 0
+    },
+    "immunity_leek_salad": {
+      "reference": 10185,
+      "difference": 0
+    },
+    "baby_honey_curry": {
+      "reference": 3004,
+      "difference": 1
+    },
+    "fancy_apple_curry": {
+      "reference": 2678,
+      "difference": 1
+    },
+    "spooky_face_pancakes": {
+      "reference": 87187,
+      "difference": 0
+    },
+    "hearty_white_stew": {
+      "reference": 11388,
+      "difference": 1
+    },
+    "simple_white_stew": {
+      "reference": 2914,
+      "difference": 0
+    },
+    "defiant_coffee_salad": {
+      "reference": 72380,
+      "difference": 0
+    },
+    "huge_power_soy_donuts": {
+      "reference": 19858,
+      "difference": 0
+    },
+    "neroli_detox_tea": {
+      "reference": 18133,
+      "difference": 1
+    },
+    "crunch_avocado_salad": {
+      "reference": 25508,
+      "difference": 0
+    },
+    "drought_katsu_curry": {
+      "reference": 6952,
+      "difference": 0
+    },
+    "superpower_extreme_salad": {
+      "reference": 10905,
+      "difference": 1
+    },
+    "greengrass_curry_bun": {
+      "reference": 39183,
+      "difference": 0
+    },
+    "snow_cloak_caesar_salad": {
+      "reference": 6795,
+      "difference": 1
+    },
+    "apple_juice": {
+      "reference": 3061,
+      "difference": 1
+    },
+    "inferno_corn_keema_curry": {
+      "reference": 49010,
+      "difference": 0
+    },
+    "stomping_guacamole_chips": {
+      "reference": 90080,
+      "difference": 0
+    }
+  },
+  "source": {
+    "file": "PSG_Friday_cooking_handoff_20261001.zip",
+    "sha256": "befb0de1d4745e4dabfd6cf5f11e7db55c4cf5a3b31e9863925c68c362ff30ca"
+  }
+}

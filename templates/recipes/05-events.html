@@ -1,0 +1,19 @@
+ sort.addEventListener('change',render);
+ categoryButtons.forEach(button=>button.addEventListener('click',()=>{
+  selectedCategory=button.dataset.recipeCategory;
+  categoryButtons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  selectedIngredient='';ingredientButton.firstChild.textContent='食材';ingredientButton.classList.remove('active');ingredientOptions.parentElement.classList.remove('open');ingredientChoices();render();
+ }));
+ window.PS_OPEN_RECIPE=id=>{
+  const recipe=catalog.recipes?.[id];if(!recipe)return;
+  categoryButtons.find(button=>button.dataset.recipeCategory===recipe.category)?.click();
+  window.PS?.go('recipePage');
+  const entry=[...list.querySelectorAll('.psg-recipe-entry')].find(card=>card.dataset.recipeId===id);
+  if(entry)entry.open=true;
+ };
+ // Navigation reuses the current list; providers are built only when details open.
+ ingredientChoices();
+ render();
+})();
+</script>
+</body></html>

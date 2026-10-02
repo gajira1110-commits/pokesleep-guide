@@ -1,0 +1,103 @@
+{
+  "no": 178,
+  "name": "ネイティオ",
+  "type": "エスパー",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "マゴのみ",
+  "berryQty": 2,
+  "help": 2500,
+  "carry": 24,
+  "foodRate": 19.1,
+  "skillRate": 2.5,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 2
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 4
+        },
+        {
+          "ingredientId": "soothing_cacao",
+          "qty": 3
+        },
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 5
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0178_01",
+      "name": "みらいよち寝",
+      "stars": 1
+    },
+    {
+      "id": "0178_02",
+      "name": "くびふり寝",
+      "stars": 2
+    },
+    {
+      "id": "0178_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0178_03",
+      "name": "はねひろげ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%82%AA",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ネイティ",
+    "↓ Lv.19＋ネイティのアメx40",
+    "ネイティオ"
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0178_ネイティオ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%8D%E3%82%A4%E3%83%86%E3%82%A3%E3%82%AA",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "no": 25,
+  "name": "ピカチュウ",
+  "type": "でんき",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "ウブのみ",
+  "berryQty": 2,
+  "help": 2700,
+  "carry": 22,
+  "foodRate": 20.7,
+  "skillRate": 2.1,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_fixed",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 3
+        },
+        {
+          "ingredientId": "fancy_egg",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 26,
+    "to": "ライチュウ",
+    "item": "かみなりのいし",
+    "candy": 80
+  },
+  "sleepStyles": [
+    {
+      "id": "0025_01",
+      "name": "まるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0025_02",
+      "name": "たれみみ寝",
+      "stars": 2
+    },
+    {
+      "id": "0025_03",
+      "name": "ほうでん寝",
+      "stars": 3
+    },
+    {
+      "id": "0025_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 7,
+  "expType": 600,
+  "transferCandy": 6,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0025_ピカチュウ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6"
+  ]
+}

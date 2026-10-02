@@ -1,0 +1,101 @@
+{
+  "no": 37,
+  "name": "ロコン",
+  "type": "ほのお",
+  "sleepType": "すやすや",
+  "specialty": "きのみ",
+  "berry": "ヒメリのみ",
+  "berryQty": 2,
+  "help": 4700,
+  "carry": 13,
+  "foodRate": 16.8,
+  "skillRate": 3.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 3
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0037_01",
+      "name": "まるまり寝",
+      "stars": 1
+    },
+    {
+      "id": "0037_02",
+      "name": "こっくり寝",
+      "stars": 2
+    },
+    {
+      "id": "0037_03",
+      "name": "ひのこ寝",
+      "stars": 3
+    },
+    {
+      "id": "0037_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "evolution": {
+    "toNo": 38,
+    "to": "キュウコン",
+    "item": "ほのおのいし",
+    "candy": 80
+  },
+  "friendPoints": 5,
+  "expType": 600,
+  "transferCandy": 5,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0037_ロコン",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AD%E3%82%B3%E3%83%B3",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%AD%E3%82%B3%E3%83%B3"
+  ]
+}

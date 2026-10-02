@@ -1,0 +1,4 @@
+// Box detail fragment: assembled inside the core controller closure.
+const boxEsc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const selectedSpecies=()=>window.PS_CATALOG?.pokemon?.[state.selected?.no]||null;
+function openBox(id){state.selected=state.box.find(x=>x.id===id);if(!state.selected)return;boxTitle.textContent=state.selected.name;syncLevel();go('boxDetail')}

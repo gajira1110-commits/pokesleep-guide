@@ -1,0 +1,103 @@
+{
+  "no": 202,
+  "name": "ソーナンス",
+  "type": "エスパー",
+  "sleepType": "すやすや",
+  "specialty": "スキル",
+  "berry": "マゴのみ",
+  "berryQty": 1,
+  "help": 3500,
+  "carry": 21,
+  "foodRate": 21.1,
+  "skillRate": 8.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_cheer_s",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 2
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "fancy_apple",
+          "qty": 4
+        },
+        {
+          "ingredientId": "tasty_mushroom",
+          "qty": 2
+        },
+        {
+          "ingredientId": "pure_oil",
+          "qty": 3
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0202_01",
+      "name": "しっぽかくし寝",
+      "stars": 1
+    },
+    {
+      "id": "0202_02",
+      "name": "がまん寝",
+      "stars": 2
+    },
+    {
+      "id": "0202_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    },
+    {
+      "id": "0202_03",
+      "name": "きめポーズ寝",
+      "stars": 3
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%BD%E3%83%BC%E3%83%8A%E3%83%B3%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 7,
+  "expType": 600,
+  "evolutionNotes": [
+    "ソーナノ",
+    "↓　Lv.11＋ソーナンスのアメ×20",
+    "ソーナンス"
+  ],
+  "transferCandy": 6,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0202_ソーナンス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%BD%E3%83%BC%E3%83%8A%E3%83%B3%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "pendingNationalNos": [],
+  "absentOrPendingVerification": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    21,
+    22
+  ],
+  "sourceNote": "Current Sleep-specific values are added only after cross-checking; pending records remain absent."
+}

@@ -1,0 +1,101 @@
+{
+  "no": 2,
+  "name": "フシギソウ",
+  "type": "くさ",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ドリのみ",
+  "berryQty": 1,
+  "help": 3300,
+  "foodRate": 25.5,
+  "skillRate": 1.9,
+  "rateStatus": "推定",
+  "mainSkillId": "ingredient_magnet_s",
+  "dexVisible": true,
+  "carry": 19,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 5
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 4
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "honey",
+          "qty": 7
+        },
+        {
+          "ingredientId": "tomato",
+          "qty": 7
+        },
+        {
+          "ingredientId": "potato",
+          "qty": 6
+        }
+      ]
+    }
+  ],
+  "evolution": {
+    "toNo": 3,
+    "to": "フシギバナ",
+    "level": 24,
+    "candy": 80
+  },
+  "sleepStyles": [
+    {
+      "id": "0002_01",
+      "name": "こうごうせい寝",
+      "stars": 1
+    },
+    {
+      "id": "0002_02",
+      "name": "ふんばり寝",
+      "stars": 2
+    },
+    {
+      "id": "0002_03",
+      "name": "ツルだし寝",
+      "stars": 3
+    },
+    {
+      "id": "0002_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "friendPoints": 12,
+  "expType": 600,
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0002_フシギソウ",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%82%BD%E3%82%A6",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  },
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%95%E3%82%B7%E3%82%AE%E3%82%BD%E3%82%A6"
+  ]
+}

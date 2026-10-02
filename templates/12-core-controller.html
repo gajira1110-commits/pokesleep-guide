@@ -1,0 +1,45 @@
+<script id="stable-v2-controller">
+(()=>{'use strict';
+const state={screen:'home',history:[],box:[],selected:null,selectedDex:null,
+filters:{types:new Set(),ingredients:new Set(),specs:new Set()},
+boxFilters:{types:new Set(),ingredients:new Set(),specs:new Set(),tags:new Set()}};
+/* One source of truth. No Pokémon values are carried over from the unstable builds. */
+const master={
+ pokemon:[], ingredients:[],
+ rules:{version:'stable-v3',verifiedAt:null}
+};
+const BOX_STORAGE_KEY='psg.box.instances.v1';
+const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
+const TEAM_STORAGE_KEY='psg.team.primary.v1';
+const FIELD_STORAGE_KEY='psg.field.profile.v1';
+const boxCatalog=()=>Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible);
+function normalizeBox(raw){
+  if(!Array.isArray(raw))return [];
+  const known=new Map(boxCatalog().map(p=>[Number(p.no),p]));
+  const seen=new Set();
+  return raw.filter(x=>{
+    if(!x||typeof x.id!=='string'||! /^[a-zA-Z0-9-]{1,100}$/.test(x.id)||seen.has(x.id)||!known.has(Number(x.no))||!Number.isInteger(x.level)||x.level<1||x.level>100)return false;
+    seen.add(x.id);return true;
+  })
+   .map(x=>({id:x.id,no:Number(x.no),level:Math.min(70,x.level),name:known.get(Number(x.no)).name,
+    specialty:known.get(Number(x.no)).specialty,
+    ingredients:x.ingredients&&typeof x.ingredients==='object'?x.ingredients:{},
+    subskills:Array.isArray(x.subskills)?x.subskills.slice(0,5).map(s=>String(s||'').slice(0,80)):[],
+    nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
+    skillLevel:Number.isInteger(x.skillLevel)?Math.max(1,Math.min(7,x.skillLevel)):1,
+    role:String(x.role||'').slice(0,40),favorite:x.favorite===true,training:x.training===true,ribbonHours:[0,200,500,1000,2000].includes(x.ribbonHours)?x.ribbonHours:0}));
+}
+function readBox(){
+ try{return normalizeBox(JSON.parse(localStorage.getItem(BOX_STORAGE_KEY)||'[]'))}
+ catch{return []}
+}
+function commitBox(next){
+ try{
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>
+   ({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours}))));
+  state.box=next;
+  renderBox();
+  return true;
+ }catch{alert('保存できませんでした。ブラウザーの保存設定を確認してください。');return false}
+}
+state.box=readBox();

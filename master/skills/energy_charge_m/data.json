@@ -1,0 +1,41 @@
+{
+  "id": "energy_charge_m",
+  "name": "エナジーチャージM",
+  "maxLevel": 7,
+  "tags": [
+    "エナジー",
+    "固定"
+  ],
+  "effectType": "fixed_energy",
+  "levels": {
+    "1": {
+      "energy": 880,
+      "description": "カビゴンのエナジーを880増やす"
+    },
+    "2": {
+      "energy": 1251,
+      "description": "カビゴンのエナジーを1251増やす"
+    },
+    "3": {
+      "energy": 1726,
+      "description": "カビゴンのエナジーを1726増やす"
+    },
+    "4": {
+      "energy": 2383,
+      "description": "カビゴンのエナジーを2383増やす"
+    },
+    "5": {
+      "energy": 3290,
+      "description": "カビゴンのエナジーを3290増やす"
+    },
+    "6": {
+      "energy": 4546,
+      "description": "カビゴンのエナジーを4546増やす"
+    },
+    "7": {
+      "energy": 6858,
+      "description": "カビゴンのエナジーを6858増やす"
+    }
+  },
+  "iconAsset": "assets/skill-icons/energy_charge_m.webp"
+}

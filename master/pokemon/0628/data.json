@@ -1,0 +1,103 @@
+{
+  "no": 628,
+  "name": "ウォーグル",
+  "type": "ひこう",
+  "sleepType": "ぐっすり",
+  "specialty": "スキル",
+  "berry": "シーヤのみ",
+  "berryQty": 1,
+  "help": 2400,
+  "carry": 23,
+  "foodRate": 12.1,
+  "skillRate": 3.5,
+  "rateStatus": "推定",
+  "mainSkillId": "berry_burst",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 2
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "bean_meat",
+          "qty": 4
+        },
+        {
+          "ingredientId": "greengrass_corn",
+          "qty": 3
+        },
+        {
+          "ingredientId": "coffee",
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0628_01",
+      "name": "はねやすめ寝",
+      "stars": 1
+    },
+    {
+      "id": "0628_02",
+      "name": "はばたき寝",
+      "stars": 2
+    },
+    {
+      "id": "0628_03",
+      "name": "はづくろい寝",
+      "stars": 3
+    },
+    {
+      "id": "0628_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%B0%E3%83%AB",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 12,
+  "expType": 600,
+  "evolutionNotes": [
+    "ワシボン",
+    "↓　Lv.41＋ワシボンのアメ×40",
+    "ウォーグル"
+  ],
+  "transferCandy": 7,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0628_ウォーグル",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%B0%E3%83%AB",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}

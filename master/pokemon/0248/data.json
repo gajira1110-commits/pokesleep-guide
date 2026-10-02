@@ -1,0 +1,105 @@
+{
+  "no": 248,
+  "name": "バンギラス",
+  "type": "あく",
+  "sleepType": "うとうと",
+  "specialty": "食材",
+  "berry": "ウイのみ",
+  "berryQty": 1,
+  "help": 2700,
+  "carry": 29,
+  "foodRate": 26.6,
+  "skillRate": 5.2,
+  "rateStatus": "推定",
+  "mainSkillId": "energy_charge_s_self",
+  "dexVisible": true,
+  "ingredientSlotStatus": "verified",
+  "ingredientSlots": [
+    {
+      "unlock": 1,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "unlock": 30,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 5
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "unlock": 60,
+      "candidates": [
+        {
+          "ingredientId": "warming_ginger",
+          "qty": 7
+        },
+        {
+          "ingredientId": "greengrass_soybeans",
+          "qty": 8
+        },
+        {
+          "ingredientId": "bean_meat",
+          "qty": 8
+        }
+      ]
+    }
+  ],
+  "sleepStyles": [
+    {
+      "id": "0248_01",
+      "name": "はらばい寝",
+      "stars": 1
+    },
+    {
+      "id": "0248_02",
+      "name": "におうだち寝",
+      "stars": 2
+    },
+    {
+      "id": "0248_03",
+      "name": "だいのじ寝",
+      "stars": 3
+    },
+    {
+      "id": "0248_04",
+      "name": "おなかのうえ寝",
+      "stars": 4
+    }
+  ],
+  "sources": [
+    "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%B3%E3%82%AE%E3%83%A9%E3%82%B9",
+    "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+  ],
+  "verifiedAt": "2026-10-01",
+  "dataStatus": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+  "friendPoints": 25,
+  "expType": 900,
+  "evolutionNotes": [
+    "ヨーギラス",
+    "↓　Lv.23＋ヨーギラスのアメ×40",
+    "サナギラス",
+    "↓　Lv.41＋ヨーギラスのアメ×100",
+    "バンギラス"
+  ],
+  "transferCandy": 12,
+  "canTransfer": true,
+  "acquisitionSource": {
+    "file": "PSG_pokemon_master_248.json",
+    "recordId": "0248_バンギラス",
+    "url": "https://wikiwiki.jp/poke_sleep/%E3%83%90%E3%83%B3%E3%82%AE%E3%83%A9%E3%82%B9",
+    "checkedAt": "2026-10-01",
+    "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+    "transferCandyStatus": "資料確認"
+  }
+}
