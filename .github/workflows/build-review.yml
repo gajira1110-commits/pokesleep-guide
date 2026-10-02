@@ -10,6 +10,8 @@ on:
       - 'vendor/enigma-swap/**'
       - 'PSG_face_sheet.js'
       - 'PSG_build_master.py'
+      - 'PSG_sleep_images.py'
+      - 'data-import/picasso-sleep-v277/**'
       - 'PSG_import_cooking.py'
       - 'PSG_import_recipe_evaluation.py'
       - 'PSG_import_daily_supply.py'

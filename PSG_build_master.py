@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from PSG_image_assets import image_path, face_sheet_script
+from PSG_sleep_images import restore_sleep_images
 from PSG_import_cooking import validate as validate_cooking
 
 ROOT = Path(__file__).resolve().parent
@@ -377,6 +378,7 @@ def swap_engine():
 
 def build():
     catalog, images = catalog_and_images()
+    restore_sleep_images(ROOT, catalog, images)
     core = ('help','carry','berryQty','foodRate','skillRate','ingredientSlots')
     missing = [(f'{int(no):04d} {obj["name"]}',[field for field in core if field not in obj])
                for no,obj in catalog['pokemon'].items()]
@@ -388,7 +390,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v276') == 2
+    assert source.count('Review v277') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
