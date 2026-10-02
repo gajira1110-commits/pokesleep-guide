@@ -55,7 +55,7 @@
    const note=document.createElement('p');note.className='note';note.textContent='解放エナジーは最低ランクへの到達値で、出現を保証しません。必要ねむけパワーは別条件です。攻略資料に基づく掲載値・ゲーム内未照合。未掲載は出現しないという意味ではありません。';field.append(note);
    const fieldOrder=['greengrass','cyan','taupe','snowdrop','lapis','old_gold','amber'];
    const position=entry=>{const index=fieldOrder.indexOf(entry.id.replace(/_ex$/,''));return index<0?fieldOrder.length:index};
-   const entries=Object.values(V.fields||{}).sort((a,b)=>position(a)-position(b)||(a.mode==='expert')-(b.mode==='expert')||a.id.localeCompare(b.id));
+   const entries=Object.values(V.fields||{}).sort((a,b)=>(a.mode==='expert')-(b.mode==='expert')||position(a)-position(b)||a.id.localeCompare(b.id));
    const groups=new Map();
    for(const entry of entries){
      for(const item of entry.encounters||[]){
@@ -71,22 +71,24 @@
      const normalRows=rows.filter(row=>row.entry.mode!=='expert');
      const powers=[...new Set((normalRows.length?normalRows:rows).map(row=>row.item.drowsyPower))];
      const commonPower=powers.length===1?powers[0]:null;
+     const expertPowers=[...new Set(rows.filter(row=>row.entry.mode==='expert').map(row=>row.item.drowsyPower))];
+     const expertPower=expertPowers.length===1?expertPowers[0]:null;
      const heading=document.createElement('h4');heading.textContent=`★${style.stars} ${style.name}`;
      if(Number.isFinite(commonPower)){
        const power=document.createElement('small');power.className='psg-sleep-field-power';
-       const differing=rows.some(row=>row.item.drowsyPower!==commonPower);
-       power.textContent=`（${differing?'通常の':''}ねむけパワー${commonPower.toLocaleString()}）`;heading.append(power);
+       power.textContent=`ねむけパワー ${commonPower.toLocaleString()}${Number.isFinite(expertPower)&&expertPower!==commonPower?`(EX ${expertPower.toLocaleString()})`:''}`;heading.append(power);
      }
      section.append(heading);
      for(const {entry,item} of rows){
        const line=document.createElement('div');line.className='psg-style-field-row';line.dataset.fieldId=entry.id;
-       const label=document.createElement('span');label.className='psg-style-field-name';label.textContent=`${entry.name.replace(/\s*EX$/,'')}（${entry.mode==='expert'?'EX':'ノーマル'}）`;
+       const label=document.createElement('span');label.className='psg-style-field-name';label.textContent=`${entry.name.replace(/\s*EX$/,'')}${entry.mode==='expert'?'(EX)':''}`;
        const rank=document.createElement('strong');rank.className='psg-style-field-rank';rank.textContent=String(item.rank.level);rank.setAttribute('aria-label',`${item.rank.tier}${item.rank.level}`);window.PS_UI_ART.rank(rank,item.rank.tier);
        const energy=document.createElement('span');energy.className='psg-style-field-energy';energy.textContent=`エナジー${Number.isFinite(item.unlockEnergy)?item.unlockEnergy.toLocaleString():'未確認'}`;
        line.append(label,rank,energy);
-       if(!Number.isFinite(commonPower)||item.drowsyPower!==commonPower||item.eventOnly){
+       const powerInHeading=Number.isFinite(commonPower)&&(item.drowsyPower===commonPower||(entry.mode==='expert'&&item.drowsyPower===expertPower));
+       if(!powerInHeading||item.eventOnly){
          const condition=document.createElement('small');condition.className='note psg-style-field-condition';
-         condition.textContent=`${!Number.isFinite(commonPower)||item.drowsyPower!==commonPower?`ねむけパワー${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}`:''}${item.eventOnly?'・イベント条件あり':''}`.replace(/^・/,'');line.append(condition);
+         condition.textContent=`${!powerInHeading?`ねむけパワー${Number.isFinite(item.drowsyPower)?item.drowsyPower.toLocaleString():'未確認'}`:''}${item.eventOnly?'・イベント条件あり':''}`.replace(/^・/,'');line.append(condition);
        }
        section.append(line);
      }
