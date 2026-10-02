@@ -52,5 +52,28 @@ def restore_sleep_images(root, catalog, images):
                 matched += 1
     assert matched == manifest['matchedCount'] == 883
     assert len(rows) - matched == manifest['pendingCount'] == 24
+    # Apply explicit user-confirmed corrections without altering received archives.
+    resolutions = json.loads((package / 'resolutions.json').read_text())
+    by_member = {row['member']: row for row in rows}
+    resolved = set()
+    for correction in resolutions['bindings']:
+        row = by_member[correction['member']]
+        assert row['status'] == 'pending'
+        assert row['member'] not in resolved
+        for sid in correction['speciesIds']:
+            if sid.endswith('_default'):
+                styles = [(item[2], item[0]) for item in catalog['sleepStyles'][str(int(sid.split('_')[0]))]]
+            else:
+                raw = next(item for item in catalog['forms']['species'] if item['speciesId'] == sid)
+                styles = [(item['id'], item['name']) for item in catalog['forms']['sleepStyleGroups'][raw['sleepStyleGroupId']]['styles']]
+            ids = [style_id for style_id, name in styles if name == correction['name']]
+            assert len(ids) == 1, (sid, correction['name'], styles)
+            style_id = ids[0]
+            assert style_id in species[sid]
+            assert style_id not in bindings.get(sid, {})
+            bindings.setdefault(sid, {})[style_id] = row['path']
+            if sid.endswith('_default'):
+                images['sleepStyles'][style_id] = row['path']
+        resolved.add(row['member'])
     images['sleepStylesBySpecies'] = bindings
-    print(f'Sleep artwork: {matched}/907 identities matched; 24 retained pending; bytes unchanged')
+    print(f'Sleep artwork: {matched + len(resolved)}/907 images connected; {24 - len(resolved)} retained pending; bytes unchanged')

@@ -6,11 +6,15 @@ const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import
  await page.goto('file://'+path.resolve(__dirname,'../review.html'));
  const bindings=await page.evaluate(()=>PS_IMAGE_FILES.sleepStylesBySpecies);
  const matched=manifest.images.filter(r=>r.status==='matched');assert.equal(matched.length,883);
- assert.equal(Object.values(bindings).reduce((n,b)=>n+Object.keys(b).length,0),883);
- for(const row of matched)assert.equal(bindings[row.speciesId][row.sleepStyleId],row.path);
+ assert.equal(Object.values(bindings).reduce((n,b)=>n+Object.keys(b).length,0),910);
+ const resolutions=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import/picasso-sleep-v281/resolutions.json')));
+ for(const correction of resolutions.bindings){
+  const row=manifest.images.find(r=>r.member===correction.member);
+  for(const sid of correction.speciesIds)assert.ok(Object.values(bindings[sid]).includes(row.path),sid+' '+correction.member);
+ }
  const forms=await page.evaluate(()=>[...PS_FORMS.records.values()].map(p=>({id:p.speciesId,styles:p.sleepStyles})));
  for(const p of forms)for(const s of p.styles)assert.equal(s.image,bindings[p.id]?.[s.id]||null);
- assert.equal(bindings['0025_halloween_23'],undefined);assert.equal(bindings['0025_halloween_24'],undefined);
+ assert.equal(Object.keys(bindings['0025_halloween_23']).length,2);assert.equal(Object.keys(bindings['0025_halloween_24']).length,2);
  for(const width of [320,390,768]){
   await page.setViewportSize({width,height:844});
   for(const id of [1,25,132,'0025_holiday','0037_alola','0150_default','0849_low_key','0710_medium']){
@@ -21,7 +25,7 @@ const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import
    assert.ok(await photos.evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0)));
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    if(width===390&&id===1)await page.screenshot({path:'/tmp/psg277-sleep.png'});
-   if(id==='0710_medium')assert.equal(await photos.count(),0);
+   if(id==='0710_medium')assert.equal(await photos.count(),4);
   }
  }
  await page.evaluate(()=>openDexCard(1));await page.locator('[data-v12tab="sleep"]').click();
@@ -31,5 +35,5 @@ const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import
  assert.equal(await page.locator('.psg-sleep-toggle').first().getAttribute('aria-pressed'),'true');
  await page.locator('.psg-sleep-toggle').first().click();
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('psg-sleep-discoveries-v1'))['0001_01']),undefined);
- assert.deepEqual(errors,[]);console.log('883 exact image bindings; form isolation; pending images excluded from binding; real decoded photos; 320/390/768px; discovery persistence passed');
+ assert.deepEqual(errors,[]);console.log('898 connected images with 910 species/style bindings; confirmed corrections and size sharing; real decoded photos; 320/390/768px; discovery persistence passed');
 }finally{await browser.close()}})().catch(e=>{console.error(e.stack);process.exitCode=1});

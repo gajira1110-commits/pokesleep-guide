@@ -143,7 +143,7 @@
       "sourceRecordId": "0025_ピカチュウ(ハロウィン・2023の帽子)",
       "no": 25,
       "formId": "halloween_23",
-      "name": "ピカチュウ(ハロウィン・2023の帽子)",
+      "name": "ピカチュウ(ハロウィン・2025の帽子)",
       "type": "でんき",
       "sleepType": "すやすや",
       "specialty": "きのみ",
@@ -275,7 +275,13 @@
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
       "sleepStyleGroupId": "0025_halloween",
-      "boxEligible": true
+      "boxEligible": true,
+      "appearanceYear": 2025,
+      "hatColor": "紫",
+      "identityCorrection": {
+        "source": "ユーザー確認 2026-10-03",
+        "note": "旧23内部IDは保存済み個体との互換性のため保持。表示・姿の年は2025に訂正。原資料IDは来歴として保持。"
+      }
     },
     {
       "speciesId": "0025_halloween_24",
@@ -415,7 +421,9 @@
       "evolutionTransitions": [],
       "detailGroupId": "0025_costumes",
       "sleepStyleGroupId": "0025_halloween",
-      "boxEligible": true
+      "boxEligible": true,
+      "appearanceYear": 2024,
+      "hatColor": "オレンジ"
     },
     {
       "speciesId": "0025_holiday",
@@ -5678,7 +5686,7 @@
         },
         {
           "speciesId": "0025_halloween_23",
-          "label": "ハロウィン23"
+          "label": "ハロウィン25"
         },
         {
           "speciesId": "0025_halloween_24",

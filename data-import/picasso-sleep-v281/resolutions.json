@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "source": "User instruction 2026-10-03 JST",
+  "bindings": [
+    {
+      "member": "0068.webp",
+      "speciesIds": [
+        "0025_halloween_24"
+      ],
+      "name": "まるまり寝"
+    },
+    {
+      "member": "0069.webp",
+      "speciesIds": [
+        "0025_halloween_24"
+      ],
+      "name": "たれみみ寝"
+    },
+    {
+      "member": "0197.webp",
+      "speciesIds": [
+        "0083_default"
+      ],
+      "name": "クキかみ寝"
+    },
+    {
+      "member": "0268.webp",
+      "speciesIds": [
+        "0136_default"
+      ],
+      "name": "こうばこずわり寝"
+    },
+    {
+      "member": "0343.webp",
+      "speciesIds": [
+        "0176_default"
+      ],
+      "name": "うかびぱたぱた寝"
+    },
+    {
+      "member": "0471.webp",
+      "speciesIds": [
+        "0257_default"
+      ],
+      "name": "きあいだめ寝"
+    },
+    {
+      "member": "0568.webp",
+      "speciesIds": [
+        "0359_default"
+      ],
+      "name": "こうばこずわり寝"
+    },
+    {
+      "member": "0704.webp",
+      "speciesIds": [
+        "0468_default"
+      ],
+      "name": "じゆうひこう寝"
+    },
+    {
+      "member": "0840.webp",
+      "speciesIds": [
+        "0906_default"
+      ],
+      "name": "こうばこずわり寝"
+    },
+    {
+      "member": "0763.webp",
+      "speciesIds": [
+        "0710_small",
+        "0710_medium",
+        "0710_large",
+        "0710_jumbo"
+      ],
+      "name": "うまり寝"
+    },
+    {
+      "member": "0764.webp",
+      "speciesIds": [
+        "0710_small",
+        "0710_medium",
+        "0710_large",
+        "0710_jumbo"
+      ],
+      "name": "うかびぱたぱた寝"
+    },
+    {
+      "member": "0765.webp",
+      "speciesIds": [
+        "0710_small",
+        "0710_medium",
+        "0710_large",
+        "0710_jumbo"
+      ],
+      "name": "ひかりてらし寝"
+    },
+    {
+      "member": "0766.webp",
+      "speciesIds": [
+        "0710_small",
+        "0710_medium",
+        "0710_large",
+        "0710_jumbo"
+      ],
+      "name": "おなかのうえ寝"
+    },
+    {
+      "member": "0070.webp",
+      "speciesIds": [
+        "0025_halloween_23"
+      ],
+      "name": "まるまり寝",
+      "note": "紫＝2025年。旧内部IDを維持した訂正済み姿データへ接続。"
+    },
+    {
+      "member": "0071.webp",
+      "speciesIds": [
+        "0025_halloween_23"
+      ],
+      "name": "たれみみ寝",
+      "note": "紫＝2025年。旧内部IDを維持した訂正済み姿データへ接続。"
+    }
+  ],
+  "pendingNotes": {}
+}
