@@ -3,7 +3,7 @@ function normalizeTeam(raw,box){
  return Array.from({length:5},(_,i)=>{
   const id=Array.isArray(raw)?raw[i]:null;
   if(typeof id!=='string'||!byId.has(id)||seen.has(id))return null;
-  const special=window.PS_CATALOG?.pokemon?.[byId.get(id).no]?.specialTeamLimited===true;
+  const special=speciesFor(byId.get(id))?.specialTeamLimited===true;
   if(special&&hasSpecial)return null;
   if(special)hasSpecial=true;
   seen.add(id);return id;
@@ -18,7 +18,7 @@ let team=readTeam();
 function teamContext(){
  const members=team.map((id,slot)=>{
   const individual=state.box.find(x=>x.id===id);
-  const species=individual&&window.PS_CATALOG?.pokemon[individual.no];
+  const species=speciesFor(individual);
   return species?{slot,instanceId:individual.id,speciesNo:Number(species.no),type:species.type,mainSkillId:species.mainSkillId}:null;
  }).filter(Boolean);
  const speciesCounts={},skillCounts={},speciesByType={};
@@ -34,7 +34,7 @@ function teamFoodContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
  ids.forEach((id,position)=>{
   const individual=box.find(x=>x.id===id);
   if(!individual)return;
-  const species=catalog?.pokemon?.[individual.no];
+  const species=speciesFor(individual,catalog);
   const label=`${position+1}匹目 ${individual.name} Lv.${individual.level}`;
   if(!species?.ingredientSlots?.length){unconfirmed.push(`${label}：食材データ未確認`);return}
   species.ingredientSlots.filter(slot=>slot.unlock<=individual.level).forEach(slot=>{

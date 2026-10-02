@@ -8,7 +8,7 @@
  function header(m){
    let h=document.getElementById("v12Header");
    if(!h){h=document.createElement("div");h.id="v12Header";info.prepend(h)}
-   const prev=neighborOf(m.no,-1),next=neighborOf(m.no,1);
+   const prev=neighborOf(m,-1),next=neighborOf(m,1);
    const berryQty=m.berryQtyOverride??m.berryQty;
 
    // v51: 1-2 + previous/next move into the sticky detail header.

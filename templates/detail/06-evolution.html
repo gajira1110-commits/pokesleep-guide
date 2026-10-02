@@ -64,7 +64,13 @@
    if(m.detailPreviewOnly){
      const transitions=m.evolutionTransitions||[];
      card.style.display=transitions.length?'':'none';
-     el.textContent=transitions.length?'同サイズへの進化は未確認です。サイズを自動で変更する処理は行いません。':'';
+     el.replaceChildren();
+     for(const edge of transitions){
+       if(!edge.transitionEnabled){const note=document.createElement('p');note.className='note';note.textContent='同サイズへの進化は未確認です。サイズを自動で変更する処理は行いません。';el.append(note);continue}
+       const target=window.PS_FORMS.resolve(edge.targetSpeciesId);if(!target)continue;
+       const b=document.createElement('button');b.className='btn';b.textContent=`${target.name} ›`;b.dataset.evoNo=target.no;b.onclick=()=>openPokemonDetail(edge.targetSpeciesId,{pushHistory:true});
+       const note=document.createElement('p');note.className='note';note.textContent=Object.entries(edge.conditionsSource||{}).map(([key,value])=>`${key}：${value}`).join('・');el.append(b,note);
+     }
      return;
    }
    const root=rootOf(m),family=descendantsOf(root),rootBranches=evolutionEntries(root);

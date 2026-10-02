@@ -7,8 +7,9 @@ function saveTeamSelection(next){
 function teamFace(individual){
  const art=document.createElement('span');art.className='psg-team-face';
  if(!individual){art.textContent='＋';return art}
+ if(speciesFor(individual)?.detailPreviewOnly||!speciesFor(individual)){art.textContent='No image';return art}
  if(window.PS_FACE_ART?.usesSheet(individual.no)){art.append(window.PS_FACE_ART.element(individual.no,''));return art}
- const species=window.PS_CATALOG?.pokemon[individual.no];
+ const species=speciesFor(individual);
  const src=window.PS_IMAGE_FILES.pokemonFaces?.[individual.no]||species?.faceImage||species?.image;
  if(!src){art.textContent='No image';return art}
  const img=document.createElement('img');img.src=src;img.alt='';img.onerror=()=>{img.remove();art.textContent='No image'};
@@ -37,7 +38,7 @@ function renderTeam(){
   if(teamReorderMode)row.classList.add('is-reordering');
   if(teamReorderFrom===index)row.classList.add('is-reorder-source');
   const choose=document.createElement('button');choose.type='button';choose.className='psg-team-choose';
-  if(individual)choose.classList.add(`type-${typeClass(window.PS_CATALOG?.pokemon?.[individual.no]?.type)}`);
+  if(individual)choose.classList.add(`type-${typeClass(speciesFor(individual)?.type)}`);
   choose.setAttribute('aria-label',`${index+1}匹目：${individual?individual.name:'未設定'}。${teamReorderMode?'並び替える枠を選ぶ':'Boxで個体を選ぶ'}`);
   const name=document.createElement('strong');name.className='psg-team-card-name';name.textContent=individual?.name||'個体を選ぶ';choose.append(name);
   const artwork=document.createElement('span');artwork.className='psg-team-card-art';artwork.append(teamFace(individual));

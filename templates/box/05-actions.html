@@ -13,17 +13,19 @@ function showBoxEditor(){const details=document.getElementById('boxEditor');deta
   if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
  };
 document.getElementById('boxEditForm').onsubmit=e=>{
- e.preventDefault();const item=state.selected,p=selectedSpecies();if(!item||!p)return;
+ e.preventDefault();const item=state.selected;if(!item)return;
  const form=e.currentTarget;const data=new FormData(form),ingredients={};
+ const p=document.getElementById('boxAppearanceLabel').hidden?selectedSpecies():window.PS_FORMS.resolve(String(data.get('appearance')||''));
+ if(!p||p.no!==item.no){document.getElementById('boxEditMessage').textContent='衣装・サイズを確認してください。';return}
  for(const unlock of [1,30,60]){
   const value=String(data.get(`ingredient-${unlock}`)||'');
   if(p.ingredientSlots?.find(s=>s.unlock===unlock)?.candidates?.some(c=>c.name===value))ingredients[unlock]=value;
  }
- const target=evolutionFamily(item.no).find(x=>Number(x.no)===Number(data.get('evolution')))||p;
+ const target=boxEvolutionChoices(p).find(x=>speciesKey(x)===String(data.get('evolution')))||p;
  for(const [unlock,name] of Object.entries(ingredients))if(!target.ingredientSlots?.find(s=>s.unlock===Number(unlock))?.candidates?.some(c=>c.name===name)){document.getElementById('boxEditMessage').textContent='進化先の食材候補と一致しません。食材を確認してください。';return}
  const skillLevel=Math.max(1,Math.min(window.PS_CATALOG?.skills?.[target.mainSkillId]?.maxLevel||7,Number(data.get('skillLevel'))||1));
  const ribbonHours=Number(data.get('ribbonHours'));
- const changed={...item,no:Number(target.no),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
+ const changed={...item,no:Number(target.no),speciesId:speciesKey(target),name:target.name,specialty:target.specialty,ribbonHours:[0,200,500,1000,2000].includes(ribbonHours)?ribbonHours:0,favorite:data.get('favorite')==='on',training:data.get('training')==='on',ingredients,subskills:SUBSKILL_LEVELS.map((_,i)=>String(data.get(`subskill-${i}`)||'').trim().slice(0,80)),nature:String(data.get('nature')||'').trim().slice(0,40),mint:data.get('mint')==='on',skillLevel,role:String(data.get('role')||'').trim().slice(0,40)};
  const filled=changed.subskills.filter(Boolean);
  if(new Set(filled).size!==filled.length){document.getElementById('boxEditMessage').textContent='同じサブスキルを重複して設定できません';return}
  if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel();document.getElementById('boxEditMessage').textContent='保存しました'}

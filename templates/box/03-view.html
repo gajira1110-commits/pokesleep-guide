@@ -16,7 +16,7 @@ function syncLevel(){
  const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
  hero.style.setProperty('--box-type-bg',theme[0]);hero.style.setProperty('--box-type-accent',theme[1]);
  const badges=p?`<div class="psg-box-art-badges"><span class="psg-box-art-badge" title="タイプ：${boxEsc(p.type)}" aria-label="タイプ：${boxEsc(p.type)}">${typeFilterArt(p.type)}</span></div>`:'';
- artwork.innerHTML=(window.PS_DEV_ASSETS.image(p?.image||p?.faceImage,'pokemon',p?.no,p?.image===p?.faceImage?'face':'full',item.name)||'No image')+badges;
+ artwork.innerHTML=(p&&!p.detailPreviewOnly?window.PS_DEV_ASSETS.image(p.image||p.faceImage,'pokemon',p.no,p.image===p.faceImage?'face':'full',item.name):'No image')+badges;
  hydrateSpecialtyIcons(artwork);
  const naturePending=(!item.nature&&!item.mint)||calc.unknown.length;
  const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);

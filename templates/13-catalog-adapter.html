@@ -1,22 +1,5 @@
 <script id="psg-dex-catalog-adapter">
 (()=>{
-const catalog=window.PS_CATALOG,data=catalog?.forms;
-if(data){
- const records=new Map(data.species.map(raw=>{
-  const rows=new Map();for(const slot of raw.ingredientSlots||[])for(const candidate of slot.candidates){
-   if(!rows.has(candidate.name))rows.set(candidate.name,[null,null,null]);
-   rows.get(candidate.name)[[1,30,60].indexOf(slot.unlock)]=candidate.qty;
-  }
-  const record={...raw,detailPreviewOnly:true,image:null,faceImage:null,berryImage:window.PS_IMAGE_FILES.berries[raw.berry]||null,
-   ingredients:[...rows].map(([name,qty],i)=>({slot:['A','B','C'][i],name,qty})),
-   sleepStyles:data.sleepStyleGroups[raw.sleepStyleGroupId]?.styles||[]};
-  return [record.speciesId,record];
- }));
- const groupFor=id=>data.detailFormGroups.find(g=>g.choices.some(c=>c.speciesId===id));
- const resolve=id=>records.get(String(id))||(String(id).endsWith('_default')?catalog.pokemon[Number(String(id).split('_')[0])]:null);
- const dexEntries=data.detailFormGroups.filter(g=>g.kind==='size').map(g=>({...resolve(g.choices[0].speciesId),name:g.name,dexVisible:true}));
- window.PS_FORMS={data,records,groupFor,resolve,dexEntries};
-}
 /* Dex cards share the same records and Pokédex order as the detail renderer. */
 if(window.PS?.master&&window.PS_CATALOG){
  window.PS.master.pokemon.splice(0,window.PS.master.pokemon.length,
@@ -28,7 +11,6 @@ if(window.PS?.master&&window.PS_CATALOG){
 }
 })();
 </script>
-
 
 
 

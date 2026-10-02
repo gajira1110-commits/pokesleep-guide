@@ -1,4 +1,7 @@
 // Shared daily estimate, assembled inside the core controller closure.
+function speciesFor(item,catalog=window.PS_CATALOG){
+ return window.PS_SPECIES?window.PS_SPECIES(item,catalog):(!item?.speciesId?catalog?.pokemon?.[item?.no]||null:null);
+}
 // Bounded estimate: ten-minute energy bands and expected inventory occupancy.
 // Ingredients across unlocked slots are assumed equally likely; skill events are separate.
 function expectedStoredSkills(regularHelps,rate,stockLimit){
@@ -20,7 +23,7 @@ function helperBoostContext(effectType,effect,items,catalog){
  const types={helper_boost_fire:['ほのお','bonusByUniqueFire'],helper_boost_water:['みず','bonusByUniqueWater'],helper_boost_electric:['でんき','bonusByUniqueElectric']};
  const config=types[effectType];if(!config)return null;
  const [type,key]=config;
- const unique=new Set(items.filter(item=>catalog?.pokemon?.[item.no]?.type===type).map(item=>item.no)).size;
+ const unique=new Set(items.filter(item=>speciesFor(item,catalog)?.type===type).map(item=>item.no)).size;
  const bonus=effect?.[key]?.[Math.min(5,unique)];
  return {type,unique,helps:Number.isFinite(effect?.helps)&&Number.isFinite(bonus)?effect.helps+bonus:null};
 }
@@ -35,7 +38,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
  periods.push(8); // No collection during sleep; collect at wake-up.
  const items=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
  const members=items.map(item=>{
-  const species=catalog?.pokemon?.[item.no],stats=speedContext.members.get(item.id);
+  const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id);
   const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
    const chosen=item.ingredients?.[slot.unlock];
    return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);

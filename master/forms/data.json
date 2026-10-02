@@ -2233,6 +2233,485 @@
       "evolutionTransitions": [],
       "detailGroupId": "0711_sizes",
       "sleepStyleGroupId": "0711_sizes"
+    },
+    {
+      "speciesId": "0037_alola",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0037_ロコン(アローラ)",
+      "no": 37,
+      "formId": "alola",
+      "name": "ロコン(アローラ)",
+      "type": "こおり",
+      "sleepType": "ぐっすり",
+      "specialty": "きのみ",
+      "berry": "チーゴのみ",
+      "berryQty": 2,
+      "help": 5600,
+      "carry": 10,
+      "foodRate": 23,
+      "skillRate": 2.8,
+      "rateStatus": "推定",
+      "mainSkillName": "おてつだいサポートS",
+      "mainSkillId": "extra_helpful_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 3
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "道具": "こおりのいし",
+          "アメ種類": "ロコン",
+          "アメ個数": 80,
+          "最低レベル条件": "なし"
+        },
+        "状態": "資料確認",
+        "注記": "当該姿の進化系統から条件を抽出",
+        "proposedTargetSpeciesId": "0038_alola",
+        "targetSourceRecordId": "0038_キュウコン(アローラ)"
+      },
+      "sleepStyleReferenceKey": "ロコン(アローラのすがた)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "こなゆき寝",
+          "stars": 3
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 8,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%83%AD%E3%82%B3%E3%83%B3%28%E3%82%A2%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%81%99%E3%81%8C%E3%81%9F%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0038_alola",
+          "conditionsSource": {
+            "道具": "こおりのいし",
+            "アメ種類": "ロコン",
+            "アメ個数": 80,
+            "最低レベル条件": "なし"
+          },
+          "status": "資料確認",
+          "transitionEnabled": true
+        }
+      ],
+      "dexEntryPolicy": "independent",
+      "sleepStyleGroupId": "0037_alola"
+    },
+    {
+      "speciesId": "0038_alola",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0038_キュウコン(アローラ)",
+      "no": 38,
+      "formId": "alola",
+      "name": "キュウコン(アローラ)",
+      "type": "こおり",
+      "sleepType": "ぐっすり",
+      "specialty": "きのみ",
+      "berry": "チーゴのみ",
+      "berryQty": 2,
+      "help": 2900,
+      "carry": 25,
+      "foodRate": 23.2,
+      "skillRate": 2.8,
+      "rateStatus": "推定",
+      "mainSkillName": "おてつだいサポートS",
+      "mainSkillId": "extra_helpful_s",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "greengrass_soybeans",
+          "name": "ワカクサ大豆",
+          "quantities": {
+            "1": 1,
+            "30": 2,
+            "60": 4
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "greengrass_corn",
+          "name": "ワカクサコーン",
+          "quantities": {
+            "1": null,
+            "30": 2,
+            "60": 3
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 3
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 1
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 2
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "greengrass_soybeans",
+              "qty": 4
+            },
+            {
+              "ingredientId": "greengrass_corn",
+              "qty": 3
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 20,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 10,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": false,
+        "条件": null,
+        "状態": "資料確認",
+        "注記": "最終進化形には系統全体の進化条件文から次の進化を生成しない",
+        "proposedTargetSpeciesId": null,
+        "targetSourceRecordId": null
+      },
+      "sleepStyleReferenceKey": "キュウコン(アローラのすがた)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "のび寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "しっぽふわり寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "しっぽつつまれ寝",
+          "stars": 3
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 8,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%AD%E3%83%A5%E3%82%A6%E3%82%B3%E3%83%B3%28%E3%82%A2%E3%83%AD%E3%83%BC%E3%83%A9%E3%81%AE%E3%81%99%E3%81%8C%E3%81%9F%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [],
+      "dexEntryPolicy": "independent",
+      "sleepStyleGroupId": "0038_alola"
+    },
+    {
+      "speciesId": "0194_paldea",
+      "identityStatus": "naming_rule_agreed_app_integration_pending",
+      "sourceRecordId": "0194_ウパー(パルデア)",
+      "no": 194,
+      "formId": "paldea",
+      "name": "ウパー(パルデア)",
+      "type": "どく",
+      "sleepType": "うとうと",
+      "specialty": "食材",
+      "berry": "カゴのみ",
+      "berryQty": 1,
+      "help": 6400,
+      "carry": 9,
+      "foodRate": 20.9,
+      "skillRate": 5.6,
+      "rateStatus": "推定",
+      "mainSkillName": "げんきチャージS",
+      "mainSkillId": "energy_charge_s_self",
+      "proposedMainSkillId": null,
+      "individualSkillSelectionRequired": false,
+      "ingredientPool": [
+        {
+          "candidate": "A",
+          "ingredientId": "soothing_cacao",
+          "name": "リラックスカカオ",
+          "quantities": {
+            "1": 2,
+            "30": 5,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "B",
+          "ingredientId": "coffee",
+          "name": "めざましコーヒー",
+          "quantities": {
+            "1": null,
+            "30": 4,
+            "60": 7
+          }
+        },
+        {
+          "candidate": "C",
+          "ingredientId": "potato",
+          "name": "ほっこりポテト",
+          "quantities": {
+            "1": null,
+            "30": null,
+            "60": 9
+          }
+        }
+      ],
+      "ingredientSlots": [
+        {
+          "unlock": 1,
+          "candidates": [
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 2
+            }
+          ]
+        },
+        {
+          "unlock": 30,
+          "candidates": [
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 5
+            },
+            {
+              "ingredientId": "coffee",
+              "qty": 4
+            }
+          ]
+        },
+        {
+          "unlock": 60,
+          "candidates": [
+            {
+              "ingredientId": "soothing_cacao",
+              "qty": 7
+            },
+            {
+              "ingredientId": "coffee",
+              "qty": 7
+            },
+            {
+              "ingredientId": "potato",
+              "qty": 9
+            }
+          ]
+        }
+      ],
+      "ingredientStateStatus": "source_verified_candidates",
+      "friendPoints": 5,
+      "expType": 600,
+      "canTransfer": true,
+      "transferCandy": 5,
+      "transferCandyStatus": "資料確認",
+      "evolution": {
+        "可能": true,
+        "条件": {
+          "最低レベル": 15,
+          "アメ種類": "ウパー",
+          "アメ個数": 40
+        },
+        "状態": "資料確認",
+        "注記": "当該姿の進化系統から条件を抽出",
+        "proposedTargetSpeciesId": "0980_default",
+        "targetSourceRecordId": "0980_ドオー"
+      },
+      "sleepStyleReferenceKey": "ウパー(パルデアのすがた)",
+      "sleepStyles": [
+        {
+          "sourceStyleId": "1",
+          "name": "にこにこ寝",
+          "stars": 1
+        },
+        {
+          "sourceStyleId": "2",
+          "name": "おおあくび寝",
+          "stars": 2
+        },
+        {
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "sourceStyleId": "3",
+          "name": "どろにうまり寝",
+          "stars": 3
+        }
+      ],
+      "sleepDataStatus": "source_rows_available",
+      "sleepStyleSupplementSource": null,
+      "appearanceRowCount": 11,
+      "blockers": [
+        "species_identity_migration"
+      ],
+      "source": {
+        "url": "https://wikiwiki.jp/poke_sleep/%E3%82%A6%E3%83%91%E3%83%BC%28%E3%83%91%E3%83%AB%E3%83%87%E3%82%A2%E3%81%AE%E3%81%99%E3%81%8C%E3%81%9F%29",
+        "checkedAt": "2026-10-01",
+        "status": "攻略・検証Wiki記載値（ゲーム内全件照合未実施）",
+        "probabilityUrl": "https://wikiwiki.jp/poke_sleep/ポケモンの一覧/食材確率・スキル発動確率の推定値一覧"
+      },
+      "skillDefinitionStatus": "existing_definition",
+      "imageResolutionPolicy": "explicit_species_asset_mapping_or_no_image",
+      "evolutionTransitions": [
+        {
+          "targetSpeciesId": "0980_default",
+          "conditionsSource": {
+            "最低レベル": 15,
+            "アメ種類": "ウパー",
+            "アメ個数": 40
+          },
+          "status": "資料確認",
+          "transitionEnabled": true
+        }
+      ],
+      "dexEntryPolicy": "independent",
+      "sleepStyleGroupId": "0194_paldea"
     }
   ],
   "detailFormGroups": [
@@ -2554,6 +3033,107 @@
           "stars": 3
         }
       ]
+    },
+    "0037_alola": {
+      "sourceReferenceKey": "ロコン(アローラのすがた)",
+      "speciesIds": [
+        "0037_alola"
+      ],
+      "styles": [
+        {
+          "id": "0037_alola_01",
+          "sourceStyleId": "1",
+          "name": "まるまり寝",
+          "stars": 1
+        },
+        {
+          "id": "0037_alola_02",
+          "sourceStyleId": "2",
+          "name": "こっくり寝",
+          "stars": 2
+        },
+        {
+          "id": "0037_alola_03",
+          "sourceStyleId": "3",
+          "name": "こなゆき寝",
+          "stars": 3
+        },
+        {
+          "id": "0037_alola_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        }
+      ]
+    },
+    "0038_alola": {
+      "sourceReferenceKey": "キュウコン(アローラのすがた)",
+      "speciesIds": [
+        "0038_alola"
+      ],
+      "styles": [
+        {
+          "id": "0038_alola_01",
+          "sourceStyleId": "1",
+          "name": "のび寝",
+          "stars": 1
+        },
+        {
+          "id": "0038_alola_02",
+          "sourceStyleId": "2",
+          "name": "しっぽふわり寝",
+          "stars": 2
+        },
+        {
+          "id": "0038_alola_03",
+          "sourceStyleId": "3",
+          "name": "しっぽつつまれ寝",
+          "stars": 3
+        },
+        {
+          "id": "0038_alola_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        }
+      ]
+    },
+    "0194_paldea": {
+      "sourceReferenceKey": "ウパー(パルデアのすがた)",
+      "speciesIds": [
+        "0194_paldea"
+      ],
+      "styles": [
+        {
+          "id": "0194_paldea_01",
+          "sourceStyleId": "1",
+          "name": "にこにこ寝",
+          "stars": 1
+        },
+        {
+          "id": "0194_paldea_02",
+          "sourceStyleId": "2",
+          "name": "おおあくび寝",
+          "stars": 2
+        },
+        {
+          "id": "0194_paldea_04",
+          "sourceStyleId": "4",
+          "name": "おなかのうえ寝",
+          "stars": 4
+        },
+        {
+          "id": "0194_paldea_03",
+          "sourceStyleId": "3",
+          "name": "どろにうまり寝",
+          "stars": 3
+        }
+      ]
     }
-  }
+  },
+  "independentDexEntries": [
+    "0037_alola",
+    "0038_alola",
+    "0194_paldea"
+  ]
 }
