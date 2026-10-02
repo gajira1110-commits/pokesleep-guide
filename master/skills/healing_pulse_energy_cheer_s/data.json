@@ -301,5 +301,47 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "効果の対象",
+      "text": "ランダムなチーム2匹へ回復と即時おてつだい。回復とおてつだいを別成分として扱う。",
+      "status": "official",
+      "sourceRule": "target",
+      "sources": [
+        {
+          "id": "official_latias",
+          "title": "ラティアス登場告知",
+          "url": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "編成条件",
+      "text": "ラティオスがチームにいる場合の追加おてつだい。イベント由来の追加効果解放フラグも保存し、不明なら条件効果を確定しない。",
+      "status": "community_documented",
+      "sourceRule": "partnerCondition",
+      "sources": [
+        {
+          "id": "healing_pulse_energy_cheer_s",
+          "title": "いやしのはどう(げんきエールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/いやしのはどう",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_latios_event",
+          "title": "ラティオスとこころのしずく",
+          "url": "https://www.pokemonsleep.net/news/343031343632313536373438333930343032/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

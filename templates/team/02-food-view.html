@@ -9,6 +9,13 @@ function renderTeamFood(){
  const ingredients=document.getElementById('teamIngredientList'),recipes=document.getElementById('teamRecipeList');
  if(!ingredients||!recipes)return;
  ingredients.replaceChildren();recipes.replaceChildren();
+ const pot=cookingContext(),potSelect=document.getElementById('teamPotBase');
+ if(potSelect){
+  if(potSelect.options.length===1)for(const capacity of potCapacities)potSelect.add(new Option(`${capacity}個`,String(capacity)));
+  potSelect.value=pot.base===null?'':String(pot.base);
+  const factors=[pot.camp?'キャンプON':'',pot.sunday?'日曜':'',pot.skill?`スキル＋${pot.skill}`:'',pot.event!==1?`イベント×${pot.event}`:''].filter(Boolean);
+  document.getElementById('teamPotCapacity').textContent=pot.capacity===null?'鍋未設定':`現在 ${pot.capacity}個${factors.length?`（${factors.join('・')}）`:''}`;
+ }
  const {confirmed,unconfirmed}=teamFoodContext();
  if(!team.some(Boolean)){
   const empty=document.createElement('p');empty.className='note';empty.textContent='チームを選ぶと、拾える食材を表示します。';ingredients.append(empty);
@@ -42,16 +49,23 @@ function renderTeamFood(){
   const list=document.createElement('div');list.className='psg-team-recipe-items';
   for(const recipe of categoryRecipes){
    const missing=recipe.ingredients.filter(item=>!confirmed.has(item.name));
-   const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;
+   const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;row.dataset.recipeId=recipe.id;
+   const image=document.createElement('span');image.className='psg-team-recipe-image';
+   if(recipe.image){const img=document.createElement('img');img.src=recipe.image;img.alt='';img.loading='lazy';image.append(img)}else image.textContent='No image';
+   const copy=document.createElement('span');copy.className='psg-team-recipe-copy';
    const name=document.createElement('strong');name.textContent=recipe.name;
    const meta=document.createElement('span');meta.className='psg-team-recipe-meta';const verified=recipe.energy?.max,shown=verified||[...(recipe.energy?.observed||[])].sort((a,b)=>b.level-a.level)[0];meta.textContent=shown?`${shown.status==='推定'?'推定 ':verified?'':'確認値 '}Lv.${shown.level} ${shown.value.toLocaleString()} エナジー`:'エナジー未確認';
    const status=document.createElement('span');status.className=`psg-team-recipe-status ${missing.length?'is-unconfirmed':'is-covered'}`;
    status.textContent=!team.some(Boolean)?'チーム未設定':missing.length?`未確認：${missing.map(item=>item.name).join('・')}`:'食材の種類が揃う';
-   row.append(name,meta,status);
-   row.setAttribute('aria-label',`${recipe.name}、${status.textContent}、料理の詳細へ`);
+   const required=recipe.ingredients.reduce((sum,item)=>sum+item.qty,0),potStatus=document.createElement('span');potStatus.className='psg-team-recipe-pot';
+   potStatus.textContent=pot.capacity===null?`鍋 ${required}個・容量未設定`:required<=pot.capacity?`鍋 ${required}個・容量内`:`鍋 ${required}個・あと${required-pot.capacity}個`;
+   potStatus.classList.toggle('is-over-capacity',pot.capacity!==null&&required>pot.capacity);
+   copy.append(name,meta,potStatus,status);row.append(image,copy);
+   row.setAttribute('aria-label',`${recipe.name}、${potStatus.textContent}、${status.textContent}、料理の詳細へ`);
    row.onclick=()=>window.PS_OPEN_RECIPE?.(recipe.id);
    list.append(row);
   }
   group.append(list);recipes.append(group);
  }
 }
+document.getElementById('teamPotBase').onchange=e=>saveCookingSettings({base:e.target.value===''?null:Number(e.target.value)});

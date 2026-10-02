@@ -9,7 +9,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   const composition=page.locator('#teamComposition');
   assert.equal(await composition.locator('b').evaluateAll(els=>els.reduce((n,el)=>n+Number(el.textContent.slice(1)),0)),5);
   assert.equal(await composition.locator('img').evaluateAll(els=>els.every(el=>el.complete&&el.naturalWidth>0)),true);
-  assert.equal(await page.locator('#teamSummary').innerText(),'おて部 合計 10%');
+  assert.equal(await page.locator('#teamSummary').innerText(),'おてボ 合計 10%');
   assert.equal(await page.locator('.psg-team-food-list').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),4);
   const tile=page.locator('.psg-team-food-item').first();assert.equal(await tile.evaluate(el=>el.open),false);
   await tile.locator('summary').click();assert.match(await tile.locator('small').innerText(),/Lv\.\d+ ×\d+/);

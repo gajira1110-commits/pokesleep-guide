@@ -822,5 +822,63 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "きのみの計算",
+      "text": "自分列は発動者分、チーム列は他の各1匹分、合計列は5匹編成の参考値。各個体のレベルときのみでエナジー化する。きのみとくい／きのみの数Sで個数を再倍化しない。",
+      "status": "community_documented",
+      "sourceRule": "berries",
+      "sources": [
+        {
+          "id": "lunar_blessing_energy_for_everyone_s",
+          "title": "みかづきのいのり(げんきオールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "回復の対象",
+      "text": "チーム全員。種類ボーナスはきのみ数だけに作用し、回復量を増やさない。",
+      "status": "community_documented",
+      "sourceRule": "recovery",
+      "sources": [
+        {
+          "id": "lunar_blessing_energy_for_everyone_s",
+          "title": "みかづきのいのり(げんきオールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "種類ボーナス",
+      "text": "発動者を含む異なるエスパーの種類数（1〜5種類）。同種2匹を2種類と数えない。衣装・サイズ・リージョンの扱いは未確認。",
+      "status": "community_documented",
+      "sourceRule": "diversityBonus",
+      "sources": [
+        {
+          "id": "official_cresselia",
+          "title": "クレセリア登場告知",
+          "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "lunar_blessing_energy_for_everyone_s",
+          "title": "みかづきのいのり(げんきオールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

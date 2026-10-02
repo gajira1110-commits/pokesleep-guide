@@ -25,6 +25,6 @@ boxUndoRemove.onclick=()=>{
  if(commitBox(next)){lastRemoval=null;boxUndoPanel.hidden=true}
 };
 hydrateSpecialtyIcons(document);renderFilters();setupMenus();renderDex();renderBox();
-window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel,teamContext};
+window.PS={state,master,go,renderDex,renderFilters,renderBox,refreshBoxDetail:syncLevel,teamContext,cookingContext,saveCookingSettings,calculatePotCapacity,setGoodCamp:value=>{teamGoodCamp=value===true;saveDaySettings()}};
 })();
 </script>
