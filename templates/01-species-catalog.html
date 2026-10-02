@@ -10,7 +10,7 @@
   return [raw.speciesId,{...raw,dexVisible:true,detailPreviewOnly:true,image:null,faceImage:null,
    berryImage:window.PS_IMAGE_FILES.berries[raw.berry]||null,
    ingredients:[...rows].map(([name,qty],i)=>({slot:raw.mythicalSettings?'候補':['A','B','C'][i],name,qty})),
-   sleepStyles:data.sleepStyleGroups[raw.sleepStyleGroupId]?.styles||[]}];
+   sleepStyles:(data.sleepStyleGroups[raw.sleepStyleGroupId]?.styles||[]).map(style=>({...style,image:window.PS_IMAGE_FILES.sleepStylesBySpecies[raw.speciesId]?.[style.id]||null}))}];
  }));
  const groupFor=id=>data.detailFormGroups.find(g=>g.choices.some(c=>c.speciesId===id));
  const resolve=id=>records.get(String(id))||(/^\d{4}_default$/.test(String(id))?catalog.pokemon[Number(String(id).split('_')[0])]:null)||null;
