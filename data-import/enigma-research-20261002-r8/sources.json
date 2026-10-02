@@ -1,0 +1,49 @@
+[
+  {
+    "sourceId": "R8-january-report",
+    "url": "https://note.com/gigigi_pksl/n/n11dc7da2e96a",
+    "kind": "first_person_observation_report",
+    "author": "gigigi",
+    "publishedAt": "2026-01-31",
+    "observationStart": "2026-01-19",
+    "observationEnd": "2026-01-25",
+    "checkedAt": "2026-10-02",
+    "summary": "日中の37発動でボーナス11回、最低げんきの対象21回。本人への回復対象11回。修正前の観測。"
+  },
+  {
+    "sourceId": "R8-april-week2",
+    "url": "https://note.com/gigigi_pksl/n/ne9fe06e6cb8b",
+    "kind": "first_person_observation_report",
+    "author": "gigigi",
+    "publishedAt": "2026-05-02",
+    "observationStart": "2026-04-13",
+    "observationEnd": "2026-04-19",
+    "checkedAt": "2026-10-02",
+    "summary": "2週目64発動・ボーナス27回。2週間合計126発動・49回。1週目62・22を含むため別々の新規試行へ二重加算しない。"
+  },
+  {
+    "sourceId": "R8-april-retrospective",
+    "url": "https://note.com/gigigi_pksl/n/n0394ae2ecb6e",
+    "kind": "first_person_retrospective_with_hypotheses",
+    "author": "gigigi",
+    "publishedAt": "2026-05-08",
+    "observationStart": "2026-04-06",
+    "observationEnd": "2026-04-19",
+    "checkedAt": "2026-10-02",
+    "summary": "5月公開でも記録期間は4月6〜19日。対象ではなくトゲデマル自身の確率参照だったとの振り返り。イベント補正除外は作者の解釈で、現行の確定仕様にはしない。"
+  },
+  {
+    "sourceId": "R8-official-nuzzle",
+    "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "対象への回復と通常おてつだいとは別の追加1発動。既所持なら追加ボーナスなし。睡眠リサーチとフィールド移動で消失。既知ルール再確認。"
+  },
+  {
+    "sourceId": "R8-official-fixes",
+    "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "4月27日に対象個体のスキル確率による挙動の不具合を修正。8月21日にボーナス経由のLv7ゆびをふる・へんしん・ものまねで最大Lv6スキルが選ばれた場合の不具合を修正。"
+  }
+]

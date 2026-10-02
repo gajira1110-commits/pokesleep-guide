@@ -1,0 +1,10 @@
+{
+  "dailyRowsSumMatchesWeek2": true,
+  "weekTotalsMatchTwoWeekTotal": true,
+  "observedFractionsWithinBounds": true,
+  "datasetOverlapMarked": true,
+  "observationPeriodBeforeFix": true,
+  "publicArticleDatesNotUsedAsObservationDates": true,
+  "unconfirmedFieldsRetainedAsNull": true,
+  "gameMechanicsValidatedByArithmetic": false
+}
