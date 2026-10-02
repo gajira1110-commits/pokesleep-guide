@@ -265,5 +265,55 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "個体のスキル",
+      "text": "ダークライの固定メインスキル。ひらめきのたねで変更できるスキル一覧は確認されていない。",
+      "status": "community_documented",
+      "sourceRule": "individualSkill",
+      "sources": [
+        {
+          "id": "darkrai",
+          "title": "ダークライ",
+          "url": "https://wikiwiki.jp/poke_sleep/ダークライ",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "doctor_seed",
+          "title": "ネロリ博士/イベント",
+          "url": "https://wikiwiki.jp/poke_sleep/ネロリ博士/イベント",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "効果の内訳",
+      "text": "カビゴンのエナジー増加と、あくタイプ以外の各個体のげんき−12。減少量はスキルLvによらない。",
+      "status": "community_documented",
+      "sourceRule": "components",
+      "sources": [
+        {
+          "id": "official_darkrai",
+          "title": "ダークライに関するお知らせ",
+          "url": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "nightmare_energy_charge_m",
+          "title": "ナイトメア(エナジーチャージM)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ/ナイトメア",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

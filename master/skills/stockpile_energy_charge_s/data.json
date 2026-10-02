@@ -673,5 +673,55 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "持続・リセット",
+      "text": "個体ごとのたくわえ数0〜10回。たくわえる時はエナジー0。はきだす／その個体の離脱で0へ戻り、10回たくわえた次ははきだす。",
+      "status": "community_documented",
+      "sourceRule": "state",
+      "sources": [
+        {
+          "id": "official_stockpile",
+          "title": "フワンテ／フワライド登場告知",
+          "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "stockpile_energy_charge_s",
+          "title": "たくわえる(エナジーチャージS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ/たくわえる",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "分岐の確率",
+      "text": "公式の分岐確率は未公表。たくわえる75%／はきだす25%は検証由来の推定で、確定値として日産へ適用しない。",
+      "status": "community_estimate",
+      "sourceRule": "branchProbability",
+      "sources": [
+        {
+          "id": "stockpile_energy_charge_s",
+          "title": "たくわえる(エナジーチャージS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/エナジーチャージ/たくわえる",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "stockpile_verification",
+          "title": "検証/はきだす確率",
+          "url": "https://wikiwiki.jp/poke_sleep/検証/はきだす確率",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

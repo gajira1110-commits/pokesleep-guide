@@ -11,6 +11,30 @@ const daySettings=readDaySettings();
 let teamInitialEnergy=daySettings.initialEnergy;
 let teamGoodCamp=daySettings.goodCamp;
 let teamMeals=daySettings.meals;
+const COOKING_SETTINGS_KEY='psg-cooking-settings-v1';
+const potCapacities=window.PS_CATALOG.cooking.pot['拡張表'].map(row=>row['容量']);
+function normalizeCookingSettings(value){
+ const v=value&&typeof value==='object'?value:{};
+ return {base:potCapacities.includes(Number(v.base))?Number(v.base):null,
+ event:Number.isFinite(v.event)&&v.event>0&&Number.isInteger(Math.round(v.event*1000))&&Math.abs(v.event*1000-Math.round(v.event*1000))<1e-7?v.event:1,
+ skill:Number.isInteger(v.skill)&&v.skill>=0&&v.skill<=200?v.skill:0,sunday:v.sunday===true};
+}
+let cookingSettings;
+try{cookingSettings=normalizeCookingSettings(JSON.parse(localStorage.getItem(COOKING_SETTINGS_KEY)||'{}'))}catch{cookingSettings=normalizeCookingSettings({})}
+function calculatePotCapacity(base,event=1,skill=0,sunday=false,camp=false){
+ if(!potCapacities.includes(base)||!Number.isFinite(event)||event<=0||!Number.isInteger(skill)||skill<0||skill>200)return null;
+ const scaled=event*1000;
+ if(Math.abs(scaled-Math.round(scaled))>1e-7||!Number.isSafeInteger(base*Math.round(scaled)))return null;
+ const first=Math.floor((base*Math.round(scaled)+500)/1000),subtotal=first*(sunday?2:1)+skill;
+ const result=camp?Math.ceil(subtotal*1.5):subtotal;
+ return Number.isSafeInteger(result)?result:null;
+}
+function cookingContext(){return {...cookingSettings,camp:teamGoodCamp,capacity:calculatePotCapacity(cookingSettings.base,cookingSettings.event,cookingSettings.skill,cookingSettings.sunday,teamGoodCamp)}}
+function saveCookingSettings(value){
+ cookingSettings=normalizeCookingSettings({...cookingSettings,...value});
+ try{localStorage.setItem(COOKING_SETTINGS_KEY,JSON.stringify(cookingSettings))}catch{}
+ renderTeamFood();window.dispatchEvent(new Event('psg-cooking-settings-change'));
+}
 function syncDayControls(){
  document.getElementById('teamCollectionInterval').value=String(daySettings.collectionHours);
  document.getElementById('teamInitialEnergy').value=String(teamInitialEnergy);
@@ -25,6 +49,7 @@ function saveDaySettings(){
  try{localStorage.setItem(DAY_SETTINGS_KEY,JSON.stringify(next));document.getElementById('teamDaySaveStatus').textContent='条件をこの端末に保存しました。'}
  catch{document.getElementById('teamDaySaveStatus').textContent='条件を保存できませんでした。今回の表示には反映しています。'}
  renderTeamDay();
+ renderTeamFood();window.dispatchEvent(new Event('psg-cooking-settings-change'));
 }
 syncDayControls();
 const berryChoices=[...document.querySelectorAll('.psg-favorite-berry')];

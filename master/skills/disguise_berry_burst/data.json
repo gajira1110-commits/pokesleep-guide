@@ -358,5 +358,71 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "きのみの計算",
+      "text": "大成功では自分と他の各個体のきのみ個数が各3倍。合計列を追加効果として加算しない。",
+      "status": "community_documented",
+      "sourceRule": "berries",
+      "sources": [
+        {
+          "id": "disguise_berry_burst",
+          "title": "ばけのかわ(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/ばけのかわ",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "大成功・リセット",
+      "text": "大成功時は自分・他の各匹のきのみが3倍。大成功後は睡眠リサーチ／手動睡眠登録まで再大成功なし。",
+      "status": "community_documented",
+      "sourceRule": "successState",
+      "sources": [
+        {
+          "id": "official_disguise",
+          "title": "ミミッキュ登場告知",
+          "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "disguise_berry_burst",
+          "title": "ばけのかわ(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/ばけのかわ",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "大成功の確率",
+      "text": "公式値は未公表。攻略資料の約20%は推定で、すべての発動へ一律に大成功倍率を掛けない。",
+      "status": "community_estimate",
+      "sourceRule": "successProbability",
+      "sources": [
+        {
+          "id": "disguise_berry_burst",
+          "title": "ばけのかわ(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/ばけのかわ",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "disguise_verification",
+          "title": "検証/ばけのかわ(きのみバースト)の大成功",
+          "url": "https://wikiwiki.jp/poke_sleep/検証/ばけのかわ(きのみバースト)の大成功",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

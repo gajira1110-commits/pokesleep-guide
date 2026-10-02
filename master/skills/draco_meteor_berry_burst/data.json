@@ -823,5 +823,63 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "きのみの計算",
+      "text": "自分列は発動者分、チーム列は他の各1匹分、合計列は5匹編成の参考値。各個体のレベルときのみでエナジー化する。きのみとくい／きのみの数Sで個数を再倍化しない。",
+      "status": "community_documented",
+      "sourceRule": "berries",
+      "sources": [
+        {
+          "id": "draco_meteor_berry_burst",
+          "title": "りゅうせいぐん(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/りゅうせいぐん",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "編成条件",
+      "text": "ラティアス編成＋追加効果解放で、自分のきのみだけ追加。Lv別+2/+4/+6/+8/+9/+10。",
+      "status": "community_documented",
+      "sourceRule": "partnerCondition",
+      "sources": [
+        {
+          "id": "draco_meteor_berry_burst",
+          "title": "りゅうせいぐん(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/りゅうせいぐん",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "種類ボーナス",
+      "text": "発動者を含む異なるドラゴンの種類数（1〜5種類）。同種2匹を2種類と数えない。衣装・サイズ・リージョンの扱いは未確認。",
+      "status": "community_documented",
+      "sourceRule": "diversityBonus",
+      "sources": [
+        {
+          "id": "official_latios",
+          "title": "ラティオス登場告知",
+          "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "draco_meteor_berry_burst",
+          "title": "りゅうせいぐん(きのみバースト)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみバースト/りゅうせいぐん",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

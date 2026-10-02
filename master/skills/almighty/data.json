@@ -329,5 +329,79 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "効果の対象",
+      "text": "個体にセットされたスキルを実行し、チーム内1匹のアメを追加取得。",
+      "status": "official",
+      "sourceRule": "target",
+      "sources": [
+        {
+          "id": "official_mew",
+          "title": "ミュウに関するお知らせ",
+          "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "セットスキル",
+      "text": "種族のオールマイティーと個体のセットスキル・習得済み一覧を分離。変更してもスキルLvは維持。発生確率はセットスキルごと。",
+      "status": "official",
+      "sourceRule": "selectedSkill",
+      "sources": [
+        {
+          "id": "official_mew",
+          "title": "ミュウに関するお知らせ",
+          "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "効果レベル",
+      "text": "セットスキルの効果表・上限を別途参照。オールマイティーのLv.8を全セット効果のLv.8へ外挿しない。",
+      "status": "implementation_policy",
+      "sourceRule": "effectLevel",
+      "sources": [
+        {
+          "id": "almighty",
+          "title": "オールマイティー",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_mew",
+          "title": "ミュウに関するお知らせ",
+          "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "追加アメ",
+      "text": "基本1個。ときどき増える確率は未公表で、約35%は攻略資料の推定。",
+      "status": "community_documented",
+      "sourceRule": "candy",
+      "sources": [
+        {
+          "id": "almighty",
+          "title": "オールマイティー",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

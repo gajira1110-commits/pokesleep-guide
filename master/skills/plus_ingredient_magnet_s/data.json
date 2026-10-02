@@ -382,5 +382,79 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "ランダム食材",
+      "text": "入手済み食材から3種類を選ぶ食材ゲット共通仕様。未入手食材を抽選対象に足さない。",
+      "status": "community_documented",
+      "sourceRule": "randomComponent",
+      "sources": [
+        {
+          "id": "ingredient_magnet",
+          "title": "メインスキル/食材ゲット",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "追加食材",
+      "text": "追加2列は食材別の代替列。プラスル＝コーヒー、プラスのストリンダー＝ミルク。発動者の1枠目を追加する。2列を足さない。",
+      "status": "community_documented",
+      "sourceRule": "additionalComponent",
+      "sources": [
+        {
+          "id": "plus_ingredient_magnet_s",
+          "title": "プラス(食材ゲットS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット/プラス",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_plus_minus",
+          "title": "プラス／マイナス登場告知",
+          "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "コピー時",
+      "text": "コピー発動者の1枠目を参照し、追加数はコピー対象の数を参照するというWiki記載。",
+      "status": "community_documented",
+      "sourceRule": "copyException",
+      "sources": [
+        {
+          "id": "plus_ingredient_magnet_s",
+          "title": "プラス(食材ゲットS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット/プラス",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "編成条件",
+      "text": "発動者以外にプラス／マイナスを持つポケモンが1匹以上。仲間の人数で追加効果を倍増しない。",
+      "status": "official",
+      "sourceRule": "partnerCondition",
+      "sources": [
+        {
+          "id": "official_plus_minus",
+          "title": "プラス／マイナス登場告知",
+          "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

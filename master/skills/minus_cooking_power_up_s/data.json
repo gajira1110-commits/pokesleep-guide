@@ -324,5 +324,63 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "効果の内訳",
+      "text": "通常列は鍋の追加容量、追加列は条件付きでランダム1匹に与える回復量。単位が違うので合算しない。",
+      "status": "community_documented",
+      "sourceRule": "components",
+      "sources": [
+        {
+          "id": "official_plus_minus",
+          "title": "プラス／マイナス登場告知",
+          "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "minus_cooking_power_up_s",
+          "title": "マイナス(料理パワーアップS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/料理パワーアップ/マイナス",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "編成条件",
+      "text": "発動者以外にプラス／マイナスを持つポケモンが1匹以上。仲間の人数で追加効果を倍増しない。",
+      "status": "official",
+      "sourceRule": "partnerCondition",
+      "sources": [
+        {
+          "id": "official_plus_minus",
+          "title": "プラス／マイナス登場告知",
+          "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "鍋の持続",
+      "text": "追加容量の累積上限は200個。次の料理で消費し、フィールド移動・週をまたいで持続。日曜は追加分を2倍にせず、キャンプは追加分も1.5倍。",
+      "status": "parent_skill_documented_application_requires_check",
+      "sourceRule": "potState",
+      "sources": [
+        {
+          "id": "cooking_power",
+          "title": "メインスキル/料理パワーアップ",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/料理パワーアップ",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

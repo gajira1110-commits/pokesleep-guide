@@ -327,5 +327,71 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "効果の対象",
+      "text": "自身を含むチーム1匹。抽選の重みは未確認。",
+      "status": "community_documented",
+      "sourceRule": "target",
+      "sources": [
+        {
+          "id": "nuzzle_energy_cheer_s",
+          "title": "ほっぺすりすり(げんきエールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "ボーナスの保持",
+      "text": "通常ストックと別の最大1枠。睡眠リサーチ・フィールド移動・チームの誰か1匹の交代で消失。",
+      "status": "community_documented",
+      "sourceRule": "bonusState",
+      "sources": [
+        {
+          "id": "nuzzle_energy_cheer_s",
+          "title": "ほっぺすりすり(げんきエールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_nuzzle",
+          "title": "トゲデマル登場告知",
+          "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "追加抽選",
+      "text": "現行Lv.1〜6は2〜7回。対象の確率に含む補正・抽選の独立性・通常ストックとの発動順は未確認。",
+      "status": "community_documented",
+      "sourceRule": "bonusProbability",
+      "sources": [
+        {
+          "id": "nuzzle_energy_cheer_s",
+          "title": "ほっぺすりすり(げんきエールS)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_bugs",
+          "title": "不具合修正（4/27ほっぺすりすり）",
+          "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

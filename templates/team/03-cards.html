@@ -67,7 +67,7 @@ function renderTeam(){
  });
  const selected=team.map(id=>state.box.find(x=>x.id===id)).filter(Boolean);
  const summary=document.getElementById('teamSummary');
- summary.textContent=`おて部 合計 ${Math.round(teamSpeeds.bonus*100)}%`;
+ summary.textContent=`おてボ 合計 ${Math.round(teamSpeeds.bonus*100)}%`;
  const composition=document.getElementById('teamComposition');
  composition.innerHTML=['きのみ','食材','スキル','オール'].map(s=>{
   const count=selected.filter(x=>speciesFor(x)?.specialty===s).length;

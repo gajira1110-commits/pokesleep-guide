@@ -284,5 +284,79 @@
       "dailyPrediction": "requires_frequency_and_state_model",
       "unknownComponentsMustBeListed": true
     }
-  }
+  },
+  "ruleNotes": [
+    {
+      "label": "効果の対象",
+      "text": "直接エナジーはカビゴン。ゾーンはマゴのみのエナジー。",
+      "status": "official",
+      "sourceRule": "target",
+      "sources": [
+        {
+          "id": "official_zone",
+          "title": "ミュウツー登場告知",
+          "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "発動時のきのみ",
+      "text": "発動時に箱内の全きのみを即消費。今回増えたゾーンの効果はその即消費分に適用しない。",
+      "status": "community_documented",
+      "sourceRule": "berryBoxAtActivation",
+      "sources": [
+        {
+          "id": "psystrike_berry_zone",
+          "title": "サイコブレイク(きのみゾーン)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "上限時",
+      "text": "上限でも直接エナジー効果は得られる。",
+      "status": "community_documented",
+      "sourceRule": "capBehavior",
+      "sources": [
+        {
+          "id": "psystrike_berry_zone",
+          "title": "サイコブレイク(きのみゾーン)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "持続・リセット",
+      "text": "フィールド共通のゾーンを加算し、上限24%。発動者を外しても持続し、フィールド移動でリセット。",
+      "status": "community_documented",
+      "sourceRule": "state",
+      "sources": [
+        {
+          "id": "psystrike_berry_zone",
+          "title": "サイコブレイク(きのみゾーン)",
+          "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+          "kind": "community_wiki",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "id": "official_zone",
+          "title": "ミュウツー登場告知",
+          "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

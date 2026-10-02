@@ -18,7 +18,7 @@ assert.equal(skills.find(s=>s.id==='almighty').levels[8].referenceValues[0],'1 �
   const page=await b.newPage({viewport:{width,height:844}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('file://'+root+'/review.html');await page.evaluate(()=>PS.go('skillPage'));
   assert.equal(await page.locator('.psg-skill-entry').count(),38);
   for(const s of skills){
-   await page.locator('#skillSearch').fill(s.name);assert.equal(await page.locator('.psg-skill-entry').count(),1);await page.locator('.psg-skill-entry summary').click();
+   await page.locator('#skillSearch').fill(s.name);assert.equal(await page.locator('.psg-skill-entry').count(),1);await page.locator('.psg-skill-entry>summary').click();
    assert.equal(await page.locator('.psg-skill-level').count(),s.maxLevel);assert.match(await page.locator('.psg-skill-entry').innerText(),/日産予想への効果反映は未対応/);
    for(const p of s.nativeSpecies)assert.ok((await page.locator('.psg-skill-species').innerText()).includes(p.name));
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);

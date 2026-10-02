@@ -26,14 +26,7 @@
  const sundayInput=document.getElementById('cookingSunday'),campInput=document.getElementById('cookingCamp');
  for(const row of potRows){const option=document.createElement('option');option.value=row['容量'];option.textContent=`${row['容量']}個`;potBase.append(option)}
  function calculatePot(base,event,skill,sunday,camp){
-  // Decimal event multipliers are converted to integers before half-up rounding.
-  if(!potRows.some(row=>row['容量']===base)||!Number.isFinite(event)||event<=0||!Number.isInteger(skill)||skill<0||skill>200)return null;
-  const scaled=event*1000;
-  if(Math.abs(scaled-Math.round(scaled))>1e-7||!Number.isSafeInteger(base*Math.round(scaled)))return null;
-  const first=Math.floor((base*Math.round(scaled)+500)/1000);
-  const subtotal=first*(sunday?2:1)+skill;
-  const result=camp?Math.floor((subtotal*3+1)/2):subtotal;
-  return Number.isSafeInteger(result)?result:null;
+  return window.PS.calculatePotCapacity(base,event,skill,sunday,camp);
  }
  function updatePot(){
   const base=Number(potBase.value),event=eventInput.value.trim()===''?NaN:Number(eventInput.value),skill=skillInput.value.trim()===''?NaN:Number(skillInput.value);
@@ -42,8 +35,19 @@
   const row=potRows.find(item=>item['容量']===base);
   document.getElementById('cookingPotCost').textContent=`寝顔 ${row['必要寝顔種類数']}種類・この段階の拡張 ${row['拡張1回のゆめのかけら'].toLocaleString()}かけら・初期から累計 ${row['初期からの累計ゆめのかけら'].toLocaleString()}かけら（資料確認）`;
  }
- for(const input of [potBase,eventInput,skillInput,sundayInput,campInput])input.addEventListener('input',updatePot);
- updatePot();
+ function syncPot(){
+  const current=window.PS.cookingContext();
+  if(current.base!==null)potBase.value=String(current.base);
+  eventInput.value=String(current.event);skillInput.value=String(current.skill);sundayInput.checked=current.sunday;campInput.checked=current.camp;updatePot();
+ }
+ for(const input of [potBase,eventInput,skillInput,sundayInput,campInput])input.addEventListener('input',()=>{
+  updatePot();
+  const base=Number(potBase.value),event=eventInput.value.trim()===''?NaN:Number(eventInput.value),skill=skillInput.value.trim()===''?NaN:Number(skillInput.value),camp=campInput.checked,sunday=sundayInput.checked;
+  if(calculatePot(base,event,skill,sunday,camp)===null)return;
+  window.PS.saveCookingSettings({base,event,skill,sunday});
+  if(window.PS.cookingContext().camp!==camp)window.PS.setGoodCamp(camp);
+ });
+ window.addEventListener('psg-cooking-settings-change',syncPot);syncPot();
  const reference=document.getElementById('cookingReferenceTables');
  const addNote=text=>{const p=document.createElement('p');p.className='note';p.textContent=text;reference.append(p)};
  function addTable(title,columns,rows){
