@@ -106,5 +106,49 @@
   "hyper_cutter_ingredient_select_s": {
     "name": "かいりきバサミ",
     "path": "assets/skill-icons/hyper_cutter_ingredient_select_s.webp"
+  },
+  "psystrike_berry_zone": {
+    "name": "サイコブレイク(きのみゾーン)",
+    "path": "assets/skill-icons/psystrike_berry_zone.webp"
+  },
+  "almighty": {
+    "name": "オールマイティー",
+    "path": "assets/skill-icons/almighty.webp"
+  },
+  "plus_ingredient_magnet_s": {
+    "name": "プラス(食材ゲットS)",
+    "path": "assets/skill-icons/plus_ingredient_magnet_s.webp"
+  },
+  "minus_cooking_power_up_s": {
+    "name": "マイナス(料理パワーアップS)",
+    "path": "assets/skill-icons/minus_cooking_power_up_s.webp"
+  },
+  "healing_pulse_energy_cheer_s": {
+    "name": "いやしのはどう(げんきエールS)",
+    "path": "assets/skill-icons/healing_pulse_energy_cheer_s.webp"
+  },
+  "draco_meteor_berry_burst": {
+    "name": "りゅうせいぐん(きのみバースト)",
+    "path": "assets/skill-icons/draco_meteor_berry_burst.webp"
+  },
+  "stockpile_energy_charge_s": {
+    "name": "たくわえる(エナジーチャージS)",
+    "path": "assets/skill-icons/stockpile_energy_charge_s.webp"
+  },
+  "lunar_blessing_energy_for_everyone_s": {
+    "name": "みかづきのいのり(げんきオールS)",
+    "path": "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp"
+  },
+  "nightmare_energy_charge_m": {
+    "name": "ナイトメア(エナジーチャージM)",
+    "path": "assets/skill-icons/nightmare_energy_charge_m.webp"
+  },
+  "nuzzle_energy_cheer_s": {
+    "name": "ほっぺすりすり(げんきエールS)",
+    "path": "assets/skill-icons/nuzzle_energy_cheer_s.webp"
+  },
+  "disguise_berry_burst": {
+    "name": "ばけのかわ(きのみバースト)",
+    "path": "assets/skill-icons/disguise_berry_burst.webp"
   }
 }

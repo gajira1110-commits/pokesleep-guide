@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "自分 8個／チーム欄 1個／合計 通常 12個・大成功 36個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分8個・他の各匹1個／大成功時は各3倍",
       "referenceValues": [
         "8",
         "1",
@@ -24,10 +24,16 @@
         "1",
         "12",
         "36"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 8,
+        "berriesPerOtherMember": 1,
+        "totalForFiveMemberTeam": 12,
+        "greatSuccessTotalForFiveMemberTeam": 36
+      }
     },
     "2": {
-      "description": "自分 10個／チーム欄 2個／合計 通常 18個・大成功 54個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分10個・他の各匹2個／大成功時は各3倍",
       "referenceValues": [
         "10",
         "2",
@@ -41,10 +47,16 @@
         "2",
         "18",
         "54"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 10,
+        "berriesPerOtherMember": 2,
+        "totalForFiveMemberTeam": 18,
+        "greatSuccessTotalForFiveMemberTeam": 54
+      }
     },
     "3": {
-      "description": "自分 15個／チーム欄 2個／合計 通常 23個・大成功 69個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分15個・他の各匹2個／大成功時は各3倍",
       "referenceValues": [
         "15",
         "2",
@@ -58,10 +70,16 @@
         "2",
         "23",
         "69"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 15,
+        "berriesPerOtherMember": 2,
+        "totalForFiveMemberTeam": 23,
+        "greatSuccessTotalForFiveMemberTeam": 69
+      }
     },
     "4": {
-      "description": "自分 17個／チーム欄 3個／合計 通常 29個・大成功 87個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分17個・他の各匹3個／大成功時は各3倍",
       "referenceValues": [
         "17",
         "3",
@@ -75,10 +93,16 @@
         "3",
         "29",
         "87"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 17,
+        "berriesPerOtherMember": 3,
+        "totalForFiveMemberTeam": 29,
+        "greatSuccessTotalForFiveMemberTeam": 87
+      }
     },
     "5": {
-      "description": "自分 19個／チーム欄 4個／合計 通常 35個・大成功 105個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分19個・他の各匹4個／大成功時は各3倍",
       "referenceValues": [
         "19",
         "4",
@@ -92,10 +116,16 @@
         "4",
         "35",
         "105"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 19,
+        "berriesPerOtherMember": 4,
+        "totalForFiveMemberTeam": 35,
+        "greatSuccessTotalForFiveMemberTeam": 105
+      }
     },
     "6": {
-      "description": "自分 21個／チーム欄 5個／合計 通常 41個・大成功 123個（抽選・連続発動の条件は確認待ち）",
+      "description": "きのみ：自分21個・他の各匹5個／大成功時は各3倍",
       "referenceValues": [
         "21",
         "5",
@@ -109,10 +139,16 @@
         "5",
         "41",
         "123"
-      ]
+      ],
+      "namedValues": {
+        "selfBerries": 21,
+        "berriesPerOtherMember": 5,
+        "totalForFiveMemberTeam": 41,
+        "greatSuccessTotalForFiveMemberTeam": 123
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "大成功時は各個体の獲得きのみが3倍。大成功後は睡眠リサーチ／手動睡眠登録まで再大成功なし。確率は未確認。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0778_default",
@@ -212,5 +248,115 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/disguise_berry_burst.webp",
+  "effectRules": {
+    "skillId": "disguise_berry_burst",
+    "name": "ばけのかわ(きのみバースト)",
+    "affectedSpeciesIds": [
+      "0778_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "disguise_berry_burst",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "berries": {
+        "value": "大成功では自分と他の各個体のきのみ個数が各3倍。合計列を追加効果として加算しない。",
+        "status": "community_documented",
+        "sources": [
+          "disguise_berry_burst"
+        ]
+      },
+      "successState": {
+        "value": {
+          "scope": "box_individual",
+          "eligibleAfter": [
+            "sleep_research",
+            "manual_sleep_registration"
+          ],
+          "afterSuccess": "ineligible_until_reset",
+          "greatSuccessMultiplier": 3
+        },
+        "status": "community_documented",
+        "sources": [
+          "official_disguise",
+          "disguise_berry_burst"
+        ]
+      },
+      "successProbability": {
+        "value": {
+          "officialValue": null,
+          "communityApproximation": 0.2,
+          "earlyObservedRate": 0.186,
+          "earlySampleCount": 311,
+          "earlyReportDate": "2024-11-29",
+          "useByDefault": false
+        },
+        "status": "community_estimate",
+        "sources": [
+          "disguise_berry_burst",
+          "disguise_verification"
+        ]
+      }
+    },
+    "unknowns": [
+      "正確な大成功確率・性格等による変更は未確認。約20%を確定値にしない。",
+      "交代・フィールド移動・週跨ぎで再大成功可能になるとは確認されていない。"
+    ],
+    "columns": [
+      "selfBerries",
+      "berriesPerOtherMember",
+      "totalForFiveMemberTeam",
+      "greatSuccessTotalForFiveMemberTeam"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "selfBerries": 8,
+        "berriesPerOtherMember": 1,
+        "totalForFiveMemberTeam": 12,
+        "greatSuccessTotalForFiveMemberTeam": 36
+      },
+      {
+        "level": 2,
+        "selfBerries": 10,
+        "berriesPerOtherMember": 2,
+        "totalForFiveMemberTeam": 18,
+        "greatSuccessTotalForFiveMemberTeam": 54
+      },
+      {
+        "level": 3,
+        "selfBerries": 15,
+        "berriesPerOtherMember": 2,
+        "totalForFiveMemberTeam": 23,
+        "greatSuccessTotalForFiveMemberTeam": 69
+      },
+      {
+        "level": 4,
+        "selfBerries": 17,
+        "berriesPerOtherMember": 3,
+        "totalForFiveMemberTeam": 29,
+        "greatSuccessTotalForFiveMemberTeam": 87
+      },
+      {
+        "level": 5,
+        "selfBerries": 19,
+        "berriesPerOtherMember": 4,
+        "totalForFiveMemberTeam": 35,
+        "greatSuccessTotalForFiveMemberTeam": 105
+      },
+      {
+        "level": 6,
+        "selfBerries": 21,
+        "berriesPerOtherMember": 5,
+        "totalForFiveMemberTeam": 41,
+        "greatSuccessTotalForFiveMemberTeam": 123
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

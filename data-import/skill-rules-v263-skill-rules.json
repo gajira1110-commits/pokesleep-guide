@@ -1,0 +1,1537 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-02",
+  "scope": "calculation_rules_handoff_not_app_patch",
+  "evidenceStatuses": [
+    "official",
+    "community_documented",
+    "community_estimate",
+    "model_inference",
+    "unconfirmed"
+  ],
+  "common": {
+    "recovery": {
+      "value": {
+        "natureOf": "recipient",
+        "up": 1.2,
+        "down": 0.88,
+        "neutral": 1,
+        "maxEnergy": 150,
+        "internalDecimals": "preserve",
+        "display": "floor",
+        "appliesTo": [
+          "minus_conditional_recovery",
+          "healing_pulse_recovery",
+          "lunar_recovery",
+          "nuzzle_recovery"
+        ]
+      },
+      "status": "parent_recovery_rule_applied_to_variants",
+      "sources": [
+        "nature",
+        "energy_cheer",
+        "nuzzle_energy_cheer_s"
+      ]
+    },
+    "fieldBonus": {
+      "value": {
+        "directEnergy": "multiply by 1+FB/100; ceil for energy-charge family",
+        "berries": "apply in existing berry-energy pipeline once, separately for each donor",
+        "notAppliedTo": [
+          "ingredient_count",
+          "pot_increment",
+          "recovery_quantity",
+          "candy_count",
+          "zone_percentage",
+          "branch_probability"
+        ]
+      },
+      "status": "common_rule_with_unverified_variant_rounding",
+      "sources": [
+        "energy_charge",
+        "berries"
+      ]
+    },
+    "skillNature": {
+      "value": "発生確率補正は通常スキル発生側に適用。効果量の食材・鍋・きのみ個数・直接エナジー・分岐確率に一律乗算しない。",
+      "status": "community_documented",
+      "sources": [
+        "nature"
+      ]
+    },
+    "events": {
+      "value": "複合スキルの効果別に適用条件を持たせる。きのみ倍率を回復やアメにもかけない。",
+      "status": "official",
+      "sources": [
+        "official_berry_event"
+      ]
+    },
+    "dailyFrequency": {
+      "value": "当日の発生回数によって発生確率が変動する仕様が公式に存在。回数×固定確率は近似であり、実際の1日発動回数を断言しない。",
+      "status": "official",
+      "sources": [
+        "official_v330"
+      ]
+    },
+    "teamRestriction": {
+      "value": "原則特別なポケモンは同時1匹。ラティアス＋ラティオスのみ公式の組合せ例外。さらに第三の特別ポケモンを加えない。",
+      "status": "official_with_validator_inference",
+      "sources": [
+        "official_mew",
+        "official_latias",
+        "official_latios"
+      ]
+    },
+    "unknownPolicy": "不明/nullは0・等確率・自動解放へ置換しない。未対応成分を残した合計はpartialと表示。"
+  },
+  "skills": [
+    {
+      "skillId": "psystrike_berry_zone",
+      "name": "サイコブレイク(きのみゾーン)",
+      "affectedSpeciesIds": [
+        "0150_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "psystrike_berry_zone",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "target": {
+          "value": "直接エナジーはカビゴン。ゾーンはマゴのみのエナジー。",
+          "status": "official",
+          "sources": [
+            "official_zone"
+          ]
+        },
+        "state": {
+          "value": {
+            "scope": "research_field",
+            "unit": "percentage_points",
+            "stack": "additive",
+            "cap": 24,
+            "reset": [
+              "field_move"
+            ],
+            "persistsAfterCasterRemoved": true
+          },
+          "status": "community_documented",
+          "sources": [
+            "psystrike_berry_zone",
+            "official_zone"
+          ]
+        },
+        "berryBoxAtActivation": {
+          "value": "発動時に箱内の全きのみを即消費。今回増えたゾーンの効果はその即消費分に適用しない。",
+          "status": "community_documented",
+          "sources": [
+            "psystrike_berry_zone"
+          ]
+        },
+        "capBehavior": {
+          "value": "上限でも直接エナジー効果は得られる。",
+          "status": "community_documented",
+          "sources": [
+            "psystrike_berry_zone"
+          ]
+        }
+      },
+      "unknowns": [
+        "即消費きのみに既存ゾーンまで不適用か、今回の増加分だけ不適用かは要ゲーム内照合。",
+        "スキル由来のマゴのみとの端数処理・EX補正順、コピー時のゾーン種別は未確認。"
+      ],
+      "columns": [
+        "directEnergy",
+        "zoneIncreasePercentagePoints"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "directEnergy": 1408,
+          "zoneIncreasePercentagePoints": 0.6
+        },
+        {
+          "level": 2,
+          "directEnergy": 2002,
+          "zoneIncreasePercentagePoints": 0.8
+        },
+        {
+          "level": 3,
+          "directEnergy": 2762,
+          "zoneIncreasePercentagePoints": 1.0
+        },
+        {
+          "level": 4,
+          "directEnergy": 3813,
+          "zoneIncreasePercentagePoints": 1.2
+        },
+        {
+          "level": 5,
+          "directEnergy": 5264,
+          "zoneIncreasePercentagePoints": 1.6
+        },
+        {
+          "level": 6,
+          "directEnergy": 7274,
+          "zoneIncreasePercentagePoints": 2.0
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "almighty",
+      "name": "オールマイティー",
+      "affectedSpeciesIds": [
+        "0151_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "almighty",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "target": {
+          "value": "個体にセットされたスキルを実行し、チーム内1匹のアメを追加取得。",
+          "status": "official",
+          "sources": [
+            "official_mew"
+          ]
+        },
+        "selectedSkill": {
+          "value": "種族のオールマイティーと個体のセットスキル・習得済み一覧を分離。変更してもスキルLvは維持。発生確率はセットスキルごと。",
+          "status": "official",
+          "sources": [
+            "official_mew"
+          ]
+        },
+        "candy": {
+          "value": {
+            "base": 1,
+            "occasionalByLevel": {
+              "6": 2,
+              "7": 3,
+              "8": 4
+            },
+            "probability": null,
+            "approximateCommunityEstimate": 0.35
+          },
+          "status": "community_documented",
+          "sources": [
+            "almighty"
+          ]
+        },
+        "effectLevel": {
+          "value": "セットスキルの効果表・上限を別途参照。オールマイティーのLv.8を全セット効果のLv.8へ外挿しない。",
+          "status": "implementation_policy",
+          "sources": [
+            "almighty",
+            "official_mew"
+          ]
+        }
+      },
+      "unknowns": [
+        "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+        "セット先が上限の低いスキルの場合の高Lv効果参照方法は未確認。"
+      ],
+      "columns": [
+        "candyQuantityDescription"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "baseCandy": 1,
+          "occasionalCandy": null,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 2,
+          "baseCandy": 1,
+          "occasionalCandy": null,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 3,
+          "baseCandy": 1,
+          "occasionalCandy": null,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 4,
+          "baseCandy": 1,
+          "occasionalCandy": null,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 5,
+          "baseCandy": 1,
+          "occasionalCandy": null,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 6,
+          "baseCandy": 1,
+          "occasionalCandy": 2,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 7,
+          "baseCandy": 1,
+          "occasionalCandy": 3,
+          "occasionalCandyProbability": null
+        },
+        {
+          "level": 8,
+          "baseCandy": 1,
+          "occasionalCandy": 4,
+          "occasionalCandyProbability": null
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "plus_ingredient_magnet_s",
+      "name": "プラス(食材ゲットS)",
+      "affectedSpeciesIds": [
+        "0311_default",
+        "0849_amped"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "plus_ingredient_magnet_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "partnerCondition": {
+          "value": {
+            "excludeCaster": true,
+            "otherCountAtLeast": 1,
+            "allowedNativeSkillFamilies": [
+              "plus",
+              "minus"
+            ],
+            "scalesWithPartnerCount": false
+          },
+          "status": "official",
+          "sources": [
+            "official_plus_minus"
+          ]
+        },
+        "randomComponent": {
+          "value": "入手済み食材から3種類を選ぶ食材ゲット共通仕様。未入手食材を抽選対象に足さない。",
+          "status": "community_documented",
+          "sources": [
+            "ingredient_magnet"
+          ]
+        },
+        "additionalComponent": {
+          "value": "追加2列は食材別の代替列。プラスル＝コーヒー、プラスのストリンダー＝ミルク。発動者の1枠目を追加する。2列を足さない。",
+          "status": "community_documented",
+          "sources": [
+            "plus_ingredient_magnet_s",
+            "official_plus_minus"
+          ]
+        },
+        "copyException": {
+          "value": "コピー発動者の1枠目を参照し、追加数はコピー対象の数を参照するというWiki記載。",
+          "status": "community_documented",
+          "sources": [
+            "plus_ingredient_magnet_s"
+          ]
+        }
+      },
+      "unknowns": [
+        "ランダム食材数5/7/等を3種類へ配分する端数処理・抽選重み・バッグ残量不足時の各成分処理は未確認。",
+        "ゆびをふる等による別食材の追加数の一般式は未確認。コーヒー／ミルク列を任意食材へ流用しない。"
+      ],
+      "columns": [
+        "randomIngredientTotalBase",
+        "additionalCoffeeForPlusle",
+        "additionalMilkForToxtricity"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "randomIngredientTotalBase": 5,
+          "additionalByFirstIngredient": {
+            "coffee": 6,
+            "moomoo_milk": 6
+          }
+        },
+        {
+          "level": 2,
+          "randomIngredientTotalBase": 7,
+          "additionalByFirstIngredient": {
+            "coffee": 7,
+            "moomoo_milk": 7
+          }
+        },
+        {
+          "level": 3,
+          "randomIngredientTotalBase": 9,
+          "additionalByFirstIngredient": {
+            "coffee": 8,
+            "moomoo_milk": 9
+          }
+        },
+        {
+          "level": 4,
+          "randomIngredientTotalBase": 11,
+          "additionalByFirstIngredient": {
+            "coffee": 9,
+            "moomoo_milk": 10
+          }
+        },
+        {
+          "level": 5,
+          "randomIngredientTotalBase": 13,
+          "additionalByFirstIngredient": {
+            "coffee": 10,
+            "moomoo_milk": 12
+          }
+        },
+        {
+          "level": 6,
+          "randomIngredientTotalBase": 16,
+          "additionalByFirstIngredient": {
+            "coffee": 11,
+            "moomoo_milk": 13
+          }
+        },
+        {
+          "level": 7,
+          "randomIngredientTotalBase": 18,
+          "additionalByFirstIngredient": {
+            "coffee": 12,
+            "moomoo_milk": 14
+          }
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "minus_cooking_power_up_s",
+      "name": "マイナス(料理パワーアップS)",
+      "affectedSpeciesIds": [
+        "0312_default",
+        "0849_low_key"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "minus_cooking_power_up_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "partnerCondition": {
+          "value": {
+            "excludeCaster": true,
+            "otherCountAtLeast": 1,
+            "allowedNativeSkillFamilies": [
+              "plus",
+              "minus"
+            ],
+            "scalesWithPartnerCount": false
+          },
+          "status": "official",
+          "sources": [
+            "official_plus_minus"
+          ]
+        },
+        "components": {
+          "value": "通常列は鍋の追加容量、追加列は条件付きでランダム1匹に与える回復量。単位が違うので合算しない。",
+          "status": "community_documented",
+          "sources": [
+            "official_plus_minus",
+            "minus_cooking_power_up_s"
+          ]
+        },
+        "potState": {
+          "value": {
+            "scope": "researcher",
+            "additiveCap": 200,
+            "consumedBy": "next_cooking",
+            "persistsAcrossFieldMove": true,
+            "persistsAcrossWeek": true,
+            "sundayDoublesIncrement": false,
+            "campMultipliesIncrement": true
+          },
+          "status": "parent_skill_documented_application_requires_check",
+          "sources": [
+            "cooking_power"
+          ]
+        },
+        "potFormula": {
+          "value": "ceil((basePot*sundayMultiplier+storedIncrease)*campMultiplier)",
+          "status": "parent_skill_documented_application_requires_check",
+          "sources": [
+            "cooking_power"
+          ]
+        }
+      },
+      "unknowns": [
+        "容量+200上限でマイナス全体が発動不能か、回復部分のみ発動できるかは未確認。親スキルの発動不能を自動継承しない。",
+        "回復対象の抽選重み、自身が対象になるかの直接確認は未実施。げんきエールの低元気優先を自動継承しない。"
+      ],
+      "columns": [
+        "potIncrease",
+        "conditionalRecovery"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "potIncrease": 5,
+          "conditionalRecovery": 8
+        },
+        {
+          "level": 2,
+          "potIncrease": 7,
+          "conditionalRecovery": 10
+        },
+        {
+          "level": 3,
+          "potIncrease": 9,
+          "conditionalRecovery": 13
+        },
+        {
+          "level": 4,
+          "potIncrease": 12,
+          "conditionalRecovery": 17
+        },
+        {
+          "level": 5,
+          "potIncrease": 16,
+          "conditionalRecovery": 23
+        },
+        {
+          "level": 6,
+          "potIncrease": 20,
+          "conditionalRecovery": 30
+        },
+        {
+          "level": 7,
+          "potIncrease": 24,
+          "conditionalRecovery": 35
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "healing_pulse_energy_cheer_s",
+      "name": "いやしのはどう(げんきエールS)",
+      "affectedSpeciesIds": [
+        "0380_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "healing_pulse_energy_cheer_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "target": {
+          "value": "ランダムなチーム2匹へ回復と即時おてつだい。回復とおてつだいを別成分として扱う。",
+          "status": "official",
+          "sources": [
+            "official_latias"
+          ]
+        },
+        "partnerCondition": {
+          "value": "ラティオスがチームにいる場合の追加おてつだい。イベント由来の追加効果解放フラグも保存し、不明なら条件効果を確定しない。",
+          "status": "community_documented",
+          "sources": [
+            "healing_pulse_energy_cheer_s",
+            "official_latios_event"
+          ]
+        }
+      },
+      "unknowns": [
+        "2匹の抽選重み、自身の対象可否、追加おてつだい対象、即時おてつだいの所持上限とスキル抽選の有無は未確認。",
+        "過去イベント未参加者の現在の追加効果解放手段・自動解放可否は未確認。"
+      ],
+      "columns": [
+        "recoveryPerTarget",
+        "instantHelpsPerTarget",
+        "conditionalAdditionalHelpsPerTarget"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "recoveryPerTarget": 6,
+          "instantHelpsPerTarget": 1,
+          "conditionalAdditionalHelpsPerTarget": 1
+        },
+        {
+          "level": 2,
+          "recoveryPerTarget": 8,
+          "instantHelpsPerTarget": 2,
+          "conditionalAdditionalHelpsPerTarget": 1
+        },
+        {
+          "level": 3,
+          "recoveryPerTarget": 10,
+          "instantHelpsPerTarget": 2,
+          "conditionalAdditionalHelpsPerTarget": 2
+        },
+        {
+          "level": 4,
+          "recoveryPerTarget": 13,
+          "instantHelpsPerTarget": 3,
+          "conditionalAdditionalHelpsPerTarget": 2
+        },
+        {
+          "level": 5,
+          "recoveryPerTarget": 17,
+          "instantHelpsPerTarget": 4,
+          "conditionalAdditionalHelpsPerTarget": 2
+        },
+        {
+          "level": 6,
+          "recoveryPerTarget": 22,
+          "instantHelpsPerTarget": 4,
+          "conditionalAdditionalHelpsPerTarget": 3
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "draco_meteor_berry_burst",
+      "name": "りゅうせいぐん(きのみバースト)",
+      "affectedSpeciesIds": [
+        "0381_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "draco_meteor_berry_burst",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "diversityBonus": {
+          "value": {
+            "type": "ドラゴン",
+            "count": "different_species_in_team_including_caster",
+            "range": [
+              1,
+              5
+            ],
+            "notNumberOfInstances": true
+          },
+          "status": "community_documented",
+          "sources": [
+            "official_latios",
+            "draco_meteor_berry_burst"
+          ]
+        },
+        "berries": {
+          "value": "自分列は発動者分、チーム列は他の各1匹分、合計列は5匹編成の参考値。各個体のレベルときのみでエナジー化する。きのみとくい／きのみの数Sで個数を再倍化しない。",
+          "status": "community_documented",
+          "sources": [
+            "draco_meteor_berry_burst"
+          ]
+        },
+        "partnerCondition": {
+          "value": "ラティアス編成＋追加効果解放で、自分のきのみだけ追加。Lv別+2/+4/+6/+8/+9/+10。",
+          "status": "community_documented",
+          "sources": [
+            "draco_meteor_berry_burst"
+          ]
+        }
+      },
+      "unknowns": [
+        "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+        "コピー時、端数・EX補正順は未確認。",
+        "追加効果の現在の解放手段は未確認。"
+      ],
+      "columns": [
+        "selfBerriesByDistinctCount1to5",
+        "berriesPerOtherMemberByDistinctCount1to5",
+        "totalForFiveMemberTeamByDistinctCount1to5",
+        "conditionalExtraSelfBerries"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "selfBerriesByDistinctCount": {
+            "1": 12,
+            "2": 14,
+            "3": 18,
+            "4": 18,
+            "5": 20
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 2,
+            "5": 2
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 16,
+            "2": 18,
+            "3": 22,
+            "4": 26,
+            "5": 28
+          },
+          "conditionalExtraSelfBerries": 2
+        },
+        {
+          "level": 2,
+          "selfBerriesByDistinctCount": {
+            "1": 21,
+            "2": 24,
+            "3": 29,
+            "4": 30,
+            "5": 33
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 2,
+            "5": 2
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 25,
+            "2": 28,
+            "3": 33,
+            "4": 38,
+            "5": 41
+          },
+          "conditionalExtraSelfBerries": 4
+        },
+        {
+          "level": 3,
+          "selfBerriesByDistinctCount": {
+            "1": 29,
+            "2": 29,
+            "3": 35,
+            "4": 37,
+            "5": 41
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 2,
+            "3": 2,
+            "4": 3,
+            "5": 3
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 33,
+            "2": 37,
+            "3": 43,
+            "4": 49,
+            "5": 53
+          },
+          "conditionalExtraSelfBerries": 6
+        },
+        {
+          "level": 4,
+          "selfBerriesByDistinctCount": {
+            "1": 38,
+            "2": 39,
+            "3": 42,
+            "4": 45,
+            "5": 49
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 4
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 42,
+            "2": 47,
+            "3": 54,
+            "4": 61,
+            "5": 65
+          },
+          "conditionalExtraSelfBerries": 8
+        },
+        {
+          "level": 5,
+          "selfBerriesByDistinctCount": {
+            "1": 43,
+            "2": 44,
+            "3": 48,
+            "4": 49,
+            "5": 53
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 2,
+            "2": 3,
+            "3": 4,
+            "4": 5,
+            "5": 5
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 51,
+            "2": 56,
+            "3": 64,
+            "4": 69,
+            "5": 73
+          },
+          "conditionalExtraSelfBerries": 9
+        },
+        {
+          "level": 6,
+          "selfBerriesByDistinctCount": {
+            "1": 48,
+            "2": 50,
+            "3": 55,
+            "4": 55,
+            "5": 58
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 3,
+            "2": 4,
+            "3": 4,
+            "4": 5,
+            "5": 5
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 60,
+            "2": 66,
+            "3": 71,
+            "4": 75,
+            "5": 78
+          },
+          "conditionalExtraSelfBerries": 10
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "name": "たくわえる(エナジーチャージS)",
+      "affectedSpeciesIds": [
+        "0425_default",
+        "0426_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "stockpile_energy_charge_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "state": {
+          "value": {
+            "scope": "box_individual",
+            "storedCountRange": [
+              0,
+              10
+            ],
+            "stockpileEnergy": 0,
+            "spitResetsTo": 0,
+            "removingThisIndividualResetsTo": 0,
+            "countTenNextActivation": "spit"
+          },
+          "status": "community_documented",
+          "sources": [
+            "official_stockpile",
+            "stockpile_energy_charge_s"
+          ]
+        },
+        "branchProbability": {
+          "value": {
+            "officialValue": null,
+            "communitySuggestedStockpile": 0.75,
+            "communitySuggestedSpit": 0.25,
+            "count0to9": "constant_probability_estimate",
+            "count10Spit": 1,
+            "useByDefault": false
+          },
+          "status": "community_estimate",
+          "sources": [
+            "stockpile_energy_charge_s",
+            "stockpile_verification"
+          ]
+        }
+      },
+      "unknowns": [
+        "25%は公式確定値ではない。性格・サブスキルによる分岐確率変化は未確認。スキル発生確率の補正を分岐抽選へ二重適用しない。",
+        "別個体の交代だけで残留個体のたくわえ数がリセットされるとは確認できない。",
+        "睡眠・週跨ぎ・同一フィールドへの移動、進化時の状態処理は未確認。"
+      ],
+      "columns": [
+        "spitEnergyByStoredCount0to10"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "spitEnergyByStoredCount": [
+            600,
+            1020,
+            1500,
+            2040,
+            2640,
+            3300,
+            4020,
+            4920,
+            6480,
+            8880,
+            12120
+          ]
+        },
+        {
+          "level": 2,
+          "spitEnergyByStoredCount": [
+            853,
+            1450,
+            2132,
+            2900,
+            3753,
+            4691,
+            5715,
+            6995,
+            9213,
+            12625,
+            17231
+          ]
+        },
+        {
+          "level": 3,
+          "spitEnergyByStoredCount": [
+            1177,
+            2001,
+            2943,
+            4002,
+            5179,
+            6474,
+            7886,
+            9652,
+            12712,
+            17420,
+            23776
+          ]
+        },
+        {
+          "level": 4,
+          "spitEnergyByStoredCount": [
+            1625,
+            2763,
+            4063,
+            5526,
+            7151,
+            8939,
+            10889,
+            13327,
+            17552,
+            24052,
+            32827
+          ]
+        },
+        {
+          "level": 5,
+          "spitEnergyByStoredCount": [
+            2243,
+            3813,
+            5607,
+            7626,
+            9869,
+            12336,
+            15028,
+            18393,
+            24225,
+            33197,
+            45309
+          ]
+        },
+        {
+          "level": 6,
+          "spitEnergyByStoredCount": [
+            3099,
+            5268,
+            7747,
+            10536,
+            13635,
+            17044,
+            20763,
+            25412,
+            33469,
+            45865,
+            62600
+          ]
+        },
+        {
+          "level": 7,
+          "spitEnergyByStoredCount": [
+            4502,
+            7653,
+            11255,
+            15307,
+            19809,
+            24761,
+            30163,
+            36916,
+            48621,
+            66629,
+            90940
+          ]
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "lunar_blessing_energy_for_everyone_s",
+      "name": "みかづきのいのり(げんきオールS)",
+      "affectedSpeciesIds": [
+        "0488_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "lunar_blessing_energy_for_everyone_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "diversityBonus": {
+          "value": {
+            "type": "エスパー",
+            "count": "different_species_in_team_including_caster",
+            "range": [
+              1,
+              5
+            ],
+            "notNumberOfInstances": true
+          },
+          "status": "community_documented",
+          "sources": [
+            "official_cresselia",
+            "lunar_blessing_energy_for_everyone_s"
+          ]
+        },
+        "berries": {
+          "value": "自分列は発動者分、チーム列は他の各1匹分、合計列は5匹編成の参考値。各個体のレベルときのみでエナジー化する。きのみとくい／きのみの数Sで個数を再倍化しない。",
+          "status": "community_documented",
+          "sources": [
+            "lunar_blessing_energy_for_everyone_s"
+          ]
+        },
+        "recovery": {
+          "value": "チーム全員。種類ボーナスはきのみ数だけに作用し、回復量を増やさない。",
+          "status": "community_documented",
+          "sources": [
+            "lunar_blessing_energy_for_everyone_s"
+          ]
+        }
+      },
+      "unknowns": [
+        "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+        "コピー時、端数・EX補正順は未確認。"
+      ],
+      "columns": [
+        "recoveryPerTeamMember",
+        "selfBerriesByDistinctCount1to5",
+        "berriesPerOtherMemberByDistinctCount1to5",
+        "totalForFiveMemberTeamByDistinctCount1to5"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "recoveryPerTeamMember": 3,
+          "selfBerriesByDistinctCount": {
+            "1": 5,
+            "2": 7,
+            "3": 9,
+            "4": 12,
+            "5": 14
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 1,
+            "5": 2
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 9,
+            "2": 11,
+            "3": 13,
+            "4": 16,
+            "5": 22
+          }
+        },
+        {
+          "level": 2,
+          "recoveryPerTeamMember": 4,
+          "selfBerriesByDistinctCount": {
+            "1": 9,
+            "2": 12,
+            "3": 15,
+            "4": 16,
+            "5": 19
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 1,
+            "3": 1,
+            "4": 2,
+            "5": 3
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 13,
+            "2": 16,
+            "3": 19,
+            "4": 24,
+            "5": 31
+          }
+        },
+        {
+          "level": 3,
+          "recoveryPerTeamMember": 5,
+          "selfBerriesByDistinctCount": {
+            "1": 13,
+            "2": 17,
+            "3": 18,
+            "4": 20,
+            "5": 24
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 1,
+            "3": 2,
+            "4": 3,
+            "5": 4
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 17,
+            "2": 21,
+            "3": 26,
+            "4": 32,
+            "5": 40
+          }
+        },
+        {
+          "level": 4,
+          "recoveryPerTeamMember": 7,
+          "selfBerriesByDistinctCount": {
+            "1": 17,
+            "2": 19,
+            "3": 25,
+            "4": 28,
+            "5": 29
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 2,
+            "3": 2,
+            "4": 3,
+            "5": 5
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 21,
+            "2": 27,
+            "3": 33,
+            "4": 40,
+            "5": 49
+          }
+        },
+        {
+          "level": 5,
+          "recoveryPerTeamMember": 9,
+          "selfBerriesByDistinctCount": {
+            "1": 21,
+            "2": 24,
+            "3": 27,
+            "4": 28,
+            "5": 30
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 5,
+            "5": 7
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 25,
+            "2": 32,
+            "3": 39,
+            "4": 48,
+            "5": 58
+          }
+        },
+        {
+          "level": 6,
+          "recoveryPerTeamMember": 11,
+          "selfBerriesByDistinctCount": {
+            "1": 25,
+            "2": 29,
+            "3": 30,
+            "4": 31,
+            "5": 32
+          },
+          "berriesPerOtherMemberByDistinctCount": {
+            "1": 1,
+            "2": 2,
+            "3": 4,
+            "4": 6,
+            "5": 9
+          },
+          "totalForFiveMemberTeamByDistinctCount": {
+            "1": 29,
+            "2": 37,
+            "3": 46,
+            "4": 55,
+            "5": 68
+          }
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "nightmare_energy_charge_m",
+      "name": "ナイトメア(エナジーチャージM)",
+      "affectedSpeciesIds": [
+        "0491_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "nightmare_energy_charge_m",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "components": {
+          "value": {
+            "energyTarget": "snorlax",
+            "energyLossTargets": "all_non_dark_team_members",
+            "energyLossEach": 12,
+            "lossChangesWithSkillLevel": false
+          },
+          "status": "community_documented",
+          "sources": [
+            "official_darkrai",
+            "nightmare_energy_charge_m"
+          ]
+        },
+        "individualSkill": {
+          "value": "ダークライの固定メインスキル。ひらめきのたねで変更できるスキル一覧は確認されていない。",
+          "status": "community_documented",
+          "sources": [
+            "darkrai",
+            "doctor_seed"
+          ]
+        }
+      },
+      "unknowns": [
+        "負のげんき効果に性格の回復補正が作用するか、0未満の処理を個別には未確認。計算の推奨仮定は-12固定・0下限で明示する。"
+      ],
+      "columns": [
+        "directEnergy"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "directEnergy": 2640,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 2,
+          "directEnergy": 3753,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 3,
+          "directEnergy": 5178,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 4,
+          "directEnergy": 7149,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 5,
+          "directEnergy": 9870,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 6,
+          "directEnergy": 13638,
+          "energyLossPerNonDarkMember": 12
+        },
+        {
+          "level": 7,
+          "directEnergy": 18515,
+          "energyLossPerNonDarkMember": 12
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "name": "ほっぺすりすり(げんきエールS)",
+      "affectedSpeciesIds": [
+        "0777_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "nuzzle_energy_cheer_s",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "target": {
+          "value": "自身を含むチーム1匹。抽選の重みは未確認。",
+          "status": "community_documented",
+          "sources": [
+            "nuzzle_energy_cheer_s"
+          ]
+        },
+        "bonusState": {
+          "value": {
+            "scope": "box_individual_bonus_flag",
+            "capacity": 1,
+            "separateFromOrdinaryStock": true,
+            "reset": [
+              "sleep_research",
+              "field_move",
+              "any_team_member_change"
+            ],
+            "consumedBy": "one_bonus_skill_activation"
+          },
+          "status": "community_documented",
+          "sources": [
+            "nuzzle_energy_cheer_s",
+            "official_nuzzle"
+          ]
+        },
+        "bonusProbability": {
+          "value": {
+            "targetSkillProbability": "対象個体のおてつだい1回分の確率",
+            "drawCountByLevel": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "formulaUnderIndependentTrials": "1-(1-pTarget)^drawCount",
+            "formulaStatus": "model_inference",
+            "defaultProbability": null,
+            "oldFormulaExponentEqualsLevel": "outdated_against_current_table"
+          },
+          "status": "community_documented",
+          "sources": [
+            "nuzzle_energy_cheer_s",
+            "official_bugs"
+          ]
+        }
+      },
+      "unknowns": [
+        "対象個体の性格・サブスキル・イベント・当日の発生回数制御を抽選pへどこまで反映するか、天井抽選との関係は未確認。",
+        "ボーナス既所持対象を抽選から除くか、付与だけ失敗するか、回復はどう扱うか未確認。",
+        "通常ストックとボーナスの発動順・同時発動・睡眠データのマニュアル登録時の消失は未確認。"
+      ],
+      "columns": [
+        "recovery",
+        "displayRecovery",
+        "bonusDrawCount"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "recovery": 9.0,
+          "displayRecovery": 9,
+          "bonusDrawCount": 2
+        },
+        {
+          "level": 2,
+          "recovery": 12.0,
+          "displayRecovery": 12,
+          "bonusDrawCount": 3
+        },
+        {
+          "level": 3,
+          "recovery": 16.0,
+          "displayRecovery": 16,
+          "bonusDrawCount": 4
+        },
+        {
+          "level": 4,
+          "recovery": 20.0,
+          "displayRecovery": 20,
+          "bonusDrawCount": 5
+        },
+        {
+          "level": 5,
+          "recovery": 27.0,
+          "displayRecovery": 27,
+          "bonusDrawCount": 6
+        },
+        {
+          "level": 6,
+          "recovery": 35.0,
+          "displayRecovery": 35,
+          "bonusDrawCount": 7
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "name": "ばけのかわ(きのみバースト)",
+      "affectedSpeciesIds": [
+        "0778_default"
+      ],
+      "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+      "tableSource": "disguise_berry_burst",
+      "valueStatus": "community_documented_not_independently_game_verified",
+      "rules": {
+        "berries": {
+          "value": "大成功では自分と他の各個体のきのみ個数が各3倍。合計列を追加効果として加算しない。",
+          "status": "community_documented",
+          "sources": [
+            "disguise_berry_burst"
+          ]
+        },
+        "successState": {
+          "value": {
+            "scope": "box_individual",
+            "eligibleAfter": [
+              "sleep_research",
+              "manual_sleep_registration"
+            ],
+            "afterSuccess": "ineligible_until_reset",
+            "greatSuccessMultiplier": 3
+          },
+          "status": "community_documented",
+          "sources": [
+            "official_disguise",
+            "disguise_berry_burst"
+          ]
+        },
+        "successProbability": {
+          "value": {
+            "officialValue": null,
+            "communityApproximation": 0.2,
+            "earlyObservedRate": 0.186,
+            "earlySampleCount": 311,
+            "earlyReportDate": "2024-11-29",
+            "useByDefault": false
+          },
+          "status": "community_estimate",
+          "sources": [
+            "disguise_berry_burst",
+            "disguise_verification"
+          ]
+        }
+      },
+      "unknowns": [
+        "正確な大成功確率・性格等による変更は未確認。約20%を確定値にしない。",
+        "交代・フィールド移動・週跨ぎで再大成功可能になるとは確認されていない。"
+      ],
+      "columns": [
+        "selfBerries",
+        "berriesPerOtherMember",
+        "totalForFiveMemberTeam",
+        "greatSuccessTotalForFiveMemberTeam"
+      ],
+      "levels": [
+        {
+          "level": 1,
+          "selfBerries": 8,
+          "berriesPerOtherMember": 1,
+          "totalForFiveMemberTeam": 12,
+          "greatSuccessTotalForFiveMemberTeam": 36
+        },
+        {
+          "level": 2,
+          "selfBerries": 10,
+          "berriesPerOtherMember": 2,
+          "totalForFiveMemberTeam": 18,
+          "greatSuccessTotalForFiveMemberTeam": 54
+        },
+        {
+          "level": 3,
+          "selfBerries": 15,
+          "berriesPerOtherMember": 2,
+          "totalForFiveMemberTeam": 23,
+          "greatSuccessTotalForFiveMemberTeam": 69
+        },
+        {
+          "level": 4,
+          "selfBerries": 17,
+          "berriesPerOtherMember": 3,
+          "totalForFiveMemberTeam": 29,
+          "greatSuccessTotalForFiveMemberTeam": 87
+        },
+        {
+          "level": 5,
+          "selfBerries": 19,
+          "berriesPerOtherMember": 4,
+          "totalForFiveMemberTeam": 35,
+          "greatSuccessTotalForFiveMemberTeam": 105
+        },
+        {
+          "level": 6,
+          "selfBerries": 21,
+          "berriesPerOtherMember": 5,
+          "totalForFiveMemberTeam": 41,
+          "greatSuccessTotalForFiveMemberTeam": 123
+        }
+      ],
+      "calculationReadiness": {
+        "perActivation": "partial_with_explicit_state_and_targets",
+        "dailyPrediction": "requires_frequency_and_state_model",
+        "unknownComponentsMustBeListed": true
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "path": "0491_default.individualSkillSelectionRequired",
+      "old": true,
+      "new": false,
+      "reason": "ダークライのひらめき対象は食材・サブスキル。ミュウと同じ選択スキルを要求しない。"
+    },
+    {
+      "path": "0151_default.skillRate",
+      "old": 4.0,
+      "new": null,
+      "reason": "セットスキル別の推定確率を使う。一律4%は中確率群の参考値に限る。"
+    },
+    {
+      "path": "nuzzle_probability_exponent",
+      "old": "skillLevel",
+      "new": "drawCount from table = skillLevel+1 (current levels1..6)",
+      "reason": "Wikiの数式本文は旧記載。2026/4/27後の2..7回表と更新記録を優先するモデル候補。公式は正確な式を公表していない。"
+    },
+    {
+      "path": "stockpile_effect_table",
+      "old": "Ver.2.12.2以前の8..10回値",
+      "new": "前回引き渡し表は現行値と一致（変更不要）",
+      "reason": "調査中に差異を見たのはWiki折りたたみ内の旧表。今回値の更新はしない。"
+    },
+    {
+      "path": "psystrike_level1",
+      "old": "Wiki考察内1048",
+      "new": 1408,
+      "reason": "前回表と現行効果表は1408。考察内の1048と競合しているためゲーム内照合推奨。"
+    },
+    {
+      "path": "mythical_ingredient_quantities",
+      "old": "攻略記事の別数量",
+      "new": "前回提供表・現行Wiki数量を保持",
+      "reason": "第三者記事の数量と一部競合。別値へ自動上書きしない。ゲーム内照合未実施。"
+    }
+  ]
+}

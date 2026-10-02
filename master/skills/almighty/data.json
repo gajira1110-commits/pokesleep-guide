@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個",
       "referenceValues": [
         "1"
       ],
@@ -18,10 +18,15 @@
         "オールマイティー",
         "1",
         "1"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      }
     },
     "2": {
-      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個",
       "referenceValues": [
         "1"
       ],
@@ -29,10 +34,15 @@
         "~",
         "2",
         "1"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      }
     },
     "3": {
-      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個",
       "referenceValues": [
         "1"
       ],
@@ -40,10 +50,15 @@
         "~",
         "3",
         "1"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      }
     },
     "4": {
-      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個",
       "referenceValues": [
         "1"
       ],
@@ -51,10 +66,15 @@
         "~",
         "4",
         "1"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      }
     },
     "5": {
-      "description": "アメ：1。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個",
       "referenceValues": [
         "1"
       ],
@@ -62,10 +82,15 @@
         "~",
         "5",
         "1"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      }
     },
     "6": {
-      "description": "アメ：1 ときどき 2。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個（ときどき2個）",
       "referenceValues": [
         "1 ときどき 2"
       ],
@@ -73,10 +98,15 @@
         "~",
         "6",
         "1 ときどき 2"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": 2,
+        "occasionalCandyProbability": null
+      }
     },
     "7": {
-      "description": "アメ：1 ときどき 3。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個（ときどき3個）",
       "referenceValues": [
         "1 ときどき 3"
       ],
@@ -84,10 +114,15 @@
         "~",
         "7",
         "1 ときどき 3"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": 3,
+        "occasionalCandyProbability": null
+      }
     },
     "8": {
-      "description": "アメ：1 ときどき 4。個体の選択スキルによる効果は別途。",
+      "description": "セットしたスキルを発動＋アメ1個（ときどき4個）",
       "referenceValues": [
         "1 ときどき 4"
       ],
@@ -95,10 +130,15 @@
         "~",
         "8",
         "1 ときどき 4"
-      ]
+      ],
+      "namedValues": {
+        "baseCandy": 1,
+        "occasionalCandy": 4,
+        "occasionalCandyProbability": null
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "個体のセットスキルと習得履歴を別管理。発動率はセットスキルごとの推定値。追加アメ確率は未確認。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0151_default",
@@ -176,5 +216,118 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/almighty.webp",
+  "effectRules": {
+    "skillId": "almighty",
+    "name": "オールマイティー",
+    "affectedSpeciesIds": [
+      "0151_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "almighty",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "target": {
+        "value": "個体にセットされたスキルを実行し、チーム内1匹のアメを追加取得。",
+        "status": "official",
+        "sources": [
+          "official_mew"
+        ]
+      },
+      "selectedSkill": {
+        "value": "種族のオールマイティーと個体のセットスキル・習得済み一覧を分離。変更してもスキルLvは維持。発生確率はセットスキルごと。",
+        "status": "official",
+        "sources": [
+          "official_mew"
+        ]
+      },
+      "candy": {
+        "value": {
+          "base": 1,
+          "occasionalByLevel": {
+            "6": 2,
+            "7": 3,
+            "8": 4
+          },
+          "probability": null,
+          "approximateCommunityEstimate": 0.35
+        },
+        "status": "community_documented",
+        "sources": [
+          "almighty"
+        ]
+      },
+      "effectLevel": {
+        "value": "セットスキルの効果表・上限を別途参照。オールマイティーのLv.8を全セット効果のLv.8へ外挿しない。",
+        "status": "implementation_policy",
+        "sources": [
+          "almighty",
+          "official_mew"
+        ]
+      }
+    },
+    "unknowns": [
+      "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+      "セット先が上限の低いスキルの場合の高Lv効果参照方法は未確認。"
+    ],
+    "columns": [
+      "candyQuantityDescription"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 2,
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 3,
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 4,
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 5,
+        "baseCandy": 1,
+        "occasionalCandy": null,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 6,
+        "baseCandy": 1,
+        "occasionalCandy": 2,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 7,
+        "baseCandy": 1,
+        "occasionalCandy": 3,
+        "occasionalCandyProbability": null
+      },
+      {
+        "level": 8,
+        "baseCandy": 1,
+        "occasionalCandy": 4,
+        "occasionalCandyProbability": null
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

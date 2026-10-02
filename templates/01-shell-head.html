@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>PokéSleep Guide — Review v262</title>
+  <title>PokéSleep Guide — Review v263</title>
 
 
 
@@ -142,7 +142,7 @@ window.PS_CATALOG.ingredientVisual=name=>window.PS_CATALOG.ingredientAssets[name
   }
   return [raw.speciesId,{...raw,dexVisible:true,detailPreviewOnly:true,image:null,faceImage:null,
    berryImage:window.PS_IMAGE_FILES.berries[raw.berry]||null,
-   ingredients:[...rows].map(([name,qty],i)=>({slot:['A','B','C'][i],name,qty})),
+   ingredients:[...rows].map(([name,qty],i)=>({slot:raw.mythicalSettings?'候補':['A','B','C'][i],name,qty})),
    sleepStyles:data.sleepStyleGroups[raw.sleepStyleGroupId]?.styles||[]}];
  }));
  const groupFor=id=>data.detailFormGroups.find(g=>g.choices.some(c=>c.speciesId===id));
@@ -251,5 +251,5 @@ window.PS_UI_ART={
 </script>
 </head>
 <body>
-<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v262</small></header>
+<header class="psg-app-header"><span class="psg-app-title">PokéSleep Guide</span><small class="psg-app-version">Review v263</small></header>
 <main>

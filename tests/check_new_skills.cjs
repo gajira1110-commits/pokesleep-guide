@@ -2,12 +2,14 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..');
 const skills=fs.readdirSync(root+'/master/skills').map(dir=>JSON.parse(fs.readFileSync(root+'/master/skills/'+dir+'/data.json'))).filter(s=>s.effectType==='reference_only');
+const rules=JSON.parse(fs.readFileSync(root+'/data-import/skill-rules-v263-skill-rules.json'));
 assert.equal(skills.length,11);
 for(const s of skills){
  assert.deepEqual(Object.keys(s.levels).map(Number),Array.from({length:s.maxLevel},(_,i)=>i+1));
  assert(s.nativeSpecies.every(p=>p.speciesId&&p.name));assert.equal(s.calculationStatus,'not_implemented');
+ for(const row of rules.skills.find(r=>r.skillId===s.id).levels){const {level,...named}=row;assert.deepEqual(s.levels[level].namedValues,named);}
  const rows=s.sourceTable['効果表'].flat().filter(row=>/^\d+$/.test(row[0])||/^\d+$/.test(row[1]));
- for(const row of rows){const pos=/^\d+$/.test(row[0])?0:1,entry=s.levels[row[pos]];assert.deepEqual(entry.referenceValues,row.slice(pos+1));for(const value of entry.referenceValues)assert(entry.description.includes(value),s.id+' missing '+value);}
+ for(const row of rows){const pos=/^\d+$/.test(row[0])?0:1,entry=s.levels[row[pos]];assert.deepEqual(entry.referenceValues,row.slice(pos+1));assert(entry.namedValues);}
 }
 assert.equal(skills.find(s=>s.id==='stockpile_energy_charge_s').levels[7].referenceValues[10],'90,940');
 assert.equal(skills.find(s=>s.id==='almighty').levels[8].referenceValues[0],'1 ときどき 4');

@@ -13,7 +13,7 @@ const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
 const TEAM_STORAGE_KEY='psg.team.primary.v1';
 const FIELD_STORAGE_KEY='psg.field.profile.v1';
 const speciesKey=p=>p.speciesId||`${String(p.no).padStart(4,'0')}_default`;
-const boxCatalog=()=>[...Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible),...[...(window.PS_FORMS?.records.values()||[])]].sort((a,b)=>a.no-b.no||Number(!!a.speciesId)-Number(!!b.speciesId)||speciesKey(a).localeCompare(speciesKey(b)));
+const boxCatalog=()=>[...Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible),...[...(window.PS_FORMS?.records.values()||[])].filter(p=>p.boxEligible!==false)].sort((a,b)=>a.no-b.no||Number(!!a.speciesId)-Number(!!b.speciesId)||speciesKey(a).localeCompare(speciesKey(b)));
 function normalizeBox(raw){
   if(!Array.isArray(raw))return [];
   const known=new Set(boxCatalog().map(p=>Number(p.no)));

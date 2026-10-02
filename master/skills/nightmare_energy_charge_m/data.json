@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "エナジー 2,640（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 2,640／あく以外の各匹のげんき−12",
       "referenceValues": [
         "2,640"
       ],
@@ -18,10 +18,14 @@
         "ナイトメア",
         "1",
         "2,640"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 2640,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "2": {
-      "description": "エナジー 3,753（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 3,753／あく以外の各匹のげんき−12",
       "referenceValues": [
         "3,753"
       ],
@@ -29,10 +33,14 @@
         "~",
         "2",
         "3,753"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 3753,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "3": {
-      "description": "エナジー 5,178（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 5,178／あく以外の各匹のげんき−12",
       "referenceValues": [
         "5,178"
       ],
@@ -40,10 +48,14 @@
         "~",
         "3",
         "5,178"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 5178,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "4": {
-      "description": "エナジー 7,149（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 7,149／あく以外の各匹のげんき−12",
       "referenceValues": [
         "7,149"
       ],
@@ -51,10 +63,14 @@
         "~",
         "4",
         "7,149"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 7149,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "5": {
-      "description": "エナジー 9,870（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 9,870／あく以外の各匹のげんき−12",
       "referenceValues": [
         "9,870"
       ],
@@ -62,10 +78,14 @@
         "~",
         "5",
         "9,870"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 9870,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "6": {
-      "description": "エナジー 13,638（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 13,638／あく以外の各匹のげんき−12",
       "referenceValues": [
         "13,638"
       ],
@@ -73,10 +93,14 @@
         "~",
         "6",
         "13,638"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 13638,
+        "energyLossPerNonDarkMember": 12
+      }
     },
     "7": {
-      "description": "エナジー 18,515（仲間のげんき消費は条件確認待ち）",
+      "description": "エナジー 18,515／あく以外の各匹のげんき−12",
       "referenceValues": [
         "18,515"
       ],
@@ -84,10 +108,14 @@
         "~",
         "7",
         "18,515"
-      ]
+      ],
+      "namedValues": {
+        "directEnergy": 18515,
+        "energyLossPerNonDarkMember": 12
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "ナイトメア固定。あくタイプ以外の各個体のげんきが12減少。ミュウのセットスキル変更とは別です。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0491_default",
@@ -155,5 +183,87 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/nightmare_energy_charge_m.webp",
+  "effectRules": {
+    "skillId": "nightmare_energy_charge_m",
+    "name": "ナイトメア(エナジーチャージM)",
+    "affectedSpeciesIds": [
+      "0491_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "nightmare_energy_charge_m",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "components": {
+        "value": {
+          "energyTarget": "snorlax",
+          "energyLossTargets": "all_non_dark_team_members",
+          "energyLossEach": 12,
+          "lossChangesWithSkillLevel": false
+        },
+        "status": "community_documented",
+        "sources": [
+          "official_darkrai",
+          "nightmare_energy_charge_m"
+        ]
+      },
+      "individualSkill": {
+        "value": "ダークライの固定メインスキル。ひらめきのたねで変更できるスキル一覧は確認されていない。",
+        "status": "community_documented",
+        "sources": [
+          "darkrai",
+          "doctor_seed"
+        ]
+      }
+    },
+    "unknowns": [
+      "負のげんき効果に性格の回復補正が作用するか、0未満の処理を個別には未確認。計算の推奨仮定は-12固定・0下限で明示する。"
+    ],
+    "columns": [
+      "directEnergy"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "directEnergy": 2640,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 2,
+        "directEnergy": 3753,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 3,
+        "directEnergy": 5178,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 4,
+        "directEnergy": 7149,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 5,
+        "directEnergy": 9870,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 6,
+        "directEnergy": 13638,
+        "energyLossPerNonDarkMember": 12
+      },
+      {
+        "level": 7,
+        "directEnergy": 18515,
+        "energyLossPerNonDarkMember": 12
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

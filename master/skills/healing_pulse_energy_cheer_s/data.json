@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "げんき回復 6／通常おてつだい 1回／追加 +1回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋6・おてつだい1回／条件成立時さらに1回",
       "referenceValues": [
         "6",
         "1",
@@ -22,10 +22,15 @@
         "6",
         "1",
         "+1"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 6,
+        "instantHelpsPerTarget": 1,
+        "conditionalAdditionalHelpsPerTarget": 1
+      }
     },
     "2": {
-      "description": "げんき回復 8／通常おてつだい 2回／追加 +1回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋8・おてつだい2回／条件成立時さらに1回",
       "referenceValues": [
         "8",
         "2",
@@ -37,10 +42,15 @@
         "8",
         "2",
         "+1"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 8,
+        "instantHelpsPerTarget": 2,
+        "conditionalAdditionalHelpsPerTarget": 1
+      }
     },
     "3": {
-      "description": "げんき回復 10／通常おてつだい 2回／追加 +2回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋10・おてつだい2回／条件成立時さらに2回",
       "referenceValues": [
         "10",
         "2",
@@ -52,10 +62,15 @@
         "10",
         "2",
         "+2"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 10,
+        "instantHelpsPerTarget": 2,
+        "conditionalAdditionalHelpsPerTarget": 2
+      }
     },
     "4": {
-      "description": "げんき回復 13／通常おてつだい 3回／追加 +2回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋13・おてつだい3回／条件成立時さらに2回",
       "referenceValues": [
         "13",
         "3",
@@ -67,10 +82,15 @@
         "13",
         "3",
         "+2"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 13,
+        "instantHelpsPerTarget": 3,
+        "conditionalAdditionalHelpsPerTarget": 2
+      }
     },
     "5": {
-      "description": "げんき回復 17／通常おてつだい 4回／追加 +2回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋17・おてつだい4回／条件成立時さらに2回",
       "referenceValues": [
         "17",
         "4",
@@ -82,10 +102,15 @@
         "17",
         "4",
         "+2"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 17,
+        "instantHelpsPerTarget": 4,
+        "conditionalAdditionalHelpsPerTarget": 2
+      }
     },
     "6": {
-      "description": "げんき回復 22／通常おてつだい 4回／追加 +3回（対象・編成条件は確認待ち）",
+      "description": "2匹それぞれのげんき＋22・おてつだい4回／条件成立時さらに3回",
       "referenceValues": [
         "22",
         "4",
@@ -97,10 +122,15 @@
         "22",
         "4",
         "+3"
-      ]
+      ],
+      "namedValues": {
+        "recoveryPerTarget": 22,
+        "instantHelpsPerTarget": 4,
+        "conditionalAdditionalHelpsPerTarget": 3
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "ランダム2匹を回復し即時おてつだい。ラティオス編成時の追加効果は解放状況も必要。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0380_default",
@@ -191,5 +221,85 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/healing_pulse_energy_cheer_s.webp",
+  "effectRules": {
+    "skillId": "healing_pulse_energy_cheer_s",
+    "name": "いやしのはどう(げんきエールS)",
+    "affectedSpeciesIds": [
+      "0380_default"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "healing_pulse_energy_cheer_s",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "target": {
+        "value": "ランダムなチーム2匹へ回復と即時おてつだい。回復とおてつだいを別成分として扱う。",
+        "status": "official",
+        "sources": [
+          "official_latias"
+        ]
+      },
+      "partnerCondition": {
+        "value": "ラティオスがチームにいる場合の追加おてつだい。イベント由来の追加効果解放フラグも保存し、不明なら条件効果を確定しない。",
+        "status": "community_documented",
+        "sources": [
+          "healing_pulse_energy_cheer_s",
+          "official_latios_event"
+        ]
+      }
+    },
+    "unknowns": [
+      "2匹の抽選重み、自身の対象可否、追加おてつだい対象、即時おてつだいの所持上限とスキル抽選の有無は未確認。",
+      "過去イベント未参加者の現在の追加効果解放手段・自動解放可否は未確認。"
+    ],
+    "columns": [
+      "recoveryPerTarget",
+      "instantHelpsPerTarget",
+      "conditionalAdditionalHelpsPerTarget"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "recoveryPerTarget": 6,
+        "instantHelpsPerTarget": 1,
+        "conditionalAdditionalHelpsPerTarget": 1
+      },
+      {
+        "level": 2,
+        "recoveryPerTarget": 8,
+        "instantHelpsPerTarget": 2,
+        "conditionalAdditionalHelpsPerTarget": 1
+      },
+      {
+        "level": 3,
+        "recoveryPerTarget": 10,
+        "instantHelpsPerTarget": 2,
+        "conditionalAdditionalHelpsPerTarget": 2
+      },
+      {
+        "level": 4,
+        "recoveryPerTarget": 13,
+        "instantHelpsPerTarget": 3,
+        "conditionalAdditionalHelpsPerTarget": 2
+      },
+      {
+        "level": 5,
+        "recoveryPerTarget": 17,
+        "instantHelpsPerTarget": 4,
+        "conditionalAdditionalHelpsPerTarget": 2
+      },
+      {
+        "level": 6,
+        "recoveryPerTarget": 22,
+        "instantHelpsPerTarget": 4,
+        "conditionalAdditionalHelpsPerTarget": 3
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

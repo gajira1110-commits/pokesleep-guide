@@ -117,7 +117,10 @@
 .psg-team-option:disabled{opacity:.5;cursor:default}
 .psg-team-option[hidden]{display:none}
 .psg-team-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.psg-team-toolbar .note{flex:1}
+.psg-team-composition{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.psg-team-composition>span{display:flex;align-items:center;gap:3px;font-size:14px;white-space:nowrap}
+.psg-team-composition .psg-specialty-icon{width:27px;height:27px;object-fit:contain}
+#teamSummary{margin:8px 0 0;font-size:13px}
 .psg-team-toolbar button,.psg-team-picker-remove{min-height:44px;padding:7px 11px;border:1px solid #d5e3db;border-radius:10px;background:#fff;color:#276747;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
 .psg-team-toolbar button[aria-pressed="true"]{background:#e5f4e9;border-color:#70af82}
 .psg-team-toolbar button:disabled{opacity:.45;cursor:default}
@@ -217,11 +220,15 @@
 .psg-day-food-summary .psg-day-food-tile>img,.psg-day-food-summary .psg-day-food-tile>span:first-child{width:36px;height:36px}
 .psg-day-food-summary .psg-day-food-tile>span:last-child{width:100%;gap:3px;line-height:1.3}
 .psg-day-food-summary .psg-day-food-tile small{display:none}
-.psg-team-food-list{display:grid;gap:8px}
-.psg-team-food-item{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid #e2e9e5;border-radius:13px;background:#fafcfb;min-width:0}
-.psg-team-food-item>img,.psg-team-food-item>span:first-child{width:34px;height:34px;object-fit:contain;flex:none}
-.psg-team-food-item>span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
-.psg-team-food-item strong{color:#111}.psg-team-food-item small{color:#60716a;line-height:1.45;overflow-wrap:anywhere}
+.psg-team-food-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;align-items:start}
+.psg-team-food-item{padding:6px 3px;border:1px solid #e2e9e5;border-radius:10px;background:#fff;min-width:0}
+.psg-team-food-item>summary{display:flex;flex-direction:column;align-items:center;gap:3px;list-style:none;cursor:pointer;min-height:59px;text-align:center}
+.psg-team-food-item>summary::-webkit-details-marker{display:none}
+.psg-team-food-item summary>img,.psg-team-food-item summary>span{width:32px;height:32px;object-fit:contain;flex:none}
+.psg-team-food-item strong{color:#111;font-size:10px;line-height:1.2;overflow-wrap:anywhere}
+.psg-team-food-item small{display:block;margin:6px 2px 0;color:#60716a;font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+.psg-team-food-item[open]{grid-column:span 2;border-color:#8eb7a1}
+.psg-team-food-item summary:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
 .psg-team-food-card>.note{margin:8px 0 0}
 #teamRecipeList{display:grid;gap:8px;margin-top:10px}
 .psg-team-recipe-group{border:1px solid #dfe8e3;border-radius:13px;background:#fff;overflow:hidden}

@@ -10,7 +10,7 @@
   "calculationStatus": "not_implemented",
   "levels": {
     "1": {
-      "description": "なべ容量 ＋5／げんき回復 8（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋5個／条件成立時：1匹のげんき＋8",
       "referenceValues": [
         "5",
         "8"
@@ -20,10 +20,14 @@
         "1",
         "5",
         "8"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 5,
+        "conditionalRecovery": 8
+      }
     },
     "2": {
-      "description": "なべ容量 ＋7／げんき回復 10（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋7個／条件成立時：1匹のげんき＋10",
       "referenceValues": [
         "7",
         "10"
@@ -33,10 +37,14 @@
         "2",
         "7",
         "10"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 7,
+        "conditionalRecovery": 10
+      }
     },
     "3": {
-      "description": "なべ容量 ＋9／げんき回復 13（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋9個／条件成立時：1匹のげんき＋13",
       "referenceValues": [
         "9",
         "13"
@@ -46,10 +54,14 @@
         "3",
         "9",
         "13"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 9,
+        "conditionalRecovery": 13
+      }
     },
     "4": {
-      "description": "なべ容量 ＋12／げんき回復 17（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋12個／条件成立時：1匹のげんき＋17",
       "referenceValues": [
         "12",
         "17"
@@ -59,10 +71,14 @@
         "4",
         "12",
         "17"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 12,
+        "conditionalRecovery": 17
+      }
     },
     "5": {
-      "description": "なべ容量 ＋16／げんき回復 23（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋16個／条件成立時：1匹のげんき＋23",
       "referenceValues": [
         "16",
         "23"
@@ -72,10 +88,14 @@
         "5",
         "16",
         "23"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 16,
+        "conditionalRecovery": 23
+      }
     },
     "6": {
-      "description": "なべ容量 ＋20／げんき回復 30（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋20個／条件成立時：1匹のげんき＋30",
       "referenceValues": [
         "20",
         "30"
@@ -85,10 +105,14 @@
         "6",
         "20",
         "30"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 20,
+        "conditionalRecovery": 30
+      }
     },
     "7": {
-      "description": "なべ容量 ＋24／げんき回復 35（追加効果の対象・条件は確認待ち）",
+      "description": "鍋＋24個／条件成立時：1匹のげんき＋35",
       "referenceValues": [
         "24",
         "35"
@@ -98,10 +122,14 @@
         "7",
         "24",
         "35"
-      ]
+      ],
+      "namedValues": {
+        "potIncrease": 24,
+        "conditionalRecovery": 35
+      }
     }
   },
-  "displayNote": "資料に掲載された無補正の基礎値です。効果の対象・追加条件・抽選ルールは確認中。日産予想への効果反映は未対応です。",
+  "displayNote": "他にプラス／マイナスが1匹以上いるとランダム1匹を回復。鍋増加と回復は別の効果。 日産予想への効果反映は未対応です。",
   "nativeSpecies": [
     {
       "speciesId": "0312_default",
@@ -187,5 +215,114 @@
     ],
     "表記ルール": "~は前行・見出しの継承、>は結合セル。表中の数値は無補正の基礎効果。",
     "状態": "数値表収集済み。計算用スキーマへの変換・条件分岐の実装は未実施。"
+  },
+  "iconAsset": "assets/skill-icons/minus_cooking_power_up_s.webp",
+  "effectRules": {
+    "skillId": "minus_cooking_power_up_s",
+    "name": "マイナス(料理パワーアップS)",
+    "affectedSpeciesIds": [
+      "0312_default",
+      "0849_low_key"
+    ],
+    "tableProvenance": "previous_handoff_supplied_table_rechecked_against_current_wiki",
+    "tableSource": "minus_cooking_power_up_s",
+    "valueStatus": "community_documented_not_independently_game_verified",
+    "rules": {
+      "partnerCondition": {
+        "value": {
+          "excludeCaster": true,
+          "otherCountAtLeast": 1,
+          "allowedNativeSkillFamilies": [
+            "plus",
+            "minus"
+          ],
+          "scalesWithPartnerCount": false
+        },
+        "status": "official",
+        "sources": [
+          "official_plus_minus"
+        ]
+      },
+      "components": {
+        "value": "通常列は鍋の追加容量、追加列は条件付きでランダム1匹に与える回復量。単位が違うので合算しない。",
+        "status": "community_documented",
+        "sources": [
+          "official_plus_minus",
+          "minus_cooking_power_up_s"
+        ]
+      },
+      "potState": {
+        "value": {
+          "scope": "researcher",
+          "additiveCap": 200,
+          "consumedBy": "next_cooking",
+          "persistsAcrossFieldMove": true,
+          "persistsAcrossWeek": true,
+          "sundayDoublesIncrement": false,
+          "campMultipliesIncrement": true
+        },
+        "status": "parent_skill_documented_application_requires_check",
+        "sources": [
+          "cooking_power"
+        ]
+      },
+      "potFormula": {
+        "value": "ceil((basePot*sundayMultiplier+storedIncrease)*campMultiplier)",
+        "status": "parent_skill_documented_application_requires_check",
+        "sources": [
+          "cooking_power"
+        ]
+      }
+    },
+    "unknowns": [
+      "容量+200上限でマイナス全体が発動不能か、回復部分のみ発動できるかは未確認。親スキルの発動不能を自動継承しない。",
+      "回復対象の抽選重み、自身が対象になるかの直接確認は未実施。げんきエールの低元気優先を自動継承しない。"
+    ],
+    "columns": [
+      "potIncrease",
+      "conditionalRecovery"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "potIncrease": 5,
+        "conditionalRecovery": 8
+      },
+      {
+        "level": 2,
+        "potIncrease": 7,
+        "conditionalRecovery": 10
+      },
+      {
+        "level": 3,
+        "potIncrease": 9,
+        "conditionalRecovery": 13
+      },
+      {
+        "level": 4,
+        "potIncrease": 12,
+        "conditionalRecovery": 17
+      },
+      {
+        "level": 5,
+        "potIncrease": 16,
+        "conditionalRecovery": 23
+      },
+      {
+        "level": 6,
+        "potIncrease": 20,
+        "conditionalRecovery": 30
+      },
+      {
+        "level": 7,
+        "potIncrease": 24,
+        "conditionalRecovery": 35
+      }
+    ],
+    "calculationReadiness": {
+      "perActivation": "partial_with_explicit_state_and_targets",
+      "dailyPrediction": "requires_frequency_and_state_model",
+      "unknownComponentsMustBeListed": true
+    }
   }
 }

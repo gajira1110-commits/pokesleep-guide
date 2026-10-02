@@ -13,4 +13,5 @@
      return `<div class="psg-food-row" data-slot="${x.slot||['A','B','C'][i]}"><div class="psg-food-id"><b>${x.slot||['A','B','C'][i]}</b>${visual}</div><div class="psg-food-levels">${quantities}</div>${recipes}</div>`;
    }).join('');
    host.innerHTML=`<div class="psg-food-head"><div class="psg-food-rate"><span>食材</span><strong>${m.foodRate!=null?m.foodRate+'%':'未確認'}</strong></div><div class="psg-food-head-levels"><span></span><span>Lv.30</span><span>Lv.60</span></div><b>対応料理</b></div>${rows?`<div class="psg-food-stack">${rows}</div>`:'<p class="unknown">食材データ未確認</p>'}`;
+   if(m.mythicalSettings){const note=document.createElement('p');note.className='note';note.textContent='各枠で抽選される候補と数量です。枠の解放とLv到達が必要。初期食材：'+m.mythicalSettings.ingredientSlots.map(s=>s.initialUnlocked?s.candidates.find(c=>c.ingredientId===s.initialIngredientId)?.name:'未解放').join('／');host.prepend(note)}
  }
