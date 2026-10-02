@@ -148,6 +148,10 @@ def catalog_and_images():
     validate_cooking(catalog['cooking'])
     catalog['recipeEvaluation'] = json.loads((MASTER / 'cooking/evaluation.json').read_text())
     catalog['dailySupply'] = json.loads((MASTER / 'cooking/daily-supply.json').read_text())
+    assert set(catalog['dailySupply']['scenarios']) == {f'collect{h}h_meals{m}' for h in (1,3,6) for m in (0,1)}
+    for scenario in catalog['dailySupply']['scenarios'].values():
+        for level in ('30','60'):
+            assert len(scenario['tiers'][level]) == 19 and len(scenario['burdens'][level]) == 78
     for level in ('30', '60'):
         assert len(catalog['dailySupply']['tiers'][level]) == 19
         assert len(catalog['dailySupply']['burdens'][level]) == 78
@@ -359,7 +363,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v265') == 2
+    assert source.count('Review v266') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

@@ -1,7 +1,15 @@
  const supply=catalog.dailySupply,supplyLevel=document.getElementById('recipeSupplyLevel'),supplyMeals=document.getElementById('recipeSupplyMeals');
+ let supplyScenario='collect3h_meals0';
+ const currentSupply=()=>supply.scenarios?.[supplyScenario]||supply;
+ const scenarioControls=[];
+ for(const [parentId,id] of [['recipeSupplyControls','recipeSupplyScenario'],['ingredientSupplyConditions','ingredientSupplyScenario']]){
+  const parent=document.getElementById(parentId),label=document.createElement('label'),select=document.createElement('select');label.textContent='収集条件 ';select.id=id;select.setAttribute('aria-label',parentId==='recipeSupplyControls'?'料理収集の比較条件':'食材日産量の比較条件');select.style.maxWidth='100%';
+  for(const hours of [1,3,6])for(const meals of [0,1]){const option=document.createElement('option');option.value=`collect${hours}h_meals${meals}`;option.textContent=`回収${hours}時間・料理回復${meals?'あり':'なし'}${hours===3&&!meals?'（基準）':''}`;select.append(option)}select.value=supplyScenario;label.append(select);parent.append(label);scenarioControls.push(select);
+  select.addEventListener('change',()=>{supplyScenario=select.value;for(const control of scenarioControls)control.value=supplyScenario;preserveRecipeDetails(()=>{});renderDailyTiers()});
+ }
  const supplyNumber=value=>Number.isFinite(value)?value.toLocaleString('ja-JP',{minimumFractionDigits:2,maximumFractionDigits:2}):'未対応';
  function supplyBurden(recipe){
-  const data=supply.burdens[supplyLevel.value]?.[recipe.id],scale=Number(supplyMeals.value)/3;
+  const data=currentSupply().burdens[supplyLevel.value]?.[recipe.id],scale=Number(supplyMeals.value)/3;
   return {dedicated:Number.isFinite(data?.dedicated)?data.dedicated*scale:null,relaxed:Number.isFinite(data?.relaxed)?data.relaxed*scale:null,bottleneck:data?.bottleneck};
  }
  function supplySummary(recipe){
@@ -24,12 +32,13 @@
   const data=supplyBurden(recipe);
   const note=document.createElement('p');note.className='note';note.textContent=`専任負担 ${supplyNumber(data.dedicated)}匹・日。共有の理論下限 ${supplyNumber(data.relaxed)}匹・日（分数配分を許す参考値）。必要枠数・交代時間ではありません。`;section.append(note);
   for(const item of recipe.ingredients){
-   const row=supply.tiers[supplyLevel.value]?.[item.name],count=item.qty*Number(supplyMeals.value),block=document.createElement('div');block.className='psg-supply-food';
+   const row=currentSupply().tiers[supplyLevel.value]?.[item.name],count=item.qty*Number(supplyMeals.value),block=document.createElement('div');block.className='psg-supply-food';
    const title=document.createElement('strong');title.textContent=`${item.name} ${count}個 → ${row?supplyNumber(count/row.daily):'未対応'}匹・日`;block.append(title);
    if(row){const tier=document.createElement('p');tier.className='note';tier.textContent=`日産ティア ${row.tier}（暫定）・最良担当 ${supplyNumber(row.daily)}個/日`;block.append(tier,providerText(row.top[0]))}
    section.append(block);
   }
-  const warning=document.createElement('p');warning.className='note';warning.textContent='通常食材の期待量・在庫なし。最良担当は食材ごとに別個体・別構成です。1日合計で足りても食事時点にそろう保証はありません。';section.append(warning);
+  const condition=document.createElement('p');condition.className='note';condition.textContent=scenarioControls[0].selectedOptions[0].textContent+'・睡眠8時間半・共通条件の推定';section.append(condition);
+  const warning=document.createElement('p');warning.className='note';warning.textContent='通常食材の期待量・在庫なし。最良担当は食材ごとに別個体・別構成です。1日合計で足りても食事時点にそろう保証はありません。料理回復ありは何らかの料理を3食食べる仮定です。';section.append(warning);
   const link=document.createElement('button');link.type='button';link.className='btn';link.textContent='日産量の前提を見る';link.addEventListener('click',()=>openSupplyReference());section.append(link);
   return section;
  }
@@ -43,6 +52,7 @@
  supplyNote('専任収集負担＝食材ごとの必要数÷最良担当日産量を合計。1匹・日は、この条件で1匹を1日編成する収集力の単位です。共有の理論下限は、実在する食材構成の供給ベクトルを線形計画で配分した参考値。分数・同種複数・別構成を許すため、実際の必要枠数・Box交代時間・5匹で作れるかの判定には使いません。');
  supplyNote('調査候補には現行図鑑未収録の種族を含みます。期間限定・衣装、個体状態未指定のミュウ・ダークライは除外。比較Lvを超える進化条件の種族は育成経由の候補から除外。低Lvの進化後直接捕獲や厳選負担は評価しません。上位3系統は別々の選択肢であり、1匹の量として合算しません。');
  supplyNote('周期位相・待機キュー・げんき0〜1付近等は未確定を含む近似です。1日合計の見込みであり、朝昼晩の食事時点にそろう保証はありません。食事の間隔は同じ長さではありません。');
+ supplyNote('食材・料理評価の収集条件は回収1／3／6時間と料理回復なし／ありの6通りから選べます。既定は回収3時間・回復なし。いずれも就寝直前と起床時に回収。回復ありは8:00・12:00・18:00の料理を仮定し、スキル回復は含みません。ホームのチーム予想とは連動しません。');
  const ingredientLink=document.createElement('button');ingredientLink.type='button';ingredientLink.className='btn';ingredientLink.textContent='食材の一覧を見る';ingredientLink.addEventListener('click',()=>window.PS?.go('ingredientPage'));referenceContent.append(ingredientLink);
  const sensitivity=document.createElement('details');sensitivity.className='psg-cooking-reference';const caption=document.createElement('summary');caption.textContent='回収・料理回復を変えた場合の参考比較';sensitivity.append(caption);
  const explanation=document.createElement('p');explanation.className='note';explanation.textContent='以下は基準（回収3時間・料理回復なし）から日産ティアが変わる食材数。料理回復ありは何らかの料理を3食食べる条件で、目標料理を3食作れる保証ではありません。基準は変更していません。';sensitivity.append(explanation);
