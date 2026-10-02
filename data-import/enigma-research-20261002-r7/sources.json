@@ -1,0 +1,35 @@
+[
+  {
+    "sourceId": "R7-analysis-report",
+    "url": "https://wikiwiki.jp/poke_sleep/コメント/検証/はきだす確率",
+    "kind": "first_person_analysis_of_community_data",
+    "reportedAt": "2026-02-18",
+    "author": "L",
+    "checkedAt": "2026-10-02",
+    "summary": "本人の最尤推定報告。95%信頼区間24.34〜26.82%。回数別差の検定は有意差なしと報告。元データ再計算・検定統計量の取得は未実施。"
+  },
+  {
+    "sourceId": "R7-study-method",
+    "url": "https://wikiwiki.jp/poke_sleep/検証/はきだす確率",
+    "kind": "original_community_study_method_and_interim_report",
+    "checkedAt": "2026-10-02",
+    "summary": "はきだすまでの発動順を募集。個体識別と能力は任意。2024年11月8日の中間報告は324報告・16識別ID。現行分析の件数とは区別する。"
+  },
+  {
+    "sourceId": "R7-individual-observation",
+    "url": "https://pokesuri.ogagawa.com/takuwaeru_energycharges/",
+    "kind": "first_person_experiment_report",
+    "publishedAt": "2024-10-11",
+    "updatedAt": "2025-10-16",
+    "checkedAt": "2026-10-02",
+    "summary": "本人の目視166発動。たくわえる122・はきだす44。強制はきだすを除いた集計かは不明。"
+  },
+  {
+    "sourceId": "R7-official-stockpile",
+    "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+    "kind": "official",
+    "publishedAt": "2024-10-10",
+    "checkedAt": "2026-10-02",
+    "summary": "ランダム分岐、個体別カウント、はきだす後と本人が編成を離れた際のリセット。25%と上限10回はこの公式記事には記載なし。"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "19ce4c8db2c76298c45eaa0149cfa71247c03051ffd5a7d6815b2f4bdb47ad62"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "eea22bfc50d72f6dcf8cd323bcdc7c04909c14f6319bcad623c399e338e3caa0"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "4c78eb6f4b4d9c042eda2b37ec14c513d0b554c1ef9d517739d40b93f5ac845c"
+    },
+    {
+      "path": "daily-expectation-model.json",
+      "sha256": "edab5ea532734a2d44eb28bdbedaa0dce392e7389de9c4a388d28cf48a13baf9"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "d5301c30dbfe48d3c245f8e04abb4d86ae99d099ddf13c5e762487d2db145b56"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "4bc40c38660e7969161a76d7983dd32a13b36b5155e3dcd2587ebf98041651d2"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "ab3014676298393528f014cf30dacd1105fd6a34d4282fa7031d81247193d863"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "78461abfa7585faaa9d9e978611cbbed62542b1d82b1ca8212e63a68c5f34cc2"
+    }
+  ]
+}

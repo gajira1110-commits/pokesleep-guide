@@ -722,6 +722,48 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "はきだす確率の参考記録",
+      "text": "分析者の報告では95%信頼区間24.34〜26.82%。元データ未取得で再計算していません。別の個人検証は166発動中はきだす44回ですが、強制分岐の内訳が不明。25%や44/166を確定確率として採用せず、既存標本と合算しません。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r270-stockpile",
+      "sources": [
+        {
+          "sourceId": "R7-analysis-report",
+          "url": "https://wikiwiki.jp/poke_sleep/コメント/検証/はきだす確率",
+          "kind": "first_person_analysis_of_community_data",
+          "reportedAt": "2026-02-18",
+          "author": "L",
+          "checkedAt": "2026-10-02",
+          "summary": "本人の最尤推定報告。95%信頼区間24.34〜26.82%。回数別差の検定は有意差なしと報告。元データ再計算・検定統計量の取得は未実施。",
+          "id": "R7-analysis-report",
+          "title": "たくわえる：参考検証",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "sourceId": "R7-study-method",
+          "url": "https://wikiwiki.jp/poke_sleep/検証/はきだす確率",
+          "kind": "original_community_study_method_and_interim_report",
+          "checkedAt": "2026-10-02",
+          "summary": "はきだすまでの発動順を募集。個体識別と能力は任意。2024年11月8日の中間報告は324報告・16識別ID。現行分析の件数とは区別する。",
+          "id": "R7-study-method",
+          "title": "たくわえる：参考検証",
+          "inGameVerifiedByUs": false
+        },
+        {
+          "sourceId": "R7-individual-observation",
+          "url": "https://pokesuri.ogagawa.com/takuwaeru_energycharges/",
+          "kind": "first_person_experiment_report",
+          "publishedAt": "2024-10-11",
+          "updatedAt": "2025-10-16",
+          "checkedAt": "2026-10-02",
+          "summary": "本人の目視166発動。たくわえる122・はきだす44。強制はきだすを除いた集計かは不明。",
+          "id": "R7-individual-observation",
+          "title": "たくわえる：参考検証",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }
