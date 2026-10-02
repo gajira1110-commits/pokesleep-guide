@@ -120,6 +120,55 @@
       ],
       "name": "たれみみ寝",
       "note": "紫＝2025年。旧内部IDを維持した訂正済み姿データへ接続。"
+    },
+    {
+      "member": "0289.webp",
+      "speciesIds": [
+        "0152_default"
+      ],
+      "name": "はっぱまわし寝",
+      "note": "ユーザー提供のゲーム内スクリーンショットで寝顔名確認 2026-10-03"
+    },
+    {
+      "member": "0295.webp",
+      "speciesIds": [
+        "0153_default"
+      ],
+      "name": "かおりただよい寝",
+      "note": "ユーザー提供のゲーム内スクリーンショットで寝顔名確認 2026-10-03"
+    },
+    {
+      "member": "0767.webp",
+      "speciesIds": [
+        "0711_small",
+        "0711_medium",
+        "0711_large",
+        "0711_jumbo"
+      ],
+      "name": "だきしめ寝",
+      "note": "ユーザー指定：全サイズ共有"
+    },
+    {
+      "member": "0768.webp",
+      "speciesIds": [
+        "0711_small",
+        "0711_medium",
+        "0711_large",
+        "0711_jumbo"
+      ],
+      "name": "うでひろげ寝",
+      "note": "ユーザー指定：全サイズ共有"
+    },
+    {
+      "member": "0769.webp",
+      "speciesIds": [
+        "0711_small",
+        "0711_medium",
+        "0711_large",
+        "0711_jumbo"
+      ],
+      "name": "おどろかし寝",
+      "note": "ユーザー指定：全サイズ共有"
     }
   ],
   "pendingNotes": {}
