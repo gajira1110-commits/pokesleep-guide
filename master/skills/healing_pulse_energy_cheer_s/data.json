@@ -342,6 +342,26 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "対象選択の参考観測",
+      "text": "検証記事では、1匹だけげんきが極端に低い条件で73発動中61回が対象になったと報告。第2対象の19/31は条件付きの内訳で、別の31発動として加算しない。現行の対象確率・同率処理は未確認。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-1",
+      "sources": [
+        {
+          "sourceId": "R3-healing-first-person",
+          "url": "https://pokesuri.ogagawa.com/latias_hyouka/",
+          "kind": "first_person_experiment_report",
+          "publishedAt": "2026-04-09",
+          "updatedAt": "2026-06-09",
+          "checkedAt": "2026-10-02",
+          "summary": "げんきが極端に少ない1匹を用意した本人検証。73回中61回が対象。追加おてつだいのスキル抽選なしという別記述には検証手順が示されていない。",
+          "id": "R3-healing-first-person",
+          "title": "参考資料：対象選択の参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }

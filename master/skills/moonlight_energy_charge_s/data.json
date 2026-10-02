@@ -46,5 +46,28 @@
   ],
   "verifiedAt": "2026-09-30",
   "calculationStatus": "追加回復の確率を含む期待値は未対応",
-  "iconAsset": "assets/skill-icons/moonlight_energy_charge_s.webp"
+  "iconAsset": "assets/skill-icons/moonlight_energy_charge_s.webp",
+  "ruleNotes": [
+    {
+      "label": "大成功の参考観測",
+      "text": "2024年の個人検証では100発動中51回の大成功を報告。スキル発動率とは別の条件付き観測で、51%を正確な定数にしない。性格補正・追加回復対象の重みは未確認。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-9",
+      "sources": [
+        {
+          "sourceId": "R6-moonlight-first-person",
+          "url": "https://pokesuri.ogagawa.com/tukinohikari_kenshou/",
+          "kind": "first_person_experiment_report",
+          "publishedAt": "2024-11-20",
+          "updatedAt": "2024-12-24",
+          "collectionCompletedAt": "2024-12-22",
+          "checkedAt": "2026-10-02",
+          "summary": "本人が100発動を収集し、大成功51・不成功49と報告。個体補正別や対象選択の内訳は取得できない。",
+          "id": "R6-moonlight-first-person",
+          "title": "参考資料：大成功の参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    }
+  ]
 }

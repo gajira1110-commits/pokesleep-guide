@@ -1,0 +1,231 @@
+{
+  "baseCommit": "88643d6112e2eae385a143aea13a9683e76cb82b",
+  "source": "forms-source.json",
+  "records": [
+    {
+      "speciesId": "0025_captain",
+      "name": "ピカチュウ(キャプテン)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0025_halloween_23",
+      "name": "ピカチュウ(ハロウィン・2023の帽子)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0025_halloween_24",
+      "name": "ピカチュウ(ハロウィン・2024の帽子)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0025_holiday",
+      "name": "ピカチュウ(ホリデー)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0133_halloween",
+      "name": "イーブイ(ハロウィン)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0133_holiday",
+      "name": "イーブイ(ホリデー)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0363_holiday",
+      "name": "タマザラシ(ホリデー)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0710_large",
+      "name": "バケッチャ(おおだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0710_small",
+      "name": "バケッチャ(こだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0710_medium",
+      "name": "バケッチャ(ちゅうだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0710_jumbo",
+      "name": "バケッチャ(ギガだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0711_large",
+      "name": "パンプジン(おおだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0711_small",
+      "name": "パンプジン(こだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0711_medium",
+      "name": "パンプジン(ちゅうだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0711_jumbo",
+      "name": "パンプジン(ギガだま)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0037_alola",
+      "name": "ロコン(アローラ)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0038_alola",
+      "name": "キュウコン(アローラ)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0194_paldea",
+      "name": "ウパー(パルデア)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0150_default",
+      "name": "ミュウツー",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0151_default",
+      "name": "ミュウ",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0311_default",
+      "name": "プラスル",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0312_default",
+      "name": "マイナン",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0380_default",
+      "name": "ラティアス",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0381_default",
+      "name": "ラティオス",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0425_default",
+      "name": "フワンテ",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0426_default",
+      "name": "フワライド",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0488_default",
+      "name": "クレセリア",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0491_default",
+      "name": "ダークライ",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0777_default",
+      "name": "トゲデマル",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0778_default",
+      "name": "ミミッキュ",
+      "sourceMatched": false,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0849_amped",
+      "name": "ストリンダー(ハイ)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    },
+    {
+      "speciesId": "0849_low_key",
+      "name": "ストリンダー(ロー)",
+      "sourceMatched": true,
+      "masterHasEncounterRows": false,
+      "action": "能力資料から出現条件は生成しない。出現原資料を特定する。"
+    }
+  ],
+  "limitation": "能力資料には出現表なし。全受領資料に存在しないという判定ではない。"
+}

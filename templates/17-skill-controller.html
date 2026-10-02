@@ -41,7 +41,7 @@
     const label=document.createElement('summary');label.textContent='発動条件・持続・出典';conditions.append(label);
     const sources=new Map();
     for(const note of skill.ruleNotes){const p=document.createElement('p'),title=document.createElement('b');title.textContent=note.label+'：';p.append(title,document.createTextNode(note.text));conditions.append(p);for(const source of note.sources)sources.set(source.url,source)}
-    if(skill.effectRules.unknowns?.length){const heading=document.createElement('b');heading.textContent='未確認の項目';conditions.append(heading);for(const text of skill.effectRules.unknowns){const p=document.createElement('p');p.className='note';p.textContent=text;conditions.append(p)}}
+    if(skill.effectRules?.unknowns?.length){const heading=document.createElement('b');heading.textContent='未確認の項目';conditions.append(heading);for(const text of skill.effectRules.unknowns){const p=document.createElement('p');p.className='note';p.textContent=text;conditions.append(p)}}
     for(const source of sources.values()){const p=document.createElement('p'),link=document.createElement('a');link.href=source.url;link.textContent=source.title;link.target='_blank';link.rel='noopener';p.append(link);conditions.append(p)}
     item.append(conditions);
    }

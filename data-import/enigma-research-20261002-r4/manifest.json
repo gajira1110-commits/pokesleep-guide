@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "9cc5a7718c7f5007ae4cf3b820a8f9234d4a2d08fa4fa0e1cab9fe8aca9bb5d9"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "e8c33c58173cbb8a067d122daff0b9a133d71c7e4127bbc179d1559025f7280d"
+    },
+    {
+      "path": "arithmetic-checks.json",
+      "sha256": "ae8e16dc1759da182d2e5eb7b29646e4a0fb251c525b53cf06e2f426e1c47c97"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "2afbb54feedda2ccc9f4ba8806c31e81877b5588442c6c7dc50e1d18e915d113"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "2ccf8be1969504ec7e4ebf4cbb98a5acb4da71767bb706cde1fef3281b1abed3"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "0599daddb8f0d89b0542c416d67ca35acb96a2ccab0429b3e4218ea7d598aa09"
+    },
+    {
+      "path": "state-rules.json",
+      "sha256": "e181f301829d2952de7b97b753265b4ccab0bb2230054d556fc107dd8330dfa9"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "d250871186744497f941494b81bc1cdc7f7a25c1018f258df88c53ab1ee01a18"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "619af4dd74045b4081925bfa3c737b80bdda4b4c0af578c4e82c4ea3a307f973"
+    }
+  ]
+}

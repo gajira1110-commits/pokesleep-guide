@@ -423,6 +423,46 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "大成功の参考観測",
+      "text": "過去の個人検証では、大成功可能な100発動中18回の大成功を報告。大成功後の発動は分母から除外されている。18%を確定確率にせず、既存311件とも重複未確認のため合算しない。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-7",
+      "sources": [
+        {
+          "sourceId": "R6-disguise-first-person",
+          "url": "https://pokesuri.ogagawa.com/bakenokawa_kenshou/",
+          "kind": "first_person_experiment_report",
+          "publishedAt": "2024-10-30",
+          "updatedAt": "2025-07-01",
+          "checkedAt": "2026-10-02",
+          "summary": "大成功できる状態の100発動を個人で収集。18成功・82不成功。大成功後の発動を分母から除く。分割睡眠とBoxに戻した後の睡眠による復活を本人観測として報告。",
+          "id": "R6-disguise-first-person",
+          "title": "参考資料：大成功の参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
+    },
+    {
+      "label": "リセットの参考観測",
+      "text": "分割睡眠とBoxに戻した後の睡眠による復活の報告を受領。開始・終了・リサーチの厳密な境界は不明で、睡眠開始だけ・交代だけでリセットとは判断しない。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-8",
+      "sources": [
+        {
+          "sourceId": "R6-disguise-first-person",
+          "url": "https://pokesuri.ogagawa.com/bakenokawa_kenshou/",
+          "kind": "first_person_experiment_report",
+          "publishedAt": "2024-10-30",
+          "updatedAt": "2025-07-01",
+          "checkedAt": "2026-10-02",
+          "summary": "大成功できる状態の100発動を個人で収集。18成功・82不成功。大成功後の発動を分母から除く。分割睡眠とBoxに戻した後の睡眠による復活を本人観測として報告。",
+          "id": "R6-disguise-first-person",
+          "title": "参考資料：リセットの参考観測",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }

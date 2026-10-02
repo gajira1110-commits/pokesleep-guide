@@ -1,0 +1,14 @@
+{
+  "supplements": [
+    "PSG_Enigma_to_Biblo_research_20261002_v1.zip",
+    "PSG_Enigma_to_Biblo_research_20261002_v2.zip"
+  ],
+  "newOfficialConfirmedRules": 0,
+  "newFirstPersonEvidenceReports": 2,
+  "observationConditionGroups": 3,
+  "newSearchOnlyLeads": 1,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26,
+  "applicationPatch": null,
+  "proposedAdoption": "出典付き観測を追記。計算定数・mainデータの変更はなし。最新mainへの採用状況はビブロが照合。"
+}

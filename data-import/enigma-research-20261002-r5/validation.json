@@ -1,0 +1,11 @@
+{
+  "allQuestionIdsMatchExistingQueue": true,
+  "allSourceReferencesResolve": true,
+  "hypothesisArithmeticChecked": true,
+  "directAndNestedRoutesSeparated": true,
+  "finalSkillNameKeptInferred": true,
+  "unknownFormIdentityRetained": true,
+  "originalEvidencePresent": true,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26
+}

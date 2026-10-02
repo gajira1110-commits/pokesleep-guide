@@ -1,0 +1,12 @@
+{
+  "allQuestionIdsMatchExistingQueue": true,
+  "allSourceReferencesResolve": true,
+  "observedNumeratorDenominatorChecked": true,
+  "eligibleDenominatorDistinguished": true,
+  "overlapNotAssumedIndependent": true,
+  "cappedModelValidatedByEnumerationForN0To8": true,
+  "unknownProbabilityRetainedAsNull": true,
+  "moonlightSupplementNotAddedToExistingQueue": true,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchBulletItems": 26
+}

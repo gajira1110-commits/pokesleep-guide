@@ -1,0 +1,36 @@
+[
+  {
+    "questionId": "ENI-psystrike_berry_zone-01",
+    "status": "unconfirmed",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "boxInstantConsumptionUsesExistingZone": null,
+      "boxInstantConsumptionUsesNewZoneIncrement": null
+    },
+    "sourceIds": [
+      "R4-zone-wiki"
+    ],
+    "reason": "Wikiの適用なしという文だけでは既存ゾーン有無の条件を区別できない。0%からの発動だけで結論を広げない。",
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-psystrike_berry_zone-02",
+    "status": "partial_first_person_evidence_and_secondary_leads",
+    "checkedAt": "2026-10-02",
+    "answer": {
+      "normalBerryObservations": "observations.json",
+      "roundingRule": null,
+      "exModifierOrder": null,
+      "skillCreatedMagoBerryRounding": null,
+      "psystrikeCopyEligibility": null,
+      "copiedZoneBerryType": null
+    },
+    "sourceIds": [
+      "R4-normal-berry-first-person",
+      "R4-copy-wiki",
+      "R4-burst-article-index"
+    ],
+    "reason": "通常きのみの本人報告を追加。著者の式は同じ前提で全値を再現せず未採用。バースト記事の試算をバースト実測と数えない。コピー対象外のWiki記述があり、ゾーン種別より可否を先に一次確認する。",
+    "fullyResolved": false
+  }
+]

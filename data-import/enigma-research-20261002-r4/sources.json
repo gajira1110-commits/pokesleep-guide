@@ -1,0 +1,40 @@
+[
+  {
+    "sourceId": "R4-official-zone",
+    "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+    "kind": "official",
+    "checkedAt": "2026-10-02",
+    "summary": "マゴのみを強化。フィールド移動まで持続。ミュウツー離脱で消えず、上限まで重ねがけ。既存根拠の再確認。"
+  },
+  {
+    "sourceId": "R4-normal-berry-first-person",
+    "url": "https://note.com/ready_gibbon6262/n/n633299e2c6a8",
+    "kind": "first_person_gameplay_report_with_author_inference",
+    "publishedAt": "2026-09-16",
+    "reportedAdditionDate": "2026-09-22",
+    "checkedAt": "2026-10-02",
+    "summary": "通常きのみの表示エナジーを発動前後で記録。週替わりのリセット後にも元値を実測したと追記。端数処理式は著者推論。原画像は今回照合していない。"
+  },
+  {
+    "sourceId": "R4-zone-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "summary": "箱内即消費分はゾーン適用なしとの記載。ただし既存ゾーンと今回増分の区別を実測するデータは確認できない。一次資料に昇格しない。"
+  },
+  {
+    "sourceId": "R4-copy-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/スキルコピー/ものまね",
+    "kind": "community_wiki",
+    "checkedAt": "2026-10-02",
+    "summary": "サイコブレイクはコピー抽選対象外と記載。成功時のゾーン種別を調べる前にコピー可否を確認する手掛かり。公式・本人検証の一次資料は今回未取得。"
+  },
+  {
+    "sourceId": "R4-burst-article-index",
+    "url": "https://note.com/ready_gibbon6262/n/ne4e77cc323b4",
+    "kind": "indexed_excerpt_only",
+    "checkedAt": "2026-10-02",
+    "fullTextRetrieved": false,
+    "summary": "通常きのみの実測表示値を用いたバーストの試算を確認。バースト発動前後の総エナジー差の直接観測と区別する。取得した範囲では試算を現行仕様の確定証拠にしない。"
+  }
+]

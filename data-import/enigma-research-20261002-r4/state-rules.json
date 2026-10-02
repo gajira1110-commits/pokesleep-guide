@@ -1,0 +1,27 @@
+[
+  {
+    "event": "remove_mewtwo_from_team",
+    "zoneReset": false,
+    "status": "official_reconfirmed",
+    "sourceIds": [
+      "R4-official-zone"
+    ]
+  },
+  {
+    "event": "move_research_field",
+    "zoneReset": true,
+    "status": "official_reconfirmed",
+    "sourceIds": [
+      "R4-official-zone"
+    ]
+  },
+  {
+    "event": "week_rollover_without_separately_observed_field_move",
+    "zoneReset": null,
+    "status": "first_person_case_report_only",
+    "sourceIds": [
+      "R4-normal-berry-first-person"
+    ],
+    "note": "週替わりでリセットしたという本人報告を追加。フィールド再選択／移動と分離した条件記録がなく、週独自のリセット条件を確定しない。"
+  }
+]

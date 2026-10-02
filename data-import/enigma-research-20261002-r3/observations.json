@@ -1,0 +1,37 @@
+[
+  {
+    "observationId": "R3-healing-lowest-energy",
+    "sourceId": "R3-healing-first-person",
+    "conditions": "1匹だけ極端にげんきが低い編成。全試行のげんき・同率処理・ゲーム版の詳細記録は未取得。",
+    "trials": 73,
+    "firstTargetHits": 42,
+    "secondTargetHits": 19,
+    "secondTargetEligibleTrials": 31,
+    "eitherTargetHits": 61,
+    "denominatorNote": "19/31は第1対象で最低げんき個体が選ばれなかった31回を分母とする整理。独立した31発動として足さない。",
+    "firstTargetObservedFraction": 0.5753424657534246,
+    "conditionalSecondObservedFraction": 0.6129032258064516,
+    "eitherTargetObservedFraction": 0.8356164383561644,
+    "inGameTestedByUs": false,
+    "generalProbability": null,
+    "interpretation": "この条件で最低げんき個体に当たりやすい可能性を示す報告。普遍的な83.6%・個体別重み・均等2/5は確定しない。"
+  },
+  {
+    "observationId": "R3-minus-main",
+    "sourceId": "R3-minus-first-person",
+    "conditions": "SLv4、1週間。パーモットを最低半日編成。多くの時間げんき80%以上で近い値。最低げんき同率の扱い未確認。",
+    "trials": 30,
+    "lowestEnergyHits": 9,
+    "observedFraction": 0.3,
+    "generalProbability": null
+  },
+  {
+    "observationId": "R3-minus-sub",
+    "sourceId": "R3-minus-first-person",
+    "conditions": "SLv4、1週間。ヒーラー不在で個体間のげんき差がつきやすい。",
+    "trials": 24,
+    "lowestEnergyHits": 13,
+    "observedFraction": 0.5416666666666666,
+    "generalProbability": null
+  }
+]

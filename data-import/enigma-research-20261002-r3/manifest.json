@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "ae7e92e5cba252740c7a0c95eebbeedbb98b5bc470f4be7b11821b24e0282201"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "1dd79d56d82d2a0c0d47009752d0be1f03c0ed7f3c09271ac8254dcc25b37e25"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "d97157150242b294872a42d8957abc160679332d03ef1bd179a7a8974eebf6fd"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "c55c3ad92864481174be497175fb0199c58e6ada954241a37eabdfadf06a8183"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "62830a19da627bd1e73451f7ca014aa51838010929abb763d26eb8f14bcb488f"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "c695bceee3dc00327b44542fd90b82da90fc8dd5a57e0713d0157bed02e41322"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "a61fa32caf0ff605dcc73355170945a22ae466a2c95850d371a17a61792357f9"
+    }
+  ]
+}

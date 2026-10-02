@@ -880,6 +880,24 @@
           "inGameVerifiedByUs": false
         }
       ]
+    },
+    {
+      "label": "姿違いの種類判定",
+      "text": "衣装・年式・リージョン・サイズの種類ボーナス判定は未確認。Boxの姿IDや全国番号から、必ず同種類・別種類と決めない。",
+      "status": "reported_observation_not_confirmed_game_rule",
+      "sourceRule": "research-r269-5",
+      "sources": [
+        {
+          "sourceId": "R5-official-latios",
+          "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+          "kind": "official",
+          "checkedAt": "2026-10-02",
+          "summary": "異なるドラゴン種類数で増加。ラティアスで自分のきのみ追加。姿違い・コピーの詳細は記載なし。",
+          "id": "R5-official-latios",
+          "title": "参考資料：姿違いの種類判定",
+          "inGameVerifiedByUs": false
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,17 @@
+[
+  {
+    "questionId": "ENI-minus_cooking_power_up_s-01",
+    "procedure": "追加効果を満たす編成で鍋拡張+200到達前後の発動表示、回復、ストックを記録。最低げんき個体を設け回復上限で効果が見えなくなる条件を避ける。",
+    "requires": "ゲーム内観測／元投稿本文"
+  },
+  {
+    "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+    "procedure": "発動直前の全5匹げんき・対象2匹・ラティオス有無を記録。対象選択の重み、自己対象、同率時処理を別集計。即時おてつだいのスキル抽選は通常の経過おてつだいとストックを分離して検証。",
+    "requires": "ゲーム内観測"
+  },
+  {
+    "questionId": "ENI-plus_ingredient_magnet_s-01",
+    "procedure": "発動ごとの食材種類と個数、SLv、イベント補正、発動前バッグ残数を記録。ランダム本体と固定追加食材を分離し端数と上限を照合。",
+    "requires": "ゲーム内観測"
+  }
+]

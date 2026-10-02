@@ -1,0 +1,53 @@
+{
+  "sourceId": "R4-normal-berry-first-person",
+  "conditionReported": {
+    "field": "ワカクサ本島EX",
+    "fieldBonusPercent": 85,
+    "favoriteMultiplier": 2.4,
+    "berry": "マゴのみ",
+    "berrySize": "normal"
+  },
+  "rows": [
+    {
+      "speciesId": "0282_default",
+      "level": 60,
+      "reportedEnergyByZonePercent": {
+        "0": 500,
+        "1.6": 507,
+        "2": 509,
+        "4": 519
+      }
+    },
+    {
+      "speciesId": "0150_default",
+      "level": 29,
+      "reportedEnergyByZonePercent": {
+        "0": 240,
+        "1.6": 245,
+        "2": 245,
+        "4": 250
+      }
+    },
+    {
+      "speciesId": "0488_default",
+      "level": 70,
+      "reportedEnergyByZonePercent": {
+        "0": 636,
+        "1.6": 646,
+        "2": 648,
+        "4": 663
+      }
+    }
+  ],
+  "limits": [
+    "前値のミュウツーとクレセリアは初版の逆算値でなく9/22追記の実測値を採用。",
+    "複数日・週の記録であり、全観測時点のFBや個体状態の一致を原画像で照合していない。",
+    "本文の観測報告であり、こちらでゲーム内観測したデータではない。"
+  ],
+  "weeklyResetReport": {
+    "value": true,
+    "scope": "著者の9/22週替わりでリセットしたとの報告",
+    "fieldSelectionAndMoveDetails": null,
+    "generalWeekOnlyResetRule": null
+  }
+}

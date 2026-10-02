@@ -1,0 +1,68 @@
+[
+  {
+    "version": "v3",
+    "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "partial_first_person_evidence"
+  },
+  {
+    "version": "v3",
+    "questionId": "ENI-minus_cooking_power_up_s-02",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "partial_first_person_evidence"
+  },
+  {
+    "version": "v3",
+    "questionId": "ENI-minus_cooking_power_up_s-01",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed_search_lead"
+  },
+  {
+    "version": "v3",
+    "questionId": "ENI-plus_ingredient_magnet_s-01",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed"
+  },
+  {
+    "version": "v3",
+    "questionId": "ENI-plus_ingredient_magnet_s-02",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed"
+  },
+  {
+    "version": "v3",
+    "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed"
+  },
+  {
+    "version": "v2",
+    "questionId": "ENI-stockpile_energy_charge_s-02",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "reported_observation_historical"
+  },
+  {
+    "version": "v2",
+    "questionId": "ENI-stockpile_energy_charge_s-03",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed"
+  },
+  {
+    "version": "v2",
+    "questionId": "ENI-nuzzle_energy_cheer_s-01",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "partial_context_only"
+  },
+  {
+    "version": "v2",
+    "questionId": "ENI-nuzzle_energy_cheer_s-03",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "unconfirmed"
+  },
+  {
+    "version": "v2",
+    "questionId": "ENI-disguise_berry_burst-02",
+    "decision": "出典付き補足として追記。確率・一般則への昇格なし",
+    "status": "official_constraint_reconfirmed"
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "observationId": "R6-disguise-18-of-100",
+    "sourceIds": [
+      "R6-disguise-first-person"
+    ],
+    "skillId": "disguise_berry_burst",
+    "eligibleActivations": 100,
+    "greatSuccesses": 18,
+    "eligibleFailures": 82,
+    "observedFraction": 0.18,
+    "excludedFromDenominator": "既に大成功してばけのかわが剥がれた状態での発動",
+    "exactGameProbability": null,
+    "modifierEffects": null,
+    "overlapWithBaselineWiki311Samples": null,
+    "limitations": [
+      "性格・サブスキル・SLv別の比較なし。",
+      "既存311件と独立な標本か未確認。合算しない。",
+      "本文の旧名称エナジーブーストを公式名と混同せず、対象はミミッキュのばけのかわとして紐付ける。",
+      "現行版でこちらがゲーム内再検証したものではない。"
+    ]
+  },
+  {
+    "observationId": "R6-disguise-reset-reports",
+    "sourceIds": [
+      "R6-disguise-first-person"
+    ],
+    "reportedSequence": [
+      {
+        "time": "08:00",
+        "event": "great_success"
+      },
+      {
+        "time": "09:30",
+        "event": "sleep_measurement_reported_restoration"
+      },
+      {
+        "time": "12:00",
+        "event": "great_success"
+      },
+      {
+        "time": "19:00",
+        "event": "sleep_measurement_reported_restoration"
+      }
+    ],
+    "reportedRestorationAfterSleepWhileInBox": true,
+    "exactResetMoment": null,
+    "sleepStartAloneConfirmed": false,
+    "limitations": [
+      "著者は睡眠計測で復活と表現するが、開始・終了・リサーチの境界の厳密な時系列は不明。",
+      "睡眠開始イベントへリセットを前倒しする根拠にしない。",
+      "交代単独・フィールド移動単独・週替わり単独の検証ではない。"
+    ]
+  },
+  {
+    "observationId": "R6-moonlight-51-of-100",
+    "scope": "adjacent_skill_supplement_outside_existing_11_skill_queue",
+    "sourceIds": [
+      "R6-moonlight-first-person"
+    ],
+    "skillId": "moonlight_energy_charge_s",
+    "activations": 100,
+    "greatSuccesses": 51,
+    "failures": 49,
+    "observedFraction": 0.51,
+    "exactGameProbability": null,
+    "targetWeights": null,
+    "selfTargetPossible": null,
+    "limitations": [
+      "発生確率と大成功分岐確率を分ける。",
+      "51%を正確な定数にせず、50%や45%も公式確定値として採用しない。",
+      "性格や追加回復対象についての直接比較を示す記録ではない。"
+    ]
+  }
+]
