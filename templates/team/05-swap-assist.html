@@ -75,13 +75,13 @@ function swapRequest(recipe){
  return {request:{members,teamIds:team.filter(Boolean),collectionHours,demand},candidateIds,rejected};
 }
 function appendSwapNote(host,text){const p=document.createElement('p');p.className='note';p.textContent=text;host.append(p)}
-function mealTimeText(food){return food.hour!==null?`約${food.hour.toFixed(1)}時間`:food.status==='no_provider'?'担当なし':'24時間以内では届かない'}
-function mealOverallText(timing){return timing.hour!==null?`約${timing.hour.toFixed(1)}時間`:'24時間以内では揃わない'}
+function mealTimeText(food){return food.hour!==null?`約${food.hour.toFixed(1)}時間`:'24時間超'}
 function renderMealFoods(host,timing,focus){
  const list=document.createElement('div');list.className='psg-meal-food-times';
  for(const [name,food]of Object.entries(timing.foods)){
+  const deficit=Math.max(0,food.required-food.expected);
   const row=document.createElement('button');row.type='button';row.className='psg-meal-food-time'+(name===focus?' is-focus':'');row.setAttribute('aria-pressed',String(name===focus));row.dataset.food=name;
-  row.append(teamFoodIcon(name));const label=document.createElement('span');label.textContent=`${name} ×${food.required}`;const value=document.createElement('strong');value.textContent=mealTimeText(food);row.append(label,value);
+  row.append(teamFoodIcon(name));const label=document.createElement('span');label.textContent=`${name} ×${food.required}`;const value=document.createElement('strong');value.textContent=deficit>1e-7?`不足 約${deficit.toFixed(1)}個`:'足りる見込み';row.append(label,value);
   row.onclick=()=>{mealFocus=name;calculateSwap()};list.append(row);
  }host.append(list);
 }
@@ -96,41 +96,33 @@ async function calculateSwap(){
  let input;try{input=swapRequest(recipe)}catch(error){status.textContent=error.message;swapUI('swapSettings').open=true;return}
  const baseline=window.PS_SWAP_ENGINE.mealTiming(input.request);
  if(baseline.status!=='estimated'){status.textContent=`${swapInputLabel(baseline.field)}を確認してください。予測を保留しました。`;return}
- const foods=Object.entries(baseline.timing.foods).sort((a,b)=>(b[1].hour??Infinity)-(a[1].hour??Infinity));
+ const foods=Object.entries(baseline.timing.foods).sort((a,b)=>Math.max(0,b[1].required-b[1].expected)-Math.max(0,a[1].required-a[1].expected));
  const focus=Object.hasOwn(baseline.timing.foods,mealFocus)?mealFocus:foods[0][0];
- const heading=document.createElement('strong');heading.className='psg-meal-total';heading.textContent=`現チームで1食分：${mealOverallText(baseline.timing)}`;host.append(heading);
+ const heading=document.createElement('strong');heading.className='psg-meal-total';heading.textContent='現チームの24時間予測 → 料理1食分';host.append(heading);
  renderMealFoods(host,baseline.timing,focus);
- appendSwapNote(host,`改善する食材：${focus}（食材をタップして変更）`);
+ const deficit=Math.max(0,baseline.timing.foods[focus].required-baseline.timing.foods[focus].expected);
+ if(deficit<=1e-7){status.textContent=`${focus}は足りる見込みです。不足する食材をタップしてください。`;return}
+ appendSwapNote(host,`${focus}の補充候補`);
+ const options=[];
+ for(const id of input.candidateIds){
+  const member=input.request.members.find(m=>m.boxId===id);
+  const result=window.PS_SWAP_ENGINE.supplementTiming(member,input.request.collectionHours,{[focus]:deficit});
+  if(result.status!=='estimated'){input.rejected.push(`${state.box.find(x=>x.id===id)?.name}：${swapInputLabel(result.field)}を確認してください。`);continue}
+  const food=result.timing.foods[focus];if(food.expected>0)options.push({id,food});
+ }
+ options.sort((a,b)=>(a.food.hour??Infinity)-(b.food.hour??Infinity)||b.food.expected-a.food.expected||a.id.localeCompare(b.id));
+ for(const option of options){
+  const incoming=state.box.find(x=>x.id===option.id),row=document.createElement('div');row.className='psg-swap-option';
+  const title=document.createElement('strong');title.textContent=`${incoming.name} Lv.${incoming.level}`;const identity=document.createElement('div');identity.className='psg-supplement-identity';identity.append(teamFace(incoming),title);row.append(identity);
+  appendSwapNote(row,`不足 約${deficit.toFixed(1)}個を補う目安：${mealTimeText(option.food)}`);
+  if(option.food.hour===null)appendSwapNote(row,`単体の24時間予測：約${option.food.expected.toFixed(1)}個`);
+  host.append(row);
+ }
  for(const message of input.rejected)appendSwapNote(host,`控えを保留：${message}`);
- appendSwapNote(host,'在庫なし・回収時の期待量が必要数に届く目安です。確実に集まる時間ではありません。');
- if(!input.candidateIds.length){status.textContent='現チームの時間を表示しました。「条件を変更」で控えを選ぶと比較できます。';return}
- swapAbort=new AbortController();const controller=swapAbort;swapUI('swapCalculate').disabled=true;swapUI('swapCancel').hidden=false;status.textContent=`${focus}を早める交代を確認中…`;
- try{
-  const result=await window.PS_SWAP_ENGINE.findMealOptionsAsync(input.request,{candidateIds:input.candidateIds,focus,startHour:Number(swapUI('swapStart').value),endHour:16,maxEvaluations:1500,maxResults:5},{signal:controller.signal,onProgress:p=>{if(generation===swapGeneration)status.textContent=`${focus}を確認中… ${p.tested}件`}});
-  if(generation!==swapGeneration)return;
-  if(result.status==='cancelled'){status.textContent='計算を中止しました。';return}
-  if(result.status!=='estimated'){status.textContent=`${swapInputLabel(result.field)}を確認してください。`;return}
-  status.textContent=!result.searchComplete?'途中の候補です。探索上限のため順位は未確定です。':result.options.length?`${focus}を早める・不足を減らす交代`:`選んだ控えでは${focus}を改善する候補が見つかりませんでした。`;
-  for(const rejected of result.rejected)appendSwapNote(host,`控えを保留：${state.box.find(x=>x.id===rejected.inId)?.name||'控え'}（${swapInputLabel(rejected.field)}）`);
-  for(const option of result.options){
-   const out=state.box.find(x=>x.id===option.outId),incoming=state.box.find(x=>x.id===option.inId),row=document.createElement('div');row.className='psg-swap-option';
-   const title=document.createElement('strong');title.textContent=`${out.name} → ${incoming.name}`;row.append(title);
-   const before=baseline.timing.foods[focus],after=option.timing.foods[focus];
-   appendSwapNote(row,`${focus}：${mealTimeText(before)} → ${mealTimeText(after)}`);
-   if(option.partial)appendSwapNote(row,`24時間の予測：${before.expected.toFixed(1)} → ${after.expected.toFixed(1)}個（必要${after.required}個）。1食分にはまだ届きません。`);
-   appendSwapNote(row,`1食分全体：${mealOverallText(baseline.timing)} → ${mealOverallText(option.timing)}`);
-   const slower=Object.entries(option.timing.foods).filter(([name,f])=>(f.hour??Infinity)>(baseline.timing.foods[name].hour??Infinity));
-   if(slower.length)appendSwapNote(row,`遅くなる食材：${slower.map(([name,f])=>`${name} ${mealTimeText(baseline.timing.foods[name])} → ${mealTimeText(f)}`).join('・')}`);
-   const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='交代時間・ほかの食材';details.append(summary);
-   appendSwapNote(details,`起床${option.startHour===0?'時':`${option.startHour}時間後`}から約${option.durationHours.toFixed(1)}時間交代し、起床${option.endHour}時間後に戻す。`);
-   for(const [name,f]of Object.entries(option.timing.foods))appendSwapNote(details,`${name}：${mealTimeText(f)}（1食${f.required}個）`);
-   const delta=option.energy.berryDelta;appendSwapNote(details,`24時間のきのみ差：${delta===null?'好物未設定':`${delta>=0?'+':'−'}${Math.round(Math.abs(delta)).toLocaleString()}`}・スキル差：未計算`);
-   row.append(details);host.append(row);
-  }
- }catch(error){if(generation===swapGeneration)status.textContent='計算を完了できませんでした。条件を確認してください。';console.error(error)}
- finally{if(generation===swapGeneration){swapAbort=null;swapUI('swapCancel').hidden=true;swapUI('swapCalculate').disabled=false}}
+ status.textContent=options.length?'食材をタップして候補を変更できます。':input.candidateIds.length?'選んだ控えに、この食材を拾える個体がいません。':'「条件を変更・控えを選ぶ」で補充候補を指定してください。';
+ if(options.length)appendSwapNote(host,'候補単体の回収時刻での目安。交代相手を選んだ後、上の1日の獲得予想で全体を確認してください。');
 }
-for(const id of ['swapRecipe','swapInterval','swapStart','swapAssumeSubskills'])swapUI(id).onchange=()=>{mealFocus=null;invalidateSwap()};
+for(const id of ['swapRecipe','swapInterval','swapAssumeSubskills'])swapUI(id).onchange=()=>{mealFocus=null;invalidateSwap()};
 swapUI('swapCalculate').onclick=calculateSwap;
 swapUI('swapCancel').onclick=()=>swapAbort?.abort();
 swapUI('swapBasisLink').onclick=()=>{go('info');const details=swapUI('swapPredictionBasis');details.open=true;details.scrollIntoView({block:'start'})};

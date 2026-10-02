@@ -14,3 +14,5 @@
 .psg-meal-total{display:block;font-size:15px;margin-bottom:7px}
 .psg-meal-food-times{display:grid;gap:4px}.psg-meal-food-time{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(70px,auto);gap:5px;align-items:center;text-align:left;padding:7px;border:1px solid #dbe5de;border-radius:9px;background:#fff;color:#111;min-width:0;font-size:12px}
 .psg-meal-food-time img{width:26px;height:26px;object-fit:contain}.psg-meal-food-time strong{font-size:12px;text-align:right;max-width:130px}.psg-meal-food-time.is-focus{background:#fff4df;border-color:#d5b369}
+
+.psg-supplement-identity{display:flex;align-items:center;gap:8px}.psg-supplement-identity .psg-team-face{width:38px;height:38px;flex:none}
