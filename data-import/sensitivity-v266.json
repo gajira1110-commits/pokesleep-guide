@@ -1,0 +1,329 @@
+{
+  "checkedAt": "2026-10-02",
+  "source": "PSG_daily_supply_sensitivity_20261001.zip",
+  "zipSha256": "bdbbdb57de765e04b16fc84020e5d5f25992f5b4d9f85661ac9d327e3d9cd5a9",
+  "manifest": {
+    "files": [
+      {
+        "path": "PSG_ingredient_scenario_comparison.json",
+        "bytes": 160882,
+        "sha256": "cb662ff8533ff8e4b1eabf545e2c97ecae389a8286e1f12d388e67988d623e25"
+      },
+      {
+        "path": "PSG_recipe_scenario_comparison.json",
+        "bytes": 401422,
+        "sha256": "89536d9c9dd598dccd42094e468c925ccb4dfd30a484d96842b2d4178393169c"
+      },
+      {
+        "path": "PSG_sensitivity_summary.json",
+        "bytes": 3051,
+        "sha256": "bce0f741acdb1c2b87cbb2349c9848e10c8b21c9a0a26856b259493dcd0e99fc"
+      },
+      {
+        "path": "PSG_sensitivity_validation.json",
+        "bytes": 266,
+        "sha256": "4b607c90ddd17512df6a3b4c90950f263b6d169a069731176d4ce68c1f4ec265"
+      },
+      {
+        "path": "README.txt",
+        "bytes": 4587,
+        "sha256": "58c0ddac3b335f85a2d7517c74338dca0ffa272ae6cd908545defcd6ecd3c50b"
+      },
+      {
+        "path": "engine.py",
+        "bytes": 16451,
+        "sha256": "de46e07d4380a2d1792604cd42f28f800a5f589bfbd9f1c766df54b38f47f8cb"
+      },
+      {
+        "path": "inputs/PSG_availability_classification_248.json",
+        "bytes": 245852,
+        "sha256": "77562397ff7a3c0f54128025c380723f3d8a3445f1bd39c6865442cc82745fd6"
+      },
+      {
+        "path": "inputs/PSG_ingredient_selection_rules.json",
+        "bytes": 2454,
+        "sha256": "664fa3a731e968174a63a481964b4d5ffda6aaf3e17220e8125f98430256e919"
+      },
+      {
+        "path": "inputs/PSG_modifier_order_rules.json",
+        "bytes": 4399,
+        "sha256": "cbbef2b8245f49ce0c5d11dcd836d18d8d084a5149d10f70df2b55537b031efb"
+      },
+      {
+        "path": "inputs/PSG_pokemon_master_248.json",
+        "bytes": 517241,
+        "sha256": "7fcf3a44dc6527b616c25f1b8426fc49697d8093ea05bac78344fe016dec3627"
+      },
+      {
+        "path": "inputs/PSG_recipe_efficiency_Lv70_78.json",
+        "bytes": 133553,
+        "sha256": "d437ad7a514d5fbd70fed2ec8f28e9a1489084cf79c71a9c503d10c8815be3f0"
+      },
+      {
+        "path": "run_scenarios.py",
+        "bytes": 5615,
+        "sha256": "3c949c600bad4a4ca6b9112dac63e066dab241cec047209e7d895fd4e0cf5b59"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/PSG_daily_model_conditions.json",
+        "bytes": 3849,
+        "sha256": "9de405c7d81737ef382ec2004ad830c9028df7df3736d84a32efdd94f6501a73"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53280,
+        "sha256": "3e2ecb3d4a567b8e3059b4ec749932dbb41ff83acd69119b38b4bc8fb605ad19"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/PSG_provider_daily_supply.json",
+        "bytes": 2700947,
+        "sha256": "feefb1b5b059d7f6916f134a6ff33a507acff8b2e65d0d1a41a0f68c67f50a4b"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/PSG_recipe_3meals_burden_78.json",
+        "bytes": 490751,
+        "sha256": "70baf011c311cd98e2d99f5d5bd6541f7ce2c5ecd5069b3c6543a82c699e5aed"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/config.json",
+        "bytes": 164,
+        "sha256": "14a3c2a68aea663fb7010b858d11a46d65f0a36bfd6f7538de8bcc71601da36f"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/料理3食収集負担78種類.txt",
+        "bytes": 30944,
+        "sha256": "919de52538fa5565e33b03c643dd818470ceabae4d47fc1f04fcadb919e1bcc4"
+      },
+      {
+        "path": "scenarios/collect1h_meals0/食材日産量19種類.txt",
+        "bytes": 5085,
+        "sha256": "b52cccf7c800368c885ab84d101b78b167e8bd66f3b14c89c52037be002a94f5"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/PSG_daily_model_conditions.json",
+        "bytes": 3942,
+        "sha256": "b7876fad6b042613d7a0ad51de72cce3b30660470b5d1acfdc98b20462ce3ed4"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53482,
+        "sha256": "11eff718b77cceb6ec9cf8a414c9cc9a68cfc6918fa05771a1b9faadff2346fa"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/PSG_provider_daily_supply.json",
+        "bytes": 2703546,
+        "sha256": "e3e3ba4fc98b217d3154fe0c43f303a74eacec227cfb228ff7bee097da48c1a4"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/PSG_recipe_3meals_burden_78.json",
+        "bytes": 492279,
+        "sha256": "d5d990bcc14e6a995cf16b0f901d2f29d7773f3bfc9196e788160a271ccb3161"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/config.json",
+        "bytes": 163,
+        "sha256": "20e744093aa28dac104b3b0afdc159ea9a48a65ea6584133612a25844babef6a"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/料理3食収集負担78種類.txt",
+        "bytes": 30944,
+        "sha256": "1170a15902371ef2d0006357261b21fca681d797a66f9ab2ab5c0c9e8e9d988c"
+      },
+      {
+        "path": "scenarios/collect1h_meals1/食材日産量19種類.txt",
+        "bytes": 5085,
+        "sha256": "112b9b3ca3fb291710cd06afe3b694c059e7eec2b6a9d35fb8de63c224ff2226"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/PSG_daily_model_conditions.json",
+        "bytes": 3755,
+        "sha256": "8d87e119448b3755a50d40ed2acce0bc4ca3f9ba638c8a103f2e6ce88afda21f"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53311,
+        "sha256": "e4d8caaa7b930243514c7b11b41ac597d0e9ca578182092e89cc31090705aee2"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/PSG_provider_daily_supply.json",
+        "bytes": 2495440,
+        "sha256": "0ecf6c84528020d89c0379e4694a411e5b480b1d202b6c3df1fe52403ffdb2a1"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/PSG_recipe_3meals_burden_78.json",
+        "bytes": 491260,
+        "sha256": "2f9c2eb18fe9b9e7cb8861b0bcef22d270b1f7ed661b25d779002bb5506f1a6e"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/config.json",
+        "bytes": 164,
+        "sha256": "ef38cb12df69f3383f1f6f4ef797bdabb3f8d858ddf8a5fb044afeddd7409b2c"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/料理3食収集負担78種類.txt",
+        "bytes": 30944,
+        "sha256": "73bbbaae136ec462166255fda9f82fb907cc46634e345503e7e0f3a000693b25"
+      },
+      {
+        "path": "scenarios/collect3h_meals0/食材日産量19種類.txt",
+        "bytes": 5091,
+        "sha256": "07b42b0d0459b1f812d56ae9b6a46c52cf48c2a9eacded5525adb92a6846a9d3"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/PSG_daily_model_conditions.json",
+        "bytes": 3848,
+        "sha256": "ae24a238ab13ce0def93c2073b096526ba8adc9c73135af2ed5e592891cfae62"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53518,
+        "sha256": "c56ebd548ad174596121d546579219738b57e0b9409cef54979f0a9d18767ab1"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/PSG_provider_daily_supply.json",
+        "bytes": 2497980,
+        "sha256": "b6e8b793874b266dc09ba5cf60b40afd22411ea0c6a7f5ea36f978fdc175a837"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/PSG_recipe_3meals_burden_78.json",
+        "bytes": 492662,
+        "sha256": "3c76e145c62548df4368d2923330022f34ad1ae0a78b6416e64a45a1f5b2792c"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/config.json",
+        "bytes": 163,
+        "sha256": "616fa1ce99b1d09cdf52d2024ddb959185c8ba8c974e2e069c7d88afe2eec9e1"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/料理3食収集負担78種類.txt",
+        "bytes": 30944,
+        "sha256": "87fc1c87eb549820c1e996754048ec0caebdb83dba1fb7b1b86c6db471a56088"
+      },
+      {
+        "path": "scenarios/collect3h_meals1/食材日産量19種類.txt",
+        "bytes": 5091,
+        "sha256": "c9f7b0ee3f1e7ed2523f798f040b0dd29021f704e0da78a0b744cfc34af1406a"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/PSG_daily_model_conditions.json",
+        "bytes": 3727,
+        "sha256": "210508147e9f25ebb689c7cc69637632c84fec84253131ebee4091014fcdee03"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53313,
+        "sha256": "8e4ab07dbe6c8fe9e6b4f6309b4e1378e5f8fcdd5e1b6403114873e674e4505e"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/PSG_provider_daily_supply.json",
+        "bytes": 2436331,
+        "sha256": "f796820cb9fa517849aa98b65927055d586dce0361d8d371ec7da976185e5c5d"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/PSG_recipe_3meals_burden_78.json",
+        "bytes": 491672,
+        "sha256": "f9cf398bd865b373ba624d9f0cb601ce447f37133f9b330b6f8f1801944247a6"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/config.json",
+        "bytes": 164,
+        "sha256": "ad86204f292e7484e633757dee2f67cd61d4b9f0e2fe72c76e93d4e1eaf90e76"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/料理3食収集負担78種類.txt",
+        "bytes": 30955,
+        "sha256": "e59a481accf00358afa440e480045b97cd386adf056b01727bce0c35ebd34bc3"
+      },
+      {
+        "path": "scenarios/collect6h_meals0/食材日産量19種類.txt",
+        "bytes": 5088,
+        "sha256": "94faa0c859698924b4d9878422ac61605c405ec8aa7feca5f1996a42fcf89a84"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/PSG_daily_model_conditions.json",
+        "bytes": 3820,
+        "sha256": "dcdd45fe16eb922fc2e809e29bccd014aa1c1838369b608db4c3695ee3818717"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/PSG_ingredient_daily_tiers_19.json",
+        "bytes": 53512,
+        "sha256": "c374abe3de62f58fa0ecabe291fe41d5922c8f588209b8596123dfca17daf715"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/PSG_provider_daily_supply.json",
+        "bytes": 2438705,
+        "sha256": "96cfc46513d8cb48f707526e3e51cf3c7be090d7b1714aeb51af1201dbad4548"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/PSG_recipe_3meals_burden_78.json",
+        "bytes": 492340,
+        "sha256": "be40a790e164dbcd417dde9592fbc34026dd6713fdfcf08e9c156178c40eba91"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/PSG_validation.json",
+        "bytes": 482,
+        "sha256": "cf832128569fc343373e7e2b9605c045a646a3b7167f921739639b27f5b6214e"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/config.json",
+        "bytes": 163,
+        "sha256": "5298fac8eb32a4820eed576483b2418d01b6bed8fcf9b63a7fcf822d71f81149"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/料理3食収集負担78種類.txt",
+        "bytes": 30960,
+        "sha256": "ae90829a5d9067b12e3e17fdf727be956ec48244e213df94d1a892a8ea9078e5"
+      },
+      {
+        "path": "scenarios/collect6h_meals1/食材日産量19種類.txt",
+        "bytes": 5085,
+        "sha256": "6e21caf7f8880908f2c66af4b816d1b31e554bb3843f1ebf4cdbc9ab5d867977"
+      },
+      {
+        "path": "v1_baseline_snapshot.json",
+        "bytes": 402558,
+        "sha256": "ba210e75db2486cf2e44af7c58a5be339ff7ec403d54f9d1fcfb8a65d4e4fc3a"
+      },
+      {
+        "path": "条件比較まとめ.txt",
+        "bytes": 8938,
+        "sha256": "4a64c258327c43032e917d7d7bce43755edf60f9ceaed9c8dd97a41ff248806d"
+      }
+    ]
+  },
+  "validation": {
+    "baselineMatchesTolerance": 1e-12,
+    "baselinePayloadPreserved": true,
+    "ingredientRows": 228,
+    "recipeRows": 936,
+    "allProviderAmountsMatch": true,
+    "collectionMonotonic": true
+  },
+  "default": "collect3h_meals0",
+  "status": "独自共通条件の推定、ホーム/Box交代へ流用しない"
+}
