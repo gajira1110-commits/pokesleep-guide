@@ -1,0 +1,71 @@
+[
+  {
+    "questionId": "ENI-mythical-individual-02",
+    "status": "partial_evidence",
+    "factOrInference": "reported_observation",
+    "answer": {
+      "mewSubskillBeforeActiveLevelObserved": true,
+      "case": {
+        "pokemonLevel": 31,
+        "slotActiveAtLevel": 50,
+        "resultSubskill": "スキル確率アップS"
+      },
+      "allSlotsAllowEarlyUnlock": null,
+      "darkraiAllowEarlyUnlock": null,
+      "ingredientAllowEarlyUnlock": null,
+      "minimumSeedUseLevel": null
+    },
+    "sourceIds": [
+      "R1-mew-level31-report",
+      "R1-mew-level31-image"
+    ],
+    "checkedAt": "2026-10-02",
+    "inGameTestedByUs": false,
+    "limitation": "本人本文と添付画像を組み合わせた単一観測。全枠・全種の一般則や効果の有効化時期を、この観測だけで確定しない。",
+    "affectedPaths": [
+      "data-import/skill-rules-v263-mythical-settings.json"
+    ],
+    "proposedAdoption": "種全体のlevelRequiredToUseSeedはnullのまま。観測ケースを別記し、レベル未到達だから未解放だと決め付けて既存個体入力を消さない。",
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-almighty-02",
+    "status": "unconfirmed",
+    "factOrInference": "fact_for_level_retention_only",
+    "answer": {
+      "skillLevelRetainedOnEffectChange": true,
+      "effectiveLevelAboveSelectedSkillCap": null,
+      "selectedSkillEffectAboveCap": null
+    },
+    "sourceIds": [
+      "R1-official-mew",
+      "R1-official-bugs"
+    ],
+    "checkedAt": "2026-10-02",
+    "newConfirmedRule": false,
+    "reason": "レベル保持は既知ルールの再確認。上限超過時の効果量を公式説明で直接確認できず。ゆびをふる・コピーの規則を直接セットへ流用しない。",
+    "affectedPaths": [
+      "data-import/skill-rules-v263-skill-rules.json",
+      "data-import/skill-rules-v263-mythical-settings.json"
+    ],
+    "fullyResolved": false
+  },
+  {
+    "questionId": "ENI-mythical-individual-01",
+    "status": "unconfirmed",
+    "factOrInference": "historical_notice_lead",
+    "answer": {
+      "ingredientWeights": null,
+      "mainSkillWeights": null,
+      "completeExclusionRules": null,
+      "subskillUniformDirectOfficialReverification": false
+    },
+    "sourceIds": [
+      "R1-official-bugs",
+      "R1-uniform-history-lead"
+    ],
+    "checkedAt": "2026-10-02",
+    "reason": "等確率との既存記載の歴史的出典候補を発見したが、現行の公式一次原本では当該文を再確認できず。食材・メインスキルへ均一確率を転用しない。",
+    "fullyResolved": false
+  }
+]

@@ -4,7 +4,7 @@ const backupImport=document.getElementById('backupImport');
 let pendingBackup=null;
 document.getElementById('backupExport').onclick=()=>{
  try{
-  const payload={format:'psg-user-data',version:4,exportedAt:new Date().toISOString(),box:state.box.map(backupBoxFields),sleepFound:readSleepBackup(),team:normalizeTeam(team,state.box),fields:normalizeFieldProfile(fieldProfile)};
+  const payload={format:'psg-user-data',version:5,exportedAt:new Date().toISOString(),box:state.box.map(backupBoxFields),sleepFound:readSleepBackup(),team:normalizeTeam(team,state.box),fields:normalizeFieldProfile(fieldProfile)};
   const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));
   const link=document.createElement('a');link.href=url;link.download=`PSG_backup_${new Date().toISOString().slice(0,10)}.json`;
   document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
@@ -17,7 +17,7 @@ backupFile.onchange=async()=>{
  if(file.size>5*1024*1024){backupPreview.textContent='ファイルが大きすぎます（上限5MB）。';return}
  try{
   const parsed=JSON.parse(await file.text());
-  if(parsed?.format!=='psg-user-data'||![1,2,3,4].includes(parsed.version)||!Array.isArray(parsed.box)||!parsed.sleepFound||typeof parsed.sleepFound!=='object'||Array.isArray(parsed.sleepFound)||parsed.version>=2&&!Array.isArray(parsed.team)||parsed.version>=3&&(!parsed.fields||typeof parsed.fields!=='object'||Array.isArray(parsed.fields)))throw Error('形式');
+  if(parsed?.format!=='psg-user-data'||![1,2,3,4,5].includes(parsed.version)||!Array.isArray(parsed.box)||!parsed.sleepFound||typeof parsed.sleepFound!=='object'||Array.isArray(parsed.sleepFound)||parsed.version>=2&&!Array.isArray(parsed.team)||parsed.version>=3&&(!parsed.fields||typeof parsed.fields!=='object'||Array.isArray(parsed.fields)))throw Error('形式');
   const box=normalizeBox(parsed.box),sleepFound=normalizeSleepFound(parsed.sleepFound);
   const importedTeam=normalizeTeam(parsed.team,box);
   if(parsed.box.length>0&&box.length===0)throw Error('ポケモンのデータが一致しません');

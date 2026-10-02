@@ -1,0 +1,16 @@
+{
+  "newOfficialConfirmedRules": 0,
+  "newObservedCases": 1,
+  "reconfirmedExistingRules": 1,
+  "fullyResolvedQuestions": 0,
+  "remainingResearchItems": 26,
+  "separatedUserInputItems": 1,
+  "managementCorrections": [
+    "研究26項目と実個体入力1項目を分離",
+    "優先度を調査順へ統一",
+    "表記をフレンドメダルへ統一",
+    "添付差分の参照先をビブロ既存棚卸しZIPと明記",
+    "寝顔の旧輪郭切り抜き版を採用対象から除外"
+  ],
+  "applicationPatch": null
+}

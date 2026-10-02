@@ -54,8 +54,8 @@ function renderBox(){
    const index=teamBoxSlot,id=c.dataset.id,usedAt=team.indexOf(id),next=[...team];
    const selected=state.box.find(x=>x.id===id);
    const selectingSpecial=speciesFor(selected)?.specialTeamLimited===true;
-   const occupiedSpecial=team.some((memberId,slot)=>slot!==index&&memberId!==id&&speciesFor(state.box.find(x=>x.id===memberId))?.specialTeamLimited===true);
-   if(selectingSpecial&&occupiedSpecial){alert('特別なポケモンはチームに1匹だけ編成できます。先に現在の特別なポケモンを外してください。');return}
+   const occupiedSpecial=team.filter((memberId,slot)=>slot!==index&&memberId!==id).map(memberId=>speciesFor(state.box.find(x=>x.id===memberId))).filter(p=>p?.specialTeamLimited===true);
+   if(selectingSpecial&&!specialTeamCompatible(speciesFor(selected),occupiedSpecial)){alert('特別なポケモンは通常1匹までです。ラティアスとラティオスの組み合わせだけ同時に編成できます。先に現在の特別なポケモンを外してください。');return}
    if(usedAt!==-1&&usedAt!==index)next[usedAt]=next[index];
    next[index]=id;saveTeamSelection(next);teamBoxSlot=null;renderBoxTeamMode();go('home');return;
   }

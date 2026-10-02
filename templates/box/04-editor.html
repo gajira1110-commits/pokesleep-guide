@@ -30,11 +30,32 @@ function fillBoxEditor(item,p){
  form.elements.nature.value=item.nature||'';
  form.elements.mint.checked=!!item.mint;
  form.elements.skillLevel.value=item.skillLevel||1;
+ form.elements.skillLevel.max=window.PS_CATALOG?.skills?.[p?.mainSkillId]?.maxLevel||7;
  form.elements.role.querySelector('[data-legacy]')?.remove();
  if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
  form.elements.role.value=item.role||'';
  fillBoxIngredients(item,p);
  document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
+ fillBoxMythicalEditor(item,p);
+}
+function mythicalUnlockSelect(name,value){
+ return `<select name="${name}" aria-label="${name.startsWith('ingredient')?'食材':'サブスキル'}枠の解放状態"><option value="" ${value==null?'selected':''}>解放未確認</option><option value="yes" ${value===true?'selected':''}>解放済み</option><option value="no" ${value===false?'selected':''}>未解放</option></select>`;
+}
+function fillBoxMythicalEditor(item,p){
+ const host=document.getElementById('boxEditMythical');host.hidden=!p?.mythicalSettings;host.replaceChildren();
+ if(!p?.mythicalSettings)return;
+ const current=normalizeMythicalState(item.mythicalState,p),settings=p.mythicalSettings,effects=settings.mainSkill.selectableEffects||[];
+ for(const unlock of [1,30,60]){
+  const label=document.querySelector(`#boxEditIngredients select[name="ingredient-${unlock}"]`).closest('label');
+  label.insertAdjacentHTML('beforeend',mythicalUnlockSelect(`ingredient-unlocked-${unlock}`,current?.ingredientUnlocked[unlock]));
+ }
+ for(let i=0;i<5;i++){
+  const label=document.querySelector(`#boxEditSubskills select[name="subskill-${i}"]`).closest('label');
+  label.insertAdjacentHTML('beforeend',mythicalUnlockSelect(`subskill-unlocked-${i}`,current?.subskillUnlocked[i]));
+ }
+ host.innerHTML='<p class="psg-box-muted">ゲーム内で確認した枠の状態を記録します。解放済みと、Lv到達による効果の有効化は別です。Lv未到達の枠も記録できます。</p>'+(effects.length?
+  `<label>セット中の効果<select name="mythicalSelectedEffect"><option value="">未確認</option>${effects.map(name=>`<option value="${boxEsc(name)}" ${name===current?.selectedEffect?'selected':''}>${boxEsc(name)}</option>`).join('')}</select></label><details class="psg-box-explanation"><summary>習得済みの効果</summary>${effects.map((name,i)=>`<label class="psg-editor-check"><input type="checkbox" name="mythical-learned-${i}" ${current?.learnedEffects.includes(name)?'checked':''}>${boxEsc(name)}</label>`).join('')}</details><p class="psg-box-muted">セット中の効果は習得済みにも保存します。変更しても、ほかの習得済み効果とスキルLvは保持します。</p>`:
+  `<p class="psg-box-muted">メインスキルは${boxEsc(settings.mainSkill.initialEffect)}で固定です。</p>`);
 }
 function boxEvolutionChoices(p){
  if(!p)return [];

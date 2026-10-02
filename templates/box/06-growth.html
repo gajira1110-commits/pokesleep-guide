@@ -29,12 +29,12 @@ function renderBoxGrowth(item,p,milestones){
  if(!milestones.length)return '<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
  const rows=milestones.map(target=>{
   const labels=[];
-  if(p?.ingredientSlots?.some(s=>s.unlock===target))labels.push('食材解放');
-  if(SUBSKILL_LEVELS.includes(target))labels.push('サブスキル解放');
+  if(p?.ingredientSlots?.some(s=>s.unlock===target))labels.push(p?.mythicalSettings?'食材枠の有効Lv':'食材解放');
+  if(SUBSKILL_LEVELS.includes(target))labels.push(p?.mythicalSettings?'サブスキル枠の有効Lv':'サブスキル解放');
   const result=boxGrowthEstimate(item,p,target);
   const summary=result.status==='estimate'?`アメ 約${result.candy.toLocaleString()}個・ゆめのかけら 約${result.shards.toLocaleString()}`:`${boxEsc(result.reason)}（計算保留）`;
   return `<div class="psg-milestone"><b>Lv.${target}　${labels.join('・')}</b><p>${summary}</p>${result.conflicts?.length?'<small>EXP表に差異あり・累計丸めによる推定</small>':''}</div>`;
  }).join('');
  const sources=Object.entries(window.PS_CATALOG.growth.sources).map(([key,url])=>`<a href="${boxEsc(url)}" target="_blank" rel="noopener noreferrer">${key==='level'?'レベル・アメ費用':'経験値タイプ'}</a>`).join('・');
- return rows+'<details class="psg-box-explanation"><summary>育成の計算条件</summary><p class="psg-box-muted">現LvのEXP0から通常アメのみで育てる目安です。性格のEXP補正と、アメ使用時のLvごとの費用を反映。途中のEXPは繰り越します。現在のEXP・ブースト・睡眠EXP・研究ランクによる上限は含みません。</p><p class="psg-box-muted">攻略資料の表と累計丸めによる導出値を使用。実機未照合・資料間の差異は推定として扱います。ミント適用後のEXP補正は未確認のため保留します。</p><p class="psg-box-muted">出典：'+sources+'</p></details>';
+ return rows+(p?.mythicalSettings?'<p class="psg-box-muted">Lv到達だけでは枠を解放しません。解放状態は個体を編集して記録してください。</p>':'')+'<details class="psg-box-explanation"><summary>育成の計算条件</summary><p class="psg-box-muted">現LvのEXP0から通常アメのみで育てる目安です。性格のEXP補正と、アメ使用時のLvごとの費用を反映。途中のEXPは繰り越します。現在のEXP・ブースト・睡眠EXP・研究ランクによる上限は含みません。</p><p class="psg-box-muted">攻略資料の表と累計丸めによる導出値を使用。実機未照合・資料間の差異は推定として扱います。ミント適用後のEXP補正は未確認のため保留します。</p><p class="psg-box-muted">出典：'+sources+'</p></details>';
 }

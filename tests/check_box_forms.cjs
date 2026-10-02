@@ -19,7 +19,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   await page.evaluate(()=>document.getElementById('boxEditForm').requestSubmit());
   assert.equal(await page.evaluate(()=>PS.state.box.find(x=>x.id==='unspecified').speciesId),'0710_jumbo');
   await page.evaluate(()=>PS.go('box'));
-  const ids=await page.evaluate(()=>[...PS_FORMS.records.values()].filter(p=>p.boxEligible!==false).map(p=>p.speciesId));
+  const ids=await page.evaluate(()=>[...PS_FORMS.records.values()].filter(p=>p.boxEligible!==false&&p.dailyCalculationStatus!=='pending_special_skill').map(p=>p.speciesId));
   for(const id of ids){
    await page.locator('#addBtn').click();await page.locator('#boxSpecies').selectOption(id);await page.locator('#boxConfirmAdd').click();
    const item=await page.evaluate(()=>PS.state.box.at(-1));assert.equal(item.speciesId,id);
@@ -63,12 +63,12 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
    const original=URL.createObjectURL;URL.createObjectURL=blob=>{window.testBackupBlob=blob;return original(blob)};
    document.getElementById('backupExport').click();
   });
-  const payload=await page.evaluate(async()=>JSON.parse(await window.testBackupBlob.text()));assert.equal(payload.version,4);assert.equal(payload.box[0].speciesId,'0025_captain');
+  const payload=await page.evaluate(async()=>JSON.parse(await window.testBackupBlob.text()));assert.equal(payload.version,5);assert.equal(payload.box[0].speciesId,'0025_captain');
   const sleepId=await page.evaluate(()=>PS_FORMS.records.get('0025_halloween_23').sleepStyles[0].id);payload.sleepFound={[sleepId]:true};
   await page.locator('#backupFile').setInputFiles({name:'forms.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(payload))});
   page.once('dialog',dialog=>dialog.accept());await page.evaluate(()=>document.getElementById('backupImport').click());
   assert.equal(await page.evaluate(()=>PS.state.box[0].speciesId),'0025_captain');assert.equal(await page.evaluate(id=>JSON.parse(localStorage.getItem('psg-sleep-discoveries-v1'))[id],sleepId),true);
   await page.evaluate(()=>{PS.state.selected=PS.state.box[0];PS.refreshBoxDetail();PS.go('boxDetail')});if(width===390)await page.screenshot({path:'/tmp/psg260-box-form.png'});
-  assert.deepEqual(errors,[]);console.log(width+'px: 18 form registrations/reloads, legacy identity and missing size, explicit edit, 3 independent dex entries, form team forecast/art, v4 backup roundtrip');await page.close();
+  assert.deepEqual(errors,[]);console.log(width+'px: 18 form registrations/reloads, legacy identity and missing size, explicit edit, 3 independent dex entries, form team forecast/art, v5 backup roundtrip');await page.close();
  }
 }finally{await browser.close()}})().catch(e=>{console.error(e.stack);process.exitCode=1});

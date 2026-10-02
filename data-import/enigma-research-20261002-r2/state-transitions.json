@@ -1,0 +1,196 @@
+{
+  "kind": "reviewable_rules_not_runtime_config",
+  "unknownPolicy": "nullは未確認。keepやresetのどちらにも暗黙変換しない。",
+  "rows": [
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "spit_up",
+      "result": "count=0",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "holder_leaves_team",
+      "result": "count=0",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "other_member_swap",
+      "result": "count preserved in reported case",
+      "evidenceStatus": "historical_first_person_observation",
+      "sourceIds": [
+        "R2-stockpile-first-person"
+      ],
+      "note": "現行版未検証"
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "sleep_research",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "manual_sleep_entry",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "week_rollover",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "same_field_move",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "stockpile_energy_charge_s",
+      "event": "evolution",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-stockpile"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "event": "sleep_research",
+      "result": "bonus=false",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-nuzzle"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "event": "field_move",
+      "result": "bonus=false",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-nuzzle"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "event": "any_member_swap",
+      "result": "bonus=false (existing community rule)",
+      "evidenceStatus": "existing_community_reference",
+      "sourceIds": [
+        "R2-nuzzle-wiki"
+      ],
+      "note": "新規一次確認はしていない"
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "event": "manual_sleep_entry",
+      "result": null,
+      "evidenceStatus": "unconfirmed",
+      "sourceIds": [
+        "R2-official-nuzzle"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "nuzzle_energy_cheer_s",
+      "event": "bonus_already_present",
+      "result": "no additional bonus",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-nuzzle"
+      ],
+      "note": "既所持対象を抽選から除くかは別の未確認事項"
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "great_success",
+      "result": "blocked until reset",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "sleep_research",
+      "result": "great success can occur again",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "manual_sleep_entry",
+      "result": "great success can occur again",
+      "evidenceStatus": "official_reconfirmed",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": ""
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "holder_swap",
+      "result": "do not add reset before research/manual entry",
+      "evidenceStatus": "inference_from_official_constraint",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": "個別実測済みではない"
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "field_move",
+      "result": "do not add reset before research/manual entry",
+      "evidenceStatus": "inference_from_official_constraint",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": "個別実測済みではない"
+    },
+    {
+      "skillId": "disguise_berry_burst",
+      "event": "week_rollover",
+      "result": "do not add reset before research/manual entry",
+      "evidenceStatus": "inference_from_official_constraint",
+      "sourceIds": [
+        "R2-official-disguise"
+      ],
+      "note": "個別実測済みではない"
+    }
+  ]
+}

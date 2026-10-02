@@ -25,7 +25,7 @@ function individualRibbon(item,p){
 }
 function individualCorrections(item,p,teamSpeedReduction=0){
  const effect=item.mint?{}:NATURE_EFFECTS[item.nature]||{};
- const active=SUBSKILL_LEVELS.filter(n=>n<=item.level).map((_,i)=>item.subskills?.[i]).filter(Boolean);
+ const active=SUBSKILL_LEVELS.map((n,i)=>n<=item.level&&(!p?.mythicalSettings||item.mythicalState?.subskillUnlocked?.[i]===true)?item.subskills?.[i]:null).filter(Boolean);
  const sum=kind=>active.reduce((total,name)=>total+(SUBSKILLS[name]?.effect===kind?SUBSKILLS[name].value||0:0),0);
  const natureFactor=axis=>effect.up===axis?window.PS_CATALOG.natures.factors[axis].up:effect.down===axis?window.PS_CATALOG.natures.factors[axis].down:1;
  const soloSpeedReduction=Math.min(.35,sum('speedReduction'));
@@ -46,7 +46,7 @@ function individualCorrections(item,p,teamSpeedReduction=0){
 }
 function teamSpeedContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
  const selected=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
- const contribution=item=>SUBSKILL_LEVELS.reduce((sum,unlock,i)=>sum+(unlock<=item.level&&SUBSKILLS[item.subskills?.[i]]?.effect==='teamSpeedReduction'?SUBSKILLS[item.subskills[i]].value:0),0);
+ const contribution=item=>SUBSKILL_LEVELS.reduce((sum,unlock,i)=>sum+(unlock<=item.level&&(!speciesFor(item,catalog)?.mythicalSettings||item.mythicalState?.subskillUnlocked?.[i]===true)&&SUBSKILLS[item.subskills?.[i]]?.effect==='teamSpeedReduction'?SUBSKILLS[item.subskills[i]].value:0),0);
  const bonus=selected.reduce((sum,item)=>sum+contribution(item),0);
  const members=new Map(selected.map(item=>[item.id,individualCorrections(item,speciesFor(item,catalog),bonus)]));
  return {bonus,bonusCount:selected.filter(item=>contribution(item)>0).length,members};

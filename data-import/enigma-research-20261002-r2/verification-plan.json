@@ -1,0 +1,30 @@
+{
+  "performed": false,
+  "cases": [
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-02",
+      "steps": [
+        "保持者のたくわえ回数を記録",
+        "別の1匹だけを交代",
+        "保持者の回数を確認"
+      ],
+      "control": "交代前後にスキルを発動させない。保持者の出入りを混ぜない。"
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-03",
+      "steps": [
+        "睡眠・週替わり・同一フィールド移動・進化を別ケースに分ける",
+        "各イベント前後の個体IDとたくわえ回数を記録"
+      ],
+      "control": "週替わり＋睡眠リサーチ＋チーム変更の同時発生を単一イベントの証拠にしない。"
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-03",
+      "steps": [
+        "ボーナスありの状態を記録",
+        "マニュアル睡眠登録の前後を比較"
+      ],
+      "control": "その間に回収・チーム変更・睡眠リサーチ・フィールド移動を挟まない。"
+    }
+  ]
+}
