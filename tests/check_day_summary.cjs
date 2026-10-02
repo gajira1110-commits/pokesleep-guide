@@ -21,7 +21,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   assert.equal(await foodGrid.locator('.psg-day-food-tile').first().evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(255, 255, 255)');
   assert.match(await foodGrid.locator('.psg-day-food-tile').first().getAttribute('aria-label'),/約[\d.]+個/);
   assert.equal(await foodGrid.locator('.psg-day-food-tile').first().evaluate(el=>getComputedStyle(el).borderTopWidth),'1px');
-  assert.equal(await page.locator('.psg-day-card').evaluate(el=>getComputedStyle(el).borderTopWidth),'0px');
+  assert.equal(await page.locator('.psg-day-card').evaluate(el=>getComputedStyle(el).borderTopWidth),'1px');
   assert.equal(await foodGrid.evaluate(el=>el.scrollWidth>el.clientWidth),false);
   await details.locator('summary').click();assert.equal(await page.locator('.psg-day-row').count(),5);assert.equal(await page.locator('.psg-day-row').first().isVisible(),true);
   assert.equal(await page.locator('#teamDayEstimate').textContent(),before);

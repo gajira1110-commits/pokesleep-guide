@@ -16,6 +16,11 @@
    if(head){
      const title=head.querySelector("h2");
      if(title) title.innerHTML=`<span class="v51-head-no">No.${String(m.no).padStart(3,"0")}</span><span class="v51-head-name">${m.name}</span>`;
+     if(title){
+       const costume=document.createElement('select');costume.className='psg-dex-costume';
+       costume.setAttribute('aria-label','衣装');costume.title='衣装別データ未登録';costume.disabled=true;
+       const normal=document.createElement('option');normal.value='default';normal.textContent='通常';costume.append(normal);title.append(costume);
+     }
      head.querySelector(".v51-head-nav")?.remove();
      const nav=document.createElement("div");
      nav.className="v51-head-nav";

@@ -155,7 +155,7 @@
 .psg-team-choose:focus-visible,.psg-team-actions button:focus-visible,.psg-team-option:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
 @media(max-width:355px){.psg-team-choose{gap:5px;padding:5px}.psg-team-face{flex-basis:40px;width:40px;height:40px}.psg-team-actions button{min-width:31px}.psg-team-actions .psg-team-remove{min-width:37px}}
 .psg-team-food-card,.psg-team-recipe-card{margin-top:12px}
-.psg-day-card{margin-top:12px;border:0;border-radius:0;background:none}
+.psg-day-card{margin-top:12px}
 .psg-day-header{display:flex;align-items:center;justify-content:space-between;gap:6px}
 .psg-day-header .section-title{margin:0;min-width:0}
 .psg-day-setting{display:flex;align-items:center;justify-content:flex-end;gap:5px;white-space:nowrap;font-size:12px;font-weight:700}
@@ -165,8 +165,7 @@
 .psg-day-camp[aria-pressed="true"]{background:#dff2e6;border-color:#61a878;color:#174b30}
 .psg-day-energy{border:0;padding:0;margin:12px 0 0;min-width:0}
 .psg-day-energy-heading{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-weight:700;color:#111;font-size:14px}
-.psg-day-energy-heading input{width:4.5em;min-width:0;margin:0;padding:4px 6px;font:inherit;box-sizing:border-box}
-.psg-day-energy-heading small{font-size:11px;white-space:nowrap}
+.psg-day-energy-heading input{width:4.5em;min-width:0;margin:0 0 0 auto;padding:4px 6px;font:inherit;box-sizing:border-box}
 .psg-day-energy-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
 .psg-day-energy-options button{font:inherit;font-weight:700;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:12px;min-height:42px;padding:6px}
 .psg-day-energy-options button[aria-pressed="true"]{background:#e8f2fc;border-color:#3888d8;color:#145c9e}
