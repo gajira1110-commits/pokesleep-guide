@@ -1,1 +1,0 @@
-window.PS_SPECIALTY_IMAGES={"berry": "master/specialties/berry/icon.webp", "ingredient": "master/specialties/ingredient/icon.webp", "skill": "master/specialties/skill/icon.webp", "all": "master/specialties/all/icon.webp"};

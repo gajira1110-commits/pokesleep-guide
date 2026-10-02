@@ -164,7 +164,9 @@
 .psg-day-camp{font:inherit;font-weight:700;color:#285843;background:#fff;border:1px solid #b8d3c0;border-radius:12px;padding:9px 12px;min-height:42px}
 .psg-day-camp[aria-pressed="true"]{background:#dff2e6;border-color:#61a878;color:#174b30}
 .psg-day-energy{border:0;padding:0;margin:12px 0 0;min-width:0}
-.psg-day-energy legend{font-weight:700;padding:0;margin-bottom:7px;color:#111}
+.psg-day-energy-heading{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-weight:700;color:#111;font-size:14px}
+.psg-day-energy-heading input{width:4.5em;min-width:0;margin:0;padding:4px 6px;font:inherit;box-sizing:border-box}
+.psg-day-energy-heading small{font-size:11px;white-space:nowrap}
 .psg-day-energy-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
 .psg-day-energy-options button{font:inherit;font-weight:700;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:12px;min-height:42px;padding:6px}
 .psg-day-energy-options button[aria-pressed="true"]{background:#e8f2fc;border-color:#3888d8;color:#145c9e}
@@ -175,6 +177,8 @@
 .psg-day-berries select{width:100%;font:inherit;font-size:1.12em;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:7px 2px;min-height:38px}
 .psg-day-field-link{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;padding:10px 12px;text-align:left;font:inherit;font-size:.88em;font-weight:700;color:#24583d;background:#f1f8f3;border:1px solid #cbded0;border-radius:12px}
 .psg-day-field-link span{min-width:0}.psg-day-field-link b{font-size:1.4em}
+#teamFieldSummary{flex:1;text-align:center;display:flex;flex-direction:column;gap:5px}
+.psg-day-field-berries{display:flex;align-items:center;justify-content:center;gap:10px}
 .psg-field-settings>label{display:block;margin:12px 0 5px;font-weight:700}
 .psg-field-settings>select{width:100%;font:inherit;padding:9px;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:10px}
 .psg-field-percent{display:flex;align-items:center;gap:6px}
