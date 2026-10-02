@@ -41,7 +41,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   const regionalId=await page.evaluate(()=>PS.state.selected.id);await page.locator('#boxEditEvolution').selectOption('0038_alola');await page.evaluate(()=>document.getElementById('boxEditForm').requestSubmit());
   assert.deepEqual(await page.evaluate(id=>{const x=PS.state.box.find(x=>x.id===id);return [x.id,x.no,x.speciesId]},regionalId),[regionalId,38,'0038_alola']);
   await page.evaluate(()=>{PS.state.selected=PS.state.box.find(x=>x.speciesId==='0710_small');PS.state.selected.ribbonHours=500;PS.refreshBoxDetail();PS.go('boxDetail')});
-  assert.equal(await page.locator('#boxStats strong').first().innerText(),'未確認');
+  assert.equal(await page.locator('#boxStats strong').first().innerText(),await page.evaluate(()=>Math.floor(PS_SPECIES(PS.state.selected).help*.95).toLocaleString()+'秒'));
   for(const id of ['0037_alola','0038_alola','0194_paldea']){
    await page.evaluate(()=>PS.go('dex'));await page.locator(`.dex-card[data-species-id="${id}"]`).click();
    assert.equal(await page.locator('.psg-dex-costume').count(),0);assert.match(await page.locator('.v51-head-name').innerText(),/アローラ|パルデア/);
