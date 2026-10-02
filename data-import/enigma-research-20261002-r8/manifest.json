@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "ce201ee77b82b4b1105ad7343c565a5ea5f8856ab2ccaef2c89ae4348aa6314c"
+    },
+    {
+      "path": "answers.json",
+      "sha256": "95d87000281eea30e718bba469883c2a45f5bfea2580ce43372d23400f1d7ad7"
+    },
+    {
+      "path": "calculation-guidance.json",
+      "sha256": "7af515980adbcc9c5816c987eda8920be0bc15dfef503ae6441c0c72c9569180"
+    },
+    {
+      "path": "changes.json",
+      "sha256": "606abde8e86b3fddf730ed0d5cf826df9b14798a6426d4be11eef46e1c27aa80"
+    },
+    {
+      "path": "observations.json",
+      "sha256": "3f124e1d67d06f65729ea75270cb6ee693cfb70abc37fcd7d73c40e65dadb780"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "20525bcbf9b5fa590732071ea3675f43186a9956d84a2d280c09cc21afed5535"
+    },
+    {
+      "path": "validation.json",
+      "sha256": "948062b845b3488624a65bb45314c5794305fd6eacc2973e1f40e8c5d53f2648"
+    },
+    {
+      "path": "verification-plan.json",
+      "sha256": "f60f9e673e844fac76b090930ef38811245c7e97206d7756e7b5aa4806216f08"
+    }
+  ]
+}

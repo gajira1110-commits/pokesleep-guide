@@ -1,0 +1,47 @@
+{
+  "status": "proposed_model_contract_not_application_patch",
+  "skillId": "nuzzle_energy_cheer_s",
+  "requiredState": [
+    "Box個体ID",
+    "回復対象候補の現在げんき",
+    "通常のスキルストック",
+    "未使用ボーナスの有無",
+    "対象個体のスキルとレベル",
+    "対象選択確率と付与確率の出典・版"
+  ],
+  "effectSeparation": [
+    "回復対象の抽選とボーナス付与の抽選を別に保持する。",
+    "通常おてつだいによるストックとボーナスを別状態で保持する。",
+    "回復した量・付与した件数・実際にボーナス発動した回数を別集計にする。"
+  ],
+  "conditionalEventModel": {
+    "targetProbability": "w_i(t)。未確認の重みを固定1/5へ置き換えない。",
+    "grantProbability": "b_i(t)。参照対象・補正の未確認箇所はnull。",
+    "newGrantExpectation": "sum_i w_i(t)*(1-held_i(t))*b_i(t)；既所持対象への回復抽選規則が別途確定した場合に、そのw_iを使用。",
+    "heldState": "未使用ボーナス0/1。付与、使用、確認された消失イベントで更新。",
+    "dailyOutput": "付与数の期待値と使用数の期待値を区別。使用は回収時点と終端状態に依存。"
+  },
+  "confirmedConstraints": [
+    {
+      "rule": "既にボーナスを持つ個体には追加取得なし",
+      "sourceIds": [
+        "R8-official-nuzzle"
+      ]
+    },
+    {
+      "rule": "睡眠リサーチ・フィールド移動で消失",
+      "sourceIds": [
+        "R8-official-nuzzle"
+      ]
+    }
+  ],
+  "unresolvedConstraints": {
+    "anyTeamChangeReset": "既存コミュニティ資料に記載。今回の公式記事では確認できない。",
+    "manualSleepEntryReset": null,
+    "activationOrder": null,
+    "heldBonusTargetExclusion": null
+  },
+  "copyAndMetronome": "ボーナス経由のLv7から最大Lv6スキルが選ばれる境界を検証対象に追加。8/21より前の不具合を現行挙動へ採用しない。",
+  "userSwapPolicy": "交代前に回収する前提を保つ。全対象の未使用ボーナスも実際に使えるかは発動順未確認のため別条件として残す。",
+  "displayGuidance": "回復と追加発動の見込みを分ける。正確な付与確率や対象重みが未確認なら、未確認または明示した参考シナリオとして表示する。"
+}

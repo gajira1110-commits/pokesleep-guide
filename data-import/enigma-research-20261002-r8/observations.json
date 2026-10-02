@@ -1,0 +1,78 @@
+[
+  {
+    "observationId": "january",
+    "sourceIds": [
+      "R8-january-report"
+    ],
+    "skillActivations": 37,
+    "bonusesReported": 11,
+    "lowestEnergyTargetCount": 21,
+    "selfTargetCount": 11,
+    "versionClass": "before_2026_04_27_fix",
+    "targetWeights": null,
+    "fixedBonusProbability": null,
+    "notes": [
+      "対象を入れ替えながら観測。最低げんきの同率・各時点の状態分布は取得していない。",
+      "最低対象21/37を一般の選択確率として固定しない。"
+    ]
+  },
+  {
+    "observationId": "april",
+    "sourceIds": [
+      "R8-april-week2",
+      "R8-april-retrospective"
+    ],
+    "skillActivationsTotal": 126,
+    "bonusesReportedTotal": 49,
+    "week1": {
+      "activations": 62,
+      "bonuses": 22
+    },
+    "week2": {
+      "activations": 64,
+      "bonuses": 27,
+      "days": [
+        {
+          "date": "2026-04-13",
+          "activations": 10,
+          "bonuses": 3
+        },
+        {
+          "date": "2026-04-14",
+          "activations": 14,
+          "bonuses": 7
+        },
+        {
+          "date": "2026-04-15",
+          "activations": 5,
+          "bonuses": 1
+        },
+        {
+          "date": "2026-04-16",
+          "activations": 6,
+          "bonuses": 3
+        },
+        {
+          "date": "2026-04-17",
+          "activations": 7,
+          "bonuses": 2
+        },
+        {
+          "date": "2026-04-18",
+          "activations": 9,
+          "bonuses": 4
+        },
+        {
+          "date": "2026-04-19",
+          "activations": 13,
+          "bonuses": 7
+        }
+      ]
+    },
+    "versionClass": "before_2026_04_27_fix",
+    "dataOverlap": [
+      "5/2の記事の2週合計と5/8の記事は同じ観測期間。追加サンプルとして合算しない。"
+    ],
+    "currentProbabilityAdoptionAllowed": false
+  }
+]

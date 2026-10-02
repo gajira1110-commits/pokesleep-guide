@@ -1,0 +1,56 @@
+{
+  "purpose": "4/27修正後の対象選択、補正範囲、既所持時と発動順の検証準備。実ゲームの操作は未実施。",
+  "minimumRecordFields": [
+    "observedAt",
+    "gameVersion",
+    "speciesId",
+    "boxIndividualId",
+    "casterSkillLevel",
+    "teamIndividualIds",
+    "preEnergyPerIndividual",
+    "normalStockBefore",
+    "bonusHeldBefore",
+    "selectedTargetIndividualId",
+    "displayedRecovery",
+    "bonusGranted",
+    "activationOrder",
+    "eventBonus",
+    "nature",
+    "subskills",
+    "resetEvent",
+    "bonusHeldAfter"
+  ],
+  "cases": [
+    {
+      "caseId": "held-target",
+      "condition": "1個体に未使用ボーナスあり。回復対象と付与結果を別記録。",
+      "separates": "回復対象から除外 vs 回復するが追加付与なし。"
+    },
+    {
+      "caseId": "stock-order",
+      "condition": "通常ストックと未使用ボーナスが共存。回収を録画。",
+      "separates": "発動順、同時、通常ストックの得意別上限。"
+    },
+    {
+      "caseId": "modifier",
+      "condition": "同一対象個体を修正後の補正条件別に観測。既所持状態とげんき・編成を記録。",
+      "separates": "性格・サブスキル・イベント・天井。必要な適格件数を集めるまで確定しない。"
+    },
+    {
+      "caseId": "manual-entry",
+      "condition": "未使用ボーナスを確認して睡眠のマニュアル登録前後を観測。",
+      "separates": "リサーチとは別イベント。"
+    },
+    {
+      "caseId": "bonus-level-boundary",
+      "condition": "Lv7ゆびをふる・へんしん・ものまねのボーナス発動で、最大Lv6の効果が選ばれたケース。",
+      "separates": "通常発動とボーナス発動の効果量。"
+    }
+  ],
+  "futureLead": {
+    "url": "https://x.com/nitoyon/status/2047269317646176340",
+    "status": "search_snippet_only_full_post_unavailable",
+    "useAsConfirmedDataset": false,
+    "note": "第1回の集計を確認する手掛かり。本人の126発動が含まれる可能性を確認してから集計。第2回修正後のデータは今回未取得。"
+  }
+}

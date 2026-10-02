@@ -1,0 +1,58 @@
+[
+  {
+    "questionId": "ENI-nuzzle_energy_cheer_s-01",
+    "status": "historical_evidence_version_restricted",
+    "answer": {
+      "januaryObservedBonusFraction": 0.2972972972972973,
+      "aprilObservedBonusFraction": 0.3888888888888889,
+      "currentExactBonusProbability": null,
+      "eventMultiplierAppliedToBonusProbability": null,
+      "natureModifierScope": null,
+      "subskillModifierScope": null,
+      "pityInteraction": null
+    },
+    "sourceIds": [
+      "R8-january-report",
+      "R8-april-week2",
+      "R8-april-retrospective",
+      "R8-official-fixes"
+    ],
+    "fullyResolved": false,
+    "reason": "観測は4/27修正前。5月公開を修正後の検証と誤認しない。現在の抽選定数やイベント補正に転用しない。"
+  },
+  {
+    "questionId": "ENI-nuzzle_energy_cheer_s-02",
+    "status": "official_capacity_reconfirmed_target_selection_unresolved",
+    "answer": {
+      "additionalBonusWhenAlreadyHeld": false,
+      "excludeAlreadyHeldFromRecoveryTargetSelection": null,
+      "recoveryWhenTargetAlreadyHoldsBonus": null,
+      "targetWeights": null,
+      "selfObservedAsRecoveryTarget": true,
+      "selfObservationScope": "1月の本人記録11/37。現行重みは未確定。"
+    },
+    "sourceIds": [
+      "R8-official-nuzzle",
+      "R8-january-report"
+    ],
+    "fullyResolved": false,
+    "reason": "重複取得できないことと、回復対象から除かれることは別の規則。未確認の除外を実装しない。"
+  },
+  {
+    "questionId": "ENI-nuzzle_energy_cheer_s-03",
+    "status": "partial_official_bonus_execution_boundary",
+    "answer": {
+      "normalStockAndBonusActivationOrder": null,
+      "simultaneousActivationBehavior": null,
+      "manualSleepEntryReset": null,
+      "bonusTriggeredCopyOrMetronomePathHasOfficialBugHistory": true,
+      "bonusMaxLevelClampFormula": null
+    },
+    "sourceIds": [
+      "R8-official-fixes",
+      "R8-official-nuzzle"
+    ],
+    "fullyResolved": false,
+    "reason": "8/21修正はボーナス経由の実行経路の確認材料。発動順や一般のレベル変換式をここから確定しない。"
+  }
+]
