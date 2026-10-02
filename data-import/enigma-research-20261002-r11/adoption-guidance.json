@@ -1,0 +1,78 @@
+{
+  "scope": "採否判断の補助資料。アプリの現行採用状態は未照合。マスターや本番データの置換用ではない。",
+  "mergeRules": [
+    "履歴ごとに種・対象枠・日時・バージョン・直接/コピーを保持。",
+    "nullは未知。0やfalseに変換しない。後便のnullで前便の限定観測を消さない。",
+    "sourceIdsはsource-index内originalSource.sourceIdに照合する。",
+    "原便の観測・公式条件・条件付き計算案・二次出典の手掛かりを混ぜない。",
+    "過去の抽選率や候補一覧を現行の既定値にしない。",
+    "reportedStatusesは証拠の状態であり、実装採用状況ではない。"
+  ],
+  "criticalCases": [
+    {
+      "questionId": "ENI-mythical-individual-02",
+      "retainEntries": [
+        "v1-answer-01",
+        "v10-answer-02"
+      ],
+      "rule": "ミュウLv31でLv50枠の解放を報告した観測を保持。ダークライのレベル条件は未確認のまま。空欄だけで未解放と判定しない。"
+    },
+    {
+      "questionId": "ENI-disguise_berry_burst-02",
+      "rule": "v2の公式リサーチ/手動入力条件とv6の睡眠周期の本人観測を併記。睡眠開始だけのリセットへ広げない。"
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-01",
+      "rule": "v8の2026/4/27以前の観測を現行確率へ流用しない。公開日と観測日を分ける。"
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-01",
+      "rule": "v7の25%は参考仮定。スキル発生補正を分岐抽選に二重適用しない。"
+    },
+    {
+      "questionId": "ENI-nightmare_energy_charge_m-01",
+      "rule": "v9の-12・0下限は明示した計算仮定。歴史的観測だけで現行全条件を確定しない。"
+    }
+  ],
+  "calculationReferences": [
+    {
+      "round": 6,
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/daily-expectation-model.json",
+      "purpose": "ばけのかわの成功済み状態を含む条件付き日次期待値"
+    },
+    {
+      "round": 7,
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/daily-expectation-model.json",
+      "purpose": "たくわえる状態を持つ条件付き日次計算"
+    },
+    {
+      "round": 8,
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/calculation-guidance.json",
+      "purpose": "ほっぺすりすりの付与・所持・使用を分離"
+    },
+    {
+      "round": 9,
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/calculation-guidance.json",
+      "purpose": "ナイトメアのげんき損失とエナジーの間接影響を分離"
+    },
+    {
+      "round": 10,
+      "path": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/box-state-guidance.json",
+      "purpose": "解放状態・内容・効果有効レベルを分離"
+    }
+  ],
+  "followUp": [
+    {
+      "questionId": "ENI-almighty-01",
+      "question": "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+      "priority": "C",
+      "status": "既存キューに存在するが第1〜10便の個別回答は未作成。新規項目でも調査済みの否定結果でもない。"
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-03",
+      "question": "追加効果の現在の解放手段は未確認。",
+      "priority": "B2",
+      "status": "既存キューに存在するが第1〜10便の個別回答は未作成。新規項目でも調査済みの否定結果でもない。"
+    }
+  ]
+}

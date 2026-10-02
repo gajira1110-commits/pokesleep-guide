@@ -1,0 +1,17 @@
+{
+  "nextChecks": [
+    {
+      "questionId": "ENI-almighty-01",
+      "needed": "発動ごとのスキル設定・Lv・チーム順・対象個体/系統・総アメ個数の原記録。コピー/ゆびをふるは経路を別記。"
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-03",
+      "needed": "イベント未参加者の現在のゲーム内解放条件、後から仲間にした個体への適用範囲。"
+    },
+    {
+      "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+      "needed": "ラティアスの同条件確認。相方不在時と未解放時の表示を区別。"
+    }
+  ],
+  "inGameTestedByUs": false
+}

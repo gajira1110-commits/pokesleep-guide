@@ -1,0 +1,105 @@
+{
+  "speciesId": "0491_default",
+  "operation": "subskill_unlock",
+  "slotActiveAtLevel": 10,
+  "status": "historical_screenshot_observed_candidates",
+  "observedAtArticleDate": "2025-05-17",
+  "candidateCount": 17,
+  "sourceIds": [
+    "R10-candidate-image",
+    "R10-sharkfin-report"
+  ],
+  "candidates": [
+    {
+      "name": "睡眠EXPボーナス",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "おてつだいボーナス",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "げんき回復ボーナス",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "ゆめのかけらボーナス",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "リサーチEXPボーナス",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "きのみの数S",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "スキルレベルアップM",
+      "displayColor": "gold",
+      "drawProbability": null
+    },
+    {
+      "name": "スキルレベルアップS",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "最大所持数アップL",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "最大所持数アップM",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "おてつだいスピードM",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "食材確率アップM",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "スキル確率アップM",
+      "displayColor": "blue",
+      "drawProbability": null
+    },
+    {
+      "name": "最大所持数アップS",
+      "displayColor": "white",
+      "drawProbability": null
+    },
+    {
+      "name": "おてつだいスピードS",
+      "displayColor": "white",
+      "drawProbability": null
+    },
+    {
+      "name": "食材確率アップS",
+      "displayColor": "white",
+      "drawProbability": null
+    },
+    {
+      "name": "スキル確率アップS",
+      "displayColor": "white",
+      "drawProbability": null
+    }
+  ],
+  "limits": [
+    "この画面は既存資料の候補の裏付けで、現行候補の追加・削除を証明しない。",
+    "全枠・変更時・他枠の既存スキル重複時に同じ17種が選ばれるとは確定しない。",
+    "確率を1/17へ固定しない。色別比率や既存結果の除外は別確認が必要。",
+    "サブスキルのたねによる昇格と、ひらめきのたねによる再抽選を別操作として扱う。"
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "scope": "既存26項目。個体入力の追加依頼は別枠。",
+  "questionCount": 26,
+  "coveredQuestionCount": 24,
+  "answerEntryCount": 29,
+  "fullyResolvedQuestionCount": 0,
+  "noAnswerEntryQuestionIds": [
+    "ENI-almighty-01",
+    "ENI-draco_meteor_berry_burst-03"
+  ],
+  "items": [
+    {
+      "questionId": "ENI-psystrike_berry_zone-01",
+      "entityId": "psystrike_berry_zone",
+      "question": "即消費きのみに既存ゾーンまで不適用か、今回の増加分だけ不適用かは要ゲーム内照合。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v4-answer-01"
+      ],
+      "rounds": [
+        4
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-psystrike_berry_zone-02",
+      "entityId": "psystrike_berry_zone",
+      "question": "スキル由来のマゴのみとの端数処理・EX補正順、コピー時のゾーン種別は未確認。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v4-answer-02"
+      ],
+      "rounds": [
+        4
+      ],
+      "reportedStatuses": [
+        "partial_first_person_evidence_and_secondary_leads"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-almighty-01",
+      "entityId": "almighty",
+      "question": "追加アメ抽選の確率・対象選択の重み・コピーやゆびをふるの入れ子は未確認。約35%はWiki推定で既定値にしない。",
+      "priority": "C",
+      "coverage": "no_answer_entry_yet",
+      "fullyResolved": false,
+      "entryIds": [],
+      "rounds": [],
+      "reportedStatuses": [],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-almighty-02",
+      "entityId": "almighty",
+      "question": "セット先が上限の低いスキルの場合の高Lv効果参照方法は未確認。",
+      "priority": "A1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v1-answer-02"
+      ],
+      "rounds": [
+        1
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-plus_ingredient_magnet_s-01",
+      "entityId": "plus_ingredient_magnet_s",
+      "question": "ランダム食材数5/7/等を3種類へ配分する端数処理・抽選重み・バッグ残量不足時の各成分処理は未確認。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-04"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-plus_ingredient_magnet_s-02",
+      "entityId": "plus_ingredient_magnet_s",
+      "question": "ゆびをふる等による別食材の追加数の一般式は未確認。コーヒー／ミルク列を任意食材へ流用しない。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-05"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-minus_cooking_power_up_s-01",
+      "entityId": "minus_cooking_power_up_s",
+      "question": "容量+200上限でマイナス全体が発動不能か、回復部分のみ発動できるかは未確認。親スキルの発動不能を自動継承しない。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-03"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "unconfirmed_search_lead"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-minus_cooking_power_up_s-02",
+      "entityId": "minus_cooking_power_up_s",
+      "question": "回復対象の抽選重み、自身が対象になるかの直接確認は未実施。げんきエールの低元気優先を自動継承しない。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-02"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "partial_first_person_evidence"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+      "entityId": "healing_pulse_energy_cheer_s",
+      "question": "2匹の抽選重み、自身の対象可否、追加おてつだい対象、即時おてつだいの所持上限とスキル抽選の有無は未確認。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-01"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "partial_first_person_evidence"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+      "entityId": "healing_pulse_energy_cheer_s",
+      "question": "過去イベント未参加者の現在の追加効果解放手段・自動解放可否は未確認。",
+      "priority": "B1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v3-answer-06"
+      ],
+      "rounds": [
+        3
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-01",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v5-answer-01"
+      ],
+      "rounds": [
+        5
+      ],
+      "reportedStatuses": [
+        "unconfirmed_forms"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-02",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "コピー時、端数・EX補正順は未確認。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v5-answer-04"
+      ],
+      "rounds": [
+        5
+      ],
+      "reportedStatuses": [
+        "unconfirmed_copy_eligibility_lead"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-draco_meteor_berry_burst-03",
+      "entityId": "draco_meteor_berry_burst",
+      "question": "追加効果の現在の解放手段は未確認。",
+      "priority": "B2",
+      "coverage": "no_answer_entry_yet",
+      "fullyResolved": false,
+      "entryIds": [],
+      "rounds": [],
+      "reportedStatuses": [],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-01",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "25%は公式確定値ではない。性格・サブスキルによる分岐確率変化は未確認。スキル発生確率の補正を分岐抽選へ二重適用しない。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v7-answer-01"
+      ],
+      "rounds": [
+        7
+      ],
+      "reportedStatuses": [
+        "partial_primary_analysis_and_observation"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-02",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "別個体の交代だけで残留個体のたくわえ数がリセットされるとは確認できない。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v2-answer-01"
+      ],
+      "rounds": [
+        2
+      ],
+      "reportedStatuses": [
+        "reported_observation_historical"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-stockpile_energy_charge_s-03",
+      "entityId": "stockpile_energy_charge_s",
+      "question": "睡眠・週跨ぎ・同一フィールドへの移動、進化時の状態処理は未確認。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v2-answer-02"
+      ],
+      "rounds": [
+        2
+      ],
+      "reportedStatuses": [
+        "unconfirmed"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-01",
+      "entityId": "lunar_blessing_energy_for_everyone_s",
+      "question": "衣装・リージョン・サイズを種類ボーナスで別種と数える条件は未確認。speciesIdの種類数で自動決定しない。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v5-answer-02"
+      ],
+      "rounds": [
+        5
+      ],
+      "reportedStatuses": [
+        "unconfirmed_forms"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-02",
+      "entityId": "lunar_blessing_energy_for_everyone_s",
+      "question": "コピー時、端数・EX補正順は未確認。",
+      "priority": "B2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v5-answer-03"
+      ],
+      "rounds": [
+        5
+      ],
+      "reportedStatuses": [
+        "partial_historical_screenshot_evidence"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-nightmare_energy_charge_m-01",
+      "entityId": "nightmare_energy_charge_m",
+      "question": "負のげんき効果に性格の回復補正が作用するか、0未満の処理を個別には未確認。計算の推奨仮定は-12固定・0下限で明示する。",
+      "priority": "C",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v9-answer-01"
+      ],
+      "rounds": [
+        9
+      ],
+      "reportedStatuses": [
+        "partial_historical_boundary_observation"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-01",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "対象個体の性格・サブスキル・イベント・当日の発生回数制御を抽選pへどこまで反映するか、天井抽選との関係は未確認。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v2-answer-03",
+        "v8-answer-01"
+      ],
+      "rounds": [
+        2,
+        8
+      ],
+      "reportedStatuses": [
+        "partial_context_only",
+        "historical_evidence_version_restricted"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-02",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "ボーナス既所持対象を抽選から除くか、付与だけ失敗するか、回復はどう扱うか未確認。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v8-answer-02"
+      ],
+      "rounds": [
+        8
+      ],
+      "reportedStatuses": [
+        "official_capacity_reconfirmed_target_selection_unresolved"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-nuzzle_energy_cheer_s-03",
+      "entityId": "nuzzle_energy_cheer_s",
+      "question": "通常ストックとボーナスの発動順・同時発動・睡眠データのマニュアル登録時の消失は未確認。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v2-answer-04",
+        "v8-answer-03"
+      ],
+      "rounds": [
+        2,
+        8
+      ],
+      "reportedStatuses": [
+        "unconfirmed",
+        "partial_official_bonus_execution_boundary"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-disguise_berry_burst-01",
+      "entityId": "disguise_berry_burst",
+      "question": "正確な大成功確率・性格等による変更は未確認。約20%を確定値にしない。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v6-answer-01"
+      ],
+      "rounds": [
+        6
+      ],
+      "reportedStatuses": [
+        "partial_historical_first_person_evidence"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-disguise_berry_burst-02",
+      "entityId": "disguise_berry_burst",
+      "question": "交代・フィールド移動・週跨ぎで再大成功可能になるとは確認されていない。",
+      "priority": "A2",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v2-answer-05",
+        "v6-answer-02"
+      ],
+      "rounds": [
+        2,
+        6
+      ],
+      "reportedStatuses": [
+        "official_constraint_reconfirmed",
+        "partial_sleep_cycle_observation"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-mythical-individual-01",
+      "entityId": "mythical_individual_settings",
+      "question": "食材とメインスキルの抽選重み、重複候補除外の完全な規則は未確認。",
+      "priority": "C",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v1-answer-03",
+        "v10-answer-01"
+      ],
+      "rounds": [
+        1,
+        10
+      ],
+      "reportedStatuses": [
+        "unconfirmed",
+        "partial_historical_candidate_and_reroll_evidence"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    },
+    {
+      "questionId": "ENI-mythical-individual-02",
+      "entityId": "mythical_individual_settings",
+      "question": "レベル到達前にたねで解放可能かは未確認。枠解放と効果有効レベルを分離しておく。",
+      "priority": "A1",
+      "coverage": "answer_entries_present",
+      "fullyResolved": false,
+      "entryIds": [
+        "v1-answer-01",
+        "v10-answer-02"
+      ],
+      "rounds": [
+        1,
+        10
+      ],
+      "reportedStatuses": [
+        "partial_evidence",
+        "unlock_and_display_evidence_without_level_requirement_resolution"
+      ],
+      "remainingUnknownsMustBeReadInAllEntries": true,
+      "originalQueuePointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/research-queue.json"
+    }
+  ]
+}

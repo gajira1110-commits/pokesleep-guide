@@ -1,0 +1,738 @@
+{
+  "mergePolicy": "append_only_by_entry_id; never shallow-merge answer dictionaries or treat latest null as a retraction",
+  "entries": [
+    {
+      "entryId": "v1-answer-01",
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/answers.json#/0",
+      "questionId": "ENI-mythical-individual-02",
+      "originalAnswer": {
+        "questionId": "ENI-mythical-individual-02",
+        "status": "partial_evidence",
+        "factOrInference": "reported_observation",
+        "answer": {
+          "mewSubskillBeforeActiveLevelObserved": true,
+          "case": {
+            "pokemonLevel": 31,
+            "slotActiveAtLevel": 50,
+            "resultSubskill": "スキル確率アップS"
+          },
+          "allSlotsAllowEarlyUnlock": null,
+          "darkraiAllowEarlyUnlock": null,
+          "ingredientAllowEarlyUnlock": null,
+          "minimumSeedUseLevel": null
+        },
+        "sourceIds": [
+          "R1-mew-level31-report",
+          "R1-mew-level31-image"
+        ],
+        "checkedAt": "2026-10-02",
+        "inGameTestedByUs": false,
+        "limitation": "本人本文と添付画像を組み合わせた単一観測。全枠・全種の一般則や効果の有効化時期を、この観測だけで確定しない。",
+        "affectedPaths": [
+          "data-import/skill-rules-v263-mythical-settings.json"
+        ],
+        "proposedAdoption": "種全体のlevelRequiredToUseSeedはnullのまま。観測ケースを別記し、レベル未到達だから未解放だと決め付けて既存個体入力を消さない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v1-answer-02",
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/answers.json#/1",
+      "questionId": "ENI-almighty-02",
+      "originalAnswer": {
+        "questionId": "ENI-almighty-02",
+        "status": "unconfirmed",
+        "factOrInference": "fact_for_level_retention_only",
+        "answer": {
+          "skillLevelRetainedOnEffectChange": true,
+          "effectiveLevelAboveSelectedSkillCap": null,
+          "selectedSkillEffectAboveCap": null
+        },
+        "sourceIds": [
+          "R1-official-mew",
+          "R1-official-bugs"
+        ],
+        "checkedAt": "2026-10-02",
+        "newConfirmedRule": false,
+        "reason": "レベル保持は既知ルールの再確認。上限超過時の効果量を公式説明で直接確認できず。ゆびをふる・コピーの規則を直接セットへ流用しない。",
+        "affectedPaths": [
+          "data-import/skill-rules-v263-skill-rules.json",
+          "data-import/skill-rules-v263-mythical-settings.json"
+        ],
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v1-answer-03",
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/answers.json#/2",
+      "questionId": "ENI-mythical-individual-01",
+      "originalAnswer": {
+        "questionId": "ENI-mythical-individual-01",
+        "status": "unconfirmed",
+        "factOrInference": "historical_notice_lead",
+        "answer": {
+          "ingredientWeights": null,
+          "mainSkillWeights": null,
+          "completeExclusionRules": null,
+          "subskillUniformDirectOfficialReverification": false
+        },
+        "sourceIds": [
+          "R1-official-bugs",
+          "R1-uniform-history-lead"
+        ],
+        "checkedAt": "2026-10-02",
+        "reason": "等確率との既存記載の歴史的出典候補を発見したが、現行の公式一次原本では当該文を再確認できず。食材・メインスキルへ均一確率を転用しない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v2-answer-01",
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json#/0",
+      "questionId": "ENI-stockpile_energy_charge_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-stockpile_energy_charge_s-02",
+        "status": "reported_observation_historical",
+        "checkedAt": "2026-10-02",
+        "factOrInference": "first_person_report",
+        "answer": {
+          "otherMemberSwapResetsResidentCount": false,
+          "scope": "報告された2024年の編成・交代条件"
+        },
+        "sourceIds": [
+          "R2-stockpile-first-person"
+        ],
+        "newEvidence": true,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false,
+        "proposedAdoption": "全メンバーを一律に0へ戻す処理の根拠にしない。現行再確認待ちの観測として追加。",
+        "affectedPaths": [
+          "data-import/skill-rules-v263-skill-rules.json"
+        ],
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v2-answer-02",
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json#/1",
+      "questionId": "ENI-stockpile_energy_charge_s-03",
+      "originalAnswer": {
+        "questionId": "ENI-stockpile_energy_charge_s-03",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "sleep": null,
+          "weekRollover": null,
+          "sameFieldMove": null,
+          "evolution": null
+        },
+        "sourceIds": [
+          "R2-official-stockpile",
+          "R2-official-field-ticket"
+        ],
+        "reason": "カビゴンのエナジーリセットから個体のたくわえ回数リセットを導かない。週初めの利用提案だけでは前後状態の実測証拠にしない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v2-answer-03",
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json#/2",
+      "questionId": "ENI-nuzzle_energy_cheer_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-nuzzle_energy_cheer_s-01",
+        "status": "partial_context_only",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "communityTableDrawCounts": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "communityAdjustmentDate": "2026-04-27",
+          "adjustmentClaim": "抽選回数+1",
+          "probabilityFormula": null,
+          "modifierScope": null,
+          "independentDraws": null,
+          "pityInteraction": null
+        },
+        "sourceIds": [
+          "R2-nuzzle-wiki"
+        ],
+        "newEvidence": "表と旧式のずれに対する履歴説明を新しく確認。ただし一次資料ではない。",
+        "proposedAdoption": "現行2〜7の既存表を再提出して新ルールと数えない。本文SLv指数をそのまま計算へ採用しない。+1履歴と独立抽選式の確定は分ける。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v2-answer-04",
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json#/3",
+      "questionId": "ENI-nuzzle_energy_cheer_s-03",
+      "originalAnswer": {
+        "questionId": "ENI-nuzzle_energy_cheer_s-03",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "manualSleepEntryRemovesBonus": null,
+          "normalStockVsBonusOrder": null,
+          "simultaneousActivation": null
+        },
+        "sourceIds": [
+          "R2-official-nuzzle"
+        ],
+        "reason": "公式の睡眠リサーチはマニュアル登録と同義とは決め付けない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v2-answer-05",
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/answers.json#/4",
+      "questionId": "ENI-disguise_berry_burst-02",
+      "originalAnswer": {
+        "questionId": "ENI-disguise_berry_burst-02",
+        "status": "official_constraint_reconfirmed",
+        "checkedAt": "2026-10-02",
+        "factOrInference": "inference_from_official_constraint",
+        "answer": {
+          "allowAnotherSuccessBeforeResearchOrManualEntry": false,
+          "swapSpecificExperiment": null,
+          "fieldMoveSpecificExperiment": null,
+          "weekSpecificExperiment": null
+        },
+        "sourceIds": [
+          "R2-official-disguise"
+        ],
+        "proposedAdoption": "通常モデルでは睡眠リサーチ／マニュアル登録以外のイベントを大成功解禁イベントに追加しない。これは公式の制限からの実装提案で、個々のイベントを実測済みという意味ではない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v3-answer-01",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/0",
+      "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-healing_pulse_energy_cheer_s-01",
+        "status": "partial_first_person_evidence",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "observationIds": [
+            "R3-healing-lowest-energy"
+          ],
+          "targetWeights": null,
+          "selfTargetPossible": null,
+          "instantHelpCapacityRule": null,
+          "instantHelpRollsMainSkill": null
+        },
+        "sourceIds": [
+          "R3-healing-first-person",
+          "R3-official-healing"
+        ],
+        "reason": "対象選択の本人検証を追加。即時おてつだいでスキルが発生しないとの記事記述は専用検証がなく、確定値に昇格しない。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v3-answer-02",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/1",
+      "questionId": "ENI-minus_cooking_power_up_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-minus_cooking_power_up_s-02",
+        "status": "partial_first_person_evidence",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "observationIds": [
+            "R3-minus-main",
+            "R3-minus-sub"
+          ],
+          "targetWeights": null,
+          "selfTargetPossible": null
+        },
+        "sourceIds": [
+          "R3-minus-first-person",
+          "R3-official-plus-minus"
+        ],
+        "reason": "条件の異なる2記録を合算して共通確率を作らない。最低げんき優先の式と自己対象は未確認。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v3-answer-03",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/2",
+      "questionId": "ENI-minus_cooking_power_up_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-minus_cooking_power_up_s-01",
+        "status": "unconfirmed_search_lead",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "canActivateAtPotBonusCap": null,
+          "healingOccursAtPotBonusCap": null,
+          "pendingStockAtCap": null
+        },
+        "sourceIds": [
+          "R3-minus-cap-search-lead",
+          "R3-official-plus-minus"
+        ],
+        "reason": "投稿本文が取得できず、検索抜粋のみ。親スキルの上限挙動からも継承を決め付けない。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v3-answer-04",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/3",
+      "questionId": "ENI-plus_ingredient_magnet_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-plus_ingredient_magnet_s-01",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "randomIngredientDistribution": null,
+          "rounding": null,
+          "bagOverflow": null
+        },
+        "sourceIds": [
+          "R3-official-plus-minus"
+        ],
+        "reason": "公式はランダム取得まで。均等N/3・端数配分・バッグ超過の具体的処理を裏付ける新一次資料なし。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v3-answer-05",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/4",
+      "questionId": "ENI-plus_ingredient_magnet_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-plus_ingredient_magnet_s-02",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "extraQuantityGeneralFormula": null,
+          "metronomeArbitraryIngredientQuantity": null
+        },
+        "sourceIds": [
+          "R3-official-plus-minus"
+        ],
+        "reason": "発動者1枠目という既知の公式ルールから任意食材の数量式までは導けない。既存数量表の再提出は新規確定と数えない。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v3-answer-06",
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/answers.json#/5",
+      "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-healing_pulse_energy_cheer_s-02",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "currentLatePlayerUnlockConditions": null
+        },
+        "sourceIds": [
+          "R3-official-healing"
+        ],
+        "reason": "登場告知はイベント後の現行解放条件の証拠にしない。今回の対象選択観測とも別問題。",
+        "fullyResolved": false,
+        "inGameTestedByUs": false,
+        "currentVersionIndependentlyVerified": false
+      }
+    },
+    {
+      "entryId": "v4-answer-01",
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/answers.json#/0",
+      "questionId": "ENI-psystrike_berry_zone-01",
+      "originalAnswer": {
+        "questionId": "ENI-psystrike_berry_zone-01",
+        "status": "unconfirmed",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "boxInstantConsumptionUsesExistingZone": null,
+          "boxInstantConsumptionUsesNewZoneIncrement": null
+        },
+        "sourceIds": [
+          "R4-zone-wiki"
+        ],
+        "reason": "Wikiの適用なしという文だけでは既存ゾーン有無の条件を区別できない。0%からの発動だけで結論を広げない。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v4-answer-02",
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/answers.json#/1",
+      "questionId": "ENI-psystrike_berry_zone-02",
+      "originalAnswer": {
+        "questionId": "ENI-psystrike_berry_zone-02",
+        "status": "partial_first_person_evidence_and_secondary_leads",
+        "checkedAt": "2026-10-02",
+        "answer": {
+          "normalBerryObservations": "observations.json",
+          "roundingRule": null,
+          "exModifierOrder": null,
+          "skillCreatedMagoBerryRounding": null,
+          "psystrikeCopyEligibility": null,
+          "copiedZoneBerryType": null
+        },
+        "sourceIds": [
+          "R4-normal-berry-first-person",
+          "R4-copy-wiki",
+          "R4-burst-article-index"
+        ],
+        "reason": "通常きのみの本人報告を追加。著者の式は同じ前提で全値を再現せず未採用。バースト記事の試算をバースト実測と数えない。コピー対象外のWiki記述があり、ゾーン種別より可否を先に一次確認する。",
+        "fullyResolved": false
+      }
+    },
+    {
+      "entryId": "v5-answer-01",
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/answers.json#/0",
+      "questionId": "ENI-draco_meteor_berry_burst-01",
+      "originalAnswer": {
+        "questionId": "ENI-draco_meteor_berry_burst-01",
+        "status": "unconfirmed_forms",
+        "answer": {
+          "costumeIdentityRule": null,
+          "costumeYearIdentityRule": null,
+          "regionalIdentityRule": null,
+          "sizeIdentityRule": null
+        },
+        "sourceIds": [
+          "R5-official-cresselia",
+          "R5-official-latios"
+        ],
+        "fullyResolved": false,
+        "reason": "Box用speciesIdや図鑑番号から種類ボーナスの同一性を自動決定しない。おてつだいブーストの衣装説明を別スキルへ無条件継承しない。",
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v5-answer-02",
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/answers.json#/1",
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-lunar_blessing_energy_for_everyone_s-01",
+        "status": "unconfirmed_forms",
+        "answer": {
+          "costumeIdentityRule": null,
+          "costumeYearIdentityRule": null,
+          "regionalIdentityRule": null,
+          "sizeIdentityRule": null
+        },
+        "sourceIds": [
+          "R5-official-cresselia",
+          "R5-official-latios"
+        ],
+        "fullyResolved": false,
+        "reason": "Box用speciesIdや図鑑番号から種類ボーナスの同一性を自動決定しない。おてつだいブーストの衣装説明を別スキルへ無条件継承しない。",
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v5-answer-03",
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/answers.json#/2",
+      "questionId": "ENI-lunar_blessing_energy_for_everyone_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-lunar_blessing_energy_for_everyone_s-02",
+        "status": "partial_historical_screenshot_evidence",
+        "answer": {
+          "nestedCopyObservationId": "R5-mimic-metronome-combined-effect",
+          "directCopyReferenceType": null,
+          "nestedReferenceType": null,
+          "berryEnergyRounding": null,
+          "exModifierOrder": null
+        },
+        "sourceIds": [
+          "R5-taiga-nested-copy",
+          "R5-taiga-image",
+          "R5-lunar-wiki"
+        ],
+        "fullyResolved": false,
+        "reason": "2025年のものまね→ゆびをふる経路の画面証拠。直接クレセリアコピーの検証と混同しない。",
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v5-answer-04",
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/answers.json#/3",
+      "questionId": "ENI-draco_meteor_berry_burst-02",
+      "originalAnswer": {
+        "questionId": "ENI-draco_meteor_berry_burst-02",
+        "status": "unconfirmed_copy_eligibility_lead",
+        "answer": {
+          "copyEligible": null,
+          "copiedBerryType": null,
+          "berryEnergyRounding": null,
+          "exModifierOrder": null
+        },
+        "sourceIds": [
+          "R5-copy-wiki",
+          "R5-official-latios"
+        ],
+        "fullyResolved": false,
+        "reason": "Wikiはコピー対象外と記載。成功時計算を仮定する前に抽選候補／失敗効果を一次資料で確認する。",
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v6-answer-01",
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/answers.json#/0",
+      "questionId": "ENI-disguise_berry_burst-01",
+      "originalAnswer": {
+        "questionId": "ENI-disguise_berry_burst-01",
+        "status": "partial_historical_first_person_evidence",
+        "answer": {
+          "eligibleSampleCount": 100,
+          "greatSuccessCount": 18,
+          "observedFraction": 0.18,
+          "exactProbability": null,
+          "natureEffectOnBranchProbability": null,
+          "subskillEffectOnBranchProbability": null
+        },
+        "sourceIds": [
+          "R6-disguise-first-person"
+        ],
+        "reason": "成功後の抽選不可状態を除いた条件付き観測。18%を一般定数にしない。既存311件へ重複確認なしで合算しない。",
+        "fullyResolved": false,
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v6-answer-02",
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/answers.json#/1",
+      "questionId": "ENI-disguise_berry_burst-02",
+      "originalAnswer": {
+        "questionId": "ENI-disguise_berry_burst-02",
+        "status": "partial_sleep_cycle_observation",
+        "answer": {
+          "reportedRestorationAfterSplitSleepCycle": true,
+          "reportedRestorationAfterSleepCycleWhileBoxed": true,
+          "sleepStartAloneResets": null,
+          "swapAloneResets": null,
+          "fieldMoveAloneResets": null,
+          "weekOnlyResets": null
+        },
+        "sourceIds": [
+          "R6-disguise-first-person",
+          "R6-official-disguise"
+        ],
+        "reason": "睡眠を含む観測として追加。交代単独で復活・睡眠開始だけで復活とは読まない。",
+        "fullyResolved": false,
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v7-answer-01",
+      "round": 7,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/answers.json#/0",
+      "questionId": "ENI-stockpile_energy_charge_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-stockpile_energy_charge_s-01",
+        "status": "partial_primary_analysis_and_observation",
+        "answer": {
+          "exactSpitProbability": null,
+          "suggestedScenarioProbability": 0.25,
+          "defaultEnableSuggestedProbability": false,
+          "reported95PercentConfidenceInterval": [
+            0.2434,
+            0.2682
+          ],
+          "reportedIntervalIndependentlyRecalculated": false,
+          "analysisSampleSize": null,
+          "equalProbabilityAcrossCountsProven": false,
+          "natureEffectOnBranchProbability": null,
+          "subskillEffectOnBranchProbability": null
+        },
+        "sourceIds": [
+          "R7-analysis-report",
+          "R7-study-method",
+          "R7-individual-observation"
+        ],
+        "fullyResolved": false,
+        "reason": "25%の検証根拠を追加。検定の非有意は同一性の証明ではなく、性格・FBなど補正範囲も未確認。",
+        "checkedAt": "2026-10-02"
+      }
+    },
+    {
+      "entryId": "v8-answer-01",
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/answers.json#/0",
+      "questionId": "ENI-nuzzle_energy_cheer_s-01",
+      "originalAnswer": {
+        "questionId": "ENI-nuzzle_energy_cheer_s-01",
+        "status": "historical_evidence_version_restricted",
+        "answer": {
+          "januaryObservedBonusFraction": 0.2972972972972973,
+          "aprilObservedBonusFraction": 0.3888888888888889,
+          "currentExactBonusProbability": null,
+          "eventMultiplierAppliedToBonusProbability": null,
+          "natureModifierScope": null,
+          "subskillModifierScope": null,
+          "pityInteraction": null
+        },
+        "sourceIds": [
+          "R8-january-report",
+          "R8-april-week2",
+          "R8-april-retrospective",
+          "R8-official-fixes"
+        ],
+        "fullyResolved": false,
+        "reason": "観測は4/27修正前。5月公開を修正後の検証と誤認しない。現在の抽選定数やイベント補正に転用しない。"
+      }
+    },
+    {
+      "entryId": "v8-answer-02",
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/answers.json#/1",
+      "questionId": "ENI-nuzzle_energy_cheer_s-02",
+      "originalAnswer": {
+        "questionId": "ENI-nuzzle_energy_cheer_s-02",
+        "status": "official_capacity_reconfirmed_target_selection_unresolved",
+        "answer": {
+          "additionalBonusWhenAlreadyHeld": false,
+          "excludeAlreadyHeldFromRecoveryTargetSelection": null,
+          "recoveryWhenTargetAlreadyHoldsBonus": null,
+          "targetWeights": null,
+          "selfObservedAsRecoveryTarget": true,
+          "selfObservationScope": "1月の本人記録11/37。現行重みは未確定。"
+        },
+        "sourceIds": [
+          "R8-official-nuzzle",
+          "R8-january-report"
+        ],
+        "fullyResolved": false,
+        "reason": "重複取得できないことと、回復対象から除かれることは別の規則。未確認の除外を実装しない。"
+      }
+    },
+    {
+      "entryId": "v8-answer-03",
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/answers.json#/2",
+      "questionId": "ENI-nuzzle_energy_cheer_s-03",
+      "originalAnswer": {
+        "questionId": "ENI-nuzzle_energy_cheer_s-03",
+        "status": "partial_official_bonus_execution_boundary",
+        "answer": {
+          "normalStockAndBonusActivationOrder": null,
+          "simultaneousActivationBehavior": null,
+          "manualSleepEntryReset": null,
+          "bonusTriggeredCopyOrMetronomePathHasOfficialBugHistory": true,
+          "bonusMaxLevelClampFormula": null
+        },
+        "sourceIds": [
+          "R8-official-fixes",
+          "R8-official-nuzzle"
+        ],
+        "fullyResolved": false,
+        "reason": "8/21修正はボーナス経由の実行経路の確認材料。発動順や一般のレベル変換式をここから確定しない。"
+      }
+    },
+    {
+      "entryId": "v9-answer-01",
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/answers.json#/0",
+      "questionId": "ENI-nightmare_energy_charge_m-01",
+      "originalAnswer": {
+        "questionId": "ENI-nightmare_energy_charge_m-01",
+        "status": "partial_historical_boundary_observation",
+        "answer": {
+          "observedNearSevenToZero": true,
+          "observedDoubleActivationLoss": 24,
+          "currentExactLowerBound": null,
+          "natureRecoveryModifierAppliesToNegativeEffect": null,
+          "internalFractionalEnergyBelowZero": null,
+          "suggestedScenario": {
+            "lossPerActivation": 12,
+            "floor": 0,
+            "status": "explicit_assumption_supported_by_historical_reports_not_official_confirmation"
+          }
+        },
+        "sourceIds": [
+          "R9-zero-report",
+          "R9-double-report81",
+          "R9-double-report94",
+          "R9-official-darkrai"
+        ],
+        "fullyResolved": false,
+        "reason": "下限0の計算案に本人報告を紐付ける。古い条件不明の記録なので、内部小数値や性格別の現行挙動は確定しない。"
+      }
+    },
+    {
+      "entryId": "v10-answer-01",
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/answers.json#/0",
+      "questionId": "ENI-mythical-individual-01",
+      "originalAnswer": {
+        "questionId": "ENI-mythical-individual-01",
+        "status": "partial_historical_candidate_and_reroll_evidence",
+        "answer": {
+          "darkraiFirstSubskillCandidatesObserved": 17,
+          "candidateScope": "2025/5/17掲載のLv10枠解放時の候補画面",
+          "candidateDrawProbabilities": null,
+          "completeDuplicateExclusionRules": null,
+          "currentIngredientDrawWeights": null,
+          "mewMainSkillDrawWeights": null,
+          "rerollRejectionRetainsOldSubskillReported": true,
+          "rerollRejectionCandyReported": 40
+        },
+        "sourceIds": [
+          "R10-candidate-image",
+          "R10-sharkfin-report",
+          "R10-reroll-retain-report"
+        ],
+        "fullyResolved": false,
+        "reason": "候補と再抽選取り消しの本人証拠を追加。重みや除外の完全な規則は未確認。"
+      }
+    },
+    {
+      "entryId": "v10-answer-02",
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/answers.json#/1",
+      "questionId": "ENI-mythical-individual-02",
+      "originalAnswer": {
+        "questionId": "ENI-mythical-individual-02",
+        "status": "unlock_and_display_evidence_without_level_requirement_resolution",
+        "answer": {
+          "darkraiCanUnlockBeforeRequiredLevel": null,
+          "priorSlotUnlockRequirementReported": true,
+          "emptyDisplayProvesLocked": false
+        },
+        "sourceIds": [
+          "R10-anonymous-order-report",
+          "R10-kamome-report",
+          "R10-blank-image"
+        ],
+        "fullyResolved": false,
+        "reason": "鍵の見た目と空欄だけでは、たねの使用条件を確定できない。表示不具合の本人報告を加え、解放状態と内容確認を分離する。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,634 @@
+{
+  "policy": "同じURLの再掲は独立標本数に加算しない。出典種別・観測時期・制約は原文を保持。localPath/localEvidenceは各便ディレクトリ基準。",
+  "entries": [
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R1-official-mew",
+        "url": "https://www.pokemonsleep.net/news/333832393732393736363935333435313533/",
+        "title": "ミュウに関するお知らせ",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "evidence": "メインスキル変更時のレベル保持と、設定先による発生確率の差を再確認。設定先上限での効果量は明記を確認できず。"
+      }
+    },
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R1-mew-level31-report",
+        "url": "https://note.com/shima_pks/n/na99660604c35",
+        "title": "ポケスリ日記18_ミュウツーイベント1",
+        "kind": "first_person_gameplay_report",
+        "publishedAt": "2026-09-15",
+        "checkedAt": "2026-10-02",
+        "evidence": "本人がLv.50枠の解放を報告。添付結果画面にLv.31ミュウとスキル確率アップSの抽選結果が見える。画面単体には対象枠番号と採用後状態は見えない。"
+      }
+    },
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R1-mew-level31-image",
+        "url": "https://assets.st-note.com/img/1789441256-x8JougIWbVvldZ0PMasBt6Kq.jpg?width=1200",
+        "kind": "game_screenshot_in_first_person_report",
+        "checkedAt": "2026-10-02",
+        "localPath": "originals/mew_level50_unlock_observation.jpg",
+        "sha256": "abfdf1581259320b38016f4477880d863e415ef432b22ae89d729907c531dc4a",
+        "visualInspected": true,
+        "evidence": "Lv.31ミュウ、ひらめきのたね(ミュウ)、スキル確率アップSの結果を確認。Lv.50枠という対応は本文による。"
+      }
+    },
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R1-official-bugs",
+        "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "evidence": "現行ページにはたねのサブスキル等確率の記述を確認できず。ゆびをふる・コピーのLv.7と対象上限Lv.6の不具合修正はあるが、ミュウの直接セットへ自動適用しない。"
+      }
+    },
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R1-almighty-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/オールマイティー",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "adoption": "参考のみ",
+        "evidence": "上限問題の一次証拠としては使用しない。"
+      }
+    },
+    {
+      "round": 1,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v1/sources.json#/5",
+      "originalSource": {
+        "sourceId": "R1-uniform-history-lead",
+        "url": "https://www.fireyoshida.com/entry/2025/05/16/204208",
+        "kind": "secondary_report_of_historical_official_notice",
+        "publishedAt": "2025-05-16",
+        "checkedAt": "2026-10-02",
+        "adoption": "一次原本を確認するための手掛かりのみ",
+        "evidence": "当時の公式告知としてサブスキル等確率の説明訂正を転載。現行公式ページで当該文は確認できないため公式直接確認済みへ格上げしない。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R2-official-stockpile",
+        "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "個体ごとのたくわえ回数。はきだす後と、その個体がチームを抜ける場合にリセット。既知ルールの再確認。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R2-stockpile-first-person",
+        "url": "https://note.com/yuuun222/n/nd4ae956659f8",
+        "kind": "first_person_gameplay_report",
+        "publishedAt": "2024-10-22",
+        "checkedAt": "2026-10-02",
+        "summary": "本人が1週間編成した結果として、他のメンバーの交代ではたくわえ回数が保持されたと記載。現行版の直接検証ではない。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R2-official-nuzzle",
+        "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "ボーナスは通常ストックとは別の追加1回、既所持なら追加不可。睡眠リサーチとフィールド移動で消失。既知ルールの再確認。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R2-nuzzle-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきエール/ほっぺすりすり",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "summary": "Lv1〜6の抽選回数2〜7の表、4/27に1回増えたとの記述、指数がSLvの式が同じページに併存。更新理由の手掛かり。独立性や補正範囲の一次確認には使わない。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R2-official-disguise",
+        "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "一度大成功した後は睡眠リサーチまたはマニュアル登録まで再大成功しない。既知ルールの再確認。"
+      }
+    },
+    {
+      "round": 2,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v2/sources.json#/5",
+      "originalSource": {
+        "sourceId": "R2-official-field-ticket",
+        "url": "https://app-psl.pokemon-support.com/hc/ja/articles/20334303852441",
+        "kind": "official_support",
+        "checkedAt": "2026-10-02",
+        "summary": "カビゴンエナジーと評価ミッション進捗のリセット。スキル個体状態のリセット可否は記載を確認できない。"
+      }
+    },
+    {
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R3-healing-first-person",
+        "url": "https://pokesuri.ogagawa.com/latias_hyouka/",
+        "kind": "first_person_experiment_report",
+        "publishedAt": "2026-04-09",
+        "updatedAt": "2026-06-09",
+        "checkedAt": "2026-10-02",
+        "summary": "げんきが極端に少ない1匹を用意した本人検証。73回中61回が対象。追加おてつだいのスキル抽選なしという別記述には検証手順が示されていない。"
+      }
+    },
+    {
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R3-minus-first-person",
+        "url": "https://note.com/honeysuckle216/n/n23381bd793a0",
+        "kind": "first_person_gameplay_report",
+        "publishedAt": "2025-08-12",
+        "checkedAt": "2026-10-02",
+        "summary": "2アカウント・1週間・マイナンSLv4。最低げんきへの回復は9/30と13/24。ヒーラー有無で条件が異なり、同率時の判定方法は不明。"
+      }
+    },
+    {
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R3-minus-cap-search-lead",
+        "url": "https://x.com/Ellenard_20/status/1956955019808506188",
+        "kind": "search_snippet_only",
+        "checkedAt": "2026-10-02",
+        "fullTextRetrieved": false,
+        "retrievalFailure": "403 Forbidden",
+        "summary": "検索結果に鍋拡張200でマイナンとストリンダー(ロー)のスキル自体が発動しないという投稿の手掛かり。本文・検証条件を未確認。確定根拠に使わない。"
+      }
+    },
+    {
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R3-official-plus-minus",
+        "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "追加効果の編成条件とプラスの追加食材が発動者の1枠目であることを再確認。配分端数・上限時発動・回復対象重みは記載なし。"
+      }
+    },
+    {
+      "round": 3,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v3/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R3-official-healing",
+        "url": "https://www.pokemonsleep.net/news/333831353535333734393439343030353832/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "ランダム2匹回復と即時おてつだい、ラティオス編成時の回数追加を再確認。対象重み・所持上限・スキル抽選は記載なし。"
+      }
+    },
+    {
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R4-official-zone",
+        "url": "https://www.pokemonsleep.net/news/343333373536323134343933343436313435/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "マゴのみを強化。フィールド移動まで持続。ミュウツー離脱で消えず、上限まで重ねがけ。既存根拠の再確認。"
+      }
+    },
+    {
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R4-normal-berry-first-person",
+        "url": "https://note.com/ready_gibbon6262/n/n633299e2c6a8",
+        "kind": "first_person_gameplay_report_with_author_inference",
+        "publishedAt": "2026-09-16",
+        "reportedAdditionDate": "2026-09-22",
+        "checkedAt": "2026-10-02",
+        "summary": "通常きのみの表示エナジーを発動前後で記録。週替わりのリセット後にも元値を実測したと追記。端数処理式は著者推論。原画像は今回照合していない。"
+      }
+    },
+    {
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R4-zone-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/きのみゾーン/サイコブレイク",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "summary": "箱内即消費分はゾーン適用なしとの記載。ただし既存ゾーンと今回増分の区別を実測するデータは確認できない。一次資料に昇格しない。"
+      }
+    },
+    {
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R4-copy-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/スキルコピー/ものまね",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "summary": "サイコブレイクはコピー抽選対象外と記載。成功時のゾーン種別を調べる前にコピー可否を確認する手掛かり。公式・本人検証の一次資料は今回未取得。"
+      }
+    },
+    {
+      "round": 4,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v4/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R4-burst-article-index",
+        "url": "https://note.com/ready_gibbon6262/n/ne4e77cc323b4",
+        "kind": "indexed_excerpt_only",
+        "checkedAt": "2026-10-02",
+        "fullTextRetrieved": false,
+        "summary": "通常きのみの実測表示値を用いたバーストの試算を確認。バースト発動前後の総エナジー差の直接観測と区別する。取得した範囲では試算を現行仕様の確定証拠にしない。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R5-official-cresselia",
+        "url": "https://www.pokemonsleep.net/news/323436303633343234303337393738313133/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "ムンナとムシャーナを別種類、同じエーフィ2匹を1種類と数える公式例。衣装・年式・サイズの一般規則は記載なし。既知ルール再確認。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R5-official-latios",
+        "url": "https://www.pokemonsleep.net/news/343031343531353932363035323337323532/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "異なるドラゴン種類数で増加。ラティアスで自分のきのみ追加。姿違い・コピーの詳細は記載なし。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R5-lunar-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/げんきオール/みかづきのいのり",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "summary": "コピー時に発動者のタイプを参照すると記載。メタモンはノーマル。一次検証未取得。表Lv5の種類数1は自分21・他1、種類数2は自分24・他2。仮説比較に限定して使用。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R5-copy-wiki",
+        "url": "https://wikiwiki.jp/poke_sleep/メインスキル/スキルコピー/ものまね",
+        "kind": "community_wiki",
+        "checkedAt": "2026-10-02",
+        "summary": "りゅうせいぐんはコピー対象外との記載。成功時のきのみ処理を仮定する前に可否を一次確認する。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R5-taiga-nested-copy",
+        "url": "https://note.com/taiga_hachiware/n/n97c3534efd83",
+        "kind": "first_person_gameplay_report_with_screenshot",
+        "publishedAt": "2025-04-16",
+        "reportedPlayWeek": "2025-04-07/2025-04-13",
+        "checkedAt": "2026-10-02",
+        "summary": "バリヤードがトゲキッスをものまねした画面。Lv5、チーム回復9・きのみ32の表示を原画像で確認。みかづきのいのりという名称は画像に表示されておらず、効果からの推定と分ける。"
+      }
+    },
+    {
+      "round": 5,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v5/sources.json#/5",
+      "originalSource": {
+        "sourceId": "R5-taiga-image",
+        "url": "https://assets.st-note.com/img/1744766180-xT0YfNhjgrVb2HDsSym9PGXF.png?width=1200",
+        "kind": "original_gameplay_screenshot_linked_by_author",
+        "checkedAt": "2026-10-02",
+        "localEvidencePath": "evidence/mimic_metronome_lunar.png",
+        "summary": "ものまね(スキルコピー)Lv5、トゲキッスのものまね、チームげんき9回復、きのみ32個の文字を確認。"
+      }
+    },
+    {
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R6-disguise-first-person",
+        "url": "https://pokesuri.ogagawa.com/bakenokawa_kenshou/",
+        "kind": "first_person_experiment_report",
+        "publishedAt": "2024-10-30",
+        "updatedAt": "2025-07-01",
+        "checkedAt": "2026-10-02",
+        "summary": "大成功できる状態の100発動を個人で収集。18成功・82不成功。大成功後の発動を分母から除く。分割睡眠とBoxに戻した後の睡眠による復活を本人観測として報告。"
+      }
+    },
+    {
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R6-official-disguise",
+        "url": "https://www.pokemonsleep.net/news/313931363231383538363537383238383635/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "大成功後、睡眠リサーチまたはマニュアル登録まで再大成功しない。既知ルールの再確認。"
+      }
+    },
+    {
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R6-moonlight-first-person",
+        "url": "https://pokesuri.ogagawa.com/tukinohikari_kenshou/",
+        "kind": "first_person_experiment_report",
+        "publishedAt": "2024-11-20",
+        "updatedAt": "2024-12-24",
+        "collectionCompletedAt": "2024-12-22",
+        "checkedAt": "2026-10-02",
+        "summary": "本人が100発動を収集し、大成功51・不成功49と報告。個体補正別や対象選択の内訳は取得できない。"
+      }
+    },
+    {
+      "round": 6,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R6-official-moonlight",
+        "url": "https://www.pokemonsleep.net/news/313933383736363033303032393435353337/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "ブラッキーの自己回復は以前と同じ。大成功時にチーム1匹をランダム追加回復。正式な分岐確率は未記載。"
+      }
+    },
+    {
+      "round": 7,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R7-analysis-report",
+        "url": "https://wikiwiki.jp/poke_sleep/コメント/検証/はきだす確率",
+        "kind": "first_person_analysis_of_community_data",
+        "reportedAt": "2026-02-18",
+        "author": "L",
+        "checkedAt": "2026-10-02",
+        "summary": "本人の最尤推定報告。95%信頼区間24.34〜26.82%。回数別差の検定は有意差なしと報告。元データ再計算・検定統計量の取得は未実施。"
+      }
+    },
+    {
+      "round": 7,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R7-study-method",
+        "url": "https://wikiwiki.jp/poke_sleep/検証/はきだす確率",
+        "kind": "original_community_study_method_and_interim_report",
+        "checkedAt": "2026-10-02",
+        "summary": "はきだすまでの発動順を募集。個体識別と能力は任意。2024年11月8日の中間報告は324報告・16識別ID。現行分析の件数とは区別する。"
+      }
+    },
+    {
+      "round": 7,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R7-individual-observation",
+        "url": "https://pokesuri.ogagawa.com/takuwaeru_energycharges/",
+        "kind": "first_person_experiment_report",
+        "publishedAt": "2024-10-11",
+        "updatedAt": "2025-10-16",
+        "checkedAt": "2026-10-02",
+        "summary": "本人の目視166発動。たくわえる122・はきだす44。強制はきだすを除いた集計かは不明。"
+      }
+    },
+    {
+      "round": 7,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R7-official-stockpile",
+        "url": "https://www.pokemonsleep.net/news/313837373133383836383536363735333239/",
+        "kind": "official",
+        "publishedAt": "2024-10-10",
+        "checkedAt": "2026-10-02",
+        "summary": "ランダム分岐、個体別カウント、はきだす後と本人が編成を離れた際のリセット。25%と上限10回はこの公式記事には記載なし。"
+      }
+    },
+    {
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R8-january-report",
+        "url": "https://note.com/gigigi_pksl/n/n11dc7da2e96a",
+        "kind": "first_person_observation_report",
+        "author": "gigigi",
+        "publishedAt": "2026-01-31",
+        "observationStart": "2026-01-19",
+        "observationEnd": "2026-01-25",
+        "checkedAt": "2026-10-02",
+        "summary": "日中の37発動でボーナス11回、最低げんきの対象21回。本人への回復対象11回。修正前の観測。"
+      }
+    },
+    {
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R8-april-week2",
+        "url": "https://note.com/gigigi_pksl/n/ne9fe06e6cb8b",
+        "kind": "first_person_observation_report",
+        "author": "gigigi",
+        "publishedAt": "2026-05-02",
+        "observationStart": "2026-04-13",
+        "observationEnd": "2026-04-19",
+        "checkedAt": "2026-10-02",
+        "summary": "2週目64発動・ボーナス27回。2週間合計126発動・49回。1週目62・22を含むため別々の新規試行へ二重加算しない。"
+      }
+    },
+    {
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R8-april-retrospective",
+        "url": "https://note.com/gigigi_pksl/n/n0394ae2ecb6e",
+        "kind": "first_person_retrospective_with_hypotheses",
+        "author": "gigigi",
+        "publishedAt": "2026-05-08",
+        "observationStart": "2026-04-06",
+        "observationEnd": "2026-04-19",
+        "checkedAt": "2026-10-02",
+        "summary": "5月公開でも記録期間は4月6〜19日。対象ではなくトゲデマル自身の確率参照だったとの振り返り。イベント補正除外は作者の解釈で、現行の確定仕様にはしない。"
+      }
+    },
+    {
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R8-official-nuzzle",
+        "url": "https://www.pokemonsleep.net/news/333432343138383031313633323339343235/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "対象への回復と通常おてつだいとは別の追加1発動。既所持なら追加ボーナスなし。睡眠リサーチとフィールド移動で消失。既知ルール再確認。"
+      }
+    },
+    {
+      "round": 8,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R8-official-fixes",
+        "url": "https://www.pokemonsleep.net/news/3438393436383032353035383039393231/",
+        "kind": "official",
+        "checkedAt": "2026-10-02",
+        "summary": "4月27日に対象個体のスキル確率による挙動の不具合を修正。8月21日にボーナス経由のLv7ゆびをふる・へんしん・ものまねで最大Lv6スキルが選ばれた場合の不具合を修正。"
+      }
+    },
+    {
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R9-zero-report",
+        "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/112",
+        "kind": "first_person_anonymous_observation",
+        "reportedAt": "2025-06-20",
+        "checkedAt": "2026-10-02",
+        "summary": "げんき約7の状態でナイトメアを受け、負にならず0になったとの本人報告。観測時期は5月更新前かもしれないとの記述。性格・精密な内部値・試行数・画像は不明。"
+      }
+    },
+    {
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R9-double-report81",
+        "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/81",
+        "kind": "first_person_anonymous_observation",
+        "reportedAt": "2025-05-16",
+        "checkedAt": "2026-10-02",
+        "summary": "2回同時発動で演出は1回、ヒーラーのげんきが24減ったとの本人報告。"
+      }
+    },
+    {
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R9-double-report94",
+        "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/94",
+        "kind": "first_person_anonymous_observation",
+        "reportedAt": "2025-05-17",
+        "checkedAt": "2026-10-02",
+        "summary": "2回発動と24減少を別コメントでも報告。集計の独立性や補正条件は不明。"
+      }
+    },
+    {
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R9-official-darkrai",
+        "url": "https://www.pokemonsleep.net/news/323536313935333430343630333539363831/",
+        "kind": "official",
+        "publishedAt": "2025-04-15",
+        "checkedAt": "2026-10-02",
+        "summary": "ナイトメアはエナジー獲得と引き換えに、あく以外のチーム個体のげんきを減らす。12・性格補正・0下限は本文には記載されていない。"
+      }
+    },
+    {
+      "round": 9,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R9-play-order-report",
+        "url": "https://note.com/shibe266/n/n8f62a4263f37",
+        "kind": "first_person_play_report",
+        "author": "shibe",
+        "publishedAt": "2025-07-22",
+        "checkedAt": "2026-10-02",
+        "summary": "本人がGo Plus+同期前のスキル発動を含む運用を報告。発動→睡眠リサーチによる回復→ヒーラー回復という順序を説明。現行の全環境を検証した記録ではない。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/0",
+      "originalSource": {
+        "sourceId": "R10-sharkfin-report",
+        "url": "https://note.com/sharkfin/n/n018793feae7b",
+        "kind": "first_person_seed_use_report",
+        "publishedAt": "2025-05-17",
+        "checkedAt": "2026-10-02",
+        "summary": "本人がLv10のサブスキル枠へたねを使用した報告。掲載の候補画像を目視確認。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/1",
+      "originalSource": {
+        "sourceId": "R10-candidate-image",
+        "url": "https://assets.st-note.com/img/1747447506-o6LmcJ5Sbs1MgeRYy3CaHTwK.png?width=1200",
+        "kind": "first_person_game_screenshot",
+        "parentSourceId": "R10-sharkfin-report",
+        "localEvidence": "evidence/subskill_candidates.png",
+        "visuallyInspected": true,
+        "summary": "サブスキルの一覧という画面で17種を確認。抽選確率や現行の全枠共通候補をこの画像だけでは確定しない。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/2",
+      "originalSource": {
+        "sourceId": "R10-kamome-report",
+        "url": "https://note.com/k4momew/n/nd614267f717a",
+        "kind": "first_person_seed_use_and_display_issue_report",
+        "publishedAt": "2025-05-16",
+        "checkedAt": "2026-10-02",
+        "summary": "サブスキル解放結果はリサーチEXPボーナスと本人報告。解放後も表示が空欄になり、キャッシュ削除で改善したと報告。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/3",
+      "originalSource": {
+        "sourceId": "R10-blank-image",
+        "url": "https://assets.st-note.com/img/1747372548-EtcZ98uABmdJKsWM6UVeY54l.jpg?width=1200",
+        "kind": "first_person_game_screenshot",
+        "parentSourceId": "R10-kamome-report",
+        "localEvidence": "evidence/darkrai_result.jpg",
+        "visuallyInspected": true,
+        "summary": "Lv25、Lv30/60食材は鍵と空欄。サブスキル最初2枠は空欄、Lv50/75/100は鍵と空欄。解放結果自体を画像から読み取ることはできない。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/4",
+      "originalSource": {
+        "sourceId": "R10-anonymous-order-report",
+        "url": "https://z.wikiwiki.jp/poke_sleep/topic/92/60",
+        "kind": "first_person_anonymous_report_with_image_links",
+        "reportedAt": "2025-05-16",
+        "checkedAt": "2026-10-02",
+        "summary": "前の枠を解放してから次の枠を解放するとの本人報告。リンク先画像は取得・目視確認できなかったため、候補や数量の検証には使用しない。"
+      }
+    },
+    {
+      "round": 10,
+      "originalPointer": "reports/PSG_Enigma_to_Biblo_research_20261002_v10/sources.json#/5",
+      "originalSource": {
+        "sourceId": "R10-reroll-retain-report",
+        "url": "https://note.com/shibe266/n/n8f62a4263f37",
+        "kind": "first_person_seed_use_report",
+        "publishedAt": "2025-07-22",
+        "checkedAt": "2026-10-02",
+        "summary": "食材確率アップMを再抽選してリサーチEXPボーナスとなり、変更を取り消して元のスキルを保持、アメ40個へ変換した本人報告。"
+      }
+    }
+  ]
+}

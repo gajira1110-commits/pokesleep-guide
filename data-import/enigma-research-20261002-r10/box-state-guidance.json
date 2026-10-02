@@ -1,0 +1,33 @@
+{
+  "status": "proposed_data_contract_not_application_patch",
+  "speciesId": "0491_default",
+  "separateFields": {
+    "unlockStatus": "locked / unlocked / unknown",
+    "selectedSubskill": "確認済みの名称またはnull",
+    "contentEvidenceStatus": "confirmed / unconfirmed",
+    "activeAtLevel": "10 / 25 / 50 / 75 / 100の既存枠レベル",
+    "levelRequirementForSeedUse": "確認されるまでnull"
+  },
+  "calculationRule": "unlockStatus=unlocked かつ 内容確認済み かつ 個体レベル>=activeAtLevel のときに効果を算入する提案。内容未確認なら未知の効果を0と断定しない。",
+  "importRule": [
+    "画像上の空欄を自動でlockedへ変換しない。",
+    "解放済みの本人報告があるが画像が空欄なら、解放済み・内容未確認として根拠を保持する。",
+    "画面の鍵マークは表示上の事実として保存し、たね使用不可の条件と同一視しない。"
+  ],
+  "seedOperations": [
+    {
+      "operation": "unlock",
+      "proposal": "未解放枠の結果を記録。解放結果を取り消せるかは今回未確認。"
+    },
+    {
+      "operation": "reroll_accept",
+      "proposal": "新しい結果を記録。種族マスターは更新しない。"
+    },
+    {
+      "operation": "reroll_reject",
+      "proposal": "以前の内容を保持。本人報告ではアメ40個。既存マスターから空欄へ戻さない。"
+    }
+  ],
+  "speciesSeparation": "ミュウの初期サブスキルや学習済みメインスキルには、このダークライの17候補を自動適用しない。",
+  "userFlow": "Boxは実際に所持する個体の状態を記録する。ゲーム内抽選の結果をユーザーが選べるという説明にしない。"
+}
