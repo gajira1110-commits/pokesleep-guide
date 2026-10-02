@@ -1,0 +1,13 @@
+{
+  "stage": "deployment-verified",
+  "received": 907,
+  "matched": 883,
+  "pending": 24,
+  "archiveCount": 128,
+  "uploadReceipts": 128,
+  "remoteCommitVerified": true,
+  "deploymentVerified": true,
+  "next": "Resolve only 24 pending identities; image intake and publication are complete.",
+  "manifestSha256": "dac6853b8f28024e16d7b1ddd89b8d3defd475285cad6cf66949ec596731b5c6",
+  "commit": "d724aa2e41206c566a013d3518843710309978b3"
+}
