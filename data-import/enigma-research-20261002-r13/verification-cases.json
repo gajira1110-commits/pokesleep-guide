@@ -1,0 +1,94 @@
+{
+  "purpose": "次に必要な直接証拠の採取仕様。今回ゲーム内検証は実施していない。",
+  "commonFields": [
+    "gameVersion",
+    "timestamp",
+    "skillPath",
+    "casterBoxId",
+    "skillLevelDisplayed",
+    "skillLevelEffective",
+    "teamBoxIds",
+    "teamSkillIds",
+    "bagBefore",
+    "bagAfter",
+    "potExpansionBefore",
+    "potExpansionAfter",
+    "energyBeforeByBoxId",
+    "energyAfterByBoxId",
+    "pendingSkillBefore",
+    "pendingSkillAfter",
+    "screenshotPaths"
+  ],
+  "cases": [
+    {
+      "caseId": "CAP-1",
+      "questionIds": [
+        "ENI-minus_cooking_power_up_s-01"
+      ],
+      "setup": "拡張上限と仮定する+200状態、別のプラス/マイナスを編成、対象候補にげんき150未満あり。通常スキル1ストックで試す。",
+      "record": "発動通知、全員の前後げんき、拡張前後値、通常ストックの残否。実際の上限と基礎鍋容量を別記。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "CAP-2",
+      "questionIds": [
+        "ENI-minus_cooking_power_up_s-01"
+      ],
+      "setup": "CAP-1と同じ個体・ストックで、料理によって拡張を消費後に回収。チーム/睡眠/フィールドを変えない。",
+      "record": "上限で保持されたストックがあるかと料理後の発動。新規抽選を挟むと区別できないので時刻と操作を記録。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "CAP-3",
+      "questionIds": [
+        "ENI-minus_cooking_power_up_s-01"
+      ],
+      "setup": "上限直前と既に上限のケースを分ける。例として拡張+199から発動できる状況と+200状態。",
+      "record": "増分の切り詰めと、上限時の全体停止・回復のみを区別。199状態は実現方法と実測確認が必要。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "PLUS-1",
+      "questionIds": [
+        "ENI-plus_ingredient_magnet_s-01"
+      ],
+      "setup": "通常発動Lv1/2。バッグに十分な空き。ランダム成分と追加成分が見分けられる回を記録。",
+      "record": "全食材の種類・個数と表示効果値。5/7の総量と整数配分を確認。追加食材がランダム成分と同じなら差分だけで分解しない。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "PLUS-2",
+      "questionIds": [
+        "ENI-plus_ingredient_magnet_s-01"
+      ],
+      "setup": "追加条件なし/ありを別記し、バッグ空き0/1/ランダム成分未満/十分な空きを分ける。",
+      "record": "発動の可否、落ちた量、回収量、未回収量、前後バッグ。通常おてつだいの回収を混ぜない。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "PLUS-3",
+      "questionIds": [
+        "ENI-plus_ingredient_magnet_s-02"
+      ],
+      "setup": "直接プラス/ものまね/へんしん/ゆびをふるを経路ごとに別記。コピー先、実効Lv、発動者の1枠目食材を保存。",
+      "record": "追加食材種類と数量。コピー先がコーヒー/ミルクのどちらか、相方条件を同時に記録。",
+      "executed": false,
+      "expectedGameResult": null
+    },
+    {
+      "caseId": "TARGET-1",
+      "questionIds": [
+        "ENI-minus_cooking_power_up_s-02"
+      ],
+      "setup": "1匹のみ明確に低げんき、他4匹は近い値。全員の回復余地あり。",
+      "record": "5匹の前後げんき・個体ID・性格・対象・低げんき群人数・同率・発動Lv。発動者自身が低げんきの回を区別。",
+      "executed": false,
+      "expectedGameResult": null
+    }
+  ]
+}

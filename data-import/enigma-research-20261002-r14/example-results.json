@@ -1,0 +1,54 @@
+{
+  "allInputsSynthetic": true,
+  "noDefaultGameProbability": true,
+  "examples": [
+    {
+      "case": "たくわえ1回、分岐p=0を仮定",
+      "result": {
+        "paid_energy": "0",
+        "terminal_stored_distribution": {
+          "1": "1"
+        }
+      },
+      "interpretation": "その日の獲得0、状態1を持越し。1はエナジーではない。"
+    },
+    {
+      "case": "ばけのかわNが0/2各50%、成功分岐p=50%、通常10・大成功3倍を仮定",
+      "result": {
+        "paid_energy": "35/2",
+        "expected_successes": "3/8",
+        "terminal_eligible_probability": "5/8"
+      },
+      "interpretation": "期待エナジー17.5。平均回数1を固定回数へ入れた20とは異なる。"
+    },
+    {
+      "case": "ボーナス既所持box-aを対象75%、未所持box-bを対象25%、付与p=1という明示仮定",
+      "result": {
+        "expected_new_grants": "1/4",
+        "box_ids": [
+          "box-a",
+          "box-b"
+        ],
+        "terminal_held_distribution": {
+          "(True, False)": "3/4",
+          "(True, True)": "1/4"
+        }
+      },
+      "interpretation": "新規付与期待値0.25。既所持を自動で除外してbox-bへ100%付与しない。"
+    },
+    {
+      "case": "非あくげんき7とあくげんき30、減少12・下限0を仮定",
+      "result": {
+        "energy_after": {
+          "box-a": "0",
+          "box-b": "30"
+        },
+        "actual_genki_loss": {
+          "box-a": "7",
+          "box-b": "0"
+        }
+      },
+      "interpretation": "実減少は非あく7、あく0。カビゴンのエナジー差とは別単位。"
+    }
+  ]
+}

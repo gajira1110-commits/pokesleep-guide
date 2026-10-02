@@ -1,0 +1,55 @@
+{
+  "status": "conditional_reference_code_not_app_patch",
+  "newConfirmedRules": false,
+  "fullyResolvedQuestionCountChange": 0,
+  "inputs": [
+    "状態をBox個体IDに紐付ける",
+    "実発動順とリセットイベントを入力する",
+    "確率・効果量・初期状態が不明ならnullとして止める",
+    "明示した参考シナリオでは仮定を別記する"
+  ],
+  "output": [
+    "当該区間で実際に支払われた効果の期待値",
+    "終端の持続状態分布",
+    "付与数と使用数の分離",
+    "げんき減少とエナジー産出の分離"
+  ],
+  "limits": [
+    "固定発動回数または明示した独立の回数分布を対象。実ゲームの発動率・天井・所持上限・げんきによる時間変化をモデル化しない。",
+    "ほっぺすりすりは1付与イベント。回復と通常ストック/ボーナスの実際の発動順は未確認で、呼出側が明示する。",
+    "きのみゾーンの補正順・持続リセット、コピーの種別、ラティ兄妹の解放条件はこのコードの対象外。",
+    "本人交代前回収の既存方針を保つ。状態リセットは普通のスキル回収とは別処理。",
+    "先の日次結果への末端状態の引継ぎに使えるが、未獲得のたくわえをその日の産出に入れない。"
+  ],
+  "eventEvidence": [
+    {
+      "skill": "stockpile",
+      "event": "self_removed",
+      "result": "stored=0",
+      "basis": "第7便公式出典とモデル"
+    },
+    {
+      "skill": "disguise",
+      "events": [
+        "sleep_research",
+        "manual_sleep_entry"
+      ],
+      "result": "eligible=true",
+      "basis": "第6便が参照する公式の再大成功制限。睡眠開始だけとは区別。"
+    },
+    {
+      "skill": "nuzzle",
+      "events": [
+        "sleep_research",
+        "field_move"
+      ],
+      "result": "held=false",
+      "basis": "第8便公式条件"
+    },
+    {
+      "event": "day_boundary",
+      "result": "state unchanged by reporting boundary",
+      "basis": "日次集計設計。実際の週替わり・フィールド移動など別イベントを消すものではない。"
+    }
+  ]
+}

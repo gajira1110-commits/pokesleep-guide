@@ -1,0 +1,99 @@
+{
+  "files": [
+    {
+      "path": "README.txt",
+      "sha256": "795112a2a0c54b3b2da9c76fc06c1951793ca6f2aaa5543d147e03d65c55fc45",
+      "size": 2014
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v6/answers.json",
+      "sha256": "1c383c4a98c026d535cb69565db758b1e42dc572248d75c78a9b9cfc2df8dab1",
+      "size": 1305
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v6/daily-expectation-model.json",
+      "sha256": "580c67355c37b770dcb31201a9fc667deef14480bf69a277ac715e39031cab9e",
+      "size": 3139
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v6/sources.json",
+      "sha256": "7c14262cfe943ff297f758f3316ab681a3371c1dd8eb3648b8f8f95056e959b4",
+      "size": 1634
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v7/answers.json",
+      "sha256": "eea22bfc50d72f6dcf8cd323bcdc7c04909c14f6319bcad623c399e338e3caa0",
+      "size": 919
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v7/daily-expectation-model.json",
+      "sha256": "edab5ea532734a2d44eb28bdbedaa0dce392e7389de9c4a388d28cf48a13baf9",
+      "size": 2882
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v7/sources.json",
+      "sha256": "4bc40c38660e7969161a76d7983dd32a13b36b5155e3dcd2587ebf98041651d2",
+      "size": 1680
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v8/answers.json",
+      "sha256": "95d87000281eea30e718bba469883c2a45f5bfea2580ce43372d23400f1d7ad7",
+      "size": 2152
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v8/calculation-guidance.json",
+      "sha256": "7af515980adbcc9c5816c987eda8920be0bc15dfef503ae6441c0c72c9569180",
+      "size": 2430
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v8/sources.json",
+      "sha256": "20525bcbf9b5fa590732071ea3675f43186a9956d84a2d280c09cc21afed5535",
+      "size": 2333
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v9/answers.json",
+      "sha256": "ae047cb3d2645eb400632675d1151f62cea64f5f2ed8e8864ef6d46d5c1f98f1",
+      "size": 896
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v9/calculation-guidance.json",
+      "sha256": "6e7f29a5112c6a825cdf896948b301fdf83303872ee3dbff241bc0d2360b431d",
+      "size": 2061
+    },
+    {
+      "path": "basis/PSG_Enigma_to_Biblo_research_20261002_v9/sources.json",
+      "sha256": "23251867117a75cabd28db13cf6948118491212840e0b6b391d59d43794de385",
+      "size": 2014
+    },
+    {
+      "path": "changes.json",
+      "sha256": "5ac14e5dbda28f163d2b15eeeb054abba12c92b55786448e380c316837baa335",
+      "size": 227
+    },
+    {
+      "path": "example-results.json",
+      "sha256": "f3e93ffcb0b6de30126323b29fc2c8bc3d93778b14fd87dbf39ad83b9bdb78c9",
+      "size": 1663
+    },
+    {
+      "path": "model-contract.json",
+      "sha256": "98f39be53efaed42d7620f4eb749a5013fe2544b9ede52001e8904d0468bcd92",
+      "size": 2220
+    },
+    {
+      "path": "reference_models.py",
+      "sha256": "5f02e5e3f52520afecc39f813d08c65bf6274f34273c771c51de9d30b33e468b",
+      "size": 6949
+    },
+    {
+      "path": "verification-results.json",
+      "sha256": "426dc5e945884ac71dd8202f9a3a8d289d093ac6ce33b929daf24b2cc65f3245",
+      "size": 1397
+    },
+    {
+      "path": "verify_models.py",
+      "sha256": "112c08a6d1493f6278a92923111c12f38d3b9ed04be31b0acb21fc31538a9cbf",
+      "size": 5241
+    }
+  ]
+}
