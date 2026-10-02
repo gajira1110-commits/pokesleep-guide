@@ -21,8 +21,19 @@
 
 `12-core-controller.html`は共有状態と定数、`core/01-box-storage.html`はBox正規化・読み込み・保存。以後の`core/`・`team/`・`box/`は同じコントローラー内へ組み立てられる。関数宣言は後方参照できるが、初期化時に呼ぶグローバルは先に読み込む。
 
-`21-day-calculator.html`は日産計算、`core/09-day-view.html`と`box/02-daily-forecast.html`は結果表示、`box/05-actions.html`は編集操作。日産保留を0や部分合計に変換しない。Box保存キーとバックアップ形式は構成整理だけで変更しない。
+日産計算は次の責務に分かれる。すべて同じコントローラー内に組み立て、計算順序を維持する。
+
+| 編集元 | 責務 |
+| --- | --- |
+| `day/01-calculation-helpers.html` | 種族参照のラッパー、発動在庫期待値、きのみLvエナジー、食事回復、ブーストの種数 |
+| `day/02-member-context.html` | 個体の食材選択・不足データの検証、日産計算用の個体状態 |
+| `day/03-skill-effects.html` | 回収境界での回復・ランダム食材・追加おてつだい |
+| `21-day-calculator.html` | 未対応チームの保留、時間帯・回収・満杯・睡眠、チーム集計 |
+
+`core/09-day-view.html`と`box/02-daily-forecast.html`は結果表示、`box/05-actions.html`は編集操作。日産保留を0や部分合計に変換しない。Box保存キーとバックアップ形式は構成整理だけで変更しない。
 
 ## 整理後の確認
 
 ビルドと`check_fragment_assembly.cjs`で組み立て・構文を確認。種族参照変更は`check_species_catalog.cjs`（前版HTMLを任意指定して同値比較）、登録/保存変更は`check_all_pokemon.cjs`、姿の進化は`check_size_evolution.cjs`、候補表示は`check_form_providers.cjs`、計算は`check_daily_calculator.cjs`を使う。検証対象に応じて選び、一度に機能変更と構成変更を広げない。
+
+計算の単体検証は`tests/daily_kernel.cjs`がビルド側のファイル順を読み取る。テスト専用の別実装や手書きの第二の順序を持たない。構成変更時は`check_daily_refactor.cjs <前版の21-day-calculator.html>`で全結果を比較できる。v274は1666条件で整理前と一致。

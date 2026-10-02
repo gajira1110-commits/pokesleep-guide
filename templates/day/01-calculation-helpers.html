@@ -1,0 +1,29 @@
+// Shared daily estimate, assembled inside the core controller closure.
+function speciesFor(item,catalog=window.PS_CATALOG){
+ return window.PS_SPECIES?window.PS_SPECIES(item,catalog):(!item?.speciesId?catalog?.pokemon?.[item?.no]||null:null);
+}
+// Bounded estimate: ten-minute energy bands and expected inventory occupancy.
+// Ingredients across unlocked slots are assumed equally likely; skill events are separate.
+function expectedStoredSkills(regularHelps,rate,stockLimit){
+ const probability=Math.max(0,Math.min(1,Number(rate)/100));
+ if(!Number.isFinite(regularHelps)||regularHelps<=0||!probability)return 0;
+ if(probability===1)return Math.min(stockLimit,regularHelps);
+ // Fractional expected helps: Poisson approximation to Bernoulli trials.
+ const lambda=-regularHelps*Math.log1p(-probability),none=Math.exp(-lambda);
+ return stockLimit===2?2-(2+lambda)*none:1-none;
+}
+function berryEnergyAtLevel(base,level){
+ if(!Number.isFinite(base)||!Number.isFinite(level))return null;
+ return Math.round(Math.max(base+level-1,base*Math.pow(1.025,level-1)));
+}
+function mealRecoveryAtEnergy(energy){
+ return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
+}
+function helperBoostContext(effectType,effect,items,catalog){
+ const types={helper_boost_fire:['ほのお','bonusByUniqueFire'],helper_boost_water:['みず','bonusByUniqueWater'],helper_boost_electric:['でんき','bonusByUniqueElectric']};
+ const config=types[effectType];if(!config)return null;
+ const [type,key]=config;
+ const unique=new Set(items.filter(item=>speciesFor(item,catalog)?.type===type).map(item=>item.no)).size;
+ const bonus=effect?.[key]?.[Math.min(5,unique)];
+ return {type,unique,helps:Number.isFinite(effect?.helps)&&Number.isFinite(bonus)?effect.helps+bonus:null};
+}

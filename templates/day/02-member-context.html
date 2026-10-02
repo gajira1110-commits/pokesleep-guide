@@ -1,0 +1,35 @@
+// Individual inputs and validation for the shared daily estimate.
+function dailyMemberContext(item,speedContext,items,catalog,startingEnergy){
+  const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id);
+  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
+   const chosen=item.ingredients?.[slot.unlock];
+   return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);
+  });
+  const reasons=[];
+  if(species?.dailyCalculationStatus==='pending_special_skill')reasons.push('特殊スキルを含む日産計算は未対応');
+  if(!stats?.speed)reasons.push('おてつだい時間');
+  if(!stats?.carry)reasons.push('最大所持数');
+  if(!Number.isFinite(stats?.food))reasons.push('食材確率');
+  if(!Number.isFinite(stats?.berryQty))reasons.push('きのみ数');
+  if(!Number.isFinite(catalog?.berries?.[species?.berry]))reasons.push('きのみエナジー');
+  if(!slots.length)reasons.push('食材候補');
+  else slots.forEach((slot,index)=>{if(!slot)reasons.push(`Lv.${species.ingredientSlots.filter(s=>s.unlock<=item.level)[index].unlock}の食材選択`)});
+  if(reasons.length)return {id:item.id,name:item.name,missing:true,reasons};
+  const chance=Math.max(0,Math.min(1,stats.food/100));
+  const averageFood=slots.reduce((sum,slot)=>sum+slot.qty,0)/slots.length;
+  const averageSize=chance*averageFood+(1-chance)*stats.berryQty;
+  if(averageSize<=0)return {id:item.id,name:item.name,missing:true};
+  const skill=catalog?.skills?.[species.mainSkillId];
+  const skillLevel=Math.max(1,Math.min(skill?.maxLevel||7,item.skillLevel||1));
+  const skillEffect=skill?.levels?.[skillLevel];
+  const boost=helperBoostContext(skill?.effectType,skillEffect,items,catalog);
+  const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
+  return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
+   berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
+   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,skillExtraHelps:0,randomIngredients:0,
+   skillCalculationNote:skill?.calculationNote||null,skillName:skill?.name||null,skillEffectType:skill?.effectType,
+   skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
+    (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillShards:skillEffect?.shards ?? (skill?.effectType==='variable_dream_shards'&&Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
+   skillRecovery:skillEffect?.recovery,skillHelps:boost?boost.helps:skillEffect?.helps,boost,missing:false};
+}
