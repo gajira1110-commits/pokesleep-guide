@@ -2881,6 +2881,20 @@
           "sourceStyleId": "3",
           "name": "サイコブレイク寝",
           "stars": 3
+        },
+        {
+          "sourceStyleId": null,
+          "name": "うっとうしい寝",
+          "stars": 4,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
+        },
+        {
+          "sourceStyleId": null,
+          "name": "こころやすらぎ寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ],
       "sleepDataStatus": "source_rows_available",
@@ -3876,6 +3890,13 @@
           "sourceStyleId": "3",
           "name": "むげんのひかり寝",
           "stars": 3
+        },
+        {
+          "sourceStyleId": null,
+          "name": "なかまおもい寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ],
       "sleepDataStatus": "source_rows_available",
@@ -4029,6 +4050,13 @@
           "sourceStyleId": "3",
           "name": "むげんのオーラ寝",
           "stars": 3
+        },
+        {
+          "sourceStyleId": null,
+          "name": "なかまおもい寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ],
       "sleepDataStatus": "source_rows_available",
@@ -6108,6 +6136,22 @@
           "sourceStyleId": "3",
           "name": "サイコブレイク寝",
           "stars": 3
+        },
+        {
+          "id": "0150_default_04",
+          "sourceStyleId": null,
+          "name": "うっとうしい寝",
+          "stars": 4,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
+        },
+        {
+          "id": "0150_default_05",
+          "sourceStyleId": null,
+          "name": "こころやすらぎ寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ]
     },
@@ -6224,6 +6268,14 @@
           "sourceStyleId": "3",
           "name": "むげんのひかり寝",
           "stars": 3
+        },
+        {
+          "id": "0380_default_05",
+          "sourceStyleId": null,
+          "name": "なかまおもい寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ]
     },
@@ -6250,6 +6302,14 @@
           "sourceStyleId": "3",
           "name": "むげんのオーラ寝",
           "stars": 3
+        },
+        {
+          "id": "0381_default_05",
+          "sourceStyleId": null,
+          "name": "なかまおもい寝",
+          "stars": 5,
+          "confirmationSource": "ユーザーの星構成確認 2026-10-03・受領画像の寝顔名",
+          "appearanceConditionsStatus": "未確認"
         }
       ]
     },

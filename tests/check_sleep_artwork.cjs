@@ -6,7 +6,7 @@ const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import
  await page.goto('file://'+path.resolve(__dirname,'../review.html'));
  const bindings=await page.evaluate(()=>PS_IMAGE_FILES.sleepStylesBySpecies);
  const matched=manifest.images.filter(r=>r.status==='matched');assert.equal(matched.length,883);
- assert.equal(Object.values(bindings).reduce((n,b)=>n+Object.keys(b).length,0),924);
+ assert.equal(Object.values(bindings).reduce((n,b)=>n+Object.keys(b).length,0),928);
  const resolutions=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import/picasso-sleep-v281/resolutions.json')));
  for(const correction of resolutions.bindings){
   const row=manifest.images.find(r=>r.member===correction.member);
@@ -35,5 +35,5 @@ const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import
  assert.equal(await page.locator('.psg-sleep-toggle').first().getAttribute('aria-pressed'),'true');
  await page.locator('.psg-sleep-toggle').first().click();
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('psg-sleep-discoveries-v1'))['0001_01']),undefined);
- assert.deepEqual(errors,[]);console.log('903 connected images with 924 species/style bindings; confirmed corrections and size sharing; real decoded photos; 320/390/768px; discovery persistence passed');
+ assert.deepEqual(errors,[]);console.log('907 connected images with 928 species/style bindings; confirmed corrections and size sharing; real decoded photos; 320/390/768px; discovery persistence passed');
 }finally{await browser.close()}})().catch(e=>{console.error(e.stack);process.exitCode=1});

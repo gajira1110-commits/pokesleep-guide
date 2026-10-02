@@ -61,7 +61,7 @@ def restore_sleep_images(root, catalog, images):
         assert row['status'] == 'pending'
         assert row['member'] not in resolved
         for sid in correction['speciesIds']:
-            if sid.endswith('_default'):
+            if sid.endswith('_default') and str(int(sid.split('_')[0])) in catalog['sleepStyles']:
                 styles = [(item[2], item[0]) for item in catalog['sleepStyles'][str(int(sid.split('_')[0]))]]
             else:
                 raw = next(item for item in catalog['forms']['species'] if item['speciesId'] == sid)
