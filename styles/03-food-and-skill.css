@@ -109,7 +109,7 @@
   line-height:1.1!important;
 }
 #v12Ability .skill-name::before{
-  content:"✨ ";
+  content:none;
 }
 #v12Ability .skill-rate-inline{
   border-radius:0!important;
@@ -255,4 +255,3 @@
   #detailFoods{overflow-x:auto!important}
   #v12Ability .skill-rate-inline{padding-left:126px!important;}
 }
-

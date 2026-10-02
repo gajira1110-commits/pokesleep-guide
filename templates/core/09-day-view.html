@@ -4,7 +4,6 @@ function renderTeamDay(){
  const interval=document.getElementById('teamCollectionInterval').value;
  renderFieldControls();
  const result=dailyBaseline(team,state.box,window.PS_CATALOG,interval,teamInitialEnergy,teamGoodCamp,teamMeals,activeFieldBerries(),fieldProfile.areaBonuses[fieldProfile.selectedFieldId]||0);
- document.getElementById('teamDayConditions').textContent=`適用条件：起床時げんき${result.startingEnergy}・回収${result.interval}時間ごと・キャンプ${result.goodCamp?'ON':'OFF'}・食事3回${result.threeMeals?'ON':'OFF'}（起床後16時間・睡眠8時間）`;
  host.replaceChildren();
  if(!result.members.length){const p=document.createElement('p');p.className='note';p.textContent='チームを選ぶと獲得予想を表示します。';host.append(p);return}
  const foodTiles=(foods,summary=false)=>{
