@@ -155,7 +155,7 @@
 .psg-team-choose:focus-visible,.psg-team-actions button:focus-visible,.psg-team-option:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
 @media(max-width:355px){.psg-team-choose{gap:5px;padding:5px}.psg-team-face{flex-basis:40px;width:40px;height:40px}.psg-team-actions button{min-width:31px}.psg-team-actions .psg-team-remove{min-width:37px}}
 .psg-team-food-card,.psg-team-recipe-card{margin-top:12px}
-.psg-day-card{margin-top:12px}
+.psg-day-card{margin-top:12px;border:0;border-radius:0;background:none}
 .psg-day-header{display:flex;align-items:center;justify-content:space-between;gap:6px}
 .psg-day-header .section-title{margin:0;min-width:0}
 .psg-day-setting{display:flex;align-items:center;justify-content:flex-end;gap:5px;white-space:nowrap;font-size:12px;font-weight:700}
@@ -210,7 +210,7 @@
 .psg-day-food-tile>span:last-child{display:flex;flex-direction:column;min-width:0;line-height:1.12}
 .psg-day-food-tile small{font-size:10px;font-weight:600;white-space:nowrap}.psg-day-food-tile strong{font-size:12px;white-space:nowrap}
 .psg-day-food-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 6px;margin-top:10px}
-.psg-day-food-summary .psg-day-food-tile{flex-direction:column;text-align:center;gap:4px;padding:0;border:0;border-radius:0;background:none}
+.psg-day-food-summary .psg-day-food-tile{flex-direction:column;text-align:center;gap:4px;padding:5px 2px}
 .psg-day-food-summary .psg-day-food-tile>img,.psg-day-food-summary .psg-day-food-tile>span:first-child{width:36px;height:36px}
 .psg-day-food-summary .psg-day-food-tile>span:last-child{width:100%;gap:3px;line-height:1.3}
 .psg-day-food-summary .psg-day-food-tile small{white-space:normal;overflow-wrap:anywhere}
