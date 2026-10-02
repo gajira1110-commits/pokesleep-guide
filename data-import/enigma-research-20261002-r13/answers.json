@@ -1,0 +1,70 @@
+[
+  {
+    "questionId": "ENI-minus_cooking_power_up_s-02",
+    "status": "additional_first_person_measurement_with_group_size_confound",
+    "answer": {
+      "followupActivations": 57,
+      "energyDifferenceTrials": 39,
+      "lowerEnergyGroupHits": 24,
+      "lowerEnergyGroupObservedFraction": 0.6153846153846154,
+      "lowestSingleMemberProbability": null,
+      "selfTargetDirectConfirmation": null,
+      "targetWeights": null
+    },
+    "sourceIds": [
+      "R13-minus-followup",
+      "R13-minus-earlier"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "観測定義を低げんき群と明記。24/39を最低1匹の抽選pや日次既定値にしない。"
+  },
+  {
+    "questionId": "ENI-minus_cooking_power_up_s-01",
+    "status": "unconfirmed_direct_cap_evidence_not_retrieved",
+    "answer": {
+      "activateAtPotExpansionCap": null,
+      "healOnlyAtCap": null,
+      "pendingStockRetainedAtCap": null,
+      "postCookingActivationOfPendingStock": null
+    },
+    "sourceIds": [
+      "R13-official-plus-minus",
+      "R13-minus-cap-lead",
+      "R13-minus-parent-wiki"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "上限時全体停止/回復のみ発動のどちらも確定しない。親スキル規則を自動継承しない。"
+  },
+  {
+    "questionId": "ENI-plus_ingredient_magnet_s-01",
+    "status": "unconfirmed_allocation_and_bag_boundary_rules",
+    "answer": {
+      "allocationRounding": null,
+      "randomIngredientWeights": null,
+      "capacityShortageComponentOrder": null,
+      "capacityOverflowRule": null
+    },
+    "sourceIds": [
+      "R13-official-plus-minus",
+      "R13-plus-wiki"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "日次の平均食材分配と1回の整数配分を区別。バッグ余裕を仮定した計算にはその前提を明記。"
+  },
+  {
+    "questionId": "ENI-plus_ingredient_magnet_s-02",
+    "status": "official_first_slot_reference_reconfirmed_general_quantity_unknown",
+    "answer": {
+      "officialAdditionalIngredientReference": "メインスキルを使ったポケモンの1枠目の食材",
+      "generalAdditionalQuantityFormula": null,
+      "copyQuantityReferenceDirectlyVerified": null,
+      "metronomeQuantityReferenceDirectlyVerified": null
+    },
+    "sourceIds": [
+      "R13-official-plus-minus",
+      "R13-plus-wiki"
+    ],
+    "fullyResolved": false,
+    "proposedAdoption": "追加食材の種類と数量の参照先を分離。コーヒー/ミルクの列だけから任意食材の数量式を推定しない。"
+  }
+]

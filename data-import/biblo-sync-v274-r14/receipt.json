@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-02",
+  "baseCommit": "f54dd70637bba1b3dada8c091653626100ed9b1e",
+  "applicationVersion": 274,
+  "bibloPackage": "PSG_Biblo_research_organized_through_v12_20261002.zip",
+  "bibloLedgerVerifiedEquivalentToExistingAnswers": 32,
+  "manifestChecks": [
+    {
+      "package": "PSG_Enigma_to_Biblo_research_20261002_v13",
+      "verifiedFiles": 7
+    },
+    {
+      "package": "PSG_Enigma_to_Biblo_research_20261002_v14",
+      "verifiedFiles": 19
+    },
+    {
+      "package": "research_through_v12/cumulative-source-v11",
+      "verifiedFiles": 101
+    },
+    {
+      "package": "research_through_v12/round12",
+      "verifiedFiles": 10
+    }
+  ],
+  "newEvidenceRound": 13,
+  "newAnswerEntries": 4,
+  "cumulativeQuestionCount": 26,
+  "cumulativeAnswerEntries": 36,
+  "fullyResolved": 0,
+  "referenceCodeRound": 14,
+  "referenceArithmeticChecks": 41,
+  "newConfirmedRuntimeRules": 0,
+  "runtimeAdoption": "none; 11 reference-only skills and 14 dependent species remain pending",
+  "referenceCodePath": "vendor/enigma-special-skill-reference",
+  "originalStorageScope": "New root text/JSON and two Python files only. Original manifests validate received ZIPs; historical basis and research images remain in received packages, not duplicated here.",
+  "correctionsCarriedForward": [
+    "v10 stored by PR89 after Biblo v274 source snapshot; distinguish old snapshot from current adoption",
+    "source subskill 75/100 is historical; current runtime activeAtLevel 70/80 unchanged"
+  ],
+  "notes": [
+    "41 checks validate conditional arithmetic with synthetic inputs, not gameplay rates or actual day predictions",
+    "r13 lower-energy group 24/39 is not lowest-single-member target probability",
+    "r14 fixed-count or explicit count-distribution input is not interchangeable with ordinary daily fractional trigger expectation",
+    "No new release for evidence-only and offline reference-code intake"
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "sourceId": "R13-official-plus-minus",
+    "url": "https://www.pokemonsleep.net/news/323836363139383039363439353234373337/",
+    "kind": "official",
+    "summary": "追加食材は発動したポケモンの1枠目。相方条件は自分以外にプラス/マイナス持ちが1匹以上。端数配分、追加数の一般式、鍋拡張上限時のマイナスの挙動は記載確認できず。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R13-minus-followup",
+    "url": "https://note.com/honeysuckle216/n/n98e0ed82b1d8",
+    "kind": "first_person_gameplay_measurement",
+    "publishedAt": "2025-09-05",
+    "observedPeriod": "2025-08-18〜2025-08-31",
+    "summary": "サブアカSLv7、全発動57回。げんき差のある39回中24回が低げんき側の群に当たった。本人追記により最低げんき1匹の当選率ではないことを明示。1匹120/他4匹90も低げんき群の当選として数える例。各回の群人数と全員げんきの原記録は未取得。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R13-minus-earlier",
+    "url": "https://note.com/honeysuckle216/n/n23381bd793a0",
+    "kind": "previously_reviewed_first_person_report",
+    "reviewPointer": "第3便 observations.json R3-minus-main / R3-minus-sub",
+    "summary": "前便のSLv4観測は別の期間・条件として保持。今回SLv7の57回を同じ定義の独立標本として合算しない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R13-minus-cap-lead",
+    "url": "https://x.com/Xellennard/status/1956955019808506188",
+    "kind": "unread_primary_candidate",
+    "accessResult": "web open DisabledError",
+    "summary": "上限時挙動の証拠としては不使用。前便に既存の手掛かりで、今回も原文を読めず。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R13-plus-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/食材ゲット/プラス",
+    "kind": "community_documentation_without_direct_evidence_here",
+    "adoption": "追加数・コピー時数量の確認先候補のみ",
+    "summary": "食材種類別の追加数やコピー/ゆびをふるの説明があるが、今回直接の観測記録に辿れず、一般式や現行仕様として格上げしない。",
+    "checkedAt": "2026-10-02"
+  },
+  {
+    "sourceId": "R13-minus-parent-wiki",
+    "url": "https://wikiwiki.jp/poke_sleep/メインスキル/料理パワーアップ",
+    "kind": "parent_skill_community_documentation",
+    "adoption": "親スキルの説明をマイナスへ自動適用しない",
+    "summary": "料理パワーアップの上限時発動不能説明はマイナスの回復部分の挙動を直接証明しない。",
+    "checkedAt": "2026-10-02"
+  }
+]

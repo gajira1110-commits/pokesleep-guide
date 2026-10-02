@@ -1,0 +1,17 @@
+[
+  {
+    "observationId": "R13-minus-lower-energy-group",
+    "sourceId": "R13-minus-followup",
+    "skillLevel": 7,
+    "totalActivations": 57,
+    "energyDifferenceTrials": 39,
+    "lowerEnergyGroupHits": 24,
+    "remainingTrialsNotEnergyDifferenceSubset": 18,
+    "observedFraction": 0.6153846153846154,
+    "definition": "他よりげんきが低い1匹以上の群への命中。最低げんき1匹に限定していない。",
+    "perTrialLowerGroupSize": null,
+    "generalProbability": null,
+    "inGameTestedByUs": false,
+    "combineWithRound3": false
+  }
+]

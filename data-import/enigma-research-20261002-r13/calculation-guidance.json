@@ -1,0 +1,70 @@
+{
+  "minusTarget": {
+    "explanation": "全5匹均等という比較仮説なら、各回の低げんき群人数m_tに対し命中期待率はm_t/5。群人数不明の24/39では均等抽選を排除できない。",
+    "syntheticExamples": [
+      {
+        "lowerGroupSize": 1,
+        "uniformNullHitFraction": 0.2
+      },
+      {
+        "lowerGroupSize": 4,
+        "uniformNullHitFraction": 0.8
+      }
+    ],
+    "warning": "これらは仮説比較用の算術であり、均等抽選がゲームの既定値という意味ではない。61.5%を5匹各々へ配分しない。"
+  },
+  "plusAllocation": {
+    "separate": [
+      "ランダム成分の総量",
+      "1回の整数配分",
+      "食材種類の抽選分布",
+      "相方条件による固定食材追加量",
+      "バッグへの実回収量"
+    ],
+    "warning": "理論獲得量と回収量を分離。未知の端数処理を食材ごとの切り上げで埋めると、宣言した総量を超える可能性がある。",
+    "syntheticHypothesisExamples": [
+      {
+        "randomDeclaredTotal": 5,
+        "assumedOutputTypes": 3,
+        "totalPreservingAllocationSorted": [
+          1,
+          2,
+          2
+        ],
+        "allCeilAllocation": [
+          2,
+          2,
+          2
+        ],
+        "allCeilSum": 6
+      },
+      {
+        "randomDeclaredTotal": 7,
+        "assumedOutputTypes": 3,
+        "totalPreservingAllocationSorted": [
+          2,
+          2,
+          3
+        ],
+        "allFloorAllocation": [
+          2,
+          2,
+          2
+        ],
+        "allFloorSum": 6,
+        "allCeilAllocation": [
+          3,
+          3,
+          3
+        ],
+        "allCeilSum": 9
+      }
+    ],
+    "scope": "3種が出る状況を仮定した識別例。実測値や実装既定値ではない。"
+  },
+  "minusCap": {
+    "unknownPolicy": "上限時の停止条件を断言しない。料理時刻と鍋拡張の持越し状態をモデルに保持。",
+    "display": "全体停止仮定/回復だけ継続仮定が結果に影響する場合は条件付きで示す。",
+    "pendingSkillPolicy": "ユーザー承認済みの交代前回収方針とは別問題。上限により回収できるかが未知のケースとして記録。"
+  }
+}
