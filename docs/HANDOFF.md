@@ -4,8 +4,8 @@
 
 ## 反映状況
 
-- 公開済みの基準：v253、PR #67、マージSHA `7edd6c6a850848387c7e9fa98a9d9dc700d35a33`。
-- この変更：v254。枠除去対象を訂正。「1日の獲得予想」ブロック全体の外枠・背景を除去。食材ごとの枠・背景は復元し、3列表示を維持。計算変更なし。
+- 公開済みの基準：v254、PR #68、マージSHA `8abb4d0eb0f8f9d000f7dce6ee930e84d4e44310`。
+- この変更：v255。日産の食材合計カードを白背景、アイコン＋個数のみの4列へ。食材名は読み上げ用aria-labelに保持。日産ブロック外枠なしと個別詳細は維持。計算変更なし。
 - リポジトリ： https://github.com/psguide-dev/pokesleep-guide
 - 実機確認： https://psguide-dev.github.io/pokesleep-guide/review.html （ヘッダーの版番号を確認）
 

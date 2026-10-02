@@ -11,7 +11,10 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   const before=await page.locator('#teamDayEstimate').textContent();assert.match(before,/食材合計/);
   assert.equal(await page.locator('#teamDayEstimate').evaluate(el=>el.lastElementChild.tagName),'DETAILS');
   const foodGrid=page.locator('.psg-day-food-summary');
-  assert.equal(await foodGrid.evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),3);
+  assert.equal(await foodGrid.evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),4);
+  assert.equal(await foodGrid.locator('small').first().isVisible(),false);
+  assert.equal(await foodGrid.locator('.psg-day-food-tile').first().evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(255, 255, 255)');
+  assert.match(await foodGrid.locator('.psg-day-food-tile').first().getAttribute('aria-label'),/約[\d.]+個/);
   assert.equal(await foodGrid.locator('.psg-day-food-tile').first().evaluate(el=>getComputedStyle(el).borderTopWidth),'1px');
   assert.equal(await page.locator('.psg-day-card').evaluate(el=>getComputedStyle(el).borderTopWidth),'0px');
   assert.equal(await foodGrid.evaluate(el=>el.scrollWidth>el.clientWidth),false);
@@ -19,7 +22,7 @@ const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
   assert.equal(await page.locator('#teamDayEstimate').textContent(),before);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.deepEqual(errors,[]);
   await details.locator('summary').click();
-  if(width===390){await foodGrid.evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-400));await page.screenshot({path:'/tmp/psg253-day.png'})}
+  if(width===390){await foodGrid.evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-400));await page.screenshot({path:'/tmp/psg255-day.png'})}
   console.log(width+'px: team totals first, collapsed five-member details, unchanged totals, no overflow');await page.close();
  }
 }finally{await b.close()}})().catch(e=>{console.error(e.stack);process.exitCode=1});
