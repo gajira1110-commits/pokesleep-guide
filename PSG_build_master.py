@@ -38,7 +38,9 @@ TEMPLATE_PARTS = tuple(ROOT / 'templates' / name for name in (
     'core/07-corrections.html',
     'core/10-individual-evaluation.html',
     'core/08-fields.html',
+    'fields/01-spawn-calculator.html',
     'core/11-field-spawn.html',
+    'whistle/01-calculator.html',
     'team/06-whistle.html',
     'core/09-day-view.html',
     'day/01-calculation-helpers.html',
@@ -82,6 +84,8 @@ CSS = ROOT / 'PSG_styles.css'
 STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '01-foundation.css',
     '02-detail-layout.css',
+    '16-whistle.css',
+    '17-field-spawn.css',
     '03-food-and-skill.css',
     '04-basic-blocks.css',
     '05-responsive-detail.css',
@@ -409,7 +413,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v285') == 2
+    assert source.count('Review v286') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

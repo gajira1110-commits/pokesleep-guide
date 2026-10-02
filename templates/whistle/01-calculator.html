@@ -1,0 +1,42 @@
+// Three hours at the adopted maximum-energy rate. This never invokes daily skills.
+function whistleEstimate(ids,box,catalog,options={}){
+ const selected=ids.filter(Boolean).map(id=>box.find(item=>item.id===id));
+ const empty={members:[],foods:new Map(),berryEnergy:null,berryCount:null,pendingReasons:[]};
+ if(!selected.length)return empty;
+ if(selected.some(item=>!item))return {...empty,pendingReasons:['チーム個体が見つかりません']};
+ if(options.fieldMode==='ex')return {...empty,pendingReasons:['EXフィールドの補正は未対応']};
+ const speedContext=teamSpeedContext(ids,box,catalog),members=[],pendingReasons=[];
+ const favorites=new Set(options.favoriteBerries||[]),areaFactor=1+(options.areaBonus||0)/100;
+ for(const item of selected){
+  const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id),reasons=[];
+  if(!species||species.mythicalSettings||species.dailyCalculationStatus==='pending_special_skill')reasons.push('特殊な個体・追加状態は未対応');
+  if(!Number.isFinite(item.level)||item.level<1)reasons.push('レベル');
+  if(!options.assumeNeutral){
+   if(!item.nature&&!item.mint)reasons.push('性格未入力');
+   if(SUBSKILL_LEVELS.some((level,index)=>level<=item.level&&!item.subskills?.[index]))reasons.push('解放済みサブスキル未入力');
+  }
+  if(stats?.unknown?.length)reasons.push('性格・サブスキル未対応');
+  if(!Number.isFinite(stats?.speed)||stats.speed<=0)reasons.push('おてつだい時間');
+  if(!Number.isFinite(stats?.food)||stats.food<0||stats.food>100)reasons.push('食材確率');
+  if(!Number.isFinite(stats?.berryQty)||stats.berryQty<=0)reasons.push('きのみ個数');
+  const berryBase=catalog.berries?.[species?.berry];
+  if(!Number.isFinite(berryBase))reasons.push('きのみエナジー');
+  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
+   const candidate=slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(c=>c.name===item.ingredients?.[slot.unlock]);
+   if(!candidate||!Number.isFinite(candidate.qty)||candidate.qty<=0)reasons.push(`Lv.${slot.unlock}の食材選択・個数`);
+   return candidate;
+  });
+  if(!slots.length)reasons.push('食材枠');
+  if(reasons.length){pendingReasons.push(`${item.name}：${[...new Set(reasons)].join('・')}`);continue}
+  const helps=10800/(stats.speed*.45),chance=stats.food/100;
+  const berries=Math.floor(helps*(1-chance)*stats.berryQty+.5),foods=new Map();
+  // Round each slot before merging identical ingredient names or individuals.
+  for(const slot of slots)foods.set(slot.name,(foods.get(slot.name)||0)+Math.floor(helps*chance*slot.qty/slots.length+.5));
+  const berryEnergy=options.favoritesKnown===false?null:berries*berryEnergyAtLevel(berryBase,item.level)*(favorites.has(species.berry)?2:1)*areaFactor;
+  members.push({id:item.id,name:item.name,level:item.level,berryName:species.berry,berries,berryEnergy,foods,helpSeconds:stats.speed});
+ }
+ // A subset is never presented as the selected team's total.
+ if(pendingReasons.length)return {...empty,pendingReasons};
+ const foods=new Map();for(const member of members)for(const [name,qty] of member.foods)foods.set(name,(foods.get(name)||0)+qty);
+ return {members,foods,berryCount:members.reduce((sum,m)=>sum+m.berries,0),berryEnergy:members.some(m=>m.berryEnergy===null)?null:members.reduce((sum,m)=>sum+m.berryEnergy,0),pendingReasons};
+}

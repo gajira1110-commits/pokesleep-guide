@@ -32,6 +32,17 @@
 
 `core/09-day-view.html`と`box/02-daily-forecast.html`は結果表示、`box/05-actions.html`は編集操作。日産保留を0や部分合計に変換しない。Box保存キーとバックアップ形式は構成整理だけで変更しない。
 
+## 笛・出現匹数の責務
+
+| 編集元 | 責務 |
+| --- | --- |
+| `whistle/01-calculator.html` | 笛1回分の個体計算・不足条件・チーム集計。DOMや比較状態を持たない |
+| `team/06-whistle.html` | 笛の表示・比較基準・操作イベント |
+| `fields/01-spawn-calculator.html` | 睡眠スコアから必要エナジーと観測範囲を計算 |
+| `core/11-field-spawn.html` | 出現匹数表・出典の表示と入力イベント |
+
+笛と出現匹数のCSSは `styles/16-whistle.css` と `styles/17-field-spawn.css` に分ける。結合順は既存CSSと同じ位置を維持する。`check_whistle.cjs` は計算ファイルを直接読み込み、表示コード内の文字列で切り出さない。v286は整理前と生成JavaScript・CSSが完全一致。
+
 ## 整理後の確認
 
 ビルドと`check_fragment_assembly.cjs`で組み立て・構文を確認。種族参照変更は`check_species_catalog.cjs`（前版HTMLを任意指定して同値比較）、登録/保存変更は`check_all_pokemon.cjs`、姿の進化は`check_size_evolution.cjs`、候補表示は`check_form_providers.cjs`、計算は`check_daily_calculator.cjs`を使う。検証対象に応じて選び、一度に機能変更と構成変更を広げない。

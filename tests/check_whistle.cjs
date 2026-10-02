@@ -4,7 +4,7 @@ const catalog={berries:{berry:30},pokemon:{1:{berry:'berry',ingredientSlots:[{un
 const item={id:'one',no:1,name:'Test',level:30,nature:'まじめ',subskills:['known','known']};
 let speed=3600,food=50;
 const ctx={Map,Set,Number,Math,SUBSKILL_LEVELS:[10,25,50,70,80],speciesFor:item=>catalog.pokemon[item.no],teamSpeedContext:()=>({members:new Map([['one',{speed,food,berryQty:1,unknown:[]}]])}),berryEnergyAtLevel:()=>30};
-vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'templates/team/06-whistle.html'),'utf8').split('let whistleComparison')[0],ctx);
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'templates/whistle/01-calculator.html'),'utf8'),ctx);
 const estimate=(options={})=>ctx.whistleEstimate(['one'],[item],catalog,options);
 let r=estimate();assert.equal(r.foods.get('same'),4,'two slots round to 2 each, rather than rounding the merged 3.333 to 3');assert.equal(r.berryCount,3);assert.equal(r.berryEnergy,90);
 r=estimate({favoriteBerries:['berry'],areaBonus:50});assert.equal(r.berryEnergy,270);
@@ -23,7 +23,7 @@ catalog.pokemon[1].dailyCalculationStatus='pending_special_skill';assert(estimat
 assert(estimate({fieldMode:'ex'}).pendingReasons.length);assert(ctx.whistleEstimate(['missing'],[item],catalog).pendingReasons.length);
 console.log('Whistle: per-slot rounding, one/two/three slots, field energy, independent inputs and unknown-condition hold passed.');
 const rows=JSON.parse(fs.readFileSync(path.join(root,'master/research/field-spawn-counts.json'))).fields;
-vm.runInContext(fs.readFileSync(path.join(root,'templates/core/11-field-spawn.html'),'utf8').split('function renderFieldSpawn')[0],ctx);
+vm.runInContext(fs.readFileSync(path.join(root,'templates/fields/01-spawn-calculator.html'),'utf8'),ctx);
 assert.equal(Object.values(rows).flat().length,45);assert.equal(Object.values(rows).flat().filter(r=>r.exactThreshold!==null).length,12);
 assert.equal(ctx.spawnEnergyBounds(rows.greengrass[4],100).estimate,195636);assert.equal(ctx.spawnEnergyBounds(rows.greengrass[4],50).estimate,391272);
 assert.equal(ctx.spawnEnergyBounds(rows.cyan_ex[2],100).lower,null);assert.equal(ctx.spawnEnergyBounds(rows.amber[4],100).estimate,976396);assert.equal(ctx.spawnEnergyBounds(rows.amber[4],100).upper,976659);
