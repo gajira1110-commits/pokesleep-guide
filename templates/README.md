@@ -33,6 +33,7 @@
 | `21-day-calculator.html` | ホームとボックス共通の日産近似計算 |
 | `19-box-detail-controller.html` | ボックス詳細の共通参照・開く入口 |
 | `box/02-daily-forecast.html` | 日産予想の接続・食材とスキル予想表示 |
+| `box/06-growth.html` | 次の解放までの通常アメ・ゆめのかけら目安。現在EXP0・未確認条件の保留 |
 | `box/03-view.html` | 個体詳細の表示更新 |
 | `box/04-editor.html` | 進化系統・編集フォームの準備 |
 | `box/05-actions.html` | レベル・お気に入り・育成・編集保存の操作 |

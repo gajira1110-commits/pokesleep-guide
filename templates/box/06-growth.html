@@ -1,0 +1,40 @@
+// Normal candy only. Progress EXP is not recorded, so estimates start at EXP 0.
+function boxGrowthEstimate(item,p,target){
+ const data=window.PS_CATALOG?.growth,from=Number(item.level),type=String(p?.expType);
+ const pending=reason=>({status:'pending',reason});
+ if(!p||!data?.expTypeMultipliers?.[type])return pending('経験値タイプ未確認');
+ if(item.mint)return pending('ミント適用後のEXP補正は未確認');
+ const nature=NATURE_EFFECTS[item.nature];
+ if(!nature)return pending('性格を設定すると計算できます');
+ if(!Number.isInteger(from)||from<1||!Number.isInteger(target)||target<=from||target>Math.min(MAX_POKEMON_LEVEL,data.levelCap))return pending('対象レベル範囲外');
+ const natureKey=nature.up==='exp'?'up':nature.down==='exp'?'down':'neutral';
+ let level=from,progress=0,candy=0,shards=0,requiredExp=0;
+ for(let n=from;n<target;n++){
+  const amount=data.rows[n-1]?.exp_types?.[type]?.exp_to_next;
+  if(!Number.isFinite(amount)||amount<=0)return pending('EXP表未確認');
+  requiredExp+=amount;
+ }
+ while(level<target){
+  const row=data.rows[level-1],amount=row?.candy_exp?.[natureKey],cost=row?.dream_shards_per_candy_at_current_level;
+  if(!Number.isFinite(amount)||amount<=0||!Number.isFinite(cost)||cost<=0||candy>=100000)return pending('アメ・費用データ未確認');
+  candy++;shards+=cost;progress+=amount;
+  while(level<target&&progress>=data.rows[level-1].exp_types[type].exp_to_next){
+   progress-=data.rows[level-1].exp_types[type].exp_to_next;level++;
+  }
+ }
+ const conflicts=data.sourceTableConflicts.filter(x=>String(x.exp_type)===type&&x.target_level>from&&x.target_level<=target);
+ return {status:'estimate',candy,shards,requiredExp,conflicts};
+}
+function renderBoxGrowth(item,p,milestones){
+ if(!milestones.length)return '<p class="psg-box-muted">現在のレベル上限まで、次の解放はありません。</p>';
+ const rows=milestones.map(target=>{
+  const labels=[];
+  if(p?.ingredientSlots?.some(s=>s.unlock===target))labels.push('食材解放');
+  if(SUBSKILL_LEVELS.includes(target))labels.push('サブスキル解放');
+  const result=boxGrowthEstimate(item,p,target);
+  const summary=result.status==='estimate'?`アメ 約${result.candy.toLocaleString()}個・ゆめのかけら 約${result.shards.toLocaleString()}`:`${boxEsc(result.reason)}（計算保留）`;
+  return `<div class="psg-milestone"><b>Lv.${target}　${labels.join('・')}</b><p>${summary}</p>${result.conflicts?.length?'<small>EXP表に差異あり・累計丸めによる推定</small>':''}</div>`;
+ }).join('');
+ const sources=Object.entries(window.PS_CATALOG.growth.sources).map(([key,url])=>`<a href="${boxEsc(url)}" target="_blank" rel="noopener noreferrer">${key==='level'?'レベル・アメ費用':'経験値タイプ'}</a>`).join('・');
+ return rows+'<details class="psg-box-explanation"><summary>育成の計算条件</summary><p class="psg-box-muted">現LvのEXP0から通常アメのみで育てる目安です。性格のEXP補正と、アメ使用時のLvごとの費用を反映。途中のEXPは繰り越します。現在のEXP・ブースト・睡眠EXP・研究ランクによる上限は含みません。</p><p class="psg-box-muted">攻略資料の表と累計丸めによる導出値を使用。実機未照合・資料間の差異は推定として扱います。ミント適用後のEXP補正は未確認のため保留します。</p><p class="psg-box-muted">出典：'+sources+'</p></details>';
+}
