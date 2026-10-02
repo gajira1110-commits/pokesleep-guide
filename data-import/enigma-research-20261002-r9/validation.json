@@ -1,0 +1,37 @@
+{
+  "conditionalBoundaryCases": [
+    {
+      "preEnergy": 0,
+      "oneActivationAfter": 0,
+      "twoActivationsAfter": 0,
+      "passed": true
+    },
+    {
+      "preEnergy": 7,
+      "oneActivationAfter": 0,
+      "twoActivationsAfter": 0,
+      "passed": true
+    },
+    {
+      "preEnergy": 12,
+      "oneActivationAfter": 0,
+      "twoActivationsAfter": 0,
+      "passed": true
+    },
+    {
+      "preEnergy": 20,
+      "oneActivationAfter": 8,
+      "twoActivationsAfter": 0,
+      "passed": true
+    },
+    {
+      "preEnergy": 100,
+      "oneActivationAfter": 88,
+      "twoActivationsAfter": 76,
+      "passed": true
+    }
+  ],
+  "orderExampleVerified": true,
+  "actualGameMechanicsVerifiedByArithmetic": false,
+  "unconfirmedNatureAndInternalFloorRetainedAsNull": true
+}

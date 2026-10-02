@@ -1,0 +1,30 @@
+[
+  {
+    "id": "low-energy-boundary",
+    "sourceIds": [
+      "R9-zero-report"
+    ],
+    "energyBeforeApproximate": 7,
+    "energyAfterReported": 0,
+    "nature": null,
+    "gameVersion": null,
+    "exactObservationDate": null,
+    "sampleCount": null,
+    "screenshotObtained": false,
+    "conclusionScope": "表示上0になった歴史的観測。内部値・全条件での下限を証明しない。"
+  },
+  {
+    "id": "double-activation",
+    "sourceIds": [
+      "R9-double-report81",
+      "R9-double-report94"
+    ],
+    "reportedActivations": 2,
+    "reportedTotalLoss": 24,
+    "animationCountReportedIn81": 1,
+    "nature": null,
+    "sampleCount": null,
+    "gameVersion": null,
+    "conclusionScope": "演出回数と効果適用回数を同一視しない。表示上24減少という観測。"
+  }
+]

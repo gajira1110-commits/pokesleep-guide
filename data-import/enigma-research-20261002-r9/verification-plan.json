@@ -1,0 +1,46 @@
+{
+  "notExecutedInGame": true,
+  "matrix": {
+    "targetNature": [
+      "げんき回復量上昇",
+      "無補正",
+      "げんき回復量下降"
+    ],
+    "preEnergy": [
+      "12を十分上回る状態",
+      "12付近",
+      "1〜11",
+      "0"
+    ],
+    "activationBatch": [
+      1,
+      2
+    ],
+    "control": "同時刻の自然減少と回復イベントを記録し、あくタイプを免除対照として含める。"
+  },
+  "recordFields": [
+    "gameVersion",
+    "observedAt",
+    "skillLevel",
+    "targetIndividualId",
+    "targetType",
+    "targetNature",
+    "mintState",
+    "displayedEnergyBefore",
+    "displayedEnergyAfter",
+    "activationCount",
+    "recoveryEventsBetween",
+    "naturalDecayTick",
+    "screenshotsOrVideo"
+  ],
+  "questions": [
+    "性格別に減少量が変わるか。受ける個体の性格とダークライの性格を混同しない。",
+    "0付近で表示だけの丸めと内部状態を区別できるか。",
+    "2回の効果が演出1回で処理される現行挙動を確認できるか。"
+  ],
+  "inferenceLimits": [
+    "回復補正という名称だけで負の効果へ補正を適用しない。",
+    "げんきの自然減少の下限を、ナイトメア固有の検証の代わりにしない。",
+    "Go Plus+同期前運用の古い報告を、全端末・現行仕様の保証にしない。"
+  ]
+}
