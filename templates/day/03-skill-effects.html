@@ -1,0 +1,13 @@
+// Skill effects at a collection boundary. Immediate helps never roll further skills.
+function dailyCollectionSkills(member,triggers,hasFollowingPeriod,teamSize){
+ let teamRecovery=0,allyRecovery=0,bonusHelps=0;
+   if(member.boost&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps;
+   if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps/teamSize;
+   if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))member.randomIngredients+=triggers*member.skillAmount;
+   if(member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery))teamRecovery+=triggers*member.skillRecovery;
+   if(hasFollowingPeriod&&member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    member.energy=Math.min(150,member.energy+triggers*member.skillRecovery*member.stats.energyFactor);
+   if(member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery))
+    allyRecovery+=triggers*member.skillRecovery;
+ return {teamRecovery,allyRecovery,bonusHelps};
+}

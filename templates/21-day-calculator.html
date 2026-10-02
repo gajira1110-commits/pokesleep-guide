@@ -1,32 +1,4 @@
-// Shared daily estimate, assembled inside the core controller closure.
-function speciesFor(item,catalog=window.PS_CATALOG){
- return window.PS_SPECIES?window.PS_SPECIES(item,catalog):(!item?.speciesId?catalog?.pokemon?.[item?.no]||null:null);
-}
-// Bounded estimate: ten-minute energy bands and expected inventory occupancy.
-// Ingredients across unlocked slots are assumed equally likely; skill events are separate.
-function expectedStoredSkills(regularHelps,rate,stockLimit){
- const probability=Math.max(0,Math.min(1,Number(rate)/100));
- if(!Number.isFinite(regularHelps)||regularHelps<=0||!probability)return 0;
- if(probability===1)return Math.min(stockLimit,regularHelps);
- // Fractional expected helps: Poisson approximation to Bernoulli trials.
- const lambda=-regularHelps*Math.log1p(-probability),none=Math.exp(-lambda);
- return stockLimit===2?2-(2+lambda)*none:1-none;
-}
-function berryEnergyAtLevel(base,level){
- if(!Number.isFinite(base)||!Number.isFinite(level))return null;
- return Math.round(Math.max(base+level-1,base*Math.pow(1.025,level-1)));
-}
-function mealRecoveryAtEnergy(energy){
- return energy>80?1:energy>70?2:energy>60?3:energy>50?4:energy>40?5:energy>30?6:energy>20?7:energy>10?8:9;
-}
-function helperBoostContext(effectType,effect,items,catalog){
- const types={helper_boost_fire:['ほのお','bonusByUniqueFire'],helper_boost_water:['みず','bonusByUniqueWater'],helper_boost_electric:['でんき','bonusByUniqueElectric']};
- const config=types[effectType];if(!config)return null;
- const [type,key]=config;
- const unique=new Set(items.filter(item=>speciesFor(item,catalog)?.type===type).map(item=>item.no)).size;
- const bonus=effect?.[key]?.[Math.min(5,unique)];
- return {type,unique,helps:Number.isFinite(effect?.helps)&&Number.isFinite(bonus)?effect.helps+bonus:null};
-}
+// Shared daily estimate: collection timeline and team totals.
 function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collectionHours=4,initialEnergy=100,goodCamp=false,threeMeals=true,favoriteBerries=[],areaBonus=0){
  const interval=[1,2,4,8].includes(Number(collectionHours))?Number(collectionHours):4;
  const startingEnergy=Math.max(0,Math.min(150,Math.round(Number(initialEnergy)||0)));
@@ -43,40 +15,7 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
   foods:new Map(),randomIngredients:null,dreamShards:null,berryEnergy:null,skillEnergy:null,skillEnergyBase:null,
   periods,interval,startingEnergy,goodCamp,threeMeals,favorites,areaFactor
  };
- const members=items.map(item=>{
-  const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id);
-  const slots=(species?.ingredientSlots||[]).filter(slot=>slot.unlock<=item.level).map(slot=>{
-   const chosen=item.ingredients?.[slot.unlock];
-   return slot.candidates?.length===1?slot.candidates[0]:slot.candidates?.find(candidate=>candidate.name===chosen);
-  });
-  const reasons=[];
-  if(species?.dailyCalculationStatus==='pending_special_skill')reasons.push('特殊スキルを含む日産計算は未対応');
-  if(!stats?.speed)reasons.push('おてつだい時間');
-  if(!stats?.carry)reasons.push('最大所持数');
-  if(!Number.isFinite(stats?.food))reasons.push('食材確率');
-  if(!Number.isFinite(stats?.berryQty))reasons.push('きのみ数');
-  if(!Number.isFinite(catalog?.berries?.[species?.berry]))reasons.push('きのみエナジー');
-  if(!slots.length)reasons.push('食材候補');
-  else slots.forEach((slot,index)=>{if(!slot)reasons.push(`Lv.${species.ingredientSlots.filter(s=>s.unlock<=item.level)[index].unlock}の食材選択`)});
-  if(reasons.length)return {id:item.id,name:item.name,missing:true,reasons};
-  const chance=Math.max(0,Math.min(1,stats.food/100));
-  const averageFood=slots.reduce((sum,slot)=>sum+slot.qty,0)/slots.length;
-  const averageSize=chance*averageFood+(1-chance)*stats.berryQty;
-  if(averageSize<=0)return {id:item.id,name:item.name,missing:true};
-  const skill=catalog?.skills?.[species.mainSkillId];
-  const skillLevel=Math.max(1,Math.min(skill?.maxLevel||7,item.skillLevel||1));
-  const skillEffect=skill?.levels?.[skillLevel];
-  const boost=helperBoostContext(skill?.effectType,skillEffect,items,catalog);
-  const stockLimit=['スキル','オール'].includes(species.specialty)?2:1;
-  return {id:item.id,name:item.name,stats,slots,chance,averageSize,stockLimit,
-   berryBase:catalog.berries[species.berry],berryName:species.berry,level:item.level,
-   foods:new Map(),berries:0,overflow:0,skillTriggers:0,energy:startingEnergy,skillExtraHelps:0,randomIngredients:0,
-   skillCalculationNote:skill?.calculationNote||null,skillName:skill?.name||null,skillEffectType:skill?.effectType,
-   skillAmount:skillEffect?.amount,skillEnergy:skillEffect?.energy ??
-    (Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
-   skillShards:skillEffect?.shards ?? (skill?.effectType==='variable_dream_shards'&&Number.isFinite(skillEffect?.min)&&Number.isFinite(skillEffect?.max)?(skillEffect.min+skillEffect.max)/2:null),
-   skillRecovery:skillEffect?.recovery,skillHelps:boost?boost.helps:skillEffect?.helps,boost,missing:false};
- });
+ const members=items.map(item=>dailyMemberContext(item,speedContext,items,catalog,startingEnergy));
  const valid=members.filter(m=>!m.missing);
  let elapsedTicks=0;
  periods.forEach((hours,periodIndex)=>{
@@ -92,14 +31,8 @@ function dailyBaseline(ids=team,box=state.box,catalog=window.PS_CATALOG,collecti
    const extra=Math.max(0,helps-regular);
    const triggers=Number.isFinite(member.stats.skill)&&member.skillName?expectedStoredSkills(regular,member.stats.skill,member.stockLimit):0;
    member.skillTriggers+=triggers;
-   if(member.boost&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps;
-   if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))bonusHelps+=triggers*member.skillHelps/items.length;
-   if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))member.randomIngredients+=triggers*member.skillAmount;
-   if(member.skillEffectType==='team_energy_recovery'&&Number.isFinite(member.skillRecovery))teamRecovery+=triggers*member.skillRecovery;
-   if(periodIndex<periods.length-1&&member.skillEffectType==='self_energy_recovery'&&Number.isFinite(member.skillRecovery))
-    member.energy=Math.min(150,member.energy+triggers*member.skillRecovery*member.stats.energyFactor);
-   if(member.skillEffectType==='ally_energy_recovery'&&Number.isFinite(member.skillRecovery))
-    allyRecovery+=triggers*member.skillRecovery;
+   const effects=dailyCollectionSkills(member,triggers,periodIndex<periods.length-1,items.length);
+   bonusHelps+=effects.bonusHelps;teamRecovery+=effects.teamRecovery;allyRecovery+=effects.allyRecovery;
    for(const slot of member.slots)member.foods.set(slot.name,(member.foods.get(slot.name)||0)+regular*member.chance*slot.qty/member.slots.length);
    member.berries+=regular*(1-member.chance)*member.stats.berryQty+extra*member.stats.berryQty;
    member.overflow+=extra*member.stats.berryQty;
