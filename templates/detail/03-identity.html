@@ -19,7 +19,8 @@
      if(title){
        const costume=document.createElement('select');costume.className='psg-dex-costume';
        costume.setAttribute('aria-label','衣装');costume.title='衣装別データ未登録';costume.disabled=true;
-       const normal=document.createElement('option');normal.value='default';normal.textContent='通常';costume.append(normal);title.append(costume);
+       const normal=document.createElement('option');normal.value='default';normal.textContent='通常';costume.append(normal);
+       costume.hidden=costume.options.length<=1;title.append(costume);
      }
      head.querySelector(".v51-head-nav")?.remove();
      const nav=document.createElement("div");
