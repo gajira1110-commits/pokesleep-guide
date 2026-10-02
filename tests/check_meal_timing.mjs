@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {mealTiming,findMealOptionsAsync,simulateTeam} from '../vendor/enigma-swap/swap-assist.mjs';
+import {mealTiming,findMealOptionsAsync,simulateTeam,supplementTiming} from '../vendor/enigma-swap/swap-assist.mjs';
 const member=(id,food,capacity=1000)=>({boxId:id,species:{id,'名前':id,'基準おてつだい時間秒':3600,'初期最大所持数':capacity,'食材確率推定pct':100,'きのみ個数':1,'きのみ基礎エナジー':20,'食材候補':[{'候補':'A','食材':food,Lv1:1}]},individual:{level:1,configuration:'A',nature:'まじめ',mintNeutralized:false,subskills:[null,null,null,null,null],sleepHours:0,remainingEvolutions:0},initialEnergy:0,recoveryEvents:[],berryEnergyPerUnit:20});
 const req={members:[member('a','milk'),member('b','egg'),member('c','other'),member('d','other'),member('e','other'),member('reserve','leek')],teamIds:['a','b','c','d','e'],collectionHours:[0,3,6,9,12,15,16,24],demand:{milk:2,egg:5,leek:1}};
 let result=mealTiming(req);assert.equal(result.timing.foods.milk.hour,3);assert.equal(result.timing.foods.egg.hour,6);assert.equal(result.timing.foods.leek.status,'no_provider');assert.equal(result.timing.hour,null);
@@ -12,3 +12,10 @@ const huge={...req,demand:{leek:1000}};const improved=await findMealOptionsAsync
 const limited=await findMealOptionsAsync(req,{candidateIds:['reserve'],focus:'leek',maxEvaluations:1});assert.equal(limited.searchComplete,false);
 const abort=new AbortController();abort.abort();assert.equal((await findMealOptionsAsync(req,{candidateIds:['reserve'],focus:'leek'},{signal:abort.signal})).status,'cancelled');
 console.log('Meal timing: collection boundaries, no daily extrapolation, capacity, swap collection, outgoing losses, missing other food, partial improvement, limit, cancel passed.');
+
+let solo=supplementTiming(member('solo','milk'),req.collectionHours,{milk:2});assert.equal(solo.timing.foods.milk.hour,3);assert.equal(solo.ingredients.milk,24);
+assert.equal(supplementTiming(member('solo','milk',1),req.collectionHours,{milk:2}).timing.foods.milk.hour,6);
+assert.equal(supplementTiming(member('solo','milk'),req.collectionHours,{milk:25}).timing.foods.milk.hour,null);
+assert.equal(supplementTiming(member('solo','milk'),req.collectionHours,{egg:2}).timing.foods.egg.status,'no_provider');
+assert.equal(simulateTeam({...req,teamIds:['a']}).status,'invalid_input');
+console.log('Standalone candidate: collection time, capacity, over-day, missing provider and original five-member validation passed');

@@ -22,12 +22,12 @@ export function berryUnitEnergy(species,level,{fieldBonusFraction,favoriteMultip
   const base=Math.round(Math.max(species['きのみ基礎エナジー']+level-1,species['きのみ基礎エナジー']*1.025**(level-1)));
   return Math.ceil(base*(1+fieldBonusFraction)*(1+berryZoneFraction))*favoriteMultiplier;
 }
-function prepare(request){
+function prepare(request,solo=false){
   need(request&&typeof request==='object','request');
   const {members,teamIds,collectionHours,demand}=request;
-  need(Array.isArray(members)&&members.length>=5,'members');
+  need(Array.isArray(members)&&members.length>=(solo?1:5),'members');
   need(members.every(m=>typeof m?.boxId==='string'&&m.boxId.length>0)&&new Set(members.map(m=>m.boxId)).size===members.length,'boxId','invalid_input');
-  need(Array.isArray(teamIds)&&teamIds.length===5&&new Set(teamIds).size===5,'teamIds[5]','invalid_input');
+  need(Array.isArray(teamIds)&&teamIds.length===(solo?1:5)&&new Set(teamIds).size===teamIds.length,'teamIds[5]','invalid_input');
   // Reuse the previous module's validation for clock/collection assumptions.
   countEvents(86400,{wakeEnergy:0,collectionHours,recoveryEvents:[]});
   need(demand&&typeof demand==='object'&&!Array.isArray(demand)&&Object.keys(demand).length>0&&Object.values(demand).every(v=>finite(v,0,Infinity)),'demand','invalid_input');
@@ -66,8 +66,8 @@ function assess(demand,supply){
   return Object.fromEntries(Object.entries(demand).map(([i,qty])=>[i,{required:qty,expected:supply[i]??0,
     deficit:Math.max(0,qty-(supply[i]??0)),surplus:Math.max(0,(supply[i]??0)-qty)}]));
 }
-function run(request,swap,{timeline=false}={}){
-  const {map}=prepare(request);
+function run(request,swap,{timeline=false,solo=false}={}){
+  const {map}=prepare(request,solo);
   if(swap){
     need(request.teamIds.includes(swap.outId)&&map.has(swap.inId)&&!request.teamIds.includes(swap.inId),'swap.members','invalid_input');
     need(finite(swap.startHour,0,24)&&finite(swap.endHour,0,24)&&swap.endHour>swap.startHour,'swap.hours','invalid_input');
@@ -257,3 +257,10 @@ export async function findSwapOptionsAsync(request,options,{batchSize=25,onProgr
     }
   }catch(e){if(e instanceof InputError)return {status:e.code,field:e.field};throw e;}
 }
+
+// Independent reserve estimate: no outgoing member or other-team bonuses assumed.
+export function supplementTiming(member,collectionHours,demand){return safe(()=>{
+ const request={members:[member],teamIds:[member.boxId],collectionHours,demand};
+ const result=run(request,null,{timeline:true,solo:true});
+ return {...result,timing:mealTimes(request,result)};
+});}
