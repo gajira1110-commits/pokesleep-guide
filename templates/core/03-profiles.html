@@ -1,5 +1,5 @@
-const backupBoxFields=({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours});
-const knownSleepIds=new Set(Object.values(window.PS_CATALOG?.sleepStyles||{}).flat().map(s=>s.id));
+const backupBoxFields=({id,no,speciesId,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>({id,no,...(speciesId?{speciesId}:{}),level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours});
+const knownSleepIds=new Set([...Object.values(window.PS_CATALOG?.sleepStyles||{}).flat(),...Object.values(window.PS_CATALOG?.forms?.sleepStyleGroups||{}).flatMap(g=>g.styles||[])].map(s=>s.id));
 function normalizeSleepFound(raw){
  if(!raw||typeof raw!=='object'||Array.isArray(raw))return {};
  return Object.fromEntries(Object.entries(raw).filter(([id,found])=>knownSleepIds.has(id)&&found===true));

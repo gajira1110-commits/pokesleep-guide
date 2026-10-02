@@ -32,7 +32,7 @@ function renderTeamSwap(){
  if(!category)swapUI('swapStatus').textContent='今週の料理を選んでください。';
 }
 function swapMember(item,initialEnergy){
- const p=window.PS_CATALOG.pokemon[item.no];
+ const p=speciesFor(item);
  if(!p)throw Error(`${item.name}：図鑑データがありません。`);
  if(['ミュウ','ダークライ'].includes(p.name))throw Error(`${item.name}：特殊な個体状態には未対応です。`);
  if(!Number.isFinite(initialEnergy)||initialEnergy<0||initialEnergy>150)throw Error(`${item.name}：起点げんき（0〜150）を入力してください。`);
@@ -51,8 +51,8 @@ function swapMember(item,initialEnergy){
   if(row['食材']!==c.name)throw Error(`${item.name}：食材構成の照合が必要です。`);
   row[`Lv${slot.unlock}`]=c.qty;candidates.set(letter,row);
  });
- const species={id:String(p.no),'名前':p.name,'基準おてつだい時間秒':p.help,'初期最大所持数':p.carry,'食材確率推定pct':p.foodRate,'きのみ個数':p.berryQty,'きのみ基礎エナジー':window.PS_CATALOG.berries[p.berry],'食材候補':[...candidates.values()]};
- const individual={level:item.level,configuration,nature:item.mint?'まじめ':item.nature,mintNeutralized:!!item.mint,subskills,sleepHours:item.ribbonHours||0,remainingEvolutions:remainingEvolutionCount(item.no)};
+ const species={id:speciesKey(p),'名前':p.name,'基準おてつだい時間秒':p.help,'初期最大所持数':p.carry,'食材確率推定pct':p.foodRate,'きのみ個数':p.berryQty,'きのみ基礎エナジー':window.PS_CATALOG.berries[p.berry],'食材候補':[...candidates.values()]};
+ const individual={level:item.level,configuration,nature:item.mint?'まじめ':item.nature,mintNeutralized:!!item.mint,subskills,sleepHours:item.ribbonHours||0,remainingEvolutions:remainingEvolutionCount(p)};
  const favorites=activeFieldBerries(),field=window.PS_CATALOG.fields[fieldProfile.selectedFieldId];
  // Random favorites are unknown until all three are specified.
  const berryKnown=field?.favoriteMode==='fixed'||(favorites.length===3&&new Set(favorites).size===3);

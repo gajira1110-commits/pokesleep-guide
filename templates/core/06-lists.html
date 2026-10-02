@@ -6,14 +6,14 @@ function renderDex(){
  document.querySelector('[data-menu="dex-type"]>.filter-main')?.classList.toggle('active',state.filters.types.size>0);
  document.querySelector('[data-menu="dex-ing"]>.filter-main')?.classList.toggle('active',state.filters.ingredients.size>0);
  dexCount.textContent=`${a.length} / ${all.length}`;
- dexGrid.innerHTML=a.map(p=>`<article class="poke dex-card type-${typeClass(p.type)}" data-no="${p.no}" role="button" tabindex="0" aria-label="No.${String(p.no).padStart(3,'0')} ${p.name}の詳細を見る">
+ dexGrid.innerHTML=a.map(p=>`<article class="poke dex-card type-${typeClass(p.type)}" data-no="${p.no}" data-species-id="${p.speciesId||''}" role="button" tabindex="0" aria-label="No.${String(p.no).padStart(3,'0')} ${p.name}の詳細を見る">
    <div class="dex-heading"><div class="dex-identity"><div class="dex-number-row"><span class="dex-no">No.${String(p.no).padStart(3,'0')}</span><span class="dex-discovery" aria-label="寝顔登録数 ${discoveryLabel(p)}">${discoveryLabel(p)}</span></div><span class="dex-name">${p.name}</span></div></div>
-   <div class="dex-art">${window.PS_DEV_ASSETS.image(p.faceImage||p.image,'pokemon',p.no,'face',p.name)}</div><div class="dex-bottom"><span title="得意: ${p.specialty||'未確認'}">${specIcon(p.specialty)}</span>${[0,1,2].map(i=>`<span title="食材${['A','B','C'][i]}: ${p.ingredients?.[i]?.name||'未確認'}">${ingIcon(p.ingredients?.[i])}</span>`).join('')}</div>
+   <div class="dex-art">${p.detailPreviewOnly?'<small>No image</small>':window.PS_DEV_ASSETS.image(p.faceImage||p.image,'pokemon',p.no,'face',p.name)}</div><div class="dex-bottom"><span title="得意: ${p.specialty||'未確認'}">${specIcon(p.specialty)}</span>${[0,1,2].map(i=>`<span title="食材${['A','B','C'][i]}: ${p.ingredients?.[i]?.name||'未確認'}">${ingIcon(p.ingredients?.[i])}</span>`).join('')}</div>
   </article>`).join('');
  hydrateSpecialtyIcons(dexGrid);
  dexEmpty.style.display=a.length?'none':'block';
  dexGrid.querySelectorAll('[data-no]').forEach(c=>{
-   c.onclick=()=>{if(Date.now()<(window.PS?.ignoreCardClicksUntil||0))return;window.openDexCard?.(+c.dataset.no)};
+   c.onclick=()=>{if(Date.now()<(window.PS?.ignoreCardClicksUntil||0))return;window.openDexCard?.(c.dataset.speciesId||+c.dataset.no)};
    c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click()}};
  });
 }
@@ -25,7 +25,7 @@ function renderBox(){
  renderSelectedFilters('box');
  const q=searchKey(boxSearch.value.trim()),a=state.box.filter(x=>{
  const text=!q||searchKey(x.name).includes(q);
-  const species=window.PS_CATALOG?.pokemon[x.no];
+  const species=speciesFor(x);
   const type=!state.boxFilters.types.size||state.boxFilters.types.has(species?.type);
   const ingredient=!state.boxFilters.ingredients.size||species?.ingredients?.some(item=>state.boxFilters.ingredients.has(item.name));
  const spec=!state.boxFilters.specs.size||state.boxFilters.specs.has(x.specialty);
@@ -36,7 +36,7 @@ function renderBox(){
   document.querySelector('[data-menu="box-type"]>.filter-main')?.classList.toggle('active',state.boxFilters.types.size>0);
   document.querySelector('[data-menu="box-ing"]>.filter-main')?.classList.toggle('active',state.boxFilters.ingredients.size>0);
  boxGrid.innerHTML=a.map(x=>{
-  const species=window.PS_CATALOG?.pokemon[x.no];
+  const species=speciesFor(x);
   const foods=[1,30,60].map((unlock,i)=>{
    const slot=species?.ingredientSlots?.find(s=>s.unlock===unlock);
    const chosen=x.ingredients?.[unlock]||((slot?.candidates?.length===1)?slot.candidates[0].name:'');
@@ -44,7 +44,7 @@ function renderBox(){
    const icon=chosen?ingIcon({name:chosen}):'';
    return `<span class="psg-box-mini-badge ${chosen?'':'is-unknown'}" title="${['A','B','C'][i]} Lv.${unlock}：${boxEsc(chosen||'未確認')}" aria-label="${['A','B','C'][i]} ${boxEsc(chosen||'未確認')}"><em>${['A','B','C'][i]}</em>${icon||'<span>?</span>'}</span>`;
   }).join('');
-  return `<button type="button" class="poke psg-box-card type-${typeClass(species?.type)}" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b></span><span class="psg-box-card-art">${window.PS_DEV_ASSETS.image(species?.faceImage,'pokemon',x.no,'face',x.name)||'<small>No image</small>'}<span class="psg-box-card-level">Lv.${x.level}</span></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span>${subskillCardBadges(x)}</button>`;
+  return `<button type="button" class="poke psg-box-card type-${typeClass(species?.type)}" data-id="${boxEsc(x.id)}" aria-label="${boxEsc(x.name)} Lv.${x.level}、食材とサブスキルの構成を見る"><span class="psg-box-card-copy"><b>${boxEsc(x.name)}</b></span><span class="psg-box-card-art">${species&&!species.detailPreviewOnly?window.PS_DEV_ASSETS.image(species.faceImage,'pokemon',x.no,'face',x.name):'<small>No image</small>'}<span class="psg-box-card-level">Lv.${x.level}</span></span><span class="psg-box-mini-row" aria-label="食材構成">${foods}</span>${subskillCardBadges(x)}</button>`;
  }).join('');
  boxEmpty.textContent=state.box.length?'条件に合う個体がありません。':'Boxは空です。「＋追加」から登録できます。';
  boxEmpty.style.display=a.length?'none':'block';
@@ -53,8 +53,8 @@ function renderBox(){
   if(teamBoxSlot!==null){
    const index=teamBoxSlot,id=c.dataset.id,usedAt=team.indexOf(id),next=[...team];
    const selected=state.box.find(x=>x.id===id);
-   const selectingSpecial=window.PS_CATALOG?.pokemon?.[selected?.no]?.specialTeamLimited===true;
-   const occupiedSpecial=team.some((memberId,slot)=>slot!==index&&memberId!==id&&window.PS_CATALOG?.pokemon?.[state.box.find(x=>x.id===memberId)?.no]?.specialTeamLimited===true);
+   const selectingSpecial=speciesFor(selected)?.specialTeamLimited===true;
+   const occupiedSpecial=team.some((memberId,slot)=>slot!==index&&memberId!==id&&speciesFor(state.box.find(x=>x.id===memberId))?.specialTeamLimited===true);
    if(selectingSpecial&&occupiedSpecial){alert('特別なポケモンはチームに1匹だけ編成できます。先に現在の特別なポケモンを外してください。');return}
    if(usedAt!==-1&&usedAt!==index)next[usedAt]=next[index];
    next[index]=id;saveTeamSelection(next);teamBoxSlot=null;renderBoxTeamMode();go('home');return;

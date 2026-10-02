@@ -11,9 +11,13 @@ function evolutionFamily(no){
 }
 function fillBoxEditor(item,p){
  const form=document.getElementById('boxEditForm');
- form.elements.evolution.innerHTML=evolutionFamily(item.no).map(x=>`<option value="${x.no}">${boxEsc(x.name)}</option>`).join('');
- form.elements.evolution.value=String(item.no);
- form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+ const group=window.PS_FORMS?.groupFor(p?speciesKey(p):'')||window.PS_FORMS?.data.detailFormGroups.find(g=>g.kind==='size'&&g.choices.some(c=>Number(c.speciesId.split('_')[0])===item.no));
+ document.getElementById('boxAppearanceLabel').hidden=!group;
+ document.getElementById('boxAppearanceTitle').textContent=group?.kind==='size'?'サイズ':'衣装';
+ form.elements.appearance.innerHTML=group?`${p?'':'<option value="">未確認（選択してください）</option>'}${group.choices.map(c=>`<option value="${c.speciesId}">${boxEsc(c.label)}</option>`).join('')}`:'';
+ form.elements.appearance.value=p?speciesKey(p):'';
+ fillBoxEvolution(form,p);
+ form.elements.appearance.onchange=()=>{const chosen=window.PS_FORMS.resolve(form.elements.appearance.value);fillBoxEvolution(form,chosen);fillBoxIngredients(item,chosen)};
  form.elements.ribbonHours.value=String(item.ribbonHours||0);
  const ribbonPreview=document.getElementById('boxRibbonPreview');
  const updateRibbonPreview=()=>{ribbonPreview.innerHTML=window.PS_UI_ART.icon('ribbons',form.elements.ribbonHours.value)};
@@ -29,11 +33,23 @@ function fillBoxEditor(item,p){
  form.elements.role.querySelector('[data-legacy]')?.remove();
  if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
  form.elements.role.value=item.role||'';
+ fillBoxIngredients(item,p);
+ document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
+}
+function boxEvolutionChoices(p){
+ if(!p)return [];
+ if(!p.detailPreviewOnly)return evolutionFamily(p.no).filter(x=>!x.detailPreviewOnly);
+ return [p,...(p.evolutionTransitions||[]).filter(e=>e.transitionEnabled).map(e=>window.PS_FORMS.resolve(e.targetSpeciesId)).filter(Boolean)];
+}
+function fillBoxEvolution(form,p){
+ form.elements.evolution.innerHTML=boxEvolutionChoices(p).map(x=>`<option value="${speciesKey(x)}">${boxEsc(x.name)}</option>`).join('');
+ form.elements.evolution.value=p?speciesKey(p):'';form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+}
+function fillBoxIngredients(item,p){
  const slots=p?.ingredientSlots||[];
  document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
   const candidates=slots.find(s=>s.unlock===unlock)?.candidates||[];
-  const chosen=item.ingredients?.[unlock]||((candidates.length===1)?candidates[0].name:'');
+ const prior=item.ingredients?.[unlock],chosen=candidates.some(c=>c.name===prior)?prior:((candidates.length===1)?candidates[0].name:'');
   return `<label>Lv.${unlock} 食材<select name="ingredient-${unlock}"><option value="">未確認</option>${candidates.map(c=>`<option value="${boxEsc(c.name)}" ${c.name===chosen?'selected':''}>${boxEsc(c.name)} ×${c.qty}</option>`).join('')}</select></label>`;
  }).join('');
- document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
 }

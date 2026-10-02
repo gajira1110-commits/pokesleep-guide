@@ -6,15 +6,21 @@ const NATURE_AXES=window.PS_CATALOG.natures.axes;
 const NATURE_EFFECTS=Object.fromEntries(NATURE_ROWS.flatMap((row,up)=>row.map((name,down)=>[name,up===down?{}:{up:NATURE_AXES[up],down:NATURE_AXES[down]}])));
 const SUBSKILLS=Object.fromEntries(window.PS_CATALOG.subskills.map(skill=>[skill.name,skill]));
 const SUBSKILL_NAMES=window.PS_CATALOG.subskills.map(skill=>skill.name);
-function remainingEvolutionCount(no,seen=new Set(),catalog=window.PS_CATALOG){
+function remainingEvolutionCount(value,seen=new Set(),catalog=window.PS_CATALOG){
+ const p=typeof value==='object'?value:catalog?.pokemon?.[value];if(!p)throw Error('進化先のデータが未登録です。');
+ const no=p.speciesId||p.no;
  if(seen.has(no))throw Error('進化データを確認してください。');
- const p=catalog?.pokemon?.[no];if(!p)throw Error('進化先のデータが未登録です。');
+ if(p.detailPreviewOnly){
+  const edges=p.evolutionTransitions||[];
+  if(edges.some(e=>!e.transitionEnabled))throw Error('この姿の進化回数は未確認です。');
+  return edges.length?Math.max(...edges.map(e=>1+remainingEvolutionCount(window.PS_FORMS.resolve(e.targetSpeciesId),new Set([...seen,no]),catalog))):0;
+ }
  const targets=(Array.isArray(p.evolution)?p.evolution:[p.evolution]).filter(Boolean).map(e=>e.toNo);
  return targets.length?Math.max(...targets.map(target=>1+remainingEvolutionCount(target,new Set([...seen,no]),catalog))):0;
 }
 function individualRibbon(item,p){
  if(!item.ribbonHours)return {capacity:0,time:1};
- try{return window.PS_SWAP_ENGINE.ribbon(item.ribbonHours,remainingEvolutionCount(p?.no))}
+ try{return window.PS_SWAP_ENGINE.ribbon(item.ribbonHours,remainingEvolutionCount(p))}
  catch{return {capacity:null,time:null}}
 }
 function individualCorrections(item,p,teamSpeedReduction=0){
@@ -42,6 +48,6 @@ function teamSpeedContext(ids=team,box=state.box,catalog=window.PS_CATALOG){
  const selected=ids.map(id=>box.find(item=>item.id===id)).filter(Boolean);
  const contribution=item=>SUBSKILL_LEVELS.reduce((sum,unlock,i)=>sum+(unlock<=item.level&&SUBSKILLS[item.subskills?.[i]]?.effect==='teamSpeedReduction'?SUBSKILLS[item.subskills[i]].value:0),0);
  const bonus=selected.reduce((sum,item)=>sum+contribution(item),0);
- const members=new Map(selected.map(item=>[item.id,individualCorrections(item,catalog?.pokemon?.[item.no],bonus)]));
+ const members=new Map(selected.map(item=>[item.id,individualCorrections(item,speciesFor(item,catalog),bonus)]));
  return {bonus,bonusCount:selected.filter(item=>contribution(item)>0).length,members};
 }

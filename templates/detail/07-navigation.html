@@ -1,7 +1,7 @@
  function openPokemonDetail(no,opts={}){
    const m=byNo(no);if(!m)return;
    if(['skillPage','recipePage'].includes(window.PS?.state?.screen))detailOrigin=window.PS.state.screen;
-   if(opts.pushHistory&&currentNo&&currentNo!==m.no){detailHistory.push(currentNo);detailForward.length=0}
+   if(opts.pushHistory&&currentNo&&(currentSpeciesId||currentNo)!==(m.speciesId||m.no)){detailHistory.push(currentSpeciesId||currentNo);detailForward.length=0}
    const scroll=window.scrollY;
    currentNo=m.no;currentSpeciesId=m.speciesId||null;setTheme(m.type);show("dexDetail");
    header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);renderSleepStyles(m);renderPokemonFields(m);switchTab(currentTab||"ability");
@@ -13,7 +13,7 @@
  // v57: one explicit entry point for every Dex card.
  // renderDex calls this directly, so there is no capture/bubble race with the legacy handler.
  window.openDexCard=function(no){
-   no=Number(no);if(!Number.isFinite(no))return;
+   if(!byNo(no))return;
    currentTab="ability";detailHistory.length=0;detailForward.length=0;detailOrigin="dex";currentNo=null;
    if(byNo(no)){openPokemonDetail(no);return;}
  };
@@ -22,10 +22,10 @@
  document.addEventListener("click",e=>{
    const b=e.target.closest?.("#v12Prev,#v12Next");
    if(!b||b.disabled)return;
-   const current=byNo(currentNo);if(!current)return;
-   const target=neighborOf(current.no,b.id==="v12Prev"?-1:1);
+   const current=byNo(currentSpeciesId||currentNo);if(!current)return;
+   const target=neighborOf(current,b.id==="v12Prev"?-1:1);
    if(!target)return;
-   e.preventDefault();e.stopImmediatePropagation();openPokemonDetail(target.no,{pushHistory:true});
+   e.preventDefault();e.stopImmediatePropagation();openPokemonDetail(target.speciesId||target.no,{pushHistory:true});
  },true);
 
  const back=document.querySelector("#dexDetail [data-back]");
@@ -36,13 +36,13 @@
  }
  function backDetail(){
    const previous=detailHistory.pop();
-   if(previous){detailForward.push(currentNo);openPokemonDetail(previous);return true}
+   if(previous){detailForward.push(currentSpeciesId||currentNo);openPokemonDetail(previous);return true}
    return leaveDetail();
  }
  function forwardDetail(){
    const next=detailForward.pop();
    if(!next)return false;
-   if(currentNo)detailHistory.push(currentNo);
+   if(currentNo)detailHistory.push(currentSpeciesId||currentNo);
    openPokemonDetail(next);return true;
  }
  // The visible button exits to the originating list. Inner-screen swipes navigate detail history.

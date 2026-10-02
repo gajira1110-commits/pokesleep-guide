@@ -4,12 +4,14 @@
  const detailEsc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
  let currentNo=1,currentSpeciesId=null,currentTab="ability";
  const byNo=n=>V.pokemon[Number(n)]||window.PS_FORMS?.resolve(String(n))||window.PS_FORMS?.dexEntries.find(p=>p.no===Number(n))||null;
- const neighborOf=(no,direction)=>{
-   const knownNos=[...Object.values(V.pokemon),...(window.PS_FORMS?.dexEntries||[])]
+ const detailKey=p=>p.speciesId||`${String(p.no).padStart(4,'0')}_default`;
+ const neighborOf=(current,direction)=>{
+   const known=[...Object.values(V.pokemon),...(window.PS_FORMS?.dexEntries||[])]
      .filter(p=>p&&Number.isInteger(Number(p.no))&&p.name)
-     .map(p=>Number(p.no)).sort((a,b)=>a-b);
-   const index=knownNos.indexOf(Number(no));
-   return index<0?null:byNo(knownNos[index+direction]);
+     .sort((a,b)=>a.no-b.no||Number(!!a.speciesId)-Number(!!b.speciesId)||detailKey(a).localeCompare(detailKey(b)));
+   const key=window.PS_FORMS?.groupFor(detailKey(current))?.choices[0].speciesId||detailKey(current);
+   const index=known.findIndex(p=>detailKey(p)===key);
+   return index<0?null:known[index+direction]||null;
  };
  const skillOf=m=>m?V.skills[m.mainSkillId]:null;
 

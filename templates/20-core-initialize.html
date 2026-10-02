@@ -2,14 +2,14 @@ boxSearch.oninput=renderBox;dexSearch.oninput=renderDex;
 function closeBoxAdd(){boxAddPanel.hidden=true;addBtn.setAttribute('aria-expanded','false')}
 addBtn.onclick=()=>{
  const opening=boxAddPanel.hidden;
- if(opening)boxSpecies.innerHTML=boxCatalog().map(p=>`<option value="${p.no}">No.${String(p.no).padStart(3,'0')} ${p.name}</option>`).join('');
+ if(opening)boxSpecies.innerHTML=boxCatalog().map(p=>`<option value="${speciesKey(p)}">No.${String(p.no).padStart(3,'0')} ${p.name}</option>`).join('');
  boxAddPanel.hidden=!opening;addBtn.setAttribute('aria-expanded',String(opening));
 };
 boxCancelAdd.onclick=closeBoxAdd;
 boxConfirmAdd.onclick=()=>{
- const p=boxCatalog().find(x=>Number(x.no)===Number(boxSpecies.value));if(!p)return;
+ const p=boxCatalog().find(x=>speciesKey(x)===boxSpecies.value);if(!p)return;
  const id=globalThis.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}`;
- if(commitBox([...state.box,{id,no:Number(p.no),name:p.name,specialty:p.specialty,level:1}])){
+ if(commitBox([...state.box,{id,no:Number(p.no),speciesId:speciesKey(p),name:p.name,specialty:p.specialty,level:1}])){
   boxUndoPanel.hidden=true;closeBoxAdd();boxSearch.value='';renderBox();
  }
 };

@@ -12,17 +12,18 @@ const BOX_STORAGE_KEY='psg.box.instances.v1';
 const SLEEP_STORAGE_KEY='psg-sleep-discoveries-v1';
 const TEAM_STORAGE_KEY='psg.team.primary.v1';
 const FIELD_STORAGE_KEY='psg.field.profile.v1';
-const boxCatalog=()=>Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible);
+const speciesKey=p=>p.speciesId||`${String(p.no).padStart(4,'0')}_default`;
+const boxCatalog=()=>[...Object.values(window.PS_CATALOG?.pokemon||{}).filter(p=>p.dexVisible),...[...(window.PS_FORMS?.records.values()||[])]].sort((a,b)=>a.no-b.no||Number(!!a.speciesId)-Number(!!b.speciesId)||speciesKey(a).localeCompare(speciesKey(b)));
 function normalizeBox(raw){
   if(!Array.isArray(raw))return [];
-  const known=new Map(boxCatalog().map(p=>[Number(p.no),p]));
+  const known=new Set(boxCatalog().map(p=>Number(p.no)));
   const seen=new Set();
   return raw.filter(x=>{
     if(!x||typeof x.id!=='string'||! /^[a-zA-Z0-9-]{1,100}$/.test(x.id)||seen.has(x.id)||!known.has(Number(x.no))||!Number.isInteger(x.level)||x.level<1||x.level>100)return false;
     seen.add(x.id);return true;
   })
-   .map(x=>({id:x.id,no:Number(x.no),level:Math.min(70,x.level),name:known.get(Number(x.no)).name,
-    specialty:known.get(Number(x.no)).specialty,
+   .map(x=>({id:x.id,no:Number(x.no),...(x.speciesId?{speciesId:String(x.speciesId).slice(0,80)}:{}),level:Math.min(70,x.level),name:speciesFor(x)?.name||`${window.PS_FORMS?.dexEntries.find(p=>p.no===Number(x.no))?.name||'ポケモン'}（姿未確認）`,
+    specialty:speciesFor(x)?.specialty||'未確認',
     ingredients:x.ingredients&&typeof x.ingredients==='object'?x.ingredients:{},
     subskills:Array.isArray(x.subskills)?x.subskills.slice(0,5).map(s=>String(s||'').slice(0,80)):[],
     nature:String(x.nature||'').slice(0,40),mint:x.mint===true,
@@ -35,8 +36,7 @@ function readBox(){
 }
 function commitBox(next){
  try{
-  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours})=>
-   ({id,no,level,ingredients,subskills,nature,mint,skillLevel,role,favorite,training,ribbonHours}))));
+  localStorage.setItem(BOX_STORAGE_KEY,JSON.stringify(next.map(backupBoxFields)));
   state.box=next;
   renderBox();
   return true;
