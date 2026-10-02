@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 root = Path(__file__).resolve().parent
-package = root / 'data-import/picasso-sleep-v277'
+package = root / 'data-import/picasso-sleep-v281'
 manifest = json.loads((package / 'manifest.json').read_text())
 missing = []
 for row in manifest['images']:

@@ -9,7 +9,7 @@ h2{margin:8px 0 12px;font-size:19px}.card{background:#fff;border:1px solid var(-
 .btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:800}.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .psg-team-card .note{margin:8px 0}
 .psg-skill-index input{display:block;width:100%;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px}.psg-skill-entry{margin-top:10px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}.psg-skill-entry summary{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px;cursor:pointer;color:#171d1a}.psg-skill-entry summary strong{font-size:18px}.psg-skill-tags{font-size:13px;color:#527a62}.psg-skill-levels{padding:0 14px}.psg-skill-level{display:flex;gap:16px;padding:10px 0;border-top:1px solid var(--line)}.psg-skill-level b{min-width:44px}.psg-skill-species-label{font-weight:700;padding:12px 14px 6px}.psg-skill-species{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 14px}
-.psg-recipe-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.psg-recipe-filters label{font-size:13px;font-weight:700}.psg-recipe-filters input,.psg-recipe-filters select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:16px;color:#18221b}.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--recipe-category-bg,#fff)}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-headline{display:flex;flex-direction:column;gap:2px}.psg-recipe-headline strong{font-size:17px}.psg-recipe-headline small,.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
+.psg-recipe-entry{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--recipe-category-bg,#fff)}.psg-recipe-heading,.psg-recipe-energy{display:flex;align-items:center;justify-content:space-between;gap:8px}.psg-recipe-energy small{color:var(--muted)}.psg-recipe-ingredients{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.psg-recipe-chip{display:flex;align-items:center;gap:5px;border-radius:10px;background:#f3f7f3;font-weight:700}.psg-recipe-chip img{width:26px;height:26px;object-fit:contain}.psg-recipe-energy strong{font-size:14px}.psg-recipe-entry>.note{margin:8px 0}.psg-recipe-providers{border-top:1px solid var(--line);padding-top:8px;font-size:13px}.psg-recipe-providers summary{color:#3679c2;font-weight:700;cursor:pointer}.psg-recipe-providers p{margin:8px 0 0;line-height:1.5}
 .toolbar{display:flex;gap:7px;margin-bottom:10px}.toolbar input{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:10px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.poke{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px;min-height:112px;cursor:pointer;font:inherit;color:inherit;text-align:left}.poke b{display:block;font-size:13px}.poke small{color:var(--muted)}.poke .icons{margin-top:24px;font-size:15px;display:flex;gap:5px}
 nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30;padding-bottom:env(safe-area-inset-bottom)}
@@ -20,17 +20,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 @media(max-width:360px){.grid{gap:6px}.poke{padding:7px}}
 
 /* source: stable-v2-style */
-.dex-card{position:relative;min-width:0;min-height:162px;padding:8px 6px 9px;overflow:hidden;display:flex;flex-direction:column}
-.dex-card .dex-heading{min-width:0;min-height:36px;display:flex;align-items:flex-start;justify-content:space-between;gap:2px}
-.dex-card .dex-identity{min-width:0;flex:1;color:#111}
-.dex-card .dex-number-row{display:flex;align-items:center;justify-content:space-between;gap:3px;min-width:0}
-.dex-card .dex-no{display:block;font-size:9px;font-weight:800;line-height:1.1;white-space:nowrap}
-.dex-card .dex-name{display:block;font-weight:900;font-size:13px;line-height:1.2;overflow-wrap:anywhere}
-.dex-card .dex-discovery{flex:none;font-size:8px;font-weight:700;white-space:nowrap;color:#52635b}
-.dex-card .dex-art{height:92px;display:grid;place-items:center;color:#9aa7a2}
-.dex-card .dex-art img{width:100%;height:100%;object-fit:contain}
 .psg-face-sprite{display:block;flex:none;width:100%;max-height:100%;aspect-ratio:145/108;background-image:var(--psg-face-sheet);background-repeat:no-repeat;background-size:1412.414% 1066.667%;background-position:var(--face-x) var(--face-y);image-rendering:pixelated;border-radius:7px}
-.dex-card .dex-art>.psg-face-sprite{max-width:124px}
 .psg-team-face>.psg-face-sprite,.psg-recipe-provider-art>.psg-face-sprite,.v31-evo-image>.psg-face-sprite{width:100%;height:auto}
 #boxGrid .psg-box-card{display:flex;flex-direction:column;}
 .psg-box-card-art{width:100%;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:8px;color:#82918a;font-size:10px}
@@ -39,14 +29,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-box-card-copy{display:block;min-width:0}
 /* Five cards across on phone and desktop; each badge keeps its own accessible label. */
 #dexGrid,#boxGrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
-#dexGrid .dex-card{padding:4px 3px;min-height:112px}
-#dexGrid .dex-heading{min-height:28px;display:block}
-#dexGrid .dex-discovery{display:block;font-size:9px;text-align:right;margin-left:auto}
-#dexGrid .dex-name{font-size:11px}
-#dexGrid .dex-art{height:clamp(54px,17vw,68px)}
-#dexGrid .dex-bottom{gap:1px;margin-top:2px}
-#dexGrid .dex-bottom>span{width:16px;height:16px;flex:none;overflow:hidden;font-size:10px}
-#dexGrid .dex-bottom img,#dexGrid .dex-bottom img.psg-specialty-icon{width:13px;height:13px}
 #boxGrid .psg-box-card{min-width:0;padding:3px 2px 4px;gap:1px;overflow:hidden;border-radius:10px}
 #boxGrid .psg-box-card-art{position:relative;height:68px}
 #boxGrid .psg-box-card-copy{min-height:14px;line-height:1.1;text-align:left}
@@ -62,17 +44,11 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-subskill-card-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;width:100%;max-width:74px;margin:0 auto}
 .psg-subskill-card-grid .psg-box-mini-badge{grid-column:span 2;width:100%;max-width:none;min-height:18px;border-radius:4px}
 .psg-subskill-card-grid .psg-box-mini-badge:nth-child(4){grid-column:2 / span 2}
-.dex-card .dex-art-placeholder{width:35px;height:35px;border:2px dotted currentColor;border-radius:50%}
-.dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:2px;margin-top:-11px;position:relative}
-.dex-card .dex-bottom>span{width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;display:grid;place-items:center;font-size:13px}
-.dex-card .dex-bottom img{width:18px;height:18px;object-fit:contain}
 .psg-specialty-icon{width:22px;height:22px;object-fit:contain;vertical-align:middle;flex:none;image-rendering:auto}
-.dex-card .dex-bottom img.psg-specialty-icon{width:18px;height:18px}
 #boxSpecialtyFilters .filter-option{display:flex;align-items:center;gap:6px}
 #boxSpecialtyFilters .psg-specialty-icon{width:20px;height:20px}
 .psg-mini-missing{display:block;font-size:7px;font-weight:650;line-height:.95;text-align:center;color:#74857e;letter-spacing:0}
-@media(max-width:360px){.dex-card .dex-bottom>span{width:18px;height:18px;font-size:11px}}
-.type-grass{--psg-type-bg:#eaf7ed;background:var(--psg-type-bg)}.type-fire{--psg-type-bg:#fff0e9;background:var(--psg-type-bg)}.type-water{--psg-type-bg:#eaf4ff;background:var(--psg-type-bg)}.type-electric{--psg-type-bg:#fff9dc;background:var(--psg-type-bg)}.type-bug{--psg-type-bg:#f2f7df;background:var(--psg-type-bg)}.type-normal{--psg-type-bg:#f3f2ef;background:var(--psg-type-bg)}.type-poison{--psg-type-bg:#f5eafa;background:var(--psg-type-bg)}.type-ground{--psg-type-bg:#f6f0e3;background:var(--psg-type-bg)}.type-flying{--psg-type-bg:#eaf3ff;background:var(--psg-type-bg)}.type-ghost{--psg-type-bg:#eeeaf8;background:var(--psg-type-bg)}.type-psychic{--psg-type-bg:#ffeef4;background:var(--psg-type-bg)}.type-ice{--psg-type-bg:#e6f8fb;background:var(--psg-type-bg)}.type-steel{--psg-type-bg:#edf2f5;background:var(--psg-type-bg)}.type-fighting{--psg-type-bg:#faece8;background:var(--psg-type-bg)}.type-rock{--psg-type-bg:#f0eee4;background:var(--psg-type-bg)}.type-dark{--psg-type-bg:#ecebea;background:var(--psg-type-bg)}.type-dragon{--psg-type-bg:#eceffc;background:var(--psg-type-bg)}.type-fairy{--psg-type-bg:#fff0f8;background:var(--psg-type-bg)}
+.type-grass{--psg-type-bg:#a9dcb5;background:var(--psg-type-bg)}.type-fire{--psg-type-bg:#ffbd80;background:var(--psg-type-bg)}.type-water{--psg-type-bg:#a9d0f8;background:var(--psg-type-bg)}.type-electric{--psg-type-bg:#ffe680;background:var(--psg-type-bg)}.type-bug{--psg-type-bg:#cbdc88;background:var(--psg-type-bg)}.type-normal{--psg-type-bg:#d8d1c5;background:var(--psg-type-bg)}.type-poison{--psg-type-bg:#d0a5e4;background:var(--psg-type-bg)}.type-ground{--psg-type-bg:#dcb881;background:var(--psg-type-bg)}.type-flying{--psg-type-bg:#bec9ef;background:var(--psg-type-bg)}.type-ghost{--psg-type-bg:#b5a3d7;background:var(--psg-type-bg)}.type-psychic{--psg-type-bg:#f3a6c3;background:var(--psg-type-bg)}.type-ice{--psg-type-bg:#a2e2e8;background:var(--psg-type-bg)}.type-steel{--psg-type-bg:#b2c7d2;background:var(--psg-type-bg)}.type-fighting{--psg-type-bg:#de9995;background:var(--psg-type-bg)}.type-rock{--psg-type-bg:#c7be93;background:var(--psg-type-bg)}.type-dark{--psg-type-bg:#b5aaa5;background:var(--psg-type-bg)}.type-dragon{--psg-type-bg:#a6aee2;background:var(--psg-type-bg)}.type-fairy{--psg-type-bg:#f1b9dd;background:var(--psg-type-bg)}
 .dex-controls{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:10px}
 .filter-title{font-size:11px;color:var(--muted);font-weight:800;margin:6px 0}
 .filter-row{display:flex;gap:6px;overflow:auto;padding-bottom:2px}.filter-btn{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:800}.filter-btn.on{background:#e7f6ef;border-color:#79bea0}
@@ -401,7 +377,10 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-team-option:disabled{opacity:.5;cursor:default}
 .psg-team-option[hidden]{display:none}
 .psg-team-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.psg-team-toolbar .note{flex:1}
+.psg-team-composition{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.psg-team-composition>span{display:flex;align-items:center;gap:3px;font-size:14px;white-space:nowrap}
+.psg-team-composition .psg-specialty-icon{width:27px;height:27px;object-fit:contain}
+#teamSummary{margin:8px 0 0;font-size:13px}
 .psg-team-toolbar button,.psg-team-picker-remove{min-height:44px;padding:7px 11px;border:1px solid #d5e3db;border-radius:10px;background:#fff;color:#276747;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
 .psg-team-toolbar button[aria-pressed="true"]{background:#e5f4e9;border-color:#70af82}
 .psg-team-toolbar button:disabled{opacity:.45;cursor:default}
@@ -448,7 +427,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-day-camp{font:inherit;font-weight:700;color:#285843;background:#fff;border:1px solid #b8d3c0;border-radius:12px;padding:9px 12px;min-height:42px}
 .psg-day-camp[aria-pressed="true"]{background:#dff2e6;border-color:#61a878;color:#174b30}
 .psg-day-energy{border:0;padding:0;margin:12px 0 0;min-width:0}
-.psg-day-energy legend{font-weight:700;padding:0;margin-bottom:7px;color:#111}
+.psg-day-energy-heading{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-weight:700;color:#111;font-size:14px}
+.psg-day-energy-heading input{width:4.5em;min-width:0;margin:0 0 0 auto;padding:4px 6px;font:inherit;box-sizing:border-box}
 .psg-day-energy-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
 .psg-day-energy-options button{font:inherit;font-weight:700;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:12px;min-height:42px;padding:6px}
 .psg-day-energy-options button[aria-pressed="true"]{background:#e8f2fc;border-color:#3888d8;color:#145c9e}
@@ -459,6 +439,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-day-berries select{width:100%;font:inherit;font-size:1.12em;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:9px;padding:7px 2px;min-height:38px}
 .psg-day-field-link{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;padding:10px 12px;text-align:left;font:inherit;font-size:.88em;font-weight:700;color:#24583d;background:#f1f8f3;border:1px solid #cbded0;border-radius:12px}
 .psg-day-field-link span{min-width:0}.psg-day-field-link b{font-size:1.4em}
+#teamFieldSummary{flex:1;text-align:center;display:flex;flex-direction:column;gap:5px}
+.psg-day-field-berries{display:flex;align-items:center;justify-content:center;gap:10px}
 .psg-field-settings>label{display:block;margin:12px 0 5px;font-weight:700}
 .psg-field-settings>select{width:100%;font:inherit;padding:9px;color:#111;background:#fff;border:1px solid #d7e0da;border-radius:10px}
 .psg-field-percent{display:flex;align-items:center;gap:6px}
@@ -493,11 +475,20 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-day-food-tile>img,.psg-day-food-tile>span:first-child{width:28px;height:28px;flex:none;object-fit:contain}
 .psg-day-food-tile>span:last-child{display:flex;flex-direction:column;min-width:0;line-height:1.12}
 .psg-day-food-tile small{font-size:10px;font-weight:600;white-space:nowrap}.psg-day-food-tile strong{font-size:12px;white-space:nowrap}
-.psg-team-food-list{display:grid;gap:8px}
-.psg-team-food-item{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid #e2e9e5;border-radius:13px;background:#fafcfb;min-width:0}
-.psg-team-food-item>img,.psg-team-food-item>span:first-child{width:34px;height:34px;object-fit:contain;flex:none}
-.psg-team-food-item>span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
-.psg-team-food-item strong{color:#111}.psg-team-food-item small{color:#60716a;line-height:1.45;overflow-wrap:anywhere}
+.psg-day-food-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 6px;margin-top:10px}
+.psg-day-food-summary .psg-day-food-tile{flex-direction:column;text-align:center;gap:4px;padding:5px 2px;background:#fff}
+.psg-day-food-summary .psg-day-food-tile>img,.psg-day-food-summary .psg-day-food-tile>span:first-child{width:36px;height:36px}
+.psg-day-food-summary .psg-day-food-tile>span:last-child{width:100%;gap:3px;line-height:1.3}
+.psg-day-food-summary .psg-day-food-tile small{display:none}
+.psg-team-food-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;align-items:start}
+.psg-team-food-item{padding:6px 3px;border:1px solid #e2e9e5;border-radius:10px;background:#fff;min-width:0}
+.psg-team-food-item>summary{display:flex;flex-direction:column;align-items:center;gap:3px;list-style:none;cursor:pointer;min-height:59px;text-align:center}
+.psg-team-food-item>summary::-webkit-details-marker{display:none}
+.psg-team-food-item summary>img,.psg-team-food-item summary>span{width:32px;height:32px;object-fit:contain;flex:none}
+.psg-team-food-item strong{color:#111;font-size:10px;line-height:1.2;overflow-wrap:anywhere}
+.psg-team-food-item small{display:block;margin:6px 2px 0;color:#60716a;font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+.psg-team-food-item[open]{grid-column:span 2;border-color:#8eb7a1}
+.psg-team-food-item summary:focus-visible{outline:2px solid #438ac8;outline-offset:2px}
 .psg-team-food-card>.note{margin:8px 0 0}
 #teamRecipeList{display:grid;gap:8px;margin-top:10px}
 .psg-team-recipe-group{border:1px solid #dfe8e3;border-radius:13px;background:#fff;overflow:hidden}
@@ -507,8 +498,18 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-team-recipe-group-title:after{content:'▾';font-size:13px;color:#66766f}
 .psg-team-recipe-group[open]>.psg-team-recipe-group-title:after{transform:rotate(180deg)}
 .psg-team-recipe-items{display:grid;gap:7px;padding:0 9px 9px}
-.psg-team-recipe-row{display:flex;flex-direction:column;gap:3px;width:100%;padding:10px 12px;text-align:left;background:var(--recipe-category-bg,#f9fbfa);color:#111;border:1px solid #e2e9e5;border-radius:10px;cursor:pointer}
-.psg-team-recipe-row>strong{overflow-wrap:anywhere}
+.psg-team-recipe-row{display:flex;align-items:center;gap:9px;width:100%;padding:9px;text-align:left;background:var(--recipe-category-bg,#f9fbfa);color:#111;border:1px solid #e2e9e5;border-radius:10px;cursor:pointer}
+.psg-team-recipe-image{display:flex;align-items:center;justify-content:center;flex:none;width:52px;height:52px;font-size:10px}
+.psg-team-recipe-image img{width:100%;height:100%;object-fit:contain}
+.psg-team-recipe-copy{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.psg-team-recipe-copy>strong{overflow-wrap:anywhere}
+.psg-team-recipe-pot{font-size:.78em;color:#276747}
+.psg-team-recipe-pot.is-over-capacity{color:#8b5d26}
+.psg-skill-conditions{margin-top:12px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.psg-skill-conditions p{margin:7px 0}
+.psg-skill-conditions h4{margin:8px 0;font-size:13px}
+.psg-team-pot-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:8px;font-size:12px}
+.psg-team-pot-controls select{font:inherit;border:1px solid #d5e3db;border-radius:8px;background:white;min-height:38px;padding:4px}
 .psg-team-recipe-meta{color:#64756d;font-size:.78em}
 .psg-team-recipe-status{color:#68766f;font-size:.8em;line-height:1.35;overflow-wrap:anywhere}
 .psg-team-recipe-status.is-covered{color:#267650;font-weight:700}
@@ -689,6 +690,17 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 
 #home .psg-team-card{border:0;border-radius:0;background:transparent;padding:0;box-shadow:none}
 
+.psg-day-energy-amount{display:block;font-size:18px;line-height:1.4}.psg-day-energy-breakdown{display:block;font-size:12px;font-weight:400;margin-top:3px}
+
+/* Dex encounters: one group per sleep style, canonical field order inside. */
+.psg-sleep-field-power{display:block;font-weight:400;font-size:.85em;margin-top:3px}
+.psg-style-field-row{display:grid;grid-template-columns:minmax(0,1fr) 44px 128px;align-items:center;gap:4px 6px;padding:8px 0;border-top:1px solid #e9eeeb;font-size:.9em}
+.psg-style-field-name{min-width:0}
+.psg-style-field-rank{display:inline-flex;align-items:center;justify-content:flex-start;gap:3px;font-variant-numeric:tabular-nums}
+.psg-style-field-rank .psg-ui-ranks{width:24px;height:24px;margin:0;flex:none}
+.psg-style-field-energy{font-size:.95em}
+.psg-style-field-condition{grid-column:1/-1;margin:0}
+
 #dexDetail .v19-identity .v19-no{flex:0 0 auto!important}
 #dexDetail .v19-identity strong{line-height:1.05!important;flex:0 0 auto!important}
 #dexDetail .v19-type{padding:5px 8px!important;flex:0 0 auto!important}
@@ -799,7 +811,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
   line-height:1.1!important;
 }
 #v12Ability .skill-name::before{
-  content:"✨ ";
+  content:none;
 }
 #v12Ability .skill-rate-inline{
   border-radius:0!important;
@@ -945,7 +957,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
   #detailFoods{overflow-x:auto!important}
   #v12Ability .skill-rate-inline{padding-left:126px!important;}
 }
-
 /* source: stable-v26-skill-group-fix */
 #v12Ability .skill-top{grid-template-columns:minmax(0,1fr) auto!important;
   align-items:center!important;
@@ -1408,7 +1419,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #v12Ability .v33-skill-effect-row .skill-detail-toggle{color:#000!important;opacity:1!important;}
 
 @media(max-width:620px){
-  #dexDetail #v12Header{grid-column:2!important;grid-row:1!important;align-self:start!important;}
   #dexDetail .hero-info>.stats{
     grid-column:1 / -1!important;grid-row:2!important;
   }
@@ -2227,7 +2237,6 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-recipe-provider-group>strong{display:flex;align-items:center;gap:5px;font-size:13px}
 .psg-recipe-provider-group>strong img{width:24px;height:24px;object-fit:contain}
 .psg-recipe-providers{display:flex;flex-direction:row;flex-wrap:wrap;gap:6px;border:0;padding:4px 0 0}
-.psg-recipe-family{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
 .psg-recipe-provider{border:0;border-radius:0;background:transparent;padding:0;min-width:58px;max-width:64px;display:grid;justify-items:center;gap:2px;color:#111;cursor:pointer}
 .psg-recipe-provider-art{position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:0;background:transparent}
 .psg-recipe-provider-art img{max-width:100%;max-height:100%;object-fit:contain}
@@ -2238,7 +2247,7 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #v12Sleep .psg-sleep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 #v12Sleep .psg-sleep-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e4e1eb;border-radius:15px;padding:7px}
 #v12Sleep .psg-sleep-photo{position:relative;aspect-ratio:4/3;display:grid;place-items:center;border-radius:10px;background:#f8f7fa;overflow:hidden}
-#v12Sleep .psg-sleep-photo img{display:block;width:100%;height:100%;object-fit:cover}
+#v12Sleep .psg-sleep-photo img{display:block;width:100%;height:100%;object-fit:contain}
 #v12Sleep .psg-sleep-no-image{font-size:13px;color:#75827c;font-weight:700}
 #v12Sleep .psg-sleep-toggle{position:absolute;top:7px;right:7px;display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid #d8e1dc;border-radius:50%;background:rgba(255,255,255,.97);color:#6d7a73;font-size:21px;line-height:1;box-shadow:0 1px 5px #0002;cursor:pointer}
 #v12Sleep .psg-sleep-toggle[aria-pressed="true"]{background:#47a472;border-color:#47a472;color:#fff;font-size:22px}
@@ -2307,6 +2316,20 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .v106-evo-conditions .psg-ui-icon,.v31-evo-cond .psg-ui-icon{width:20px;height:20px;margin-right:2px}
 .psg-ribbon-preview{display:inline-block;margin-left:4px;min-height:30px;vertical-align:middle}
 .psg-mint-mark .psg-ui-icon{width:24px;height:24px;margin:0}
+
+/* Skill summary owns the icon + two text rows; level details stay below. */
+#v12Ability .skill-box:has(.psg-skill-summary){display:block!important}
+#v12Ability .psg-skill-summary{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:10px}
+#v12Ability .psg-skill-summary .skill-icon{width:44px!important;height:44px!important;margin:0!important}
+#v12Ability .psg-skill-copy{min-width:0}
+#v12Ability .psg-skill-copy .skill-name{display:block!important;font-size:17px!important;line-height:1.3!important;white-space:normal!important}
+#v12Ability .psg-skill-copy .skill-desc{display:block!important;margin:4px 0 0!important;padding:0!important;line-height:1.45!important;font-size:13px!important;border:0!important}
+#v12Ability .psg-skill-copy .v35-effect-level{font-size:13px!important;margin-right:6px}
+#v12Ability .psg-skill-copy .v35-effect-copy{font-size:13px!important}
+#dexDetail .psg-dex-costume{flex:none;width:75px;min-height:28px;padding:2px;font:inherit;font-size:11px;color:#52645b;background:#fff;border:1px solid #dce4df;border-radius:7px;opacity:1}
+#dexDetail .psg-form-no-image{font-size:14px;color:#718078;align-self:center}
+.psg-skill-level>span{min-width:0;overflow-wrap:anywhere;line-height:1.6}
+.psg-skill-entry summary strong{min-width:0;overflow-wrap:anywhere}
 /* Box detail styles, in their original cascade order. */
 /* v95: dedicated layouts for the rebuilt Box screen and Dex food rows. */
 /* Box identity remains visible while reading its long sections. */
@@ -2456,6 +2479,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 #boxDetail .psg-box-explanation summary{cursor:pointer;color:#456458}
 #boxDetail .psg-box-lead{font-size:17px;line-height:1.4}
 #boxDetail .psg-milestone{padding:5px 8px;margin-top:4px;border-radius:8px;font-size:13px}
+#boxDetail .psg-milestone p{margin:3px 0;line-height:1.5}
+#boxDetail .psg-milestone small{display:block;color:#718078;line-height:1.5}
 #boxEvaluation>p{font-size:13px}
 #boxDetail #boxGrowth .psg-box-muted{font-size:12px}
 
@@ -2471,3 +2496,112 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-individual-row details{font-size:13px}
 
 .psg-evaluation-role{margin:8px 0}.psg-individual-row.is-primary{background:#fff;border:1px solid #d9e5df;border-radius:12px;padding:12px}.psg-evaluation-other{margin:12px 0}
+/* Dex cards: one canonical set of rules for heading, artwork and badges. */
+.dex-card{position:relative;min-width:0;min-height:0;padding:3px;overflow:hidden;display:grid;grid-template-rows:auto auto auto;gap:1px;align-content:start}
+.dex-card .dex-heading,.dex-card .dex-identity{min-width:0;color:#111}
+.dex-card .dex-number-row{display:flex;align-items:center;justify-content:space-between;gap:2px;min-width:0}
+.dex-card .dex-no{font-size:9px;font-weight:800;line-height:1.1;white-space:nowrap}
+.dex-card .dex-name{display:block;font-size:11px;font-weight:900;line-height:1.1;overflow-wrap:anywhere}
+.dex-card .dex-discovery{flex:none;font-size:9px;font-weight:700;line-height:1.1;white-space:nowrap;color:#52635b}
+.dex-card .dex-art{display:grid;place-items:center;width:min(100%,68px);aspect-ratio:1;justify-self:center;color:#9aa7a2}
+.dex-card .dex-art img{display:block;width:100%;height:100%;object-fit:contain}
+.dex-card .dex-art>.psg-face-sprite{width:100%;max-height:100%}
+.dex-card .dex-art-placeholder{width:35px;height:35px;border:2px dotted currentColor;border-radius:50%}
+.dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:1px;margin:0;min-width:0}
+.dex-card .dex-bottom>span{display:grid;place-items:center;width:min(16px,25%);height:auto;aspect-ratio:1;flex:0 1 16px;overflow:hidden;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;font-size:10px}
+.dex-card .dex-bottom img,.dex-card .dex-bottom img.psg-specialty-icon{width:13px;height:13px;object-fit:contain}
+/* Shared Block 1: four traits above two rows of two basic stats. */
+#dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{display:grid!important;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-items:start;align-content:start;gap:3px!important;min-width:0;align-self:start}
+.psg-detail-facts #v12Header{grid-column:1;grid-row:1;margin:0;min-width:0}
+.psg-detail-traits,.psg-detail-stats{display:grid;gap:3px;min-width:0;margin:0;padding:0}
+.psg-detail-traits{grid-column:1;grid-row:1;grid-template-columns:repeat(4,minmax(0,1fr))}
+.psg-detail-stats{grid-column:1;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));background:transparent;border:0}
+.psg-detail-trait,.psg-detail-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;box-sizing:border-box;gap:1px;padding:2px;border-radius:8px;background:#fff;color:#111;text-align:center;line-height:1.1}
+.psg-detail-trait{min-height:44px;font-size:clamp(8px,2.1vw,10px);font-weight:850;overflow-wrap:anywhere}
+.psg-detail-trait img,.psg-detail-trait .psg-specialty-icon,.psg-detail-trait .psg-ui-icon{width:23px;height:23px;object-fit:contain;margin:0;flex:none}
+.psg-detail-berry{flex-direction:row;gap:1px}
+.psg-detail-berry-visual{display:grid;place-items:center;width:23px;height:23px;flex:none}
+.psg-detail-berry b{font-size:10px}
+.psg-detail-specialty>img{width:29px!important;height:29px!important}
+.psg-detail-trait:has(.psg-sleep-type-icon){padding:1px;gap:0}
+.psg-detail-trait .psg-sleep-type-icon{width:30px;height:30px}
+.psg-detail-ribbon small{font-size:8px;white-space:nowrap}
+.psg-detail-friend small{font-size:clamp(7px,1.9vw,9px);font-weight:800;white-space:normal;overflow-wrap:anywhere}
+.psg-detail-friend b{font-size:14px}
+.psg-detail-stat{min-height:38px}
+.psg-detail-stat small{font-size:clamp(8px,2.2vw,11px);font-weight:850;white-space:nowrap;letter-spacing:-.04em}
+.psg-detail-stat b,.psg-detail-stat strong{font-size:clamp(12px,3.1vw,18px);font-weight:900;line-height:1.1;overflow-wrap:anywhere}
+.psg-detail-stat em{font-size:8px;font-weight:650;font-style:normal;line-height:1.1;overflow-wrap:anywhere}
+.psg-detail-stat .v45-stat-icon{display:none}
+@media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
+.psg-cooking-controls{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0}
+.psg-cooking-controls label{display:flex;align-items:center;gap:4px;font-size:12px;min-width:0}
+.psg-cooking-controls input[type=number]{width:76px;min-width:0;padding:4px}
+.psg-cooking-controls select{padding:4px;max-width:100%}
+.psg-cooking-reference{margin:8px 0;padding:8px;border:1px solid var(--line,#dce4df);border-radius:10px}
+.psg-cooking-reference summary{cursor:pointer;font-weight:700}
+.psg-cooking-reference .note{margin:6px 0;font-size:12px;overflow-wrap:anywhere}
+.psg-cooking-table-wrap{max-width:100%;overflow-x:auto}
+.psg-cooking-table{width:100%;border-collapse:collapse;font-size:12px}
+.psg-cooking-table th,.psg-cooking-table td{padding:4px 3px;text-align:right;border-bottom:1px solid #dce4df}
+.psg-cooking-table th:first-child,.psg-cooking-table td:first-child{text-align:left}
+.psg-recipe-mode{display:flex;gap:2px;margin-left:auto}
+.psg-recipe-mode button{padding:5px 7px;font-size:12px;border:1px solid #dce4df;border-radius:8px;background:#fff}
+.psg-recipe-mode button.active{color:#355f49;border-color:#6b9f82;background:#eaf5ee;font-weight:700}
+#recipePage [hidden]{display:none!important}
+.psg-evaluation-mode .psg-recipe-copy{grid-template-rows:auto auto auto auto}
+.psg-recipe-metrics{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:3px}
+.psg-recipe-metric{display:flex;flex-direction:column;min-width:0;font-size:12px;line-height:1.3}
+.psg-recipe-metric small{font-size:10px;color:#64756b}
+.psg-recipe-metric b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.psg-recipe-metric.active b{color:#35694c}
+#recipeEvaluationNote{font-size:12px;margin:6px 0}
+#recipeEvaluationBasisLink{padding:2px 6px;border:0;background:transparent;text-decoration:underline;color:#35694c;font-size:12px}
+#recipeEvaluationBasis .note{overflow-wrap:anywhere}
+.psg-recipe-burden{grid-column:1/-1;font-size:11px;color:#53685b;line-height:1.3;margin-top:3px}
+.psg-supply-detail{margin:6px 0;padding-top:6px;border-top:1px solid #dce4df;font-size:12px}
+.psg-supply-detail h3{font-size:13px;margin:0 0 4px}
+.psg-supply-food{margin:5px 0;line-height:1.45;overflow-wrap:anywhere}
+.psg-supply-food>strong{display:block}
+.psg-supply-food .note{font-size:11px;margin:2px 0}
+.psg-supply-tier summary{display:flex;align-items:center;gap:4px;font-size:12px;flex-wrap:wrap}
+.psg-supply-tier summary img{width:20px;height:20px;object-fit:contain}
+.psg-supply-tier .psg-supply-daily{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums}
+#dailySupplyReferenceContent .note{font-size:12px;overflow-wrap:anywhere;margin:6px 0}
+#dailySupplyReference{scroll-margin-top:55px}
+#ingredientPage .psg-subpage-head h2{display:flex;align-items:baseline;gap:6px}
+#ingredientIndexCount{font-size:12px;font-weight:400;color:#75847b;white-space:nowrap}
+.psg-ingredient-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;margin:6px 0}
+.psg-ingredient-controls input{grid-column:1/-1;min-width:0;padding:8px}
+.psg-ingredient-controls select{min-width:0;padding:5px;font-size:12px}
+.psg-ingredient-note{font-size:11px;margin:5px 0}
+#ingredientSupplyBasis{border:0;background:transparent;color:#35694c;text-decoration:underline;font-size:11px;padding:3px}
+#ingredientPage .psg-supply-tier{margin:5px 0;padding:7px}
+#ingredientPage .psg-supply-tier summary{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:5px;align-items:center}
+#ingredientPage .psg-supply-tier summary img{width:32px;height:32px;object-fit:contain;grid-row:1/3}
+.psg-ingredient-name{font-size:13px;line-height:1.25}
+.psg-ingredient-base{font-size:11px;color:#53665a;font-weight:400}
+#ingredientPage .psg-supply-daily{grid-column:3;grid-row:1/3;text-align:right;font-size:12px;margin-left:0}
+.psg-ingredient-details{font-size:12px;border-top:1px solid #dce4df;margin-top:6px;padding-top:5px}
+.psg-ingredient-details h3{font-size:12px;margin:5px 0}
+.psg-ingredient-details .note{font-size:11px;margin:5px 0;overflow-wrap:anywhere}
+.psg-ingredient-recipes{display:flex;flex-direction:column;gap:4px}
+.psg-ingredient-recipes button{text-align:left;background:transparent;border:0;color:#35694c;text-decoration:underline;padding:4px 0;font-size:12px}
+.psg-swap-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.psg-swap-controls label{display:flex;flex-direction:column;gap:2px;min-width:0;font-size:12px;font-weight:750}
+.psg-swap-controls select,.psg-swap-controls input{width:100%;min-width:0;box-sizing:border-box;font-size:14px;padding:6px;border:1px solid #d8e3dc;border-radius:8px;background:#fff;color:#111}
+.psg-swap-controls .psg-swap-recipe{grid-column:1/-1}
+.psg-swap-candidates{display:grid;gap:4px;margin:8px 0;max-height:220px;overflow:auto}
+.psg-swap-candidate{display:grid;grid-template-columns:20px minmax(0,1fr) 66px;align-items:center;gap:5px;font-size:12px;min-height:32px}
+.psg-swap-candidate input[type=number]{min-width:0;width:66px;box-sizing:border-box;padding:4px;border-radius:6px;border:1px solid #d8e3dc;font-size:13px}
+.psg-swap-actions{display:flex;gap:6px;margin:8px 0}.psg-swap-actions button{padding:8px 12px;font-size:13px}
+.psg-swap-result{border-top:1px solid #e2e9e4;padding-top:6px;font-size:13px}
+.psg-swap-option{margin:7px 0;padding:7px;background:#f2f8f4;border-radius:9px}.psg-swap-option strong{font-size:13px}
+.psg-swap-option p{margin:4px 0;font-size:12px}.psg-swap-option summary{font-size:12px;cursor:pointer}
+.psg-swap-card .note{font-size:12px;margin:5px 0;line-height:1.45}
+.psg-swap-assumption{display:flex;align-items:flex-start;gap:5px;margin:7px 0;font-size:12px}.psg-swap-assumption input{flex:none}
+.psg-meal-total{display:block;font-size:15px;margin-bottom:7px}
+.psg-meal-food-times{display:grid;gap:4px}.psg-meal-food-time{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(70px,auto);gap:5px;align-items:center;text-align:left;padding:7px;border:1px solid #dbe5de;border-radius:9px;background:#fff;color:#111;min-width:0;font-size:12px}
+.psg-meal-food-time img{width:26px;height:26px;object-fit:contain}.psg-meal-food-time strong{font-size:12px;text-align:right;max-width:130px}.psg-meal-food-time.is-focus{background:#fff4df;border-color:#d5b369}
+
+.psg-supplement-identity{display:flex;align-items:center;gap:8px}.psg-supplement-identity .psg-team-face{width:38px;height:38px;flex:none}

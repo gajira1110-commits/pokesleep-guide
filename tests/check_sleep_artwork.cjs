@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {firefox}=require(process.env.PSG_PLAYWRIGHT_MODULE||'playwright');
-const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import/picasso-sleep-v277/manifest.json')));
+const manifest=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data-import/picasso-sleep-v281/manifest.json')));
 (async()=>{const browser=await firefox.launch({headless:true,env:{...process.env,MOZ_DISABLE_CONTENT_SANDBOX:'1'}});try{
  const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('file://'+path.resolve(__dirname,'../review.html'));

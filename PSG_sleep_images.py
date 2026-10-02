@@ -6,7 +6,7 @@ from zipfile import ZipFile
 
 
 def restore_sleep_images(root, catalog, images):
-    package = root / 'data-import/picasso-sleep-v277'
+    package = root / 'data-import/picasso-sleep-v281'
     manifest = json.loads((package / 'manifest.json').read_text())
     rows = manifest['images']
     assert len(rows) == manifest['imageCount'] == 907
@@ -28,9 +28,9 @@ def restore_sleep_images(root, catalog, images):
             assert set(archive.namelist()) == {row['member'] for row in pack_rows}
             for row in pack_rows:
                 assert re.fullmatch(r'\d{4}\.webp', row['member'])
-                assert row['path'] == f"assets/sleep/picasso-v277/{row['member']}"
+                assert row['path'] == f"assets/sleep/picasso-v281/{row['member']}"
                 data = archive.read(row['member'])
-                assert hashlib.sha256(data).hexdigest() == row['sha256'], row['source']
+                assert hashlib.sha256(data).hexdigest() == row['sha256'], row['member']
                 assert data[:4] == b'RIFF' and data[8:12] == b'WEBP'
                 destination = root / row['path']
                 destination.parent.mkdir(parents=True, exist_ok=True)
