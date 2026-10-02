@@ -2,10 +2,13 @@
    const m=byNo(no);if(!m)return;
    if(['skillPage','recipePage'].includes(window.PS?.state?.screen))detailOrigin=window.PS.state.screen;
    if(opts.pushHistory&&currentNo&&currentNo!==m.no){detailHistory.push(currentNo);detailForward.length=0}
-   currentNo=m.no;setTheme(m.type);show("dexDetail");
+   const scroll=window.scrollY;
+   currentNo=m.no;currentSpeciesId=m.speciesId||null;setTheme(m.type);show("dexDetail");
    header(m);renderStats(m);renderFood(m);renderSkill(m);renderEvolution(m);renderSleepStyles(m);renderPokemonFields(m);switchTab(currentTab||"ability");
+   if(opts.keepScroll)window.scrollTo(0,scroll);
  }
  window.openPokemonDetail=openPokemonDetail;
+ window.PSG_REFRESH_DEX_DETAIL=()=>openPokemonDetail(currentSpeciesId||currentNo,{keepScroll:true});
 
  // v57: one explicit entry point for every Dex card.
  // renderDex calls this directly, so there is no capture/bubble race with the legacy handler.

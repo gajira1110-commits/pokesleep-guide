@@ -283,4 +283,5 @@
 #v12Ability .psg-skill-copy .skill-desc{display:block!important;margin:4px 0 0!important;padding:0!important;line-height:1.45!important;font-size:13px!important;border:0!important}
 #v12Ability .psg-skill-copy .v35-effect-level{font-size:13px!important;margin-right:6px}
 #v12Ability .psg-skill-copy .v35-effect-copy{font-size:13px!important}
-#dexDetail .psg-dex-costume{flex:none;width:48px;min-height:28px;padding:2px;font:inherit;font-size:11px;color:#52645b;background:#fff;border:1px solid #dce4df;border-radius:7px;opacity:1}
+#dexDetail .psg-dex-costume{flex:none;width:75px;min-height:28px;padding:2px;font:inherit;font-size:11px;color:#52645b;background:#fff;border:1px solid #dce4df;border-radius:7px;opacity:1}
+#dexDetail .psg-form-no-image{font-size:14px;color:#718078;align-self:center}

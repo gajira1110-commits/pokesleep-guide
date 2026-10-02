@@ -2,10 +2,10 @@
 (()=>{
  const V=window.PS_CATALOG;if(!V)return;
  const detailEsc=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
- let currentNo=1,currentTab="ability";
- const byNo=n=>V.pokemon[Number(n)]||null;
+ let currentNo=1,currentSpeciesId=null,currentTab="ability";
+ const byNo=n=>V.pokemon[Number(n)]||window.PS_FORMS?.resolve(String(n))||window.PS_FORMS?.dexEntries.find(p=>p.no===Number(n))||null;
  const neighborOf=(no,direction)=>{
-   const knownNos=Object.values(V.pokemon)
+   const knownNos=[...Object.values(V.pokemon),...(window.PS_FORMS?.dexEntries||[])]
      .filter(p=>p&&Number.isInteger(Number(p.no))&&p.name)
      .map(p=>Number(p.no)).sort((a,b)=>a-b);
    const index=knownNos.indexOf(Number(no));
@@ -86,4 +86,3 @@
    sticky=document.createElement('div');sticky.id='psgDexSticky';sticky.className='psg-dex-sticky';
    hero.before(sticky);sticky.append(hero,tabs);
  }
-

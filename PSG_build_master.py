@@ -314,6 +314,16 @@ def catalog_and_images():
         if image:
             images['recipes'][key] = image
     # The old catalog entries may contain pending numbers. New records are authoritative.
+    forms = json.loads((MASTER / 'forms/data.json').read_text())
+    assert len(forms['detailFormGroups']) == 5 and len(forms['species']) == 15
+    for record in forms['species']:
+        assert record['mainSkillId'] in catalog['skills'], record['speciesId']
+        for slot in record['ingredientSlots']:
+            for candidate in slot['candidates']:
+                ingredient_id = candidate['ingredientId']
+                assert ingredient_id in ingredients, ingredient_id
+                candidate['name'] = ingredients[ingredient_id][0]['name']
+    catalog['forms'] = forms
     catalog['pendingNationalNos'] = [n for n in data.get('pendingNationalNos',[]) if str(n) not in catalog['pokemon']]
     return catalog, images
 
@@ -342,7 +352,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v258') == 2
+    assert source.count('Review v259') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
