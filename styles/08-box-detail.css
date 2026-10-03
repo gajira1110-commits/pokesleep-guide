@@ -239,7 +239,7 @@
 #boxDetail .psg-growth-comparison .psg-subskill-badge{width:20px;height:20px}
 
 /* v318: four-unit evaluation, compact controls on the right. */
-#boxDetail .psg-box-evaluation-section{height:calc(4 * var(--box-unit-height));box-sizing:border-box;padding:6px 8px;display:grid;grid-template-rows:24px minmax(0,1fr);gap:3px}
+#boxDetail .psg-box-evaluation-section{position:relative;height:calc(4 * var(--box-unit-height));box-sizing:border-box;padding:6px 8px;display:grid;grid-template-rows:24px minmax(0,1fr);gap:3px}
 #boxDetail .psg-box-evaluation-section:has(details[open]){height:auto;min-height:calc(4 * var(--box-unit-height))}
 #boxDetail .psg-box-evaluation-section .psg-evaluation-heading{margin:0;font-size:16px;min-width:0}
 #boxDetail .psg-box-evaluation-section .psg-evaluation-heading small{font-size:11px}
@@ -256,3 +256,12 @@
 #boxDetail .psg-evaluation-controls .psg-box-muted{font-size:11px}
 #boxDetail .psg-evaluation-pending{overflow:auto;font-size:11px}
 #boxDetail .psg-evaluation-pending p,#boxDetail .psg-evaluation-pending ul{margin:2px 0}
+
+/* v319: right-edge controls, consistent comparison borders. */
+#boxDetail .psg-box-evaluation-section .psg-evaluation-heading{padding-right:58px}
+#boxDetail .psg-evaluation-controls{display:block}
+#boxDetail .psg-evaluation-other{width:100%;margin:0}
+#boxDetail .psg-evaluation-other>summary{width:100%;text-align:right}
+#boxDetail .psg-evaluation-conditions>summary{position:absolute;right:8px;top:8px;font-size:10px;color:#111}
+#boxDetail .psg-evaluation-controls .psg-evaluation-conditions{margin:0}
+#boxDetail .psg-evaluation-other .psg-individual-row{border:1px solid #d9e5df;border-radius:12px;background:#fff;margin-top:5px}
