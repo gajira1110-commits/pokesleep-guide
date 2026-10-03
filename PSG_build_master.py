@@ -411,7 +411,7 @@ def swap_engine():
 
 
 def build():
-    restore_trim_assets(ROOT)
+    restore_trim_assets(ROOT)  # Verify received pack hashes before applying artwork.
     catalog, images = catalog_and_images()
     restore_sleep_images(ROOT, catalog, images)
     core = ('help','carry','berryQty','foodRate','skillRate','ingredientSlots')
