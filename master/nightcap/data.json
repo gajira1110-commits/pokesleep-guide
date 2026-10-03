@@ -1,0 +1,212 @@
+{
+  "status": "reference-unverified-in-game",
+  "source": "PSG_nightcap_pikachu_research_20261003.txt",
+  "rows": [
+    {
+      "level": 1,
+      "helpSeconds": 4800,
+      "carry": 8,
+      "berryQty": 1,
+      "appleQty": 0,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 0
+    },
+    {
+      "level": 2,
+      "helpSeconds": 4680,
+      "carry": 8,
+      "berryQty": 1,
+      "appleQty": 0,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 20
+    },
+    {
+      "level": 3,
+      "helpSeconds": 4560,
+      "carry": 9,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 40
+    },
+    {
+      "level": 4,
+      "helpSeconds": 4440,
+      "carry": 9,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 70
+    },
+    {
+      "level": 5,
+      "helpSeconds": 4380,
+      "carry": 10,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 100
+    },
+    {
+      "level": 6,
+      "helpSeconds": 4320,
+      "carry": 10,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 140
+    },
+    {
+      "level": 7,
+      "helpSeconds": 4260,
+      "carry": 11,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 180
+    },
+    {
+      "level": 8,
+      "helpSeconds": 4200,
+      "carry": 11,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 0,
+      "honeyQty": 0,
+      "requiredHours": 220
+    },
+    {
+      "level": 9,
+      "helpSeconds": 4140,
+      "carry": 12,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 270
+    },
+    {
+      "level": 10,
+      "helpSeconds": 4080,
+      "carry": 12,
+      "berryQty": 1,
+      "appleQty": 1,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 320
+    },
+    {
+      "level": 11,
+      "helpSeconds": 4020,
+      "carry": 13,
+      "berryQty": 2,
+      "appleQty": 1,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 400
+    },
+    {
+      "level": 12,
+      "helpSeconds": 3960,
+      "carry": 13,
+      "berryQty": 2,
+      "appleQty": 1,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 500
+    },
+    {
+      "level": 13,
+      "helpSeconds": 3900,
+      "carry": 14,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 620
+    },
+    {
+      "level": 14,
+      "helpSeconds": 3840,
+      "carry": 14,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 750
+    },
+    {
+      "level": 15,
+      "helpSeconds": 3780,
+      "carry": 15,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 900
+    },
+    {
+      "level": 16,
+      "helpSeconds": 3720,
+      "carry": 15,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 1,
+      "honeyQty": 0,
+      "requiredHours": 1080
+    },
+    {
+      "level": 17,
+      "helpSeconds": 3660,
+      "carry": 16,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 2,
+      "honeyQty": 0,
+      "requiredHours": 1300
+    },
+    {
+      "level": 18,
+      "helpSeconds": 3600,
+      "carry": 16,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 2,
+      "honeyQty": 0,
+      "requiredHours": 1600
+    },
+    {
+      "level": 19,
+      "helpSeconds": 3570,
+      "carry": 17,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 2,
+      "honeyQty": 2,
+      "requiredHours": 2000
+    },
+    {
+      "level": 20,
+      "helpSeconds": 3540,
+      "carry": 17,
+      "berryQty": 2,
+      "appleQty": 2,
+      "cacaoQty": 2,
+      "honeyQty": 2,
+      "requiredHours": 2500
+    }
+  ],
+  "probabilities": {
+    "berry": null,
+    "apple": null,
+    "cacao": null,
+    "honey": null
+  }
+}

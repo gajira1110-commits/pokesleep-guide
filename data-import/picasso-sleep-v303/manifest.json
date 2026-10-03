@@ -1,0 +1,47 @@
+{
+  "source": "PSG_sleep_additions6_20261003.zip",
+  "images": [
+    {
+      "speciesId": "0133_halloween",
+      "sleepStyleId": "0133_halloween_01",
+      "path": "assets/sleep/picasso-v303/0133_halloween_01.webp",
+      "sha256": "8a0770acf63d15d0c649d48cc60e9d5162e8ad5d7226d28ae68b0a77afbcab0a",
+      "sourceFile": "0133_イーブイ_魔女帽子_寝顔1_まるまり寝.webp"
+    },
+    {
+      "speciesId": "0133_halloween",
+      "sleepStyleId": "0133_halloween_02",
+      "path": "assets/sleep/picasso-v303/0133_halloween_02.webp",
+      "sha256": "45812249e14140cbffc7ca267f0877ccce5fe016bbab566362ef9c7c5534cbf5",
+      "sourceFile": "0133_イーブイ_魔女帽子_寝顔2_たれみみ寝.webp"
+    },
+    {
+      "speciesId": "0133_holiday",
+      "sleepStyleId": "0133_holiday_01",
+      "path": "assets/sleep/picasso-v303/0133_holiday_01.webp",
+      "sha256": "ddb5d7155939ed9b0f78fd1ca35262daccd4e22802f5625d7da1a978227d0a57",
+      "sourceFile": "0133_イーブイ_赤いサンタ帽子_寝顔1_まるまり寝.webp"
+    },
+    {
+      "speciesId": "0133_holiday",
+      "sleepStyleId": "0133_holiday_02",
+      "path": "assets/sleep/picasso-v303/0133_holiday_02.webp",
+      "sha256": "e8ee86a73a4b10f0e2640125c98979a42e2ebfc4a2fe6c07c60c9382d5d5f61d",
+      "sourceFile": "0133_イーブイ_赤いサンタ帽子_寝顔2_プレゼント寝.webp"
+    },
+    {
+      "speciesId": "0363_holiday",
+      "sleepStyleId": "0363_holiday_01",
+      "path": "assets/sleep/picasso-v303/0363_holiday_01.webp",
+      "sha256": "c523a8fb229161e0350e2a90d7f5347fc343dce47743e1562b82c3154249bfe7",
+      "sourceFile": "0363_タマザラシ_リース付き_寝顔1_こてん寝.webp"
+    },
+    {
+      "speciesId": "0363_holiday",
+      "sleepStyleId": "0363_holiday_02",
+      "path": "assets/sleep/picasso-v303/0363_holiday_02.webp",
+      "sha256": "112ae30fa4f3018742c23b701d994d45d7694fd14b58d372617c97c10792e783",
+      "sourceFile": "0363_タマザラシ_リース付き_寝顔2_プレゼント寝.webp"
+    }
+  ]
+}

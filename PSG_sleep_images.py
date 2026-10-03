@@ -75,5 +75,12 @@ def restore_sleep_images(root, catalog, images):
             if sid.endswith('_default'):
                 images['sleepStyles'][style_id] = row['path']
         resolved.add(row['member'])
+    additions = json.loads((root / 'data-import/picasso-sleep-v303/manifest.json').read_text())['images']
+    assert len(additions) == 6
+    for row in additions:
+        sid, style_id = row['speciesId'], row['sleepStyleId']
+        assert style_id in species[sid] and style_id not in bindings.get(sid, {})
+        assert hashlib.sha256((root / row['path']).read_bytes()).hexdigest() == row['sha256']
+        bindings.setdefault(sid, {})[style_id] = row['path']
     images['sleepStylesBySpecies'] = bindings
-    print(f'Sleep artwork: {matched + len(resolved)}/907 images connected; {24 - len(resolved)} retained pending; bytes unchanged')
+    print(f'Sleep artwork: {matched + len(resolved) + len(additions)}/913 images connected; {24 - len(resolved)} retained pending; bytes unchanged')
