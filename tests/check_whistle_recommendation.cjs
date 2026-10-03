@@ -34,3 +34,11 @@ for(const targets of [[{name:'apple',weight:3}],[{name:'apple',weight:3},{name:'
 assert(ctx.whistleRecommendWeighted(box,catalog,options,[{name:'apple',weight:1},{name:'apple',weight:2}]).reason);
 assert(ctx.whistleRecommendWeighted(box,catalog,options,[]).reason);
 console.log('Weighted recommendation: exact global optimum for 1/2/3 objectives, mixed energy/food units, duplicate and empty validation.');
+catalog.pokemon[5].ingredientSlots[0].candidates[0].name='honey';catalog.pokemon[8].ingredientSlots[0].candidates[0].name='honey';
+for(const targets of [[{name:'apple',weight:1}],[{name:'apple',weight:1},{name:'milk',weight:1}],[{name:'apple',weight:2},{name:'milk',weight:1}],[{name:'apple',weight:1},{name:'milk',weight:1},{name:'honey',weight:1}]]){
+ const recommendation=ctx.whistleRecommendBalanced(box,catalog,options,targets);let best={score:-Infinity,energy:-Infinity};
+ const score=r=>Math.min(...targets.map(t=>(r.foods.get(t.name)||0)/t.weight));
+ function visit(start,ids){if(ids.length===5){if(ctx.normalizeTeam(ids,box).some(x=>!x))return;const r=ctx.whistleEstimate(ids,box,catalog,options),v=score(r);if(v>best.score||v===best.score&&r.berryEnergy>best.energy)best={score:v,energy:r.berryEnergy};return}for(let i=start;i<box.length;i++)visit(i+1,[...ids,box[i].id]);}visit(0,[]);
+ assert.equal(score(recommendation.result),best.score);assert(Math.abs(recommendation.result.berryEnergy-best.energy)<1e-8);
+}
+const balancedStart=Date.now();const balanced=ctx.whistleRecommendBalanced(many,catalog,options,[{name:'apple',weight:1},{name:'milk',weight:1},{name:'honey',weight:1}]);assert.equal(balanced.ids.length,5);console.log(`Balanced: exact 1/2/3-food and 2:1 ratio optima with berry tie-break; 235 individuals in ${Date.now()-balancedStart}ms.`);

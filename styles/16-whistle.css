@@ -4,3 +4,5 @@
 .psg-whistle-recommend{border-top:1px solid #ddd;margin-top:10px;padding-top:10px}.psg-whistle-recommend>label{display:block;font-weight:bold;margin-bottom:5px}.psg-whistle-recommend>select{width:100%;min-height:36px}.psg-whistle-recommend-members{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin:8px 0}.psg-whistle-recommend-members>div{display:flex;flex-direction:column;align-items:center;min-width:0;background:#fff;border:1px solid #ddd;border-radius:7px;padding:4px 2px}.psg-whistle-recommend-members small{font-size:10px;line-height:1.3;text-align:center;overflow-wrap:anywhere}.psg-whistle-recommend-members .psg-team-face{width:100%;max-width:52px;height:52px}
 
 .psg-whistle-objective{display:flex;align-items:center;gap:5px;margin:5px 0}.psg-whistle-objective>span{font-size:11px;flex:none}.psg-whistle-objective>select{flex:1;min-width:0;min-height:36px}.psg-whistle-objective>label{display:flex;align-items:center;gap:3px;font-size:11px}.psg-whistle-objective label select{min-height:36px;width:48px}
+
+#whistleFoodControls[hidden]{display:none}
