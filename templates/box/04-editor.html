@@ -17,20 +17,16 @@ function fillBoxEditor(item,p){
  form.elements.appearance.innerHTML=group?`${p?'':'<option value="">未確認（選択してください）</option>'}${group.choices.map(c=>`<option value="${c.speciesId}">${boxEsc(c.label)}</option>`).join('')}`:'';
  form.elements.appearance.value=p?speciesKey(p):'';
  fillBoxEvolution(form,p);
- form.elements.appearance.onchange=()=>{const chosen=window.PS_FORMS.resolve(form.elements.appearance.value);fillBoxEvolution(form,chosen);fillBoxIngredients(item,chosen)};
+ form.elements.appearance.onchange=()=>{const chosen=window.PS_FORMS.resolve(form.elements.appearance.value);fillBoxEvolution(form,chosen);fillBoxIngredients(item,chosen);fillBoxSkillLevel(form,chosen,Number(form.elements.skillLevel.value)||1)};
  form.elements.ribbonHours.value=String(item.ribbonHours||0);
  const ribbonPreview=document.getElementById('boxRibbonPreview');
  const updateRibbonPreview=()=>{ribbonPreview.innerHTML=window.PS_UI_ART.icon('ribbons',form.elements.ribbonHours.value)};
  updateRibbonPreview();form.elements.ribbonHours.onchange=updateRibbonPreview;
  document.getElementById('boxMintIcon').innerHTML=window.PS_UI_ART.icon('items','まっしろミント');
  form.elements.favorite.checked=!!item.favorite;form.elements.training.checked=!!item.training;
- const natureOptions=['',...NATURE_ROWS.flat()];
- if(item.nature&&!natureOptions.includes(item.nature))natureOptions.push(item.nature);
- form.elements.nature.innerHTML=natureOptions.map(name=>`<option value="${boxEsc(name)}">${boxEsc(name||'未確認')}${name&&!NATURE_EFFECTS[name]?'（未対応）':''}</option>`).join('');
- form.elements.nature.value=item.nature||'';
+ fillBoxNatureEditor(item,form);
  form.elements.mint.checked=!!item.mint;
- form.elements.skillLevel.value=item.skillLevel||1;
- form.elements.skillLevel.max=window.PS_CATALOG?.skills?.[p?.mainSkillId]?.maxLevel||7;
+ fillBoxSkillLevel(form,p,item.skillLevel||1);
  form.elements.role.querySelector('[data-legacy]')?.remove();
  if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
  form.elements.role.value=item.role||defaultIndividualRole(p);
@@ -64,13 +60,46 @@ function boxEvolutionChoices(p){
 }
 function fillBoxEvolution(form,p){
  form.elements.evolution.innerHTML=boxEvolutionChoices(p).map(x=>`<option value="${speciesKey(x)}">${boxEsc(x.name)}</option>`).join('');
- form.elements.evolution.value=p?speciesKey(p):'';form.elements.evolution.disabled=form.elements.evolution.options.length<2;
+ form.elements.evolution.value=p?speciesKey(p):'';form.elements.evolution.disabled=form.elements.evolution.options.length<2;document.getElementById('boxEvolutionLabel').hidden=form.elements.evolution.options.length<2;
+ form.elements.evolution.onchange=()=>{const chosen=boxEvolutionChoices(p).find(x=>speciesKey(x)===form.elements.evolution.value)||p;fillBoxSkillLevel(form,chosen,Number(form.elements.skillLevel.value)||1)};
 }
 function fillBoxIngredients(item,p){
  const slots=p?.ingredientSlots||[];
  document.getElementById('boxEditIngredients').innerHTML=[1,30,60].map(unlock=>{
   const candidates=slots.find(s=>s.unlock===unlock)?.candidates||[];
  const prior=item.ingredients?.[unlock],chosen=candidates.some(c=>c.name===prior)?prior:((candidates.length===1)?candidates[0].name:'');
-  return `<label>Lv.${unlock} 食材<select name="ingredient-${unlock}"><option value="">未確認</option>${candidates.map(c=>`<option value="${boxEsc(c.name)}" ${c.name===chosen?'selected':''}>${boxEsc(c.name)} ×${c.qty}</option>`).join('')}</select></label>`;
+  return `<label ${unlock===1&&p?.specialty!=='オール'?'hidden':''}>Lv.${unlock} 食材<select name="ingredient-${unlock}"><option value="">未確認</option>${candidates.map(c=>`<option value="${boxEsc(c.name)}" ${c.name===chosen?'selected':''}>${boxEsc(c.name)} ×${c.qty}</option>`).join('')}</select></label>`;
  }).join('');
+}
+
+function fillBoxSkillLevel(form,p,value){
+ const max=window.PS_CATALOG?.skills?.[p?.mainSkillId]?.maxLevel||7;
+ form.elements.skillLevel.innerHTML=Array.from({length:max},(_,i)=>`<option value="${i+1}">Lv.${i+1}</option>`).join('');
+ form.elements.skillLevel.value=String(Math.min(max,Math.max(1,value)));
+}
+function inferBoxNature(up,down){
+ if(!up&&!down)return {neutral:true};
+ if(!up||!down)return {error:'上昇項目と下降項目を両方選んでください。'};
+ if(up===down)return {error:'上昇項目と下降項目は別の項目を選んでください。無補正は両方「無補正」にします。'};
+ const name=Object.keys(NATURE_EFFECTS).find(n=>NATURE_EFFECTS[n].up===up&&NATURE_EFFECTS[n].down===down);
+ return name?{name}:{error:'この組合せの性格は未確認です。'};
+}
+function fillBoxNatureEditor(item,form){
+ const labels={speed:'おてつだい',energy:'げんき回復',food:'食材',skill:'スキル',exp:'EXP'};
+ const up=document.getElementById('boxNatureUp'),down=document.getElementById('boxNatureDown'),select=form.elements.nature;
+ const options='<option value="">無補正</option>'+NATURE_AXES.map(axis=>`<option value="${axis}">${labels[axis]}</option>`).join('');
+ up.innerHTML=down.innerHTML=options;
+ const current=NATURE_EFFECTS[item.nature];up.value=current?.up||'';down.value=current?.down||'';
+ const neutral=Object.keys(NATURE_EFFECTS).filter(name=>!NATURE_EFFECTS[name].up);
+ const update=(initial=false)=>{
+  const inferred=inferBoxNature(up.value,down.value),host=document.getElementById('boxNatureInferred');
+  document.getElementById('boxNeutralNatureLabel').hidden=!inferred.neutral;
+  host.textContent=inferred.name?'性格：'+inferred.name:inferred.error||'無補正の性格を選んでください。';
+  const prior=select.value||item.nature||'';
+  const choices=inferred.name?[inferred.name]:['',...neutral];
+  if(initial&&item.nature&&!current)choices.push(item.nature);
+  select.innerHTML=choices.map(name=>`<option value="${boxEsc(name)}">${boxEsc(name||'選択してください')}${name&&!NATURE_EFFECTS[name]?'（未対応）':''}</option>`).join('');
+  select.value=inferred.name||((inferred.neutral&&choices.includes(prior))?prior:'');
+ };
+ up.onchange=down.onchange=()=>update();update(true);
 }

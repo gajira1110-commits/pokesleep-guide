@@ -14,7 +14,10 @@ function showBoxEditor(){const details=document.getElementById('boxEditor');deta
  };
 document.getElementById('boxEditForm').onsubmit=e=>{
  e.preventDefault();const item=state.selected;if(!item)return;
- const form=e.currentTarget;const data=new FormData(form),ingredients={};
+ const form=e.currentTarget;
+ const natureInput=inferBoxNature(document.getElementById('boxNatureUp').value,document.getElementById('boxNatureDown').value);
+ if(natureInput.error){document.getElementById('boxEditMessage').textContent=natureInput.error;return;}
+ const data=new FormData(form),ingredients={};
  const p=document.getElementById('boxAppearanceLabel').hidden?selectedSpecies():window.PS_FORMS.resolve(String(data.get('appearance')||''));
  if(!p||p.no!==item.no){document.getElementById('boxEditMessage').textContent='衣装・サイズを確認してください。';return}
  for(const unlock of [1,30,60]){

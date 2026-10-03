@@ -180,7 +180,7 @@
 #boxDetail .psg-box-day-conditions[open]{padding-top:5px}
 
 /* Skill identity/effect occupy two thirds; daily figures span both rows. */
-#boxDetail .psg-box-skill-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:var(--box-unit-height) minmax(calc(1.5 * var(--box-unit-height)),auto) auto;gap:3px 6px;align-items:stretch}
+#boxDetail .psg-box-skill-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:var(--box-unit-height) minmax(var(--box-unit-height),auto) auto;gap:3px 6px;align-items:stretch}
 #boxDetail .psg-box-skill-heading{grid-column:1;grid-row:1;display:grid;grid-template-columns:28px minmax(0,1fr) max-content;gap:4px;align-items:center;min-width:0}
 #boxDetail .psg-box-skill-heading .psg-box-skill-art{display:grid;place-items:center;width:28px;height:28px;margin:0}
 #boxDetail .psg-box-skill-heading .psg-box-skill-art img{width:28px;height:28px;object-fit:contain}
@@ -209,7 +209,7 @@
 #boxDetail .psg-box-nature-tile .psg-mint-mark .psg-ui-icon{width:12px;height:12px;margin:0}
 #boxDetail .psg-box-skill-grid>.psg-box-effect{display:flex;align-items:center}
 #boxDetail .psg-box-skill-calculation{grid-column:1 / -1;grid-row:3;margin:0;font-size:9px;color:#111}
-#boxDetail .psg-box-skill-calculation summary{width:calc((100% - 6px) / 3);margin-left:auto;color:#111}
+#boxDetail .psg-box-skill-calculation summary{width:calc((100% - 6px) / 3);margin-left:auto;color:#111;text-align:right}
 #boxDetail .psg-box-skill-calculation p{font-size:10px}
 
 /* v316: centered nature, side-by-side evaluation and growth summaries. */
@@ -269,3 +269,16 @@
 #boxDetail .psg-box-skill-totals{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:6px;background:#fff;border-radius:8px;font-size:12px}
 #boxDetail .psg-box-skill-totals>small{width:100%;font-size:10px}
 #boxDetail .psg-box-skill-totals>span{display:grid;gap:2px}
+
+/* v321: compact editor controls and two-unit skill content. */
+#boxDetail #boxEditForm [hidden]{display:none!important}
+#boxDetail #boxEditForm{gap:7px}
+#boxDetail .psg-editor-flags-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:6px;align-items:center}
+#boxDetail .psg-editor-flags-row>label:first-child{position:relative}
+#boxDetail .psg-editor-flags-row .psg-ribbon-preview{position:absolute;top:0;right:0;width:20px;height:20px}
+#boxDetail .psg-editor-flags-row .psg-editor-check{gap:3px!important;font-size:11px!important}
+#boxDetail .psg-editor-nature-axes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#boxDetail #boxNatureInferred{margin:0;font-size:12px}
+#boxDetail #boxEditSubskills{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#boxDetail #boxEditSubskills label{min-width:0}
+#boxDetail #boxEditForm select{font-size:14px;padding:7px}
