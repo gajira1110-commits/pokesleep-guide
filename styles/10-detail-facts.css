@@ -20,10 +20,22 @@
 .psg-detail-stat small{font-size:clamp(8px,2.2vw,11px);font-weight:850;white-space:nowrap;letter-spacing:-.04em}
 .psg-detail-stat b,.psg-detail-stat strong{font-size:clamp(12px,3.1vw,18px);font-weight:900;line-height:1.1;overflow-wrap:anywhere}
 .psg-detail-stat em{font-size:8px;font-weight:650;font-style:normal;line-height:1.1;overflow-wrap:anywhere}
-#boxStats .psg-detail-stat{position:relative;min-height:32px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:pan-y;cursor:help}
-#boxStats .psg-detail-stat em{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;padding:3px 2px;background:#fff;border-radius:0 0 6px 6px;box-shadow:0 2px 4px #0002}
-#boxStats .psg-detail-stat.psg-note-held{z-index:5}
-#boxStats .psg-detail-stat.psg-note-held em{display:block}
-#boxStats .psg-detail-stat:focus-visible{outline:2px solid #3986ff;outline-offset:1px}
+#boxDetail .psg-detail-stat{position:relative;min-height:32px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:pan-y;cursor:help}
+#boxDetail .psg-detail-stat em{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;padding:3px 2px;background:#fff;border-radius:0 0 6px 6px;box-shadow:0 2px 4px #0002}
+#boxDetail .psg-detail-stat.psg-note-held{z-index:5}
+#boxDetail .psg-detail-stat.psg-note-held em{display:block}
+#boxDetail .psg-detail-stat:focus-visible{outline:2px solid #3986ff;outline-offset:1px}
 .psg-detail-stat .v45-stat-icon{display:none}
 @media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
+
+/* Individual facts: four quarters, 1:1:2, then equal thirds. */
+#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto auto}
+#boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents}
+#boxTraits>div{grid-column:span 3;min-width:0}
+#boxTraits>.psg-fact-speed{grid-column:span 6}
+#boxStats>.psg-detail-stat{grid-column:span 4}
+#boxDetail .psg-fact-speed>.psg-detail-stat{height:100%}
+#boxDetail .psg-fact-toggle{display:flex;align-items:stretch;justify-content:center;background:#fff;border-radius:8px;min-height:44px}
+#boxDetail .psg-fact-toggle>.btn{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;padding:2px;border:0;border-radius:8px}
+#boxDetail .psg-fact-toggle .psg-ui-icon{margin:0;width:26px;height:26px;flex:none}
+@media(min-width:621px){#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:48px}}

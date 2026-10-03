@@ -12,7 +12,10 @@ function syncLevel(){
  document.getElementById('boxTraining').innerHTML=window.PS_UI_ART.icon('ui',item.training?'training_on':'training_off');
  document.getElementById('boxTraining').setAttribute('aria-label',`育成対象 ${item.training?'ON':'OFF'}`);
  const berryImage=p?.berryImage?window.PS_DEV_ASSETS.image(p.berryImage,'berry',p.berry,'full',p.berry):'<small aria-label="No image">◌</small>';
- document.getElementById('boxTraits').innerHTML=`<span class="psg-detail-trait psg-detail-berry">${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b></span><span class="psg-detail-trait">${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}</span><span class="psg-detail-trait psg-detail-specialty" title="得意：${boxEsc(p?.specialty||'未確認')}" aria-label="得意：${boxEsc(p?.specialty||'未確認')}">${specIcon(p?.specialty)}</span><span class="psg-detail-trait psg-detail-ribbon" title="おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}（所持数・残り進化回数による時間補正を反映）" aria-label="おやすみリボン ${item.ribbonHours?item.ribbonHours+'時間':'なし'}">${window.PS_UI_ART.icon('ribbons',item.ribbonHours)}<small>${item.ribbonHours?item.ribbonHours+'h':'リボンなし'}</small></span>`;
+ document.getElementById('boxBerry').innerHTML=`${berryImage}<b>${calc.berryQty==null?'未確認':'×'+calc.berryQty}</b>`;
+ document.getElementById('boxSleep').innerHTML=`${window.PS_SLEEP_ICON(p?.sleepType)} ${boxEsc(p?.sleepType||'未確認')}`;
+ const specialty=document.getElementById('boxSpecialty');specialty.innerHTML=specIcon(p?.specialty);specialty.setAttribute('aria-label',`得意：${p?.specialty||'未確認'}`);specialty.title=`得意：${p?.specialty||'未確認'}`;
+ const ribbon=document.getElementById('boxRibbon');ribbon.innerHTML=`${window.PS_UI_ART.icon('ribbons',item.ribbonHours)}<small>${item.ribbonHours?item.ribbonHours+'h':'リボンなし'}</small>`;ribbon.setAttribute('aria-label',`おやすみリボン ${item.ribbonHours?item.ribbonHours+'時間':'なし'}`);ribbon.title=`おやすみリボン：${item.ribbonHours?item.ribbonHours+'時間':'なし'}（所持数・残り進化回数による時間補正を反映）`;
  hydrateSpecialtyIcons(document.getElementById('boxTraits'));
  const artwork=document.getElementById('boxArtwork');
  const hero=document.querySelector('#boxDetail .psg-box-hero'),theme=window.PS_TYPE_THEME[p?.type]||['#f3f6f4','#718078'];
@@ -24,8 +27,10 @@ function syncLevel(){
  const nextRateUnlock=kind=>SUBSKILL_LEVELS.find((unlock,i)=>unlock>item.level&&unlock<=MAX_POKEMON_LEVEL&&SUBSKILLS[item.subskills?.[i]]?.effect===kind);
  const rateNote=(factor,kind)=>{const next=factor===1?nextRateUnlock(kind):null;return next?`推定・Lv.${next}で補正`:`推定・×${factor.toFixed(2)}`};
  const fields=[['おてつだい時間',calc.speed,'秒','Lv・個体補正',naturePending],['最大所持数',calc.carry,'','補正反映',false],['食材確率',calc.food,'%',rateNote(calc.foodFactor,'foodRateBonus'),naturePending],['スキル発動確率',calc.skill,'%',rateNote(calc.skillFactor,'skillRateBonus'),naturePending]];
- document.getElementById('boxStats').innerHTML=fields.map(([title,value,unit,note,pending])=>`<div class="psg-detail-stat" role="button" tabindex="0" aria-label="${title}：押している間、補足を表示"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`).join('');
- for(const stat of document.querySelectorAll('#boxStats .psg-detail-stat')){
+ const renderStat=([title,value,unit,note,pending])=>`<div class="psg-detail-stat" role="button" tabindex="0" aria-label="${title}：押している間、補足を表示"><small>${title}</small><strong>${value==null?'未確認':(unit==='%'?value.toFixed(1):value.toLocaleString())+unit}</strong><em>${value==null?'（基礎データなし）':'（'+(pending?'暫定・':'')+note+'）'}</em></div>`;
+ document.getElementById('boxSpeed').innerHTML=renderStat(fields[0]);
+ document.getElementById('boxStats').innerHTML=fields.slice(1).map(renderStat).join('');
+ for(const stat of document.querySelectorAll('#boxDetail .psg-detail-stat')){
   const hide=()=>stat.classList.remove('psg-note-held');
   stat.onpointerdown=event=>{if(event.button!==0)return;stat.classList.add('psg-note-held');stat.setPointerCapture(event.pointerId)};
   stat.onpointerup=hide;stat.onpointercancel=hide;stat.onlostpointercapture=hide;stat.onblur=hide;
