@@ -32,7 +32,7 @@
 #boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto auto}
 #boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents}
 #boxTraits>div{grid-column:span 3;min-width:0}
-#boxTraits>.psg-fact-speed{grid-column:span 6}
+#boxTraits>.psg-fact-speed{grid-column:span 6;align-self:stretch}
 #boxStats>.psg-detail-stat{grid-column:span 4}
 #boxDetail .psg-fact-speed>.psg-detail-stat{height:100%}
 #boxDetail .psg-fact-toggle{display:flex;align-items:stretch;justify-content:center;background:#fff;border-radius:8px;min-height:44px}
