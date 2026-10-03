@@ -211,3 +211,17 @@
 #boxDetail .psg-box-skill-calculation{grid-column:1 / -1;grid-row:3;margin:0;font-size:9px;color:#111}
 #boxDetail .psg-box-skill-calculation summary{width:calc((100% - 6px) / 3);margin-left:auto;color:#111}
 #boxDetail .psg-box-skill-calculation p{font-size:10px}
+
+/* v316: centered nature, side-by-side evaluation and growth summaries. */
+#boxDetail .psg-box-nature-effects{text-align:center;justify-items:center}
+#boxDetail .psg-evaluation-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#boxDetail .psg-evaluation-heading small{font-size:13px;font-weight:600}
+#boxDetail .psg-individual-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
+#boxDetail .psg-individual-score{min-width:0;font-size:12px}
+#boxDetail .psg-individual-ideal{min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:#f4f7f5;border-radius:8px;padding:4px;text-align:center;font-size:12px}
+#boxDetail .psg-individual-ideal-icons{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:3px}
+#boxDetail .psg-individual-ideal-icons .psg-subskill-badge{width:24px;height:24px;object-fit:contain}
+#boxDetail .psg-growth-milestones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+#boxDetail .psg-milestone{min-width:0;margin:0;padding:6px;display:grid;grid-template-rows:auto auto auto;align-content:start;gap:4px}
+#boxDetail .psg-milestone>b{font-size:12px;min-height:30px;display:flex;align-items:center}
+#boxDetail .psg-milestone>div{display:flex;justify-content:space-between;align-items:center;gap:4px;min-height:var(--box-unit-height);font-size:12px}
