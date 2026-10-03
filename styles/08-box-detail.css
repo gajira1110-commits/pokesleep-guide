@@ -153,8 +153,8 @@
 #boxDetail #boxGrowth .psg-box-muted{font-size:12px}
 
 #boxDetail .psg-box-day-food{position:relative;margin-top:6px}
-#boxDetail .psg-box-day-food-line{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:start;gap:7px;font-size:12px;box-sizing:border-box;height:var(--box-unit-height);background:#fff;border:1px solid #fff;border-radius:10px}
-#boxDetail .psg-box-day-food-line>small{display:flex;align-items:center;justify-content:center;height:calc(var(--box-unit-height) / 2);font-size:10px;font-weight:800;color:#111}
+#boxDetail .psg-box-day-food-line{display:grid;grid-template-columns:64px minmax(0,1fr);align-items:center;gap:7px;padding-right:30px;font-size:12px;box-sizing:border-box;height:var(--box-unit-height);background:#fff;border:1px solid #fff;border-radius:10px}
+#boxDetail .psg-box-day-food-line>small{display:flex;align-items:center;justify-content:center;height:calc(var(--box-unit-height) - 2px);font-size:13px;font-weight:800;color:#111}
 #boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
 #boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
 #boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}
@@ -173,7 +173,7 @@
 #boxDetail .psg-box-day-food-amounts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:3px 8px;box-sizing:border-box;min-width:0;height:calc(var(--box-unit-height) - 2px);min-height:0;padding:2px;border:0;border-radius:0;background:transparent;color:#111}
 #boxDetail .psg-box-day-food-amounts.psg-box-pending{margin:0;font-size:10px}
 #boxDetail .psg-box-day-conditions{margin:0;color:#111}
-#boxDetail .psg-box-day-conditions>summary{position:absolute;top:calc(var(--box-unit-height) / 2);left:0;display:flex;justify-content:center;align-items:center;width:52px;min-height:calc(var(--box-unit-height) / 2);color:#111;list-style:none;font-size:12px}
+#boxDetail .psg-box-day-conditions>summary{position:absolute;top:0;right:0;display:flex;justify-content:center;align-items:center;width:30px;min-height:var(--box-unit-height);color:#111;list-style:none;font-size:12px}
 #boxDetail .psg-box-day-conditions>summary::-webkit-details-marker{display:none}
 #boxDetail .psg-box-day-conditions .psg-conditions-open,#boxDetail .psg-box-day-conditions[open] .psg-conditions-closed{display:none}
 #boxDetail .psg-box-day-conditions[open] .psg-conditions-open{display:inline}
@@ -288,3 +288,10 @@
 #boxDetail #boxEditSubskills{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 #boxDetail #boxEditSubskills label{min-width:0}
 #boxDetail #boxEditForm select{font-size:14px;padding:7px}
+
+/* Header submenu shares the existing edit/delete actions. */
+#boxDetail .psg-box-header-menu{position:relative;flex:0 0 auto}
+#boxDetail .psg-box-header-menu>summary{display:flex;align-items:center;justify-content:center;list-style:none;cursor:pointer}
+#boxDetail .psg-box-header-menu>summary::-webkit-details-marker{display:none}
+#boxDetail .psg-box-header-menu-items{position:absolute;top:calc(100% + 5px);right:0;z-index:50;display:grid;gap:6px;min-width:140px;padding:8px;background:#fff;border:1px solid #d9e5df;border-radius:12px;box-shadow:0 4px 12px #0002}
+#boxDetail .psg-box-header-menu-items .btn{width:100%;font-size:13px;white-space:nowrap}

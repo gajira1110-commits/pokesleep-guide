@@ -6,8 +6,8 @@ function updateLevel(level){
 minus.onclick=()=>updateLevel(Math.max(1,(state.selected?.level||1)-1));
 plus.onclick=()=>updateLevel(Math.min(MAX_POKEMON_LEVEL,(state.selected?.level||1)+1));
 lvRange.oninput=()=>updateLevel(+lvRange.value);
-function showBoxEditor(){const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})}
- document.getElementById('boxEditShortcut').onclick=showBoxEditor;document.getElementById('boxHeaderEdit').onclick=showBoxEditor;
+function showBoxEditor(){document.getElementById('boxHeaderMenu').open=false;const details=document.getElementById('boxEditor');details.open=true;details.scrollIntoView({behavior:'smooth',block:'start'})}
+ document.getElementById('boxEditShortcut').onclick=showBoxEditor;
  for(const [id,field] of [['boxFavorite','favorite'],['boxTraining','training']])document.getElementById(id).onclick=()=>{
   if(!state.selected)return;const changed={...state.selected,[field]:!state.selected[field]};
   if(commitBox(state.box.map(x=>x.id===changed.id?changed:x))){state.selected=changed;syncLevel()}
