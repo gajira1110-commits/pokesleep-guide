@@ -28,16 +28,29 @@
 .psg-detail-stat .v45-stat-icon{display:none}
 @media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
 
-/* Individual facts: four quarters, 1:1:2, then equal thirds. */
-#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,var(--box-fact-row-height));align-items:stretch;gap:2px!important}
-#boxDetail .psg-detail-facts .psg-detail-trait,#boxDetail .psg-detail-facts .psg-detail-stat,#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:0;height:100%}
-#boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents}
-#boxTraits>div{grid-column:span 3;min-width:0}
-#boxTraits>.psg-fact-speed{grid-column:span 6;align-self:stretch}
-#boxStats>.psg-detail-stat{grid-column:span 4}
-#boxDetail .psg-fact-speed>.psg-detail-stat{height:100%}
+/* Shared three-row grid: four quarters, 1:1:2, then equal thirds. */
+#dexDetail .hero-info.psg-detail-facts,#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,var(--box-fact-row-height));align-items:stretch;gap:2px!important}
+:is(#dexDetail,#boxDetail) .psg-detail-facts .psg-detail-trait,:is(#dexDetail,#boxDetail) .psg-detail-facts .psg-detail-stat,#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:0;height:100%}
+#dexDetail .psg-detail-facts #v12Header,#dexDetail .psg-detail-facts .psg-detail-traits,#dexDetail .psg-detail-facts .psg-detail-stats,#boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents!important}
+#dexDetail .psg-detail-traits>span,#boxTraits>div{grid-column:span 3;min-width:0}
+#dexDetail .psg-detail-traits>.psg-fact-speed,#boxTraits>.psg-fact-speed{grid-column:span 6;align-self:stretch}
+#dexDetail .psg-detail-stats>.psg-detail-stat,#boxStats>.psg-detail-stat{grid-column:span 4}
+:is(#dexDetail,#boxDetail) .psg-fact-speed>.psg-detail-stat{height:100%}
 #boxDetail .psg-fact-toggle{display:flex;align-items:stretch;justify-content:center;background:#fff;border-radius:8px;min-height:0}
 #boxDetail .psg-fact-toggle>.btn{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:0;padding:1px;border:0;border-radius:8px}
 #boxDetail .psg-fact-toggle .psg-ui-icon{margin:0;width:26px;height:26px;flex:none}
-#boxDetail .psg-detail-trait .psg-sleep-type-icon{width:24px;height:24px}
-#boxDetail .psg-detail-facts .psg-detail-trait,#boxDetail .psg-detail-facts .psg-detail-stat{padding:1px}
+:is(#dexDetail,#boxDetail) .psg-detail-trait .psg-sleep-type-icon{width:24px;height:24px}
+:is(#dexDetail,#boxDetail) .psg-detail-facts .psg-detail-trait,:is(#dexDetail,#boxDetail) .psg-detail-facts .psg-detail-stat{padding:1px}
+
+/* Dex artwork and facts use the same dimensions as the Box hero. */
+#dexDetail{--box-unit-height:clamp(36px,6vw,42px)}
+#dexDetail .hero{--box-fact-row-height:var(--box-unit-height);--box-facts-height:calc(3 * var(--box-fact-row-height) + 4px);--box-portrait-column:min(37%,var(--box-facts-height));padding:2px!important}
+#dexDetail .hero-top{grid-template-columns:var(--box-portrait-column) minmax(0,1fr)!important;gap:3px!important;align-items:start!important}
+#dexDetail .psg-v106-media{height:var(--box-facts-height);gap:0}
+#dexDetail .hero-art{position:relative;min-height:0!important;height:100%!important;aspect-ratio:auto!important;display:grid;place-items:start;margin:0!important}
+#dexDetail .hero-art>img{width:100%!important;height:100%!important;max-width:100%;max-height:100%;object-fit:contain!important;object-position:left top!important}
+#dexDetail .v51-type-badge{right:0!important;bottom:0!important}
+#dexDetail .psg-fact-blank{min-width:0;height:100%;background:transparent}
+#dexDetail .psg-detail-friend{flex-direction:row;gap:2px}
+#dexDetail .psg-detail-friend b{font-size:14px}
+@media(max-width:620px){#dexDetail .hero{--box-portrait-column:min(34%,var(--box-facts-height))}}

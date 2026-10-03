@@ -31,12 +31,14 @@
      head.appendChild(nav);
    }
 
-   // v51: right side line 1 = former 1-3 (3 columns). Identity/type no longer consumes this area.
+   // Same three-row proportions as Box; Dex reserves the two action slots.
    h.innerHTML=`<div class="psg-detail-traits">
      <span class="psg-detail-trait psg-detail-berry"><span class="psg-detail-berry-visual" title="${m.berry||'きのみ'}">${m.berryImage?window.PS_DEV_ASSETS.image(m.berryImage,'berry',m.berry,'full',m.berry):'<small class="psg-mini-missing" aria-label="No image">No<br>image</small>'}</span><b>${berryQty==null?"未確認":`×${berryQty}`}</b></span>
      <span class="psg-detail-trait">${window.PS_SLEEP_ICON(m.sleepType)} ${m.sleepType}</span>
+     <span class="psg-fact-blank" aria-hidden="true"></span><span class="psg-fact-blank" aria-hidden="true"></span>
      <span class="psg-detail-trait psg-detail-specialty" title="得意：${m.specialty}" aria-label="得意：${m.specialty}">${window.PS_SPECIALTY_IMAGES?.[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]?`<img class="psg-specialty-icon" src="${window.PS_SPECIALTY_IMAGES[({"きのみ":"berry","食材":"ingredient","スキル":"skill","オール":"all"})[m.specialty]]}" alt="">`:m.specialty}</span>
      <span class="psg-detail-trait psg-detail-friend" title="フレンドポイント（資料確認）" aria-label="フレンドポイント ${m.friendPoints??'未確定'}">${window.PS_UI_ART.icon('items','ポケサブレ')}<b>${m.friendPoints??'未確定'}</b></span>
+     <span id="dexSpeed" class="psg-fact-speed"></span>
    </div>`;
 
    // Keep artwork square and place the compact trait row beneath it.
@@ -72,8 +74,8 @@
    }
  }
  function renderStats(m){
-   stats.innerHTML=`<div class="psg-detail-stat"><small><span class="v45-stat-icon">⏱</span><span class="v45-stat-text">おてつだい時間</span></small><b>${m.help?.toLocaleString()||"—"}秒</b></div>
-   <div class="psg-detail-stat"><small><span class="v45-stat-icon">🎒</span><span class="v45-stat-text">最大所持数</span></small><b>${m.carry??"未確認"}</b></div>
+   document.getElementById("dexSpeed").innerHTML=`<div class="psg-detail-stat"><small><span class="v45-stat-icon">⏱</span><span class="v45-stat-text">おてつだい時間</span></small><b>${m.help?.toLocaleString()||"—"}秒</b></div>`;
+   stats.innerHTML=`<div class="psg-detail-stat"><small><span class="v45-stat-icon">🎒</span><span class="v45-stat-text">最大所持数</span></small><b>${m.carry??"未確認"}</b></div>
    <div class="psg-detail-stat"><small><span class="v45-stat-icon">🥕</span><span class="v45-stat-text">食材確率${m.detailPreviewOnly&&m.rateStatus==='推定'?'（推定）':''}</span></small><b>${m.foodRate??"—"}%</b></div>
    <div class="psg-detail-stat"><small><span class="v45-stat-icon">✨</span><span class="v45-stat-text">スキル発動確率${m.detailPreviewOnly&&m.rateStatus==='推定'?'（推定）':''}</span></small><b>${m.skillRate??"—"}%</b></div>`;
  }
