@@ -45,13 +45,6 @@
 #boxDetail .psg-box-muted{color:#111;font-size:13px;line-height:1.5}
 #boxDetail .psg-mint-mark{display:inline-flex;border:1px solid #8ab99e;border-radius:50%;background:#fff;color:#56966e;width:25px;height:25px;align-items:center;justify-content:center;margin-left:7px;vertical-align:middle}
 #boxDetail .psg-milestone{background:#fff;}
-#boxDetail .psg-box-editor summary{font-weight:900;cursor:pointer}
-#boxDetail #boxEditForm{display:grid;gap:10px;margin-top:12px}
-#boxDetail #boxEditForm label{display:grid;gap:3px;font-weight:800;font-size:13px}
-#boxDetail #boxEditForm input,#boxDetail #boxEditForm select{min-width:0;width:100%;border:1px solid #cbdad3;background:#fff;border-radius:8px;padding:9px;font-size:16px}
-#boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
-#boxDetail #boxEditForm .psg-editor-check input{width:auto}
-#boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
 /* Individual artwork fits beside three equal-height fact rows. */
 #boxDetail .psg-box-hero{--box-fact-row-height:var(--box-unit-height);--box-facts-height:calc(3 * var(--box-fact-row-height) + 4px);--box-portrait-column:min(37%,var(--box-facts-height));padding:2px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
 #boxDetail .psg-box-identity{grid-template-columns:var(--box-portrait-column) minmax(0,1fr);gap:3px;align-items:start}
@@ -270,23 +263,27 @@
 #boxDetail .psg-box-skill-totals>small{width:100%;font-size:10px}
 #boxDetail .psg-box-skill-totals>span{display:grid;gap:2px}
 
-/* v321: compact editor controls and two-unit skill content. */
+/* Individual editor: form, ribbon, ingredients, subskills and nature. */
+#boxDetail .psg-box-editor summary{font-weight:900;cursor:pointer}
+#boxDetail #boxEditForm{display:grid;gap:7px;margin-top:12px}
+#boxDetail #boxEditForm label{display:grid;gap:3px;font-weight:800;font-size:13px}
+#boxDetail #boxEditForm input,#boxDetail #boxEditForm select{min-width:0;width:100%;border:1px solid #cbdad3;background:#fff;border-radius:8px;padding:9px;font-size:16px}
+#boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
+#boxDetail #boxEditForm .psg-editor-check input{width:auto}
+
 #boxDetail #boxEditForm [hidden]{display:none!important}
-#boxDetail #boxEditForm{gap:7px}
 #boxDetail .psg-editor-ribbon{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-items:end}
 #boxDetail .psg-editor-ribbon label{min-width:0}
 #boxDetail .psg-editor-ribbon .psg-ribbon-preview{display:flex;align-items:center;justify-content:flex-start;min-height:34px}
 #boxDetail .psg-editor-ribbon .psg-ribbon-preview .psg-ui-icon{width:28px;height:28px;margin:0}
-#boxDetail #boxEditIngredients,#boxDetail .psg-editor-skill-role{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-#boxDetail #boxEditIngredients label,#boxDetail .psg-editor-skill-role label{min-width:0}
+#boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills,#boxDetail .psg-editor-skill-role{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#boxDetail #boxEditIngredients label,#boxDetail #boxEditSubskills label,#boxDetail .psg-editor-skill-role label{min-width:0}
 #boxDetail .psg-editor-nature-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
 #boxDetail #boxEditForm .psg-editor-nature-heading .psg-editor-check{font-size:11px;gap:4px;white-space:nowrap}
 #boxDetail .psg-editor-nature-heading #boxMintIcon{display:inline-flex;align-items:center}
 #boxDetail .psg-editor-nature-heading #boxMintIcon .psg-ui-icon{width:18px;height:18px}
 #boxDetail .psg-editor-nature-axes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 #boxDetail #boxNatureInferred{margin:0;font-size:13px;font-weight:800;color:inherit}
-#boxDetail #boxEditSubskills{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-#boxDetail #boxEditSubskills label{min-width:0}
 #boxDetail #boxEditForm select{font-size:14px;padding:7px}
 
 /* Header submenu shares the existing edit/delete actions. */

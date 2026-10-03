@@ -110,3 +110,14 @@ v209の整理でも、生成テンプレート・review.htmlはバージョン�
 
 
 v268：Boxは受領248レコードに対応。ミュウ/ダークライのmythicalStateは12-coreで検証、04-editorで入力、05-actionsで保存。通常個体のingredients/subskillsと別に解放状態を記録。core/07は解放済みAND到達Lvのみ有効、21-dayは特殊スキル含むチーム全体を保留。バックアップv5はcore/03・04、旧v1〜4読み込みを保持。
+
+## v325 個体詳細の編集場所（2026-10-03）
+
+- マークアップ：`10-box-detail.html`。ヘッダーのサブメニューに個体値設定・削除を集約。
+- 表示更新：`box/03-view.html`、単体予想：`box/02-daily-forecast.html`。
+- 編集欄の生成：`box/04-editor.html`、保存・フラグ：`box/05-actions.html`。
+- 評価：`core/10-individual-evaluation.html`、育成：`box/06-growth.html`。
+- スタイル：`styles/08-box-detail.css` の Individual editor セクションに入力欄を集約。
+- 入力順：リボン → 食材 → サブスキル → スキルLv・役割 → 性格。
+- favorite/training は編集フォームで上書きせず、詳細内の専用トグルで変更する。
+- `review.html` / `PSG_source_template.html` / `PSG_styles.css` は生成物。直接編集しない。
