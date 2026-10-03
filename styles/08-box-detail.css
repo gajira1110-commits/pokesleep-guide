@@ -119,7 +119,7 @@
 
 /* Compact individual controls and three-column subskill tiles. */
 #boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
-#boxDetail .psg-box-flags .btn{min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
+#boxDetail .psg-box-flags .btn{display:inline-flex;align-items:center;justify-content:center;min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
 #boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
 #boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
 #boxDetail .psg-box-subskill{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;background:#fff;border-radius:9px;padding:3px}
