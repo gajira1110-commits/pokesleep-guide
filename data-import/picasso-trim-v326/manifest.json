@@ -1,0 +1,750 @@
+{
+  "images": [
+    {
+      "path": "master/recipes/spicy_leek_curry/image.webp",
+      "sha256": "6f741aa38ea4406e4466275f070941e23aa42c82c233787d4215bbea837baa10",
+      "originalSha256": "a5095eba3ed1f9dbd38013fdc74e5b6fea0a8c3ac1a5757c4b00cc6bc8b3c30d",
+      "sourcePath": "master/recipes/spicy_leek_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/cross_chop_salad/image.webp",
+      "sha256": "a61abd5e0fb2daa98ddfa74252b39e8c85dcf85a39d61093e6fc902888c49acf",
+      "originalSha256": "d716827f0bd12baacf48d685a32172d508b96f43c9b7c57d05d75074ac6f0fa0",
+      "sourcePath": "master/recipes/cross_chop_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/explosion_popcorn/image.webp",
+      "sha256": "76eee8ab12cfa26f83458807754cbac138db8442d3ef8cbe521ae86ab8ca7820",
+      "originalSha256": "03cf558b3d277b420a1689eaef66127f6dd28ee47f83476f954c4bf6228af3b4",
+      "sourcePath": "master/recipes/explosion_popcorn/image.webp"
+    },
+    {
+      "path": "master/recipes/superpower_extreme_salad/image.webp",
+      "sha256": "d012c1a2ac5832031f140ddf377d6e04aeb53fb3ef8775edc79b0781baa5bfbf",
+      "originalSha256": "a23b5fd69462c8882952d120d028b6f2622935a4ae972cb8435b38ce768b2ece",
+      "sourcePath": "master/recipes/superpower_extreme_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/apple_juice/image.webp",
+      "sha256": "75844c127f1fd01a8033710cd4839772f2ab600bc1b28e6ef49550cd05ddbe84",
+      "originalSha256": "e9279f5b39ed00528dde3fe39d0ff5b90a76226e9697f294d13d80c8681674ee",
+      "sourcePath": "master/recipes/apple_juice/image.webp"
+    },
+    {
+      "path": "master/recipes/petal_dance_chocolate_tart/image.webp",
+      "sha256": "e4d2dc134ede1748b74f273bb193c23ed188d4b4d191590a0bd147725a2d1145",
+      "originalSha256": "e1dd192d5b1d239f7b8418f17af73c771bb37cfb1cc8edf9b097b60d7254b2e4",
+      "sourcePath": "master/recipes/petal_dance_chocolate_tart/image.webp"
+    },
+    {
+      "path": "master/recipes/slow_and_steady_vegetable_juice/image.webp",
+      "sha256": "a4b2095024e4ed47511207fe658a18c389f5e5a27cc82d3c67a39c0c24ebfe45",
+      "originalSha256": "da9d6b0df0ac81d768f8d9ddcaf0e1481c0f4073cf7da2cf654fcd5449efe7cf",
+      "sourcePath": "master/recipes/slow_and_steady_vegetable_juice/image.webp"
+    },
+    {
+      "path": "master/recipes/zippy_zap_spiced_cola/image.webp",
+      "sha256": "1d83d4febe15f3eabbdab74576239e13c52d33990dc2a8ac309602181b371e6c",
+      "originalSha256": "fe00efcf0b88d643bd13b58d13a54863fef126f01783c0611aaff1cc52dc6500",
+      "sourcePath": "master/recipes/zippy_zap_spiced_cola/image.webp"
+    },
+    {
+      "path": "master/recipes/spore_mushroom_salad/image.webp",
+      "sha256": "b3629dc6dd75236c3f1a0e1916c641e907a9bc0ecef2bb2f07fdcad8b40cf864",
+      "originalSha256": "ebfdc94e253fb4876d8b731d22ab71fd305fbc293f6d53b0e1e2610c0941daae",
+      "sourcePath": "master/recipes/spore_mushroom_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/slowpoke_tail_pepper_salad/image.webp",
+      "sha256": "ea2b7d8257817e640f5cc2750d363ebec8e68cba73f3e514b5d3dd493c5f51ed",
+      "originalSha256": "f06fca4c6c59b259bf7cbf17807ae18339083ece562b53d8acde7157ec9352ae",
+      "sourcePath": "master/recipes/slowpoke_tail_pepper_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/fury_attack_chocolate_meat_salad/image.webp",
+      "sha256": "0bbebcd55196c2cc460b2ccc7026ed18a3e6865f52e1bbc89dc17d977292b4fb",
+      "originalSha256": "575a8ac09c0ac26816cc9d5eae8e023990faf01426cfab07a6377ee87f36078c",
+      "sourcePath": "master/recipes/fury_attack_chocolate_meat_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/apple_acid_yogurt_salad/image.webp",
+      "sha256": "49c49de9f207f637a2db33e8390522c0494337bd568a9ab02da76326573d592a",
+      "originalSha256": "1d54f4ce52aff95f4facaf4b1cd5239917341570e3f69b40fdec876a417dfd45",
+      "sourcePath": "master/recipes/apple_acid_yogurt_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/melty_omelette_curry/image.webp",
+      "sha256": "2d043ec4f0f48f67eca7eb740ceb781fe865aa1fb8256a00f5d13e4616282394",
+      "originalSha256": "9d9d59d32890c0d11a30b250ab3b74bc1dd05770497111245f2a480712a4e576",
+      "sourcePath": "master/recipes/melty_omelette_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/hot_milk/image.webp",
+      "sha256": "c7e9282f15a8a61be49af054b091d500da67827799d641b7f390427cd09d781f",
+      "originalSha256": "86cf304a4b802d24cb0c0a1b913bfdefadb03d851b403833cfc6acad019f5d00",
+      "sourcePath": "master/recipes/hot_milk/image.webp"
+    },
+    {
+      "path": "master/recipes/ripened_sweet_potato/image.webp",
+      "sha256": "d372f45baa61ac0838de1eded44bfa28e5d5366bd0de1cab42e73f34b52e870a",
+      "originalSha256": "52b1990cbcb23e994c827b537f5e10e42ac667ff7ede19678975abd4b338f4f5",
+      "sourcePath": "master/recipes/ripened_sweet_potato/image.webp"
+    },
+    {
+      "path": "master/recipes/water_veil_tofu_salad/image.webp",
+      "sha256": "7c8a555d27a15de274050a3fef41495bdf90176d54ddf48980a241a62c66a2b8",
+      "originalSha256": "8abccc806e46f1100c838ee045b8b733607305428b3f2714992350b11c8f5de4",
+      "sourcePath": "master/recipes/water_veil_tofu_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/hearty_white_stew/image.webp",
+      "sha256": "e75d839eb322dc103d08867a9bf79964acc4ac9e506467db5efa1d6393efaa0d",
+      "originalSha256": "9888df8e702a0674dc82526ba3f438c010bdddd47f1cea460c592b6c57f0ef82",
+      "sourcePath": "master/recipes/hearty_white_stew/image.webp"
+    },
+    {
+      "path": "master/recipes/hearty_cheeseburger_curry/image.webp",
+      "sha256": "913300b3610b1a99f22955c6186d56b478113e99328031828340c11b6e8615a3",
+      "originalSha256": "3d1f4e4ce6ea5dfb557ab5fcb538d3b6fafe55b96d993c0b8f0fc4db45023664",
+      "sourcePath": "master/recipes/hearty_cheeseburger_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/jigglypuff_flan/image.webp",
+      "sha256": "70ce4c08354bab854e11408e456926169c74011e8b56d600dceab13103a8cc4a",
+      "originalSha256": "c4fb034265e0aa912d3f7bc2f8a783cdd80592eea1ada4ce40c2136b69a3a15c",
+      "sourcePath": "master/recipes/jigglypuff_flan/image.webp"
+    },
+    {
+      "path": "master/recipes/defiant_coffee_salad/image.webp",
+      "sha256": "d395fd67daa2bd84f7eaa9c923c6afdfd54e6c01e41677adb9155ab388f40a7b",
+      "originalSha256": "b60c60ea1301cf2797b395d7086d18ca2095a2d21698f5bc59679c04bfd99db4",
+      "sourcePath": "master/recipes/defiant_coffee_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/honey_gathering_chocolate_waffles/image.webp",
+      "sha256": "7df788cda86981fd6c15ce392c78036e82ca1e95b062e72f0849f8b0a2c1532d",
+      "originalSha256": "d496248d614521b0bbda16265402f7d33a7db504d9d759ff81e13acc22647a3d",
+      "sourcePath": "master/recipes/honey_gathering_chocolate_waffles/image.webp"
+    },
+    {
+      "path": "master/recipes/snow_cloak_caesar_salad/image.webp",
+      "sha256": "489442eec325a97db5c59ecc876a71735198f21a1eef4d9b3d0cde3f8ed55ac7",
+      "originalSha256": "3a4343e3407cf1b7788003a8fee366372d5cd05796bde0820b9aed4226156405",
+      "sourcePath": "master/recipes/snow_cloak_caesar_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/mold_breaker_corn_tiramisu/image.webp",
+      "sha256": "dfa28381ea59add0403aaf48cb2cfd1564403c40ff98ef18a824798525e9ffcc",
+      "originalSha256": "90ad2078575d89ae38550ea3c1fae87fabaa83a64c6c4c02babbf421d8dc7476",
+      "sourcePath": "master/recipes/mold_breaker_corn_tiramisu/image.webp"
+    },
+    {
+      "path": "master/recipes/greengrass_salad/image.webp",
+      "sha256": "7be0e94fb52639ccd3b04c2b3539dbcb0a2429d364e3dd0b1d2b5befebd031f4",
+      "originalSha256": "041af7045c4baee9414bd0962ae37e30ccfd289dec91b68d0d7e7b8cb7ef9f5f",
+      "sourcePath": "master/recipes/greengrass_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/solar_power_tomato_curry/image.webp",
+      "sha256": "49c0e644b857302c93cd654cfc4cada144c3aadad49e94ada5f80767c2e5ab8b",
+      "originalSha256": "fe65e65df8d223c65aa6c1b40f4ff62dc1aa0c1568f32a151371614efba84604",
+      "sourcePath": "master/recipes/solar_power_tomato_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/teatime_corn_scones/image.webp",
+      "sha256": "7baa2347a4ebb2406eaab8c2ff067570fc96784074a366b7ec8cf264623e2877",
+      "originalSha256": "445eface41f604793716213fd570bbb059503654175102a591606a6701d442e4",
+      "sourcePath": "master/recipes/teatime_corn_scones/image.webp"
+    },
+    {
+      "path": "master/recipes/moomoo_caprese/image.webp",
+      "sha256": "8a26e2eca70c113d72a854b5a7c319d551a4a0f44a4a2b39b4ea5515dc9d7f5f",
+      "originalSha256": "bb0f80391786772b5572f5baa7a5e7b526afd294efef4d6133f1b7d3cdd56415",
+      "sourcePath": "master/recipes/moomoo_caprese/image.webp"
+    },
+    {
+      "path": "master/recipes/verdant_avocado_gratin/image.webp",
+      "sha256": "86f87e96c54b30d7d518c5a4a80e23dc64fb9c861961413a30a9585484249da4",
+      "originalSha256": "aee552cd898e4ad08acfb7f825fdb574c3e5f3dcf77cfea9f0d1cc478f450ddc",
+      "sourcePath": "master/recipes/verdant_avocado_gratin/image.webp"
+    },
+    {
+      "path": "master/recipes/petal_blizzard_mimosa_salad/image.webp",
+      "sha256": "d93441f3d1c5d8612ceecbdd6d93aadca0280f28611ea27e479211a9514102b2",
+      "originalSha256": "103879a9bfac7de1c8f9987759178811ee364ef71974b3a8bd37c37d1438a1fe",
+      "sourcePath": "master/recipes/petal_blizzard_mimosa_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/overheat_salad/image.webp",
+      "sha256": "cf67a92a2d4d5c45482551dd8ac831126bad2c592b53ba983e7cdcf710ef97c7",
+      "originalSha256": "fe1dbd40d28375b5df93e3f5b17d881172bec9ff4c6bcb69545309ff53eab68e",
+      "sourcePath": "master/recipes/overheat_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/egg_bomb_curry/image.webp",
+      "sha256": "23ef25dc4bbc7560c9d708fd46af5f29290c1257d5f79064e30145fe00b7187e",
+      "originalSha256": "1a51c5a8f05440e18fc8b708e4224dd5c11db68c9af7a5eb4d8bcc0f6d08a92a",
+      "sourcePath": "master/recipes/egg_bomb_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/lovely_kiss_fruit_au_lait/image.webp",
+      "sha256": "6cf18594d30172bfa5e6d66ad23f93f61d38cb20e0bfcd982d59274d3caab40d",
+      "originalSha256": "69426cbc36050c66b4f95ffec0be68e2c378d0851e78e10d5892ee1933cff7fd",
+      "sourcePath": "master/recipes/lovely_kiss_fruit_au_lait/image.webp"
+    },
+    {
+      "path": "master/recipes/grilled_tail_curry/image.webp",
+      "sha256": "34048914fdbdfda176a0c1d08887510f1aac0e6974d3f4f9037240b1bca2d40b",
+      "originalSha256": "a321c4f4a73642dca4dc2e58717e28501d750fe7fe829d959adf690a3cdb4089",
+      "sourcePath": "master/recipes/grilled_tail_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/hustle_protein_smoothie/image.webp",
+      "sha256": "9181177f126da9b333a7b4669228be691e44c5fc24f8eb0e029d1a1a0b766f7f",
+      "originalSha256": "ee3a053744b0fb9879e2269679218b8948f63c9e8100c2ba4d683d9b889bebc3",
+      "sourcePath": "master/recipes/hustle_protein_smoothie/image.webp"
+    },
+    {
+      "path": "master/recipes/light_soy_cake/image.webp",
+      "sha256": "19ed56326354420c91ccbd7f80b3d88feda45957b1bf0409b21870e6ca289d3b",
+      "originalSha256": "82861b58a215042b275fc213321f5e37444b3bda8045a9dc4fdb66bf30c1a58f",
+      "sourcePath": "master/recipes/light_soy_cake/image.webp"
+    },
+    {
+      "path": "master/recipes/ninja_curry/image.webp",
+      "sha256": "732ebd900e426bd48817923ed03002743ec72e151a7f848b712f79194f3d1594",
+      "originalSha256": "dfd8773d50587fec1dd3cac50eaa963ecc112dce90d5e7520b38dce11814712b",
+      "sourcePath": "master/recipes/ninja_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/flower_gift_macarons/image.webp",
+      "sha256": "b72e061add3af10093f71b801191b1eb819018cbe73b9aa5e6ddd764f5c419e4",
+      "originalSha256": "aee2f1e379cc94894aef3e2c04f577e74439b61113d98df421f5dca6483ecb92",
+      "sourcePath": "master/recipes/flower_gift_macarons/image.webp"
+    },
+    {
+      "path": "master/recipes/bean_ham_salad/image.webp",
+      "sha256": "d2d42c37097de974481060f69d06a346dfcd995521ccd771376db606088e826e",
+      "originalSha256": "8f78729a005d80fee98d73881cc72a8e74b9645d23c5e1984fa153aacf3b7786",
+      "sourcePath": "master/recipes/bean_ham_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/fancy_apple_curry/image.webp",
+      "sha256": "7a717571ebb47a18acd3ef52e3164a67e6c2c237c08d18e10c41302bfaa87d41",
+      "originalSha256": "64ad9206d49f8a5f3117be479366412a5c62955d54cc1a42d094771fa89add4c",
+      "sourcePath": "master/recipes/fancy_apple_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/calm_mind_fruit_salad/image.webp",
+      "sha256": "b147fb928b7e7e13b7d7d3691a34b239a79e795845b154f6d050b5fa31aa39b9",
+      "originalSha256": "b9ea64650636bf7ef8ba6ccbb11b8d07d8a0563ee9e1f305c2f284485eeb8788",
+      "sourcePath": "master/recipes/calm_mind_fruit_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/wish_apple_pie/image.webp",
+      "sha256": "ea1694c06de6d9c73411c6e3f91e41252993e66a76e6a2b730a488bcda1b0a4e",
+      "originalSha256": "38226737ea6ce86080ffd1c5855c8c79b11e7bee388c9fd8e5f265d4d23826d3",
+      "sourcePath": "master/recipes/wish_apple_pie/image.webp"
+    },
+    {
+      "path": "master/recipes/greengrass_curry_bun/image.webp",
+      "sha256": "3ed41864ae642b50fd963a61f0a21e165764827be3704b540ff3813018e5f661",
+      "originalSha256": "b6f76b1f4c0c63b2268af36a5a8ba67f4f029025cd62b60eb4eedc084e07cc54",
+      "sourcePath": "master/recipes/greengrass_curry_bun/image.webp"
+    },
+    {
+      "path": "master/recipes/big_malasada/image.webp",
+      "sha256": "c0bb0c24f10424c4f8f8e5e45698c9fe26bed49cbad1f01b46ab966ebc047f66",
+      "originalSha256": "0162b74bf860afc49ba1607d749c25a66bccc065e33a52b5442dd598f4bb9039",
+      "sourcePath": "master/recipes/big_malasada/image.webp"
+    },
+    {
+      "path": "master/recipes/simple_white_stew/image.webp",
+      "sha256": "946a4925e973c4298460995a0baf61b437824c0d462d392f564b284e8340a3df",
+      "originalSha256": "526c91c9bee5f32c4395fc827ce34b17abb47e3642f0e9a9a60ce478ece2470e",
+      "sourcePath": "master/recipes/simple_white_stew/image.webp"
+    },
+    {
+      "path": "master/recipes/bulk_up_bean_curry/image.webp",
+      "sha256": "8612943730f7ba3ce8c90614644304715b9e6840c8c0f2352dfc9d60a83ad2f8",
+      "originalSha256": "47e4c42f318b29f434425d9fe3666086703b46a110b10848f5db3a425188b7f8",
+      "sourcePath": "master/recipes/bulk_up_bean_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/hidden_power_stew/image.webp",
+      "sha256": "defa5e110596c9ebd7c37e3aa176a631c55fb59a30f566e462228c5dbf31c96e",
+      "originalSha256": "90382a2e9277ad00e19c50ed853e04a179a0dcb91d2f034c74d9524c7ea94445",
+      "sourcePath": "master/recipes/hidden_power_stew/image.webp"
+    },
+    {
+      "path": "master/recipes/attract_apple_cheese_salad/image.webp",
+      "sha256": "619fe65ed9c16cb631f6440ed522734d6d3bee5a61a3e9d1383ac67188ac9b21",
+      "originalSha256": "c9630f63ce550f9098f06e0e5cd7654c5c12a40d99c772184be2e6b2bc8ed58a",
+      "sourcePath": "master/recipes/attract_apple_cheese_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/clodsire_eclairs/image.webp",
+      "sha256": "29fe33ede840409d71d37013f1ae9d59c3e115b0a6c2ad06dd781267d7e9cd0a",
+      "originalSha256": "ed151b2be903a557febff91a8afbf503f0514983c864dff28bf2f58375d1395f",
+      "sourcePath": "master/recipes/clodsire_eclairs/image.webp"
+    },
+    {
+      "path": "master/recipes/huge_power_soy_donuts/image.webp",
+      "sha256": "d2034513ba9b50bf67ab966adfb826cb8d881f20dad996b16246ae5fe00c81a7",
+      "originalSha256": "48f3e43bfa233452b6107e299af4f63785366afc3f1767e80f33bb1d9002594c",
+      "sourcePath": "master/recipes/huge_power_soy_donuts/image.webp"
+    },
+    {
+      "path": "master/recipes/inferno_corn_keema_curry/image.webp",
+      "sha256": "8174db1f6771881702cb7917d03fa1cd28ad5f6b225f5190de8787ac2f74ab21",
+      "originalSha256": "91cb8e6b965f1768ba58b6f98febc2e9ee4a9a066c4c8c9ee67351d15a6d98a5",
+      "sourcePath": "master/recipes/inferno_corn_keema_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/choice_apple_salad/image.webp",
+      "sha256": "234eb220bb128ffbeda62a18f9d8535fc2f9ab169b2ed5ae1013de3678bf5464",
+      "originalSha256": "b7f7f87fca85e9e70d3cd0e68d39e561cc25d3bb03f85af9c12fa1d426ba3268",
+      "sourcePath": "master/recipes/choice_apple_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/stomping_guacamole_chips/image.webp",
+      "sha256": "9c7d8d68c740abe119d9b3ee32e24894df7e26a8ad6e868d9368e3712a6122d5",
+      "originalSha256": "38ad8fa8411eb599f4228eb1cb0bbecd6fe766ddc808cc99a558756beebb27d5",
+      "sourcePath": "master/recipes/stomping_guacamole_chips/image.webp"
+    },
+    {
+      "path": "master/recipes/crunch_avocado_salad/image.webp",
+      "sha256": "2132a2cb2fc258d062bf6e09b43d52152ac0e9df735d94b7efe6105026e83454",
+      "originalSha256": "6b197b3d5d8fca6ed693223b05780e968bed6092470c5f007bd92d419bdf145e",
+      "sourcePath": "master/recipes/crunch_avocado_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/limber_corn_stew/image.webp",
+      "sha256": "fbaa9782e61bd8248b986b9e11c3b24a0f8c97d81c78f8413576092a25eab98a",
+      "originalSha256": "6e901d2f05bc8b5a409f2973abb201874d847e19ad1dc09c6b69f1c7a47644a5",
+      "sourcePath": "master/recipes/limber_corn_stew/image.webp"
+    },
+    {
+      "path": "master/recipes/baby_honey_curry/image.webp",
+      "sha256": "9ae4c98cf1e8c90e4288d641e60e44c95de51f75eea3e4ed93129e63e6148f9f",
+      "originalSha256": "d9d3aa4eb3f9fefac4cd302960020ba3df719c272dda3e2f54944eea89fec2ce",
+      "sourcePath": "master/recipes/baby_honey_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/spore_mushroom_curry/image.webp",
+      "sha256": "3e0e5b58ece57b22c2720cee0f145964ae98859046e36a2875463e2e7a877a8f",
+      "originalSha256": "5606426f09929aefa694732f53521c7f0eb0d8e34f88d9908d27a0cb569fe9db",
+      "sourcePath": "master/recipes/spore_mushroom_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/fury_attack_corn_salad/image.webp",
+      "sha256": "6698206b0ce6bc77bb86e7745fce68da24032c4b35f422a6d7438a3aebd1d18e",
+      "originalSha256": "05413b70f0bf1d55b67ba8f80eadcb7004e76525ec2db99b91a67b2aa977a585",
+      "sourcePath": "master/recipes/fury_attack_corn_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/dizzy_punch_spicy_curry/image.webp",
+      "sha256": "8998cdd8737c1739591a22ba4fb0dfe46fe2dbf4dac7deb0b92c9f4b3498a955",
+      "originalSha256": "1b6be5a6c29177da30a037237d3e3a305a368c107555e76ff704d0bd242b46ad",
+      "sourcePath": "master/recipes/dizzy_punch_spicy_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/spooky_face_pancakes/image.webp",
+      "sha256": "fb90f255092b1cfbea49b774e624023ed7b60c1b54b9a0d734b0f326dcb51ce6",
+      "originalSha256": "8125efc642e6ef9799b604d29c2c16290f7ba37a31c96a2ca638c10597b57b7b",
+      "sourcePath": "master/recipes/spooky_face_pancakes/image.webp"
+    },
+    {
+      "path": "master/recipes/dream_eater_butter_curry/image.webp",
+      "sha256": "8ed70ced7b622d122e7f41a5111891a4ad2feef1d8b8899b8588f237e5d7d77f",
+      "originalSha256": "ec4846afdc4b9252d9ba0181d37bb06564f1c94bf652b0ffa525240139ff464e",
+      "sourcePath": "master/recipes/dream_eater_butter_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/ninja_salad/image.webp",
+      "sha256": "77b590b86eed638c26ad6c961499e66eade048f994ebf1b9e375fa3ed0a4979d",
+      "originalSha256": "58169413e28c7d55e0f747b58454fb264a33a6c4f7cbd06a00e18fabcc4b2c30",
+      "sourcePath": "master/recipes/ninja_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/neroli_detox_tea/image.webp",
+      "sha256": "b986f981ee48eaeea7016a7e7bc4d8bad53228cfc9a1f601bebe338a8e1d2ae5",
+      "originalSha256": "b560d138eed51366b9ec101a64c22f9cca3b13d269ef4450c0d4710a886113b0",
+      "sourcePath": "master/recipes/neroli_detox_tea/image.webp"
+    },
+    {
+      "path": "master/recipes/craft_psycho_soda/image.webp",
+      "sha256": "b51b005f1fca7e94e0114d07814e065514f771fa49407b49e6dc5b0b901dc638",
+      "originalSha256": "13391eea4b07c2446eebae3e358655223fc0977b5321e74251b4b7e2f26eafaf",
+      "sourcePath": "master/recipes/craft_psycho_soda/image.webp"
+    },
+    {
+      "path": "master/recipes/grass_mixer_smoothie/image.webp",
+      "sha256": "6338663881d3e6cb32ca808a160ba964d5dec05ccf7f7861853510b5d73e78e5",
+      "originalSha256": "21b3110591410bb98846fd38a13a109eb1eb944c25b328b116bfec0ad220f8cd",
+      "sourcePath": "master/recipes/grass_mixer_smoothie/image.webp"
+    },
+    {
+      "path": "master/recipes/sacred_sword_sukiyaki_curry/image.webp",
+      "sha256": "1e6a9fc374e69c30a12478acf127094d3e2a7073d800560fd7a93a619fe0bffe",
+      "originalSha256": "13e9cda1cf06f76f3bdfac9775491f22c784221989f2f21371e9dee3feef4979",
+      "sourcePath": "master/recipes/sacred_sword_sukiyaki_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/bean_burger_curry/image.webp",
+      "sha256": "bfd7ca36c3739f3ec3ca9a7d12640f9ea95d3a57b497a82dc2f2256245a38d01",
+      "originalSha256": "c9090ab92d4ca6560d0a244d172932912ad4a2a20d00ce8ff14c14060ebd90fe",
+      "sourcePath": "master/recipes/bean_burger_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/role_play_pumpkaboo_stew/image.webp",
+      "sha256": "10f7c96add906fc7c1de05d89ff7a999c8ce3dc062ee4b7df5ad981a663fd55e",
+      "originalSha256": "24ece3d3fa4bc0133e29b537edcfdab4d2c8ef0e35c95791044f6c85ffaf80b1",
+      "sourcePath": "master/recipes/role_play_pumpkaboo_stew/image.webp"
+    },
+    {
+      "path": "master/recipes/snoozy_tomato_salad/image.webp",
+      "sha256": "e8de83701ef9305751c2f6b16e52b70a15fe0f8515af480d0a2e82ebccb9f7cc",
+      "originalSha256": "119d28bad2e4a55b994caa70b358c3de56567d09a5b95eb7056659dc89607b5c",
+      "sourcePath": "master/recipes/snoozy_tomato_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/immunity_leek_salad/image.webp",
+      "sha256": "e988efbc99d6d15440df1878925bc81a303f288543395a0fd2b34da6cfa0b4e3",
+      "originalSha256": "19814e1b20ec2bb69b01b7c09fa7052786f219c46283e7b9ecb46bb835c6147e",
+      "sourcePath": "master/recipes/immunity_leek_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/bouncing_curry_udon/image.webp",
+      "sha256": "9b2d0dc988a6a3987183a061e79717065e8b0833d49c4db3c13061b3dddc06cb",
+      "originalSha256": "e73d68fb3e38a7acb1e050ddc57a2b50dbc7e592f325a9f3046a6e159701d381",
+      "sourcePath": "master/recipes/bouncing_curry_udon/image.webp"
+    },
+    {
+      "path": "master/recipes/ginger_tea/image.webp",
+      "sha256": "2a326188ddd1cfe1d8d9145111ab58e23f0a2e138348f223049adf773085a333",
+      "originalSha256": "d94b57cb4a735b1268790bd37a4076a50fc1e002e2eaa3a17eab6cb4f7733777",
+      "sourcePath": "master/recipes/ginger_tea/image.webp"
+    },
+    {
+      "path": "master/recipes/heat_wave_tofu_salad/image.webp",
+      "sha256": "2f022dc5020e7eabb7a6d5afed23a0702a400ffb81874f53a079a7bbf61a2ed3",
+      "originalSha256": "7f0e1690761ddde0d62f9fbbe447ae7256c34e4e4ea3710a84408722102e35f1",
+      "sourcePath": "master/recipes/heat_wave_tofu_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/steadfast_ginger_cookies/image.webp",
+      "sha256": "33f229303ec1863534cf6f43e6115c8081cf4e71960673278fb8ac59f4c5f47a",
+      "originalSha256": "0a558b87bfc5cd4db03489c5162f478e274034a6840a5eb6602d41d5bd818e3f",
+      "sourcePath": "master/recipes/steadfast_ginger_cookies/image.webp"
+    },
+    {
+      "path": "master/recipes/early_bird_coffee_jelly/image.webp",
+      "sha256": "7cd0fea1b4a489d2f8c49eca650e9227bfcc7d592939395bb114b793c7622fde",
+      "originalSha256": "3b8f494250f8a579aa456eb524642d39c90004632f9d2e21340d87732d43424c",
+      "sourcePath": "master/recipes/early_bird_coffee_jelly/image.webp"
+    },
+    {
+      "path": "master/recipes/gluttony_potato_salad/image.webp",
+      "sha256": "2be5d3f449d842834fb9effdc88ff344be991afbefb1dd6d26c59a68c1fade9e",
+      "originalSha256": "515e9d0edda003ba7194f8e200576ec65913a050e70e324d1576e422832cc21e",
+      "sourcePath": "master/recipes/gluttony_potato_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/drought_katsu_curry/image.webp",
+      "sha256": "0866ee4b9765be30d327753465f48f4b336f3d675cc6c190716f8da7d9c2381c",
+      "originalSha256": "6361de26811280d00ad1de7c7b4604a1472fde277d8e3b7a7c1d10d26a91dceb",
+      "sourcePath": "master/recipes/drought_katsu_curry/image.webp"
+    },
+    {
+      "path": "master/recipes/boiling_hot_salad/image.webp",
+      "sha256": "4a57595053695019b78f1eb634a83872175ef9357c1f80e3949f41d5d4410370",
+      "originalSha256": "fb00f82d23adab3570f8012445cac08b87868eef1c75775353a5b14af76b4a0a",
+      "sourcePath": "master/recipes/boiling_hot_salad/image.webp"
+    },
+    {
+      "path": "master/recipes/sweet_scent_chocolate_cake/image.webp",
+      "sha256": "c8ae530bba8a1f8ed71716985c98243c2f775bf0d830b44016516c425eb7f927",
+      "originalSha256": "9eeb02e854bead14f3f92d52936b166581d2059cc0602aa4d7b24a47542f5dcb",
+      "sourcePath": "master/recipes/sweet_scent_chocolate_cake/image.webp"
+    },
+    {
+      "path": "master/fields/cyan/image.webp",
+      "sha256": "a7ffd6ed4feb3d46b8a2a3cd36d56e6efcf0b8600f8026f1b13bae93cd0fc413",
+      "originalSha256": "a7ffd6ed4feb3d46b8a2a3cd36d56e6efcf0b8600f8026f1b13bae93cd0fc413",
+      "sourcePath": "master/fields/cyan/image.webp"
+    },
+    {
+      "path": "master/fields/snowdrop/image.webp",
+      "sha256": "4d2caa3407d6b884ae493e7cd7659bee030e2616192700e6686b51a385edcc5e",
+      "originalSha256": "4d2caa3407d6b884ae493e7cd7659bee030e2616192700e6686b51a385edcc5e",
+      "sourcePath": "master/fields/snowdrop/image.webp"
+    },
+    {
+      "path": "master/fields/lapis/image.webp",
+      "sha256": "0ab149cc73319db20186a38daf09b209a2df7441ce28ae33ae1a92a67f28b4f9",
+      "originalSha256": "0ab149cc73319db20186a38daf09b209a2df7441ce28ae33ae1a92a67f28b4f9",
+      "sourcePath": "master/fields/lapis/image.webp"
+    },
+    {
+      "path": "master/fields/old_gold/image.webp",
+      "sha256": "1364907b9430a2dfbe442c80bafe6c94a26bce83a9756f7bba0b270fcd3689ef",
+      "originalSha256": "1364907b9430a2dfbe442c80bafe6c94a26bce83a9756f7bba0b270fcd3689ef",
+      "sourcePath": "master/fields/old_gold/image.webp"
+    },
+    {
+      "path": "master/fields/taupe/image.webp",
+      "sha256": "2227123698fc98d625942875b75adf2bd00d715aa0805aec2e3f3e0a6e51ca2a",
+      "originalSha256": "2227123698fc98d625942875b75adf2bd00d715aa0805aec2e3f3e0a6e51ca2a",
+      "sourcePath": "master/fields/taupe/image.webp"
+    },
+    {
+      "path": "master/fields/greengrass/image.webp",
+      "sha256": "fad271e512d1f492732bb60006f3bdb15702a32eb2971103fe0b3f39a33d4c6c",
+      "originalSha256": "fad271e512d1f492732bb60006f3bdb15702a32eb2971103fe0b3f39a33d4c6c",
+      "sourcePath": "master/fields/greengrass/image.webp"
+    },
+    {
+      "path": "master/fields/amber/image.webp",
+      "sha256": "fee0ad1a72b4be05b633dbf948fbd40f804f7e80a1b031e168929b974d536d46",
+      "originalSha256": "fee0ad1a72b4be05b633dbf948fbd40f804f7e80a1b031e168929b974d536d46",
+      "sourcePath": "master/fields/amber/image.webp"
+    },
+    {
+      "path": "assets/pokemon/0001_default_full.webp",
+      "sha256": "2f68c028b772de4f42ec7e5d3fd0e4eed28be8a8782659ca555312f82b655cbb",
+      "originalSha256": "2f68c028b772de4f42ec7e5d3fd0e4eed28be8a8782659ca555312f82b655cbb",
+      "sourcePath": "assets/pokemon/0001_default_full.webp"
+    },
+    {
+      "path": "assets/fields/greengrass_ex/image.webp",
+      "sha256": "aecef5ba33ca96e5752fe5815173f78dd7b5e55a7994d9949615abae38f96b4e",
+      "originalSha256": "aecef5ba33ca96e5752fe5815173f78dd7b5e55a7994d9949615abae38f96b4e",
+      "sourcePath": "assets/fields/greengrass_ex/image.webp"
+    },
+    {
+      "path": "assets/fields/cyan_ex/image.webp",
+      "sha256": "4365216b32b3768fb6b4f39540a2878929e47e7e4386a382e02f4948d81a43d3",
+      "originalSha256": "4365216b32b3768fb6b4f39540a2878929e47e7e4386a382e02f4948d81a43d3",
+      "sourcePath": "assets/fields/cyan_ex/image.webp"
+    },
+    {
+      "path": "assets/ui/camp_tent.png",
+      "sha256": "efbfe6dc129d9e220884ad15ef682e7d896aa1dd3b2efbd91231aa9bb24c125f",
+      "originalSha256": null,
+      "sourcePath": "new_assets/camp_tent.png"
+    },
+    {
+      "path": "assets/subskills/inventory_l.svg",
+      "sha256": "205246dbca81a5c8b80827a217833f65bffa72338fea501864eda66457949b17",
+      "originalSha256": "6a749d3c389e9da651db7bba78fdd045bc4c55bb883cf996fedd342c822c3ba1",
+      "sourcePath": "assets/subskills/inventory_l.svg"
+    },
+    {
+      "path": "assets/subskills/berry_count_s.svg",
+      "sha256": "4bcf66fa94e03f5042447d6d3423b19a51cb5cf2471408a24614f2e6fbcd1339",
+      "originalSha256": "137a5e58833d59a2ba25377a923e113a55d96d9fa5a70890b48a190e9ce3f303",
+      "sourcePath": "assets/subskills/berry_count_s.svg"
+    },
+    {
+      "path": "assets/subskills/helping_speed_m.svg",
+      "sha256": "0ac8e4ea00c9edd028a4ea5ca5bf9c004d9f7f0b4f92c3f369312671cbb4213a",
+      "originalSha256": "457c8df90534d316ebfeb4042ebd1a5361331c2d4b316bdc0237cc01cfa0656e",
+      "sourcePath": "assets/subskills/helping_speed_m.svg"
+    },
+    {
+      "path": "assets/subskills/helping_bonus.svg",
+      "sha256": "138bed29f371edcc7f209a23a0970aa179ee4586b313126220acc1ef9caf67fd",
+      "originalSha256": "1ae74a0667061ea00509785d2434af36400c1d3da670f2ee5367678d91451aa0",
+      "sourcePath": "assets/subskills/helping_bonus.svg"
+    },
+    {
+      "path": "assets/subskills/research_exp.svg",
+      "sha256": "756bd8936a03b4403c8ab124355f7f7cbbd993df421d73b44e6b735b06e7ffa1",
+      "originalSha256": "4e5c621481ed11976f670b59963308ede2bd4d0852147517ecf85c6d6c952fc5",
+      "sourcePath": "assets/subskills/research_exp.svg"
+    },
+    {
+      "path": "assets/subskills/ingredient_s.svg",
+      "sha256": "df0876eb40fc7f7552ad29d282f90cc2bb40967f74e1817301f5493ab40185e3",
+      "originalSha256": "b4aaa28895429e3f0cd816e1e97f927caf2e56a4aea09e208b67b78621f3ca49",
+      "sourcePath": "assets/subskills/ingredient_s.svg"
+    },
+    {
+      "path": "assets/subskills/sleep_exp.svg",
+      "sha256": "cbb6944613da887705341fcaff28d636203a5045a08cafd2f872ca4985419b93",
+      "originalSha256": "ab602b897e775e5a641c685aea84b88689a22e64f7e77d13c61bfaf0dc05fba6",
+      "sourcePath": "assets/subskills/sleep_exp.svg"
+    },
+    {
+      "path": "assets/subskills/dream_shard.svg",
+      "sha256": "c817772ed5f6c7bea95ab579597a9422740594376413825f0f732fada0c8710e",
+      "originalSha256": "1d8ec53e84348a00ca74eb353e616ab6274aced754dd9b4c11aeafd8ddf5355d",
+      "sourcePath": "assets/subskills/dream_shard.svg"
+    },
+    {
+      "path": "assets/subskills/level_cap.svg",
+      "sha256": "ef30bb80e4219b30c66f45c21c9fda72b1e8d74fb5a29dc104d726a647643890",
+      "originalSha256": "b2cd74f9409881c94c0712adcbdec8e09028dd327d28831eab1faf428af7ecb1",
+      "sourcePath": "assets/subskills/level_cap.svg"
+    },
+    {
+      "path": "assets/subskills/skill_trigger_m.svg",
+      "sha256": "943928311a6b4ef4a65f6bd57257654e29cb6f92618f2dae855434b76623d98a",
+      "originalSha256": "24caaf92ae34ff1869ed43936ba81b62c6e1b75cb8b2b7197bc8d59845b4001a",
+      "sourcePath": "assets/subskills/skill_trigger_m.svg"
+    },
+    {
+      "path": "assets/subskills/skill_trigger_s.svg",
+      "sha256": "dbcfe36ff03969e09d3e629c7c37fb0f4919ff8b83ed18a628b8cfcd4bb37ec0",
+      "originalSha256": "197a2468d6f2871cce2a24bdb1b1db741d8f24cdf8e50e88f5bf4329566af5af",
+      "sourcePath": "assets/subskills/skill_trigger_s.svg"
+    },
+    {
+      "path": "assets/subskills/inventory_s.svg",
+      "sha256": "1027236a20a205b1a6f4d3d9239661743fd00c6258de5759d771f9211d23005b",
+      "originalSha256": "1ef2ab60a27413e9557e8eeea11ea73244c364ed0dc8716eb6d3b5e4cc5d7798",
+      "sourcePath": "assets/subskills/inventory_s.svg"
+    },
+    {
+      "path": "assets/subskills/energy_recovery.svg",
+      "sha256": "709b2437113fed90e3f2b2d9de02995b46144af7ce45135f619f07ea781ad623",
+      "originalSha256": "2cacc92af1fabfd8d6b9734aa7ef3e65add916d7983645299beabd41edc3f4e4",
+      "sourcePath": "assets/subskills/energy_recovery.svg"
+    },
+    {
+      "path": "assets/subskills/skill_level_m.svg",
+      "sha256": "487fb61693614579584b8af6115185bab26e16ae63d519f02b5a131e61aa0d85",
+      "originalSha256": "2b95f411b887f7150fe807306e9731c1341f970e5cb3c0e2fdb1d739317959b5",
+      "sourcePath": "assets/subskills/skill_level_m.svg"
+    },
+    {
+      "path": "assets/subskills/inventory_m.svg",
+      "sha256": "83240ac2e37b8342f1acd4930020a6f78f904c7eb34574eeae88733eab256d1f",
+      "originalSha256": "5ed7c0bb6a0e4101946d8f9ef842ac765ed546a2bd65ec0c65ac998de8399f11",
+      "sourcePath": "assets/subskills/inventory_m.svg"
+    },
+    {
+      "path": "assets/subskills/helping_speed_s.svg",
+      "sha256": "2c145f96bf2ec56a91057b37704dd091e28f767ce94706076cd285714faad18e",
+      "originalSha256": "79b4d72e30c8812bd34ba106917f93c938b63995ba98c11ba4223a120d24b925",
+      "sourcePath": "assets/subskills/helping_speed_s.svg"
+    },
+    {
+      "path": "assets/subskills/skill_level_s.svg",
+      "sha256": "6def771c48246ebcd38c04a721af4a5e1afd951f4413370a1a91abcaafa2dc21",
+      "originalSha256": "0999508c7493b1b8bdc73ae3005655cad47c2f9394006d62866310fc24b30513",
+      "sourcePath": "assets/subskills/skill_level_s.svg"
+    },
+    {
+      "path": "assets/subskills/ingredient_m.svg",
+      "sha256": "72e0be8c38ecce0993a72358105ae106e646984040748619330e99eb9fa71863",
+      "originalSha256": "a10eddcff7a2d9c373f28e91f07122b6b23c6d815ecda8e7d3fe001638bbc3c0",
+      "sourcePath": "assets/subskills/ingredient_m.svg"
+    }
+  ],
+  "rasterCount": 89,
+  "svgCount": 18,
+  "archives": [
+    {
+      "path": "pack-01.zip",
+      "sha256": "0349ae75502ebad747988ec847261f796084bf61040e72c5a2676c1fcd3e81fe"
+    },
+    {
+      "path": "pack-02.zip",
+      "sha256": "333eebcf3b94776311f4dde3265f5ce21037ff4942d4beb2452b6510cb23328d"
+    },
+    {
+      "path": "pack-03.zip",
+      "sha256": "f9615f1280d4407a0c092f743adacbca398056d0d5009c5f92ff97ec42dd391b"
+    },
+    {
+      "path": "pack-04.zip",
+      "sha256": "124086301df2a1c662b8bbd9ec21f411d51ddea23902785eaf93a803fc3583e0"
+    },
+    {
+      "path": "pack-05.zip",
+      "sha256": "b9fd03fb85f53bd2ad3edf1bca923e383bfd9eedd45b4309df4582926e276cdb"
+    },
+    {
+      "path": "pack-06.zip",
+      "sha256": "30f038efa73d14138a1fe69a596bfb07c393d5df0f85247e03cc0cee691c0c20"
+    },
+    {
+      "path": "pack-07.zip",
+      "sha256": "eb04e8ba6ff823fc7d32bd34393e8b03b2633eb91d0e3ca44db958a3a4eefb40"
+    },
+    {
+      "path": "pack-08.zip",
+      "sha256": "cdc2071d57768f60d8871d129d450321b3a5e01277d0c8e0bf741aaf3de3248b"
+    },
+    {
+      "path": "pack-09.zip",
+      "sha256": "3216137f0071b7b2f8e482b1b893f4c760f3a2db6667af2424133e11034e3424"
+    },
+    {
+      "path": "pack-10.zip",
+      "sha256": "bd36564e9ddd7610430381c0cf3a7b1c9344c7dc5baf493c7b5c4786a61fb0f1"
+    },
+    {
+      "path": "pack-11.zip",
+      "sha256": "87f8295780822d8ce759af481ceccea43d5d855d4bf092aec58bea04a4045fbf"
+    },
+    {
+      "path": "pack-12.zip",
+      "sha256": "4050d95dd934bb49a61a075deedcbda0bfc8a4028f667aa0b8764b75f0e31c68"
+    },
+    {
+      "path": "pack-13.zip",
+      "sha256": "c2641337cf100c5cd5b5d69e0f212acac985bc1db0022ae53d9685b2e653ae07"
+    },
+    {
+      "path": "pack-14.zip",
+      "sha256": "c4ee5c988119782b62221cfa3d65a2bfdaabcdd4dc207dc66a834fdfa6ab3748"
+    },
+    {
+      "path": "pack-15.zip",
+      "sha256": "ccd441bfcfb5cd41b38dfbe179f98a5930862aa615ca52ad376937e7c99c0a18"
+    },
+    {
+      "path": "pack-16.zip",
+      "sha256": "983ed8304ffbc0aac2476cfd4a0745e34e686aa3ac500245b19fcef94d04b5f0"
+    },
+    {
+      "path": "pack-17.zip",
+      "sha256": "ed72a1d03237c029e5624ba757c145915b7be8d9240dfd186f6dec8ca963c09f"
+    },
+    {
+      "path": "pack-18.zip",
+      "sha256": "1d97db593654832c5a92f6364e950fdebd38b4f66a3839838bb9ad606dd0958f"
+    },
+    {
+      "path": "pack-19.zip",
+      "sha256": "45c490bc2f4a722658accf124ec7ee96308bd95dc25126699674a471a323fc7e"
+    },
+    {
+      "path": "pack-20.zip",
+      "sha256": "4c550f49b87b48461b6578d6abb7a3af0101bd5c8dd6f902b6b8c3838f2b966c"
+    },
+    {
+      "path": "pack-21.zip",
+      "sha256": "790feb40dfa402df8694e95aea8d974be01a953f3459286c70ffb8dcbddf3c8a"
+    },
+    {
+      "path": "pack-22.zip",
+      "sha256": "4132771ec54bb05c72c5dc7f1f37fd40d68d9e1e5ddfb7797875bfef1235346d"
+    },
+    {
+      "path": "pack-23.zip",
+      "sha256": "2cb68cd3b47a75df5ff58303c9ff162503eac2540a7d6773cfa5d6f5ba25f0f1"
+    },
+    {
+      "path": "pack-24.zip",
+      "sha256": "7926bfb00fc098b24621f0668ed81fb85ca916beff7ee43de288c10f0d4416ac"
+    },
+    {
+      "path": "pack-25.zip",
+      "sha256": "89bf83e926ff610cb1d05e80e7f72abe933d8fd2630633cc3e6f6f5918d04db3"
+    }
+  ]
+}
