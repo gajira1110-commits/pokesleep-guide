@@ -295,12 +295,17 @@
 #dexDetail #detailFoods .psg-food-rate{box-sizing:border-box;padding-left:var(--food-label-gutter);padding-right:2px;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1}
 #dexDetail #detailFoods .psg-food-rate span,#dexDetail #detailFoods .psg-food-rate strong,#dexDetail #detailFoods .psg-food-head>b{font-size:var(--food-heading-font-size);line-height:1}
 #dexDetail #detailFoods .psg-food-head-levels{font-size:calc(var(--food-heading-font-size) * .5);line-height:1}
-#dexDetail #detailFoods .psg-food-level strong{font-size:clamp(16px,4.1vw,22px)}
+#dexDetail #detailFoods .psg-food-head-levels{height:100%;align-items:end;padding-bottom:2px;box-sizing:border-box}
+#dexDetail #detailFoods .psg-food-level-heading{display:grid;justify-items:center;align-items:end;min-width:0}
+#dexDetail #detailFoods .psg-food-level-heading b{position:relative;font-size:clamp(16px,4.1vw,22px);line-height:1}
+#dexDetail #detailFoods .psg-food-level-heading small{position:absolute;right:100%;bottom:0;margin-right:1px;font-size:calc(var(--food-heading-font-size) * .5);line-height:1}
+#dexDetail #detailFoods .psg-food-level strong{position:relative;font-size:clamp(16px,4.1vw,22px)}
+#dexDetail #detailFoods .psg-food-quantity-unit{position:absolute;left:100%;top:0;font:inherit}
 #dexDetail #detailFoods .psg-food-row,#dexDetail #detailFoods .psg-food-row[data-slot]{box-sizing:border-box;height:var(--food-row-height);min-height:0}
 #dexDetail #detailFoods .psg-food-id,#dexDetail #detailFoods .psg-food-levels,#dexDetail #detailFoods .psg-food-recipes,#dexDetail #detailFoods .psg-food-recipes.is-pending{box-sizing:border-box;height:100%;min-height:0;padding-block:2px}
 #dexDetail #detailFoods .psg-food-id{padding-left:var(--food-label-gutter);padding-right:2px}
 #dexDetail #detailFoods .psg-food-id img{width:calc((var(--food-row-height) - 4px) * .85);height:calc((var(--food-row-height) - 4px) * .85);max-width:100%;object-fit:contain;flex-shrink:0}
 #dexDetail #detailFoods .psg-food-id b{top:5px;font-size:16px}
 #dexDetail #detailFoods .psg-food-recipe-tile{box-sizing:border-box;height:calc(var(--food-row-height) - 6px);min-height:0;position:relative}
-#dexDetail #detailFoods .psg-food-recipe-tile img{width:30px;height:30px}
+#dexDetail #detailFoods .psg-food-recipe-tile img{width:calc(100% - 2px);height:calc(100% - 2px);min-height:0;object-fit:contain}
 #dexDetail #detailFoods .psg-food-recipe-tile small{position:absolute;right:1px;bottom:1px;font-size:9px}
