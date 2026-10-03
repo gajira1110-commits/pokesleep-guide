@@ -1,0 +1,1465 @@
+{
+  "master/types/electric/icon.png": {
+    "source": "master/types/electric/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/fairy/icon.png": {
+    "source": "master/types/fairy/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/ground/icon.png": {
+    "source": "master/types/ground/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/dark/icon.png": {
+    "source": "master/types/dark/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/steel/icon.png": {
+    "source": "master/types/steel/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/rock/icon.png": {
+    "source": "master/types/rock/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      113
+    ]
+  },
+  "master/types/fire/icon.png": {
+    "source": "master/types/fire/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/water/icon.png": {
+    "source": "master/types/water/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/psychic/icon.png": {
+    "source": "master/types/psychic/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/poison/icon.png": {
+    "source": "master/types/poison/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/normal/icon.png": {
+    "source": "master/types/normal/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/flying/icon.png": {
+    "source": "master/types/flying/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/grass/icon.png": {
+    "source": "master/types/grass/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/ghost/icon.png": {
+    "source": "master/types/ghost/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/bug/icon.png": {
+    "source": "master/types/bug/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/types/dragon/icon.png": {
+    "source": "master/types/dragon/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/fighting/icon.png": {
+    "source": "master/types/fighting/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      114,
+      114
+    ]
+  },
+  "master/types/ice/icon.png": {
+    "source": "master/types/ice/icon.png",
+    "width": 128,
+    "height": 128,
+    "box": [
+      7,
+      7,
+      113,
+      114
+    ]
+  },
+  "master/specialties/all/icon.webp": {
+    "source": "master/specialties/all/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      9,
+      10,
+      238,
+      236
+    ]
+  },
+  "master/specialties/skill/icon.webp": {
+    "source": "master/specialties/skill/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      9,
+      9,
+      238,
+      238
+    ]
+  },
+  "master/specialties/berry/icon.webp": {
+    "source": "master/specialties/berry/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      9,
+      9,
+      238,
+      237
+    ]
+  },
+  "master/specialties/ingredient/icon.webp": {
+    "source": "master/specialties/ingredient/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      9,
+      10,
+      238,
+      235
+    ]
+  },
+  "master/sleepTypes/snoozing/icon.webp": {
+    "source": "master/sleepTypes/snoozing/icon.webp",
+    "width": 384,
+    "height": 240,
+    "box": [
+      32,
+      9,
+      320,
+      222
+    ]
+  },
+  "master/sleepTypes/slumbering/icon.webp": {
+    "source": "master/sleepTypes/slumbering/icon.webp",
+    "width": 384,
+    "height": 240,
+    "box": [
+      32,
+      9,
+      319,
+      222
+    ]
+  },
+  "master/sleepTypes/dozing/icon.webp": {
+    "source": "master/sleepTypes/dozing/icon.webp",
+    "width": 384,
+    "height": 240,
+    "box": [
+      33,
+      9,
+      318,
+      222
+    ]
+  },
+  "master/berries/lum/icon.webp": {
+    "source": "master/berries/lum/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      16,
+      230,
+      224
+    ]
+  },
+  "master/berries/persim/icon.webp": {
+    "source": "master/berries/persim/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      20,
+      230,
+      214
+    ]
+  },
+  "master/berries/pecha/icon.webp": {
+    "source": "master/berries/pecha/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      22,
+      230,
+      211
+    ]
+  },
+  "master/berries/chesto/icon.webp": {
+    "source": "master/berries/chesto/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      20,
+      13,
+      216,
+      230
+    ]
+  },
+  "master/berries/oran/icon.webp": {
+    "source": "master/berries/oran/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      22,
+      230,
+      211
+    ]
+  },
+  "master/berries/rawst/icon.webp": {
+    "source": "master/berries/rawst/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      15,
+      13,
+      226,
+      230
+    ]
+  },
+  "master/berries/sitrus/icon.webp": {
+    "source": "master/berries/sitrus/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      26,
+      13,
+      204,
+      230
+    ]
+  },
+  "master/berries/bluk/icon.webp": {
+    "source": "master/berries/bluk/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      15,
+      230,
+      225
+    ]
+  },
+  "master/berries/figy/icon.webp": {
+    "source": "master/berries/figy/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      20,
+      13,
+      215,
+      230
+    ]
+  },
+  "master/berries/belue/icon.webp": {
+    "source": "master/berries/belue/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      229,
+      230
+    ]
+  },
+  "master/berries/durin/icon.webp": {
+    "source": "master/berries/durin/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      21,
+      230,
+      213
+    ]
+  },
+  "master/berries/pamtre/icon.webp": {
+    "source": "master/berries/pamtre/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      16,
+      230,
+      224
+    ]
+  },
+  "master/berries/cheri/icon.webp": {
+    "source": "master/berries/cheri/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      230,
+      229
+    ]
+  },
+  "master/berries/yache/icon.webp": {
+    "source": "master/berries/yache/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      19,
+      230,
+      218
+    ]
+  },
+  "master/berries/leppa/icon.webp": {
+    "source": "master/berries/leppa/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      22,
+      13,
+      211,
+      230
+    ]
+  },
+  "master/berries/wiki/icon.webp": {
+    "source": "master/berries/wiki/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      23,
+      230,
+      210
+    ]
+  },
+  "master/berries/mago/icon.webp": {
+    "source": "master/berries/mago/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      22,
+      230,
+      211
+    ]
+  },
+  "master/berries/grepa/icon.webp": {
+    "source": "master/berries/grepa/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      230,
+      230
+    ]
+  },
+  "master/ingredients/bean_meat/icon.webp": {
+    "source": "master/ingredients/bean_meat/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      21,
+      13,
+      214,
+      230
+    ]
+  },
+  "master/ingredients/tasty_mushroom/icon.webp": {
+    "source": "master/ingredients/tasty_mushroom/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      230,
+      230
+    ]
+  },
+  "master/ingredients/fancy_egg/icon.webp": {
+    "source": "master/ingredients/fancy_egg/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      37,
+      13,
+      182,
+      230
+    ]
+  },
+  "master/ingredients/warming_ginger/icon.webp": {
+    "source": "master/ingredients/warming_ginger/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      19,
+      13,
+      217,
+      230
+    ]
+  },
+  "master/ingredients/coffee/icon.webp": {
+    "source": "master/ingredients/coffee/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      40,
+      230,
+      177
+    ]
+  },
+  "master/ingredients/potato/icon.webp": {
+    "source": "master/ingredients/potato/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      35,
+      230,
+      186
+    ]
+  },
+  "master/ingredients/large_leek/icon.webp": {
+    "source": "master/ingredients/large_leek/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      16,
+      13,
+      224,
+      230
+    ]
+  },
+  "master/ingredients/moomoo_milk/icon.webp": {
+    "source": "master/ingredients/moomoo_milk/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      56,
+      13,
+      143,
+      230
+    ]
+  },
+  "master/ingredients/pure_oil/icon.webp": {
+    "source": "master/ingredients/pure_oil/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      51,
+      13,
+      153,
+      230
+    ]
+  },
+  "master/ingredients/greengrass_corn/icon.webp": {
+    "source": "master/ingredients/greengrass_corn/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      27,
+      230,
+      201
+    ]
+  },
+  "master/ingredients/fancy_apple/icon.webp": {
+    "source": "master/ingredients/fancy_apple/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      16,
+      13,
+      224,
+      230
+    ]
+  },
+  "master/ingredients/soothing_cacao/icon.webp": {
+    "source": "master/ingredients/soothing_cacao/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      33,
+      230,
+      189
+    ]
+  },
+  "master/ingredients/plump_pumpkin/icon.webp": {
+    "source": "master/ingredients/plump_pumpkin/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      33,
+      230,
+      189
+    ]
+  },
+  "master/ingredients/honey/icon.webp": {
+    "source": "master/ingredients/honey/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      20,
+      13,
+      216,
+      230
+    ]
+  },
+  "master/ingredients/tomato/icon.webp": {
+    "source": "master/ingredients/tomato/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      19,
+      230,
+      218
+    ]
+  },
+  "master/ingredients/tasty_tail/icon.webp": {
+    "source": "master/ingredients/tasty_tail/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      25,
+      230,
+      206
+    ]
+  },
+  "master/ingredients/greengrass_soybeans/icon.webp": {
+    "source": "master/ingredients/greengrass_soybeans/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      36,
+      230,
+      184
+    ]
+  },
+  "master/ingredients/shiny_avocado/icon.webp": {
+    "source": "master/ingredients/shiny_avocado/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      229,
+      230
+    ]
+  },
+  "master/ingredients/fiery_herb/icon.webp": {
+    "source": "master/ingredients/fiery_herb/icon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      13,
+      13,
+      229,
+      230
+    ]
+  },
+  "assets/ui/helper_whistle.webp": {
+    "source": "assets/ui/helper_whistle.webp",
+    "width": 128,
+    "height": 128,
+    "box": [
+      5,
+      16,
+      118,
+      96
+    ]
+  },
+  "assets/ui/info_skills.webp": {
+    "source": "assets/ui/info_skills.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      20,
+      18,
+      217,
+      215
+    ]
+  },
+  "assets/ui/favorite_off.webp": {
+    "source": "assets/ui/favorite_off.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      50,
+      25,
+      191,
+      179
+    ]
+  },
+  "assets/ui/info_fields.webp": {
+    "source": "assets/ui/info_fields.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      18,
+      39,
+      220,
+      177
+    ]
+  },
+  "assets/ui/training_off.webp": {
+    "source": "assets/ui/training_off.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      41,
+      15,
+      196,
+      197
+    ]
+  },
+  "assets/ui/special_pokemon.webp": {
+    "source": "assets/ui/special_pokemon.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      21,
+      69,
+      220,
+      112
+    ]
+  },
+  "assets/ui/favorite_on.webp": {
+    "source": "assets/ui/favorite_on.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      15,
+      41,
+      188,
+      173
+    ]
+  },
+  "assets/ui/info_cooking.webp": {
+    "source": "assets/ui/info_cooking.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      16,
+      41,
+      224,
+      169
+    ]
+  },
+  "assets/ui/training_on.webp": {
+    "source": "assets/ui/training_on.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      62,
+      60,
+      160,
+      136
+    ]
+  },
+  "assets/ui/info_ingredients.webp": {
+    "source": "assets/ui/info_ingredients.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      20,
+      42,
+      217,
+      177
+    ]
+  },
+  "assets/ui-icons/razor_claw.webp": {
+    "source": "assets/ui-icons/razor_claw.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      45,
+      59,
+      245,
+      218
+    ]
+  },
+  "assets/ui-icons/fire_stone.webp": {
+    "source": "assets/ui-icons/fire_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      51,
+      61,
+      233,
+      213
+    ]
+  },
+  "assets/ui-icons/white_mint.webp": {
+    "source": "assets/ui-icons/white_mint.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      31,
+      56,
+      274,
+      224
+    ]
+  },
+  "assets/ui-icons/oval_stone.webp": {
+    "source": "assets/ui-icons/oval_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      56,
+      59,
+      223,
+      217
+    ]
+  },
+  "assets/ui-icons/rank_ultra.webp": {
+    "source": "assets/ui-icons/rank_ultra.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      20,
+      19,
+      184,
+      185
+    ]
+  },
+  "assets/ui-icons/poke_biscuit.webp": {
+    "source": "assets/ui-icons/poke_biscuit.webp",
+    "width": 96,
+    "height": 96,
+    "box": [
+      4,
+      4,
+      88,
+      88
+    ]
+  },
+  "assets/ui-icons/kings_rock.webp": {
+    "source": "assets/ui-icons/kings_rock.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      39,
+      55,
+      258,
+      225
+    ]
+  },
+  "assets/ui-icons/ribbon_2000.webp": {
+    "source": "assets/ui-icons/ribbon_2000.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      22,
+      28,
+      179,
+      163
+    ]
+  },
+  "assets/ui-icons/shiny_stone.webp": {
+    "source": "assets/ui-icons/shiny_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      57,
+      55,
+      222,
+      225
+    ]
+  },
+  "assets/ui-icons/water_stone.webp": {
+    "source": "assets/ui-icons/water_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      55,
+      60,
+      225,
+      215
+    ]
+  },
+  "assets/ui-icons/ice_stone.webp": {
+    "source": "assets/ui-icons/ice_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      53,
+      58,
+      230,
+      219
+    ]
+  },
+  "assets/ui-icons/rank_master.webp": {
+    "source": "assets/ui-icons/rank_master.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      20,
+      19,
+      183,
+      184
+    ]
+  },
+  "assets/ui-icons/thunder_stone.webp": {
+    "source": "assets/ui-icons/thunder_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      59,
+      38,
+      217,
+      259
+    ]
+  },
+  "assets/ui-icons/linking_cord.webp": {
+    "source": "assets/ui-icons/linking_cord.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      39,
+      54,
+      257,
+      227
+    ]
+  },
+  "assets/ui-icons/moon_stone.webp": {
+    "source": "assets/ui-icons/moon_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      38,
+      51,
+      259,
+      234
+    ]
+  },
+  "assets/ui-icons/rank_great.webp": {
+    "source": "assets/ui-icons/rank_great.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      20,
+      20,
+      182,
+      183
+    ]
+  },
+  "assets/ui-icons/ribbon_200.webp": {
+    "source": "assets/ui-icons/ribbon_200.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      77,
+      62,
+      71,
+      107
+    ]
+  },
+  "assets/ui-icons/ribbon_1000.webp": {
+    "source": "assets/ui-icons/ribbon_1000.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      29,
+      26,
+      161,
+      166
+    ]
+  },
+  "assets/ui-icons/dawn_stone.webp": {
+    "source": "assets/ui-icons/dawn_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      55,
+      54,
+      226,
+      227
+    ]
+  },
+  "assets/ui-icons/leaf_stone.webp": {
+    "source": "assets/ui-icons/leaf_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      51,
+      59,
+      234,
+      217
+    ]
+  },
+  "assets/ui-icons/dusk_stone.webp": {
+    "source": "assets/ui-icons/dusk_stone.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      55,
+      55,
+      226,
+      226
+    ]
+  },
+  "assets/ui-icons/ribbon_500.webp": {
+    "source": "assets/ui-icons/ribbon_500.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      32,
+      31,
+      145,
+      163
+    ]
+  },
+  "assets/ui-icons/metal_coat.webp": {
+    "source": "assets/ui-icons/metal_coat.webp",
+    "width": 336,
+    "height": 336,
+    "box": [
+      48,
+      60,
+      239,
+      216
+    ]
+  },
+  "assets/ui-icons/rank_normal.webp": {
+    "source": "assets/ui-icons/rank_normal.webp",
+    "width": 224,
+    "height": 224,
+    "box": [
+      21,
+      19,
+      183,
+      184
+    ]
+  },
+  "assets/skill-icons/ingredient_magnet_s.webp": {
+    "source": "assets/skill-icons/ingredient_magnet_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/draco_meteor_berry_burst.webp": {
+    "source": "assets/skill-icons/draco_meteor_berry_burst.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/helper_boost_fire.webp": {
+    "source": "assets/skill-icons/helper_boost_fire.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      15,
+      482,
+      482
+    ]
+  },
+  "assets/skill-icons/energy_charge_s_variable.webp": {
+    "source": "assets/skill-icons/energy_charge_s_variable.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      16,
+      15,
+      480,
+      476
+    ]
+  },
+  "assets/skill-icons/energy_charge_s_self.webp": {
+    "source": "assets/skill-icons/energy_charge_s_self.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/ingredient_draw_s.webp": {
+    "source": "assets/skill-icons/ingredient_draw_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/aura_sphere_dream_shards.webp": {
+    "source": "assets/skill-icons/aura_sphere_dream_shards.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      32,
+      15,
+      465,
+      468
+    ]
+  },
+  "assets/skill-icons/helper_boost_electric.webp": {
+    "source": "assets/skill-icons/helper_boost_electric.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      15,
+      482,
+      482
+    ]
+  },
+  "assets/skill-icons/helper_boost_water.webp": {
+    "source": "assets/skill-icons/helper_boost_water.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      15,
+      482,
+      482
+    ]
+  },
+  "assets/skill-icons/berry_juice_energy_for_everyone.webp": {
+    "source": "assets/skill-icons/berry_juice_energy_for_everyone.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      19,
+      482,
+      474
+    ]
+  },
+  "assets/skill-icons/extra_helpful_s.webp": {
+    "source": "assets/skill-icons/extra_helpful_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/almighty.webp": {
+    "source": "assets/skill-icons/almighty.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/cooking_chance_s.webp": {
+    "source": "assets/skill-icons/cooking_chance_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/moonlight_energy_charge_s.webp": {
+    "source": "assets/skill-icons/moonlight_energy_charge_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      19,
+      482,
+      474
+    ]
+  },
+  "assets/skill-icons/dream_shard_magnet_s.webp": {
+    "source": "assets/skill-icons/dream_shard_magnet_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/nuzzle_energy_cheer_s.webp": {
+    "source": "assets/skill-icons/nuzzle_energy_cheer_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/energy_for_everyone_s.webp": {
+    "source": "assets/skill-icons/energy_for_everyone_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp": {
+    "source": "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      18,
+      482,
+      476
+    ]
+  },
+  "assets/skill-icons/nightmare_energy_charge_m.webp": {
+    "source": "assets/skill-icons/nightmare_energy_charge_m.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/present_ingredient_magnet_s.webp": {
+    "source": "assets/skill-icons/present_ingredient_magnet_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      19,
+      482,
+      474
+    ]
+  },
+  "assets/skill-icons/minus_cooking_power_up_s.webp": {
+    "source": "assets/skill-icons/minus_cooking_power_up_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/transform_skill_copy.webp": {
+    "source": "assets/skill-icons/transform_skill_copy.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/energy_charge_m.webp": {
+    "source": "assets/skill-icons/energy_charge_m.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      16,
+      15,
+      479,
+      469
+    ]
+  },
+  "assets/skill-icons/psystrike_berry_zone.webp": {
+    "source": "assets/skill-icons/psystrike_berry_zone.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      17,
+      20,
+      477,
+      472
+    ]
+  },
+  "assets/skill-icons/bulk_up_cooking_assist_s.webp": {
+    "source": "assets/skill-icons/bulk_up_cooking_assist_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      19,
+      482,
+      474
+    ]
+  },
+  "assets/skill-icons/metronome.webp": {
+    "source": "assets/skill-icons/metronome.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/disguise_berry_burst.webp": {
+    "source": "assets/skill-icons/disguise_berry_burst.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/super_luck_ingredient_select_s.webp": {
+    "source": "assets/skill-icons/super_luck_ingredient_select_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      19,
+      482,
+      474
+    ]
+  },
+  "assets/skill-icons/berry_burst.webp": {
+    "source": "assets/skill-icons/berry_burst.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/energy_cheer_s.webp": {
+    "source": "assets/skill-icons/energy_cheer_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/hyper_cutter_ingredient_select_s.webp": {
+    "source": "assets/skill-icons/hyper_cutter_ingredient_select_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/cooking_power_up_s.webp": {
+    "source": "assets/skill-icons/cooking_power_up_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/healing_pulse_energy_cheer_s.webp": {
+    "source": "assets/skill-icons/healing_pulse_energy_cheer_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/skill-icons/stockpile_energy_charge_s.webp": {
+    "source": "assets/skill-icons/stockpile_energy_charge_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      23,
+      482,
+      466
+    ]
+  },
+  "assets/skill-icons/plus_ingredient_magnet_s.webp": {
+    "source": "assets/skill-icons/plus_ingredient_magnet_s.webp",
+    "width": 512,
+    "height": 512,
+    "box": [
+      15,
+      17,
+      482,
+      478
+    ]
+  },
+  "assets/ui/favorite_on.svg": {
+    "source": "assets/ui/favorite_on.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      15,
+      41,
+      188,
+      173
+    ]
+  },
+  "assets/ui/favorite_off.svg": {
+    "source": "assets/ui/favorite_off.webp",
+    "width": 256,
+    "height": 256,
+    "box": [
+      50,
+      25,
+      191,
+      179
+    ]
+  }
+}

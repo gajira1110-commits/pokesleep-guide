@@ -418,7 +418,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v297') == 2
+    assert source.count('Review v298') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'
@@ -430,6 +430,11 @@ def build():
         CSS.write_text(css_text)  # Compatibility copy; edit styles/*.css instead.
     assert source.count('/* PSG_BUILD_SWAP_ENGINE */') == 1
     html = source.replace(MARKER,injection).replace('/* PSG_BUILD_STYLES */',css_text).replace('/* PSG_BUILD_SPECIALTY_IMAGES */',ART.read_text()).replace('/* PSG_BUILD_FACE_SCRIPT */',face_script).replace('/* PSG_BUILD_SWAP_ENGINE */',swap_engine())
+    trim_bounds = json.loads((ROOT / 'assets/ui/icon-trim-bounds.json').read_text())
+    trim_script = (ROOT / 'templates/icon-trim.js').read_text().replace('/* PSG_ICON_TRIM_BOUNDS */', json.dumps(trim_bounds,separators=(',',':')))
+    import re
+    html = html.replace(css_text, re.sub(r'(?<![\w-])img(?![\w-])', ':is(img,svg.psg-trimmed-icon)', css_text))
+    html = html.replace('</head>', '<script>'+trim_script+'</script></head>',1)
     assert MARKER not in html
     PREVIEW.write_text(html)
     print(f'{len(catalog["pokemon"])} pokemon, {len(catalog["sleepStyles"])} sleep groups, '
