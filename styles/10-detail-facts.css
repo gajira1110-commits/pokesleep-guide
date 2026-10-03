@@ -54,3 +54,14 @@
 #dexDetail .psg-detail-friend{flex-direction:row;gap:2px}
 #dexDetail .psg-detail-friend b{font-size:14px}
 @media(max-width:620px){#dexDetail .hero{--box-portrait-column:min(34%,var(--box-facts-height))}}
+
+/* One shared minimum gap between detail blocks; each block owns its inner padding. */
+#dexDetail,#boxDetail{--detail-block-gap:2px}
+#dexDetail .psg-dex-sticky>.hero{margin-bottom:var(--detail-block-gap)!important}
+#dexDetail .psg-dex-sticky>.v12-tabs{margin:0!important;padding-block:0!important}
+#dexDetail #v12Ability,#dexDetail #v12Sleep,#dexDetail #v12Field{padding-block:var(--detail-block-gap)!important;margin-block:0!important}
+#dexDetail #pane-ability.on{display:grid;gap:var(--detail-block-gap)}
+#dexDetail #v12Ability .card{margin-block:0!important}
+#dexDetail #v12Ability .ability-card:has(#detailFoods){padding-block:0!important}
+#dexDetail #detailFoods .psg-food-stack{margin-block:0!important}
+#boxDetail>.card{margin-block:0 var(--detail-block-gap)!important}

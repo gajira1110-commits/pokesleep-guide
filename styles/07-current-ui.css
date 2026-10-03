@@ -292,7 +292,9 @@
 #dexDetail #detailFoods{--food-heading-height:calc(var(--box-unit-height) * .5);--food-row-height:calc(var(--box-unit-height) * 1.5)}
 #dexDetail #detailFoods .psg-food-head{box-sizing:border-box;height:var(--food-heading-height);min-height:0;padding:0 2px;align-items:center}
 #dexDetail #detailFoods .psg-food-rate{flex-direction:row;align-items:center;gap:3px;line-height:1}
-#dexDetail #detailFoods .psg-food-rate span,#dexDetail #detailFoods .psg-food-rate strong,#dexDetail #detailFoods .psg-food-head>b,#dexDetail #detailFoods .psg-food-head-levels{font-size:calc(var(--food-heading-height) - 3px);line-height:1}
+#dexDetail #detailFoods .psg-food-rate span,#dexDetail #detailFoods .psg-food-rate strong,#dexDetail #detailFoods .psg-food-head>b{font-size:calc(var(--food-heading-height) - 3px);line-height:1}
+#dexDetail #detailFoods .psg-food-head-levels{font-size:calc(var(--food-heading-height) * .5 - 1.5px);line-height:1}
+#dexDetail #detailFoods .psg-food-level strong{font-size:clamp(16px,4.1vw,22px)}
 #dexDetail #detailFoods .psg-food-row,#dexDetail #detailFoods .psg-food-row[data-slot]{box-sizing:border-box;height:var(--food-row-height);min-height:0}
 #dexDetail #detailFoods .psg-food-id,#dexDetail #detailFoods .psg-food-levels,#dexDetail #detailFoods .psg-food-recipes,#dexDetail #detailFoods .psg-food-recipes.is-pending{box-sizing:border-box;height:100%;min-height:0;padding-block:2px}
 #dexDetail #detailFoods .psg-food-id img{width:calc(var(--food-row-height) - 4px);height:calc(var(--food-row-height) - 4px);max-width:100%;object-fit:contain;flex-shrink:0}
