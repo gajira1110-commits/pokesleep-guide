@@ -20,12 +20,13 @@
  <section class="psg-box-section card"><h3>育成・進化</h3><div id="boxGrowth"></div></section>
  <details class="psg-box-editor card" id="boxEditor"><summary>⚙️ 個体を編集</summary>
    <form id="boxEditForm"><label id="boxAppearanceLabel" hidden><span id="boxAppearanceTitle">衣装・サイズ</span><select name="appearance" id="boxEditAppearance"></select></label><label id="boxEvolutionLabel">進化（現在の姿）<select name="evolution" id="boxEditEvolution"></select></label><p class="psg-box-muted psg-editor-note">個体情報を引き継ぎます。衣装・サイズはゲーム内の現在の姿に合わせてください。スキルLvも現在値を設定してください。</p>
-    <label class="psg-editor-ribbon">おやすみリボン<span id="boxRibbonPreview" class="psg-ribbon-preview"></span><select name="ribbonHours"><option value="0">なし</option><option value="200">200時間</option><option value="500">500時間</option><option value="1000">1000時間</option><option value="2000">2000時間</option></select></label>
+    <div class="psg-editor-ribbon"><label>おやすみリボン<select name="ribbonHours"><option value="0">なし</option><option value="200">200時間</option><option value="500">500時間</option><option value="1000">1000時間</option><option value="2000">2000時間</option></select></label><span id="boxRibbonPreview" class="psg-ribbon-preview" aria-label="選択したリボン"></span></div>
     <div id="boxEditIngredients"></div>
+    <div id="boxEditSubskills"></div>
     <div class="psg-editor-skill-role"><label>スキルLv<select name="skillLevel"></select></label><label>役割<select name="role"><option value="">未設定</option><option value="きのみ">きのみ</option><option value="食材">食材</option><option value="スキル">スキル</option></select></label></div>
     <div class="psg-editor-nature-heading"><p id="boxNatureInferred" class="psg-box-muted" aria-live="polite"></p><label class="psg-editor-check"><input name="mint" type="checkbox"><span id="boxMintIcon"></span>まっしろミント</label></div>
     <div class="psg-editor-nature-axes"><label>上昇項目<select id="boxNatureUp" aria-label="性格の上昇項目"></select></label><label>下降項目<select id="boxNatureDown" aria-label="性格の下降項目"></select></label></div><label id="boxNeutralNatureLabel">無補正の性格<select name="nature" id="boxEditNature"></select></label>
-    <div id="boxEditSubskills"></div><div id="boxEditMythical" hidden></div>
+    <div id="boxEditMythical" hidden></div>
     <button type="submit" class="btn primary">個体データを保存</button><p id="boxEditMessage" role="status"></p>
    </form>
  </details>
