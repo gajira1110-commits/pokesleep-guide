@@ -29,14 +29,15 @@
 @media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
 
 /* Individual facts: four quarters, 1:1:2, then equal thirds. */
-#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,var(--box-fact-row-height));align-items:stretch}
+#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,var(--box-fact-row-height));align-items:stretch;gap:2px!important}
 #boxDetail .psg-detail-facts .psg-detail-trait,#boxDetail .psg-detail-facts .psg-detail-stat,#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:0;height:100%}
 #boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents}
 #boxTraits>div{grid-column:span 3;min-width:0}
 #boxTraits>.psg-fact-speed{grid-column:span 6;align-self:stretch}
 #boxStats>.psg-detail-stat{grid-column:span 4}
 #boxDetail .psg-fact-speed>.psg-detail-stat{height:100%}
-#boxDetail .psg-fact-toggle{display:flex;align-items:stretch;justify-content:center;background:#fff;border-radius:8px;min-height:44px}
-#boxDetail .psg-fact-toggle>.btn{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;padding:2px;border:0;border-radius:8px}
+#boxDetail .psg-fact-toggle{display:flex;align-items:stretch;justify-content:center;background:#fff;border-radius:8px;min-height:0}
+#boxDetail .psg-fact-toggle>.btn{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:0;padding:1px;border:0;border-radius:8px}
 #boxDetail .psg-fact-toggle .psg-ui-icon{margin:0;width:26px;height:26px;flex:none}
-@media(min-width:621px){#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:48px}}
+#boxDetail .psg-detail-trait .psg-sleep-type-icon{width:24px;height:24px}
+#boxDetail .psg-detail-facts .psg-detail-trait,#boxDetail .psg-detail-facts .psg-detail-stat{padding:1px}
