@@ -58,7 +58,7 @@
      }
      const preview=window.PS_DEV_ASSETS;
      const img=document.createElement('img');
-     const role=m.image&&m.image===window.PS_IMAGE_FILES.pokemonFaces?.[m.no]?'face':'full';
+     const role=m.image&&m.image===m.faceImage?'face':'full';
      const expected=preview.path('pokemon',m.no,role);
      img.src=m.image||preview.preview(expected);
      img.alt=m.name;
