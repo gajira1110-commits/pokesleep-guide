@@ -51,13 +51,12 @@
 #boxDetail #boxEditForm .psg-editor-check{display:flex;align-items:center;gap:8px}
 #boxDetail #boxEditForm .psg-editor-check input{width:auto}
 #boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
-@media(max-width:390px){#boxDetail .psg-box-artwork{min-height:190px}}
-/* Box Block 1 shares the Dex geometry: square artwork, facts to the right,
-   and a full-width action row where the Dex shows tabs. */
-#boxDetail .psg-box-hero{padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
-#boxDetail .psg-box-identity{grid-template-columns:minmax(108px,37%) minmax(0,1fr);gap:6px;align-items:start}
-#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:transparent;border-radius:0;margin-top:-6px}
-#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center top}
+/* Individual artwork fits beside three equal-height fact rows. */
+#boxDetail .psg-box-hero{--box-fact-row-height:clamp(44px,7vw,52px);--box-facts-height:calc(3 * var(--box-fact-row-height) + 6px);padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
+#boxDetail .psg-box-identity{grid-template-columns:min(37%,var(--box-facts-height)) minmax(0,1fr);gap:6px;align-items:start}
+#boxDetail .psg-v106-media{min-width:0;height:var(--box-facts-height)}
+#boxDetail .psg-box-artwork{width:100%;height:100%;min-height:0;aspect-ratio:auto;background:transparent;border-radius:0;margin:0;place-items:center}
+#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;object-position:center}
 #boxDetail .psg-box-facts{justify-content:space-between;gap:4px;align-self:stretch}
 #boxDetail .psg-box-traits{display:grid;grid-template-columns:31fr 38fr 31fr;gap:3px;min-width:0}
 #boxDetail .psg-box-trait{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:31px;padding:3px 2px;border-radius:9px;background:#fff;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;color:#111}
@@ -74,7 +73,6 @@
 #boxDetail #lv{font-size:13px}
 #boxDetail #boxLevelInput{width:43px;padding:4px;font-size:13px}
 @media(max-width:390px){
- #boxDetail .psg-box-identity{grid-template-columns:minmax(104px,37%) minmax(0,1fr)}
  #boxDetail .psg-box-trait{font-size:9px}
  #boxDetail .psg-box-stat{min-height:45px}
  #boxDetail .psg-box-stat small{font-size:8px}
@@ -103,7 +101,7 @@
   #boxDetail .psg-box-facts{gap:3px!important}
   #boxDetail .psg-box-facts .psg-box-trait-berry>img{width:25px!important;height:25px!important}
   #boxDetail .psg-box-stats{flex:0 0 auto!important}
-  #boxDetail .psg-box-identity{grid-template-columns:minmax(102px,34%) minmax(0,1fr);align-items:start}
+  #boxDetail .psg-box-identity{grid-template-columns:min(34%,var(--box-facts-height)) minmax(0,1fr);align-items:start}
   #boxDetail .psg-box-facts{justify-content:flex-start}
   #boxDetail .psg-v106-media .psg-box-trait-berry>img{width:25px;height:25px}
   #boxDetail .psg-v106-media .psg-box-traits{align-items:start}}

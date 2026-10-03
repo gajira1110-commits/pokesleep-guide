@@ -29,7 +29,8 @@
 @media(min-width:621px){.psg-detail-trait{min-height:48px}.psg-detail-stat{min-height:48px}}
 
 /* Individual facts: four quarters, 1:1:2, then equal thirds. */
-#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto auto}
+#boxDetail .psg-detail-facts{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,var(--box-fact-row-height));align-items:stretch}
+#boxDetail .psg-detail-facts .psg-detail-trait,#boxDetail .psg-detail-facts .psg-detail-stat,#boxDetail .psg-fact-toggle,#boxDetail .psg-fact-toggle>.btn{min-height:0;height:100%}
 #boxDetail .psg-detail-traits,#boxDetail .psg-detail-stats{display:contents}
 #boxTraits>div{grid-column:span 3;min-width:0}
 #boxTraits>.psg-fact-speed{grid-column:span 6;align-self:stretch}
