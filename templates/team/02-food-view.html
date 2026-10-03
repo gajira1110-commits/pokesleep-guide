@@ -6,9 +6,9 @@ function teamFoodIcon(name){
  const fallback=document.createElement('span');fallback.textContent=visual?.fallback||'◌';return fallback;
 }
 function renderTeamFood(){
- const ingredients=document.getElementById('teamIngredientList'),recipes=document.getElementById('teamRecipeList');
- if(!ingredients||!recipes)return;
- ingredients.replaceChildren();recipes.replaceChildren();
+ const recipes=document.getElementById('teamRecipeList');
+ if(!recipes)return;
+ recipes.replaceChildren();
  const pot=cookingContext(),potSelect=document.getElementById('teamPotBase');
  if(potSelect){
   if(potSelect.options.length===1)for(const capacity of potCapacities)potSelect.add(new Option(`${capacity}個`,String(capacity)));
@@ -17,21 +17,6 @@ function renderTeamFood(){
   document.getElementById('teamPotCapacity').textContent=pot.capacity===null?'鍋未設定':`現在 ${pot.capacity}個${factors.length?`（${factors.join('・')}）`:''}`;
  }
  const {confirmed,unconfirmed}=teamFoodContext();
- if(!team.some(Boolean)){
-  const empty=document.createElement('p');empty.className='note';empty.textContent='チームを選ぶと、拾える食材を表示します。';ingredients.append(empty);
- }else{
-  if(confirmed.size){
-   const list=document.createElement('div');list.className='psg-team-food-list';
-   for(const [name,providers] of confirmed){
-    const chip=document.createElement('details');chip.className='psg-team-food-item';
-    const heading=document.createElement('summary');heading.append(teamFoodIcon(name));
-    const title=document.createElement('strong');title.textContent=name;heading.append(title);
-    const detail=document.createElement('small');detail.textContent=providers.map(x=>`${x.label}（Lv.${x.unlock} ×${x.qty}）`).join('、');
-    chip.append(heading,detail);list.append(chip);
-   }ingredients.append(list);
-  }else{const empty=document.createElement('p');empty.className='note';empty.textContent='確認できた食材はありません。';ingredients.append(empty)}
-  if(unconfirmed.length){const note=document.createElement('p');note.className='note';note.textContent=`未確認：${unconfirmed.join('、')}`;ingredients.append(note)}
- }
  const catalogRecipes=Object.values(window.PS_CATALOG?.recipes||{});
  const selectedCategory=activeMealCategory();
  if(!selectedCategory){const hint=document.createElement('p');hint.className='note';hint.textContent='今週の料理を選ぶと、そのカテゴリの食材チェックを表示します。';recipes.append(hint);return}
@@ -47,7 +32,10 @@ function renderTeamFood(){
   count.textContent=team.some(Boolean)?`食材の種類 ${covered}/${categoryRecipes.length}品`:`${categoryRecipes.length}品`;
   heading.append(title,count);group.append(heading);
   const list=document.createElement('div');list.className='psg-team-recipe-items';
-  for(const recipe of categoryRecipes){
+  const remaining=document.createElement('details');remaining.className='psg-team-recipe-more';
+  const moreTitle=document.createElement('summary');moreTitle.textContent=`残り${Math.max(0,categoryRecipes.length-3)}品を見る`;remaining.append(moreTitle);
+  const moreList=document.createElement('div');moreList.className='psg-team-recipe-items';remaining.append(moreList);
+  for(const [index,recipe] of categoryRecipes.entries()){
    const missing=recipe.ingredients.filter(item=>!confirmed.has(item.name));
    const row=document.createElement('button');row.type='button';row.className='psg-team-recipe-row';row.dataset.mealCategory=category;row.dataset.recipeId=recipe.id;
    const image=document.createElement('span');image.className='psg-team-recipe-image';
@@ -63,9 +51,9 @@ function renderTeamFood(){
    copy.append(name,meta,potStatus,status);row.append(image,copy);
    row.setAttribute('aria-label',`${recipe.name}、${potStatus.textContent}、${status.textContent}、料理の詳細へ`);
    row.onclick=()=>window.PS_OPEN_RECIPE?.(recipe.id);
-   list.append(row);
+   (index<3?list:moreList).append(row);
   }
-  group.append(list);recipes.append(group);
+  group.append(list);if(categoryRecipes.length>3)group.append(remaining);recipes.append(group);
  }
 }
 document.getElementById('teamPotBase').onchange=e=>saveCookingSettings({base:e.target.value===''?null:Number(e.target.value)});
