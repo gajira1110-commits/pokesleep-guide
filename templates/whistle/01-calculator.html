@@ -6,6 +6,7 @@ function whistleEstimate(ids,box,catalog,options={}){
  if(selected.some(item=>!item))return {...empty,pendingReasons:['チーム個体が見つかりません']};
  if(options.fieldMode==='ex')return {...empty,pendingReasons:['EXフィールドの補正は未対応']};
  const speedContext=teamSpeedContext(ids,box,catalog),members=[],pendingReasons=[];
+ if(Number.isFinite(options.teamSpeedReduction))for(const item of selected)speedContext.members.set(item.id,individualCorrections(item,speciesFor(item,catalog),options.teamSpeedReduction));
  const favorites=new Set(options.favoriteBerries||[]),areaFactor=1+(options.areaBonus||0)/100;
  for(const item of selected){
   const species=speciesFor(item,catalog),stats=speedContext.members.get(item.id),reasons=[];
@@ -39,4 +40,48 @@ function whistleEstimate(ids,box,catalog,options={}){
  if(pendingReasons.length)return {...empty,pendingReasons};
  const foods=new Map();for(const member of members)for(const [name,qty] of member.foods)foods.set(name,(foods.get(name)||0)+qty);
  return {members,foods,berryCount:members.reduce((sum,m)=>sum+m.berries,0),berryEnergy:members.some(m=>m.berryEnergy===null)?null:members.reduce((sum,m)=>sum+m.berryEnergy,0),pendingReasons};
+}
+
+// Exact additive optimization for each attainable team helping-bonus total.
+// Individual yields are rounded by whistleEstimate; no solo top-five heuristic.
+function whistleRecommend(box,catalog,options={},target='berry',maxSize=5){
+ const unique=[...new Map(box.map(item=>[item.id,item])).values()],excluded=[],candidates=[];
+ if(options.fieldMode==='ex')return {ids:[],excluded,reason:'EXフィールドの補正は未対応です。'};
+ if(target==='berry'&&options.favoritesKnown===false)return {ids:[],excluded,reason:'好物きのみを3種類設定してください。'};
+ for(const item of unique){
+  const result=whistleEstimate([item.id],unique,catalog,options);
+  if(result.pendingReasons.length||!result.members.length){excluded.push(...result.pendingReasons);continue}
+  const species=speciesFor(item,catalog);
+  const contribution=SUBSKILL_LEVELS.reduce((sum,unlock,i)=>sum+(unlock<=item.level&&SUBSKILLS[item.subskills?.[i]]?.effect==='teamSpeedReduction'?SUBSKILLS[item.subskills[i]].value:0),0);
+  candidates.push({item,species,bonus:Math.round(contribution*1000000)});
+ }
+ const size=Math.min(maxSize,candidates.length);
+ if(!size)return {ids:[],excluded,reason:'計算できるボックス個体がありません。'};
+ const sums=Array.from({length:size+1},()=>new Set());sums[0].add(0);
+ for(const c of candidates)for(let n=size;n>0;n--)for(const sum of sums[n-1])sums[n].add(sum+c.bonus);
+ let best=null;
+ for(const total of sums[size]){
+  const dp=Array.from({length:size+1},()=>new Map());dp[0].set('0|',{score:0,bonus:0,ids:[],special:[]});
+  for(const c of candidates){
+   const result=whistleEstimate([c.item.id],unique,catalog,{...options,teamSpeedReduction:total/1000000});
+   if(result.pendingReasons.length)continue;
+   const score=target==='berry'?result.berryEnergy:(result.foods.get(target)||0);
+   if(!Number.isFinite(score))continue;
+   for(let n=size;n>0;n--)for(const prev of dp[n-1].values()){
+    const bonus=prev.bonus+c.bonus;if(bonus>total)continue;
+    const special=c.species.specialTeamLimited===true;
+    if(special&&!specialTeamCompatible(c.species,prev.special))continue;
+    const nextSpecial=special?[...prev.special,c.species]:prev.special;
+    const key=bonus+'|'+nextSpecial.map(p=>p.speciesId||p.no).sort().join(',');
+    const next={score:prev.score+score,bonus,ids:[...prev.ids,c.item.id],special:nextSpecial};
+    if(!dp[n].has(key)||next.score>dp[n].get(key).score)dp[n].set(key,next);
+   }
+  }
+  for(const result of dp[size].values())if(result.bonus===total&&(!best||result.score>best.score))best=result;
+ }
+ // Fewer than five compatible members can be legitimate in a small special-only box.
+ if(!best&&size>1){
+  return whistleRecommend(unique,catalog,options,target,size-1);
+ }
+ return best?{ids:best.ids,result:whistleEstimate(best.ids,unique,catalog,options),excluded}:{ids:[],excluded,reason:'編成可能な個体がありません。'};
 }
