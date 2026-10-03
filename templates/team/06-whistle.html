@@ -11,7 +11,7 @@ function renderTeamWhistle(){
  const note=text=>{const p=document.createElement('p');p.className='note';p.textContent=text;host.append(p)};
  pin.onclick=()=>{whistleComparison={context,result};renderTeamWhistle()};
  if(result.pendingReasons.length){note(`計算保留：${result.pendingReasons.join(' ／ ')}`);return}
- if(!result.members.length){note('チームを選ぶと笛1回分の獲得予想を表示します。');return}
+ if(!result.members.length){note('チームを選ぶとホイッスル1回分の獲得予想を表示します。');return}
  const energy=document.createElement('p');energy.className='psg-day-total';energy.textContent=`きのみ 合計 約${result.berryCount}個 ／ ${result.berryEnergy===null?'エナジーは好物きのみの設定待ち':`エナジー 約${Math.round(result.berryEnergy).toLocaleString()}`}`;host.append(energy);
  const tiles=document.createElement('div');tiles.className='psg-day-food-list psg-day-food-summary';
  for(const [name,qty] of result.foods){const tile=document.createElement('span');tile.className='psg-day-food-tile';tile.setAttribute('aria-label',`${name} 約${qty}個`);tile.append(teamFoodIcon(name));const copy=document.createElement('span'),label=document.createElement('small'),amount=document.createElement('strong');label.textContent=name;amount.textContent=`約${qty}個`;copy.append(label,amount);tile.append(copy);tiles.append(tile)}host.append(tiles);
@@ -26,3 +26,10 @@ function renderTeamWhistle(){
 }
 
 document.getElementById('whistleAssumeNeutral').onchange=renderTeamWhistle;
+
+document.getElementById('whistleToggle').onclick=()=>{
+ const button=document.getElementById('whistleToggle'),panel=document.getElementById('teamWhistlePanel');
+ const open=panel.hidden;panel.hidden=!open;button.setAttribute('aria-expanded',String(open));
+ button.setAttribute('aria-label',`ホイッスル1回分の獲得予想を${open?'非表示':'表示'}`);
+ if(open)renderTeamWhistle();
+};

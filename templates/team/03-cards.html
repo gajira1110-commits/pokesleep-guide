@@ -39,7 +39,7 @@ function renderTeam(){
   if(teamReorderMode)row.classList.add('is-reordering');
   if(teamReorderFrom===index)row.classList.add('is-reorder-source');
   const choose=document.createElement('button');choose.type='button';choose.className='psg-team-choose';
-  if(individual)choose.classList.add(`type-${typeClass(speciesFor(individual)?.type)}`);
+  if(individual){choose.classList.add(`type-${typeClass(speciesFor(individual)?.type)}`);if(speciesFor(individual)?.specialTeamLimited===true)choose.classList.add('psg-special-card')}
   choose.setAttribute('aria-label',`${index+1}匹目：${individual?individual.name:'未設定'}。${teamReorderMode?'並び替える枠を選ぶ':'Boxで個体を選ぶ'}`);
   const name=document.createElement('strong');name.className='psg-team-card-name';name.textContent=individual?.name||'個体を選ぶ';choose.append(name);
   const artwork=document.createElement('span');artwork.className='psg-team-card-art';artwork.append(teamFace(individual));

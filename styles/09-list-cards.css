@@ -14,5 +14,5 @@
 .dex-card .dex-bottom img,.dex-card .dex-bottom img.psg-specialty-icon{width:13px;height:13px;object-fit:contain}
 
 /* Species-based frames shared by Dex and Box cards. */
-#dexGrid .dex-card,#boxGrid .psg-box-card{border:2px solid #000}
-#dexGrid .dex-card.psg-special-card,#boxGrid .psg-box-card.psg-special-card{border-color:#fff}
+#dexGrid .dex-card,#boxGrid .psg-box-card,#teamSlots .psg-team-choose{border:2px solid #000}
+#dexGrid .dex-card.psg-special-card,#boxGrid .psg-box-card.psg-special-card,#teamSlots .psg-team-choose.psg-special-card{border-color:#fff;box-shadow:0 0 0 1px #555}
