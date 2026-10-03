@@ -24,14 +24,14 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-team-face>.psg-face-sprite,.psg-recipe-provider-art>.psg-face-sprite,.v31-evo-image>.psg-face-sprite{width:100%;height:auto}
 #boxGrid .psg-box-card{display:flex;flex-direction:column;}
 .psg-box-card-art{width:100%;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:8px;color:#82918a;font-size:10px}
-.psg-box-card-art>.psg-face-sprite{max-width:104px;justify-self:start;transform:translateX(-2px)}
-.psg-box-card-art>img{width:100%;height:100%;object-fit:contain;object-position:left center;transform:translateX(-2px)}
+.psg-box-card-art>.psg-face-sprite{max-width:104px;width:90%;justify-self:center;align-self:start}
+.psg-box-card-art>img{width:90%;height:90%;object-fit:contain;object-position:center top;align-self:start;justify-self:center}
 .psg-box-card-copy{display:block;min-width:0}
 /* Five cards across on phone and desktop; each badge keeps its own accessible label. */
 #dexGrid,#boxGrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
 #boxGrid .psg-box-card{min-width:0;padding:3px 2px 4px;gap:1px;overflow:hidden;border-radius:10px}
 #boxGrid .psg-box-card-art{position:relative;height:64px;overflow:visible}
-#boxGrid .psg-box-card-copy{min-height:12px;line-height:1.1;text-align:left}
+#boxGrid .psg-box-card-copy{margin-bottom:-2px;min-height:12px;line-height:1.1;text-align:left}
 #boxGrid .psg-box-card-copy b{display:block;font-size:11px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #boxGrid .psg-box-card-level{position:absolute;right:1px;bottom:1px;z-index:2;padding:1px 2px;border-radius:3px;background:#ffffffe8;color:#111;font-size:10px;font-weight:950;line-height:1.15}
 #boxGrid .psg-box-card-copy small{font-size:10px}
