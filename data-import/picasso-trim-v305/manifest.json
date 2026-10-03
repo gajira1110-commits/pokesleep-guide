@@ -1,0 +1,1984 @@
+{
+  "source": "PSG_Biblo_margin_trim_20261003.zip",
+  "images": [
+    {
+      "path": "assets/skill-icons/almighty.webp",
+      "originalSha256": "448dd8e84b3d2680af7e396cd9e429bebc7423d2db3fd7d08e0206b95776eb2e",
+      "sha256": "5b9372e605a0fdb6ea72efe6c401608efe25f4308ea79fdbc62596a59f1f3d90"
+    },
+    {
+      "path": "assets/skill-icons/aura_sphere_dream_shards.webp",
+      "originalSha256": "1f8f9dcf97a2f3f4186e89930a8b63c6c42271128d0aeec60bd143d84b9f132a",
+      "sha256": "e0676b125d525cb706db468d52860961d25a84c565d620db683b42e8461590a0"
+    },
+    {
+      "path": "assets/skill-icons/berry_burst.webp",
+      "originalSha256": "ae737b608fa128d6052366e6ef1b3ff813f89bea7f8077d0cc10fbcbb393b0ad",
+      "sha256": "b107f7e87f71b2a8f1469cfe5b9aa33b682ea626841ec32dd8ae63eab9405a72"
+    },
+    {
+      "path": "assets/skill-icons/berry_juice_energy_for_everyone.webp",
+      "originalSha256": "522cbf8ab8837b4cca53401a1e920ea471ae1cd4a6b05fc3b4212d1ff4fd00c9",
+      "sha256": "84f8306eb0b4241e6a0696f876ba34ba617f49512d475894470e74f426cb9c62"
+    },
+    {
+      "path": "assets/skill-icons/bulk_up_cooking_assist_s.webp",
+      "originalSha256": "21e3c112fed536c066a7eca8d6df1e41305eb39181aa440fd247528b4059595f",
+      "sha256": "040b4cbbfdbce6993755ec82f211a292bc83a3cbe0981a570fa3a83e153b19e5"
+    },
+    {
+      "path": "assets/skill-icons/cooking_chance_s.webp",
+      "originalSha256": "d851347a0f37619ed61feda29c256021775de045fbff058c5891515fa56b2153",
+      "sha256": "fa05c7486d748209e9be9952fbea6e98d77c3c056a258dd4162b67c0e8147e1e"
+    },
+    {
+      "path": "assets/skill-icons/cooking_power_up_s.webp",
+      "originalSha256": "3d6bb43af4b6a0b69127164f302705b627c38e3426d05ad60e43a8d515cac281",
+      "sha256": "058b78ba7516af8888f9c176303ab058b132376435464256c4c35fe81af9eead"
+    },
+    {
+      "path": "assets/skill-icons/disguise_berry_burst.webp",
+      "originalSha256": "116b3ac7001e641778e3ad7227e518bcb3d19f1c39532bb21f372c96c0c344bd",
+      "sha256": "b175830c52141ec97f4065a83ebcd21e6f2a5593a83ce637828e6e7a4d33edfe"
+    },
+    {
+      "path": "assets/skill-icons/draco_meteor_berry_burst.webp",
+      "originalSha256": "31bbfe9b5e19ae46091a6f7467c08231fc13c3cfdaea7acd23c5860aa7027374",
+      "sha256": "f1f565a1369b6320ab65b4c9940623abdb9447b37ec2b5c90bbc413705643faf"
+    },
+    {
+      "path": "assets/skill-icons/dream_shard_magnet_s.webp",
+      "originalSha256": "533dd80a0881f1a86acc7037066f036cd1383efb3254a70937b8fd6e7cf5cc2a",
+      "sha256": "4b07514fc046e85fb4b2d22bdb1c8ec12549bdb74f1de2997b95e31ecccf4206"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_m.webp",
+      "originalSha256": "d7ceb2fa58fc74fa469ca8e860a5afde689808b2ce9c05d3352b13928180d90b",
+      "sha256": "d55a4337785fda967dbe69c4c943cec1d5e0a340b03c86a4f85f1b13295962af"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_s_self.webp",
+      "originalSha256": "615c124bcc39f98faabe8d7db952af922e2ee0a7cae5396fb2979d471f18636f",
+      "sha256": "043622ba84f2a93f0bf08420d66a60e5ac6a23490a441af3c27d43d2c53e370d"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_s_variable.webp",
+      "originalSha256": "878792d59aa9a598743d2d91bd028a49f9aa2185dc4c9b236c7a48a77533436f",
+      "sha256": "33014db425dc1be6856bec72c76cf886fe2240c9ab6f40a5d0eeaf1d0741bcc9"
+    },
+    {
+      "path": "assets/skill-icons/energy_cheer_s.webp",
+      "originalSha256": "99b6cdf55c4c4bc268274b606e1beb9b141e34dcfb75a5ac6b875348d9068f00",
+      "sha256": "adb14c9cc4618586a99f21eac2863485b3aec1010692e4e9357e495200f7b21d"
+    },
+    {
+      "path": "assets/skill-icons/energy_for_everyone_s.webp",
+      "originalSha256": "80b932f509a7c4f106c4c56e846bf41002430ecda655629ee7fad2b391e6cbcc",
+      "sha256": "91b40b6b35bc4cbd20ba9a178c2c5dd440aafe4ed04e786d0d670a8277277fa4"
+    },
+    {
+      "path": "assets/skill-icons/extra_helpful_s.webp",
+      "originalSha256": "774e2ccb44e9c9426817d1007405d61322dc83fdbcc0f9d5949891d48bacdf95",
+      "sha256": "1227d55ef44f043045d56c0239db9b653c3adbe3856d6b5ebd7e8ba50187fe46"
+    },
+    {
+      "path": "assets/skill-icons/healing_pulse_energy_cheer_s.webp",
+      "originalSha256": "a56e21aaa5f4d7c01ae3f13b11f0dd53a5f315f157d310871e361d013cc32b85",
+      "sha256": "cbe2f7acf0af1ab89d6f12d9aece5e625dd918b4e52df52e2c76c0ff21e03b4a"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_electric.webp",
+      "originalSha256": "381d127ad039940111c4ed13c198721a7a654eb908993db8ff432e1a00447eb9",
+      "sha256": "7d6a3c7c4f68240cffe19161336e8cdd2f27abcbb3b489a7e15f6340fdd5a72d"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_fire.webp",
+      "originalSha256": "fd3f343508a2eb1a1f4cd670ca94c5d71c58b791c2e13df417cb1f74d77856e2",
+      "sha256": "d5067c80e4a160478300b6008676500ecc7638508a0d7a183ded2e32f601689e"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_water.webp",
+      "originalSha256": "8d1d4bfa638058fc9f997fa2c80982c0d159348ac378d8fe0a33a658c2acc8d2",
+      "sha256": "1d35e5f1c91d5e9b85a5280b05cd7c89cef64269fd9ea1382cabb96d59cb13fd"
+    },
+    {
+      "path": "assets/skill-icons/hyper_cutter_ingredient_select_s.webp",
+      "originalSha256": "5eae00523c557b33196c63a66026517745d52a1e3a9366a39e93ec03f77b85a8",
+      "sha256": "e0018a67cdcafea8ea71f3bb2d39895e9fbea27c7fc5f0bb3984a19b12530580"
+    },
+    {
+      "path": "assets/skill-icons/ingredient_draw_s.webp",
+      "originalSha256": "a2669f32eb837ea61de7be57879ba7b81e09edac3dc3da0716c36e565d0f9b48",
+      "sha256": "e780e8ca768b2e9257a54267e74511cdf92376b26de7daa758089b5108b942e0"
+    },
+    {
+      "path": "assets/skill-icons/ingredient_magnet_s.webp",
+      "originalSha256": "92a31ee5ead6fe25ee9b06a131f78133feb567cf3db31fd5dbbff42d90a05675",
+      "sha256": "b900bf33edd4cbe75da19849536260261e5924cfd74e39e61971cc7571115b3b"
+    },
+    {
+      "path": "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp",
+      "originalSha256": "bdfa334061496e0079ffe5c2dba018c975390a857069a632f7598046ee74f249",
+      "sha256": "638a9579e1897b84dd2643844e7c3a3400887b58a60405d990d218523f22ba45"
+    },
+    {
+      "path": "assets/skill-icons/metronome.webp",
+      "originalSha256": "6e410713461809cce1db9752705b74a2ce1681b72ec9ffd3e0ce6dd14c30a718",
+      "sha256": "746285a961823c3badeea7cd31632e223e0391e626782dcd2b83fb71d1fd1839"
+    },
+    {
+      "path": "assets/skill-icons/minus_cooking_power_up_s.webp",
+      "originalSha256": "664920d06e119349b1c224cda4760f457c15e392a68fc1a4f795f75a2974cfcc",
+      "sha256": "b5e62798c2c830263f9cb78290114f06bec684c160269cbd987595ab6c142311"
+    },
+    {
+      "path": "assets/skill-icons/moonlight_energy_charge_s.webp",
+      "originalSha256": "da5f4a1d587dea6788c6a9bfff66b0e0154269fe9cbcc8be24421f35490fa8cd",
+      "sha256": "47784c2381b7523251cb6f16c4885f5e1c3455a030371e7f6e87df18cadb0c42"
+    },
+    {
+      "path": "assets/skill-icons/nightmare_energy_charge_m.webp",
+      "originalSha256": "c74b9b898602efb26d6e6fc2c6f3eb90fc0b5c9c77716f0c997d6521e09177e5",
+      "sha256": "cc9e6dc355db008e56e35552217471e31da1140ec1ca5202d8b1ea5c8581af5d"
+    },
+    {
+      "path": "assets/skill-icons/nuzzle_energy_cheer_s.webp",
+      "originalSha256": "5161adca6e8ca7a058e2ebe1b71480be1594c4cc3a916a689b361c901eb5aadc",
+      "sha256": "7b4715f335c3cb349470e816733173587743719f05c37d2be0d78a8c5935de5e"
+    },
+    {
+      "path": "assets/skill-icons/plus_ingredient_magnet_s.webp",
+      "originalSha256": "760cea3227eca1338e2543aaf56640608de1a7f36a6ce79d7124f32abb82d244",
+      "sha256": "f9434473eea3b0f16a13ddd715715b6327f6fd45edc63200ab663aa420e5e706"
+    },
+    {
+      "path": "assets/skill-icons/present_ingredient_magnet_s.webp",
+      "originalSha256": "470ef08d04f046e99854127d9174c96f5c0c4be19cab71b22405960565f86082",
+      "sha256": "f97da9ed670465ddb5245f5c50c6436a6a5d58009177000be798e76a635bc5ef"
+    },
+    {
+      "path": "assets/skill-icons/psystrike_berry_zone.webp",
+      "originalSha256": "116039599f78a2f265dc7cd615cf474afcae6b242a56715aec0bf558ed2dd850",
+      "sha256": "ec70b8d8e0f9bbe05ade36c80ce80530eca09447ca84c6093c63bdc8a621c343"
+    },
+    {
+      "path": "assets/skill-icons/stockpile_energy_charge_s.webp",
+      "originalSha256": "f485e27c3f7789dbd62eab9617b0995f3b68e65525a814f6b16d898455fa2437",
+      "sha256": "ce6262e93d434c9027023f66c2d26f1e923481f4da0b20acb1244dc90b02f9b4"
+    },
+    {
+      "path": "assets/skill-icons/super_luck_ingredient_select_s.webp",
+      "originalSha256": "ec128a22bdcfc8b3b2a44818bc3fc6f2b059c7c88ddbd397d7b8dcf48fe0da0a",
+      "sha256": "7385e4d1fe470e28f8402771491194281ea6ca429daa7dcdf2092c091d633bef"
+    },
+    {
+      "path": "assets/skill-icons/transform_skill_copy.webp",
+      "originalSha256": "e1ed1216507fd0b5dff681ac34cbfad955680bd02fd18035ea1c7b25da183e91",
+      "sha256": "0377a103e8fb9de8a31f34140a26caab132c893a697c44ba3f3c5f9ac13f547c"
+    },
+    {
+      "path": "assets/ui-icons/dawn_stone.webp",
+      "originalSha256": "10c9b4ffaf63d99c7badc0bd37bf62dbce77dc258e6749f48a9172f9ee46a97a",
+      "sha256": "eb91db3eb388bf8da9ff4ee8b5e486a6f141ba32cac2728e055634701968f2f0"
+    },
+    {
+      "path": "assets/ui-icons/dusk_stone.webp",
+      "originalSha256": "4280df241858efb02b74638f60d25cda14914342e8240878f82eacffa3bf1116",
+      "sha256": "1939edf813a35e877ad887575ce3dfb906bef8fbb3b3692abfd5168b7e640e5e"
+    },
+    {
+      "path": "assets/ui-icons/fire_stone.webp",
+      "originalSha256": "341e259876673eecde59ae46c5141d751bae9d80e2a9308178a8212ece100961",
+      "sha256": "6e0d610936a5f82fc028726bab9b405671ed93982ff0f4485c87bcf39be4cd98"
+    },
+    {
+      "path": "assets/ui-icons/ice_stone.webp",
+      "originalSha256": "d3bb5c9fbf7e0ff9da9e8d85fb6f681e65a4805e515d7cf468942111853958e3",
+      "sha256": "c18943396373d756633ce14aea6e62af119a1803749b17bc7f5022f8dc084122"
+    },
+    {
+      "path": "assets/ui-icons/kings_rock.webp",
+      "originalSha256": "5f7252ba8fd6b1361e6dc520c8d398c9fee9ba848123177d4fe75e5e88698ad0",
+      "sha256": "38b5d41e937d11a230f7302db1722972eeac28f6ac135ecb0a9a86a00448fca2"
+    },
+    {
+      "path": "assets/ui-icons/leaf_stone.webp",
+      "originalSha256": "b21c8a17a97c73c720aeae8fa80ee34482c1b7799afe29a6cc0d8844d73159ac",
+      "sha256": "cb00cf69b1a6930fbe17b9853e28c14751d8f7383d99a7f324041cc9ce479982"
+    },
+    {
+      "path": "assets/ui-icons/linking_cord.webp",
+      "originalSha256": "7c7def58dd1076a73fca92a5c5c83d906e02fd605d15ef676307283452335c9d",
+      "sha256": "bbc4eea5ae6dcadcc85f046e3972224b02fb16df45f25809958cc5f11170c29d"
+    },
+    {
+      "path": "assets/ui-icons/metal_coat.webp",
+      "originalSha256": "8f40350e7d33b49321dd3b71ce09d121e2960e2ebd3e5472542aceede8e473ad",
+      "sha256": "ab2101a7071daafeee0559c1c2d4569078a6f1a6f6a05a3b1badb0097bd18da6"
+    },
+    {
+      "path": "assets/ui-icons/moon_stone.webp",
+      "originalSha256": "9943012376d3160cfc01b08925a5eabccf6bfcfc8964eb74daccda367ccabcd2",
+      "sha256": "6d448694963754ae787b31db031b8e829d65ad4d42b9da5a5f3ca2087ec82a7a"
+    },
+    {
+      "path": "assets/ui-icons/oval_stone.webp",
+      "originalSha256": "9a4747a0991e2f0c144e3643b4044a2318bf8fea05d32f6247dd1869e8e47e40",
+      "sha256": "a6e95255dd1dfeaaf9578b598c617dc58dec12f3de9f9e9d968a8b517fbe921e"
+    },
+    {
+      "path": "assets/ui-icons/poke_biscuit.webp",
+      "originalSha256": "c94371017577078f1a2ff1c308d54f1f13284df2cfa3efcabdf9bd2162719231",
+      "sha256": "14d1bc4d889d5eae887c944035813933d481f0ba90b7ca03ed0fa5e1c5fd4a95"
+    },
+    {
+      "path": "assets/ui-icons/rank_great.webp",
+      "originalSha256": "1f2f9e4222fc23a0f24def088c9ddf42ab61742a8858f7e431305cbdb7ec5b61",
+      "sha256": "9e155b1a875c1292e59d048496446d0645dbde5f496b3447b8c1ddf1e55a8bea"
+    },
+    {
+      "path": "assets/ui-icons/rank_master.webp",
+      "originalSha256": "56489f7a8055f217192ea123f8884a9295d519552443dca60b8af15c4d1027c6",
+      "sha256": "b0caa27d33d1cace20fe72605e22c75da34a100cafbd9be752a0ea07b189fbae"
+    },
+    {
+      "path": "assets/ui-icons/rank_normal.webp",
+      "originalSha256": "a71d58a91389c8c0f524475253f893367996322fb81dad5339491324e46a4f94",
+      "sha256": "8697fc3c0a58ce9e89c02c2c14c93e9b789d4e97357775a91f8f30a66de87932"
+    },
+    {
+      "path": "assets/ui-icons/rank_ultra.webp",
+      "originalSha256": "6fb2b4c88b2aea6fdce71eabb8fe84aa21d2c7df4c5c567312818d726f70ecbf",
+      "sha256": "0633b4d82b02e8225ccc6a147a198125a2d249ce76f02882dd74cf67de990420"
+    },
+    {
+      "path": "assets/ui-icons/razor_claw.webp",
+      "originalSha256": "66d80dffc994ec193a2309caf79308821024c76dfe73bda9ec8e8a4f949bd19e",
+      "sha256": "47f16fb4b36b5c66969f9bfd8c7269e2d39b8646d5a71da3fc3e837286161f82"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_1000.webp",
+      "originalSha256": "e406a544d770c0cdba29485019cbc852f25d1b01427b64669fa62b66a9b288ab",
+      "sha256": "59b636c440eb4e2673d1dc6c019ecb92a1e3752bed5bfcc1a69b2a997fefdb23"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_200.webp",
+      "originalSha256": "2b399524df4213ee0aaf34059a38f1e66ceea21ef1aef86c83a7d3e2b2e11940",
+      "sha256": "8b85af44b46cadaa183f7a2b9c0938fcedde311957e65f6c91c9daf187f41f03"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_2000.webp",
+      "originalSha256": "dd3fc97a0bcfe0727c5cd5be1e9b6c594c6421add0a449a446306ebc3582ab75",
+      "sha256": "c3c304ddafcf3ac5c35d1e95f2343b4011ea31984c1eede2127cc92c809f4a99"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_500.webp",
+      "originalSha256": "310af97f71d5ff4a117a645d83f5912631ed7e88c1c21937b60013d0d8332509",
+      "sha256": "b3fdde89192172fab5cc4d7a4794a47606cea33d542e779a144d5a461107d508"
+    },
+    {
+      "path": "assets/ui-icons/shiny_stone.webp",
+      "originalSha256": "488f46388ff5ee125fb13b6de4db876dba06484310635b94421fd1e09e5e298d",
+      "sha256": "ca52987ef971618ec4b70e14bcdd36c76decac5df3484fc5f562d334428b4b4c"
+    },
+    {
+      "path": "assets/ui-icons/thunder_stone.webp",
+      "originalSha256": "c708608fa1767d474a3e6987f082cdb0df1d688439076bb6aabd2b81bcde0353",
+      "sha256": "5b6a341cb7496662c7de7b5d813afb2b4d7fbaed4e3f6cfae4235a0ec9dc2f36"
+    },
+    {
+      "path": "assets/ui-icons/water_stone.webp",
+      "originalSha256": "a71e8576dbfb92a6540fac64eb958a18b37c8ecb5f9bd9ec32abdfa7ed1457c2",
+      "sha256": "efec0f31990dd4aa65c1cf6acf398aaed9b24bb38964538b6e999cd3e5786fd2"
+    },
+    {
+      "path": "assets/ui-icons/white_mint.webp",
+      "originalSha256": "971033b261442898b0fbc44c5597830242ca7fda688c292e9a8902bacf3d7f8a",
+      "sha256": "218983a001efa0bb769a89609100a2ce409ce3e988da62466f06e3bfd77d6fa4"
+    },
+    {
+      "path": "assets/ui/favorite_off.webp",
+      "originalSha256": "c3f2f9e91ac4985655b09d0d2960fdf68b078f3ad8f023f04e6822b3bb7b928f",
+      "sha256": "05659a508fd19d5b1c2b1c29a4ede49ae827128431b7cd302820f99d25c9b4b9"
+    },
+    {
+      "path": "assets/ui/favorite_on.webp",
+      "originalSha256": "59a917014fe0ad24e60b14588365add5b083230c8d6d13133bb399d0730ff7cd",
+      "sha256": "87714dd457e69201478954f22290130e4904ff9293f1f6422bd73eb06fcd7c1f"
+    },
+    {
+      "path": "assets/ui/helper_whistle.webp",
+      "originalSha256": "dea4345ba37d13202cac88ef0fe805cc7ebd71ad3dc27f8d373461893cc98f3b",
+      "sha256": "80a15e3ebcc1c3f7fdb829689e722067c99e27ff4b84a7ab36c7a11f416745ef"
+    },
+    {
+      "path": "assets/ui/info_cooking.webp",
+      "originalSha256": "87d619a08131ce75d9ba9c1594f6e4214e883c48453dfa9556bc37b822f042b5",
+      "sha256": "c707a4c8028afd2b3336a1ff67f478f12bb97b310ea484d133293c1ca3c9f789"
+    },
+    {
+      "path": "assets/ui/info_fields.webp",
+      "originalSha256": "701a0e7a66624435e23dc391829f2b3f7cce8548ea00b984ed406e614ad951ab",
+      "sha256": "96247218fa3aefd421d8a46ade8054f34d6e827b7c3d8992db93eee2188e734a"
+    },
+    {
+      "path": "assets/ui/info_ingredients.webp",
+      "originalSha256": "8f86b64fb919a0c68b912db41b413051c69b9a6bfe0fa7df89cb5d9c3be14fa0",
+      "sha256": "ea69ecbb2fe4b112a14baac143708837eb7e5a51ff49f1c9ccf316dd9bfb8ca7"
+    },
+    {
+      "path": "assets/ui/info_skills.webp",
+      "originalSha256": "d4a577bcb13db784a38a431ce1006961ae00be07a93dcfff5cafda8510a63f71",
+      "sha256": "3213d26c790fffeffb1f3657db279a99321a62607446f603e566808dbb9b2098"
+    },
+    {
+      "path": "assets/ui/special_pokemon.webp",
+      "originalSha256": "bb3716290112dd30886545112224dae41f649b7d665d66259095a46dd561f980",
+      "sha256": "ac0bbe8acc86f2959229b6c45e2531f34b221d73de7ffacd3227338f89f097d6"
+    },
+    {
+      "path": "assets/ui/training_off.webp",
+      "originalSha256": "505a8ed568aa0c2caeed693e8e38c7f8a1b7f8495be4a971fbce8ea27d6657bc",
+      "sha256": "90a5bd300a0c294a3645c57dd8c211abd820aa58fae568c44a6bcc3245ad79ce"
+    },
+    {
+      "path": "assets/ui/training_on.webp",
+      "originalSha256": "ff824938ada251c76105944fee0c35ea5175e67349ccfc6063a52bf18d3bb181",
+      "sha256": "ea134c91d48906b96124fcabfea904527b3b4f112b817f45deac832b200d8cd3"
+    },
+    {
+      "path": "master/berries/belue/icon.webp",
+      "originalSha256": "829b7f54e5d852b2142c1ff041c5cd4dd1fa10ebd42be0c6a851a6b4c7d0bfe0",
+      "sha256": "86058bdda1ba1e0327627bf39f6f071069fd4213e28596b7c744797ac371230d"
+    },
+    {
+      "path": "master/berries/bluk/icon.webp",
+      "originalSha256": "c9457d0384be589915bdd92b6138b16a2e0c151a87698557808d485db97233ec",
+      "sha256": "428351e827fb9de803a09dcfb20cf767c6cdd7a30a6441e101aff011c3f1e879"
+    },
+    {
+      "path": "master/berries/cheri/icon.webp",
+      "originalSha256": "1ba5897e75d92bc504d206e2e54701cc6f9cdbe38d272492df2d0318aa3b6d65",
+      "sha256": "ce989f82963981416ca2f1f2a21e40d9c2a782b8f78d7bb4a48bef9ccdecbb7d"
+    },
+    {
+      "path": "master/berries/chesto/icon.webp",
+      "originalSha256": "66f46c5007e408a93800a16643271bd3e064a7f94503fcdaa1c10e3cd71bb66e",
+      "sha256": "b67020bb4a3adf2a6108a1ebbed38b548ad72aa837bcbde019c8788f4ff7b2a0"
+    },
+    {
+      "path": "master/berries/durin/icon.webp",
+      "originalSha256": "3f834e66cea7554b65a898d0893c8506d92497f9a2d23da22c347d4a0ebf8b80",
+      "sha256": "9c696120d962ddfac53319d8455ae41b87e378e738075e9549539a938bceeaf3"
+    },
+    {
+      "path": "master/berries/figy/icon.webp",
+      "originalSha256": "81911a099101ec1e75e6b42beb4bb9578978df51096492806f359b2d1cd37da8",
+      "sha256": "d48a8fe05e2fab760d12f7fd88eee234d8f9d45a54137103272fa3ca8e2a8275"
+    },
+    {
+      "path": "master/berries/grepa/icon.webp",
+      "originalSha256": "f457c31ae100b1797758e848e4fb152ac058aa6ee3aea28717c3277d70251008",
+      "sha256": "d73f744e78392cd4d341bdd99827bcd80c227dd84593dbe1947d79323f4a2902"
+    },
+    {
+      "path": "master/berries/leppa/icon.webp",
+      "originalSha256": "45a706079d75b7ca5940e0c685363397543f67425111c581d8bbe8344b0688a8",
+      "sha256": "60c1f46525831fd128a4514a11cd8fda9ba06c100a1820e22eece9b9e01121e5"
+    },
+    {
+      "path": "master/berries/lum/icon.webp",
+      "originalSha256": "8bb84f328688f2e3a9cb65cc24b55fdab3cb59466365ef2c32fd98b89d8daa6a",
+      "sha256": "0d019e71bf309e934482277441965b538732ce97e2df10f3fd0e0ab15607207a"
+    },
+    {
+      "path": "master/berries/mago/icon.webp",
+      "originalSha256": "80a229182318d019ff5b12e50db1dd5dd579c6a952139f64c54238720c4670c5",
+      "sha256": "3f262ebd80577cfdec3ec2675c360bb32a5ea4419b2700904d1d80049eaaa6aa"
+    },
+    {
+      "path": "master/berries/oran/icon.webp",
+      "originalSha256": "bf8b92d1b8d105dcab30161efdc2712e263ecc434ed410043e327e52ee8bcef9",
+      "sha256": "e87ca4a6b8a66495d0e935c771f421d8c65719eeb570d97576972dd3e4ec5787"
+    },
+    {
+      "path": "master/berries/pamtre/icon.webp",
+      "originalSha256": "f39a6c9a6ce1c25ab67f6154296db2ec646d832dd27a9a60850fa3c05fcf57e9",
+      "sha256": "6c99324ac3063cd17f64af91d43f03cd28a6e068b13fd80c44f5b7c5d62a268a"
+    },
+    {
+      "path": "master/berries/pecha/icon.webp",
+      "originalSha256": "bd5d8a130bb4714ccde0ed21d251dd19829b1aac5e4f3ae0c06713707b1dc750",
+      "sha256": "c76b5e1edb6ce7adee25aba598e3040f9cffcb76278b567649f6ba0ed4d32e35"
+    },
+    {
+      "path": "master/berries/persim/icon.webp",
+      "originalSha256": "ca40f1b652897847b9d01005c48b8dc6ba7c476e30d996bf02f45508334ae6a2",
+      "sha256": "413553b5799fb61b65ee74688f3d78d6bc3ab734f04dfc3333e8a3e405647613"
+    },
+    {
+      "path": "master/berries/rawst/icon.webp",
+      "originalSha256": "65b3ce7cd5e70a65589beb9defcd68b599ea4179dd949b906ce6593ba2ee6a3b",
+      "sha256": "d946275dd92f63b9f3729f57b602ef6e388645516aa48986e41b1770f522ebb7"
+    },
+    {
+      "path": "master/berries/sitrus/icon.webp",
+      "originalSha256": "337cdb11394b7bb0d97c7d032e36a2be83a50f76b725e81f97e0d337d6410ad3",
+      "sha256": "bed041c6c4a3cb5416ac7e103f94d5f2d4659573e655e2a92376279d26efae57"
+    },
+    {
+      "path": "master/berries/wiki/icon.webp",
+      "originalSha256": "3ce6f1b1d76980f587e751f774cef4c432ba6aeb70a8921ce470482577edaf8e",
+      "sha256": "ddb8f884cd3cdccaf130f35f28f4e96cd92c025926bbf19b61e0755b7e544106"
+    },
+    {
+      "path": "master/berries/yache/icon.webp",
+      "originalSha256": "f208c52b7d0102e1c8ea20bb407becda874e756a83ab65451b729066c742e053",
+      "sha256": "1cb610f282dc6a9bc1e472ccfe968a7e7c8a646c05b193bf0154a5ab4177f004"
+    },
+    {
+      "path": "master/forms/artwork/0025_captain/face.webp",
+      "originalSha256": "a82794d8eba2a278103f04c25b9affb2848295baa5bc17639b3df4194736907e",
+      "sha256": "d9abe558d0d939b3217b935140f42f6f522f2b2bb41f8dabce9f5da39b37b7f2"
+    },
+    {
+      "path": "master/forms/artwork/0025_halloween_23/face.webp",
+      "originalSha256": "fbf34b59d2436ff47feeffcd4df4e3c1ff1394602505787ec56cf363dcd4f856",
+      "sha256": "b9b3f26b48767313e525e6489fbd8e340484ebbf0caf9b45db6319066bfba1e8"
+    },
+    {
+      "path": "master/forms/artwork/0025_halloween_24/face.webp",
+      "originalSha256": "fa14e0271d6b46d7e44985d9e3d2213598e09e4b38f735b41c15fcd35225e06a",
+      "sha256": "ab2ed7c33c2fab01a41a5f2b45599ad660daf5a3fcdd54b98fc13807e08b61bb"
+    },
+    {
+      "path": "master/forms/artwork/0025_holiday/face.webp",
+      "originalSha256": "2076c0dde07a487ccd9808091401d0a98fffbf21c21e951ef692e1677df7d528",
+      "sha256": "c33134be5211055bde9fa5d95b1f22d3cf18373ee19b7674d70f7763e612dfc4"
+    },
+    {
+      "path": "master/forms/artwork/0037_alola/face.webp",
+      "originalSha256": "235f5ebd2a7b020e219f30ff5ee6316419dec809aeb46fa6004f15ec29f8f07d",
+      "sha256": "f0bb1fcb90e73c62dd2097e020e06b39c95e42c0c5488af3428348753e419532"
+    },
+    {
+      "path": "master/forms/artwork/0038_alola/face.webp",
+      "originalSha256": "e15874733917a8747548cc3e1f434c02b633cb27cdc8c96dd856834a8de2e74e",
+      "sha256": "97cc7beefc58af1c3d06bdfbe0e3bd88f5cf0959fae648a8573e017aba8812df"
+    },
+    {
+      "path": "master/forms/artwork/0133_halloween/face.webp",
+      "originalSha256": "b2868373a84a8a303f86c5140bd47765b821130fb95bafde5275939ce17d5d7d",
+      "sha256": "e90d6004b4242e8c2978c3fcbb2ce21b0c9adef190dd4e293e9f3552eeef8af4"
+    },
+    {
+      "path": "master/forms/artwork/0133_holiday/face.webp",
+      "originalSha256": "de06c6c893290b8c60ce0eb9284d337d7af80353b65ce890c35c3421283e95fa",
+      "sha256": "511f5c6b16777ec150208ff7f956892ee620e33735b1675ab7c4d1e9a7617024"
+    },
+    {
+      "path": "master/forms/artwork/0150_default/face.webp",
+      "originalSha256": "e6e092a0377bfa6bdf040750869ee0c3eb291b5fd4dd942326f8a3d29f72d60c",
+      "sha256": "69aca6bd610d94bcb716e9d021c8ff1f7651d1a4821b20dcd699e86d42a59916"
+    },
+    {
+      "path": "master/forms/artwork/0151_default/face.webp",
+      "originalSha256": "11b122dba1adf294e028d02dcc27229e661ff7c7c967e161509b07990fceb8d6",
+      "sha256": "980394139893b7c08087c1cd523f398bfff2c1989870bfa258c75f8f384989ab"
+    },
+    {
+      "path": "master/forms/artwork/0194_paldea/face.webp",
+      "originalSha256": "8304a1607d8f3d2bcffe1cc7f93d67a6261631dea40eac4d530bde9a0ed22058",
+      "sha256": "85397d9c5af45d1cb40b531deb9a695ad019c06d49fc8de47199f7e67595c4f5"
+    },
+    {
+      "path": "master/forms/artwork/0311_default/face.webp",
+      "originalSha256": "d5c109fd939cbbc76103da516cd617ffe88d56a8d8016b8d67dc4ad47d562d5b",
+      "sha256": "4902c855b4e198d739789b260afc282e81033880f04c7c92b22fcad020f66946"
+    },
+    {
+      "path": "master/forms/artwork/0312_default/face.webp",
+      "originalSha256": "10e4f6e56b343427380bbcb7d02e1842013736d6f776a4482586cbdb4f8d9e2f",
+      "sha256": "6260d4d51a2d8ad51c5eaafbc41fd5c014c2c4c753ffba7a27dc186cef5395c1"
+    },
+    {
+      "path": "master/forms/artwork/0363_holiday/face.webp",
+      "originalSha256": "d72d1da240e96bd296209feb6c73932dfeff6e75bd9637c2700acb92895ba984",
+      "sha256": "d4bd61308aaa1be90f01db044f6bf9b50d92bd6956305cb63063a6b28d02941a"
+    },
+    {
+      "path": "master/forms/artwork/0380_default/face.webp",
+      "originalSha256": "63376921b08cfa49db0ec3c17bb878828bf175100d371a4df725d3ce91c7849d",
+      "sha256": "0030f81b2ddd1319cd0568e704adb2121e61878a666947777738f31b298c299b"
+    },
+    {
+      "path": "master/forms/artwork/0381_default/face.webp",
+      "originalSha256": "ac9aac90e205695242d82d38222ad6c9c6904a7a00dd19b922372a21c1a021b7",
+      "sha256": "1e2cb28cff0e0fd75fb76a8948a1a976a6baf5e22e1579b34923187763612956"
+    },
+    {
+      "path": "master/forms/artwork/0425_default/face.webp",
+      "originalSha256": "93b6771dfb0598c5c579fd65c101a6ae392372dc5138c060182cc5c3a2aaa857",
+      "sha256": "59858947ef28b49f68de15bc984e1733161f6fab26e4f6d97b7b73c492954aed"
+    },
+    {
+      "path": "master/forms/artwork/0426_default/face.webp",
+      "originalSha256": "ed94195d917f8c37a932d68c04df77c7557d6070a4b2e6bbcb74a0ba204b4db3",
+      "sha256": "375cb95891187e4bcd198e7d69dd33e71b59d6688cbe464047cafe13b130f77a"
+    },
+    {
+      "path": "master/forms/artwork/0488_default/face.webp",
+      "originalSha256": "bbbf34fd2c1037ca54c1051ad24e1ef5073b6ce0b19434ef3ed93e140baa5465",
+      "sha256": "68f5171399ba0eb700b711c2f3801ac2c3a0b7f6169fb14148fdd13b44d1e932"
+    },
+    {
+      "path": "master/forms/artwork/0491_default/face.webp",
+      "originalSha256": "e655dd1b0b5a9ac4a2f719787a6eaaf49cd18d40e751f2f7fe261aba2401b6f0",
+      "sha256": "883de3f44bdd861bfc095bf6ddf829e3066ac4ef1a61442e119206a312123d79"
+    },
+    {
+      "path": "master/forms/artwork/0710_jumbo/face.webp",
+      "originalSha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118",
+      "sha256": "25a5f792450cbe03a978231ace2e400c55c6a0f6304a690622f429a418f52b99"
+    },
+    {
+      "path": "master/forms/artwork/0710_large/face.webp",
+      "originalSha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118",
+      "sha256": "25a5f792450cbe03a978231ace2e400c55c6a0f6304a690622f429a418f52b99"
+    },
+    {
+      "path": "master/forms/artwork/0710_medium/face.webp",
+      "originalSha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118",
+      "sha256": "25a5f792450cbe03a978231ace2e400c55c6a0f6304a690622f429a418f52b99"
+    },
+    {
+      "path": "master/forms/artwork/0710_small/face.webp",
+      "originalSha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118",
+      "sha256": "25a5f792450cbe03a978231ace2e400c55c6a0f6304a690622f429a418f52b99"
+    },
+    {
+      "path": "master/forms/artwork/0711_jumbo/face.webp",
+      "originalSha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259",
+      "sha256": "92d9355020e0c1a6bff62dfbe87007e048f42f8b1480a50285a903a1e8af9b5a"
+    },
+    {
+      "path": "master/forms/artwork/0711_large/face.webp",
+      "originalSha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259",
+      "sha256": "92d9355020e0c1a6bff62dfbe87007e048f42f8b1480a50285a903a1e8af9b5a"
+    },
+    {
+      "path": "master/forms/artwork/0711_medium/face.webp",
+      "originalSha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259",
+      "sha256": "92d9355020e0c1a6bff62dfbe87007e048f42f8b1480a50285a903a1e8af9b5a"
+    },
+    {
+      "path": "master/forms/artwork/0711_small/face.webp",
+      "originalSha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259",
+      "sha256": "92d9355020e0c1a6bff62dfbe87007e048f42f8b1480a50285a903a1e8af9b5a"
+    },
+    {
+      "path": "master/forms/artwork/0777_default/face.webp",
+      "originalSha256": "546ceaa54bec633fbfb099de2a9b629a8555fdd32308683aac669ee63a47befb",
+      "sha256": "2a7d482a79a0b7a72d09f82e735eb18ae0ca7fecf02457f8ebf27b86c4e17cc6"
+    },
+    {
+      "path": "master/forms/artwork/0778_default/face.webp",
+      "originalSha256": "12b6bcf8c452ab7d1956bfb88c8a6021783c6cc365f01190c59831bb39ee805b",
+      "sha256": "5ecf628c56789bc7e68a7698d0fcd99e6701ebcf48b87437be890052d030a127"
+    },
+    {
+      "path": "master/forms/artwork/0849_amped/face.webp",
+      "originalSha256": "927ea1671e81f34154b12fa0b8437a66453821783dfe70a9dff1cbe273b95056",
+      "sha256": "cfb0e55a88a6e1e894cf1086cd5f8aafe8dab646f7e7c0b6922b8498e44f493e"
+    },
+    {
+      "path": "master/forms/artwork/0849_low_key/face.webp",
+      "originalSha256": "569db69c8313df51f4c99554ca4f8974a2cfeaf00467f0684dd983e9d9205c9c",
+      "sha256": "5b5bc0841a4b2f621c75b43f9a756b599327546bd5e8308c1250250d0b913a12"
+    },
+    {
+      "path": "master/ingredients/bean_meat/icon.webp",
+      "originalSha256": "84b9deb763d2cfad9eedec0ea22738decaa080f591131abbb59281288a6512a8",
+      "sha256": "46c61c5fcd9ba5de5d132e8ca6c0d9358549572eadc30f8468469b473e5e047a"
+    },
+    {
+      "path": "master/ingredients/coffee/icon.webp",
+      "originalSha256": "aac6541d30fb51cb59ed1e5ab4c5b805e613f97a94e67c1566de7d7dd88f8de3",
+      "sha256": "4cf4c398e434809c92f95336a8e1e5dd18fb2925eecdf6b245e9093f79404bca"
+    },
+    {
+      "path": "master/ingredients/fancy_apple/icon.webp",
+      "originalSha256": "fcaa673449feb5078fd47cf679743a065c72c1a0b1d5e53a11e9a5e249275c6b",
+      "sha256": "e7d7bf8aa4a3f88587cd7484834314d630d8f2302ef487c480e7f699b238e585"
+    },
+    {
+      "path": "master/ingredients/fancy_egg/icon.webp",
+      "originalSha256": "dc8d4919cb2e70f80be4ff77c414e460c0651dd7c5f8f0c126edd092782b78fc",
+      "sha256": "d67128820927312cb785d6e3eb31880131774b5fd19a7d92aaa914f21810c939"
+    },
+    {
+      "path": "master/ingredients/fiery_herb/icon.webp",
+      "originalSha256": "78ff405f386192f03cfa7e3270762cbfbe6eb87977bcd2c3f17ee92494af68e9",
+      "sha256": "187a41ae65a470f7615c96d37777a4746444b287637360767543775a74e86c36"
+    },
+    {
+      "path": "master/ingredients/greengrass_corn/icon.webp",
+      "originalSha256": "c4b003634751adb60bd18933b69b77a6f64b24d472a2456e05208f696fbe0856",
+      "sha256": "d947b060a6df456cede89b7027a613c768be13233d77f0a66e60c2cd95e0adf1"
+    },
+    {
+      "path": "master/ingredients/greengrass_soybeans/icon.webp",
+      "originalSha256": "8666272ecee0ccab19260e062383f7bfc9f62e47703ccd071c8926d5ac89df05",
+      "sha256": "72e5a2024ddb5dd204d1086c02e745bed4a60a340cfbe9f5a4f53c2d056c612b"
+    },
+    {
+      "path": "master/ingredients/honey/icon.webp",
+      "originalSha256": "eac12b867ece4eceb098eadaf00fdc8e0de60f266aedc337e787512160feb3df",
+      "sha256": "8d2263f762be7928da787d096db299c15ef804cc0f365b36a143145873a55c03"
+    },
+    {
+      "path": "master/ingredients/large_leek/icon.webp",
+      "originalSha256": "b5b4cb888c529e028620bdd933705ee267463f2e33b9c4e071e406202cf3b07d",
+      "sha256": "b55bb8a1498826f0b8e83b4692707133abcbef6197cf29ae7d35aa47fe8c4358"
+    },
+    {
+      "path": "master/ingredients/moomoo_milk/icon.webp",
+      "originalSha256": "c42f5e7e4f5c545e9206cc990375901a364a3d09542c86205a147c52b1892680",
+      "sha256": "0c5400184cda27d89e32ec01752b7429ac8a5ba5478bce27359add49377c4819"
+    },
+    {
+      "path": "master/ingredients/plump_pumpkin/icon.webp",
+      "originalSha256": "18b03d30b8a076c24b7091eb27da469a888411d276eb77b6f03752f9f1a8d562",
+      "sha256": "eb7f573262412b8af746ae0663e89c4bac6775155010bf1af547a9a1c6968224"
+    },
+    {
+      "path": "master/ingredients/potato/icon.webp",
+      "originalSha256": "76e481c02e8cd43a19104fbcccabeacb8c88dd6ab55e35b8127d25de48aec851",
+      "sha256": "08c54edf3325d2828b26f87fb21ae487e046bf906601513d9b2dbd1742a87849"
+    },
+    {
+      "path": "master/ingredients/pure_oil/icon.webp",
+      "originalSha256": "a515bca89a15944151717e86feb297e7f361696dd388ca1b5cc540e3abdb1bff",
+      "sha256": "97f1438abffb01a31b466cab6348efaddfa2200e7c9f2464ffe9aab2771e286e"
+    },
+    {
+      "path": "master/ingredients/shiny_avocado/icon.webp",
+      "originalSha256": "242503dd9309415950cc0ae65d61ae9f5e706fc9891053dcebf5a995524f0e8c",
+      "sha256": "9486515538aac34bfb26d2246e5df65468973efd942969e8a23c2aa393382372"
+    },
+    {
+      "path": "master/ingredients/soothing_cacao/icon.webp",
+      "originalSha256": "12758bc7455cfd1987fdb3b9b28e9432f4ee8df037ad277f9c3fb4e5f51c0659",
+      "sha256": "63a7b9e15754a3c901bc54710e5d84bf3538fa234ca1868669be7cc9cc376b54"
+    },
+    {
+      "path": "master/ingredients/tasty_mushroom/icon.webp",
+      "originalSha256": "415ec0d730de354d9675bdfc5066081b8923ad8e61d503fe5cec2563d4ee1797",
+      "sha256": "7312a7e544e615289618d6831e7f86c9ea59caa5d65ea91dca0b0959203fcc93"
+    },
+    {
+      "path": "master/ingredients/tasty_tail/icon.webp",
+      "originalSha256": "35a9045694a03294e44b1d1c0282952ebf09d344f7c57b4054bc4636f081969a",
+      "sha256": "9588abd84e4d979356f5381d6c766e91f00235c250b33f5fdea3e9232cc98704"
+    },
+    {
+      "path": "master/ingredients/tomato/icon.webp",
+      "originalSha256": "903a63e94d24dd277b84adb072d86d5df75504736112efd12c18cf85e26c4dd5",
+      "sha256": "719bce54756d4991cf582c7ce404cedd1e07fcd36681159baca582908853cf07"
+    },
+    {
+      "path": "master/ingredients/warming_ginger/icon.webp",
+      "originalSha256": "711d233913b25c58eeb647a2760ad7d0faca6268d6be606d5e1a1f4998d9a176",
+      "sha256": "9d83ccb56904771c17796db8aa88bd4b9227a99a723803ef633f5f6f7cde216b"
+    },
+    {
+      "path": "master/pokemon/0001/face.webp",
+      "originalSha256": "2b4c7a18bba907cd40dd7043f500cc900ea0dfdc9a6ff2712d2a63e3e0cdc6aa",
+      "sha256": "a0347bb0dc45cb646b213a3a5dcee12aacd9975333e5a6151429e18436d9f9ec"
+    },
+    {
+      "path": "master/pokemon/0002/face.webp",
+      "originalSha256": "5445eb48f245465ef337e1de5ba5eaf573c11f3fa4a7aede65ee22deb1eb0576",
+      "sha256": "daef28ce479d957c06ead16d92335a3d921c0593025386a7ab74986c4637e4ca"
+    },
+    {
+      "path": "master/pokemon/0003/face.webp",
+      "originalSha256": "db4bbbb5e8d0ce02d4689df4e25e2f3492dd1933e0f53b2d8e9cc1d60b12faf6",
+      "sha256": "f8539c07a0db1a0ac2dd5cbb78c83fdad2deb21237f021e962818b10389ad70a"
+    },
+    {
+      "path": "master/pokemon/0004/face.webp",
+      "originalSha256": "0820f4f20e1e4fd00cc87b838acc40cefd4916911a8eb2e2abf5f79100035996",
+      "sha256": "bf1452f5858b3e69e96a4527b55292d72b322ea954414498886fe41df309befd"
+    },
+    {
+      "path": "master/pokemon/0005/face.webp",
+      "originalSha256": "1749f2c86d61513710aed38b1697370e390a42dcc1f88c2a503d8d45c9165897",
+      "sha256": "c9cc2d0ce642490342f9696ced42b1c739016e62b04c1e3931aeaeec0bdb5971"
+    },
+    {
+      "path": "master/pokemon/0006/face.webp",
+      "originalSha256": "8b0cb43c36d9b363ffbf6fdf09cb9fb6e84080f2024407ac429041e0e721a215",
+      "sha256": "e92724940c0f1fb249e082fa8881d9fcfabda27e7481bab0cb9baf3143d4407d"
+    },
+    {
+      "path": "master/pokemon/0007/face.webp",
+      "originalSha256": "72e03ade0e46c6e8cc9ff8f782d006371d6e178c57dce9fdbabce03abacbeb66",
+      "sha256": "cdfc897b0af5ed94dd813563a37abd41356e6323c1fac8a39a7225d0eb2b8511"
+    },
+    {
+      "path": "master/pokemon/0008/face.webp",
+      "originalSha256": "59f851df5a7173d9abed11990193acf813f547f373badabb00ca4b397b3cac33",
+      "sha256": "fd55942f8bcaba429fa4775445579431fdcd1799c90ec0e8bf2b83c5d4281f3e"
+    },
+    {
+      "path": "master/pokemon/0009/face.webp",
+      "originalSha256": "776d150b57a08090c87ef7803126e2ebe47226aa8b3511c995961fe138777375",
+      "sha256": "6e201a18dc4019c0bb9324bbaf7f44048568aba1eb3135fa335731368da8b87a"
+    },
+    {
+      "path": "master/pokemon/0010/face.webp",
+      "originalSha256": "8697e13d4dd0963555dc20b3e346a7a5b5ae63b02554eec9e67bbc2da2e7bc83",
+      "sha256": "f7a15afb7a46228a0f03571f76234f4ab421f711b47d8ff4731fd8e5cf001f50"
+    },
+    {
+      "path": "master/pokemon/0011/face.webp",
+      "originalSha256": "c1f56b0618e42ddd862561358211ad8e174a6aece339a10222db3bb8530eaae2",
+      "sha256": "9cb1a2590df7df28721920a16b04f9db1db85d81c536645e4778068ae63a7607"
+    },
+    {
+      "path": "master/pokemon/0012/face.webp",
+      "originalSha256": "5df40b589fad1cb130ed3fcc78582ea83504a7a1b82409284d37ba3058ce388b",
+      "sha256": "868e6a0ad10db64731a7c01e9f6b94413cde29a5f882c8f12bcb4125f59b57dd"
+    },
+    {
+      "path": "master/pokemon/0019/face.webp",
+      "originalSha256": "fc60a32ec3dc9f6c1f1ad1f62cba30eab0cc5532d53faca8d37c04e044ceff15",
+      "sha256": "77c274f9959e639096ecba8d9f3a9b12eb52d3207830d816424937adc8c95057"
+    },
+    {
+      "path": "master/pokemon/0020/face.webp",
+      "originalSha256": "6c96be526723ccacd0e78624a79f0f72b0c5bf1cbf9cd293b554242863cec50c",
+      "sha256": "221125590bff2dba1ae032e4de53aee73bad4f929df2a68dee1d44b286bddbc6"
+    },
+    {
+      "path": "master/pokemon/0023/face.webp",
+      "originalSha256": "2d25e04d5e8f1a7e0904311be16e9fb76bb13917bea62cabe82f37c0abc8ed3a",
+      "sha256": "cea99cffd0cfeca36d22667c5b523f7315579990b85032aa15fa931839c556d2"
+    },
+    {
+      "path": "master/pokemon/0024/face.webp",
+      "originalSha256": "7b8dc658a3d816107dd602e72044d554310ba3a49e496d384634945fa394bd8f",
+      "sha256": "579f574053ebc18e834bd36772bd6645c17481223e1efcc8fa290192725471af"
+    },
+    {
+      "path": "master/pokemon/0025/face.webp",
+      "originalSha256": "93a584bfe518147e8647c8ad12d5e91838ad0a17962ff9ffca03ebfa62a979bf",
+      "sha256": "8732f3b2002ac6f0e072ca5b1679c40f04c3372fc6e4139259c9e4cfe423fd9f"
+    },
+    {
+      "path": "master/pokemon/0026/face.webp",
+      "originalSha256": "116aa0a880b3c9df1da2603b1d02a2bf2cc4bc3db451986cefc1bc56aeccabc2",
+      "sha256": "7db92e2e193f92b06935c0fb7cec600a1c51845967bfc09546b7361476b48753"
+    },
+    {
+      "path": "master/pokemon/0027/face.webp",
+      "originalSha256": "e6c4f70c8d961023b4c61e79f368ee834ce4eed94ded97b0b3febfeef3e4f003",
+      "sha256": "c2e2f7a986aa4ec5cd272ee5bb778f1979aa4c0a881d041618236381b9ef13c8"
+    },
+    {
+      "path": "master/pokemon/0028/face.webp",
+      "originalSha256": "0ea40d81a8efdd3544abaaad36974c4ce4764ee2687814986cf3346e030cebb6",
+      "sha256": "2bab9b076e1a8f7aaa2155cc432b839fad03c738d4dfc7be7cdb31664f20b175"
+    },
+    {
+      "path": "master/pokemon/0035/face.webp",
+      "originalSha256": "18ad4c623bd7e370d426b6ba394db26a0cf55771d6df17bee0e925a8361cddd1",
+      "sha256": "64e2e34f78035d84121270a75c626c13a3d3b3c2f195f0fa9a58babcb6c6ed55"
+    },
+    {
+      "path": "master/pokemon/0036/face.webp",
+      "originalSha256": "21347aebff46f12f773dff5e398fdd397d234bdd0ca17a6cf023bc1a681da91c",
+      "sha256": "c84811d15395fa24dbc21690bf72c546a994d866f4952e00915fb6b34735ea6e"
+    },
+    {
+      "path": "master/pokemon/0037/face.webp",
+      "originalSha256": "ac7c00a9679f2b0519af7ae6fd215df32023283bcd81c3678e34f2a3c0ce7cee",
+      "sha256": "33bd7017daf1ed98aff40598d44ee59c9b0ecf5e9a6151923e6196e39d8ba235"
+    },
+    {
+      "path": "master/pokemon/0038/face.webp",
+      "originalSha256": "802844b422bd88f8808457e4fe1f478d746564307fe5998830ca1037a5940eec",
+      "sha256": "f1af06347c8038ea0c58f4f0a4ca91511f0c5de5e1ad5c9d496fdc50ceece0db"
+    },
+    {
+      "path": "master/pokemon/0039/face.webp",
+      "originalSha256": "40cd18d5fcdb945bfafbd2b1c2a34dafc3c290ce324ac0c991ef3808b04ef6da",
+      "sha256": "2c2073afb98209dc9086654fe5eb9e246340fb893f849fe1925f57a8bd4ccac6"
+    },
+    {
+      "path": "master/pokemon/0040/face.webp",
+      "originalSha256": "2a20b0a4aeb1bb342895305f7e31f339e74b95d30a947588639cd94fea721c51",
+      "sha256": "065d71c329ca01c446b57c8ea604075da0cd47669bab0b5b4af144ce6c2526de"
+    },
+    {
+      "path": "master/pokemon/0050/face.webp",
+      "originalSha256": "020011400316a9f8955fdeb472780c61bff5e0045ef40d1954c89d8ec381e265",
+      "sha256": "40acfb97273d0bffda39dac8502fc29186e5d647e282fbb5bf58dc0d028d7346"
+    },
+    {
+      "path": "master/pokemon/0051/face.webp",
+      "originalSha256": "6a5291c7de1005752cefe6a73295790f3eef7c8aa32a83d768cea2d8087f174a",
+      "sha256": "81a440cd0a4bf67168489f0e6260a1cf860242cce96c0a27c22a772c55fa55f5"
+    },
+    {
+      "path": "master/pokemon/0052/face.webp",
+      "originalSha256": "0f59add0d606457e3ff91849605cad96e8bc4fd3d363ee738ec547e9d1901ad2",
+      "sha256": "0dc82f3f1da84097d61f7e0ac5ee49938e2f5c7188ce9dd89168e614b31a5e66"
+    },
+    {
+      "path": "master/pokemon/0053/face.webp",
+      "originalSha256": "a7f85312eb057c9ca8c7d0f7b0f2c8d60bac510e69c36a32e4efdc4468c37f9b",
+      "sha256": "ffbb519336049bb7ee8fc63ac84d40d7e8fa35c72b3075445015b65f92b44ee1"
+    },
+    {
+      "path": "master/pokemon/0054/face.webp",
+      "originalSha256": "6e52dddee057dca43c55bc4111ae045d7deb35bb7f11622e0720f591b1af95a0",
+      "sha256": "a98ab2f57efff6a9dadc9e5795d9bd36bcfdce4f952577ef28d203e53980460e"
+    },
+    {
+      "path": "master/pokemon/0055/face.webp",
+      "originalSha256": "75814ab2387d6a47b4600a065de6e8b28982a41b2836c434f4b162738cf83553",
+      "sha256": "0b1c2da4cd8c742a5262e2373712480a402afc1e73dae4db565737c810495c65"
+    },
+    {
+      "path": "master/pokemon/0056/face.webp",
+      "originalSha256": "0e68528a6e5c8dd1741a8e38a723e17d9282ce2f7c335594a953d5c3848ae72a",
+      "sha256": "34ec06c5598fd29f0b11840e1787d1034c4837e8441ef2fa08288a43329fd5a6"
+    },
+    {
+      "path": "master/pokemon/0057/face.webp",
+      "originalSha256": "5668fd6b2ad7750673d9de5864d3a498163619cbb60337e6b5f92365f8c9074b",
+      "sha256": "862c59da75794e7f713dce292c4320299f9452722ebb10c23c9c09135842c14c"
+    },
+    {
+      "path": "master/pokemon/0058/face.webp",
+      "originalSha256": "cb7585e7d4194d6994701df270b4c1ad5c5285faefcc86b74d3ec57164f02b46",
+      "sha256": "9be60507ccf7668a6c841ab409d9654f441706a06e9b3bc4ce64e57cdf50c5eb"
+    },
+    {
+      "path": "master/pokemon/0059/face.webp",
+      "originalSha256": "1c3d29716eda77ca888d4c075e44c65f80641f284cb3d3f01a21414e9f6d03db",
+      "sha256": "73cf8caa3bb1714b96668e44645565fcf30fbe2ee610cb71f34e130e9cef901d"
+    },
+    {
+      "path": "master/pokemon/0069/face.webp",
+      "originalSha256": "434e71de03d9f20b537b3c3ceada260ccac6d6dfc6399957d3d6fd576a74d38f",
+      "sha256": "5bfd61798420ae10e8c5f3f8df50bb5e812056683db67d70837ca356b029fb3d"
+    },
+    {
+      "path": "master/pokemon/0070/face.webp",
+      "originalSha256": "b80fc74b0c23faf6c1e697ee1612f7e7fc5a4a49b678891754aca87f379e4abf",
+      "sha256": "a7646f89510ac49dc2d7af43c3181276054bcdc2b873a1f8ddc420b26352d4fa"
+    },
+    {
+      "path": "master/pokemon/0071/face.webp",
+      "originalSha256": "5ef1a7d80154ebb064ef2057bad200b0b9f246ffbc9f5d769ac345b521f6ef38",
+      "sha256": "60b204b1c9117c23f1b1bc500483d469e37e0523a73d6286fa6a95b6b27d26fa"
+    },
+    {
+      "path": "master/pokemon/0074/face.webp",
+      "originalSha256": "6af490554978ace85dc71f57a916f5d3887ef1b0f0cf47f8c0a9203d898a6743",
+      "sha256": "a4a72204cf21eee2342fa7949169bd8f99b2ba3037f4206aaeea33e1310a6238"
+    },
+    {
+      "path": "master/pokemon/0075/face.webp",
+      "originalSha256": "366b4c03343007d74a91d9d9e7d9bdf545551afbce650a54b4fc23a5547644b4",
+      "sha256": "428d2421877524eabdd81861d56e0fabf0bd69a590399e2e5d8d403be5f21f19"
+    },
+    {
+      "path": "master/pokemon/0076/face.webp",
+      "originalSha256": "482ca6b4706d41e5d03d15cdc511931087b59157b50afcfebc4ff2d26c195cd6",
+      "sha256": "74426d1b044987e775f4855effa41b59561cc53a1949527f9b4fd3d2581e1feb"
+    },
+    {
+      "path": "master/pokemon/0079/face.webp",
+      "originalSha256": "66178c2977d7fcacc683082571676366e7037adecf7216acac5a33457dd45d9a",
+      "sha256": "31cf1910bb17ba69991a76d0e3f30b0b9064ab7079deb2ef2f257638add171b8"
+    },
+    {
+      "path": "master/pokemon/0080/face.webp",
+      "originalSha256": "ed5aedabf1390983702b422124e800b2873014d4de91f790c60fc36a8ecf8365",
+      "sha256": "3f5d7442d68747a9564dc5f11f32c9a6bf4e3c01974239801fbb3c4c43acff77"
+    },
+    {
+      "path": "master/pokemon/0081/face.webp",
+      "originalSha256": "bbdcc8c6e55fd5186f5247ddae9c615a2ede1af95f1f870db966a227c089ccfe",
+      "sha256": "1fb8bb0091173ff6590791b76b2b1988693c2902d66d96e847cff02437f2a014"
+    },
+    {
+      "path": "master/pokemon/0082/face.webp",
+      "originalSha256": "68ddaf6370cf7cd36e755b995589e29aa8a556b78b6c19592f6b54f440c0d71c",
+      "sha256": "b74004b73f37fd9d0a2d8267598f47ae51f6178a6fb2f5138859b2e5f56c10a1"
+    },
+    {
+      "path": "master/pokemon/0083/face.webp",
+      "originalSha256": "aa381087113dbbf96528ff0c2f6491a0817ee7d06502fdad60ca571a1e2b1a99",
+      "sha256": "10c4dd0af72142e7d783479f10f8258bb19df845a8ba46dcc04ed550b550aa20"
+    },
+    {
+      "path": "master/pokemon/0084/face.webp",
+      "originalSha256": "365e75d659741e2931d894d40770efdcf9fa8c64d6694c83b5573b80f412819c",
+      "sha256": "122fc1474547cd830d3bdbf6fa42e90d77a2b13153c4f9fdd258e148677e0f68"
+    },
+    {
+      "path": "master/pokemon/0085/face.webp",
+      "originalSha256": "69590b9962c0f1b9ca4868df519306bd073bb60989738d2cf4fd9209a50a3a8b",
+      "sha256": "5bb84542d1223e0804f5e763ca11258cac5f9a8d1690049096b1d9f0bbebc3d0"
+    },
+    {
+      "path": "master/pokemon/0092/face.webp",
+      "originalSha256": "7e2a4ee2896d1860c32970d6bf710e7c3ad164d4c5bb28e2717199327fd2525b",
+      "sha256": "2c667335da9558f7966ce69616bc3f257eca58a5b15dc4becd8f7807ae15c8b8"
+    },
+    {
+      "path": "master/pokemon/0093/face.webp",
+      "originalSha256": "c5b981bcb91c13faa26949d47506ec2803407820546f417b1bb8a881f2142254",
+      "sha256": "d410407113d4bdbc95a8018cf21ea5c5eb9de1d971b2061bb6cd92121e110922"
+    },
+    {
+      "path": "master/pokemon/0094/face.webp",
+      "originalSha256": "59d97bbd121ebbce25254d993e9746a4929ba6ac8e97464c2a549919d6460841",
+      "sha256": "07a6f9544ba20acf4158c6c428be0477a0c342f8244c9a2795750dd114f1fcda"
+    },
+    {
+      "path": "master/pokemon/0095/face.webp",
+      "originalSha256": "a5f094a3dfbe46e0fdb9629c687d1bd242b341438590719266f02b9e5fc893dd",
+      "sha256": "2d219e49db908ca6f882b6e588a3a6a138a3f762a9eef9b1392cf57e6d9890c9"
+    },
+    {
+      "path": "master/pokemon/0104/face.webp",
+      "originalSha256": "c18692afe99e596ae1c800d88a1d489e174817385d19ad8ee9fc53098449793a",
+      "sha256": "94a2b36c43d1cc73af41d960b5ace7ba0d3b5ab0e28426eccea12b6ad650d3ca"
+    },
+    {
+      "path": "master/pokemon/0105/face.webp",
+      "originalSha256": "5335ed6d50ecc400d42b0b4be997497fbacfe4f0ba7975b978f4afe431ac5943",
+      "sha256": "c59ca2701d9e8b10319ba9cbf84c5649910b461e7557dfae57dfe1f605c0084d"
+    },
+    {
+      "path": "master/pokemon/0113/face.webp",
+      "originalSha256": "b2bef4f93628d31312a071deed9a9faa57c7dd90da7527277e07340dffad2e90",
+      "sha256": "5b4595a12601d985cb6b62c3b2298d778663b4bcb1584596d50aeaf2c12e6d53"
+    },
+    {
+      "path": "master/pokemon/0115/face.webp",
+      "originalSha256": "95b1aba5179138f0419dea28b2545bffccc096066c538f8403669af083d34918",
+      "sha256": "abf6a4f0eb867414cee80c0c431e43c56fa84b4870777febebc91d5787faa73a"
+    },
+    {
+      "path": "master/pokemon/0122/face.webp",
+      "originalSha256": "79b1decfbf9c946175eaad316692fedaca950d88bc3595c7892c759ed57b6665",
+      "sha256": "8deaa5a803798b08ef9d4a25fa5e03d284d64396b4b338bcf6f43b5059669ad6"
+    },
+    {
+      "path": "master/pokemon/0127/face.webp",
+      "originalSha256": "a57b05ca8863325d943c4030d7b86ab10a73a4c0c3a0ac41b56f4c2b1a603310",
+      "sha256": "b9f3ae5a6f8ed90bf730290aff329fb0c6ba8af3bbadd5fda306b356f90a036a"
+    },
+    {
+      "path": "master/pokemon/0132/face.webp",
+      "originalSha256": "a3be3c80fce2fbe061fba7745d7607962e0124afcadf654636da471cefc6b53b",
+      "sha256": "bc092c708d92d0614160dd36e8055e4d466b063a5da421295dc7373bdadbe32a"
+    },
+    {
+      "path": "master/pokemon/0133/face.webp",
+      "originalSha256": "0ec7d4435c98768c6f37ecf863d8f50160d895bc884934a21015bc6f30c6b029",
+      "sha256": "6d96d64f800cc0e5d4d18bc8e6cd0fd0d99d66b3dc3f8556f29532305f7e9375"
+    },
+    {
+      "path": "master/pokemon/0134/face.webp",
+      "originalSha256": "e9b9039dd1c28cd4045d7086cbb7933e7467b3de45883ada4f57ee416b059b9e",
+      "sha256": "bc46ae3af7ed5526f9962cfb2a92223a266a83c9618aab247f0cf68166b44062"
+    },
+    {
+      "path": "master/pokemon/0135/face.webp",
+      "originalSha256": "a7a2659f43a993b2e8d95ad741bd7adcf7394636e5fd9c6f8929d259ee70f603",
+      "sha256": "bfff193caca7c0aa33e7bfcd40e7e09c41d23cbd384f444f1fcebc4a20ab3cd9"
+    },
+    {
+      "path": "master/pokemon/0136/face.webp",
+      "originalSha256": "56afb3a8e1ec78193d1f6df3d564b00c538f8caa68dd921c29ab122922024589",
+      "sha256": "1b1f4064f449fb7740553a0ec16db47709c99b51cad27c806f792f2dbf2fdaa7"
+    },
+    {
+      "path": "master/pokemon/0147/face.webp",
+      "originalSha256": "b891d468e31bacf5e2909d0089cd687909c0ea102f2e3d0dceeae44acdeb7387",
+      "sha256": "427093d1e44a0dc37adeced40e805c8252fbc7bfc7aedeb8904e7761ccd9ca5a"
+    },
+    {
+      "path": "master/pokemon/0148/face.webp",
+      "originalSha256": "b6d67d7762b6ea59b39ac173857613a4c61991807f0e3d9d432a360275802241",
+      "sha256": "225e323c3fd58477e45424caef5355706fcb56b6cec7d2e89ba43ccc75c48af5"
+    },
+    {
+      "path": "master/pokemon/0149/face.webp",
+      "originalSha256": "1251fe057ffc8f4b80d46d531000f1c2af31a31b501d70e4a2d35b2579d8cdd4",
+      "sha256": "802a82ecf454f2b8214d268b801fe5d3bf1f80fa23c626f5ec7a807a76298ed9"
+    },
+    {
+      "path": "master/pokemon/0152/face.webp",
+      "originalSha256": "2c532582ffc14bdcc6e3f12f393c0f1e9d7e780fe6559b37019cbe2c6b8c92d9",
+      "sha256": "d95d3911e9c3e137e6244100c672b8824fba7c9235baddd03f0be201eae90258"
+    },
+    {
+      "path": "master/pokemon/0153/face.webp",
+      "originalSha256": "eadf6850cfc59591dd4545eb444d0753e16b135336ad0da0d95a5713ce46a654",
+      "sha256": "a80a31dce54bb9d4e00f5e43888142f0e676a70762e308acf96b8a9dbb59ae09"
+    },
+    {
+      "path": "master/pokemon/0154/face.webp",
+      "originalSha256": "127205e60ec8406d308251b208901aff0cd8b53fdffa2c54c3bc361eae5251d4",
+      "sha256": "ede4d809233b563cceb2bac7b684b03bde5e0f23aaae4d1dbacfd38acd932ad9"
+    },
+    {
+      "path": "master/pokemon/0155/face.webp",
+      "originalSha256": "8dd80af27263981b6ba09d7aec39d7ea1a247bb7f0f90cb44ea1c894cfbdb91e",
+      "sha256": "7b1056190e7000fb8858fe247978dc512f17bde59eae18631584d32fee989bfb"
+    },
+    {
+      "path": "master/pokemon/0156/face.webp",
+      "originalSha256": "cabcf61b55316d613673fcb00e109684c0f321863ea406c927b3fdf9dd5559a0",
+      "sha256": "c8248a3117e2182c893a692c9629cc339bdea5d5e644f93628f957a29a782da5"
+    },
+    {
+      "path": "master/pokemon/0157/face.webp",
+      "originalSha256": "d6688a3156e256db3e5daebe12047644bcb249ab772b0ec8517f66790eb77505",
+      "sha256": "d0d4caa4cbf359ec41f512b87ad002feb2402b0dd6eba4b8b6a4c7e4a2b62c75"
+    },
+    {
+      "path": "master/pokemon/0158/face.webp",
+      "originalSha256": "4b75bea937a804d455147cf117f826e5d39756091049f54a9e4de4b6f2b951d5",
+      "sha256": "0d52ed43d91560b82f88d81efffefd9cb1603c472e5ffdd267c98b34c17a94ce"
+    },
+    {
+      "path": "master/pokemon/0159/face.webp",
+      "originalSha256": "591ed102448783bbd4b634f9d8b2e2f821fbf049e28f182290223561baffc637",
+      "sha256": "1f47367e582ad08ddc8cadabaebd0fd987b09b1c7b9e87316dd7c03d55548666"
+    },
+    {
+      "path": "master/pokemon/0160/face.webp",
+      "originalSha256": "16415c28dd46d44f105e2dd96ee653a40522662aa6acbc81ee3b1a40b8f5c13d",
+      "sha256": "43010d609b61c04de65cef2826ec419124523b99695433a8d2da3102e961698f"
+    },
+    {
+      "path": "master/pokemon/0172/face.webp",
+      "originalSha256": "02f07f11539c0f33e102249c16d070e7a881092cb281b2057586d9a053b8a6a0",
+      "sha256": "c4d605ff880383fb5f27e07c0ac446bf52e019bf662a696ff64e0f75c2a32eb2"
+    },
+    {
+      "path": "master/pokemon/0173/face.webp",
+      "originalSha256": "7400896730de67c27494d9cbd1cb0ca6266786dbb4d99dfe1384551791c5f6e6",
+      "sha256": "be9dc54704a711949227b232a6129ae827f73c7f764f04109fb377b371394b4b"
+    },
+    {
+      "path": "master/pokemon/0174/face.webp",
+      "originalSha256": "a9d2dfc729d7753eded334da4e7461a2e170588e4fc8abbb5d32dd9685539419",
+      "sha256": "53b2349b3ef9dce4b41e69f331c4891be3d0774ee515464ebd3bf1658340a809"
+    },
+    {
+      "path": "master/pokemon/0175/face.webp",
+      "originalSha256": "5de7e79e15789fb4be9b5802740bab7ad7f5f0f33d2b7c73e143775afa77b5ec",
+      "sha256": "47d2717056d82aa0b5d3b6d32ace3fe0360c202d3dac0075693c5e5baeccbcc1"
+    },
+    {
+      "path": "master/pokemon/0176/face.webp",
+      "originalSha256": "151d934ef5a025047df5b77e83d62ab00bd99d9216a1eaf08a65c9540d5b63a9",
+      "sha256": "cff295d9b02004a79b0eab7c251f79df44d10431bf1aed3f85c110aa81da07bd"
+    },
+    {
+      "path": "master/pokemon/0177/face.webp",
+      "originalSha256": "7e1f0641060fa3fade41ac466f99da5dfd8264b0f0073893516765dbb9107378",
+      "sha256": "6fe041b2b617b9394b357736064e4591ae7471980b0f83ed4dc6491b9807edf8"
+    },
+    {
+      "path": "master/pokemon/0178/face.webp",
+      "originalSha256": "b5c5fd65aed6a7ef3571ceec9aae73082a15ad6f743582f1bdf7a783b6085a13",
+      "sha256": "92afb5cd4603051d26728c84dc8c1544364ced7a90d15770c33070b2445f4f80"
+    },
+    {
+      "path": "master/pokemon/0179/face.webp",
+      "originalSha256": "cf3fbc70f2054d2b6b9ed310c083b760de78b8987b50dac983f1ab7cee89834d",
+      "sha256": "d15bcb88111b74c9c20158c3ec61f529687ffe90bb5a6b3c86805f25c3a127c0"
+    },
+    {
+      "path": "master/pokemon/0180/face.webp",
+      "originalSha256": "3a90557050ea7686250bcd9862df45a9cf2a306c20b04d58d770f5a0e4c5334d",
+      "sha256": "ea7ea8740d6abcfe8cb91b4388b41a597ce0bbb7d3f9f4d672b879c08de15de9"
+    },
+    {
+      "path": "master/pokemon/0181/face.webp",
+      "originalSha256": "d82b82addff60f6e6a9a175fe1349a584fe277b6a893063a1f9bb1160c10b541",
+      "sha256": "76b13dafd0ca9843c64953fe86f9b8927341254f5b1a3917fc2e546e78562935"
+    },
+    {
+      "path": "master/pokemon/0185/face.webp",
+      "originalSha256": "6843645854000ed8edf2d22a738e81283ee6289e9a73333c36cea100ce90ab14",
+      "sha256": "c59555a49a9fd96b09c3e5f3525e8e62dd631d243bf08179c8a75a0e6acbd0e4"
+    },
+    {
+      "path": "master/pokemon/0194/face.webp",
+      "originalSha256": "34139a74501dc36e6f168fd3b451af9dd43ace437f3580c33c1f71a329d782d0",
+      "sha256": "177212fb3452c42ebe5dd052fed512dcc6b0233e6257cd737718e1d04033efe5"
+    },
+    {
+      "path": "master/pokemon/0195/face.webp",
+      "originalSha256": "f09f26784688762c7269199938d3717e0289587b399e3a0b99309aa7b4ed937a",
+      "sha256": "fc5ccf19791c2f783aef198c780db3dfe6a2bc8132a7184ac5a924d5d766e490"
+    },
+    {
+      "path": "master/pokemon/0196/face.webp",
+      "originalSha256": "f481fd4cb7bd77616e173b486cf710b5d7bc615bccc6a7c40432aa5af34394d0",
+      "sha256": "ce694538a76e9e9cea87fa3b59e64dfa6bfdd3c63cc94e552b44bb78fb506775"
+    },
+    {
+      "path": "master/pokemon/0197/face.webp",
+      "originalSha256": "8921386bcc1e59e3d919011540109ad7b8e22930adbe904686754fbc045f6287",
+      "sha256": "ed08236bd5a8d2b50f21545734dac81c5eb7d444d87c6c239f34f68f6baa01c1"
+    },
+    {
+      "path": "master/pokemon/0198/face.webp",
+      "originalSha256": "581e5695cb2e4f3cb48207a94a490cce55f208d56813398215c8e8e86e8e0a56",
+      "sha256": "b6ea6935f524767f07d8af9bda8557421504c6732298ab2470c50e8b8d3ac680"
+    },
+    {
+      "path": "master/pokemon/0199/face.webp",
+      "originalSha256": "9c7d6b3f139bf6190ff141f491892ac87284ae46d16b93bbb1d2f2c9b4ec5e94",
+      "sha256": "9a1c235d3dc2484058f765fb5fc78296342b774c97598b730f7386f6420010ce"
+    },
+    {
+      "path": "master/pokemon/0202/face.webp",
+      "originalSha256": "83ebee9a5e6340893e0fb982ff14dba45291ae0897c9aa2123d7ec6178ee3d43",
+      "sha256": "f65e3a0775973d6a5dc5d5462ad09e8141a570f754067516ca35b4fc33a4c491"
+    },
+    {
+      "path": "master/pokemon/0208/face.webp",
+      "originalSha256": "721b9e250a56b0471a9b873b4f0f11730554613ffb96ee710e12d71762251ec7",
+      "sha256": "de26a796555d412fc2a272a9c97c9414a6c1fdabcc07b965226afc986f2e1c5a"
+    },
+    {
+      "path": "master/pokemon/0213/face.webp",
+      "originalSha256": "f98337b640f1ef68018ca2e1655e18642ca543e7a341ecb7464b77c94e09c1db",
+      "sha256": "7a56c486fd157d3ecaf080c569c6cb31e66b0258a875ed0f7a13bc3e473df3b5"
+    },
+    {
+      "path": "master/pokemon/0214/face.webp",
+      "originalSha256": "26ffb6eae2380e514428878aa42b8e6148264904ffa6e63dac379524a5b22fec",
+      "sha256": "e6197c1f08083eaec812bbd7f02a3666c4fad7a1589c9614c52405fc0ca6b556"
+    },
+    {
+      "path": "master/pokemon/0215/face.webp",
+      "originalSha256": "2fe1b5e9f33aeb79d1ca1e7292a41131ace174edc8516367417a072ec8417f2b",
+      "sha256": "71b57c0b82c4fa757af325c6d6614f39179fedba791561bcd457260bb39bc659"
+    },
+    {
+      "path": "master/pokemon/0225/face.webp",
+      "originalSha256": "e85c21416d46849f861575dfe38c095349b940bf80e68dec70bb14511dbe14b5",
+      "sha256": "5f10c0104565d5853dcad0aea5ace89aa1a7a28548422e6bde6f3ba3fd48b76b"
+    },
+    {
+      "path": "master/pokemon/0228/face.webp",
+      "originalSha256": "92277101dc11208e43a77b512dfc5737588a2c70471936550d0eeac0d5b9f3d5",
+      "sha256": "5b3e6717c49c445d9dfe2a1d48a3d402d097b120d6319455b64565ea094719f3"
+    },
+    {
+      "path": "master/pokemon/0229/face.webp",
+      "originalSha256": "3955c84af30cc4f9b0b551e1b92dc0b3239144216752d45f0fc203db6b5c435f",
+      "sha256": "490aae2ebf961ff7bcdb853905a62b40a211360913dd347e396523b0689da7f8"
+    },
+    {
+      "path": "master/pokemon/0242/face.webp",
+      "originalSha256": "0a59ca91ec0945992d1b529611b99dcb07a85cbd293346772ed827d7082c525d",
+      "sha256": "a194cc580e1b5cc8aad7d5bdfb19d81c253cf776c10682a2feadf2bdb904fc28"
+    },
+    {
+      "path": "master/pokemon/0243/face.webp",
+      "originalSha256": "bb6e930c9245bad0357741bbe03bd78d139f7bb45bf494c85e58d0c147fd27e7",
+      "sha256": "da20f46f5b223d702bf3332dced91bb6153fc5e665ce1229259673e7b01e9537"
+    },
+    {
+      "path": "master/pokemon/0244/face.webp",
+      "originalSha256": "50df3523547ef0590eb5b59681c672320b76282517c373d562bae5e917bdb2e6",
+      "sha256": "608ec9154273483fc31c1b6940e20bcdd7f17339007a379d5b70abe258826fe8"
+    },
+    {
+      "path": "master/pokemon/0245/face.webp",
+      "originalSha256": "2950b5fb76c0c79f30ff4a8389a7415230ad776fa9653dfe935ad56618825bc7",
+      "sha256": "69766e85b537837ab68b4bcafce6e682cca28e1e008f8a7b7fe76948366ec542"
+    },
+    {
+      "path": "master/pokemon/0246/face.webp",
+      "originalSha256": "75323f446199b8ec9ae7c5cb7fc31e6ec65384c2293df55affa98f09adcebab4",
+      "sha256": "c296ddbe8d54ee8d94beea80c2b4025c5046b8932ceabe8a75475df64c6401e4"
+    },
+    {
+      "path": "master/pokemon/0247/face.webp",
+      "originalSha256": "f444755753fbef4455cb460192b2342d0f53b9853655f81bf0abb5f3d14fae99",
+      "sha256": "aa271b72706dac63bd8b4946cc3e77b3a6eaad3933d67a6fa4ec341d45365c83"
+    },
+    {
+      "path": "master/pokemon/0248/face.webp",
+      "originalSha256": "5f80f6a67d35203be4c6a3a9f205c63fd86b467f8bfc7d774d655a6f3032b3ac",
+      "sha256": "e088ac8e131950ae3dc756bc748bb3818429970f138c604f481c50b7ce8bde89"
+    },
+    {
+      "path": "master/pokemon/0252/face.webp",
+      "originalSha256": "f594bb6297d6e00bef9ad3832092b674d6447744013fea0b5eeb9e31db45f61d",
+      "sha256": "27646290938ed80feeec0f1b8fdfdfc095e9256317f4ac15d5c076825449710c"
+    },
+    {
+      "path": "master/pokemon/0253/face.webp",
+      "originalSha256": "a629d425a38fac68ad9f133a841a0eb5c401b2a11edb81cd5c03c32acb66dd11",
+      "sha256": "16ff8e08330db211d8dfdd2dcc58fbbd16fcbcb6df20430831d2e199a148be24"
+    },
+    {
+      "path": "master/pokemon/0254/face.webp",
+      "originalSha256": "f155e96997a5382a753eda7c443e11c20d91627005faf57a7edfaa286c3eaebf",
+      "sha256": "d528ec5e663a50060cb20362b5f7ed742aece87414df32aa6de0a1cf1c7ba0bd"
+    },
+    {
+      "path": "master/pokemon/0255/face.webp",
+      "originalSha256": "9a01319f0703cc460d2482522372363f61894cce49ce17740ebd61fd4f372637",
+      "sha256": "228ee52a64d6f7732adaa338f84dfca82e18443f93b7006c3c617815814c04c6"
+    },
+    {
+      "path": "master/pokemon/0256/face.webp",
+      "originalSha256": "320b41883775925dd1545d873c738f0984648ef52ca7718945393b80b270eaff",
+      "sha256": "ddb3ae3ccb730184b694314cfc57635af61ad879c6602519f5e8ee9bb60b3e4a"
+    },
+    {
+      "path": "master/pokemon/0257/face.webp",
+      "originalSha256": "3bc660afdfd5ec6cfe5a9fc7c6a919363fb8725f5b93a1e29d65939e744afeb1",
+      "sha256": "7b03fef6a2f36606f249a029ae5a3774c4dd8178e0c3bf524f954489cdf929d3"
+    },
+    {
+      "path": "master/pokemon/0258/face.webp",
+      "originalSha256": "d636b1aebcf00a386c33b732af2d9c01fa8f138dcc6b2ef3831ab507ca22a920",
+      "sha256": "114019a26f086d3a0852c22de0e7c18b21adbad1da49b88c0e2754d8ff89cb95"
+    },
+    {
+      "path": "master/pokemon/0259/face.webp",
+      "originalSha256": "5f42f88a56c13f3f7d294dc8d7c3b7e18ba4279f20e2c0221c682df9322961c7",
+      "sha256": "d579ed0db7224967a63fac5a972b283baf122e0e8f92f3bfe59f14930cc84edd"
+    },
+    {
+      "path": "master/pokemon/0260/face.webp",
+      "originalSha256": "e3049dbe0f3a9121bcf9767631e5247bc96ece925a23fa131c495ed6959c0c35",
+      "sha256": "c7bb3190eaad9c5d29832736aad67dcdc11229663c7988e28b6dfb707781b301"
+    },
+    {
+      "path": "master/pokemon/0280/face.webp",
+      "originalSha256": "05e51e0801a53ef95889a264c65a6db37edc80fc6833268975b1447833bec7ac",
+      "sha256": "44a8863047041811b11fbae5a8a76e43fe0b4fda22d02a507f6f9c3064fd882e"
+    },
+    {
+      "path": "master/pokemon/0281/face.webp",
+      "originalSha256": "e178d58e45172386895926565085ecc41cc78751fa9e717b244b4de357113c02",
+      "sha256": "68660d28f62d887eeb141fbccfcf779249eba48f812598e2a29e788690db1cca"
+    },
+    {
+      "path": "master/pokemon/0282/face.webp",
+      "originalSha256": "bb3d3cd451d4bb97e800e352c97a9656674a2bcfe2a2987763ea3efa5d693881",
+      "sha256": "eee92c9aff790eb3635f61bff9f24a324dbba740a3702c1395b0748a742bcc46"
+    },
+    {
+      "path": "master/pokemon/0287/face.webp",
+      "originalSha256": "5b0974e6b17299f31abe03b9bca9b1d24088977d756e4e1026d8627bcacdf32f",
+      "sha256": "542367638c04e12c0185c11c5e57232c085d83ae271c804f44df5bd34034f3f5"
+    },
+    {
+      "path": "master/pokemon/0288/face.webp",
+      "originalSha256": "e8ce9dc17bce334bff80630be389d368ca85326580b92afa541e35e0f8d9fb56",
+      "sha256": "c01caa4448a4e9c4e6c4b01d40ca0a27860cf01a37b26efecdc2acd2f103028f"
+    },
+    {
+      "path": "master/pokemon/0289/face.webp",
+      "originalSha256": "33e904c470ecbc697e6e63ea3b0fa03b578f52eeab75d9d236af9bbbc43eb305",
+      "sha256": "e294abec21ddb2aa7eff5dad6e6886c5a1d9b605d3af1d602adafe79476554a4"
+    },
+    {
+      "path": "master/pokemon/0302/face.webp",
+      "originalSha256": "0030ab967fa3d2dd19e24b88a63fab584907645c13cd77ccca52a011059c7146",
+      "sha256": "e460ccf6d624de0489116379e8e6f29a286e0465d401e19cbd0f3d935e6c8cf7"
+    },
+    {
+      "path": "master/pokemon/0303/face.webp",
+      "originalSha256": "d8d4a0b39e8bc2c4f72310ccf1c4769d68afc7c731ae5e3e4a4f9ae8509183a5",
+      "sha256": "dce3856b1ff2862d45c9b9268549b859b7424721aa9f13949ad6902befd8473d"
+    },
+    {
+      "path": "master/pokemon/0304/face.webp",
+      "originalSha256": "973117a1c02d9af53ab991c8adfb885c70fe0681bb13cd6c7b024873042c7907",
+      "sha256": "2c7a835ee7a86904281566b486aa57102a83a603445c002b6e200e771f70b073"
+    },
+    {
+      "path": "master/pokemon/0305/face.webp",
+      "originalSha256": "343902e2f6f15d7c7d7b39bda25798ccf548cf0d12b21a0818b39953b4d0160a",
+      "sha256": "59637094686bb717ff2c97506f473f2df0d550ecd96ce0134695469d1e6ed8ce"
+    },
+    {
+      "path": "master/pokemon/0306/face.webp",
+      "originalSha256": "29dc59bb362b28e76e1ce5b4e5efffca3ab0a52acaf8d917c99b23f8b0fdb2b0",
+      "sha256": "a487ab75c86c0730965f33d4fd70609fe4a1ece509e7c83b833c0c187909b4d4"
+    },
+    {
+      "path": "master/pokemon/0316/face.webp",
+      "originalSha256": "78e6e4332dc156b3ce3bed51094db799804d90ecab0fb63821ead6870e5c217a",
+      "sha256": "bc39128e9fd38ec6fa5ebb879d669ebf7f448f99b3b7d5aa9a1b55de908866f2"
+    },
+    {
+      "path": "master/pokemon/0317/face.webp",
+      "originalSha256": "2634153be0723e6190883122d8797f2406a98d881922e6b8ca2d3755a13c3915",
+      "sha256": "dfa4ed75b163bb27d549d4f235d6dbcf3d30a8567c60e56af68dba8ffa70b5af"
+    },
+    {
+      "path": "master/pokemon/0328/face.webp",
+      "originalSha256": "ac44fbe5f95601d6e5df4ea6dd59fade6bedbce84255efd14ecb288e13a3ecf1",
+      "sha256": "a246eff9abde9bb1c3c61aa125c9feeb0fef6bb634dfdd0d6021090f2f986d96"
+    },
+    {
+      "path": "master/pokemon/0329/face.webp",
+      "originalSha256": "4a785b8604d2e2b5d71ae2cb773cc82f089c661d21c5ab2de981c485e5fa024b",
+      "sha256": "abb7cba791254aa3ef49d0af55a61395f9e11128a7efb3bbd5a5033f0c0f7e9a"
+    },
+    {
+      "path": "master/pokemon/0330/face.webp",
+      "originalSha256": "7ab6a7a483ac58a6461bfc806203c14ebffbe41632ab8fc3891634412dbcc26a",
+      "sha256": "ff29519eb48ea00a682f0d7fc80a3c9721c47b856033b1b65370675beaea242e"
+    },
+    {
+      "path": "master/pokemon/0333/face.webp",
+      "originalSha256": "f08d49fac068dbaa112929dec2167726bb23852058ebfb9e4617f7ad2f1cdde3",
+      "sha256": "5bf53449ead8f2ed6713dd045dc7234d0e68ed3864a92dde84f5ef4672b9d221"
+    },
+    {
+      "path": "master/pokemon/0334/face.webp",
+      "originalSha256": "aa587de6a4531336ae10c5ed1c866200795650a64407d47bfe61feb9cbeb7d79",
+      "sha256": "4f10739d04d0f0939de360eacb7a7b2d62b863e824e69a86be4db37e62fde95e"
+    },
+    {
+      "path": "master/pokemon/0353/face.webp",
+      "originalSha256": "cf809f2380fd11534395189ed42276fb4dcf225b4aa2c977fa73dec4bc22a441",
+      "sha256": "876b9b8c3943688b2191ac1fe0823ef48b2295fef748c656b92f4dd1ae482ade"
+    },
+    {
+      "path": "master/pokemon/0354/face.webp",
+      "originalSha256": "22f558bf2b0bfaf83ca4bae539dbb3c8066d8d532f7c6690689d16ab52a3643b",
+      "sha256": "1ef9cf0163672187244fba7d160c9bb0aa7cc30c92187382c7ea871331f0bafa"
+    },
+    {
+      "path": "master/pokemon/0359/face.webp",
+      "originalSha256": "05b925645bfddcddf25fd3832b56be8bdacbb9b394b5a9fea1a294cf4660426d",
+      "sha256": "eb4f1643ffa0c0f3a68816385a3ed658a953a701048e9a586c473cc8ece883d5"
+    },
+    {
+      "path": "master/pokemon/0360/face.webp",
+      "originalSha256": "d30d643f4f3d9e0036de9b1ccc8351f9f56249fdc0d0d09f65367592f15b302c",
+      "sha256": "c427e59c411748ec2e70f85b8648554f22b9cd80223b5112992c0035164587f5"
+    },
+    {
+      "path": "master/pokemon/0363/face.webp",
+      "originalSha256": "c54ad15b4bcd00b1acce08bce58f589ddb375499541993322220aa8e94c2a318",
+      "sha256": "f11d408160a3370e72cbc6296de5b914a98390e038903721b2f18d914d612b04"
+    },
+    {
+      "path": "master/pokemon/0364/face.webp",
+      "originalSha256": "6eccae34927b08cf1dd6fd2b5914fec99dc394ffa25053d2d96622b3ea78651f",
+      "sha256": "d2a1864ced6352f2f523f451b58bfb5fc1e1037b5003f25ee98a10042d3f5d83"
+    },
+    {
+      "path": "master/pokemon/0365/face.webp",
+      "originalSha256": "71fbb3d2a1f17d0c4dcfb6d27a26b8eb676c2c8e6657c878eb721497c462dc7d",
+      "sha256": "509627836de1858137f4ec3d6853ca1f9d784e8e13a03255a1d0ba02d74226b1"
+    },
+    {
+      "path": "master/pokemon/0371/face.webp",
+      "originalSha256": "37938a8e989d52b4aa24d15630f17144fecc673dd1fd69b7cafe1b85df2c2547",
+      "sha256": "b4ae67266015b6739cb46093d22ab9bd359f0fafb2d66f22f48557fcaff63f29"
+    },
+    {
+      "path": "master/pokemon/0372/face.webp",
+      "originalSha256": "d4b15a9146d9c6121d436871e4cf05a737c9f7e861580d44b51e8a120923479c",
+      "sha256": "d9252a3271e94aaf9a601bcbbfb817fd6beafdf58c2be3f56a7c26fe9da67e7f"
+    },
+    {
+      "path": "master/pokemon/0373/face.webp",
+      "originalSha256": "cbb1f90dc0f9b89b77aa4bc7141adde65c4ab8eaf7f7904c4b33d09c80ea93b7",
+      "sha256": "0b58e8acfdffe6e24941b89937e800abdc5364bdff011d831e729e10cf58f359"
+    },
+    {
+      "path": "master/pokemon/0387/face.webp",
+      "originalSha256": "243ddfe1915ba8c9001d4b28681b0a174d58f8733a5ac63c1f6da60624a5d540",
+      "sha256": "35c4c49db1d89f26b1a51e011069dc8ebe6e7d22ac5fda5f05639b2ff02979e8"
+    },
+    {
+      "path": "master/pokemon/0388/face.webp",
+      "originalSha256": "f3ab5198198dd4c09f2db554beb007f40583dc1cc5c5e9b042af209b9e2af709",
+      "sha256": "7bca69762f7ebfef37e461b37ff5b584032bda20a167e1ee9eb76d6bd3167758"
+    },
+    {
+      "path": "master/pokemon/0389/face.webp",
+      "originalSha256": "9316b69053cc216405e0391138fd7cf8dda43f8106a97cb559082601379949c8",
+      "sha256": "7001bd6f8b6454ffa67d4fbd593403b371b1f00ba8ac9b818fa935e78d0dbc49"
+    },
+    {
+      "path": "master/pokemon/0390/face.webp",
+      "originalSha256": "98895c5705336bd29740270130fab511acb9d9025108840b24589b4c67c359b1",
+      "sha256": "075cd82dde3a698c0cab99d48aa8e120880aba3594cbc7c60536841f4414fe2e"
+    },
+    {
+      "path": "master/pokemon/0391/face.webp",
+      "originalSha256": "c9639c415fda191bfd4a4364bd2ffbdebe1924e6f5bdc003c2710d75418d1556",
+      "sha256": "f83323ea2813988da853fa7e764900c3b13d10e3745bb7717620b83295a485a0"
+    },
+    {
+      "path": "master/pokemon/0392/face.webp",
+      "originalSha256": "c06676e857a8360c5df860a0862c50f08963b6ceb8092ebba8494975761bad9a",
+      "sha256": "1f621a436ebf0e54109b0b2f5e4ceaba3fd1f5582d6a5f0e056a4f5fcca2c6e7"
+    },
+    {
+      "path": "master/pokemon/0393/face.webp",
+      "originalSha256": "8111dabb0c02b7fe1c1db375cc93c8a0cf14f896f7141b3d848fa7d44c171619",
+      "sha256": "53a9b49c2f254c886b0b5e4bd5c8b7b9e5cd5d752094d010706806c4656fec7e"
+    },
+    {
+      "path": "master/pokemon/0394/face.webp",
+      "originalSha256": "78bf1c8bb565cd865e725374277f31d5d65fdf592790cfc43a119dce9aa228eb",
+      "sha256": "369149c487ac9f6ed113869d92a647576551330acba1f4e9d1bcd78b7044dc59"
+    },
+    {
+      "path": "master/pokemon/0395/face.webp",
+      "originalSha256": "f029d509610cc055cfd6f2a088380a099483861b280bacbc02c159e7aa975a25",
+      "sha256": "d44719b0548e22cbba5a7d02766fd308a3164891270b34f70843b8d8493ba9e1"
+    },
+    {
+      "path": "master/pokemon/0403/face.webp",
+      "originalSha256": "391c4f8e6f0993c91f74921b8dd93b84ff6d928a00191208eaf03fcc5039aa99",
+      "sha256": "197c9c13f9ceb9ff644c814965c47ac837d4c487cb5ca935b39bf387ee01b2e8"
+    },
+    {
+      "path": "master/pokemon/0404/face.webp",
+      "originalSha256": "320c794ca88c36621fa690308991d9cd00a7ea0cca3c7b7efcb7625efd41566d",
+      "sha256": "2a3a65af611da93374ae80265e94a9b00a68f7b7cb83e731444fe8b077d5fc94"
+    },
+    {
+      "path": "master/pokemon/0405/face.webp",
+      "originalSha256": "b3c78e2fd51466d0235315b2f51c44d456c4df0711dedb3c0c769e132993e572",
+      "sha256": "1d9cb7d7ac36c5e056048e3301fd48cfec0bf7265a2333e22af3b3fe78d98089"
+    },
+    {
+      "path": "master/pokemon/0430/face.webp",
+      "originalSha256": "f0bb5116b3ed74d6d388db1c0fbae47cd12259cfe67a5bb57f5833f4990dcffd",
+      "sha256": "72de81bcc6a1cecfd4992211306bec55b29f2e59a95f74d804f722feddd84901"
+    },
+    {
+      "path": "master/pokemon/0438/face.webp",
+      "originalSha256": "f648f7914e81145e04786ff58c869c1d4b040a7e438cab7e649de8731e90f0a6",
+      "sha256": "49a6bf4fae43c2808d810255e20fb0347fc9a0684e987d42c7661e78288e7292"
+    },
+    {
+      "path": "master/pokemon/0439/face.webp",
+      "originalSha256": "32f3769e8a42adc52b6db227c397e30933ade965c9e31f844ed233feeceedeca",
+      "sha256": "7d10d0e4f917a9242377be75a841eeec15818b854c75374a982118c3f1c6005e"
+    },
+    {
+      "path": "master/pokemon/0440/face.webp",
+      "originalSha256": "ff95fe84f213925eef33e7d70f0f1a1e689895f45ed031cfb15c41116ea26761",
+      "sha256": "4a448552f027d29ff6002611a08bd24087415eab56fd682fb4e4f02e74becea0"
+    },
+    {
+      "path": "master/pokemon/0442/face.webp",
+      "originalSha256": "cf740a15e76d083996b6f5588c8571ea13b2cb70996e7e83f6c77c553e32809a",
+      "sha256": "10e8e542fb745fc20cfd3e25002185b0dbef763d2af52870dba11bacba7e6372"
+    },
+    {
+      "path": "master/pokemon/0447/face.webp",
+      "originalSha256": "7b299ca9a366951262d33db8a0b64853e26824e496c473d6155dc3f6519c9155",
+      "sha256": "736a5a817ae14751a10dae4c4e639ae99f757654b7f97c3fab90a209684567d1"
+    },
+    {
+      "path": "master/pokemon/0448/face.webp",
+      "originalSha256": "78d6a02fe3f22b215d597a443a3eb5e03c7ef6781b7eb16aa28634b6e8541d24",
+      "sha256": "2810f0f66b8739bcc320efda91165c0f38fc7c9694496abdcefb131277607f4a"
+    },
+    {
+      "path": "master/pokemon/0453/face.webp",
+      "originalSha256": "fcc042ab770f572301856e90f4f0df2330a4d7350b1e0c34323ace74e40cc440",
+      "sha256": "11496b63dc1eaab2184454cc6f4fa43a0fc4244097cd30c9b4c2a6e843080766"
+    },
+    {
+      "path": "master/pokemon/0454/face.webp",
+      "originalSha256": "365f8370cf03cc890090cee20e8904ed43000c9b93152ed40fbaae87859fc9e8",
+      "sha256": "9f33b4ad7af05f523619dc5fc7c3dad9138468ddeeb65a5610fff1ff951b9092"
+    },
+    {
+      "path": "master/pokemon/0459/face.webp",
+      "originalSha256": "f1570536a1a6c97af3fda7bbc608ca2945d41c5a17ae70466cdb7633a194d983",
+      "sha256": "7fd2476110e071162938841653879ef1f2202dff13070c5b189738ed161ad3d2"
+    },
+    {
+      "path": "master/pokemon/0460/face.webp",
+      "originalSha256": "7bb524d2fc71cfb68855fcf8670c9420c7d793e2deec8e713c3c5b1bff470a91",
+      "sha256": "7aa6e9aa3d0c3ff7890a173970121fdd8c2d06646094669067803a272297242c"
+    },
+    {
+      "path": "master/pokemon/0461/face.webp",
+      "originalSha256": "c56f447592818c19913e1053389b935b14944d57f6c398c7d59fdc2af7b27427",
+      "sha256": "f646cde1b80ed917ca23caef985e2e15af59b6ce38c6e946b6e626158380b51e"
+    },
+    {
+      "path": "master/pokemon/0462/face.webp",
+      "originalSha256": "93859b3f435b2e5eb9cf1ec57034e27c38160c6cda9505cee98b6aefe7993778",
+      "sha256": "c3fdce450dbe91f4f65f23af98a7d448e9c9e0bc352b5e2251825777af7d9270"
+    },
+    {
+      "path": "master/pokemon/0468/face.webp",
+      "originalSha256": "ff1f00fa68b4aee150b014344f788a3ffb74350340acde2a0571140a6b0694c9",
+      "sha256": "8ddc5af11312863b3c52b291e5ff5ff1857a8c7f756ee9c8d1c33f0343bc4bca"
+    },
+    {
+      "path": "master/pokemon/0470/face.webp",
+      "originalSha256": "8a9dad3f089a0f68a6c091f772c63dfd282b810c6526effa1c5f6fed293e7d51",
+      "sha256": "db3a953cd96c3cf2d72d368d56039125585dfe769f22e538c6d0b1b1ccc1104b"
+    },
+    {
+      "path": "master/pokemon/0471/face.webp",
+      "originalSha256": "43be6533f7e57f3d49c0cfac2910de2cc1e1787dbeb73fdbcec9e4f06616c8c8",
+      "sha256": "4641f92019eeee8b0402f6d342bc5603f13f5d93ebcb087cb991d6b232b0ac01"
+    },
+    {
+      "path": "master/pokemon/0475/face.webp",
+      "originalSha256": "d1402b13d973e1c9ffd28aa5a8ddb61b8dfd48bdb097410b6a29f104af3b6d00",
+      "sha256": "5461f27de867d8f1e75b725aff6f4c06a168179de9128c85ffb5bc32beb1e47f"
+    },
+    {
+      "path": "master/pokemon/0517/face.webp",
+      "originalSha256": "f1d562644b3a15dc46761b035fa86ef721461affd43e4350d11472b749abbad9",
+      "sha256": "9d82b20167e52820c60c4f6009b58233e903765aca582600253f62662323f264"
+    },
+    {
+      "path": "master/pokemon/0518/face.webp",
+      "originalSha256": "2d5e256d9246ea3eb73ce427c4a6fe34f71b16e6df5069385e8af21e9ae7f5a2",
+      "sha256": "53fef76d67530b5df82680fd56a2651395141256c0f5f0d17a52abd29c13f62a"
+    },
+    {
+      "path": "master/pokemon/0557/face.webp",
+      "originalSha256": "83b951f4bd3438fd3f8473f523cc672170f438178b6eb91c0d2158eceafcad46",
+      "sha256": "182f966f0196d4b2797bf3135e84a888674283cf159f7ace8cf19504a79bacc8"
+    },
+    {
+      "path": "master/pokemon/0558/face.webp",
+      "originalSha256": "b1f307a3b67767b8dd16486b09b7e35c3ee968bf3601616e001efadcd5b0fe7f",
+      "sha256": "ce548a3d09fda0018b6e4ff8a4a0bd796900ad9b14ac2de5a3a55588ae963c6a"
+    },
+    {
+      "path": "master/pokemon/0627/face.webp",
+      "originalSha256": "b5a6c4b3185af9e2e58f020a4b2c18d9dcbcdd4db6c0488e4b02ec1fb44c47ff",
+      "sha256": "0c2a3463f7b4f015a91659a53f725b456c7620b30f99bde8859f522b9bd8073d"
+    },
+    {
+      "path": "master/pokemon/0628/face.webp",
+      "originalSha256": "c56631dbdd767840bd55a1974faa422691378f3d2da11dd1e641c69e9cec548f",
+      "sha256": "a1a15b64fea47b5c4963dd74ae3f6d48317be976e2b77de4919b2d790b3d11c7"
+    },
+    {
+      "path": "master/pokemon/0696/face.webp",
+      "originalSha256": "5d1ae13b5ce03f65948af5b2899a8a7f9713f151f55c8a6661134c6d11db7c47",
+      "sha256": "fd298554a75c6952f216312ba1fc0b8d21096554f6b40532aab037b8413a7b09"
+    },
+    {
+      "path": "master/pokemon/0697/face.webp",
+      "originalSha256": "113f08f2632939d6792fcd253c1b2f82cafcc22d3ee583edaa1bbebd18a3478c",
+      "sha256": "880c297d5c20ddfdc56131489b55a8da655096034bd03377c7fd3366ddd22f36"
+    },
+    {
+      "path": "master/pokemon/0700/face.webp",
+      "originalSha256": "403b78909a85c2e1493fb7f78c4d731070e3a6c99fff92eddba1639da00ff7cc",
+      "sha256": "501060419355a6c7abf3b0313b77273673a754347410bd8fcd248716a59140a0"
+    },
+    {
+      "path": "master/pokemon/0701/face.webp",
+      "originalSha256": "ba5bab5756e741a0617e59878b32fcf016891e43809514c995345c7a00414d1e",
+      "sha256": "dd0450774adf8fa27a7266b3f7a7241c74f0aed0239125c2af8e34a1bfeb3a8e"
+    },
+    {
+      "path": "master/pokemon/0702/face.webp",
+      "originalSha256": "4152839ae62e1a735cb67c9252cfedb4ee2eb6b56bdd758a4b1931c129c5d821",
+      "sha256": "6960e77cb1169faa1965258fcede532caad8ac5cc250867a2c90b59c9bdcc294"
+    },
+    {
+      "path": "master/pokemon/0714/face.webp",
+      "originalSha256": "25490bae5763dfc51d2d864bed58c7148fc0c715b875f09ef4f1f58e697ac180",
+      "sha256": "bf594c5cb59055c0268501160d2d3e5a9014dd1c7ff9a449f21c279e8865ad4d"
+    },
+    {
+      "path": "master/pokemon/0715/face.webp",
+      "originalSha256": "56b8f2a48f80073d6f3804dee4059d2278fe90b9dde7d3adf3cf101541c34fe0",
+      "sha256": "7b48dc64dcfb76787ea79eb8d26f72ba0ba88a4f573a9299b00fec3327f64226"
+    },
+    {
+      "path": "master/pokemon/0736/face.webp",
+      "originalSha256": "8836e01773fb941fafbe2fa3eaeb17f47d83f3b22a72010d48384311a69f999e",
+      "sha256": "2bfee2206cf7115e5e33098d02566902614b891f14921ac10d4adf94c91af422"
+    },
+    {
+      "path": "master/pokemon/0737/face.webp",
+      "originalSha256": "1615f2cc33df01de387a75bb391e183dea9dadedfe46f69359f5dd04202d10f7",
+      "sha256": "904f4648fc4868805ab1e9f137c9b77a3e3dec2282567ee07da175cde08e69ce"
+    },
+    {
+      "path": "master/pokemon/0738/face.webp",
+      "originalSha256": "5a92628ddda7ba352211eac420cf32e0b8336dc9388274f0e0fa242f9d4f8044",
+      "sha256": "987fdc80eee0a8894fc1946734ab62fa792da79c97affe74971ebc4c6f6769ca"
+    },
+    {
+      "path": "master/pokemon/0742/face.webp",
+      "originalSha256": "a1a14b6e35d7863b13b8c85e5068daba928c689f8867dadc0a6913195fbf6568",
+      "sha256": "7682f88cd4ca361e0bacc23ae973d4a6e0e72aac2457eff7f5889d0e079375e0"
+    },
+    {
+      "path": "master/pokemon/0743/face.webp",
+      "originalSha256": "e14e0edbed21641f26f47d82bda6cde8ba143456cf2ff6e942ed4d7fc07b20b2",
+      "sha256": "e8bd9a8861172aa3365d3f52c6123cd7cd37b7280328c83ab17a9923b8710984"
+    },
+    {
+      "path": "master/pokemon/0759/face.webp",
+      "originalSha256": "99afddd24e4bba44df0acd2076caa6856e20fcb8f56d1086d06cf82187ba8c20",
+      "sha256": "d9b1ca42197baeb821d2d03eda04b0a447b258f1e9bdb8d16a128cc6f08d499f"
+    },
+    {
+      "path": "master/pokemon/0760/face.webp",
+      "originalSha256": "cd6f67e1d1ab6390f33190e4b14a63e0dccf68c6e8c382f77b1d26464ea615ca",
+      "sha256": "8ef5fabcacac2ef5873f36bc72a8de29c6b8cb226ad5e4f896bcee72e2c9666f"
+    },
+    {
+      "path": "master/pokemon/0764/face.webp",
+      "originalSha256": "b740c642c99ec711a76b9035b5a48b5c4fbbc7dc400849133a6d156e380e3350",
+      "sha256": "7667820cd392be02ee98e00c576a510bf0eaf0fd3b11361c005d91a4a46363c0"
+    },
+    {
+      "path": "master/pokemon/0780/face.webp",
+      "originalSha256": "75655c6870852c46407c74720774275d224c7bee8376342d7290610d2476779f",
+      "sha256": "97fbc0499cd5a7d143223686f6db9dff185d59cb96c2396a8cb21608393823de"
+    },
+    {
+      "path": "master/pokemon/0845/face.webp",
+      "originalSha256": "202ef85fdc31bd6e8d3051855206e8c21eecf9ac60910750ed3b54280d43b79d",
+      "sha256": "66f0404b1792bdaaf79bc4423b9d7163c80356c3fb6f8bcae89fa3299ec860f0"
+    },
+    {
+      "path": "master/pokemon/0848/face.webp",
+      "originalSha256": "4514ec2f452b7287c1049a0987ca4f4c792edac22db0c4d1294e56071f0f4775",
+      "sha256": "0f07cf17a6a6fc6675788e958f8a674963333c5643a84ec67150371fa0709d9c"
+    },
+    {
+      "path": "master/pokemon/0906/face.webp",
+      "originalSha256": "eecbb2ee080cb9f133be69a0f2cc06d317c3d028ab29434c339b19eb11deceb5",
+      "sha256": "0d5ff7b7bb4bbff98355ac57ae366554ddab306d22814778533157bb7570f0ab"
+    },
+    {
+      "path": "master/pokemon/0907/face.webp",
+      "originalSha256": "760b13b730abeb579d18a52e14be7f94a2fae1dda98634105bd8d45510c7891c",
+      "sha256": "3d93d99e0d6ead0239797795e496bb4de8e179e203c6ffdd19589c81e74ea26f"
+    },
+    {
+      "path": "master/pokemon/0908/face.webp",
+      "originalSha256": "0208c8da7052d3796eb1331f28924155b14dfc5d125c6d29da214fd21c42f496",
+      "sha256": "5609eb7adb9f321b1d625b735badd5ca500cdf0fa9d14b6eaeb6ea703cab0d85"
+    },
+    {
+      "path": "master/pokemon/0909/face.webp",
+      "originalSha256": "46a6f5b452752afabd4c06ec3beb7b36440c4ea31771b9eae4223736fe8aa61e",
+      "sha256": "15f67b8b084254e8affa16696740c06af5263a879b005f469a3f24955b9601a5"
+    },
+    {
+      "path": "master/pokemon/0910/face.webp",
+      "originalSha256": "975a340f8807b9f1cb64f34342f3ab8fbd04dd399097181e6faa3edc37fad2c4",
+      "sha256": "74a6c5c1f273ab62025cf6b4b40e6fb98c5ae298187e32c6d7652669e3cefa10"
+    },
+    {
+      "path": "master/pokemon/0911/face.webp",
+      "originalSha256": "d6a483d790907c75a54dcd936fe4d59964414cfde653322dda98eaa3740a8aac",
+      "sha256": "67ceba6696fc47da64f88d57aaa77edb5977c1e8f540c23089883bba8012b294"
+    },
+    {
+      "path": "master/pokemon/0912/face.webp",
+      "originalSha256": "02117e24eea8725589bc603c589d5f3a90ef2d248dbc7303830317475a6b6082",
+      "sha256": "8a2aed250f16e4dac77e354021c33094c680001033d55052ffb989f55a81972c"
+    },
+    {
+      "path": "master/pokemon/0913/face.webp",
+      "originalSha256": "630b025192a0188c8ba246d31f74214804c1181ed3868fa84d668818cdc7aa05",
+      "sha256": "9da9c2ba24e87cb05c6e67d167ebd3bb614e7417deee2c9237f380c86d453283"
+    },
+    {
+      "path": "master/pokemon/0914/face.webp",
+      "originalSha256": "08a541a3fc6e8082766087557c3f9f5b7601140ad141e921317c1dda737c172c",
+      "sha256": "fe2eab2bc6b0099e6c9fe5dd1902a0d43f12b43ab59444e0660393051416f55a"
+    },
+    {
+      "path": "master/pokemon/0921/face.webp",
+      "originalSha256": "e44a8609b5ddec37ee38d7953e1644978d643612d6cb39fc5fdcd424b9ef8a08",
+      "sha256": "859721cb4d1ab9b15aaddd82aa2e95dd0bc22f02636441125b5275196bfe40cd"
+    },
+    {
+      "path": "master/pokemon/0922/face.webp",
+      "originalSha256": "56a9e7d88243f0501f32f174151117f8b30ea49b00c354b622c94efebd7056d6",
+      "sha256": "3bef25b91da2240120e26063c44bc0b89382bc5bf983e49cd8e0947dd39c39d4"
+    },
+    {
+      "path": "master/pokemon/0923/face.webp",
+      "originalSha256": "ac40773010bc047e88b64f0fc6554aea819ef1b44383a9126ee0349f73a9ad6b",
+      "sha256": "353ad9104542f07b78fddac079f158741243d9eb0bf56926ca49c846471b002d"
+    },
+    {
+      "path": "master/pokemon/0957/face.webp",
+      "originalSha256": "58832c8a5a3b8c35fab0953a86c98e6301a94c65739a95c1e5692b2918f42e6e",
+      "sha256": "ca53f464cb6b4cb0b516da903f5a8d80717e804a3d2c7048e458ab320af87db5"
+    },
+    {
+      "path": "master/pokemon/0958/face.webp",
+      "originalSha256": "665a7af5e62074c872b4de5575d92256e27459974c4a3ffea51274615bfb11ba",
+      "sha256": "809e0cc31c0f2ed6390f20c052483c9c41fe6d2a46b46264dc79df1a9533f4c0"
+    },
+    {
+      "path": "master/pokemon/0959/face.webp",
+      "originalSha256": "2566da502e7f69c1b88b8c3318ac088025446baf3d7e6079579de69bed22d0c5",
+      "sha256": "4e859b275e6defe00556181b99f06baa1e80db200f15df0bbbf397cea42d6d73"
+    },
+    {
+      "path": "master/pokemon/0974/face.webp",
+      "originalSha256": "d3014332c5d90cd90be8ab099d4320a8ef3ea9d1680f1adedd4845e018614c07",
+      "sha256": "323b4bd2678387128a88128856029b3a0720d4c93b12ad14f5689c419c6205e3"
+    },
+    {
+      "path": "master/pokemon/0975/face.webp",
+      "originalSha256": "035b77aa15e79a537dfa10e7448b78ba240abdf8ce6abe12cb20cbcdb60d4797",
+      "sha256": "7ee325a772182a358ee4ae74a4ff30e0aa48fbb62a366c3147f46ae391bc1f8c"
+    },
+    {
+      "path": "master/pokemon/0980/face.webp",
+      "originalSha256": "933e0426e5fdb9e36996321ff279920fffcc4acfa5bc79cf367c6f280c64aade",
+      "sha256": "fdc5f3a2eb551ee67507f4a0c5bc8df0b66338670e498592b029e58863473a37"
+    },
+    {
+      "path": "master/sleepTypes/dozing/icon.webp",
+      "originalSha256": "af10f49fac872e98202faa5b96ed0e1e48a111b722e8731d148f71c04d950144",
+      "sha256": "92a72cd26befb5732cbdf54a0f571b3f03a7db5e12508081eca34a01526cbc97"
+    },
+    {
+      "path": "master/sleepTypes/slumbering/icon.webp",
+      "originalSha256": "d48a1efd6491f9345b5a63998e2703d22a8033ef59752a331eb3441903676b77",
+      "sha256": "268c815051635ef18811ab607e04bef28c5795e8865d4b345192f99edb248566"
+    },
+    {
+      "path": "master/sleepTypes/snoozing/icon.webp",
+      "originalSha256": "2ff800a835ed14bdeb974dd334ba228318ce4efe4eaa65c030fad0851253f44e",
+      "sha256": "1abdca3fe9f3e81619500471745569ed0e1fce9f6b25cceb4887cffc296e3ab5"
+    },
+    {
+      "path": "master/specialties/all/icon.webp",
+      "originalSha256": "773d3f6214ca6420289fcf3db1367f024d60e03244060c1bd8379c54188109b2",
+      "sha256": "d3a94a9bdb568c6c75c75865855d4ade5a081f143bc60487104b17cb55ee5930"
+    },
+    {
+      "path": "master/specialties/berry/icon.webp",
+      "originalSha256": "388231f9a0ea847188f2cb4020f2a115330bdc7be63e565030cf0dbb6487fc47",
+      "sha256": "f58cb232025a18fec7387e20b0292877c6ac48e6b4496790abc9b869332139c3"
+    },
+    {
+      "path": "master/specialties/ingredient/icon.webp",
+      "originalSha256": "1cdcb11cbbf7f99a7958fd1d7d15c45d225a81c7f9117f3398ea766b0c76f8f2",
+      "sha256": "84ea8c78c198de9942ae54ff8726c658ec89cd7e675fa790aa200335ac6dcc13"
+    },
+    {
+      "path": "master/specialties/skill/icon.webp",
+      "originalSha256": "c7cc420f4a93804a808e5f41543d019f4fee95c0547a6a5a88f4e528bf8324e5",
+      "sha256": "e776184827adeb1245268607d1d1fc1c1c9ef2a4b4beecb99fbee761def2f53d"
+    },
+    {
+      "path": "master/types/bug/icon.png",
+      "originalSha256": "50113375ed26a05832915b10d7ac5770e1383682b017fc85b33340f49cfdb34c",
+      "sha256": "b1c2b2df345494e3b6a7b09db3d98e3b4cdd6a41deddc52fff7c25b0c4dbd0c7"
+    },
+    {
+      "path": "master/types/dark/icon.png",
+      "originalSha256": "fb2827da99c474ad2bb6d2108c3cd6afeca6999ef3f59f104bb0c4ac006bf2f6",
+      "sha256": "807af2cc7066dadf8c9e85fa6126b73c7821c6d2369790d462504f3b9c34b285"
+    },
+    {
+      "path": "master/types/dragon/icon.png",
+      "originalSha256": "f23e69de72453b6058583f8b2b4220e7b33b6cfeebb2b043bd4a7f9614e79236",
+      "sha256": "3102c0862aca5f5b0744c5e1a71cef70d3e56d73ba69a10d1904074e0d034d03"
+    },
+    {
+      "path": "master/types/electric/icon.png",
+      "originalSha256": "0d387528fe40413c963b117ef1f388ed6d5e5d29bbbe01895b22ad5b90e44d23",
+      "sha256": "e32e424fbeb757cead4e80883a62a5e67db0c6938fe162a9fd09608694b17b9b"
+    },
+    {
+      "path": "master/types/fairy/icon.png",
+      "originalSha256": "a1693f7f5411275d822f69c5175ebc963dca5652c1bd7889af3235ec8a59517d",
+      "sha256": "8605a221891286cda88c173e40c91b9628a36d9a31930cffffa50bd50e7279d7"
+    },
+    {
+      "path": "master/types/fighting/icon.png",
+      "originalSha256": "6faabf9f0a3911515b2a902e57607805cf642789c547cee6d9c42d6b3a0c2350",
+      "sha256": "f7691d8062001a5ab9ba814df84bccf62b7c335065fb36659fdfd76fdb997137"
+    },
+    {
+      "path": "master/types/fire/icon.png",
+      "originalSha256": "636bc81065a86751aef200c63ccee384dfdacca4651b046b5f3964b639edd80f",
+      "sha256": "795c0373c96dc3ac07f6435309663e8245ea207b143298bda29e816d06658fca"
+    },
+    {
+      "path": "master/types/flying/icon.png",
+      "originalSha256": "0f22a8456108a5cf65dff48fabe54482a76dcdb6f1c58120ef994fa461666f13",
+      "sha256": "2a3d035d47262fcace357cffd1989f7b03b4e43d7caee36943b2e5ce72ebb747"
+    },
+    {
+      "path": "master/types/ghost/icon.png",
+      "originalSha256": "9c468acd25d06bd23dea3355b5f39021b8aff62916757df87c13489e82d524f4",
+      "sha256": "842e3cc5056cef224b4b9d856ba51c5fc9b07626d48002f57be7a63732d296c1"
+    },
+    {
+      "path": "master/types/grass/icon.png",
+      "originalSha256": "8317fd8260d53c1903607647e26c760ef5fbd59bb5ccec29b2ec0faa0ac663ce",
+      "sha256": "d4e60ddf849b0d059c9d0009a175314e5018e08501b357f1c099543f16628867"
+    },
+    {
+      "path": "master/types/ground/icon.png",
+      "originalSha256": "783b25f8b715c3c38d610a87646951552c5b4a2a3dba40c4c1cc314f595fefd4",
+      "sha256": "7deef36f3c0666af98a9abc4849cd4407860aa2d1a90c14ac8dd995d4a11dcaf"
+    },
+    {
+      "path": "master/types/ice/icon.png",
+      "originalSha256": "dab47e2083c03828f1941c314f188d8898bad7ea62c9b5e85f1696102779ddb3",
+      "sha256": "89017de24f552449dde1ed4611418586a44911735a39830b9ba5df7466832abb"
+    },
+    {
+      "path": "master/types/normal/icon.png",
+      "originalSha256": "45bc34d0d0e27eb210b5114a68779faffd5f922810c37fa9d6b35a9d6646c181",
+      "sha256": "8b1807c4d39a6fea29a088aec625e57bfbb12f7d0a40ba0084be38bc2f891ee7"
+    },
+    {
+      "path": "master/types/poison/icon.png",
+      "originalSha256": "686cce0a11299dbc3d8195256c3a0253a516940806da39de95c6d685b60ebfc9",
+      "sha256": "6965728f1bfc271a52e85f52ca53adb3abd8c05b3835f2a96c0a592b976709ab"
+    },
+    {
+      "path": "master/types/psychic/icon.png",
+      "originalSha256": "9108f60fd3750fa74e8a35e5f41905d3ba6aca5170e163302492450dc7a1907b",
+      "sha256": "0beb5493ef01a6a9b6095667bce33a93412f115c1cc26b43a190671b606b9057"
+    },
+    {
+      "path": "master/types/rock/icon.png",
+      "originalSha256": "a91efb35b5f486aadba08beda1dfd05bedcc255eccb1f0d2913a2e5fe6c43cc2",
+      "sha256": "e14ec8855355da853dc7b09096f14e6776327a693bcfd626feda834db775f056"
+    },
+    {
+      "path": "master/types/steel/icon.png",
+      "originalSha256": "637672f8c48061ec5e34f97ecad4109b777fdb258a5b8b916fdd093651d4eee6",
+      "sha256": "b00e16dfae2609eb4977917e87203373ef4f8c92813dbb7f0d474667cdff0679"
+    },
+    {
+      "path": "master/types/water/icon.png",
+      "originalSha256": "4b3e349c2e1af8667ec7e70bd542957aef17667e2f1b15e0708cbaf9a63e0f48",
+      "sha256": "bdcb1d3d890c09db1c88bd31de1279a9fd6588e992b661ff7ef40d6947a56e83"
+    },
+    {
+      "path": "assets/ui/nightcap_pikachu.webp",
+      "originalSha256": "baf585397c920d273c349d77a3107f7609d3006e3272403b64fd38f7085f7d0c",
+      "sha256": "8ac4abef8468de9499929fa8f1f5f94bc84a7a3275649aa3362b03dab8d5c8d3"
+    },
+    {
+      "path": "assets/ui/go_plus_plus.webp",
+      "originalSha256": "e8ba73ed89eb63371a3b7dbe874b59c22b5a2ffa5ead8b409a27a72629cde510",
+      "sha256": "33628bf58980288bc2b3a3341a7175b916d470109dfcbc61a2c1e95d70544f6a"
+    }
+  ],
+  "archives": [
+    {
+      "path": "pack-001.zip",
+      "sha256": "49fd063eb614a0fe610a85fe12cb53248af373c783c14149d56ac24ca3784b9a"
+    },
+    {
+      "path": "pack-002.zip",
+      "sha256": "0456f355421597fa9f572b1b40ba31f7926cb7315c675231b98bef13eeebd883"
+    },
+    {
+      "path": "pack-003.zip",
+      "sha256": "aef2065244f247b84e61147e99bc1e9b673f0621bc5c1d159b1c7cc346a0616d"
+    },
+    {
+      "path": "pack-004.zip",
+      "sha256": "e54e20ca6b76fff17e3f632939320779df9b753db91d901f8e7eb130fd5826b7"
+    },
+    {
+      "path": "pack-005.zip",
+      "sha256": "0f46f497bf8f474f69976fd2209a9ece7d44e6a08dd77700c9b185997027514b"
+    },
+    {
+      "path": "pack-006.zip",
+      "sha256": "5879c7644fa10cbab923dc49990c6fe59e9f6cb06302074913e592a171cfa334"
+    },
+    {
+      "path": "pack-007.zip",
+      "sha256": "0ab8abde9ac935e6ed47fa34e142a18a12d7c38c5fbd9eb42cc93c34b57dfa81"
+    },
+    {
+      "path": "pack-008.zip",
+      "sha256": "c5fe74f7d6db5b29c32dfae758867ce2caa97ab6688d63acf8c8e2bd91836e10"
+    },
+    {
+      "path": "pack-009.zip",
+      "sha256": "bc2b02495e9be6559041df1f5c1a3a97c4ffad6c85c59098b07c47e86cbee39e"
+    },
+    {
+      "path": "pack-010.zip",
+      "sha256": "6e5218cbd4f2d7a6c7578fe9e7352e41550561fc7c4e6f94187cb0503f9d808c"
+    },
+    {
+      "path": "pack-011.zip",
+      "sha256": "e27c1a48c8a2a93f34a9381a7c48f1c4225352d3cee99c42a4540affe5e4f2fe"
+    },
+    {
+      "path": "pack-012.zip",
+      "sha256": "d318b066749fc9c040867fff04251e4637538b61e7f67c17641754bc3fccd24f"
+    },
+    {
+      "path": "pack-013.zip",
+      "sha256": "28bfa152bd1660d10033c374042d340713e11c7255a3e30914f9c89c1f43f0df"
+    },
+    {
+      "path": "pack-014.zip",
+      "sha256": "2cbe1cc40c198be7b33aabb39b45ee49b1b9cedc4b2035276354698110f953d0"
+    },
+    {
+      "path": "pack-015.zip",
+      "sha256": "d82c498a65cc7d99e042058486d53f880412fead28e9f5d11493b54b1686e4b3"
+    },
+    {
+      "path": "pack-016.zip",
+      "sha256": "39c115ce1d6b680a52766d0a42b5b02e54c59d19a62affc532ab4200d9dc35d0"
+    },
+    {
+      "path": "pack-017.zip",
+      "sha256": "856862dc838ca63fde4c29e157a83e997aa6c882e199e3915ad6ce61d8d78d65"
+    },
+    {
+      "path": "pack-018.zip",
+      "sha256": "98805ace9f71d92f4652663012f45d39ccf7f149a7bb8582f13d734bee8ac910"
+    }
+  ]
+}

@@ -1,0 +1,6864 @@
+{
+  "source": "PSG_Biblo_margin_trim_20261003.zip",
+  "count": 381,
+  "records": [
+    {
+      "path": "assets/skill-icons/almighty.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "448dd8e84b3d2680af7e396cd9e429bebc7423d2db3fd7d08e0206b95776eb2e"
+    },
+    {
+      "path": "assets/skill-icons/aura_sphere_dream_shards.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        465,
+        468
+      ],
+      "source_box": [
+        33,
+        16,
+        496,
+        482
+      ],
+      "sha256": "1f8f9dcf97a2f3f4186e89930a8b63c6c42271128d0aeec60bd143d84b9f132a"
+    },
+    {
+      "path": "assets/skill-icons/berry_burst.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "ae737b608fa128d6052366e6ef1b3ff813f89bea7f8077d0cc10fbcbb393b0ad"
+    },
+    {
+      "path": "assets/skill-icons/berry_juice_energy_for_everyone.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        474
+      ],
+      "source_box": [
+        16,
+        20,
+        496,
+        492
+      ],
+      "sha256": "522cbf8ab8837b4cca53401a1e920ea471ae1cd4a6b05fc3b4212d1ff4fd00c9"
+    },
+    {
+      "path": "assets/skill-icons/bulk_up_cooking_assist_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        474
+      ],
+      "source_box": [
+        16,
+        20,
+        496,
+        492
+      ],
+      "sha256": "21e3c112fed536c066a7eca8d6df1e41305eb39181aa440fd247528b4059595f"
+    },
+    {
+      "path": "assets/skill-icons/cooking_chance_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "d851347a0f37619ed61feda29c256021775de045fbff058c5891515fa56b2153"
+    },
+    {
+      "path": "assets/skill-icons/cooking_power_up_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "3d6bb43af4b6a0b69127164f302705b627c38e3426d05ad60e43a8d515cac281"
+    },
+    {
+      "path": "assets/skill-icons/disguise_berry_burst.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "116b3ac7001e641778e3ad7227e518bcb3d19f1c39532bb21f372c96c0c344bd"
+    },
+    {
+      "path": "assets/skill-icons/draco_meteor_berry_burst.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "31bbfe9b5e19ae46091a6f7467c08231fc13c3cfdaea7acd23c5860aa7027374"
+    },
+    {
+      "path": "assets/skill-icons/dream_shard_magnet_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "533dd80a0881f1a86acc7037066f036cd1383efb3254a70937b8fd6e7cf5cc2a"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_m.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        479,
+        469
+      ],
+      "source_box": [
+        17,
+        16,
+        494,
+        483
+      ],
+      "sha256": "d7ceb2fa58fc74fa469ca8e860a5afde689808b2ce9c05d3352b13928180d90b"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_s_self.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "615c124bcc39f98faabe8d7db952af922e2ee0a7cae5396fb2979d471f18636f"
+    },
+    {
+      "path": "assets/skill-icons/energy_charge_s_variable.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        480,
+        476
+      ],
+      "source_box": [
+        17,
+        16,
+        495,
+        490
+      ],
+      "sha256": "878792d59aa9a598743d2d91bd028a49f9aa2185dc4c9b236c7a48a77533436f"
+    },
+    {
+      "path": "assets/skill-icons/energy_cheer_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "99b6cdf55c4c4bc268274b606e1beb9b141e34dcfb75a5ac6b875348d9068f00"
+    },
+    {
+      "path": "assets/skill-icons/energy_for_everyone_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "80b932f509a7c4f106c4c56e846bf41002430ecda655629ee7fad2b391e6cbcc"
+    },
+    {
+      "path": "assets/skill-icons/extra_helpful_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "774e2ccb44e9c9426817d1007405d61322dc83fdbcc0f9d5949891d48bacdf95"
+    },
+    {
+      "path": "assets/skill-icons/healing_pulse_energy_cheer_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "a56e21aaa5f4d7c01ae3f13b11f0dd53a5f315f157d310871e361d013cc32b85"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_electric.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        482
+      ],
+      "source_box": [
+        16,
+        16,
+        496,
+        496
+      ],
+      "sha256": "381d127ad039940111c4ed13c198721a7a654eb908993db8ff432e1a00447eb9"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_fire.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        482
+      ],
+      "source_box": [
+        16,
+        16,
+        496,
+        496
+      ],
+      "sha256": "fd3f343508a2eb1a1f4cd670ca94c5d71c58b791c2e13df417cb1f74d77856e2"
+    },
+    {
+      "path": "assets/skill-icons/helper_boost_water.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        482
+      ],
+      "source_box": [
+        16,
+        16,
+        496,
+        496
+      ],
+      "sha256": "8d1d4bfa638058fc9f997fa2c80982c0d159348ac378d8fe0a33a658c2acc8d2"
+    },
+    {
+      "path": "assets/skill-icons/hyper_cutter_ingredient_select_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "5eae00523c557b33196c63a66026517745d52a1e3a9366a39e93ec03f77b85a8"
+    },
+    {
+      "path": "assets/skill-icons/ingredient_draw_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "a2669f32eb837ea61de7be57879ba7b81e09edac3dc3da0716c36e565d0f9b48"
+    },
+    {
+      "path": "assets/skill-icons/ingredient_magnet_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "92a31ee5ead6fe25ee9b06a131f78133feb567cf3db31fd5dbbff42d90a05675"
+    },
+    {
+      "path": "assets/skill-icons/lunar_blessing_energy_for_everyone_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        476
+      ],
+      "source_box": [
+        16,
+        19,
+        496,
+        493
+      ],
+      "sha256": "bdfa334061496e0079ffe5c2dba018c975390a857069a632f7598046ee74f249"
+    },
+    {
+      "path": "assets/skill-icons/metronome.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "6e410713461809cce1db9752705b74a2ce1681b72ec9ffd3e0ce6dd14c30a718"
+    },
+    {
+      "path": "assets/skill-icons/minus_cooking_power_up_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "664920d06e119349b1c224cda4760f457c15e392a68fc1a4f795f75a2974cfcc"
+    },
+    {
+      "path": "assets/skill-icons/moonlight_energy_charge_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        474
+      ],
+      "source_box": [
+        16,
+        20,
+        496,
+        492
+      ],
+      "sha256": "da5f4a1d587dea6788c6a9bfff66b0e0154269fe9cbcc8be24421f35490fa8cd"
+    },
+    {
+      "path": "assets/skill-icons/nightmare_energy_charge_m.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "c74b9b898602efb26d6e6fc2c6f3eb90fc0b5c9c77716f0c997d6521e09177e5"
+    },
+    {
+      "path": "assets/skill-icons/nuzzle_energy_cheer_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "5161adca6e8ca7a058e2ebe1b71480be1594c4cc3a916a689b361c901eb5aadc"
+    },
+    {
+      "path": "assets/skill-icons/plus_ingredient_magnet_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        478
+      ],
+      "source_box": [
+        16,
+        18,
+        496,
+        494
+      ],
+      "sha256": "760cea3227eca1338e2543aaf56640608de1a7f36a6ce79d7124f32abb82d244"
+    },
+    {
+      "path": "assets/skill-icons/present_ingredient_magnet_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        474
+      ],
+      "source_box": [
+        16,
+        20,
+        496,
+        492
+      ],
+      "sha256": "470ef08d04f046e99854127d9174c96f5c0c4be19cab71b22405960565f86082"
+    },
+    {
+      "path": "assets/skill-icons/psystrike_berry_zone.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        477,
+        472
+      ],
+      "source_box": [
+        18,
+        21,
+        493,
+        491
+      ],
+      "sha256": "116039599f78a2f265dc7cd615cf474afcae6b242a56715aec0bf558ed2dd850"
+    },
+    {
+      "path": "assets/skill-icons/stockpile_energy_charge_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "f485e27c3f7789dbd62eab9617b0995f3b68e65525a814f6b16d898455fa2437"
+    },
+    {
+      "path": "assets/skill-icons/super_luck_ingredient_select_s.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        474
+      ],
+      "source_box": [
+        16,
+        20,
+        496,
+        492
+      ],
+      "sha256": "ec128a22bdcfc8b3b2a44818bc3fc6f2b059c7c88ddbd397d7b8dcf48fe0da0a"
+    },
+    {
+      "path": "assets/skill-icons/transform_skill_copy.webp",
+      "original": [
+        512,
+        512
+      ],
+      "cropped": [
+        482,
+        466
+      ],
+      "source_box": [
+        16,
+        24,
+        496,
+        488
+      ],
+      "sha256": "e1ed1216507fd0b5dff681ac34cbfad955680bd02fd18035ea1c7b25da183e91"
+    },
+    {
+      "path": "assets/ui-icons/dawn_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        226,
+        227
+      ],
+      "source_box": [
+        56,
+        55,
+        280,
+        280
+      ],
+      "sha256": "10c9b4ffaf63d99c7badc0bd37bf62dbce77dc258e6749f48a9172f9ee46a97a"
+    },
+    {
+      "path": "assets/ui-icons/dusk_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        226,
+        226
+      ],
+      "source_box": [
+        56,
+        56,
+        280,
+        280
+      ],
+      "sha256": "4280df241858efb02b74638f60d25cda14914342e8240878f82eacffa3bf1116"
+    },
+    {
+      "path": "assets/ui-icons/fire_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        233,
+        213
+      ],
+      "source_box": [
+        52,
+        62,
+        283,
+        273
+      ],
+      "sha256": "341e259876673eecde59ae46c5141d751bae9d80e2a9308178a8212ece100961"
+    },
+    {
+      "path": "assets/ui-icons/ice_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        230,
+        219
+      ],
+      "source_box": [
+        54,
+        59,
+        282,
+        276
+      ],
+      "sha256": "d3bb5c9fbf7e0ff9da9e8d85fb6f681e65a4805e515d7cf468942111853958e3"
+    },
+    {
+      "path": "assets/ui-icons/kings_rock.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        258,
+        225
+      ],
+      "source_box": [
+        40,
+        56,
+        296,
+        279
+      ],
+      "sha256": "5f7252ba8fd6b1361e6dc520c8d398c9fee9ba848123177d4fe75e5e88698ad0"
+    },
+    {
+      "path": "assets/ui-icons/leaf_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        234,
+        217
+      ],
+      "source_box": [
+        52,
+        60,
+        284,
+        275
+      ],
+      "sha256": "b21c8a17a97c73c720aeae8fa80ee34482c1b7799afe29a6cc0d8844d73159ac"
+    },
+    {
+      "path": "assets/ui-icons/linking_cord.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        257,
+        227
+      ],
+      "source_box": [
+        40,
+        55,
+        295,
+        280
+      ],
+      "sha256": "7c7def58dd1076a73fca92a5c5c83d906e02fd605d15ef676307283452335c9d"
+    },
+    {
+      "path": "assets/ui-icons/metal_coat.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        239,
+        216
+      ],
+      "source_box": [
+        49,
+        61,
+        286,
+        275
+      ],
+      "sha256": "8f40350e7d33b49321dd3b71ce09d121e2960e2ebd3e5472542aceede8e473ad"
+    },
+    {
+      "path": "assets/ui-icons/moon_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        259,
+        234
+      ],
+      "source_box": [
+        39,
+        52,
+        296,
+        284
+      ],
+      "sha256": "9943012376d3160cfc01b08925a5eabccf6bfcfc8964eb74daccda367ccabcd2"
+    },
+    {
+      "path": "assets/ui-icons/oval_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        223,
+        217
+      ],
+      "source_box": [
+        57,
+        60,
+        278,
+        275
+      ],
+      "sha256": "9a4747a0991e2f0c144e3643b4044a2318bf8fea05d32f6247dd1869e8e47e40"
+    },
+    {
+      "path": "assets/ui-icons/poke_biscuit.webp",
+      "original": [
+        96,
+        96
+      ],
+      "cropped": [
+        88,
+        88
+      ],
+      "source_box": [
+        5,
+        5,
+        91,
+        91
+      ],
+      "sha256": "c94371017577078f1a2ff1c308d54f1f13284df2cfa3efcabdf9bd2162719231"
+    },
+    {
+      "path": "assets/ui-icons/rank_great.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        182,
+        183
+      ],
+      "source_box": [
+        21,
+        21,
+        201,
+        202
+      ],
+      "sha256": "1f2f9e4222fc23a0f24def088c9ddf42ab61742a8858f7e431305cbdb7ec5b61"
+    },
+    {
+      "path": "assets/ui-icons/rank_master.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        183,
+        184
+      ],
+      "source_box": [
+        21,
+        20,
+        202,
+        202
+      ],
+      "sha256": "56489f7a8055f217192ea123f8884a9295d519552443dca60b8af15c4d1027c6"
+    },
+    {
+      "path": "assets/ui-icons/rank_normal.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        183,
+        184
+      ],
+      "source_box": [
+        22,
+        20,
+        203,
+        202
+      ],
+      "sha256": "a71d58a91389c8c0f524475253f893367996322fb81dad5339491324e46a4f94"
+    },
+    {
+      "path": "assets/ui-icons/rank_ultra.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        184,
+        185
+      ],
+      "source_box": [
+        21,
+        20,
+        203,
+        203
+      ],
+      "sha256": "6fb2b4c88b2aea6fdce71eabb8fe84aa21d2c7df4c5c567312818d726f70ecbf"
+    },
+    {
+      "path": "assets/ui-icons/razor_claw.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        245,
+        218
+      ],
+      "source_box": [
+        46,
+        60,
+        289,
+        276
+      ],
+      "sha256": "66d80dffc994ec193a2309caf79308821024c76dfe73bda9ec8e8a4f949bd19e"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_1000.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        161,
+        166
+      ],
+      "source_box": [
+        30,
+        27,
+        189,
+        191
+      ],
+      "sha256": "e406a544d770c0cdba29485019cbc852f25d1b01427b64669fa62b66a9b288ab"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_200.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        71,
+        107
+      ],
+      "source_box": [
+        78,
+        63,
+        147,
+        168
+      ],
+      "sha256": "2b399524df4213ee0aaf34059a38f1e66ceea21ef1aef86c83a7d3e2b2e11940"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_2000.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        179,
+        163
+      ],
+      "source_box": [
+        23,
+        29,
+        200,
+        190
+      ],
+      "sha256": "dd3fc97a0bcfe0727c5cd5be1e9b6c594c6421add0a449a446306ebc3582ab75"
+    },
+    {
+      "path": "assets/ui-icons/ribbon_500.webp",
+      "original": [
+        224,
+        224
+      ],
+      "cropped": [
+        145,
+        163
+      ],
+      "source_box": [
+        33,
+        32,
+        176,
+        193
+      ],
+      "sha256": "310af97f71d5ff4a117a645d83f5912631ed7e88c1c21937b60013d0d8332509"
+    },
+    {
+      "path": "assets/ui-icons/shiny_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        222,
+        225
+      ],
+      "source_box": [
+        58,
+        56,
+        278,
+        279
+      ],
+      "sha256": "488f46388ff5ee125fb13b6de4db876dba06484310635b94421fd1e09e5e298d"
+    },
+    {
+      "path": "assets/ui-icons/thunder_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        217,
+        259
+      ],
+      "source_box": [
+        60,
+        39,
+        275,
+        296
+      ],
+      "sha256": "c708608fa1767d474a3e6987f082cdb0df1d688439076bb6aabd2b81bcde0353"
+    },
+    {
+      "path": "assets/ui-icons/water_stone.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        225,
+        215
+      ],
+      "source_box": [
+        56,
+        61,
+        279,
+        274
+      ],
+      "sha256": "a71e8576dbfb92a6540fac64eb958a18b37c8ecb5f9bd9ec32abdfa7ed1457c2"
+    },
+    {
+      "path": "assets/ui-icons/white_mint.webp",
+      "original": [
+        336,
+        336
+      ],
+      "cropped": [
+        274,
+        224
+      ],
+      "source_box": [
+        32,
+        57,
+        304,
+        279
+      ],
+      "sha256": "971033b261442898b0fbc44c5597830242ca7fda688c292e9a8902bacf3d7f8a"
+    },
+    {
+      "path": "assets/ui/favorite_off.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        191,
+        179
+      ],
+      "source_box": [
+        51,
+        26,
+        240,
+        203
+      ],
+      "sha256": "c3f2f9e91ac4985655b09d0d2960fdf68b078f3ad8f023f04e6822b3bb7b928f"
+    },
+    {
+      "path": "assets/ui/favorite_on.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        188,
+        173
+      ],
+      "source_box": [
+        16,
+        42,
+        202,
+        213
+      ],
+      "sha256": "59a917014fe0ad24e60b14588365add5b083230c8d6d13133bb399d0730ff7cd"
+    },
+    {
+      "path": "assets/ui/helper_whistle.webp",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        118,
+        96
+      ],
+      "source_box": [
+        6,
+        17,
+        122,
+        111
+      ],
+      "sha256": "dea4345ba37d13202cac88ef0fe805cc7ebd71ad3dc27f8d373461893cc98f3b"
+    },
+    {
+      "path": "assets/ui/info_cooking.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        224,
+        169
+      ],
+      "source_box": [
+        17,
+        42,
+        239,
+        209
+      ],
+      "sha256": "87d619a08131ce75d9ba9c1594f6e4214e883c48453dfa9556bc37b822f042b5"
+    },
+    {
+      "path": "assets/ui/info_fields.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        220,
+        177
+      ],
+      "source_box": [
+        19,
+        40,
+        237,
+        215
+      ],
+      "sha256": "701a0e7a66624435e23dc391829f2b3f7cce8548ea00b984ed406e614ad951ab"
+    },
+    {
+      "path": "assets/ui/info_ingredients.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        217,
+        177
+      ],
+      "source_box": [
+        21,
+        43,
+        236,
+        218
+      ],
+      "sha256": "8f86b64fb919a0c68b912db41b413051c69b9a6bfe0fa7df89cb5d9c3be14fa0"
+    },
+    {
+      "path": "assets/ui/info_skills.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        217,
+        215
+      ],
+      "source_box": [
+        21,
+        19,
+        236,
+        232
+      ],
+      "sha256": "d4a577bcb13db784a38a431ce1006961ae00be07a93dcfff5cafda8510a63f71"
+    },
+    {
+      "path": "assets/ui/special_pokemon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        220,
+        112
+      ],
+      "source_box": [
+        22,
+        70,
+        240,
+        180
+      ],
+      "sha256": "bb3716290112dd30886545112224dae41f649b7d665d66259095a46dd561f980"
+    },
+    {
+      "path": "assets/ui/training_off.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        196,
+        197
+      ],
+      "source_box": [
+        42,
+        16,
+        236,
+        211
+      ],
+      "sha256": "505a8ed568aa0c2caeed693e8e38c7f8a1b7f8495be4a971fbce8ea27d6657bc"
+    },
+    {
+      "path": "assets/ui/training_on.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        160,
+        136
+      ],
+      "source_box": [
+        63,
+        61,
+        221,
+        195
+      ],
+      "sha256": "ff824938ada251c76105944fee0c35ea5175e67349ccfc6063a52bf18d3bb181"
+    },
+    {
+      "path": "master/berries/belue/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        229,
+        230
+      ],
+      "source_box": [
+        14,
+        14,
+        241,
+        242
+      ],
+      "sha256": "829b7f54e5d852b2142c1ff041c5cd4dd1fa10ebd42be0c6a851a6b4c7d0bfe0"
+    },
+    {
+      "path": "master/berries/bluk/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        225
+      ],
+      "source_box": [
+        14,
+        16,
+        242,
+        239
+      ],
+      "sha256": "c9457d0384be589915bdd92b6138b16a2e0c151a87698557808d485db97233ec"
+    },
+    {
+      "path": "master/berries/cheri/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        229
+      ],
+      "source_box": [
+        14,
+        14,
+        242,
+        241
+      ],
+      "sha256": "1ba5897e75d92bc504d206e2e54701cc6f9cdbe38d272492df2d0318aa3b6d65"
+    },
+    {
+      "path": "master/berries/chesto/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        216,
+        230
+      ],
+      "source_box": [
+        21,
+        14,
+        235,
+        242
+      ],
+      "sha256": "66f46c5007e408a93800a16643271bd3e064a7f94503fcdaa1c10e3cd71bb66e"
+    },
+    {
+      "path": "master/berries/durin/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        213
+      ],
+      "source_box": [
+        14,
+        22,
+        242,
+        233
+      ],
+      "sha256": "3f834e66cea7554b65a898d0893c8506d92497f9a2d23da22c347d4a0ebf8b80"
+    },
+    {
+      "path": "master/berries/figy/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        215,
+        230
+      ],
+      "source_box": [
+        21,
+        14,
+        234,
+        242
+      ],
+      "sha256": "81911a099101ec1e75e6b42beb4bb9578978df51096492806f359b2d1cd37da8"
+    },
+    {
+      "path": "master/berries/grepa/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        230
+      ],
+      "source_box": [
+        14,
+        14,
+        242,
+        242
+      ],
+      "sha256": "f457c31ae100b1797758e848e4fb152ac058aa6ee3aea28717c3277d70251008"
+    },
+    {
+      "path": "master/berries/leppa/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        211,
+        230
+      ],
+      "source_box": [
+        23,
+        14,
+        232,
+        242
+      ],
+      "sha256": "45a706079d75b7ca5940e0c685363397543f67425111c581d8bbe8344b0688a8"
+    },
+    {
+      "path": "master/berries/lum/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        224
+      ],
+      "source_box": [
+        14,
+        17,
+        242,
+        239
+      ],
+      "sha256": "8bb84f328688f2e3a9cb65cc24b55fdab3cb59466365ef2c32fd98b89d8daa6a"
+    },
+    {
+      "path": "master/berries/mago/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        211
+      ],
+      "source_box": [
+        14,
+        23,
+        242,
+        232
+      ],
+      "sha256": "80a229182318d019ff5b12e50db1dd5dd579c6a952139f64c54238720c4670c5"
+    },
+    {
+      "path": "master/berries/oran/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        211
+      ],
+      "source_box": [
+        14,
+        23,
+        242,
+        232
+      ],
+      "sha256": "bf8b92d1b8d105dcab30161efdc2712e263ecc434ed410043e327e52ee8bcef9"
+    },
+    {
+      "path": "master/berries/pamtre/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        224
+      ],
+      "source_box": [
+        14,
+        17,
+        242,
+        239
+      ],
+      "sha256": "f39a6c9a6ce1c25ab67f6154296db2ec646d832dd27a9a60850fa3c05fcf57e9"
+    },
+    {
+      "path": "master/berries/pecha/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        211
+      ],
+      "source_box": [
+        14,
+        23,
+        242,
+        232
+      ],
+      "sha256": "bd5d8a130bb4714ccde0ed21d251dd19829b1aac5e4f3ae0c06713707b1dc750"
+    },
+    {
+      "path": "master/berries/persim/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        214
+      ],
+      "source_box": [
+        14,
+        21,
+        242,
+        233
+      ],
+      "sha256": "ca40f1b652897847b9d01005c48b8dc6ba7c476e30d996bf02f45508334ae6a2"
+    },
+    {
+      "path": "master/berries/rawst/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        226,
+        230
+      ],
+      "source_box": [
+        16,
+        14,
+        240,
+        242
+      ],
+      "sha256": "65b3ce7cd5e70a65589beb9defcd68b599ea4179dd949b906ce6593ba2ee6a3b"
+    },
+    {
+      "path": "master/berries/sitrus/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        204,
+        230
+      ],
+      "source_box": [
+        27,
+        14,
+        229,
+        242
+      ],
+      "sha256": "337cdb11394b7bb0d97c7d032e36a2be83a50f76b725e81f97e0d337d6410ad3"
+    },
+    {
+      "path": "master/berries/wiki/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        210
+      ],
+      "source_box": [
+        14,
+        24,
+        242,
+        232
+      ],
+      "sha256": "3ce6f1b1d76980f587e751f774cef4c432ba6aeb70a8921ce470482577edaf8e"
+    },
+    {
+      "path": "master/berries/yache/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        218
+      ],
+      "source_box": [
+        14,
+        20,
+        242,
+        236
+      ],
+      "sha256": "f208c52b7d0102e1c8ea20bb407becda874e756a83ab65451b729066c742e053"
+    },
+    {
+      "path": "master/forms/artwork/0025_captain/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a82794d8eba2a278103f04c25b9affb2848295baa5bc17639b3df4194736907e"
+    },
+    {
+      "path": "master/forms/artwork/0025_halloween_23/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "fbf34b59d2436ff47feeffcd4df4e3c1ff1394602505787ec56cf363dcd4f856"
+    },
+    {
+      "path": "master/forms/artwork/0025_halloween_24/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "fa14e0271d6b46d7e44985d9e3d2213598e09e4b38f735b41c15fcd35225e06a"
+    },
+    {
+      "path": "master/forms/artwork/0025_holiday/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2076c0dde07a487ccd9808091401d0a98fffbf21c21e951ef692e1677df7d528"
+    },
+    {
+      "path": "master/forms/artwork/0037_alola/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "235f5ebd2a7b020e219f30ff5ee6316419dec809aeb46fa6004f15ec29f8f07d"
+    },
+    {
+      "path": "master/forms/artwork/0038_alola/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e15874733917a8747548cc3e1f434c02b633cb27cdc8c96dd856834a8de2e74e"
+    },
+    {
+      "path": "master/forms/artwork/0133_halloween/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b2868373a84a8a303f86c5140bd47765b821130fb95bafde5275939ce17d5d7d"
+    },
+    {
+      "path": "master/forms/artwork/0133_holiday/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "de06c6c893290b8c60ce0eb9284d337d7af80353b65ce890c35c3421283e95fa"
+    },
+    {
+      "path": "master/forms/artwork/0150_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e6e092a0377bfa6bdf040750869ee0c3eb291b5fd4dd942326f8a3d29f72d60c"
+    },
+    {
+      "path": "master/forms/artwork/0151_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "11b122dba1adf294e028d02dcc27229e661ff7c7c967e161509b07990fceb8d6"
+    },
+    {
+      "path": "master/forms/artwork/0194_paldea/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8304a1607d8f3d2bcffe1cc7f93d67a6261631dea40eac4d530bde9a0ed22058"
+    },
+    {
+      "path": "master/forms/artwork/0311_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d5c109fd939cbbc76103da516cd617ffe88d56a8d8016b8d67dc4ad47d562d5b"
+    },
+    {
+      "path": "master/forms/artwork/0312_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "10e4f6e56b343427380bbcb7d02e1842013736d6f776a4482586cbdb4f8d9e2f"
+    },
+    {
+      "path": "master/forms/artwork/0363_holiday/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d72d1da240e96bd296209feb6c73932dfeff6e75bd9637c2700acb92895ba984"
+    },
+    {
+      "path": "master/forms/artwork/0380_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "63376921b08cfa49db0ec3c17bb878828bf175100d371a4df725d3ce91c7849d"
+    },
+    {
+      "path": "master/forms/artwork/0381_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ac9aac90e205695242d82d38222ad6c9c6904a7a00dd19b922372a21c1a021b7"
+    },
+    {
+      "path": "master/forms/artwork/0425_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "93b6771dfb0598c5c579fd65c101a6ae392372dc5138c060182cc5c3a2aaa857"
+    },
+    {
+      "path": "master/forms/artwork/0426_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ed94195d917f8c37a932d68c04df77c7557d6070a4b2e6bbcb74a0ba204b4db3"
+    },
+    {
+      "path": "master/forms/artwork/0488_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "bbbf34fd2c1037ca54c1051ad24e1ef5073b6ce0b19434ef3ed93e140baa5465"
+    },
+    {
+      "path": "master/forms/artwork/0491_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e655dd1b0b5a9ac4a2f719787a6eaaf49cd18d40e751f2f7fe261aba2401b6f0"
+    },
+    {
+      "path": "master/forms/artwork/0710_jumbo/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118"
+    },
+    {
+      "path": "master/forms/artwork/0710_large/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118"
+    },
+    {
+      "path": "master/forms/artwork/0710_medium/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118"
+    },
+    {
+      "path": "master/forms/artwork/0710_small/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8acc8d095cfc4da17a743731fdd25d391327075d042bcf72fde46b15f8c2a118"
+    },
+    {
+      "path": "master/forms/artwork/0711_jumbo/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259"
+    },
+    {
+      "path": "master/forms/artwork/0711_large/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259"
+    },
+    {
+      "path": "master/forms/artwork/0711_medium/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259"
+    },
+    {
+      "path": "master/forms/artwork/0711_small/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "773a4cf0f80af68ac39c9f25555b1248b808a17f455fcbe5193f5e3b11739259"
+    },
+    {
+      "path": "master/forms/artwork/0777_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "546ceaa54bec633fbfb099de2a9b629a8555fdd32308683aac669ee63a47befb"
+    },
+    {
+      "path": "master/forms/artwork/0778_default/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "12b6bcf8c452ab7d1956bfb88c8a6021783c6cc365f01190c59831bb39ee805b"
+    },
+    {
+      "path": "master/forms/artwork/0849_amped/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "927ea1671e81f34154b12fa0b8437a66453821783dfe70a9dff1cbe273b95056"
+    },
+    {
+      "path": "master/forms/artwork/0849_low_key/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "569db69c8313df51f4c99554ca4f8974a2cfeaf00467f0684dd983e9d9205c9c"
+    },
+    {
+      "path": "master/ingredients/bean_meat/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        214,
+        230
+      ],
+      "source_box": [
+        22,
+        14,
+        234,
+        242
+      ],
+      "sha256": "84b9deb763d2cfad9eedec0ea22738decaa080f591131abbb59281288a6512a8"
+    },
+    {
+      "path": "master/ingredients/coffee/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        177
+      ],
+      "source_box": [
+        14,
+        41,
+        242,
+        216
+      ],
+      "sha256": "aac6541d30fb51cb59ed1e5ab4c5b805e613f97a94e67c1566de7d7dd88f8de3"
+    },
+    {
+      "path": "master/ingredients/fancy_apple/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        224,
+        230
+      ],
+      "source_box": [
+        17,
+        14,
+        239,
+        242
+      ],
+      "sha256": "fcaa673449feb5078fd47cf679743a065c72c1a0b1d5e53a11e9a5e249275c6b"
+    },
+    {
+      "path": "master/ingredients/fancy_egg/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        182,
+        230
+      ],
+      "source_box": [
+        38,
+        14,
+        218,
+        242
+      ],
+      "sha256": "dc8d4919cb2e70f80be4ff77c414e460c0651dd7c5f8f0c126edd092782b78fc"
+    },
+    {
+      "path": "master/ingredients/fiery_herb/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        229,
+        230
+      ],
+      "source_box": [
+        14,
+        14,
+        241,
+        242
+      ],
+      "sha256": "78ff405f386192f03cfa7e3270762cbfbe6eb87977bcd2c3f17ee92494af68e9"
+    },
+    {
+      "path": "master/ingredients/greengrass_corn/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        201
+      ],
+      "source_box": [
+        14,
+        28,
+        242,
+        227
+      ],
+      "sha256": "c4b003634751adb60bd18933b69b77a6f64b24d472a2456e05208f696fbe0856"
+    },
+    {
+      "path": "master/ingredients/greengrass_soybeans/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        184
+      ],
+      "source_box": [
+        14,
+        37,
+        242,
+        219
+      ],
+      "sha256": "8666272ecee0ccab19260e062383f7bfc9f62e47703ccd071c8926d5ac89df05"
+    },
+    {
+      "path": "master/ingredients/honey/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        216,
+        230
+      ],
+      "source_box": [
+        21,
+        14,
+        235,
+        242
+      ],
+      "sha256": "eac12b867ece4eceb098eadaf00fdc8e0de60f266aedc337e787512160feb3df"
+    },
+    {
+      "path": "master/ingredients/large_leek/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        224,
+        230
+      ],
+      "source_box": [
+        17,
+        14,
+        239,
+        242
+      ],
+      "sha256": "b5b4cb888c529e028620bdd933705ee267463f2e33b9c4e071e406202cf3b07d"
+    },
+    {
+      "path": "master/ingredients/moomoo_milk/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        143,
+        230
+      ],
+      "source_box": [
+        57,
+        14,
+        198,
+        242
+      ],
+      "sha256": "c42f5e7e4f5c545e9206cc990375901a364a3d09542c86205a147c52b1892680"
+    },
+    {
+      "path": "master/ingredients/plump_pumpkin/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        189
+      ],
+      "source_box": [
+        14,
+        34,
+        242,
+        221
+      ],
+      "sha256": "18b03d30b8a076c24b7091eb27da469a888411d276eb77b6f03752f9f1a8d562"
+    },
+    {
+      "path": "master/ingredients/potato/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        186
+      ],
+      "source_box": [
+        14,
+        36,
+        242,
+        220
+      ],
+      "sha256": "76e481c02e8cd43a19104fbcccabeacb8c88dd6ab55e35b8127d25de48aec851"
+    },
+    {
+      "path": "master/ingredients/pure_oil/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        153,
+        230
+      ],
+      "source_box": [
+        52,
+        14,
+        203,
+        242
+      ],
+      "sha256": "a515bca89a15944151717e86feb297e7f361696dd388ca1b5cc540e3abdb1bff"
+    },
+    {
+      "path": "master/ingredients/shiny_avocado/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        229,
+        230
+      ],
+      "source_box": [
+        14,
+        14,
+        241,
+        242
+      ],
+      "sha256": "242503dd9309415950cc0ae65d61ae9f5e706fc9891053dcebf5a995524f0e8c"
+    },
+    {
+      "path": "master/ingredients/soothing_cacao/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        189
+      ],
+      "source_box": [
+        14,
+        34,
+        242,
+        221
+      ],
+      "sha256": "12758bc7455cfd1987fdb3b9b28e9432f4ee8df037ad277f9c3fb4e5f51c0659"
+    },
+    {
+      "path": "master/ingredients/tasty_mushroom/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        230
+      ],
+      "source_box": [
+        14,
+        14,
+        242,
+        242
+      ],
+      "sha256": "415ec0d730de354d9675bdfc5066081b8923ad8e61d503fe5cec2563d4ee1797"
+    },
+    {
+      "path": "master/ingredients/tasty_tail/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        206
+      ],
+      "source_box": [
+        14,
+        26,
+        242,
+        230
+      ],
+      "sha256": "35a9045694a03294e44b1d1c0282952ebf09d344f7c57b4054bc4636f081969a"
+    },
+    {
+      "path": "master/ingredients/tomato/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        230,
+        218
+      ],
+      "source_box": [
+        14,
+        20,
+        242,
+        236
+      ],
+      "sha256": "903a63e94d24dd277b84adb072d86d5df75504736112efd12c18cf85e26c4dd5"
+    },
+    {
+      "path": "master/ingredients/warming_ginger/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        217,
+        230
+      ],
+      "source_box": [
+        20,
+        14,
+        235,
+        242
+      ],
+      "sha256": "711d233913b25c58eeb647a2760ad7d0faca6268d6be606d5e1a1f4998d9a176"
+    },
+    {
+      "path": "master/pokemon/0001/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2b4c7a18bba907cd40dd7043f500cc900ea0dfdc9a6ff2712d2a63e3e0cdc6aa"
+    },
+    {
+      "path": "master/pokemon/0002/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5445eb48f245465ef337e1de5ba5eaf573c11f3fa4a7aede65ee22deb1eb0576"
+    },
+    {
+      "path": "master/pokemon/0003/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "db4bbbb5e8d0ce02d4689df4e25e2f3492dd1933e0f53b2d8e9cc1d60b12faf6"
+    },
+    {
+      "path": "master/pokemon/0004/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0820f4f20e1e4fd00cc87b838acc40cefd4916911a8eb2e2abf5f79100035996"
+    },
+    {
+      "path": "master/pokemon/0005/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "1749f2c86d61513710aed38b1697370e390a42dcc1f88c2a503d8d45c9165897"
+    },
+    {
+      "path": "master/pokemon/0006/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8b0cb43c36d9b363ffbf6fdf09cb9fb6e84080f2024407ac429041e0e721a215"
+    },
+    {
+      "path": "master/pokemon/0007/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "72e03ade0e46c6e8cc9ff8f782d006371d6e178c57dce9fdbabce03abacbeb66"
+    },
+    {
+      "path": "master/pokemon/0008/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "59f851df5a7173d9abed11990193acf813f547f373badabb00ca4b397b3cac33"
+    },
+    {
+      "path": "master/pokemon/0009/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "776d150b57a08090c87ef7803126e2ebe47226aa8b3511c995961fe138777375"
+    },
+    {
+      "path": "master/pokemon/0010/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8697e13d4dd0963555dc20b3e346a7a5b5ae63b02554eec9e67bbc2da2e7bc83"
+    },
+    {
+      "path": "master/pokemon/0011/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c1f56b0618e42ddd862561358211ad8e174a6aece339a10222db3bb8530eaae2"
+    },
+    {
+      "path": "master/pokemon/0012/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5df40b589fad1cb130ed3fcc78582ea83504a7a1b82409284d37ba3058ce388b"
+    },
+    {
+      "path": "master/pokemon/0019/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "fc60a32ec3dc9f6c1f1ad1f62cba30eab0cc5532d53faca8d37c04e044ceff15"
+    },
+    {
+      "path": "master/pokemon/0020/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6c96be526723ccacd0e78624a79f0f72b0c5bf1cbf9cd293b554242863cec50c"
+    },
+    {
+      "path": "master/pokemon/0023/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2d25e04d5e8f1a7e0904311be16e9fb76bb13917bea62cabe82f37c0abc8ed3a"
+    },
+    {
+      "path": "master/pokemon/0024/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7b8dc658a3d816107dd602e72044d554310ba3a49e496d384634945fa394bd8f"
+    },
+    {
+      "path": "master/pokemon/0025/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "93a584bfe518147e8647c8ad12d5e91838ad0a17962ff9ffca03ebfa62a979bf"
+    },
+    {
+      "path": "master/pokemon/0026/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "116aa0a880b3c9df1da2603b1d02a2bf2cc4bc3db451986cefc1bc56aeccabc2"
+    },
+    {
+      "path": "master/pokemon/0027/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e6c4f70c8d961023b4c61e79f368ee834ce4eed94ded97b0b3febfeef3e4f003"
+    },
+    {
+      "path": "master/pokemon/0028/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0ea40d81a8efdd3544abaaad36974c4ce4764ee2687814986cf3346e030cebb6"
+    },
+    {
+      "path": "master/pokemon/0035/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "18ad4c623bd7e370d426b6ba394db26a0cf55771d6df17bee0e925a8361cddd1"
+    },
+    {
+      "path": "master/pokemon/0036/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "21347aebff46f12f773dff5e398fdd397d234bdd0ca17a6cf023bc1a681da91c"
+    },
+    {
+      "path": "master/pokemon/0037/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ac7c00a9679f2b0519af7ae6fd215df32023283bcd81c3678e34f2a3c0ce7cee"
+    },
+    {
+      "path": "master/pokemon/0038/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "802844b422bd88f8808457e4fe1f478d746564307fe5998830ca1037a5940eec"
+    },
+    {
+      "path": "master/pokemon/0039/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "40cd18d5fcdb945bfafbd2b1c2a34dafc3c290ce324ac0c991ef3808b04ef6da"
+    },
+    {
+      "path": "master/pokemon/0040/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2a20b0a4aeb1bb342895305f7e31f339e74b95d30a947588639cd94fea721c51"
+    },
+    {
+      "path": "master/pokemon/0050/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "020011400316a9f8955fdeb472780c61bff5e0045ef40d1954c89d8ec381e265"
+    },
+    {
+      "path": "master/pokemon/0051/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6a5291c7de1005752cefe6a73295790f3eef7c8aa32a83d768cea2d8087f174a"
+    },
+    {
+      "path": "master/pokemon/0052/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0f59add0d606457e3ff91849605cad96e8bc4fd3d363ee738ec547e9d1901ad2"
+    },
+    {
+      "path": "master/pokemon/0053/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a7f85312eb057c9ca8c7d0f7b0f2c8d60bac510e69c36a32e4efdc4468c37f9b"
+    },
+    {
+      "path": "master/pokemon/0054/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6e52dddee057dca43c55bc4111ae045d7deb35bb7f11622e0720f591b1af95a0"
+    },
+    {
+      "path": "master/pokemon/0055/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "75814ab2387d6a47b4600a065de6e8b28982a41b2836c434f4b162738cf83553"
+    },
+    {
+      "path": "master/pokemon/0056/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0e68528a6e5c8dd1741a8e38a723e17d9282ce2f7c335594a953d5c3848ae72a"
+    },
+    {
+      "path": "master/pokemon/0057/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5668fd6b2ad7750673d9de5864d3a498163619cbb60337e6b5f92365f8c9074b"
+    },
+    {
+      "path": "master/pokemon/0058/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cb7585e7d4194d6994701df270b4c1ad5c5285faefcc86b74d3ec57164f02b46"
+    },
+    {
+      "path": "master/pokemon/0059/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "1c3d29716eda77ca888d4c075e44c65f80641f284cb3d3f01a21414e9f6d03db"
+    },
+    {
+      "path": "master/pokemon/0069/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "434e71de03d9f20b537b3c3ceada260ccac6d6dfc6399957d3d6fd576a74d38f"
+    },
+    {
+      "path": "master/pokemon/0070/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b80fc74b0c23faf6c1e697ee1612f7e7fc5a4a49b678891754aca87f379e4abf"
+    },
+    {
+      "path": "master/pokemon/0071/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5ef1a7d80154ebb064ef2057bad200b0b9f246ffbc9f5d769ac345b521f6ef38"
+    },
+    {
+      "path": "master/pokemon/0074/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6af490554978ace85dc71f57a916f5d3887ef1b0f0cf47f8c0a9203d898a6743"
+    },
+    {
+      "path": "master/pokemon/0075/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "366b4c03343007d74a91d9d9e7d9bdf545551afbce650a54b4fc23a5547644b4"
+    },
+    {
+      "path": "master/pokemon/0076/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "482ca6b4706d41e5d03d15cdc511931087b59157b50afcfebc4ff2d26c195cd6"
+    },
+    {
+      "path": "master/pokemon/0079/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "66178c2977d7fcacc683082571676366e7037adecf7216acac5a33457dd45d9a"
+    },
+    {
+      "path": "master/pokemon/0080/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ed5aedabf1390983702b422124e800b2873014d4de91f790c60fc36a8ecf8365"
+    },
+    {
+      "path": "master/pokemon/0081/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "bbdcc8c6e55fd5186f5247ddae9c615a2ede1af95f1f870db966a227c089ccfe"
+    },
+    {
+      "path": "master/pokemon/0082/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "68ddaf6370cf7cd36e755b995589e29aa8a556b78b6c19592f6b54f440c0d71c"
+    },
+    {
+      "path": "master/pokemon/0083/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "aa381087113dbbf96528ff0c2f6491a0817ee7d06502fdad60ca571a1e2b1a99"
+    },
+    {
+      "path": "master/pokemon/0084/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "365e75d659741e2931d894d40770efdcf9fa8c64d6694c83b5573b80f412819c"
+    },
+    {
+      "path": "master/pokemon/0085/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "69590b9962c0f1b9ca4868df519306bd073bb60989738d2cf4fd9209a50a3a8b"
+    },
+    {
+      "path": "master/pokemon/0092/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7e2a4ee2896d1860c32970d6bf710e7c3ad164d4c5bb28e2717199327fd2525b"
+    },
+    {
+      "path": "master/pokemon/0093/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c5b981bcb91c13faa26949d47506ec2803407820546f417b1bb8a881f2142254"
+    },
+    {
+      "path": "master/pokemon/0094/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "59d97bbd121ebbce25254d993e9746a4929ba6ac8e97464c2a549919d6460841"
+    },
+    {
+      "path": "master/pokemon/0095/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a5f094a3dfbe46e0fdb9629c687d1bd242b341438590719266f02b9e5fc893dd"
+    },
+    {
+      "path": "master/pokemon/0104/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c18692afe99e596ae1c800d88a1d489e174817385d19ad8ee9fc53098449793a"
+    },
+    {
+      "path": "master/pokemon/0105/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5335ed6d50ecc400d42b0b4be997497fbacfe4f0ba7975b978f4afe431ac5943"
+    },
+    {
+      "path": "master/pokemon/0113/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b2bef4f93628d31312a071deed9a9faa57c7dd90da7527277e07340dffad2e90"
+    },
+    {
+      "path": "master/pokemon/0115/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "95b1aba5179138f0419dea28b2545bffccc096066c538f8403669af083d34918"
+    },
+    {
+      "path": "master/pokemon/0122/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "79b1decfbf9c946175eaad316692fedaca950d88bc3595c7892c759ed57b6665"
+    },
+    {
+      "path": "master/pokemon/0127/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a57b05ca8863325d943c4030d7b86ab10a73a4c0c3a0ac41b56f4c2b1a603310"
+    },
+    {
+      "path": "master/pokemon/0132/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a3be3c80fce2fbe061fba7745d7607962e0124afcadf654636da471cefc6b53b"
+    },
+    {
+      "path": "master/pokemon/0133/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0ec7d4435c98768c6f37ecf863d8f50160d895bc884934a21015bc6f30c6b029"
+    },
+    {
+      "path": "master/pokemon/0134/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e9b9039dd1c28cd4045d7086cbb7933e7467b3de45883ada4f57ee416b059b9e"
+    },
+    {
+      "path": "master/pokemon/0135/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a7a2659f43a993b2e8d95ad741bd7adcf7394636e5fd9c6f8929d259ee70f603"
+    },
+    {
+      "path": "master/pokemon/0136/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "56afb3a8e1ec78193d1f6df3d564b00c538f8caa68dd921c29ab122922024589"
+    },
+    {
+      "path": "master/pokemon/0147/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b891d468e31bacf5e2909d0089cd687909c0ea102f2e3d0dceeae44acdeb7387"
+    },
+    {
+      "path": "master/pokemon/0148/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b6d67d7762b6ea59b39ac173857613a4c61991807f0e3d9d432a360275802241"
+    },
+    {
+      "path": "master/pokemon/0149/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "1251fe057ffc8f4b80d46d531000f1c2af31a31b501d70e4a2d35b2579d8cdd4"
+    },
+    {
+      "path": "master/pokemon/0152/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2c532582ffc14bdcc6e3f12f393c0f1e9d7e780fe6559b37019cbe2c6b8c92d9"
+    },
+    {
+      "path": "master/pokemon/0153/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "eadf6850cfc59591dd4545eb444d0753e16b135336ad0da0d95a5713ce46a654"
+    },
+    {
+      "path": "master/pokemon/0154/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "127205e60ec8406d308251b208901aff0cd8b53fdffa2c54c3bc361eae5251d4"
+    },
+    {
+      "path": "master/pokemon/0155/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8dd80af27263981b6ba09d7aec39d7ea1a247bb7f0f90cb44ea1c894cfbdb91e"
+    },
+    {
+      "path": "master/pokemon/0156/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cabcf61b55316d613673fcb00e109684c0f321863ea406c927b3fdf9dd5559a0"
+    },
+    {
+      "path": "master/pokemon/0157/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d6688a3156e256db3e5daebe12047644bcb249ab772b0ec8517f66790eb77505"
+    },
+    {
+      "path": "master/pokemon/0158/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "4b75bea937a804d455147cf117f826e5d39756091049f54a9e4de4b6f2b951d5"
+    },
+    {
+      "path": "master/pokemon/0159/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "591ed102448783bbd4b634f9d8b2e2f821fbf049e28f182290223561baffc637"
+    },
+    {
+      "path": "master/pokemon/0160/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "16415c28dd46d44f105e2dd96ee653a40522662aa6acbc81ee3b1a40b8f5c13d"
+    },
+    {
+      "path": "master/pokemon/0172/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "02f07f11539c0f33e102249c16d070e7a881092cb281b2057586d9a053b8a6a0"
+    },
+    {
+      "path": "master/pokemon/0173/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7400896730de67c27494d9cbd1cb0ca6266786dbb4d99dfe1384551791c5f6e6"
+    },
+    {
+      "path": "master/pokemon/0174/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a9d2dfc729d7753eded334da4e7461a2e170588e4fc8abbb5d32dd9685539419"
+    },
+    {
+      "path": "master/pokemon/0175/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5de7e79e15789fb4be9b5802740bab7ad7f5f0f33d2b7c73e143775afa77b5ec"
+    },
+    {
+      "path": "master/pokemon/0176/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "151d934ef5a025047df5b77e83d62ab00bd99d9216a1eaf08a65c9540d5b63a9"
+    },
+    {
+      "path": "master/pokemon/0177/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7e1f0641060fa3fade41ac466f99da5dfd8264b0f0073893516765dbb9107378"
+    },
+    {
+      "path": "master/pokemon/0178/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b5c5fd65aed6a7ef3571ceec9aae73082a15ad6f743582f1bdf7a783b6085a13"
+    },
+    {
+      "path": "master/pokemon/0179/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cf3fbc70f2054d2b6b9ed310c083b760de78b8987b50dac983f1ab7cee89834d"
+    },
+    {
+      "path": "master/pokemon/0180/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "3a90557050ea7686250bcd9862df45a9cf2a306c20b04d58d770f5a0e4c5334d"
+    },
+    {
+      "path": "master/pokemon/0181/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d82b82addff60f6e6a9a175fe1349a584fe277b6a893063a1f9bb1160c10b541"
+    },
+    {
+      "path": "master/pokemon/0185/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6843645854000ed8edf2d22a738e81283ee6289e9a73333c36cea100ce90ab14"
+    },
+    {
+      "path": "master/pokemon/0194/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "34139a74501dc36e6f168fd3b451af9dd43ace437f3580c33c1f71a329d782d0"
+    },
+    {
+      "path": "master/pokemon/0195/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f09f26784688762c7269199938d3717e0289587b399e3a0b99309aa7b4ed937a"
+    },
+    {
+      "path": "master/pokemon/0196/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f481fd4cb7bd77616e173b486cf710b5d7bc615bccc6a7c40432aa5af34394d0"
+    },
+    {
+      "path": "master/pokemon/0197/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8921386bcc1e59e3d919011540109ad7b8e22930adbe904686754fbc045f6287"
+    },
+    {
+      "path": "master/pokemon/0198/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "581e5695cb2e4f3cb48207a94a490cce55f208d56813398215c8e8e86e8e0a56"
+    },
+    {
+      "path": "master/pokemon/0199/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "9c7d6b3f139bf6190ff141f491892ac87284ae46d16b93bbb1d2f2c9b4ec5e94"
+    },
+    {
+      "path": "master/pokemon/0202/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "83ebee9a5e6340893e0fb982ff14dba45291ae0897c9aa2123d7ec6178ee3d43"
+    },
+    {
+      "path": "master/pokemon/0208/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "721b9e250a56b0471a9b873b4f0f11730554613ffb96ee710e12d71762251ec7"
+    },
+    {
+      "path": "master/pokemon/0213/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f98337b640f1ef68018ca2e1655e18642ca543e7a341ecb7464b77c94e09c1db"
+    },
+    {
+      "path": "master/pokemon/0214/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "26ffb6eae2380e514428878aa42b8e6148264904ffa6e63dac379524a5b22fec"
+    },
+    {
+      "path": "master/pokemon/0215/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2fe1b5e9f33aeb79d1ca1e7292a41131ace174edc8516367417a072ec8417f2b"
+    },
+    {
+      "path": "master/pokemon/0225/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e85c21416d46849f861575dfe38c095349b940bf80e68dec70bb14511dbe14b5"
+    },
+    {
+      "path": "master/pokemon/0228/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "92277101dc11208e43a77b512dfc5737588a2c70471936550d0eeac0d5b9f3d5"
+    },
+    {
+      "path": "master/pokemon/0229/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "3955c84af30cc4f9b0b551e1b92dc0b3239144216752d45f0fc203db6b5c435f"
+    },
+    {
+      "path": "master/pokemon/0242/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0a59ca91ec0945992d1b529611b99dcb07a85cbd293346772ed827d7082c525d"
+    },
+    {
+      "path": "master/pokemon/0243/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "bb6e930c9245bad0357741bbe03bd78d139f7bb45bf494c85e58d0c147fd27e7"
+    },
+    {
+      "path": "master/pokemon/0244/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "50df3523547ef0590eb5b59681c672320b76282517c373d562bae5e917bdb2e6"
+    },
+    {
+      "path": "master/pokemon/0245/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2950b5fb76c0c79f30ff4a8389a7415230ad776fa9653dfe935ad56618825bc7"
+    },
+    {
+      "path": "master/pokemon/0246/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "75323f446199b8ec9ae7c5cb7fc31e6ec65384c2293df55affa98f09adcebab4"
+    },
+    {
+      "path": "master/pokemon/0247/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f444755753fbef4455cb460192b2342d0f53b9853655f81bf0abb5f3d14fae99"
+    },
+    {
+      "path": "master/pokemon/0248/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5f80f6a67d35203be4c6a3a9f205c63fd86b467f8bfc7d774d655a6f3032b3ac"
+    },
+    {
+      "path": "master/pokemon/0252/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f594bb6297d6e00bef9ad3832092b674d6447744013fea0b5eeb9e31db45f61d"
+    },
+    {
+      "path": "master/pokemon/0253/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a629d425a38fac68ad9f133a841a0eb5c401b2a11edb81cd5c03c32acb66dd11"
+    },
+    {
+      "path": "master/pokemon/0254/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f155e96997a5382a753eda7c443e11c20d91627005faf57a7edfaa286c3eaebf"
+    },
+    {
+      "path": "master/pokemon/0255/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "9a01319f0703cc460d2482522372363f61894cce49ce17740ebd61fd4f372637"
+    },
+    {
+      "path": "master/pokemon/0256/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "320b41883775925dd1545d873c738f0984648ef52ca7718945393b80b270eaff"
+    },
+    {
+      "path": "master/pokemon/0257/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "3bc660afdfd5ec6cfe5a9fc7c6a919363fb8725f5b93a1e29d65939e744afeb1"
+    },
+    {
+      "path": "master/pokemon/0258/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d636b1aebcf00a386c33b732af2d9c01fa8f138dcc6b2ef3831ab507ca22a920"
+    },
+    {
+      "path": "master/pokemon/0259/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5f42f88a56c13f3f7d294dc8d7c3b7e18ba4279f20e2c0221c682df9322961c7"
+    },
+    {
+      "path": "master/pokemon/0260/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e3049dbe0f3a9121bcf9767631e5247bc96ece925a23fa131c495ed6959c0c35"
+    },
+    {
+      "path": "master/pokemon/0280/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "05e51e0801a53ef95889a264c65a6db37edc80fc6833268975b1447833bec7ac"
+    },
+    {
+      "path": "master/pokemon/0281/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e178d58e45172386895926565085ecc41cc78751fa9e717b244b4de357113c02"
+    },
+    {
+      "path": "master/pokemon/0282/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "bb3d3cd451d4bb97e800e352c97a9656674a2bcfe2a2987763ea3efa5d693881"
+    },
+    {
+      "path": "master/pokemon/0287/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5b0974e6b17299f31abe03b9bca9b1d24088977d756e4e1026d8627bcacdf32f"
+    },
+    {
+      "path": "master/pokemon/0288/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e8ce9dc17bce334bff80630be389d368ca85326580b92afa541e35e0f8d9fb56"
+    },
+    {
+      "path": "master/pokemon/0289/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "33e904c470ecbc697e6e63ea3b0fa03b578f52eeab75d9d236af9bbbc43eb305"
+    },
+    {
+      "path": "master/pokemon/0302/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0030ab967fa3d2dd19e24b88a63fab584907645c13cd77ccca52a011059c7146"
+    },
+    {
+      "path": "master/pokemon/0303/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d8d4a0b39e8bc2c4f72310ccf1c4769d68afc7c731ae5e3e4a4f9ae8509183a5"
+    },
+    {
+      "path": "master/pokemon/0304/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "973117a1c02d9af53ab991c8adfb885c70fe0681bb13cd6c7b024873042c7907"
+    },
+    {
+      "path": "master/pokemon/0305/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "343902e2f6f15d7c7d7b39bda25798ccf548cf0d12b21a0818b39953b4d0160a"
+    },
+    {
+      "path": "master/pokemon/0306/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "29dc59bb362b28e76e1ce5b4e5efffca3ab0a52acaf8d917c99b23f8b0fdb2b0"
+    },
+    {
+      "path": "master/pokemon/0316/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "78e6e4332dc156b3ce3bed51094db799804d90ecab0fb63821ead6870e5c217a"
+    },
+    {
+      "path": "master/pokemon/0317/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2634153be0723e6190883122d8797f2406a98d881922e6b8ca2d3755a13c3915"
+    },
+    {
+      "path": "master/pokemon/0328/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ac44fbe5f95601d6e5df4ea6dd59fade6bedbce84255efd14ecb288e13a3ecf1"
+    },
+    {
+      "path": "master/pokemon/0329/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "4a785b8604d2e2b5d71ae2cb773cc82f089c661d21c5ab2de981c485e5fa024b"
+    },
+    {
+      "path": "master/pokemon/0330/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7ab6a7a483ac58a6461bfc806203c14ebffbe41632ab8fc3891634412dbcc26a"
+    },
+    {
+      "path": "master/pokemon/0333/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f08d49fac068dbaa112929dec2167726bb23852058ebfb9e4617f7ad2f1cdde3"
+    },
+    {
+      "path": "master/pokemon/0334/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "aa587de6a4531336ae10c5ed1c866200795650a64407d47bfe61feb9cbeb7d79"
+    },
+    {
+      "path": "master/pokemon/0353/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cf809f2380fd11534395189ed42276fb4dcf225b4aa2c977fa73dec4bc22a441"
+    },
+    {
+      "path": "master/pokemon/0354/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "22f558bf2b0bfaf83ca4bae539dbb3c8066d8d532f7c6690689d16ab52a3643b"
+    },
+    {
+      "path": "master/pokemon/0359/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "05b925645bfddcddf25fd3832b56be8bdacbb9b394b5a9fea1a294cf4660426d"
+    },
+    {
+      "path": "master/pokemon/0360/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d30d643f4f3d9e0036de9b1ccc8351f9f56249fdc0d0d09f65367592f15b302c"
+    },
+    {
+      "path": "master/pokemon/0363/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c54ad15b4bcd00b1acce08bce58f589ddb375499541993322220aa8e94c2a318"
+    },
+    {
+      "path": "master/pokemon/0364/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "6eccae34927b08cf1dd6fd2b5914fec99dc394ffa25053d2d96622b3ea78651f"
+    },
+    {
+      "path": "master/pokemon/0365/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "71fbb3d2a1f17d0c4dcfb6d27a26b8eb676c2c8e6657c878eb721497c462dc7d"
+    },
+    {
+      "path": "master/pokemon/0371/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "37938a8e989d52b4aa24d15630f17144fecc673dd1fd69b7cafe1b85df2c2547"
+    },
+    {
+      "path": "master/pokemon/0372/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d4b15a9146d9c6121d436871e4cf05a737c9f7e861580d44b51e8a120923479c"
+    },
+    {
+      "path": "master/pokemon/0373/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cbb1f90dc0f9b89b77aa4bc7141adde65c4ab8eaf7f7904c4b33d09c80ea93b7"
+    },
+    {
+      "path": "master/pokemon/0387/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "243ddfe1915ba8c9001d4b28681b0a174d58f8733a5ac63c1f6da60624a5d540"
+    },
+    {
+      "path": "master/pokemon/0388/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f3ab5198198dd4c09f2db554beb007f40583dc1cc5c5e9b042af209b9e2af709"
+    },
+    {
+      "path": "master/pokemon/0389/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "9316b69053cc216405e0391138fd7cf8dda43f8106a97cb559082601379949c8"
+    },
+    {
+      "path": "master/pokemon/0390/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "98895c5705336bd29740270130fab511acb9d9025108840b24589b4c67c359b1"
+    },
+    {
+      "path": "master/pokemon/0391/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c9639c415fda191bfd4a4364bd2ffbdebe1924e6f5bdc003c2710d75418d1556"
+    },
+    {
+      "path": "master/pokemon/0392/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c06676e857a8360c5df860a0862c50f08963b6ceb8092ebba8494975761bad9a"
+    },
+    {
+      "path": "master/pokemon/0393/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8111dabb0c02b7fe1c1db375cc93c8a0cf14f896f7141b3d848fa7d44c171619"
+    },
+    {
+      "path": "master/pokemon/0394/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "78bf1c8bb565cd865e725374277f31d5d65fdf592790cfc43a119dce9aa228eb"
+    },
+    {
+      "path": "master/pokemon/0395/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f029d509610cc055cfd6f2a088380a099483861b280bacbc02c159e7aa975a25"
+    },
+    {
+      "path": "master/pokemon/0403/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "391c4f8e6f0993c91f74921b8dd93b84ff6d928a00191208eaf03fcc5039aa99"
+    },
+    {
+      "path": "master/pokemon/0404/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "320c794ca88c36621fa690308991d9cd00a7ea0cca3c7b7efcb7625efd41566d"
+    },
+    {
+      "path": "master/pokemon/0405/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b3c78e2fd51466d0235315b2f51c44d456c4df0711dedb3c0c769e132993e572"
+    },
+    {
+      "path": "master/pokemon/0430/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f0bb5116b3ed74d6d388db1c0fbae47cd12259cfe67a5bb57f5833f4990dcffd"
+    },
+    {
+      "path": "master/pokemon/0438/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f648f7914e81145e04786ff58c869c1d4b040a7e438cab7e649de8731e90f0a6"
+    },
+    {
+      "path": "master/pokemon/0439/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "32f3769e8a42adc52b6db227c397e30933ade965c9e31f844ed233feeceedeca"
+    },
+    {
+      "path": "master/pokemon/0440/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ff95fe84f213925eef33e7d70f0f1a1e689895f45ed031cfb15c41116ea26761"
+    },
+    {
+      "path": "master/pokemon/0442/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cf740a15e76d083996b6f5588c8571ea13b2cb70996e7e83f6c77c553e32809a"
+    },
+    {
+      "path": "master/pokemon/0447/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7b299ca9a366951262d33db8a0b64853e26824e496c473d6155dc3f6519c9155"
+    },
+    {
+      "path": "master/pokemon/0448/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "78d6a02fe3f22b215d597a443a3eb5e03c7ef6781b7eb16aa28634b6e8541d24"
+    },
+    {
+      "path": "master/pokemon/0453/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "fcc042ab770f572301856e90f4f0df2330a4d7350b1e0c34323ace74e40cc440"
+    },
+    {
+      "path": "master/pokemon/0454/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "365f8370cf03cc890090cee20e8904ed43000c9b93152ed40fbaae87859fc9e8"
+    },
+    {
+      "path": "master/pokemon/0459/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f1570536a1a6c97af3fda7bbc608ca2945d41c5a17ae70466cdb7633a194d983"
+    },
+    {
+      "path": "master/pokemon/0460/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "7bb524d2fc71cfb68855fcf8670c9420c7d793e2deec8e713c3c5b1bff470a91"
+    },
+    {
+      "path": "master/pokemon/0461/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c56f447592818c19913e1053389b935b14944d57f6c398c7d59fdc2af7b27427"
+    },
+    {
+      "path": "master/pokemon/0462/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "93859b3f435b2e5eb9cf1ec57034e27c38160c6cda9505cee98b6aefe7993778"
+    },
+    {
+      "path": "master/pokemon/0468/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ff1f00fa68b4aee150b014344f788a3ffb74350340acde2a0571140a6b0694c9"
+    },
+    {
+      "path": "master/pokemon/0470/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8a9dad3f089a0f68a6c091f772c63dfd282b810c6526effa1c5f6fed293e7d51"
+    },
+    {
+      "path": "master/pokemon/0471/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "43be6533f7e57f3d49c0cfac2910de2cc1e1787dbeb73fdbcec9e4f06616c8c8"
+    },
+    {
+      "path": "master/pokemon/0475/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d1402b13d973e1c9ffd28aa5a8ddb61b8dfd48bdb097410b6a29f104af3b6d00"
+    },
+    {
+      "path": "master/pokemon/0517/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "f1d562644b3a15dc46761b035fa86ef721461affd43e4350d11472b749abbad9"
+    },
+    {
+      "path": "master/pokemon/0518/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2d5e256d9246ea3eb73ce427c4a6fe34f71b16e6df5069385e8af21e9ae7f5a2"
+    },
+    {
+      "path": "master/pokemon/0557/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "83b951f4bd3438fd3f8473f523cc672170f438178b6eb91c0d2158eceafcad46"
+    },
+    {
+      "path": "master/pokemon/0558/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b1f307a3b67767b8dd16486b09b7e35c3ee968bf3601616e001efadcd5b0fe7f"
+    },
+    {
+      "path": "master/pokemon/0627/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b5a6c4b3185af9e2e58f020a4b2c18d9dcbcdd4db6c0488e4b02ec1fb44c47ff"
+    },
+    {
+      "path": "master/pokemon/0628/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "c56631dbdd767840bd55a1974faa422691378f3d2da11dd1e641c69e9cec548f"
+    },
+    {
+      "path": "master/pokemon/0696/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5d1ae13b5ce03f65948af5b2899a8a7f9713f151f55c8a6661134c6d11db7c47"
+    },
+    {
+      "path": "master/pokemon/0697/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "113f08f2632939d6792fcd253c1b2f82cafcc22d3ee583edaa1bbebd18a3478c"
+    },
+    {
+      "path": "master/pokemon/0700/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "403b78909a85c2e1493fb7f78c4d731070e3a6c99fff92eddba1639da00ff7cc"
+    },
+    {
+      "path": "master/pokemon/0701/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ba5bab5756e741a0617e59878b32fcf016891e43809514c995345c7a00414d1e"
+    },
+    {
+      "path": "master/pokemon/0702/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "4152839ae62e1a735cb67c9252cfedb4ee2eb6b56bdd758a4b1931c129c5d821"
+    },
+    {
+      "path": "master/pokemon/0714/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "25490bae5763dfc51d2d864bed58c7148fc0c715b875f09ef4f1f58e697ac180"
+    },
+    {
+      "path": "master/pokemon/0715/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "56b8f2a48f80073d6f3804dee4059d2278fe90b9dde7d3adf3cf101541c34fe0"
+    },
+    {
+      "path": "master/pokemon/0736/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "8836e01773fb941fafbe2fa3eaeb17f47d83f3b22a72010d48384311a69f999e"
+    },
+    {
+      "path": "master/pokemon/0737/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "1615f2cc33df01de387a75bb391e183dea9dadedfe46f69359f5dd04202d10f7"
+    },
+    {
+      "path": "master/pokemon/0738/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "5a92628ddda7ba352211eac420cf32e0b8336dc9388274f0e0fa242f9d4f8044"
+    },
+    {
+      "path": "master/pokemon/0742/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "a1a14b6e35d7863b13b8c85e5068daba928c689f8867dadc0a6913195fbf6568"
+    },
+    {
+      "path": "master/pokemon/0743/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e14e0edbed21641f26f47d82bda6cde8ba143456cf2ff6e942ed4d7fc07b20b2"
+    },
+    {
+      "path": "master/pokemon/0759/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "99afddd24e4bba44df0acd2076caa6856e20fcb8f56d1086d06cf82187ba8c20"
+    },
+    {
+      "path": "master/pokemon/0760/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "cd6f67e1d1ab6390f33190e4b14a63e0dccf68c6e8c382f77b1d26464ea615ca"
+    },
+    {
+      "path": "master/pokemon/0764/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "b740c642c99ec711a76b9035b5a48b5c4fbbc7dc400849133a6d156e380e3350"
+    },
+    {
+      "path": "master/pokemon/0780/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "75655c6870852c46407c74720774275d224c7bee8376342d7290610d2476779f"
+    },
+    {
+      "path": "master/pokemon/0845/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "202ef85fdc31bd6e8d3051855206e8c21eecf9ac60910750ed3b54280d43b79d"
+    },
+    {
+      "path": "master/pokemon/0848/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "4514ec2f452b7287c1049a0987ca4f4c792edac22db0c4d1294e56071f0f4775"
+    },
+    {
+      "path": "master/pokemon/0906/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "eecbb2ee080cb9f133be69a0f2cc06d317c3d028ab29434c339b19eb11deceb5"
+    },
+    {
+      "path": "master/pokemon/0907/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "760b13b730abeb579d18a52e14be7f94a2fae1dda98634105bd8d45510c7891c"
+    },
+    {
+      "path": "master/pokemon/0908/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "0208c8da7052d3796eb1331f28924155b14dfc5d125c6d29da214fd21c42f496"
+    },
+    {
+      "path": "master/pokemon/0909/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "46a6f5b452752afabd4c06ec3beb7b36440c4ea31771b9eae4223736fe8aa61e"
+    },
+    {
+      "path": "master/pokemon/0910/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "975a340f8807b9f1cb64f34342f3ab8fbd04dd399097181e6faa3edc37fad2c4"
+    },
+    {
+      "path": "master/pokemon/0911/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d6a483d790907c75a54dcd936fe4d59964414cfde653322dda98eaa3740a8aac"
+    },
+    {
+      "path": "master/pokemon/0912/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "02117e24eea8725589bc603c589d5f3a90ef2d248dbc7303830317475a6b6082"
+    },
+    {
+      "path": "master/pokemon/0913/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "630b025192a0188c8ba246d31f74214804c1181ed3868fa84d668818cdc7aa05"
+    },
+    {
+      "path": "master/pokemon/0914/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "08a541a3fc6e8082766087557c3f9f5b7601140ad141e921317c1dda737c172c"
+    },
+    {
+      "path": "master/pokemon/0921/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "e44a8609b5ddec37ee38d7953e1644978d643612d6cb39fc5fdcd424b9ef8a08"
+    },
+    {
+      "path": "master/pokemon/0922/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "56a9e7d88243f0501f32f174151117f8b30ea49b00c354b622c94efebd7056d6"
+    },
+    {
+      "path": "master/pokemon/0923/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "ac40773010bc047e88b64f0fc6554aea819ef1b44383a9126ee0349f73a9ad6b"
+    },
+    {
+      "path": "master/pokemon/0957/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "58832c8a5a3b8c35fab0953a86c98e6301a94c65739a95c1e5692b2918f42e6e"
+    },
+    {
+      "path": "master/pokemon/0958/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "665a7af5e62074c872b4de5575d92256e27459974c4a3ffea51274615bfb11ba"
+    },
+    {
+      "path": "master/pokemon/0959/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "2566da502e7f69c1b88b8c3318ac088025446baf3d7e6079579de69bed22d0c5"
+    },
+    {
+      "path": "master/pokemon/0974/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "d3014332c5d90cd90be8ab099d4320a8ef3ea9d1680f1adedd4845e018614c07"
+    },
+    {
+      "path": "master/pokemon/0975/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "035b77aa15e79a537dfa10e7448b78ba240abdf8ce6abe12cb20cbcdb60d4797"
+    },
+    {
+      "path": "master/pokemon/0980/face.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        168,
+        168
+      ],
+      "source_box": [
+        9,
+        9,
+        175,
+        175
+      ],
+      "sha256": "933e0426e5fdb9e36996321ff279920fffcc4acfa5bc79cf367c6f280c64aade"
+    },
+    {
+      "path": "master/sleepTypes/dozing/icon.webp",
+      "original": [
+        384,
+        240
+      ],
+      "cropped": [
+        318,
+        222
+      ],
+      "source_box": [
+        34,
+        10,
+        350,
+        230
+      ],
+      "sha256": "af10f49fac872e98202faa5b96ed0e1e48a111b722e8731d148f71c04d950144"
+    },
+    {
+      "path": "master/sleepTypes/slumbering/icon.webp",
+      "original": [
+        384,
+        240
+      ],
+      "cropped": [
+        319,
+        222
+      ],
+      "source_box": [
+        33,
+        10,
+        350,
+        230
+      ],
+      "sha256": "d48a1efd6491f9345b5a63998e2703d22a8033ef59752a331eb3441903676b77"
+    },
+    {
+      "path": "master/sleepTypes/snoozing/icon.webp",
+      "original": [
+        384,
+        240
+      ],
+      "cropped": [
+        320,
+        222
+      ],
+      "source_box": [
+        33,
+        10,
+        351,
+        230
+      ],
+      "sha256": "2ff800a835ed14bdeb974dd334ba228318ce4efe4eaa65c030fad0851253f44e"
+    },
+    {
+      "path": "master/specialties/all/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        238,
+        236
+      ],
+      "source_box": [
+        10,
+        11,
+        246,
+        245
+      ],
+      "sha256": "773d3f6214ca6420289fcf3db1367f024d60e03244060c1bd8379c54188109b2"
+    },
+    {
+      "path": "master/specialties/berry/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        238,
+        237
+      ],
+      "source_box": [
+        10,
+        10,
+        246,
+        245
+      ],
+      "sha256": "388231f9a0ea847188f2cb4020f2a115330bdc7be63e565030cf0dbb6487fc47"
+    },
+    {
+      "path": "master/specialties/ingredient/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        238,
+        235
+      ],
+      "source_box": [
+        10,
+        11,
+        246,
+        244
+      ],
+      "sha256": "1cdcb11cbbf7f99a7958fd1d7d15c45d225a81c7f9117f3398ea766b0c76f8f2"
+    },
+    {
+      "path": "master/specialties/skill/icon.webp",
+      "original": [
+        256,
+        256
+      ],
+      "cropped": [
+        238,
+        238
+      ],
+      "source_box": [
+        10,
+        10,
+        246,
+        246
+      ],
+      "sha256": "c7cc420f4a93804a808e5f41543d019f4fee95c0547a6a5a88f4e528bf8324e5"
+    },
+    {
+      "path": "master/types/bug/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "50113375ed26a05832915b10d7ac5770e1383682b017fc85b33340f49cfdb34c"
+    },
+    {
+      "path": "master/types/dark/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "fb2827da99c474ad2bb6d2108c3cd6afeca6999ef3f59f104bb0c4ac006bf2f6"
+    },
+    {
+      "path": "master/types/dragon/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "f23e69de72453b6058583f8b2b4220e7b33b6cfeebb2b043bd4a7f9614e79236"
+    },
+    {
+      "path": "master/types/electric/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "0d387528fe40413c963b117ef1f388ed6d5e5d29bbbe01895b22ad5b90e44d23"
+    },
+    {
+      "path": "master/types/fairy/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "a1693f7f5411275d822f69c5175ebc963dca5652c1bd7889af3235ec8a59517d"
+    },
+    {
+      "path": "master/types/fighting/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "6faabf9f0a3911515b2a902e57607805cf642789c547cee6d9c42d6b3a0c2350"
+    },
+    {
+      "path": "master/types/fire/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "636bc81065a86751aef200c63ccee384dfdacca4651b046b5f3964b639edd80f"
+    },
+    {
+      "path": "master/types/flying/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "0f22a8456108a5cf65dff48fabe54482a76dcdb6f1c58120ef994fa461666f13"
+    },
+    {
+      "path": "master/types/ghost/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "9c468acd25d06bd23dea3355b5f39021b8aff62916757df87c13489e82d524f4"
+    },
+    {
+      "path": "master/types/grass/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "8317fd8260d53c1903607647e26c760ef5fbd59bb5ccec29b2ec0faa0ac663ce"
+    },
+    {
+      "path": "master/types/ground/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "783b25f8b715c3c38d610a87646951552c5b4a2a3dba40c4c1cc314f595fefd4"
+    },
+    {
+      "path": "master/types/ice/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "dab47e2083c03828f1941c314f188d8898bad7ea62c9b5e85f1696102779ddb3"
+    },
+    {
+      "path": "master/types/normal/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "45bc34d0d0e27eb210b5114a68779faffd5f922810c37fa9d6b35a9d6646c181"
+    },
+    {
+      "path": "master/types/poison/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        120
+      ],
+      "sha256": "686cce0a11299dbc3d8195256c3a0253a516940806da39de95c6d685b60ebfc9"
+    },
+    {
+      "path": "master/types/psychic/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "9108f60fd3750fa74e8a35e5f41905d3ba6aca5170e163302492450dc7a1907b"
+    },
+    {
+      "path": "master/types/rock/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        114,
+        113
+      ],
+      "source_box": [
+        8,
+        8,
+        120,
+        119
+      ],
+      "sha256": "a91efb35b5f486aadba08beda1dfd05bedcc255eccb1f0d2913a2e5fe6c43cc2"
+    },
+    {
+      "path": "master/types/steel/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "637672f8c48061ec5e34f97ecad4109b777fdb258a5b8b916fdd093651d4eee6"
+    },
+    {
+      "path": "master/types/water/icon.png",
+      "original": [
+        128,
+        128
+      ],
+      "cropped": [
+        113,
+        114
+      ],
+      "source_box": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "sha256": "4b3e349c2e1af8667ec7e70bd542957aef17667e2f1b15e0708cbaf9a63e0f48"
+    },
+    {
+      "path": "new_assets/ピカチュウ_ナイトキャップ_顔_円形黒縁.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        186,
+        186
+      ],
+      "source_box": [
+        0,
+        0,
+        184,
+        184
+      ],
+      "sha256": "baf585397c920d273c349d77a3107f7609d3006e3272403b64fd38f7085f7d0c"
+    },
+    {
+      "path": "new_assets/GO_Plus_plus_円形黒縁.webp",
+      "original": [
+        184,
+        184
+      ],
+      "cropped": [
+        186,
+        186
+      ],
+      "source_box": [
+        0,
+        0,
+        184,
+        184
+      ],
+      "sha256": "e8ba73ed89eb63371a3b7dbe874b59c22b5a2ffa5ead8b409a27a72629cde510"
+    }
+  ]
+}
