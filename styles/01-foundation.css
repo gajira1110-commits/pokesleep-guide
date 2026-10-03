@@ -24,8 +24,8 @@ nav button{border:0;background:#fff;color:#718079;font-weight:800;font-size:11px
 .psg-team-face>.psg-face-sprite,.psg-recipe-provider-art>.psg-face-sprite,.v31-evo-image>.psg-face-sprite{width:100%;height:auto}
 #boxGrid .psg-box-card{display:flex;flex-direction:column;}
 .psg-box-card-art{width:100%;height:78px;display:grid;place-items:center;overflow:hidden;border-radius:8px;color:#82918a;font-size:10px}
-.psg-box-card-art>.psg-face-sprite{max-width:104px}
-.psg-box-card-art>img{width:100%;height:100%;object-fit:contain}
+.psg-box-card-art>.psg-face-sprite{max-width:104px;justify-self:start;transform:translateX(-2px)}
+.psg-box-card-art>img{width:100%;height:100%;object-fit:contain;object-position:left center;transform:translateX(-2px)}
 .psg-box-card-copy{display:block;min-width:0}
 /* Five cards across on phone and desktop; each badge keeps its own accessible label. */
 #dexGrid,#boxGrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
