@@ -214,7 +214,7 @@
 
 /* v316: centered nature, side-by-side evaluation and growth summaries. */
 #boxDetail .psg-box-nature-effects{text-align:center;justify-items:center}
-#boxDetail .psg-evaluation-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#boxDetail .psg-evaluation-heading{display:flex;align-items:center;justify-content:flex-start;gap:8px}
 #boxDetail .psg-evaluation-heading small{font-size:13px;font-weight:600}
 #boxDetail .psg-individual-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px}
 #boxDetail .psg-individual-score{min-width:0;font-size:12px}
@@ -237,3 +237,22 @@
 #boxDetail .psg-growth-comparison .psg-individual-row{grid-template-columns:1fr;gap:4px}
 #boxDetail .psg-growth-comparison .psg-evaluation-other{margin:4px 0}
 #boxDetail .psg-growth-comparison .psg-subskill-badge{width:20px;height:20px}
+
+/* v318: four-unit evaluation, compact controls on the right. */
+#boxDetail .psg-box-evaluation-section{height:calc(4 * var(--box-unit-height));box-sizing:border-box;padding:6px 8px;display:grid;grid-template-rows:24px minmax(0,1fr);gap:3px}
+#boxDetail .psg-box-evaluation-section:has(details[open]){height:auto;min-height:calc(4 * var(--box-unit-height))}
+#boxDetail .psg-box-evaluation-section .psg-evaluation-heading{margin:0;font-size:16px;min-width:0}
+#boxDetail .psg-box-evaluation-section .psg-evaluation-heading small{font-size:11px}
+#boxDetail #boxEvaluation{min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:3px}
+#boxDetail #boxEvaluation>.psg-individual-row{margin:0;padding:4px;min-height:0;align-items:center}
+#boxDetail #boxEvaluation .psg-individual-score{font-size:11px}
+#boxDetail #boxEvaluation .psg-individual-score p{margin:3px 0}
+#boxDetail #boxEvaluation .psg-individual-ideal{padding:2px;gap:2px;font-size:11px}
+#boxDetail #boxEvaluation .psg-individual-ideal-icons .psg-subskill-badge{width:20px;height:20px}
+#boxDetail .psg-evaluation-controls{display:flex;align-items:flex-start;justify-content:flex-end;gap:10px;flex-wrap:wrap;font-size:10px;color:#111}
+#boxDetail .psg-evaluation-controls>details{margin:0;max-width:100%}
+#boxDetail .psg-evaluation-controls>details>summary{color:#111;cursor:pointer;text-align:right}
+#boxDetail .psg-evaluation-controls>details[open]{width:100%}
+#boxDetail .psg-evaluation-controls .psg-box-muted{font-size:11px}
+#boxDetail .psg-evaluation-pending{overflow:auto;font-size:11px}
+#boxDetail .psg-evaluation-pending p,#boxDetail .psg-evaluation-pending ul{margin:2px 0}

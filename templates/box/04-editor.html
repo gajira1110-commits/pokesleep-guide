@@ -33,7 +33,7 @@ function fillBoxEditor(item,p){
  form.elements.skillLevel.max=window.PS_CATALOG?.skills?.[p?.mainSkillId]?.maxLevel||7;
  form.elements.role.querySelector('[data-legacy]')?.remove();
  if(item.role&&!['きのみ','食材','スキル'].includes(item.role)){const option=document.createElement('option');option.value=item.role;option.textContent=item.role+'（旧設定）';option.dataset.legacy='true';form.elements.role.append(option);}
- form.elements.role.value=item.role||'';
+ form.elements.role.value=item.role||defaultIndividualRole(p);
  fillBoxIngredients(item,p);
  document.getElementById('boxEditSubskills').innerHTML=SUBSKILL_LEVELS.map((n,i)=>{const prior=item.subskills?.[i]||'';const choices=['',...SUBSKILL_NAMES];if(prior&&!choices.includes(prior))choices.push(prior);return `<label>Lv.${n} サブスキル<select name="subskill-${i}">${choices.map(name=>`<option value="${boxEsc(name)}" ${name===prior?'selected':''}>${boxEsc(name||'未確認')}${name&&!SUBSKILL_NAMES.includes(name)?'（未対応）':''}</option>`).join('')}</select></label>`}).join('');
  fillBoxMythicalEditor(item,p);
