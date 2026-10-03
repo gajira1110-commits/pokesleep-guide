@@ -12,3 +12,7 @@
 .dex-card .dex-bottom{display:flex;align-items:center;justify-content:center;gap:1px;margin:0;min-width:0}
 .dex-card .dex-bottom>span{display:grid;place-items:center;width:min(16px,25%);height:auto;aspect-ratio:1;flex:0 1 16px;overflow:hidden;border-radius:50%;background:#fff;box-shadow:0 2px 5px #20312c24;font-size:10px}
 .dex-card .dex-bottom img,.dex-card .dex-bottom img.psg-specialty-icon{width:13px;height:13px;object-fit:contain}
+
+/* Species-based frames shared by Dex and Box cards. */
+#dexGrid .dex-card,#boxGrid .psg-box-card{border:2px solid #000}
+#dexGrid .dex-card.psg-special-card,#boxGrid .psg-box-card.psg-special-card{border-color:#fff}
