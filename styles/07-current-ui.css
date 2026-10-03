@@ -297,7 +297,7 @@
 #dexDetail #detailFoods .psg-food-level strong{font-size:clamp(16px,4.1vw,22px)}
 #dexDetail #detailFoods .psg-food-row,#dexDetail #detailFoods .psg-food-row[data-slot]{box-sizing:border-box;height:var(--food-row-height);min-height:0}
 #dexDetail #detailFoods .psg-food-id,#dexDetail #detailFoods .psg-food-levels,#dexDetail #detailFoods .psg-food-recipes,#dexDetail #detailFoods .psg-food-recipes.is-pending{box-sizing:border-box;height:100%;min-height:0;padding-block:2px}
-#dexDetail #detailFoods .psg-food-id img{width:calc(var(--food-row-height) - 4px);height:calc(var(--food-row-height) - 4px);max-width:100%;object-fit:contain;flex-shrink:0}
+#dexDetail #detailFoods .psg-food-id img{width:calc((var(--food-row-height) - 4px) * .85);height:calc((var(--food-row-height) - 4px) * .85);max-width:100%;object-fit:contain;flex-shrink:0}
 #dexDetail #detailFoods .psg-food-id b{top:5px;font-size:16px}
 #dexDetail #detailFoods .psg-food-recipe-tile{box-sizing:border-box;height:calc(var(--food-row-height) - 6px);min-height:0;position:relative}
 #dexDetail #detailFoods .psg-food-recipe-tile img{width:30px;height:30px}
