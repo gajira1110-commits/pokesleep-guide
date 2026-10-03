@@ -730,10 +730,10 @@
     "width": 256,
     "height": 256,
     "box": [
-      41,
-      15,
-      196,
-      197
+      43,
+      67,
+      192,
+      143
     ]
   },
   "assets/ui/special_pokemon.webp": {
@@ -774,10 +774,10 @@
     "width": 256,
     "height": 256,
     "box": [
-      62,
-      60,
-      160,
-      136
+      64,
+      77,
+      156,
+      117
     ]
   },
   "assets/ui/info_ingredients.webp": {
