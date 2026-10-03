@@ -46,7 +46,7 @@ function renderWhistleRecommendation(catalog,options){
  const members=document.createElement('div');members.className='psg-whistle-recommend-members';
  for(const id of recommendation.ids){const item=state.box.find(x=>x.id===id),card=document.createElement('div'),name=document.createElement('small');name.textContent=`${cardDisplayName(item.name)} Lv.${item.level}`;card.append(teamFace(item),name);members.append(card)}host.append(members);
  const apply=document.createElement('button');apply.type='button';apply.className='btn';apply.textContent='このチームを使う';apply.onclick=()=>saveTeamSelection(recommendation.ids);host.append(apply);
- note.textContent=`計算対応済みの登録個体から目的に合う${recommendation.ids.length}体を提案。選択フィールド・エリアボーナス・個体設定・おてつだいボーナスを反映。食材は指定割合で揃う量を最大化し、同点ならきのみエナジーを優先。`;host.append(note);
+ note.textContent=`計算対応済みの登録個体から目的に合う${recommendation.ids.length}体を提案。選択フィールド・エリアボーナス・個体設定・おてつだいボーナスを反映。${berryMode?'きのみエナジーの合計を最大化。':'食材は指定割合で揃う量を最大化し、同点ならきのみエナジーを優先。'}`;host.append(note);
  if(recommendation.excluded.length){const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('p');summary.textContent=`計算対象外 ${recommendation.excluded.length}体`;list.className='note';list.textContent=recommendation.excluded.join(' ／ ');details.append(summary,list);host.append(details)}
 }
 document.getElementById('whistleTarget').onchange=renderTeamWhistle;

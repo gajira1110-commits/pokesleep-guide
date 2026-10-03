@@ -25,7 +25,7 @@ backupFile.onchange=async()=>{
   pendingBackup={box,sleepFound,nightcap:parsed.version>=6?normalizeNightcap(parsed.nightcap):null,team:importedTeam,fields:parsed.version>=3?normalizeFieldProfile(parsed.fields):null};
   backupPreview.textContent=`ボックス ${box.length}件・チーム ${importedTeam.filter(Boolean).length}匹・寝顔 ${Object.keys(sleepFound).length}件を確認しました。${skipped?`未対応の記録 ${skipped}件を除外します。`:''}復元すると現在の記録を置き換えます。`;
   backupImport.hidden=false;
- }catch{backupPreview.textContent='読み込めませんでした。PokéSleep GuideのバックアップJSONを選んでください。'}
+ }catch{backupPreview.textContent='読み込めませんでした。P Sleep NexusのバックアップJSONを選んでください。'}
 };
 backupImport.onclick=()=>{
  if(!pendingBackup)return;
