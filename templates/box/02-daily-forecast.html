@@ -15,16 +15,15 @@ function renderBoxDayFood(estimate){
  }).join('');
  host.innerHTML=`<div class="psg-box-day-food-line"><small>１日予想</small><div class="psg-box-day-food-amounts">${amounts}</div></div><details class="psg-box-explanation psg-box-day-conditions"><summary aria-label="1日予想の計算条件" title="1日予想の計算条件"><span class="psg-conditions-closed">▼</span><span class="psg-conditions-open">▲</span></summary><p>${conditions}</p><p>この個体のみを計算。所属チームに関わらず、回収間隔・起床時げんき・いいキャンプ・食事はホームの設定を使用。16時間活動・8時間睡眠。食材枠は等確率、満杯は期待値で判定。この個体自身のスキル効果は含み、他のチーム個体からの補正・回復・追加おてつだいは含みません。ランダム食材は種類未指定の別表示。リボンの所持数・おてつだい時間補正を含みます。性格未入力は無補正として仮計算します。</p></details>`;
 }
-function boxDailySkillText(estimate){
+function boxDailySkillForecast(estimate){
  const {result,member}=estimate;
- if(!member||member.missing||!Number.isFinite(member.stats?.skill)||!member.skillName)return '１日の発動予想：条件・発動率未確認';
- const n=member.skillTriggers;let amount='';
- if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))amount=`・ランダム食材 約${(n*member.skillAmount).toFixed(1)}個（種類未指定・別集計）`;
- else if(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))amount=`・エナジー 約${Math.round(n*member.skillEnergy*result.areaFactor).toLocaleString()}（エリア補正込み）`;
- else if(['team_energy_recovery','self_energy_recovery','ally_energy_recovery'].includes(member.skillEffectType)&&Number.isFinite(member.skillRecovery))amount='（回復による速度変化は予想に反映）';
- else if(member.boost&&Number.isFinite(member.skillHelps))amount=`（同タイプ${member.boost.unique}種・各${member.skillHelps}回／発動・日産に反映）`;
- else if(member.skillEffectType==='extra_help'&&Number.isFinite(member.skillHelps))amount=`（1匹に${member.skillHelps}回／発動・対象は均等配分して日産に反映）`;
- else if(!Number.isFinite(member.skillShards))amount='（効果の日産加算は未対応）';
- if(Number.isFinite(member.skillShards))amount+=`・ゆめのかけら 約${Math.round(n*member.skillShards).toLocaleString()}個${member.skillEffectType==='variable_dream_shards'?'（範囲平均の近似）':''}`;
- return `１日 約${n.toFixed(1)}回${amount}`;
+ if(!member||member.missing||!Number.isFinite(member.stats?.skill)||!member.skillName)return '<small>１日発動予想</small><strong>未確認</strong><small>効果量合計</small><b>未計算</b>';
+ const n=member.skillTriggers,totals=[];
+ const add=(label,value,unit='',digits=1)=>{if(Number.isFinite(value))totals.push(`<span><small>${label}</small><b>約${value.toLocaleString('ja-JP',{minimumFractionDigits:digits,maximumFractionDigits:digits})}${unit}</b></span>`)};
+ if(member.skillEffectType==='random_ingredients'&&Number.isFinite(member.skillAmount))add('ランダム食材',n*member.skillAmount,'個');
+ if(['fixed_energy','variable_energy','fixed_dream_shards_energy'].includes(member.skillEffectType)&&Number.isFinite(member.skillEnergy))add('エナジー',n*member.skillEnergy*result.areaFactor,'',0);
+ if(['team_energy_recovery','self_energy_recovery','ally_energy_recovery'].includes(member.skillEffectType)&&Number.isFinite(member.skillRecovery))add('げんき回復',n*member.skillRecovery);
+ if(member.boost||member.skillEffectType==='extra_help')add('追加おてつだい',member.skillExtraHelps,'回');
+ if(Number.isFinite(member.skillShards))add('ゆめのかけら',n*member.skillShards,'個',0);
+ return `<small>１日発動予想</small><strong>約${n.toFixed(1)}回</strong><small>効果量合計</small>${totals.length?totals.join(''):'<b>未計算</b>'}`;
 }
