@@ -14,11 +14,11 @@
  #boxDetail .detail-head{top:calc(38px + env(safe-area-inset-top));min-height:44px}
  #boxDetail .detail-head>[data-back]{font-size:12px}
  #boxDetail #boxTitle{font-size:16px}}
-#boxDetail .detail-head h2{display:flex;align-items:center;justify-content:center;gap:6px;flex:1;min-width:0;margin:0}
+#boxDetail .detail-head h2{display:flex;align-items:baseline;justify-content:center;gap:6px;flex:1;min-width:0;margin:0}
 #boxDetail #boxHeaderNo{font-size:10px;font-weight:900;white-space:nowrap;color:#111}
 #boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
 #boxDetail #boxIdentity:empty{display:none}
-#boxDetail .psg-box-art-badges{position:absolute;right:7px;bottom:7px;display:flex;align-items:center;gap:4px;z-index:2}
+#boxDetail .psg-box-art-badges{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:4px;z-index:2}
 #boxDetail .psg-box-art-badge{display:grid;place-items:center;width:30px;height:30px;border-radius:0;background:transparent;border:0;box-shadow:none}
 #boxDetail .psg-box-art-badge img{width:30px;height:30px;object-fit:contain;image-rendering:auto}
 #boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
@@ -52,8 +52,8 @@
 #boxDetail #boxEditForm .psg-editor-check input{width:auto}
 #boxDetail #boxEditIngredients,#boxDetail #boxEditSubskills{display:grid;gap:8px}
 /* Individual artwork fits beside three equal-height fact rows. */
-#boxDetail .psg-box-hero{--box-fact-row-height:clamp(36px,6vw,42px);--box-facts-height:calc(3 * var(--box-fact-row-height) + 4px);padding:2px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
-#boxDetail .psg-box-identity{grid-template-columns:min(37%,var(--box-facts-height)) minmax(0,1fr);gap:3px;align-items:start}
+#boxDetail .psg-box-hero{--box-fact-row-height:clamp(36px,6vw,42px);--box-facts-height:calc(3 * var(--box-fact-row-height) + 4px);--box-portrait-column:min(37%,var(--box-facts-height));padding:2px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
+#boxDetail .psg-box-identity{grid-template-columns:var(--box-portrait-column) minmax(0,1fr);gap:3px;align-items:start}
 #boxDetail .psg-v106-media{min-width:0;height:var(--box-facts-height)}
 #boxDetail .psg-box-artwork{width:100%;height:100%;min-height:0;aspect-ratio:auto;background:transparent;border-radius:0;margin:0;place-items:start}
 #boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;object-position:left top}
@@ -87,11 +87,13 @@
 #boxDetail .psg-v106-ingredient-image img{width:28px;height:28px;object-fit:contain}
 #boxDetail .psg-v106-ingredient strong{grid-column:2;text-align:center;font-size:13px;line-height:1.1;white-space:nowrap}
 #boxDetail .psg-v106-unknown{font-size:18px;color:#81908a}
-#boxDetail .psg-box-level{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:center;padding:7px 8px;margin-top:5px}
-#boxDetail .psg-box-level-controls{grid-column:1;display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:0}
-#boxDetail .psg-box-level-controls .btn{min-width:35px;min-height:38px}
+#boxDetail .psg-box-level{display:grid;grid-template-columns:var(--box-portrait-column) minmax(0,1fr);gap:3px;align-items:center;padding:2px 0;margin-top:3px}
+#boxDetail .psg-box-level-controls{grid-column:1;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:3px;margin:0;min-width:0}
+#boxDetail #minus{justify-self:end}
+#boxDetail #plus{justify-self:start}
+#boxDetail .psg-box-level-controls .btn{min-width:28px;min-height:32px}
 #boxDetail #lv{min-width:34px;text-align:center;white-space:nowrap}
-#boxDetail #lvRange{grid-column:2;min-width:0;width:100%;min-height:40px;margin:0;touch-action:pan-x}
+#boxDetail #lvRange{grid-column:2;min-width:0;width:100%;min-height:32px;margin:0;touch-action:pan-x}
 @media(max-width:620px){
   #boxDetail .psg-box-stat{min-height:46px;padding:2px}
   #boxDetail .psg-box-stats{grid-template-rows:repeat(2,minmax(46px,1fr))}
@@ -101,7 +103,7 @@
   #boxDetail .psg-box-facts{gap:3px!important}
   #boxDetail .psg-box-facts .psg-box-trait-berry>img{width:25px!important;height:25px!important}
   #boxDetail .psg-box-stats{flex:0 0 auto!important}
-  #boxDetail .psg-box-identity{grid-template-columns:min(34%,var(--box-facts-height)) minmax(0,1fr);align-items:start}
+  #boxDetail .psg-box-hero{--box-portrait-column:min(34%,var(--box-facts-height))}
   #boxDetail .psg-box-facts{justify-content:flex-start}
   #boxDetail .psg-v106-media .psg-box-trait-berry>img{width:25px;height:25px}
   #boxDetail .psg-v106-media .psg-box-traits{align-items:start}}
