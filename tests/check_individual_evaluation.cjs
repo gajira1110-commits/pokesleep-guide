@@ -25,3 +25,10 @@ ctx.p.foodRate=20;const futureItem={level:9,nature:'がんばりや',subskills:[
 ctx.PS_IMAGE_FILES={subskills:{}};ctx.p.specialty='食材';
 for(const [name,key]of [['きのみ','berry'],['食材','food'],['スキル','skill']]){const role=run({...base,role:name},'individualEvaluationRole');assert.equal(role.role,key);assert.equal(role.explicit,true);const html=run({...base,role:name},'renderIndividualEvaluation');assert(html.includes('is-primary" data-role="'+key+'"'));assert(html.includes('ほかの役割も見る'));}
 assert.equal(run({...base,role:''},'individualEvaluationRole').role,'food');assert.equal(run({...base,role:'旧メモ'},'individualEvaluationRole').explicit,false);ctx.p.specialty='オール';assert.equal(run({...base,role:''},'individualEvaluationRole').role,null);console.log('Role evaluation: three selected roles, primary markup, other roles, unset and legacy fallback, all specialty passed.');
+ctx.p.specialty='食材';
+for(const level of [1,10,25,50,70]){
+ ctx.level=level;
+ const result=run({level,nature:'がんばりや',subskills:['きのみの数S','おてつだいボーナス','食材確率アップM','おてつだいスピードM','スキル確率アップM']},'individualEvaluation');
+ for(const row of result.rows){ctx.ideal=row.ideal;ctx.role=row.role;const slots=vm.runInContext('individualIdealSlots(p,level,role,ideal)',ctx);assert.equal(slots.length,5);assert.equal(new Set(slots).size,5);assert.deepEqual(Array.from(slots.slice(0,row.ideal.subskills.length)),Array.from(row.ideal.subskills));}
+}
+const allSlotsHtml=run({...base,role:'食材'},'renderIndividualEvaluation');assert(!allSlotsHtml.includes('次のサブスキル解放'));assert(allSlotsHtml.includes('Lv.80'));assert(allSlotsHtml.includes('psg-ideal-slot is-locked'));assert(run({...base,level:80},'renderIndividualEvaluation').includes('未実装Lv'));console.log('Full ideal slots: five unique skills, active optimum unchanged, locked future slots and unavailable Lv.80 preserved.');
