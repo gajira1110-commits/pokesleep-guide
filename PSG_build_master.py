@@ -99,6 +99,7 @@ STYLE_FILES = tuple(ROOT / 'styles' / name for name in (
     '13-daily-supply.css',
     '14-ingredients.css',
     '15-swap-assist.css',
+    '18-adopted-ui-icons.css',
 ))
 ART = ROOT / 'PSG_specialty_images.js'
 FACE_SHEET = ROOT / 'assets/faces/kanto_vol1_sheet.png'
@@ -152,6 +153,10 @@ def catalog_and_images():
         for name, path in entries.items():
             assert path.startswith('assets/ui-icons/') and (ROOT/path).is_file(), path
             images[kind][name] = path
+    images['ui'] = json.loads((ROOT / 'assets/ui/manifest.json').read_text())
+    assert len(images['ui']) == 9
+    for path in images['ui'].values():
+        assert path.startswith('assets/ui/') and (ROOT/path).is_file(), path
     catalog = {**data,'pokemon':{},'sleepStyles':{},'recipes':{},'skills':{},'ingredientAssets':{},'berries':{},'fields':{},
                'natures':natures,'subskills':subskills['records']}
     catalog['cooking'] = json.loads((MASTER / 'cooking/data.json').read_text())
@@ -413,7 +418,7 @@ def build():
     if not TEMPLATE.exists() or TEMPLATE.read_text() != source:
         TEMPLATE.write_text(source)  # Compatibility copy; edit templates/*.html instead.
     assert source.count(MARKER) == source.count('/* PSG_BUILD_STYLES */') == source.count('/* PSG_BUILD_SPECIALTY_IMAGES */') == source.count('/* PSG_BUILD_FACE_SCRIPT */') == 1
-    assert source.count('Review v286') == 2
+    assert source.count('Review v287') == 2
     js_data = json.dumps(catalog,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     js_images = json.dumps(images,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     injection = ('window.PS_CATALOG='+js_data+';\n'

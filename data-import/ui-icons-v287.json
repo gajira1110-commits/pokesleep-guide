@@ -1,0 +1,97 @@
+{
+  "project": "PokéSleep Guide",
+  "date": "2026-10-03 JST",
+  "status": "採用済み・切り出し完了・実装未実施",
+  "icons": [
+    {
+      "file": "assets/ui/info_cooking.webp",
+      "label": "料理",
+      "purpose": "情報画面の「料理」カード見出しアイコン",
+      "state": null,
+      "notes": "採用した金縁版。元プレビューの淡い周辺光を保持。白・淡色背景で確認する。",
+      "width": 256,
+      "height": 256,
+      "sha256": "87d619a08131ce75d9ba9c1594f6e4214e883c48453dfa9556bc37b822f042b5"
+    },
+    {
+      "file": "assets/ui/info_ingredients.webp",
+      "label": "食材",
+      "purpose": "情報画面の「食材」カード見出しアイコン",
+      "state": null,
+      "notes": "採用した金縁版。元プレビューの淡い周辺光を保持。白・淡色背景で確認する。",
+      "width": 256,
+      "height": 256,
+      "sha256": "8f86b64fb919a0c68b912db41b413051c69b9a6bfe0fa7df89cb5d9c3be14fa0"
+    },
+    {
+      "file": "assets/ui/info_skills.webp",
+      "label": "スキル",
+      "purpose": "情報画面の「スキル」カード見出しアイコン",
+      "state": null,
+      "notes": "採用した金縁版。元プレビューの淡い周辺光を保持。白・淡色背景で確認する。",
+      "width": 256,
+      "height": 256,
+      "sha256": "d4a577bcb13db784a38a431ce1006961ae00be07a93dcfff5cafda8510a63f71"
+    },
+    {
+      "file": "assets/ui/info_fields.webp",
+      "label": "フィールド",
+      "purpose": "情報画面の「フィールド」カード見出しアイコン",
+      "state": null,
+      "notes": "採用した金縁版。元プレビューの淡い周辺光を保持。白・淡色背景で確認する。",
+      "width": 256,
+      "height": 256,
+      "sha256": "701a0e7a66624435e23dc391829f2b3f7cce8548ea00b984ed406e614ad951ab"
+    },
+    {
+      "file": "assets/ui/favorite_on.webp",
+      "label": "お気に入り",
+      "purpose": "Boxのカード・個体詳細・サブメニューでお気に入り状態を表示",
+      "state": true,
+      "notes": "ON/OFFは既存の個体状態とUndo処理に接続。",
+      "width": 256,
+      "height": 256,
+      "sha256": "59a917014fe0ad24e60b14588365add5b083230c8d6d13133bb399d0730ff7cd"
+    },
+    {
+      "file": "assets/ui/favorite_off.webp",
+      "label": "お気に入り",
+      "purpose": "Boxのカード・個体詳細・サブメニューでお気に入り状態を表示",
+      "state": false,
+      "notes": "ON/OFFは既存の個体状態とUndo処理に接続。",
+      "width": 256,
+      "height": 256,
+      "sha256": "c3f2f9e91ac4985655b09d0d2960fdf68b078f3ad8f023f04e6822b3bb7b928f"
+    },
+    {
+      "file": "assets/ui/training_on.webp",
+      "label": "育成",
+      "purpose": "Boxのカード・個体詳細・サブメニューで育成状態を表示",
+      "state": true,
+      "notes": "ON/OFFは既存の個体状態とUndo処理に接続。",
+      "width": 256,
+      "height": 256,
+      "sha256": "ff824938ada251c76105944fee0c35ea5175e67349ccfc6063a52bf18d3bb181"
+    },
+    {
+      "file": "assets/ui/training_off.webp",
+      "label": "育成",
+      "purpose": "Boxのカード・個体詳細・サブメニューで育成状態を表示",
+      "state": false,
+      "notes": "ON/OFFは既存の個体状態とUndo処理に接続。",
+      "width": 256,
+      "height": 256,
+      "sha256": "505a8ed568aa0c2caeed693e8e38c7f8a1b7f8495be4a971fbce8ea27d6657bc"
+    },
+    {
+      "file": "assets/ui/special_pokemon.webp",
+      "label": "特別なポケモン",
+      "purpose": "伝説・幻など、照合済みの特別なポケモンに付ける種族タグ",
+      "state": null,
+      "notes": "切替なし。色違い・お気に入りと別。対象種族はビブロがマスターと照合し、未確認種を推測で追加しない。",
+      "width": 256,
+      "height": 256,
+      "sha256": "bb3716290112dd30886545112224dae41f649b7d665d66259095a46dd561f980"
+    }
+  ]
+}

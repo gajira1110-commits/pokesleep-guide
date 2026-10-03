@@ -1,0 +1,11 @@
+{
+  "info_cooking": "assets/ui/info_cooking.webp",
+  "info_ingredients": "assets/ui/info_ingredients.webp",
+  "info_skills": "assets/ui/info_skills.webp",
+  "info_fields": "assets/ui/info_fields.webp",
+  "favorite_on": "assets/ui/favorite_on.webp",
+  "favorite_off": "assets/ui/favorite_off.webp",
+  "training_on": "assets/ui/training_on.webp",
+  "training_off": "assets/ui/training_off.webp",
+  "special_pokemon": "assets/ui/special_pokemon.webp"
+}
