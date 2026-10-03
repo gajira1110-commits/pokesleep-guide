@@ -3,7 +3,7 @@
 /* Box identity remains visible while reading its long sections. */
 #boxDetail .detail-head{
   position:sticky;top:56px;z-index:69;display:flex;align-items:center;
-  gap:8px;min-height:48px;margin:0 -12px 10px;padding:5px 12px;
+  gap:6px;min-height:48px;margin:0 -12px 10px;padding:5px 12px;
   background:rgba(255,255,255,.97);border-bottom:1px solid #e1e8e4;
   backdrop-filter:blur(12px);
 }
@@ -14,7 +14,7 @@
  #boxDetail .detail-head{top:calc(38px + env(safe-area-inset-top));min-height:44px}
  #boxDetail .detail-head>[data-back]{font-size:12px}
  #boxDetail #boxTitle{font-size:16px}}
-#boxDetail .detail-head h2{display:flex;align-items:baseline;justify-content:center;gap:5px;flex:1;min-width:0}
+#boxDetail .detail-head h2{display:flex;align-items:center;justify-content:center;gap:6px;flex:1;min-width:0;margin:0}
 #boxDetail #boxHeaderNo{font-size:10px;font-weight:900;white-space:nowrap;color:#111}
 #boxDetail #boxHeaderEdit{padding:6px 7px;min-height:40px;text-align:center}
 #boxDetail #boxIdentity:empty{display:none}
@@ -24,7 +24,7 @@
 #boxDetail .psg-box-art-badge .filter-pictogram{font-size:12px;font-weight:900}
 #boxDetail .psg-box-hero{border-color:color-mix(in srgb,var(--box-type-accent,#55a66b) 22%,#dfe8e2)}
 #boxDetail .psg-box-identity{display:grid;}
-#boxDetail .psg-box-artwork{border:0;position:relative;overflow:hidden;display:grid;place-items:center}
+#boxDetail .psg-box-artwork{border:0;position:relative;overflow:hidden;display:grid;place-items:start center}
 #boxDetail .psg-box-artwork img{max-width:100%;max-height:100%;object-fit:contain}
 #boxDetail .psg-box-facts{min-width:0;display:flex;flex-direction:column;}
 #boxDetail #boxIdentity{font-weight:900;font-size:14px}
@@ -56,8 +56,8 @@
    and a full-width action row where the Dex shows tabs. */
 #boxDetail .psg-box-hero{padding:7px;background:var(--box-type-bg,#eef8f0);border-radius:18px}
 #boxDetail .psg-box-identity{grid-template-columns:minmax(108px,37%) minmax(0,1fr);gap:6px;align-items:start}
-#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:transparent;border-radius:0}
-#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+#boxDetail .psg-box-artwork{width:100%;min-height:0;aspect-ratio:1/1;background:transparent;border-radius:0;margin-top:-6px}
+#boxDetail .psg-box-artwork>img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center top}
 #boxDetail .psg-box-facts{justify-content:space-between;gap:4px;align-self:stretch}
 #boxDetail .psg-box-traits{display:grid;grid-template-columns:31fr 38fr 31fr;gap:3px;min-width:0}
 #boxDetail .psg-box-trait{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:31px;padding:3px 2px;border-radius:9px;background:#fff;font-size:11px;font-weight:850;white-space:nowrap;overflow:hidden;color:#111}
@@ -118,7 +118,7 @@
   #boxDetail>.psg-box-section{margin-bottom:6px}}
 
 /* Compact individual controls and three-column subskill tiles. */
-#boxDetail .psg-box-flags{display:flex;gap:2px;margin:0;flex:none}
+#boxDetail .psg-box-flags{display:flex;gap:6px;margin:0;flex:none}
 #boxDetail .psg-box-flags .btn{display:inline-flex;align-items:center;justify-content:center;min-height:32px;min-width:30px;padding:3px;font-size:17px;line-height:1}
 #boxDetail .psg-box-flags [aria-pressed="true"]{background:#e0f2e6;border-color:#60a27b;color:#235d3c}
 #boxDetail #boxSubskillRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
@@ -130,7 +130,7 @@
 #boxDetail .psg-box-subskill.is-locked{opacity:.48}
 #boxDetail .psg-editor-note{margin:0;font-weight:400}
 #boxDetail #boxEditor{scroll-margin-top:110px}
-@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:2px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
+@media(max-width:360px){#boxDetail .detail-head{gap:4px}#boxDetail .detail-head h2{gap:4px}#boxDetail .psg-box-flags{gap:4px}#boxDetail #boxTitle{font-size:14px}#boxDetail #boxHeaderNo{font-size:8px}#boxDetail #boxHeaderEdit{font-size:10px;padding:4px}#boxDetail .psg-box-flags .btn{min-width:27px}}
 
 #boxDetail .psg-box-nature-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:8px;align-items:center}
 #boxDetail .psg-box-nature-row .psg-box-lead{margin:0}
