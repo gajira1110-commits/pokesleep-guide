@@ -273,10 +273,14 @@
 /* v321: compact editor controls and two-unit skill content. */
 #boxDetail #boxEditForm [hidden]{display:none!important}
 #boxDetail #boxEditForm{gap:7px}
-#boxDetail .psg-editor-flags-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:6px;align-items:center}
-#boxDetail .psg-editor-flags-row>label:first-child{position:relative}
-#boxDetail .psg-editor-flags-row .psg-ribbon-preview{position:absolute;top:0;right:0;width:20px;height:20px}
-#boxDetail .psg-editor-flags-row .psg-editor-check{gap:3px!important;font-size:11px!important}
+#boxDetail .psg-editor-ribbon{position:relative}
+#boxDetail .psg-editor-ribbon .psg-ribbon-preview{position:absolute;top:0;right:0;width:20px;height:20px}
+#boxDetail #boxEditIngredients,#boxDetail .psg-editor-skill-role{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#boxDetail #boxEditIngredients label,#boxDetail .psg-editor-skill-role label{min-width:0}
+#boxDetail .psg-editor-nature-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
+#boxDetail #boxEditForm .psg-editor-nature-heading .psg-editor-check{font-size:11px;gap:4px;white-space:nowrap}
+#boxDetail .psg-editor-nature-heading #boxMintIcon{display:inline-flex;align-items:center}
+#boxDetail .psg-editor-nature-heading #boxMintIcon .psg-ui-icon{width:18px;height:18px}
 #boxDetail .psg-editor-nature-axes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 #boxDetail #boxNatureInferred{margin:0;font-size:12px}
 #boxDetail #boxEditSubskills{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
