@@ -77,9 +77,8 @@
  #boxDetail .psg-box-stat{min-height:45px}
  #boxDetail .psg-box-stat small{font-size:8px}
  #boxDetail .psg-box-stat strong{font-size:12px}}
-#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:center;gap:7px}
-#boxDetail .psg-box-food-heading h3{margin:0;font-size:18px}
-#boxDetail #boxIngredientRows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+#boxDetail .psg-box-food-heading{display:grid;grid-template-columns:52px minmax(0,1fr);gap:7px;align-items:center}
+#boxDetail #boxIngredientRows{grid-column:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
 #boxDetail .psg-v106-ingredient{display:grid;grid-template-columns:28px auto;grid-template-rows:auto auto;justify-content:center;align-items:center;column-gap:3px;row-gap:0;min-width:0;min-height:36px;padding:3px 2px;border-radius:10px;background:#fff;color:#111}
 #boxDetail .psg-v106-ingredient.is-locked{opacity:.48}
 #boxDetail .psg-v106-unlock{text-align:center;font-size:11px;line-height:1.2;white-space:nowrap}
@@ -152,9 +151,9 @@
 #boxEvaluation>p{font-size:13px}
 #boxDetail #boxGrowth .psg-box-muted{font-size:12px}
 
-#boxDetail .psg-box-day-food{margin-top:6px}
-#boxDetail .psg-box-day-food-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:12px}
-#boxDetail .psg-box-day-food-line>small{font-weight:800;color:#52685d}
+#boxDetail .psg-box-day-food{position:relative;margin-top:6px}
+#boxDetail .psg-box-day-food-line{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:start;gap:7px;font-size:12px}
+#boxDetail .psg-box-day-food-line>small{font-weight:800;color:#111;padding-top:3px}
 #boxDetail .psg-box-day-food-item{display:inline-flex;align-items:center;gap:3px}
 #boxDetail .psg-box-day-food-item img{width:22px;height:22px;object-fit:contain}
 #boxDetail .psg-box-explanation p{font-size:12px;overflow-wrap:anywhere}
@@ -164,3 +163,18 @@
 .psg-individual-row details{font-size:13px}
 
 .psg-evaluation-role{margin:8px 0}.psg-individual-row.is-primary{background:#fff;border:1px solid #d9e5df;border-radius:12px;padding:12px}.psg-evaluation-other{margin:12px 0}
+
+/* Food rows share the same height and ingredient-area width. */
+#boxDetail .psg-box-food-section .psg-v106-ingredient{position:relative;box-sizing:border-box;min-height:42px;border:1px solid #fff;padding:3px 2px}
+#boxDetail .psg-v106-ingredient[data-slot="A"]{background:#e9f8ee}
+#boxDetail .psg-v106-ingredient[data-slot="B"]{background:#fdf0f3}
+#boxDetail .psg-v106-ingredient[data-slot="C"]{background:#fdf6e9}
+#boxDetail .psg-box-food-letter{position:absolute;top:2px;left:3px;font-size:8px;font-weight:900;line-height:1;color:#111}
+#boxDetail .psg-box-day-food-amounts{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:3px 8px;box-sizing:border-box;min-width:0;min-height:42px;padding:3px;border:1px solid #fff;border-radius:10px;background:#fff;color:#111}
+#boxDetail .psg-box-day-food-amounts.psg-box-pending{margin:0;font-size:10px}
+#boxDetail .psg-box-day-conditions{margin:0;color:#111}
+#boxDetail .psg-box-day-conditions>summary{position:absolute;top:21px;left:0;display:flex;justify-content:center;align-items:center;width:52px;min-height:21px;color:#111;list-style:none;font-size:12px}
+#boxDetail .psg-box-day-conditions>summary::-webkit-details-marker{display:none}
+#boxDetail .psg-box-day-conditions .psg-conditions-open,#boxDetail .psg-box-day-conditions[open] .psg-conditions-closed{display:none}
+#boxDetail .psg-box-day-conditions[open] .psg-conditions-open{display:inline}
+#boxDetail .psg-box-day-conditions[open]{padding-top:5px}

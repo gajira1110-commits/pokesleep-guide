@@ -48,7 +48,7 @@ function syncLevel(){
   const icon=iconSource?`<img src="${iconSource}" alt="${boxEsc(name)}">`:'';
   const flag=item.mythicalState?.ingredientUnlocked?.[unlock],locked=item.level<unlock||p?.mythicalSettings&&flag!==true;
   const stateLabel=p?.mythicalSettings?(flag===true?(item.level<unlock?'解放済み・Lv未到達':'解放済み'):flag===false?'未解放':'解放未確認'):item.level<unlock?'Lv未到達':'';
-  return `<div class="psg-v106-ingredient ${locked?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''} ${stateLabel}"><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">${unlock===1?'初期':'Lv.'+unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong>${p?.mythicalSettings?`<small>${stateLabel}</small>`:''}</div>`;
+  return `<div data-slot="${['A','B','C'][index]}" class="psg-v106-ingredient ${locked?'is-locked':''}" aria-label="Lv.${unlock} ${boxEsc(name||'食材未確認')}${choice?' '+choice.qty+'個':''} ${stateLabel}"><span class="psg-box-food-letter">${['A','B','C'][index]}</span><span class="psg-v106-ingredient-image">${icon||'<span class="psg-v106-unknown">◌</span>'}</span><b class="psg-v106-unlock">${unlock===1?'初期':'Lv.'+unlock}</b><strong>${choice?'×'+choice.qty:'—'}</strong>${p?.mythicalSettings?`<small>${stateLabel}</small>`:''}</div>`;
  });
  document.getElementById('boxIngredientRows').innerHTML=ingredientRows.join('');
  const daily=boxDailyEstimate(item);renderBoxDayFood(daily);
