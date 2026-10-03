@@ -25,3 +25,12 @@ const assumed=ctx.whistleRecommend([incomplete],catalog,{...options,assumeNeutra
 assert.equal(ctx.whistleRecommend([],catalog,options).ids.length,0);
 const many=Array.from({length:235},(_,i)=>({...box[i%10],id:'many'+i}));const start=Date.now();const r=ctx.whistleRecommend(many,catalog,options,'apple');assert.equal(r.ids.length,5);console.log(`Whistle recommendation: exact brute-force match for berries/two foods, bonuses, special pair, incomplete settings, empty box; 235 individuals in ${Date.now()-start}ms.`);
 const html=read('templates/02-home.html');assert(!html.includes('whistleComparePin'));assert(html.includes('whistleTarget'));
+for(const targets of [[{name:'apple',weight:3}],[{name:'apple',weight:3},{name:'milk',weight:2}],[{name:'berry',weight:3},{name:'apple',weight:2},{name:'milk',weight:1}]]){
+ const recommended=ctx.whistleRecommendWeighted(box,catalog,options,targets);let maximum=-Infinity;
+ const score=r=>recommended.targets.reduce((sum,t)=>sum+(t.name==='berry'?r.berryEnergy:r.foods.get(t.name)||0)/t.maximum*t.weight,0);
+ function visit(start,ids){if(ids.length===5){if(ctx.normalizeTeam(ids,box).some(x=>!x))return;maximum=Math.max(maximum,score(ctx.whistleEstimate(ids,box,catalog,options)));return}for(let i=start;i<box.length;i++)visit(i+1,[...ids,box[i].id]);}visit(0,[]);
+ assert(Math.abs(score(recommended.result)-maximum)<1e-10);
+}
+assert(ctx.whistleRecommendWeighted(box,catalog,options,[{name:'apple',weight:1},{name:'apple',weight:2}]).reason);
+assert(ctx.whistleRecommendWeighted(box,catalog,options,[]).reason);
+console.log('Weighted recommendation: exact global optimum for 1/2/3 objectives, mixed energy/food units, duplicate and empty validation.');

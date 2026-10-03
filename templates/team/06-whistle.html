@@ -30,16 +30,23 @@ function renderWhistleRecommendation(catalog,options){
  const selected=select.value||'berry';
  const foods=[...new Set(Object.values(catalog.pokemon).flatMap(p=>(p.ingredientSlots||[]).flatMap(slot=>(slot.candidates||[]).map(c=>c.name))))].sort((a,b)=>a.localeCompare(b,'ja'));
  select.replaceChildren();for(const [value,label] of [['berry','きのみエナジー最大'],...foods.map(name=>[name,name+'の獲得数最大'])]){const option=document.createElement('option');option.value=value;option.textContent=label;select.append(option)}
- select.value=selected;host.replaceChildren();
- const recommendation=whistleRecommend(state.box,catalog,options,select.value);
+ select.value=selected;
+ const targets=[{name:select.value,weight:Number(document.getElementById('whistleWeight1').value)}];
+ for(const index of [2,3]){const extra=document.getElementById('whistleTarget'+index),current=extra.value;extra.replaceChildren();for(const [value,label] of [['','指定なし'],['berry','きのみエナジー'],...foods.map(name=>[name,name])]){const option=document.createElement('option');option.value=value;option.textContent=label;extra.append(option)}extra.value=current;targets.push({name:extra.value,weight:Number(document.getElementById('whistleWeight'+index).value)})}
+ host.replaceChildren();
+ const recommendation=whistleRecommendWeighted(state.box,catalog,options,targets);
  const note=document.createElement('p');note.className='note';
  if(!recommendation.ids.length){note.textContent=recommendation.reason;host.append(note);return}
  const result=recommendation.result,total=document.createElement('p');total.className='psg-day-total';
- total.textContent=select.value==='berry'?`ホイッスル1回：約${Math.round(result.berryEnergy).toLocaleString()}エナジー`:`ホイッスル1回：${select.value} 約${result.foods.get(select.value)||0}個`;host.append(total);
+ total.textContent='ホイッスル1回の獲得予想';host.append(total);
+ for(const target of recommendation.targets){const row=document.createElement('p');row.className='note';const amount=target.name==='berry'?result.berryEnergy:result.foods.get(target.name)||0;row.textContent=`${target.name==='berry'?'きのみエナジー':target.name}：約${Math.round(amount).toLocaleString()}${target.name==='berry'?'':'個'}（重み${target.weight}・最大の${Math.round(amount/target.maximum*100)}%）`;host.append(row)}
+
  const members=document.createElement('div');members.className='psg-whistle-recommend-members';
  for(const id of recommendation.ids){const item=state.box.find(x=>x.id===id),card=document.createElement('div'),name=document.createElement('small');name.textContent=`${cardDisplayName(item.name)} Lv.${item.level}`;card.append(teamFace(item),name);members.append(card)}host.append(members);
  const apply=document.createElement('button');apply.type='button';apply.className='btn';apply.textContent='このチームを使う';apply.onclick=()=>saveTeamSelection(recommendation.ids);host.append(apply);
- note.textContent=`計算対応済みの登録個体から最大になる${recommendation.ids.length}体を提案。選択フィールド・エリアボーナス・個体設定・おてつだいボーナスを反映。`;host.append(note);
+ note.textContent=`計算対応済みの登録個体から重み付き達成率が最大になる${recommendation.ids.length}体を提案。選択フィールド・エリアボーナス・個体設定・おてつだいボーナスを反映。`;host.append(note);
  if(recommendation.excluded.length){const details=document.createElement('details'),summary=document.createElement('summary'),list=document.createElement('p');summary.textContent=`計算対象外 ${recommendation.excluded.length}体`;list.className='note';list.textContent=recommendation.excluded.join(' ／ ');details.append(summary,list);host.append(details)}
 }
 document.getElementById('whistleTarget').onchange=renderTeamWhistle;
+
+for(const id of ["whistleTarget2","whistleTarget3","whistleWeight1","whistleWeight2","whistleWeight3"])document.getElementById(id).onchange=renderTeamWhistle;
